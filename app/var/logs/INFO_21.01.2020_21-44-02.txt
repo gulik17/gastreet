@@ -25,5 +25,5 @@
    'discountUserTypeId' => '0',
    'monetaOperationId' => '',
    'status' => 'STATUS_NEW',
-   'id' => '673',
+   'id' => '673'
 ))
