@@ -290,62 +290,25 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    $('.more .more-link').click(function (evt) {
+    $('.partners-list .more .more-link').click(function (evt) {
         let partners = $(this).parents('.partners-list').find('ul');
         $(partners).find('li').css('display', 'inline-block');
         $(this).hide();
         return false;
     });
 
-    $('#show-all-parthners-button-one').click(function (evt) {
-        $('.hidden-parthner-one').show();
-        $('.gss-parthner-show-one').removeClass('gss-parthner-one-li-3');
-        $('.gss-parthner-show-one').removeClass('gss-parthner-one-li-4');
-        $('.gss-parthner-show-one').removeClass('gss-parthner-one-li-5');
-        $('.gss-parthner-show-one').removeClass('gss-parthner-one-li-6');
-        $('.gss-parthner-show-one').show();
-        $('#show-all-parthners-one').hide();
+    $('[data-toggle="tabs"]').click(function () {
+        $('[data-toggle="tabs"]').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-item').hide();
+        let target = $(this).data('target');
+        $('.tabs-container').find(target).show();
         return false;
     });
 
-    $('#show-all-parthners-button-two').click(function (evt) {
-        $('.hidden-parthner-two').show();
-        $('.gss-parthner-show-two').removeClass('gss-parthner-two-li-3');
-        $('.gss-parthner-show-two').removeClass('gss-parthner-two-li-4');
-        $('.gss-parthner-show-two').removeClass('gss-parthner-two-li-5');
-        $('.gss-parthner-show-two').removeClass('gss-parthner-two-li-6');
-        $('.gss-parthner-show-two').show();
-        $('#show-all-parthners-two').hide();
-        return false;
-    });
-
-    $('#show-all-parthners-button-three').click(function (evt) {
-        $('.hidden-parthner-three').show();
-        $('.gss-parthner-show-three').removeClass('gss-parthner-three-li-3');
-        $('.gss-parthner-show-three').removeClass('gss-parthner-three-li-4');
-        $('.gss-parthner-show-three').removeClass('gss-parthner-three-li-5');
-        $('.gss-parthner-show-three').removeClass('gss-parthner-three-li-6');
-        $('.gss-parthner-show-three').show();
-        $('#show-all-parthners-three').hide();
-        return false;
-    });
-
-    $('#show-all-parthners-button').click(function (evt) {
-        $('.hidden-parthner').show();
-        $('.gss-parthner-show').removeClass('gss-parthner-li-3');
-        $('.gss-parthner-show').removeClass('gss-parthner-li-4');
-        $('.gss-parthner-show').removeClass('gss-parthner-li-5');
-        $('.gss-parthner-show').removeClass('gss-parthner-li-6');
-        $('.gss-parthner-show').show();
-        $('#show-all-parthners').hide();
-        return false;
-    });
-
-    var listenScroll = function () {
-
-    };
+    let listenScroll = function () {};
     
-    var listenResize = function () {
+    let listenResize = function () {
         fixPageContainerImage();
     };
 
@@ -370,7 +333,6 @@ $(window).on('load', function () {
     var hh = $('#site-header').outerHeight();
     //$('#site-footer').css('bottom', (-1*fh));
     //$('section.header, body .l-site').css('margin-bottom', (fh-20)).css('padding-top', hh);
-    
 });
 
 /**
@@ -569,7 +531,7 @@ $('.modal .nav-btn.next').on('click', function() {
     return false;
 });
 
-$('[id^="popover-win-"]').on('shown.bs.modal', function () {
+$('.modal').on('shown.bs.modal', function () {
     $('body').addClass('modal-open').css("padding-right", "17px");
 });
 
@@ -625,7 +587,6 @@ $('.cashback-title').on('mousemove', function (e) {
 
 $(function () {
     $('[data-toggle="popover"]').popover({
-        //container: 'body',
         trigger: 'focus'
     });
     // Scroll Plugin
@@ -637,4 +598,159 @@ $(function () {
             $(".main-page header").css({'background':'transparent'});
         }
     });
+
+    $('#defaultCheck1').click(function () {
+        if ( $('#defaultCheck1').prop("checked") ) {
+            $('#next1').prop( "disabled", false );
+        } else {
+            $('#next1').prop( "disabled", true );
+        }
+    });
+    $('.btn-next2').click(function () {
+        let form = $(this).parents('form');
+        let first_name = form.find('[name=first_name]').val();
+        let last_name = form.find('[name=last_name]').val();
+        let phone = form.find('[name=phone]').val();
+        let email = form.find('[name=email]').val();
+        let company = form.find('[name=company]').val();
+        let position = form.find('[name=position]').val();
+        let about = form.find('[name=about]').val();
+
+        if (!first_name || !last_name || !phone || !email || !company || !position || !about) {
+            alert("Все поля обязательны для заполнения");
+            return falseж
+        }
+
+        let text = "Имя: "+first_name+"<br>"+
+                    "Фамилия: "+last_name+"<br>"+
+                    "Телефон: "+phone+"<br>"+
+                    "Ящик: "+email+"<br>"+
+                    "Компания: "+company+"<br>"+
+                    "Должность: "+position+"<br>"+
+                    "О себе: "+about+"<br>";
+
+        $('#registerModal3 [name=contact_text]').val(text);
+
+        $('#registerModal2').modal('hide');
+        $('#registerModal3').modal('show');
+    });
+
+    $('.btn-next3').click(function () {
+        let form = $(this).parents('form');
+        let photo = form.find('[name=photo]').val();
+        let contact_text = form.find('[name=contact_text]').val();
+        let video_link = form.find('[name=video_link]').val();
+        let instagram = form.find('[name=instagram]').val();
+        let facebook = form.find('[name=facebook]').val();
+        let vk = form.find('[name=vk]').val();
+        let odnoklassniki = form.find('[name=odnoklassniki]').val();
+
+        if (!video_link) {
+            alert("Вы не загрузили видео");
+        }
+        if (!photo) {
+            alert("Вы не загрузили фото");
+        }
+
+        var form_data = new FormData();
+        form_data.append('job', 'sendAnyFolkMsg');
+        form_data.append('photo', photo);
+        form_data.append('contact_text', contact_text);
+        form_data.append('video_link', video_link);
+        form_data.append('instagram', instagram);
+        form_data.append('facebook', facebook);
+        form_data.append('vk', vk);
+        form_data.append('odnoklassniki', odnoklassniki);
+
+        $.ajax({
+            url: '/ajax',
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function(answer) {
+                if (answer.result === "success") {
+                    $('#registerModal3').modal('hide');
+                    $('#registerModal4').modal('show');
+                } else if (answer.result === "error") {
+                    alert("Неизвестная ошибка");
+                }
+            }
+        });
+    });
 });
+
+$(document).ready(function(){
+    $('.carousel-partner-page').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        items:2,
+        dotsContainer: $('.carousel-partner-page + .controls').find('.js-dots'),
+        responsive:{
+            0:{
+                items:1,
+                margin:0
+            },
+            600:{
+                items:2
+            }
+        }
+    });
+
+    $('.image-carousel').on('click', function() {
+        let img_src = $(this).find('img').attr('src');
+        let text_title = $(this).find('.h4').eq(1).html();
+        let text_p = $(this).find('p').html();
+
+        $('.main-image-block img').attr('src', img_src);
+        $('.main-image-block h4').html(text_title);
+        $('.main-image-block p').html(text_p);
+        return false;
+    });
+});
+
+function clearError() {
+    setTimeout(function() {
+        $('.photo-file span').html('Загрузи свое лучшее фото').removeClass('error').removeClass('success');
+    }, 5000);
+}
+
+function ajaxUpload() {
+    let file_data = $('#folk_picture').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('job', 'upload');
+    form_data.append('picture', file_data);
+    console.log(form_data);
+    $.ajax({
+        url: '/ajax',
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(answer) {
+            if (answer.result === "success") {
+                $('.photo-file span').html( 'Фото загружено' ).addClass('success');
+                $('.folk-form [name=photo]').val(answer.file);
+            } else if (answer.result === "error_upload") {
+                $('.photo-file span').html( 'Ошибка загрузки' ).addClass('error');
+                clearError();
+            } else if (answer.result === "error_file_danger") {
+                $('.photo-file span').html( 'Файлы должны быть формата JPG, PNG, PDF' ).addClass('error');
+                clearError();
+            } else if (answer.result === "error_too_big") {
+                $('.photo-file span').html( 'Файлы должны быть не более 2Мб' ).addClass('error');
+                clearError();
+            } else if (answer.result === "error_unknown") {
+                alert("Неизвестная ошибка");
+            }
+        }
+    });
+}

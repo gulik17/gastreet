@@ -2448,7 +2448,7 @@ main {
  * Общая карусель
  **/
 .owl-carousel + .controls {
-    margin-top: 34px;}
+    margin-top: 2.125rem;}
 
 .owl-carousel + .controls .dots {
     position: absolute;
@@ -3852,8 +3852,7 @@ main {
     color: #000;
     border-radius: 3px;}
 .page_body .row-options .ticket {
-    padding-bottom: 3rem;
-    border: 2px dashed #dadada;}
+    padding-bottom: 3rem;}
 .page_body .ticket .btn.btn-cart {
     color: #000;
     border: 0;
@@ -4678,6 +4677,7 @@ footer .app_icons li {
 footer .app_icons li.googleplay {
     width: 34%;}
 footer.site-footer p.app_desc {
+    text-align: center;
     margin-bottom: .8rem;}
 .alert-ext {
     padding-right: 30px;
@@ -4866,6 +4866,8 @@ footer.site-footer p.app_desc {
     font-family: 'Gastreet Sans', sans-serif;}
 .main-page main {
     padding-top: 0;}
+.fb-share-button {
+    text-align: left;}
 
 @-webkit-keyframes snow{
     0% {

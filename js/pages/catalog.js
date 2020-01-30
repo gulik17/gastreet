@@ -123,18 +123,6 @@ $().ready(function() {
         return false;
     }
     
-    if ( ($('.container').outerWidth() > '600') && ($('.ticket-row').length > 0) ) {
-        $('.ticket-row').owlCarousel({
-            margin:10,
-            nav:true,
-            dots:false,
-            responsive:{
-                600:{items:3},
-                1000:{items:5}
-            }
-        });
-    }
-
     $('.buy-ticket-click').click(function (evt) {
         evt.preventDefault();
         var id = $(this).data('id');

@@ -8,6 +8,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
     public function render() {
         $actor = Context::getActor();
         $job = Request::getVar("job");
+        $time = time();
         
         // Получение данных о новом пользователе
         if ($job == "register") {
@@ -1230,6 +1231,49 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             }
         }
 
+        if ($job == 'upload') {
+            $session_id = Session::getSessionId();
+            if (!$session_id) {
+                $json['result'] = "error_session";
+                echo json_encode($json);die();
+            }
+
+            // Пути загрузки файлов
+            $path = DOCUMENT_ROOT."/images/folkspeaker/user_photo/";
+
+            // Массив допустимых значений типа файла
+            $types = array('image/png', 'image/jpeg', 'application/pdf');
+            // Максимальный размер файла
+            $size = 2048000;
+            // Обработка запроса
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $fileinfo = pathinfo($_FILES['picture']['name']);
+                // Проверяем тип файла
+                if (!in_array($_FILES['picture']['type'], $types)) {
+                    $json['result'] = "error_file_danger";
+                    echo json_encode($json);die();
+                }
+                // Проверяем размер файла
+                if ($_FILES['picture']['size'] > $size) {
+                    $json['result'] = "error_too_big";
+                    echo json_encode($json);die();
+                }
+                $filename = $session_id.'.'.$fileinfo['extension'];
+
+                // Загрузка файла и вывод сообщения
+                if (!@copy($_FILES['picture']['tmp_name'], $path . $filename)) {
+                    $json['result'] = "error_upload";
+                    echo json_encode($json);die();
+                } else {
+                    $json['file'] = $filename;
+                    $json['result'] = "success";
+                    echo json_encode($json);die();
+                }
+            }
+            $json['result'] = "error_unknown";
+            echo json_encode($json);die();
+        }
+
         if ($job == "sendAnyMsg") {
             $subject = Request::getVar("subject");
             $name = Request::getVar("name");
@@ -1300,6 +1344,62 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             }
         }
 
+        if ($job == "sendAnyFolkMsg") {
+            $contact_text = Request::getVar("contact_text");
+            $photo = Request::getVar("photo");
+            $video_link = Request::getVar("video_link");
+            $instagram = Request::getVar("instagram");
+            $facebook = Request::getVar("facebook");
+            $vk = Request::getVar("vk");
+            $odnoklassniki = Request::getVar("odnoklassniki");
+
+            $domain = str_replace('www.','',$_SERVER['SERVER_NAME']);
+            $ip = $_SERVER['REMOTE_ADDR'];
+
+            $to = "911@gastreet.com";
+            $from = "no-reply@".$domain;
+            $url = $_SERVER['HTTP_REFERER'];
+
+            $user_agent = $_SERVER["HTTP_USER_AGENT"];
+            if (strpos($user_agent, "Firefox") !== false) $browser = "Firefox";
+            elseif (strpos($user_agent, "Opera") !== false) $browser = "Opera";
+            elseif (strpos($user_agent, "Chrome") !== false) $browser = "Chrome";
+            elseif ( (strpos($user_agent, "MSIE") !== false) || (strpos($user_agent, "Edge") !== false) ) $browser = "Internet Explorer";
+            elseif (strpos($user_agent, "Safari") !== false) $browser = "Safari";
+            else $browser = "Неизвестный";
+
+            $subject = "=?UTF-8?B?".base64_encode("Заявка на народного спикера")."?=";
+            $headers  = "MIME-Version: 1.0"."\r\n";
+            $headers .= "Content-type: text/html; charset=utf-8\r\n";
+            $headers .= "From: ".$from."\r\n";
+            $headers .= "X-Mailer: PHP/".phpversion()."\r\n";
+            $mess  = trim(html_entity_decode($contact_text));
+            $mess .= "<br>Фото: <img src=\"https://gastreet.com/images/folkspeaker/user_photo/$photo\" style=\"width:300px\">";
+            $mess .= "<br>Ссылка на видео: ".trim($video_link);
+            $mess .= "<br>Instagram: ".trim($instagram);
+            $mess .= "<br>Facebook: ".trim($facebook);
+            $mess .= "<br>ВКонтакте: ".trim($vk);
+            $mess .= "<br>Одноклассники: ".trim($odnoklassniki);
+
+            $mess .= "<br><br>--<br>Отправлено со страницы:\n".$url;
+            $mess .= "<br>IP: ".$ip;
+            $mess .= "<br>Браузер: ".$browser;
+
+            if ( mail($to, $subject, $mess, $headers) ) {
+                $_SESSION['stime'] = time();
+                $array['result'] = "success";
+                $array['cls'] = "c_success";
+                $array['message'] = "Спасибо, сообщение отправлено.";
+                echo json_encode($array);
+                exit;
+            } else {
+                $array['result'] = "error";
+                $array['cls'] = "c_error";
+                $array['message'] = "Ошибка отправки сообщения. Просим связаться с нами по телефону.";
+                echo json_encode($array);
+                exit;
+            }
+        }
 
         echo json_encode("noAction");
         exit;

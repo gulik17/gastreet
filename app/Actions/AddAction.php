@@ -24,9 +24,9 @@ class AddAction extends AuthorizedUserAction implements IPublicAction {
 
         if ($ticket === 'rebro') {
             if ($extuser) {
-                $res = UserManager::sendNotifyRebro('request@restalliance.ru', $extuser);
+                $res = UserManager::sendNotifyRebro('kategamaiun@gmail.com', $extuser);
             } else {
-                $res = UserManager::sendNotifyRebro('request@restalliance.ru', $this->actor->id);
+                $res = UserManager::sendNotifyRebro('kategamaiun@gmail.com', $this->actor->id);
             }
 
             if ($res == 'allReadyHave') {
@@ -47,14 +47,14 @@ class AddAction extends AuthorizedUserAction implements IPublicAction {
                 if ($this->lang == 'en') {
                     $array['error'] = 'The application has been sent. Our manager will contact you!';
                 } else {
-                    //$array['error'] = 'Ваша заявка будет рассмотрена в течении 5 рабочих дней!';
-                    $array['error'] = 'Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!';
+                    $array['error'] = 'Ваша заявка будет рассмотрена в течении 5 рабочих дней!';
+                    //$array['error'] = 'Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!';
                 }
                 echo json_encode($array);
                 exit;
             } else {
-                //Enviropment::redirectBack("Ваша заявка будет рассмотрена в течении 5 рабочих дней!", "success");
-                Enviropment::redirectBack("Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!", "success");
+                Enviropment::redirectBack("Ваша заявка будет рассмотрена в течении 5 рабочих дней!", "success");
+                //Enviropment::redirectBack("Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!", "success");
             }
         }
 
