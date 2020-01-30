@@ -6,13 +6,13 @@ $img = 'maze'.rand(1, 3).'.png';
 
 if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
     $title = 'Error 404 - Not Found';
-    $desc = 'Go to Home page';
+    $desc = 'Go to Home page!';
 } else {
     $title = '404 - страница не найдена';
     $desc = 'Перейти на Главную страницу';
 } ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <title><?= $title ?></title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -21,10 +21,8 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
             body {
                 background:#000;
                 color:#fff;
-                font-size:12px;
                 line-height:18px;
                 margin:0;
-                padding:0;
                 font-family:Arial, Helvetica, sans-serif;
                 font-size:14px;
                 text-align: center;
@@ -129,19 +127,19 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                 dx = 0;
                 dy = 0;
                 // Если нажата стрелка вверх, начинаем двигаться вверх
-                if (e.keyCode == 38) {
+                if (e.keyCode === 38) {
                     dy = -1;
                 }
                 // Если нажата стрелка вниз, начинаем двигаться вниз
-                if (e.keyCode == 40) {
+                if (e.keyCode === 40) {
                     dy = 1;
                 }
                 // Если нажата стрелка влево, начинаем двигаться влево
-                if (e.keyCode == 37) {
+                if (e.keyCode === 37) {
                     dx = -1;
                 }
                 // Если нажата стрелка вправо, начинаем двигаться вправо
-                if (e.keyCode == 39) {
+                if (e.keyCode === 39) {
                     dx = 1;
                 }
             }
@@ -156,7 +154,6 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                     var red = pixels[i];
                     var green = pixels[i+1];
                     var blue = pixels[i+2];
-                    var alpha = pixels[i+3];
 
                     // Смотрим на наличие черного цвета стены, что указывает на столкновение
                     if (red == 0 && green == 0 && blue == 0) {
@@ -178,7 +175,7 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                     context.beginPath();
                     context.fillStyle = "rgb(254,244,207)";
                     context.rect(x, y, 15, 15);
-                    context.fill()
+                    context.fill();
                     // Обновляем координаты значка, создавая перемещение
                     x += dx;
                     y += dy;
@@ -214,6 +211,6 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
             <p>Или сыграй в мини-игру :-)</p>
         </div>
         <canvas id="canvas" width="597" height="598"></canvas>
-        <img id="face" src="/images/game/face.png">
+        <img id="face" src="/images/game/face.png" alt="Hero">
     </body>
 </html>
