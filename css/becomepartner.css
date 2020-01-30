@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;}
+html {
+    font-size: 16px;}
+body {
+    color: #000;
+    font-weight: 400;
+    background-color: #fff;}
+#carouselExampleIndicators {
+    box-sizing: border-box;}
+.main-text{
+    padding-top: 3.750rem;
+    padding-bottom: 2rem;}
+.feedback form {
+    margin-top: 1rem;
+    margin-bottom: 3rem;}
+.form-custom {
+    background-color: transparent;
+    padding: .7rem 1.563rem;
+    border: 1px solid #999;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: #000;
+    font-size: .875rem;}
+.feedback * {
+    outline: 0;}
+.feedback .btn {
+    background-color: #008dd2;
+    padding: .7rem 1.563rem;
+    border: 1px solid #999;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: #fff;
+    font-size: 1.063rem;
+    font-weight: 600;
+    border-radius: 50px;
+    position: relative;}
+.feedback .btn:hover {
+    color: #212529;}
+#carouselExampleIndicators .carousel-indicators {
+    margin-left: 5%;
+    margin-right: 5%;}
+#carouselExampleIndicators .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;}
+.form-custom.error {
+    border-color: #ff0000;}
+#carouselExampleIndicators .carousel-control-next-icon, #carouselExampleIndicators .carousel-control-prev-icon {
+    width: 46px;
+    height: 50px;
+    background-color: #000;
+    display: inline-block;
+    background-size: 60%;}
+hr {
+    border-top: 1px solid;
+    margin: 2rem 0;}
+
+/* Extra small */
+@media (max-width: 575px) {
+    .main-text .h1 {
+        font-size: 2rem;}
+}
+/* Small */
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+/* Medium */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* Large */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Extra large */
+@media (min-width: 1200px) {
+
+}

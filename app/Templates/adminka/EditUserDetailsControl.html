@@ -1,0 +1,60 @@
+{assign var=this value=$EditUserDetailsControl}
+{formrestore id="form"}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+
+<h2>Редактирование реквизитов пользователей</h2>
+<form id="form" action="{alink do=saveuserdetails}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.userDetails->id}" />
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group">
+                <label for="company_type">Юридический статус:</label>
+                <select class="form-control" id="company_type" name="company_type">
+                    <option value="2"{if $this.userDetails->company_type == 2} selected="selected"{/if}>Юридическое лицо</option>
+                    <option value="3"{if $this.userDetails->company_type == 3} selected="selected"{/if}>Индивидуальный предприниматель</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="company">Юридическое наименование организации:</label>
+                <input class="form-control" type="text" id="company" name="company" value="{$this.userDetails->company}">
+            </div>
+            <div class="form-group">
+                <label for="inn">ИНН:</label>
+                <input class="form-control" type="text" id="inn" name="inn" value="{$this.userDetails->inn}">
+            </div>
+            <div class="form-group">
+                <label for="kpp">КПП:</label>
+                <input class="form-control" type="text" id="kpp" name="kpp" value="{$this.userDetails->kpp}">
+            </div>
+            <div class="form-group">
+                <label for="address">Почтовый адрес:</label>
+                <input class="form-control" type="text" id="address" name="address" value="{$this.userDetails->address}">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <label for="rs">Расчетный счет:</label>
+                <input class="form-control" type="text" id="rs" name="rs" value="{$this.userDetails->rs}">
+            </div>
+            <div class="form-group">
+                <label for="bank">Банк:</label>
+                <input class="form-control" type="text" id="bank" name="bank" value="{$this.userDetails->bank}">
+            </div>
+            <div class="form-group">
+                <label for="corr">Корреспондентский счёт:</label>
+                <input class="form-control" type="text" id="corr" name="corr" value="{$this.userDetails->corr}">
+            </div>
+
+            <div class="form-group">
+                <label for="bik">БИК:</label>
+                <input class="form-control" type="text" id="bik" name="bik" value="{$this.userDetails->bik}">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" id="submitPlace" type="submit" value="Сохранить"/>
+    </div>
+</form>

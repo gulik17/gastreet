@@ -1,0 +1,19 @@
+03.12.2019 POST: Array
+(
+    [comment] => 20026_1575381695
+    [phone_number] => 79119274849
+    [order_id] => 20026_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 0e7c7ba9d44990dcfdaa3c7ec5c62a94
+    [name] => Оплата заказа №20026 - 79119274849
+    [system_income] => 60000.0
+    [partner_income] => 58860.0
+    [tid] => 364310584
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => oseev@inbox.ru
+)
+ GET: Array
+(
+)

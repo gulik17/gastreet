@@ -1,0 +1,185 @@
+{assign var=this value=$VolunteersControl}
+
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="videoModalLabel">##videoModalLabel##</h4>
+            </div>
+            <div class="modal-body">
+                <iframe allowfullscreen="" height="400" src="" style="width:100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron-blank">
+    <div class="container">
+        <div class="content">
+            <ul class="breadcrumbs">
+                <li><a href="/">##home##</a></li>
+                <li><span>##volunteers##</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-headline gss-volunteers-title mb-2">##volunteers##</h1>
+        </div>
+        <div class="col-md-3">
+            <div class="g-emoji-content">
+                <div class="g-emoji-icon">
+                    <img src="/images/emoji/12.png" class="img-fluid" alt="">
+                </div>
+                <div class="g-emoji-balun">Любимки чо</div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <p class="subtitle mt-1 mb-5" style="сtext-transform:inherit;color:#10093b;">ОНИ ПРОШЛИ ШКОЛУ GASTREET.<br>
+                Если вы ищите проверенных людей к&nbsp;себе в&nbsp;команду, то вы в&nbsp;нужном месте! На этой странице — волонтеры GASTREET всех лет. Их адекватность, самоотверженность и&nbsp;профессионализм подтверждены GASTREET&nbsp;TEAM. Не единожды</p>
+        </div>
+        <div class="col-md-4">
+            <div class="tickects-video-catalog-page tickects-video-catalog-none gss-video-watch-catalog-page">
+                <div>
+                    <a data-target="#video-modal" data-toggle="modal" data-link="HyFhn4EoVKU" data-title="ПРО ВОЛОНТЕРОВ" href="#">
+                        <div class="video-img" style="background-image: url('https://i.ytimg.com/vi/HyFhn4EoVKU/hq720.jpg')"></div>
+                        <span>Посмотрите ролик<br>про ВОЛОНТЕРОВ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gss-volunteers-container row mb-4">
+        <div class="col-md-3 d-none">
+            <div class="dropdown dropdown-year">
+                <a class="btn btn-white dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {if $this.year}{$this.year}{else}Год работы на&nbsp;GASTREET{/if}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">2015</a>
+                    <a class="dropdown-item" href="#">2016</a>
+                    <a class="dropdown-item" href="#">2017</a>
+                    <a class="dropdown-item" href="#">2018</a>
+                    <a class="dropdown-item" href="#">2019</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dropdown dropdown-city">
+                <a class="btn btn-white dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {if $this.city}{$this.city}{else}Город{/if}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {foreach item=city from=$this.vmCityList}
+                        <a class="dropdown-item" href="#">{$city.cityName}</a>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dropdown dropdown-position">
+                <a class="btn btn-white dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {if $this.position}{$this.position}{else}Профессия{/if} 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {foreach item=position from=$this.vmPositionList}
+                        <a class="dropdown-item" href="#">{$position.position}</a>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-white" href="/volunteers">Сбросить фильтр</a>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-red" target="_blank" href="https://forms.gle/EzsYjuuyk3ZJNVYt9">Хочу в&nbsp;семью волонтеров GASTREET</a>
+        </div>
+        <form class="volunteer-filter" action="" method="POST">
+            <input type="hidden" name="city" value="{$this.city}">
+            <input type="hidden" name="year" value="{$this.year}">
+            <input type="hidden" name="position" value="{$this.position}">
+        </form>
+    </div>
+
+    <div class="volunteers-grid js-volunteers-grid">
+        <div class="row grid js-grid">
+            <div class="col-6 col-md-3 grid-entry mb-3">
+                <a class="person-teaser" href="https://docs.google.com/forms/d/e/1FAIpQLSdjZtuCpyK1JNr2ReLVM7OFvfayzSW6Fsaz2pZ0g6QrMUbFzA/viewform?usp=sf_link" target="_blank">
+                    <img src="/images/btn-volunteers.png" alt="" class="img-fluid">
+                </a>
+            </div>
+            {if $this.vmList}
+                <!-- loop start -->
+                {foreach item=volunteer from=$this.vmList}
+                <div class="col-6 col-md-3 grid-entry mb-3">
+                    <a class="person-teaser js-popover {$volunteer.tags|tagtocssclass}" href="#popover-win-{$volunteer.id}" data-popover="#popover-win-{$volunteer.id}" data-timer="on">
+                        {if $volunteer.img}
+                            <img src="/images/volunteers/resized/{$volunteer.img}?v={$volunteer.ts_updated}" data-ratio="1">
+                        {else}
+                            <img src="/images/gss/speacker.jpg" data-ratio="1">
+                        {/if}
+                        <div class="volunteer_medal_main">{$volunteer.years|yeartomedal}</div>
+                        <div class="about">
+                            <p class="name">{$volunteer.name}<br/>{$volunteer.lastname}</p>
+                            <p class="job"><i class="fa fa-map-marker" aria-hidden="true"></i> {$volunteer.cityName}</p>
+                        </div>
+                    </a>
+                </div>
+                {/foreach}
+                <!-- loop end -->
+            {/if}
+        </div>
+    </div>
+</div>
+
+{foreach from=$this.vmList item=volunteer}
+<div class="modal fade" id="popover-win-{$volunteer.id}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content popover-win {$volunteer.years|tagtocssclass}">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <div class="modal-body p-0 row">
+                <div class="col-md-6">
+                    <figure class="thumb fg-container">
+                        {if $volunteer.img}
+                            <img src="/images/volunteers/resized/{$volunteer.img}?v={$volunteer.ts_updated}" data-ratio="1">
+                        {else}
+                            <img src="/images/gss/speacker.jpg" data-ratio="1">
+                        {/if}
+                        <p class="volunteer_medal">{$volunteer.years|yeartomedal}</p>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <p class="title">{$volunteer.name}<br/>{$volunteer.lastname}</p>
+                    <div class="desc">
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {$volunteer.cityName}{if $volunteer.position}<br/><br/>{$volunteer.position|dbtexttohtml}{/if}</p>
+                        <p>{$volunteer.description|dbtexttohtml}</p>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                {if $this.actor}
+                                <p class="mb-2">{$volunteer.phone|mobilephone}</p>
+                                {else}
+                                <p class="badge badge-primary mb-2" data-toggle="tooltip" data-html="true" title="Чтобы увидеть телефон, необходимо авторизоваться на сайте">Телефон скрыт</p>
+                                {/if}
+                                <p class="m-0">{$volunteer.email}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="speaker-icon">
+                                {if $volunteer.facebook}<a href="{$volunteer.facebook}" class="fa fa-facebook" target="_blank"></a>{/if}
+                                {if $volunteer.vk}<a href="{$volunteer.vk}" class="fa fa-vk" target="_blank"></a>{/if}
+                                {if $volunteer.instagram}<a href="{$volunteer.instagram}" class="fa fa-instagram" target="_blank"></a>{/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/foreach}

@@ -1,0 +1,135 @@
+{assign var=this value=$CatalogControl}
+
+
+<div class="container">
+    <div class="page-container" id="page-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="page-container-image" id="page-container-image">
+                    <picture>
+                        <source srcset="/images/areas/resized/03{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}" media="(min-width: 1200px)">
+                        <img src="/images/areas/resized/01{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}">
+                    </picture>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="page-container-inner" id="page-container-inner">
+                    {if $this.amObj}
+                        {if !$app}
+                        <ul class="breadcrumbs">
+                            <li><a href="/">##home##</a></li>
+                            <li><a href="{link show=programms}">##program##</a></li>
+                            <li><span>{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</span></li>
+                        </ul>
+                        {/if}
+                        <h1 class="page-headline">{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</h1>
+                        <div class="tickects-video-catalog-page tickects-video-catalog-2 gss-video-watch-catalog-page">
+                            <div class="js-videos-gallery">
+                                <div><a data-target="#video-modal" data-toggle="modal" data-link="R9eZ8shs0OY" data-title="О NIGHT LIFE" href="#"><span>Посмотрите ролик<br>о NIGHT LIFE</span></a></div>
+                            </div>
+                        </div>
+                        <div class="textblock">{if $lang == 'en'}{$this.amObj->description_en|dbtexttohtml}{else}{$this.amObj->description|dbtexttohtml}{/if}</div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            {if $this.products}
+                {assign var=productiteration value=0}
+                {assign var=oldareaid value=0}
+                {assign var=oldeventtsstart value=0}
+                {foreach from=$this.products item=product name=productloop}
+                    {assign var=eventtsstart value=$product->eventTsStart|tstocheck}
+                    {assign var=placeid value=$product->placeId}
+                    {assign var=speakerid value=$product->speakerId}
+                    {assign var=speaker value=$this.speakers.$speakerid}
+
+                    <div class="col-md-4">
+                        <div class="event-teaser">
+                            <p class="date">{$product->eventTsStart|dateformat:'d M'}</p>
+                            {assign var=idYoutubeVideo value=$product->youtube|getidyoutubevideo}
+                            <a class="thumb js-popover" href="#" data-toggle="modal" data-target="#popover-win-{$product->id}" data-idyoutubevideo="{$idYoutubeVideo}">
+                                {assign var=isimgproduct value=$product->id|isproductpic}
+                                <figure class="themed-photo">
+                                    {if $product->pic2}
+                                        <img class="photo" src="/images/products/resized/{$product->pic2}?v={$product->tsUpdate}">
+                                    {else}
+                                        <img class="photo" src="/content/event6.jpg">
+                                    {/if}
+                                </figure>
+                                <div class="about">{$product->eventTsStart|dateformat:'H:i'}</div>
+                                {assign var=canShowButton value=1}
+                                {if $this.includedProductIds}
+                                  {foreach from=$this.includedProductIds item=includedProductId}
+                                    {if $includedProductId == $product->id}
+                                      {assign var=canShowButton value=0}
+                                    {/if}
+                                  {/foreach}
+                                {/if}
+                            </a>
+                            <div class="order">
+                                {if $product->price > 0}<p class="price">{$product->price|round0} руб.</p>{/if}
+                                {if $product->leftCount > 0 && $canShowButton && $app != 1 && !$this.productId}<a class="btn-cart" href="/index.php?do=add&product={$product->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>{/if}
+                            </div>
+                            {if $product->leftCount}<p class="count">Доступно: {declension count=$product->leftCount form1=билет form2=билета form5=билетов}</p>{/if}
+                            <div class="speaker">
+                                <p class="job">{$this.plmArray.$placeid}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="popover-win-{$product->id}" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header p-3">
+                                    <p class="title m-0 text-dark">{$product->name}</p>
+                                    <span class="close" data-dismiss="modal">&times;</span>
+                                </div>
+                                <div class="modal-body p-0 pl-3 pb-3 pr-3">
+                                    {if $idYoutubeVideo}
+                                        <div class="thumb">
+                                            <iframe src="" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    {else}
+                                        <figure class="thumb">
+                                            {if $product->pic2}
+                                                <img class="img-fluid" src="/images/products/resized/{$product->pic2}?v={$product->tsUpdate}">
+                                            {else}
+                                                <img class="img-fluid" style="width: 100%;" src="/content/event6.jpg">
+                                            {/if}
+                                        </figure>
+                                    {/if}
+                                    <div class="desc text-dark">{$product->description|dbtexttohtml}</div>
+                                    {if $product->leftCount > 0 && $canShowButton && $app != 1 && !$this.productId}<div class="order"><a href="/index.php?do=add&product={$product->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>{/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/foreach}
+            {/if}
+        </div>
+    </div>
+</div>
+<div class="stick-to-footer container mt-3">
+    <div class="instagram-gallery dark-theme">
+        <div class="gallery-col">
+            <h2 class="section-headline" style="margin-top: 4rem;margin-bottom: 2.75rem;color: #fff;">Gastreet<br> History</h2>
+            <img src="/images/collages/nightpage1.jpg">
+        </div>
+        <div class="gallery-col">
+            <img src="/images/collages/nightpage2.jpg">
+            <div class="gallery-row">
+                <div class="gallery-col-1of2"><img src="/images/collages/nightpage3.jpg"></div>
+                <div class="gallery-col-1of2"><img src="/images/collages/nightpage4.jpg"></div>
+            </div>
+        </div>
+        <div class="gallery-col">
+            <img src="/images/collages/nightpage5.jpg">
+            <div class="gallery-row">
+                <div class="gallery-col-1of2"><img src="/images/collages/nightpage6.jpg"></div>
+                <div class="gallery-col-1of2"><img src="/images/collages/nightpage7.jpg"></div>
+            </div>
+            <img src="/images/collages/nightpage8.jpg">
+        </div>
+    </div>
+</div>
+<div class="container gss-tag">#gastreetshow</div>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /adminka/
+Host: gastreet.com

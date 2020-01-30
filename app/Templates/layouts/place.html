@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{$lang}" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{$pageTitle}</title>
+        <meta property="og:title" content="{$pageTitle}"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content="{$pageDesc}"/>
+        <meta property="og:description" content="{$pageDesc}"/>
+        <meta property="og:image" content="https://gastreet.com/images/fb_share_6.jpg">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
+        <link rel="apple-touch-icon" href="/images/touch-icon-iphone.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon-ipad.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/touch-icon-iphone-retina.png"/>
+        <link rel="apple-touch-icon" sizes="167x167" href="/images/touch-icon-ipad-retina.png"/>
+
+        {loadscript file='/css/font-awesome.min.css' type='css'}
+        {loadscript file='/css/bootstrap4/css/bootstrap.min.css' type='css'}
+        {loadscript file='/css/style.css' type='css'}
+        {loadscript file='/css/style-gss.css' type='css'}
+        {loadscript file='/css/style.last.css' type='css'}
+        {loadscript file='/css/place.css' type='css'}
+
+        <script>
+            var message = '{displaynotification}';
+        </script>
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.viapush.com/cdn/v1/sdks/viapush.js" async="" charset="UTF-8"></script>
+        {literal}
+        <script>
+            var ViaPush = window.ViaPush || [];
+            ViaPush.push(["init", { appId: "b58fa8ab-cf0e-8196-4952-9be21bc2b1f6" }]);
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-869423439"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-869423439'); </script>
+        {/literal}
+    </head>
+    <body class="page load d-flex flex-column h-100">
+        {component name="Topmenu"}
+        <main role="main" class="flex-shrink-0 pb-4">
+            {include file=$CURRENT_CONTROL_TEMPLATE}
+        </main>
+        {control name=Footer}
+        {control name=Webstat}
+        {control name=Avatarlink}
+
+        {if $jivoSite == 1}
+            {loadscript file='/js/jivosite.js' type='js'}
+        {/if}
+        
+        {loadscript file='/js/jquery.min.js' type='js'}
+        {loadscript file='/css/bootstrap4/js/popper.min.js' type='js'}
+        {loadscript file='/css/bootstrap4/js/bootstrap.js' type='js'}
+        {loadscript file='/js/jquery.cookie.js' type='js'}
+        {loadscript file='/js/app/app.js' type='js'}
+        {loadscript file='/js/pages/place.js' type='js'}
+    </body>
+</html>

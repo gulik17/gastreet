@@ -1,0 +1,45 @@
+{assign var=this value=$ReportRegistrationsControl}
+{formrestore id="report-registrations"}
+
+{loadscript file='/css/morris.css' type='css'}
+{loadscript file='/js/morris.min.js' type='js'}
+{loadscript file='/js/jquery.placeholder.min.js' type='js'}
+{loadscript file='/js/pages/adminkreportregistrations.js' type='js'}
+
+<h2>Конверсия регистраций</h2>
+
+<form name="report-registrations" method="post" action="" style="max-width: 400px;">
+    <div class="well">
+        <input type="hidden" name="isalive" value="1" />
+        <div class="form-group form-inline">
+            <label style="display: block;">Дата с:</label>
+            <input class="form-control" type="text" name="startDay" value="{$this.startDay}" placeholder="дд" style="width:44px" /> - 
+            <input class="form-control" type="text" name="startMonth" value="{$this.startMonth}" placeholder="мм" style="width:44px" /> - 
+            <input class="form-control" type="text" name="startYear" value="{$this.startYear}" placeholder="гггг" style="width:60px" />
+        </div>
+        <div class="form-group form-inline">
+            <label style="display: block;">Дата по:</label>
+            <input class="form-control" type="text" name="finishDay" value="{$this.finishDay}" placeholder="дд" style="width: 44px;" /> - 
+            <input class="form-control" type="text" name="finishMonth" value="{$this.finishMonth}" placeholder="мм" style="width: 44px;" /> - 
+            <input class="form-control" type="text" name="finishYear" value="{$this.finishYear}" placeholder="гггг" style="width: 60px;" />
+        </div>
+        <input class="btn btn-info" type="submit" value="Показать" />
+    </div>
+</form>
+<br/>
+
+<div id="reportdatanewusers" style="display: none;">{$this.newUsers}</div>
+<div id="reportdataregisterusers" style="display: none;">{$this.registerUsers}</div>
+<div id="reportdatasummaryusers" style="display: none;">{$this.summaryUsers}</div>
+<div id="myfirstchart" style="height: 400px;"></div>
+
+{if $this.conversion}
+<h4>Новых пользователей за период:</h4>
+<p>{$this.summNewUsers}</p>
+
+<h4>Подтвержденных регистраций за период:</h4>
+<p>{$this.summRegisterUsers}</p>
+
+<h4>Конверсия за период:</h4>
+<p>{$this.conversion}</p>
+{/if}

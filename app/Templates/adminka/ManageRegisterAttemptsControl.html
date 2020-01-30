@@ -1,0 +1,59 @@
+{assign var=this value=$ManageRegisterAttemptsControl}
+{formrestore id="attempts-filter"}
+
+<h2>Попытки регистрации</h2>
+
+<a role="button" data-toggle="collapse" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter"><h4>Фильтр для поиска <span class="caret"></span></h4></a>
+<div class="collapse" id="collapseFilter">
+    <form id="attempts-filter" method="post" action="" style="max-width: 400px;">
+        <div class="well">
+            <input type="hidden" name="show" value="manageregisterattempts"/>
+            <input type="hidden" name="isalive" value="1"/>
+            <div class="filter-users">
+                <div class="form-group">
+                    <label>Номер мобильного:</label>
+                    <input class="form-control" type="text" name="phone" id="phone" />
+                </div>
+                <div class="form-group">
+                    <label>IP:</label>
+                    <input class="form-control" type="text" name="ip" id="ip" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" id="submit" value="Показать список отбора"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Дата, время</th>
+        <th>Номер мобильного</th>
+        <th>ФИО</th>
+        <th>IP</th>
+        <th>Код</th>
+        <th>Информация</th>
+    </tr>
+    {if $this.attemptList}
+	{foreach item=attempt from=$this.attemptList}
+            {assign var=attmptPhone value=$attempt->phone}
+            {assign var=gotUser value=$this.usersByPhones.$attmptPhone}
+            <tr class="{cycle values='color,'}">
+                <td>{$attempt->ts|dateformat:'d.m.Y, в H:i'}</td>
+                <td>{$attempt->phone}</td>
+                <td>{if $gotUser}{$gotUser->lastname} {$gotUser->name}{/if}</td>
+                <td>{$attempt->ip}</td>
+                <td>{$attempt->code}</td>
+                <td>{$attempt->client}</td>
+            </tr>
+        {/foreach}
+    {else}
+        <tr class="{cycle values='color,'}">
+            <td colspan="6" class="text-center">Список пуст</td>
+        </tr>
+    {/if}
+</table>
+{if $this.attemptList}
+{pager total=$this.total per=$this.perPage}
+{/if}

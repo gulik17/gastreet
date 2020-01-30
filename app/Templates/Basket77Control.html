@@ -1,0 +1,764 @@
+{assign var=this value=$BasketControl}
+{assign var=total value=0}
+{assign var=balance value=0}
+
+{assign var=showBronButton value=0}
+{assign var=showBronProductButton value=0}
+
+<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/869423439/?label=G4tVCLCX3G4Qz7LJngM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<div class="alert alert-info hidden" role="alert">{if $lang == 'en'}Hotel booking will be available January 15, 2018{else}Бронирование отелей будет доступно 15 января 2018 года{/if}</div>
+
+<div class="gss-basket">
+    <div class="header row">
+        <div class="col-md-7">
+        <h2 class="title">{if $lang == 'en'}Basket{else}Корзина{/if}</h2>
+        </div>
+        <div class="col-md-5 ext_btn">
+        {if $this.user->hasEdit == 0}
+        <div class="addparticipant">{if !$this.actor->parentUserId}<a href="{link show=userparticipant}">{if $lang == 'en'}Add member{else}Добавить участника{/if}</a>{/if}</div>
+        {/if}
+        {if $this.olimpicBtn == 'show'}
+        <div class="olimpic_btn"><a class="btn btn-black" style="background-color:#f43e51;border-color:#f43e51" href="{link do=addOlimpic}">Принять участие в олимпиаде</a></div>
+        {/if}
+        {if $this.olimpicBtn == 'no_seats'}
+        <div class="olimpic_btn"><a class="btn btn-white" href="{link do=addOlimpic}">Мест нет! Подать заявку на всякий случай</a></div>
+        {/if}
+        {if $this.olimpicBtn == 'registered'}
+        <div class="olimpic_btn">Вы зарегистрированы на участие в Олимпиаде</div>
+        {/if}
+        </div>
+    </div>
+    <div class="gss-basket-mainuser-mark-title"> 
+        {if $this.actor->parentUserId}
+            <h3>{if $lang == 'en'}Additional Member{else}Дополнительный участник{/if}</h3>
+        {else}
+            <h3>{if $lang == 'en'}Primary Member{else}Основной участник{/if}</h3>
+        {/if}
+    </div>
+    <div class="basket-spoiler js-spoiler">
+        <div class="spoiler-head js-spoiler-head">
+            <div class="gss-basket-point"><span class="mark">&nbsp;</span></div>
+            <div class="gss-question">
+                <div class="title">
+                    <div class="user">
+                        <h4>{$this.user->lastname} {$this.user->name}</h4>
+                        <div class="phone">{$this.user->phone|mobilephone}</div>
+                        {if $this.user->ulBalance > 0}
+                            {assign var=balance value=$balance+$this.user->ulBalance}
+                            <p style="overflow:hidden;width:100%;">{if $lang == 'en'}Balance{else}Баланс{/if}: {$this.user->ulBalance|round0} ₽</p>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="gss-basket-buttons-ul marginleft45">
+            {if $this.purchasedTickets[0].status == 'STATUS_PAID'}
+            <li class="print">
+                <a href="{link show=userqr}?id={$this.user->id}">{if $lang == 'en'}Print the ticket{else}Распечатать билет<br>Купон на проживание{/if}</a>
+            </li>
+            <li class="print">
+                <a href="{link do=usergetcert}">{if $lang == 'en'}Certificate<br> of participant{else}Сертификат<br> участника{/if}</a>
+            </li>
+            {/if}
+            {if $this.user->hasEdit == 0}
+            <li class="edit">
+                <a href="{link do=loginactoreditprofile id=$this.user->id}">{if $lang == 'en'}Edit Profile<br>&nbsp;{else}Редактировать<br>&nbsp;{/if}</a>
+            </li>
+            {/if}
+        </ul>
+        <div class="spoiler-body js-spoiler-body">
+            {if $this.purchasedTickets OR $this.purchasedProducts}
+            <p class="mk-title">{if $lang == 'en'}Purchases{else}Покупки{/if}:</p>
+            <table class="table table-hover mk-table gss-basket-table-table-pc" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th class="gss-basket-table-th-2">{if $lang == 'en'}Time{else}Время{/if}</th>
+                    <th class="gss-basket-table-th-1">{if $lang == 'en'}Speaker / Topic{else}Спикер / тема{/if}</th>
+                    <th class="gss-basket-table-th-2">{if $lang == 'en'}Price{else}Цена{/if}</th>
+                    <th class="gss-basket-table-th-3">{if $lang == 'en'}Discount{else}Скидка{/if}</th>
+                    <th class="gss-basket-table-th-4">{if $lang == 'en'}Status{else}Статус{/if}</th>
+                    <th class="gss-basket-table-th-5">{if $lang == 'en'}Actions{else}Действия{/if}</th>
+                </tr>
+                {if $this.purchasedTickets}
+                    {foreach from=$this.purchasedTickets item=ticket}
+                        {assign var=basketId value=$ticket.id}
+                        {assign var=basketStatus value=$ticket.status}
+                        {assign var=basketUserId value=$ticket.userId}
+                        {assign var=basketChildId value=$ticket.childId}
+                        {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                        {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+                        <tr>
+                            <td class="gss-basket-table-td-2"></td>
+                            <td class="gss-basket-table-td-1">
+                                {if $lang == 'en'}
+                                <span class="ticket-title">Ticket &laquo;{$ticket.baseTicketName_en}&raquo;</span>
+                                {else}
+                                <span class="ticket-title">Билет &laquo;{$ticket.baseTicketName}&raquo;</span>
+                                {/if}
+                            </td>
+                            <td class="gss-basket-table-td-2">
+                                <span class="price">{$ticket.needAmount|round0} ₽</span>
+                            </td>
+                            <td class="gss-basket-table-td-3">
+                                <span class="price">{if $ticket.discountAmount > 0}{$ticket.discountAmount|round0} ₽{else}-{/if}</span>
+                            </td>
+                            <td class="gss-basket-table-td-4 status {if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                {$this.basketStatuses.$basketStatus}
+                                {assign var=estBron value=0}
+                                {if $this.allBookedUserIds && $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount == 0}
+                                    {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                        {if $basketUserIdChildId == $bookedUserId} (бронь до {$bookedUserTsFinish|dateformat:'d.m.Y H:i'}) {assign var=estBron value=1}{/if}
+                                    {/foreach}
+                                {/if}
+                                {if !$estBron}{assign var=showBronButton value=1}{/if}
+                            </td>
+                            <td class="gss-basket-table-td-5 action">
+                                {if ($ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount) > 0}
+                                    {if $ticket.status == 'STATUS_NEW' && !$estBron}
+                                        <a href="{link do=delticket id=$ticket.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a><br/>
+                                    {/if}
+                                    {assign var=total value=$total+$ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount}
+                                {elseif ($ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount) > 0}
+                                    {if $this.refundBasketIds.$basketId}
+                                        {if $this.refundBasketIds.$basketId == 'STATUS_NEW'}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                            {else}
+                                            <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('Требование на возврат будет отменено. Продолжить?');">Отозвать возврат</a>
+                                            {/if}
+                                        {else}
+                                            -
+                                        {/if}
+                                    {else}
+                                        {if $this.showRefundButtons}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Return</a>
+                                            {else}
+                                            <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                            {/if}
+                                        {else}
+                                            -
+                                        {/if}
+                                    {/if}<br/>
+                                {/if}
+                            </td>
+                        </tr>
+                    {/foreach}
+                {/if}
+                {if $this.purchasedProducts}
+                    {foreach from=$this.purchasedProducts item=product}
+                        {assign var=basketProductId value=$product.id}
+                        {assign var=basketStatus value=$product.status}
+                        {assign var=basketUserId value=$product.userId}
+                        {assign var=basketChildId value=$product.childId}
+                        {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                        {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+                        <tr>
+                            <td class="gss-basket-table-td-2">
+                                <span class="price">{$product.eventTsStart|dateformat:'d M'}, {$product.eventTsStart|dateformat:'H:i'}-{$product.eventTsFinish|dateformat:'H:i'}</span>
+                            </td>
+                            <td class="gss-basket-table-td-1 title">
+                                <div>{$product.productName}{if $product.sp_firstName}<br><small>(Спикер: {$product.sp_firstName} {$product.sp_secondName})</small>{/if}<br>{if $product.childId && !$this.actor->parentUserId}{assign var=childid value=$product.childId} <i>для {$this.childrenArray.$childid}</i>{/if}</div>
+                            </td>
+                            <td class="gss-basket-table-td-2">
+                                <span class="price">{$product.needAmount|round0} ₽</span>
+                            </td>
+                            <td class="gss-basket-table-td-3">
+                                <span class="price">{if $product.discountAmount > 0}{$product.discountAmount|round0} ₽{else}-{/if}</span>
+                            </td>
+                            <td class="gss-basket-table-td-4 status {if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">{$this.basketProductStatuses.$basketStatus}
+                                {assign var=estBron value=0}
+                                {if $this.allBookedUserIds && $product.payAmount+$product.ulAmount-$product.returnedAmount == 0}
+                                    {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                        {if $basketUserIdChildId == $bookedUserId}
+                                            {assign var=estBron value=0}
+                                        {/if}
+                                    {/foreach}
+                                {/if}
+                                {if !$estBron}
+                                    {assign var=showBronProductButton value=1}
+                                {/if}
+                            </td>
+                            <td class="gss-basket-table-td-5 action">
+                                {if ($product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount) > 0}
+                                    {if $product.status == 'STATUS_NEW' && !$estBron}
+                                        <a href="{link do=delproduct id=$product.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a><br/>
+                                    {/if}
+                                    {assign var=total value=$total+$product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount}
+                                {elseif ($product.payAmount+$product.ulAmount-$product.returnedAmount) > 0}
+                                    {if $this.refundBasketProductIds.$basketProductId}
+                                        {if $this.refundBasketProductIds.$basketProductId == 'STATUS_NEW'}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                            {else}
+                                            <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Отозвать возврат</a>
+                                            {/if}
+                                        {else}
+                                            -
+                                        {/if}
+                                    {else}
+                                        {if $this.showRefundButtons}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                            {else}
+                                            <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                            {/if}
+                                        {else}
+                                            -
+                                        {/if}
+                                    {/if}<br/>
+                                {/if}
+                                {if $product.productStatus == 'STATUS_CANCELED'}
+                                    <a href="{link show=catalog}?productId={$product.productId}">{if $lang == 'en'}Replace{else}Заменить{/if}</a><br/>
+                                {/if}
+                            </td>
+                        </tr>
+                    {/foreach}
+                {/if}
+            </table>
+
+            <!-- тут версия для мобильных устройств -->
+            <div class="gss-basket-ul-mobile">
+                {if $this.purchasedTickets}
+                    {foreach from=$this.purchasedTickets item=ticket}
+                        {assign var=basketId value=$ticket.id}
+                        {assign var=basketStatus value=$ticket.status}
+                        {assign var=basketUserId value=$ticket.userId}
+                        {assign var=basketChildId value=$ticket.childId}
+                        {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                        {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+
+                        {assign var=estBron value=0}
+                        <!-- {if $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount > $ticket.needAmount-$ticket.discountAmount}<b>{$ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount}</b>{else}{$ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount}{/if} -->
+                        {if $this.allBookedUserIds && $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount == 0}
+                            {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                {if $basketUserIdChildId == $bookedUserId} (бронь до {$bookedUserTsFinish|dateformat:'d.m.Y H:i'}) {assign var=estBron value=1}{/if}
+                            {/foreach}
+                        {/if}
+                        {if !$estBron}{assign var=showBronButton value=1}{/if}
+
+                        <!-- билеты -->
+                        <div class="gss-basket-ul-mobile-name">{if $lang == 'en'}Replace{else}Спикер / тема{/if}</div>
+                        <div class="gss-basket-ul-mobile-ticket">{if $lang == 'en'}Ticket{else}Билет{/if} &laquo;{$ticket.baseTicketName}&raquo;</div>
+                        {capture name=mobileAction}
+                            {if ($ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount) > 0}
+                                {if $ticket.status == 'STATUS_NEW' && !$estBron}
+                                    <a href="{link do=delticket id=$ticket.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a>
+                                {/if}
+                            {elseif ($ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount) > 0}
+                                {if $this.refundBasketIds.$basketId}
+                                    {if $this.refundBasketIds.$basketId == 'STATUS_NEW'}
+                                        {if $lang == 'en'}
+                                        <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('The refund request will be canceled. Continue?');">Cancel refund</a>
+                                        {else}
+                                        <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('Требование на возврат будет отменено. Продолжить?');">Отозвать возврат</a>
+                                        {/if}
+                                    {/if}
+                                {else}
+                                    {if $this.showRefundButtons}
+                                        {if $lang == 'en'}
+                                        <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                        {else}
+                                        <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                        {/if}
+                                    {/if}
+                                {/if}
+                            {/if}
+                        {/capture}
+                        {if $smarty.capture.mobileAction|strtrim|length > 1}
+                            <div class="gss-basket-ul-mobile-action">{$smarty.capture.mobileAction}</div>
+                        {/if}
+                        <div class="gss-basket-ul-mobile-price-status">
+                            <div class="gss-basket-ul-mobile-price">
+                                <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Price{else}Цена{/if}</span> {$ticket.needAmount|round0} ₽ {if $ticket.discountAmount > 0}<span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Discount{else}Скидка{/if}</span> {$ticket.discountAmount|round0} ₽{/if}
+                            </div>
+                            <div class="gss-basket-ul-mobile-status">
+                                <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Status{else}Статус{/if}</span>
+                                <span class="{if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                    {$this.basketStatuses.$basketStatus}
+                                </span>
+                            </div>
+                        </div>
+                    {/foreach}
+                {/if}
+                {if $this.purchasedProducts}
+                    {foreach from=$this.purchasedProducts item=product}
+                        {assign var=basketProductId value=$product.id}
+                        {assign var=basketStatus value=$product.status}
+                        {assign var=basketUserId value=$product.userId}
+                        {assign var=basketChildId value=$product.childId}
+                        {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                        {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+
+                        {assign var=estBron value=0}
+                        {if $this.allBookedUserIds && $product.payAmount+$product.ulAmount-$product.returnedAmount == 0}
+                            {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                {if $basketUserIdChildId == $bookedUserId}
+                                    {assign var=estBron value=0}
+                                {/if}
+                            {/foreach}
+                        {/if}
+                        {if !$estBron}
+                            {assign var=showBronProductButton value=1}
+                        {/if}
+
+                        <!-- продукты -->
+                        <div class="gss-basket-ul-mobile-product">
+                            {$product.eventTsStart|dateformat:'d M'}, {$product.eventTsStart|dateformat:'H:i'}-{$product.eventTsFinish|dateformat:'H:i'}<br/>
+                            {$product.productName}{if $product.sp_firstName}<br><small>(Спикер: {$product.sp_firstName} {$product.sp_secondName})</small>{/if}<br>{if $product.childId && !$this.actor->parentUserId}{assign var=childid value=$product.childId} <i>{if $lang == 'en'}for{else}для{/if} {$this.childrenArray.$childid}</i>{/if}
+                        </div>
+                        {capture name=mobileAction}
+                            {if ($product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount) > 0}
+                                {if $product.status == 'STATUS_NEW' && !$estBron}
+                                    <a href="{link do=delproduct id=$product.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a>
+                                {/if}
+                            {elseif ($product.payAmount+$product.ulAmount-$product.returnedAmount) > 0}
+                                {if $this.refundBasketProductIds.$basketProductId}
+                                    {if $this.refundBasketProductIds.$basketProductId == 'STATUS_NEW'}
+                                        {if $lang == 'en'}
+                                        <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                        {else}
+                                        <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Отозвать возврат</a>
+                                        {/if}
+                                    {/if}
+                                {else}
+                                    {if $this.showRefundButtons}
+                                        {if $lang == 'en'}
+                                        <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                        {else}
+                                        <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                        {/if}
+                                    {/if}
+                                {/if}
+                            {/if}
+                            {if $product.productStatus == 'STATUS_CANCELED'}
+                                <a href="{link show=catalog}?productId={$product.productId}">{if $lang == 'en'}Replace{else}Заменить{/if}</a>
+                            {/if}
+                        {/capture}
+                        {if $smarty.capture.mobileAction|strtrim|length > 1}
+                            <div class="gss-basket-ul-mobile-action">{$smarty.capture.mobileAction}</div>
+                        {/if}
+                        <div class="gss-basket-ul-mobile-price-status">
+                            <div class="gss-basket-ul-mobile-price">
+                                <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Price{else}Цена{/if}</span> {$product.needAmount|round0} ₽{if $product.discountAmount > 0} <span class="gss-basket-ul-mobile-grey-title">Скидка</span> {$product.discountAmount|round0} ₽{/if}
+                            </div>
+                            <div class="gss-basket-ul-mobile-status">
+                                <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Status{else}Статус{/if}</span>
+                                <span class="{if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                    {$this.basketProductStatuses.$basketStatus}
+                                </span>
+                            </div>
+                        </div>
+                    {/foreach}
+                {/if}
+            </div>
+            <div class="gss-basket-promocode">
+                <div class="form-group">
+                    <input class="form-control" autocomplete="off" id="discount-code-{$this.user->id}" placeholder="{if $lang == 'en'}Have a promo code?{else}Есть промо-код?{/if}" type="text" maxlength="20"/>
+                    <a href="#" class="discount-code-button" id="discount-code-button-{$this.user->id}">{if $lang == 'en'}Apply{else}Применить{/if}</a>
+                </div>
+            </div>
+            {/if}
+            {if !$app}
+            <a href="/index.php?do=reloginactor" class="btn btn-gss-default" style="margin-bottom: 20px;">{if $lang == 'en'}Go to shopping{else}Перейти к покупкам{/if}</a>
+            {/if}
+        </div>
+    </div>
+    <hr/>
+    {assign var=purchasedTickets value=0}
+    {assign var=includedProducts value=0}
+    {assign var=purchasedProducts value=0}
+
+    {if $this.childrenArray}
+        {foreach from=$this.childrenArray item=child key=childid}
+            {assign var=purchasedTickets value=$this.purchasedChildTickets.$childid}
+            {assign var=includedProducts value=$this.includedChildProducts.$childid}
+            {assign var=purchasedProducts value=$this.purchasedChildProducts.$childid}
+            {assign var=gotChildrenBalance value=$this.childrenBalance.$childid}
+
+        <div class="basket-spoiler js-spoiler">
+            <div class="spoiler-head js-spoiler-head">
+                <div class="gss-basket-point"><span class="mark">&nbsp;</span></div>
+                <div class="gss-question">
+                    <span class="title">
+                    <div class="user">
+                        {$child}
+                        {if $gotChildrenBalance > 0}
+                            {assign var=balance value=$balance+$gotChildrenBalance}
+                            <p style="overflow: hidden; width: 100%;">{if $lang == 'en'}Balance{else}Баланс{/if}: {$gotChildrenBalance|round0} ₽</p>
+                        {/if}
+                    </div>
+                    </span>
+                </div>
+            </div>
+
+            <ul class="gss-basket-buttons-ul marginleft45">
+                {if $this.purchasedChildTickets[$childid][0].status == 'STATUS_PAID'}
+                <li>
+                    <div class="print margintop5">
+                        <a href="{link show=userqr}?id={$childid}">{if $lang == 'en'}Print the ticket{else}Распечатать билет<br>Купон на проживание{/if}</a>
+                    </div>
+                </li>
+                <li class="print">
+                    <div class="print margintop5">
+                        <a href="{link do=usergetcert id=$childid}">{if $lang == 'en'}Certificate<br> of participant{else}Сертификат<br> участника{/if}</a>
+                    </div>
+                </li>
+                {/if}
+                {if $this.user->hasEdit == 0}
+                <li>
+                    <div class="edit margintop5">
+                        <a href="{link do=loginusereditprofile id=$childid}">{if $lang == 'en'}Edit Profile<br>&nbsp;{else}Редактировать<br>&nbsp;{/if}</a>
+                    </div>
+                </li>
+                {/if}
+                {if !$purchasedTickets && !$purchasedProducts}
+                <li>
+                    <div class="edit margintop5">
+                        <a href="{link do=userdelparticipant id=$childid}">{if $lang == 'en'}Remove{else}Удалить{/if}</a>
+                    </div>
+                </li>
+                {/if}
+            </ul>
+
+            <div class="spoiler-body js-spoiler-body">
+
+            {if !$purchasedTickets && !$purchasedProducts}
+                <p class="ch-empty">{if $lang == 'en'}This member's basket is empty{else}Корзина данного участника пуста.{/if}</p>
+            {else}
+                <p class="mk-title">{if $lang == 'en'}Purchases:{else}Покупки:{/if}</p>
+                <table class="table table-hover mk-table gss-basket-table-table-pc" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th class="gss-basket-table-th-2">{if $lang == 'en'}Time{else}Время{/if}</th>
+                        <th class="gss-basket-table-th-1">{if $lang == 'en'}Speaker / Topic{else}Спикер / тема{/if}</th>
+                        <th class="gss-basket-table-th-2">{if $lang == 'en'}Price{else}Цена{/if}</th>
+                        <th class="gss-basket-table-th-3">{if $lang == 'en'}Discount{else}Скидка{/if}</th>
+                        <th class="gss-basket-table-th-4">{if $lang == 'en'}Status{else}Статус{/if}</th>
+                        <th class="gss-basket-table-th-5">{if $lang == 'en'}Actions{else}Действия{/if}</th>
+                    </tr>
+                    {if $purchasedTickets}
+                        {foreach from=$purchasedTickets item=ticket}
+                            {assign var=basketId value=$ticket.id}
+                            {assign var=basketStatus value=$ticket.status}
+                            {assign var=basketUserId value=$ticket.userId}
+                            {assign var=basketChildId value=$ticket.childId}
+                            {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                            {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+                            <tr>
+                                <td class="gss-basket-table-td-2"><span class="price"></span></td>
+                                <td class="gss-basket-table-td-1">
+                                    <span class="ticket-title">{if $lang == 'en'}Ticket{else}Билет{/if} &laquo;{$ticket.baseTicketName}&raquo;</span>
+                                </td>
+                                <td class="gss-basket-table-td-2"><span class="price">{$ticket.needAmount|round0} ₽</span></td>
+                                <td class="gss-basket-table-td-3"><span class="price">{if $ticket.discountAmount > 0}{$ticket.discountAmount|round0} ₽{else}-{/if}</span></td>
+                                <td class="gss-basket-table-td-4 status {if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                    {$this.basketStatuses.$basketStatus}
+                                    {assign var=estBron value=0}
+                                    {if $this.allBookedUserIds && $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount == 0}
+                                        {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                            {if $basketUserIdChildId == $bookedUserId} ({if $lang == 'en'}reservation valid until{else}бронь до{/if} {$bookedUserTsFinish|dateformat:'d.m.Y'}) {assign var=estBron value=1}{/if}
+                                        {/foreach}
+                                    {/if}
+                                    {if !$estBron}{assign var=showBronButton value=1}{/if}
+                                </td>
+                                <td class="gss-basket-table-td-5 action">
+                                    {if ($ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount) > 0}
+                                        {if $ticket.status == 'STATUS_NEW' && !$estBron}
+                                            <a href="{link do=delticket id=$ticket.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a><br/>
+                                        {/if}
+                                        {assign var=total value=$total+$ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount}
+                                    {elseif ($ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount) > 0}
+                                        {if $this.refundBasketIds.$basketId}
+                                            {if $this.refundBasketIds.$basketId == 'STATUS_NEW'}
+                                                {if $lang == 'en'}
+                                                <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('The refund request will be canceled. Continue?');">Cancel refund</a>
+                                                {else}
+                                                <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('Требование на возврат будет отменено. Продолжить?');">Отозвать возврат</a>
+                                                {/if}
+                                            {else}
+                                                -
+                                            {/if}
+                                        {else}
+                                            {if $this.showRefundButtons}
+                                                {if $lang == 'en'}
+                                                <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                                {else}
+                                                <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                                {/if}
+                                            {else}
+                                                -
+                                            {/if}
+                                        {/if}<br/>
+                                    {/if}
+                                </td>
+                            </tr>
+                        {/foreach}
+                    {/if}
+                    {if $purchasedProducts}
+                        {foreach from=$purchasedProducts item=product}
+                            {assign var=basketProductId value=$product.id}
+                            {assign var=basketStatus value=$product.status}
+                            {assign var=basketUserId value=$product.userId}
+                            {assign var=basketChildId value=$product.childId}
+                            {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                            {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+                            <tr>
+                                <td class="gss-basket-table-td-2">
+                                    <span class="price">{$product.eventTsStart|dateformat:'d M'}, {$product.eventTsStart|dateformat:'H:i'}-{$product.eventTsFinish|dateformat:'H:i'}</span>
+                                </td>
+                                <td class="gss-basket-table-td-1 title">{$product.productName}{if $product.sp_firstName}<br><small>(Спикер: {$product.sp_firstName} {$product.sp_secondName})</small>{/if}</td>
+                                <td class="gss-basket-table-td-2">
+                                    <span class="price">{$product.needAmount|round0} ₽</span>
+                                </td>
+                                <td class="gss-basket-table-td-3">
+                                    <span class="price">{if $product.discountAmount > 0}{$product.discountAmount|round0} ₽{else}-{/if}</span>
+                                </td>
+                                <td class="gss-basket-table-td-4 status {if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">{$this.basketProductStatuses.$basketStatus}
+                                    {assign var=estBron value=0}
+                                    {if $this.allBookedUserIds && $product.payAmount+$product.ulAmount-$product.returnedAmount == 0}
+                                        {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                            {if $basketUserIdChildId == $bookedUserId}
+                                                {assign var=estBron value=0}
+                                            {/if}
+                                        {/foreach}
+                                    {/if}
+                                    {if !$estBron}{assign var=showBronProductButton value=1}{/if}
+                                </td>
+                                <td class="gss-basket-table-td-5 action">
+                                    {if ($product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount) > 0}
+                                        {if $product.status == 'STATUS_NEW' && !$estBron}
+                                            <a href="{link do=delproduct id=$product.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a><br/>
+                                        {/if}
+                                        {assign var=total value=$total+$product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount}
+                                    {elseif ($product.payAmount+$product.ulAmount-$product.returnedAmount) > 0}
+                                        {if $this.refundBasketProductIds.$basketProductId}
+                                            {if $this.refundBasketProductIds.$basketProductId == 'STATUS_NEW'}
+                                                {if $lang == 'en'}
+                                                <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                                {else}
+                                                <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Отозвать возврат</a>
+                                                {/if}
+                                            {else}
+                                                -
+                                            {/if}
+                                        {else}
+                                            {if $this.showRefundButtons}
+                                                {if $lang == 'en'}
+                                                <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                                {else}
+                                                <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                                {/if}
+                                            {else}
+                                                -
+                                            {/if}
+                                        {/if}<br/>
+                                    {/if}
+                                    {if $product.productStatus == 'STATUS_CANCELED'}
+                                        <a href="{link show=catalog}?productId={$product.productId}">{if $lang == 'en'}Replace{else}Заменить{/if}</a><br/>
+                                    {/if}
+                                </td>
+                            </tr>
+                        {/foreach}
+                    {/if}
+                </table>
+
+                <!-- тут версия для мобильных устройств -->
+                <div class="gss-basket-ul-mobile">
+                    {if $purchasedTickets}
+                        {foreach from=$purchasedTickets item=ticket}
+                            {assign var=basketId value=$ticket.id}
+                            {assign var=basketStatus value=$ticket.status}
+                            {assign var=basketUserId value=$ticket.userId}
+                            {assign var=basketChildId value=$ticket.childId}
+                            {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                            {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+
+                            {assign var=estBron value=0}
+                            <!-- {if $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount > $ticket.needAmount-$ticket.discountAmount}<b>{$ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount}</b>{else}{$ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount}{/if} -->
+                            {if $this.allBookedUserIds && $ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount == 0}
+                                {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                    {if $basketUserIdChildId == $bookedUserId} (бронь до {$bookedUserTsFinish|dateformat:'d.m.Y H:i'}) {assign var=estBron value=1}{/if}
+                                {/foreach}
+                            {/if}
+                            {if !$estBron}{assign var=showBronButton value=1}{/if}
+
+                            <div class="gss-basket-ul-mobile-name">{if $lang == 'en'}Speaker / Topic{else}Спикер / тема{/if}</div>
+                            <div class="gss-basket-ul-mobile-ticket">{if $lang == 'en'}Ticket{else}Билет{/if} &laquo;{$ticket.baseTicketName}&raquo;</div>
+                            {capture name=mobileAction}
+                                {if ($ticket.needAmount-$ticket.payAmount-$ticket.ulAmount+$ticket.returnedAmount-$ticket.discountAmount) > 0}
+                                    {if $ticket.status == 'STATUS_NEW' && !$estBron}
+                                        <a href="{link do=delticket id=$ticket.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a>
+                                    {/if}
+                                {elseif ($ticket.payAmount+$ticket.ulAmount-$ticket.returnedAmount) > 0}
+                                    {if $this.refundBasketIds.$basketId}
+                                        {if $this.refundBasketIds.$basketId == 'STATUS_NEW'}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                            {else}
+                                            <a href="{link do=derefundticket id=$ticket.id}" onclick="return confirm('Требование на возврат будет отменено. Продолжить?');">Отозвать возврат</a>
+                                            {/if}
+                                        {/if}
+                                    {else}
+                                        {if $this.showRefundButtons}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                            {else}
+                                            <a href="{link do=refundticket id=$ticket.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                            {/if}
+                                        {/if}
+                                    {/if}
+                                {/if}
+                            {/capture}
+                            {if $smarty.capture.mobileAction|strtrim|length > 1}
+                                <div class="gss-basket-ul-mobile-action">{$smarty.capture.mobileAction}</div>
+                            {/if}
+                            <div class="gss-basket-ul-mobile-price-status">
+                                <div class="gss-basket-ul-mobile-price">
+                                    <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Price{else}Цена{/if}</span> {$ticket.needAmount|round0} ₽ {if $ticket.discountAmount > 0}<span class="gss-basket-ul-mobile-grey-title">Скидка</span> {$ticket.discountAmount|round0} ₽{/if}
+                                </div>
+                                <div class="gss-basket-ul-mobile-status">
+                                    <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Status{else}Статус{/if}</span>
+                                    <span class="{if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                        {$this.basketStatuses.$basketStatus}
+                                    </span>
+                                </div>
+                            </div>
+                        {/foreach}
+                    {/if}
+                    {if $purchasedProducts}
+                        {foreach from=$purchasedProducts item=product}
+                            {assign var=basketProductId value=$product.id}
+                            {assign var=basketStatus value=$product.status}
+                            {assign var=basketUserId value=$product.userId}
+                            {assign var=basketChildId value=$product.childId}
+                            {capture name=capturedBasketUserIdChildId}{$basketUserId}_{if $basketChildId}{$basketChildId}{/if}{/capture}
+                            {assign var=basketUserIdChildId value=$smarty.capture.capturedBasketUserIdChildId}
+
+                            {assign var=estBron value=0}
+                            {if $this.allBookedUserIds && $product.payAmount+$product.ulAmount-$product.returnedAmount == 0}
+                                {foreach from=$this.allBookedUserIds item=bookedUserTsFinish key=bookedUserId}
+                                    {if $basketUserIdChildId == $bookedUserId}{assign var=estBron value=0}{/if}
+                                {/foreach}
+                            {/if}
+                            {if !$estBron}{assign var=showBronProductButton value=1}{/if}
+
+                            <div class="gss-basket-ul-mobile-name">{if $lang == 'en'}Speaker / Topic{else}Спикер / тема{/if}</div>
+                            <div class="gss-basket-ul-mobile-product">
+                                {$product.eventTsStart|dateformat:'d M'}, {$product.eventTsStart|dateformat:'H:i'}-{$product.eventTsFinish|dateformat:'H:i'}<br/>
+                                {$product.productName}{if $product.sp_firstName}<br><small>(Спикер: {$product.sp_firstName} {$product.sp_secondName})</small>{/if}
+                            </div>
+                            {capture name=mobileAction}
+                                {if ($product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount) > 0}
+                                    {if $product.status == 'STATUS_NEW' && !$estBron}
+                                        <a href="{link do=delproduct id=$product.id}">{if $lang == 'en'}Remove{else}Удалить{/if}</a>
+                                    {/if}
+                                {elseif ($product.payAmount+$product.ulAmount-$product.returnedAmount) > 0}
+                                    {if $this.refundBasketProductIds.$basketProductId}
+                                        {if $this.refundBasketProductIds.$basketProductId == 'STATUS_NEW'}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Cancel refund</a>
+                                            {else}
+                                            <a href="{link do=derefundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Отозвать возврат</a>
+                                            {/if}
+                                        {/if}
+                                    {else}
+                                        {if $this.showRefundButtons}
+                                            {if $lang == 'en'}
+                                            <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('A refund will be issued. Continue?');">Refund</a>
+                                            {else}
+                                            <a href="{link do=refundproduct id=$product.id}" onclick="return confirm('Будет выставлено требование на возврат. Продолжить?');">Возврат</a>
+                                            {/if}
+                                        {/if}
+                                    {/if}
+                                {/if}
+                                {if $product.productStatus == 'STATUS_CANCELED'}
+                                    <a href="{link show=catalog}?productId={$product.productId}">{if $lang == 'en'}Replace{else}Заменить{/if}</a>
+                                {/if}
+                            {/capture}
+                            {if $smarty.capture.mobileAction|strtrim|length > 1}
+                                <div class="gss-basket-ul-mobile-action">{$smarty.capture.mobileAction}</div>
+                            {/if}
+                            <div class="gss-basket-ul-mobile-price-status">
+                                <div class="gss-basket-ul-mobile-price">
+                                    <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Price{else}Цена{/if}</span> {$product.needAmount|round0} ₽ {if $product.discountAmount > 0}<span class="gss-basket-ul-mobile-grey-title">Скидка</span>{$product.discountAmount|round0} ₽{/if}
+                                </div>
+                                <div class="gss-basket-ul-mobile-status">
+                                    <span class="gss-basket-ul-mobile-grey-title">{if $lang == 'en'}Status{else}Статус{/if}</span>
+                                    <span class="{if $basketStatus == 'STATUS_NEW'}mk-new{else}mk-paid{/if}">
+                                        {$this.basketProductStatuses.$basketStatus}
+                                    </span>
+                                </div>
+                            </div>
+                        {/foreach}
+                    {/if}
+                </div>
+                <div class="gss-basket-promocode">
+                    <div class="form-group">
+                        <input class="form-control" autocomplete="off" id="discount-code-{$childid}" type="text" placeholder="{if $lang == 'en'}Have a promo code?{else}Есть промо-код?{/if}" maxlength="20"/>
+                        <a href="#" class="discount-code-button" id="discount-code-button-{$childid}">{if $lang == 'en'}Apply{else}Применить{/if}</a>
+                    </div>
+                </div>
+            {/if}
+            {if !$app}
+            <a href="/index.php?do=relogin&id={$childid}" class="btn btn-white" style="margin-bottom: 20px;">{if $lang == 'en'}Go to shopping{else}Перейти к покупкам{/if}</a>
+            {/if}
+            </div>
+        </div>
+        <hr/>
+        {/foreach}
+    {/if}
+
+    {if $this.childrenArray}
+        <br/>
+    {/if}
+
+    {if $this.bookingAmoount > 0}
+        {assign var=total value=$total-$this.bookingAmoount}
+    {/if}
+
+    {if $total > 0 && !$this.offPayBtn}
+        <h4 class="total">{if $lang == 'en'}Total{else}Итого{/if}: {$total|numberformat} ₽</h4>
+        <div class="pay-buttons">
+            {if $lang == 'en'}
+            <a id="basket-total-pay" data-total="{$total}" href="#" class="btn btn-black" onclick="yaCounter28771811.reachGoal('oplatit-kartoj-korzina');return true">Pay by Card</a>
+            {if !$this.child}<span class="pay-buttons-txt">or</span> <a href="{link show=invoice}?total={$total}" onclick="yaCounter28771811.reachGoal('vystavit-schet-korzina');return true" class="btn btn-white">Issue an invoice</a>{/if}
+            {if !$this.child && 1 == 0}<span class="pay-buttons-txt">or</span> <button id="basket-total-invoice" class="baskettotalamount-{$total} btn btn-white">Issue an invoice</button>{/if}
+            {if $showBronButton} <span class="pay-buttons-txt">or</span> <a href="#" id="basket-book" class="btn btn-white">Reservation</a>{/if}
+            <p class="oferta" style="margin-top: 15px;">Нажимая кнопку «Оплатить картой» или «Выставить счет» Вы соглашаетесь с&nbsp;<a href="https://gastreet.com/oferta">договором-оферты</a></p>
+            {else}
+            <a id="basket-total-pay" data-total="{$total}" href="#" class="btn btn-black" onclick="yaCounter28771811.reachGoal('oplatit-kartoj-korzina');return true">Оплатить картой</a>
+            {if !$this.child}<span class="pay-buttons-txt">или</span> <a href="{link show=invoice}?total={$total}" onclick="yaCounter28771811.reachGoal('vystavit-schet-korzina'); return true" class="btn btn-white">Выставить счёт</a>{/if}
+            {if !$this.child && 1 == 0}<span class="pay-buttons-txt">или</span> <button id="basket-total-invoice" class="baskettotalamount-{$total} btn btn-white">Выставить счёт</button>{/if}
+            {if $showBronButton} <span class="pay-buttons-txt">или</span> <a href="#" id="basket-book" class="btn btn-white">Забронировать</a>{/if}
+            <p class="oferta" style="margin-top: 15px;">Нажимая кнопку «Оплатить картой» или «Выставить счет» Вы соглашаетесь с&nbsp;<a href="https://gastreet.com/oferta">договором-оферты</a></p>
+            {/if}
+        </div>
+        <br/>
+    {/if}
+
+    {if $total > 0 && $balance > 0 && !$this.offPayBtn}
+        <h4>Баланс: {$balance|numberformat} ₽</h4>
+        <br/>
+        <div class="pay-buttons">
+            {if $lang == 'en'}
+            <button class="btn btn-white" id="basket-balance-pay">Pay from balance</button>
+            <span class="pay-buttons-txt">or</span>
+            <button class="btn btn-white" id="basket-balance-add">Add balance</button>
+            {else}
+            <button class="btn btn-white" id="basket-balance-pay">Оплатить с баланса</button>
+            <span class="pay-buttons-txt">или</span>
+            <button class="btn btn-white" id="basket-balance-add">Пополнить баланс</button>
+            {/if}
+        </div>
+        <br/>
+    {/if}
+    {if $this.offPayBtn}
+        <h4 class="total">{if $lang == 'en'}Total{else}Итого{/if}: {$total|numberformat} ₽</h4>
+        <p class="alert alert-danger" style="margin-top: 15px;">Вы не можете оплатить билеты в Вашей корзине без промо-кода!</p>
+    {/if}
+</div>

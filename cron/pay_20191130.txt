@@ -1,0 +1,19 @@
+30.11.2019 POST: Array
+(
+    [comment] => 20023_1575118776
+    [phone_number] => 79159649117
+    [order_id] => 20023_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 3e00b40bcd9d36cfadcb87ce9541947b
+    [name] => Оплата заказа №20023 - 79159649117
+    [system_income] => 100000.0
+    [partner_income] => 98100.0
+    [tid] => 363710154
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => 9117bb@gmail.com
+)
+ GET: Array
+(
+)

@@ -1,0 +1,90 @@
+
+<div class="l-container">
+    <div class="page-container" id="page-container">
+        <div class="l-row">
+            <div class="l-col-lgm-6">
+                <div class="page-container-image" id="page-container-image">
+                    <picture>
+                        <source srcset="content/page-contacts.jpg" media="(min-width: 1200px)">
+                        <img src="content/page-contacts-m.jpg">
+                    </picture>
+                    <div class="socials-area">
+                        <div class="social-operations"><a class="text" href="#">Сделать аватар</a><a class="instagram"
+                                                                                                     href="#">Instagram</a><a
+                                class="facebook" href="#">Facebook</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="l-col-lgm-6">
+                <div class="page-container-inner" id="page-container-inner">
+                    <ul class="breadcrumbs">
+                        <li><a href="/">Главная</a></li>
+                        <li><span>Контакты</span></li>
+                    </ul>
+                    <h1 class="page-headline">Контакты</h1>
+                    <div class="l-rowset">
+
+                        {if $this.cmList}
+
+                        {assign var=count value=0}
+                        <!-- loop start -->
+                        {foreach item=contact from=$this.cmList}
+                        {assign var=count value=$count+1}
+                        {if $count==1}
+                        <div class="l-row">
+                            {/if}
+
+                            <div class="l-col-tbl-4 l-as-row">
+                                <div class="contacts-teaser">
+                                    <p class="title">{$contact->title}</p>
+                                    <div class="thumb">
+                                        {assign var=isimgcontact value=$contact->id|iscontactpicpic}{if
+                                        $isimgcontact}<img class="photo"
+                                                           src="/images/contacts/resized/{$contact->id}.jpg">{else}<img
+                                            class="photo" src="content/person.jpg">{/if}
+                                    </div>
+                                    <div class="desc">
+                                        <p class="name">{$contact->name}</p>
+                                        <div class="info">
+                                            <p><a href="mailto:{$contact->email}">{$contact->email}</a></p>
+                                            {if $contact->phone1}<p>{if $contact->phone1whatsapp=='on'}
+                                            <div class="has-icon-mobile-whatsapp"></div>
+                                            {/if}{if $contact->phone1viber=='on'}
+                                            <div class="has-icon-mobile-viber"></div>
+                                            {/if} {$contact->phone1|nl2br}</p>{/if}
+                                            {if $contact->phone2}<p>{if $contact->phone2whatsapp=='on'}
+                                            <div class="has-icon-mobile-whatsapp"></div>
+                                            {/if}{if $contact->phone2viber=='on'}
+                                            <div class="has-icon-mobile-viber"></div>
+                                            {/if} {$contact->phone2|nl2br}</p>{/if}
+                                            {if $contact->link1url}<p><a href="{$contact->link1url}">{if
+                                            $contact->link1}{$contact->link1}{else}{$contact->link1url}{/if}</a></p>
+                                            {/if}
+                                            {if $contact->link2url}<p><a href="{$contact->link2url}">{if
+                                            $contact->link2}{$contact->link2}{else}{$contact->link2url}{/if}</a></p>
+                                            {/if}
+                                            {if $contact->facebookurl}<p><a href="{$contact->facebookurl}">FACEBOOK</a>
+                                        </p>{/if}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {if $count == 3}
+                        </div>
+                        {assign var=count value=0}
+                        {/if}
+
+                        {/foreach}
+                        {if $count != 3}
+                    </div>
+                    {/if}
+                    <!-- loop end -->
+                    {/if}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

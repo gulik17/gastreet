@@ -1,0 +1,47 @@
+{assign var=this value=$EditVideoControl}
+{formrestore id="form"}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+
+<h2>{if $this.video}Редактирование {else}Добавление {/if} видеоролика</h2>
+<form id="form" action="{alink do=savevideo}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();" style="max-width: 400px">
+    <input type="hidden" name="id" value="{$this.video->id}" />
+    <div class="form-group">
+        <label>Группа:</label>
+        <input class="form-control" type="text" name="v_group" id="v_group" value="{$this.video->v_group}"/>
+    </div>
+    <div class="form-group">
+        <label>Порядок сортировки:</label>
+        <input class="form-control" type="text" name="sortOrder" id="sortOrder" value="{$this.video->sortOrder}"/>
+    </div>
+    <div class="form-group">
+        <label>Статус:</label>
+        <select class="form-control" name="status" id="status">
+            {html_options options=$this.statusList selected=$this.video->status}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Имя:</label>
+        <input class="form-control" type="text" name="name" id="name" value="{$this.video->name}"/>
+    </div>
+    <div class="form-group">
+        <label>Имя (англ):</label>
+        <input class="form-control" type="text" name="name_en" id="name_en" value="{$this.video->name_en}"/>
+    </div>
+    <div class="form-group">
+        <label>URL:</label>
+        <input class="form-control" type="text" name="url" id="url" value="{$this.video->url}"/>
+    </div>
+    {if $this.video->url}
+    <div class="form-group">
+        <label>Картинка:</label>
+        <img class="img-responsive" src="https://i.ytimg.com/vi/{$this.video->url}/hqdefault.jpg" />
+    </div>
+    {/if}
+
+    <div class="form-group">
+        <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+    </div>
+</form>

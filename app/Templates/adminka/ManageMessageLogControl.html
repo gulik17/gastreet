@@ -1,0 +1,49 @@
+{assign var=this value=$ManageMessageLogControl}
+{formrestore id="log-filter"}
+
+<h2>Лог сообщений</h2>
+
+<a role="button" data-toggle="collapse" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter" aria-expanded="true"><h4>Фильтр для поиска <span class="caret"></span></h4></a>
+<div class="collapse" id="collapseFilter">
+    <form id="log-filter" method="post" action="" style="max-width: 400px;">
+        <div class="well">
+            <input type="hidden" name="show" value="managemessagelog"/>
+            <input type="hidden" name="isalive" value="1"/>
+            <div class="filter-users">
+                <div class="form-group">
+                    <label>Номер мобильного:</label>
+                    <input class="form-control" type="text" name="phone" id="phone" />
+                </div>
+                <div class="form-group">
+                    <label>E-Mail:</label>
+                    <input class="form-control" type="text" name="email" id="email" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" id="submit" value="Показать список отбора"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{if $this.logList}
+    <table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>Дата создания</th>
+            <th>Дата отправки</th>
+            <th>Номер мобильного</th>
+            <th>E-Mail</th>
+            <th>Сообщение</th>
+        </tr>
+        {foreach item=log from=$this.logList}
+            <tr class="{cycle values='color,'}">
+                <td>{$log->tsCreate|dateformat:'d.m.Y, в H:i'}</td>
+                <td>{if $log->tsSent}{$log->tsSent|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+                <td>{if $log->phone}{$log->phone}{else}-{/if}</td>
+                <td>{if $log->email}{$log->email}{else}-{/if}</td>
+                <td>{$log->message|htmltoplaintext|truncate:200:"...":true|nl2br}</td>
+            </tr>
+        {/foreach}
+    </table>
+    <p>{pager total=$this.total per=$this.perPage}</p>
+{/if}

@@ -1,0 +1,38 @@
+{assign var=this value=$ManageNewsControl}
+
+<h2>Управление новостями</h2>
+
+<div class="create">
+    <input class="btn btn-primary" type="button" onclick="window.location='{alink show=editnews}'" value="Создать новость" />
+</div>
+<br/>
+
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Заголовок</th>
+        <th>Текст</th>
+        <th>Дата создания</th>
+        <th>Действие</th>
+    </tr>
+    {if $this.news}
+	{foreach item=new from=$this.news}
+            <tr class="{cycle values='color,'}">
+                <td>{$new->id}</td>
+                <td>{$new->subject}</td>
+                <td>{$new->body|forcewrap:0:300:false|nl2br}</td>
+                <td>{$new->showDate|dateformat}</td>
+                <td class="text-center">
+                    <a href="{alink show=editnews newsid=$new->id}" class="glyphicon glyphicon-edit" title="Редактировать" aria-hidden="true"></a>&nbsp;|&nbsp;<a onclick="return confirm('Удалить?');" href="{alink do=deletenews newsid=$new->id}" class="glyphicon glyphicon-trash" title="Удалить" aria-hidden="true"></a>
+                </td>
+            </tr>
+	{/foreach}
+    {else}
+        <tr class="{cycle values='color,'}">
+            <td colspan="6" class="text-center">Список пуст</td>
+        </tr>
+    {/if}
+</table>
+{if $this.news}
+{pager total=$this.total per=$this.perPage}
+{/if}

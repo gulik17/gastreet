@@ -1,0 +1,237 @@
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(typeof haystack[i] == 'object') {
+            if(arrayCompare(haystack[i], needle)) return true;
+        } else {
+            if(haystack[i] == needle) return true;
+        }
+    }
+    return false;
+}
+
+window.isset = function (v) {
+    if (typeof(v) == 'object' && v == 'undefined') {
+        return false;
+    } else  if (arguments.length === 0) {
+        return false;
+    } else {
+        var buff = arguments[0];
+        for (var i = 0; i < arguments.length; i++){
+            if (typeof(buff) === 'undefined' || buff === null) return false;
+            buff = buff[arguments[i+1]];
+        }
+    }
+    return true;
+}
+
+Number.prototype.formatMoney = function(c, d, t){
+	var n = this, 
+		c = isNaN(c = Math.abs(c)) ? 2 : c, 
+		d = d == undefined ? "." : d, 
+		t = t == undefined ? "," : t, 
+		s = n < 0 ? "-" : "", 
+		i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), 
+		j = (j = i.length) > 3 ? j % 3 : 0;
+	return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+}
+
+function checkInput(form){
+    $(form).find('input[required]').each(function(){
+        if($(this).val() != ''){
+            $(this).removeClass('error');
+        } else {
+            $(this).addClass('error');
+        }
+    });
+}
+
+$(document).ready(function(){
+    $("#navbar, .city-click").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 500);
+    });
+    (function() {
+        var fb = $('.ajax-submit');
+        if(fb.length > 0) {
+            fb.each(function(){
+                var form = $(this).closest('form'), name = form.attr('name');
+            });
+        }
+    })();
+});
+
+/**
+ * Отправка форм.
+ */
+function filter(vars) {
+    var bt = $(vars.form).find('.ajax-submit');
+    var bvc = bt.text();
+    $.ajax({
+        type: 'POST',
+        url: "/assets/components/filters/result.php",
+        cache: false,
+        dataType: 'json',
+        data: vars.data,
+        beforeSend: function() {
+            $(bt).prop("disabled", true);
+            $(bt).text('Загрузка...');
+        },
+        success: function(answer) {
+        	console.log(answer);
+            if( isset(answer.result) && (answer.result == "success") ) {
+				$(".info-block .items>div").html(answer.content);
+            }
+            else if( isset(answer.result) && (answer.result == "error") ) {
+                $(".info-block .items>div").html("Ничего не найдено");
+            }
+        },
+        error: function() {},
+        complete: function() {
+        	$(".info-block").slideDown();
+        	$(bt).prop("disabled", false);
+            $(bt).text(bvc);
+        }
+    });
+}
+
+/**
+ * Обработчик кнопки форм.
+ * Кнопка должна быть внутри тегов <form> c классом .ajax-submit
+ * будет отправлено любое кол-во полей, кроме файлов
+ */
+$(document).on('click', '.ajax-submit', function(){
+    var form = $(this).closest('form'), name = form.attr('name'), obj = {};
+    obj.form = form;
+    obj.data = $(form).serialize();
+    filter(obj);
+    return false;
+});
+
+/* ************************/
+
+$(document).ready(function() {
+    (function() {
+        var fb = $('.ajax-mess-submit');
+        if(fb.length > 0) {
+            fb.each(function(){
+                var form = $(this).closest('form'), name = form.attr('name');
+            });
+        }
+    })();
+});
+
+/**
+ * Отправка форм.
+ */
+function feedback(vars) {
+    var bt = $(vars.form).find('.ajax-mess-submit');
+    var bvc = bt.text();
+    console.log(vars.data);
+    $.ajax({
+        type: 'POST',
+        url: "/assets/components/sendmessage/send.php",
+        cache: false,
+        dataType: 'json',
+        data: vars.data,
+        beforeSend: function() {
+            $(bt).prop("disabled", true);
+            $(bt).text('Отправка...');
+        },
+        success: function(answer) {
+            //console.log(answer);
+            if( isset(answer.result) && (answer.result == "success") ) {
+                $("#alertModal h4").html("Сообщение отправлено!");
+                $("#alertModal p").html("Мы обязательно ответим на Ваше сообщение в&nbsp;ближайшее время!");
+            }
+            else if( isset(answer.result) && (answer.result == "error") ) {
+                $("#alertModal h4").html("Ошибка!");
+                $("#alertModal p").html(answer.message);
+            }
+        },
+        error: function() {},
+        complete: function() {
+			$('#registerModal').modal('hide');
+			$('#alertModal').modal('show');
+            $(bt).prop("disabled", false);
+            $(bt).text(bvc);
+        }
+    });
+}
+
+/**
+ * Обработчик кнопки форм.
+ * Кнопка должна быть внутри тегов <form> c классом .ajax-mess-submit
+ * будет отправлено любое кол-во полей, кроме файлов
+ */
+$(document).on('click', '.ajax-mess-submit', function(){
+    var form = $(this).closest('form'), name = form.attr('name'), obj = {};
+    obj.form = form;
+    obj.data = $(form).serialize();
+    checkInput(form);
+    if ($(form).find("input.error").length === 0) {
+        feedback(obj);
+    }
+    return false;
+});
+
+/***********************************************/
+
+$(window).load(function(){});
+
+var price = 7000;
+
+$('#buyModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget);
+	var modal = $(this);
+	modal.find('.price').html( "7 000.00&nbsp;&#8381;" );
+	modal.find('.modal-body input[type="number"]').val(1);
+	modal.find("input[name=MNT_AMOUNT]").val(7000);
+    modal.find("input[name=MNT_DESCRIPTION]").val('');
+});
+
+$('form input[name="place"]').change(function() { // Расчет суммы оплаты в зависимоти от значения поля kol (kol*price)
+	if (parseInt($(this).val()) > 0) { // Защита от ввода в поле kol не цифр
+		if (parseInt($(this).val()) == 1) {
+			$('#buyModal input[name="MNT_AMOUNT"]').val('7000');
+			$('#buyModal .price').html("7 000.00 &#8381;");
+			price = 7000;
+		}
+		if (parseInt($(this).val()) == 2) {
+			$('#buyModal input[name="MNT_AMOUNT"]').val('12000');
+			$('#buyModal .price').html("12 000.00 &#8381;");
+			price = 6000;
+		}
+		if (parseInt($(this).val()) >= 3) {
+			$('#buyModal input[name="MNT_AMOUNT"]').val(parseInt($(this).val())*5000);
+			var ii_sum = parseInt($(this).val())*5000;
+			$('#buyModal .price').html(ii_sum.formatMoney(0, '', ' ')+".00 &#8381;");
+			price = 5000;
+		}
+	} else {
+		alert('Неверное значение поля «Количество»');
+	}
+});
+
+$("form[method='post'] input[type='text'], form[method='post'] input[type='number']").change(function(){
+	var form = $(this).parents("form");
+	var text = "Имя: "+$(form).find("input[name='name']").val()+"\n\r";
+	text += "Телефон: "+$(form).find("input[name='phone']").val()+"\n\r";
+	text += "Email: "+$(form).find("input[name='email']").val()+"\n\r";
+	text += "Количество: "+$(form).find("input[name='place']").val()+"\n\r";
+	$(form).find("input[name=MNT_DESCRIPTION]").val(text);
+});
+
+$("form input[name='place'], form input[name='promo']").change(function(){
+    var form = $(this).parents("form");
+    var place = $(form).find("input[name=place]").val();
+	var summa = price*place;
+	if( ($(form).find("input[name=promo]").val() == "GASTREETFAMILY") ){
+		promo = (summa*0.1);
+		summa = (summa-promo);
+	}
+	$(form).find(".price").html((summa).formatMoney(0, '', ' ')+"&nbsp;&#8381;");
+	$("input[name=MNT_AMOUNT]").val(summa);	
+});

@@ -1,0 +1,11 @@
+
+21-01-2020 20:47:46 [0.365] INFO: APPLE PAY NOTIFY APFABANK (response):
+21-01-2020 20:47:46 [0.365] INFO: array (
+  'success' => false,
+  'error' => 
+  array (
+    'code' => '10',
+    'description' => 'Расшифровка переданных данных неуспешна',
+    'message' => 'Расшифровка переданных данных неуспешна',
+  ),
+)

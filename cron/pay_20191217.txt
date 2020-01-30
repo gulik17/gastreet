@@ -1,0 +1,19 @@
+17.12.2019 POST: Array
+(
+    [comment] => 20058_1576587207
+    [phone_number] => 79100020050
+    [order_id] => 20058_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => a018d4d8c25931673f6b606dd3b59582
+    [name] => Оплата заказа №20058 - 79100020050
+    [system_income] => 30000.0
+    [partner_income] => 29430.0
+    [tid] => 367058379
+    [service_id] => 82125
+    [type] => spg_rfi4
+    [email] => yuri@saltlab.ru
+)
+ GET: Array
+(
+)

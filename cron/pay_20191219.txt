@@ -1,0 +1,57 @@
+19.12.2019 POST: Array
+(
+    [comment] => 20064_1576736307
+    [phone_number] => 79681341347
+    [order_id] => 20064_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 0a08d294b7fa51b8fd9b839c5e0f9a25
+    [name] => Оплата заказа №20064 - 79681341347
+    [system_income] => 70000.0
+    [partner_income] => 68670.0
+    [tid] => 367399708
+    [service_id] => 82125
+    [type] => spg_rfi4
+    [email] => alena6686@yandex.ru
+)
+ GET: Array
+(
+)
+19.12.2019 POST: Array
+(
+    [comment] => 20003_1576748219
+    [phone_number] => 79234161554
+    [order_id] => 20003_B
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 2a3860a427bca31a096d777289dfc81d
+    [name] => Оплата бронирования №20003 - 79234161554
+    [system_income] => 5000.0
+    [partner_income] => 4905.0
+    [tid] => 367427965
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => samarina.liza95@gmail.com
+)
+ GET: Array
+(
+)
+19.12.2019 POST: Array
+(
+    [comment] => 20004_1576748414
+    [phone_number] => 79138621435
+    [order_id] => 20004_B
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => d9cebb8f0fccb7800860e78500eca2c8
+    [name] => Оплата бронирования №20004 - 79138621435
+    [system_income] => 1000.0
+    [partner_income] => 981.0
+    [tid] => 367428395
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => berezina.oksi@gmail.com
+)
+ GET: Array
+(
+)

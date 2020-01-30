@@ -1,0 +1,987 @@
+{assign var=this value=$RegisterControl}
+
+<div class="register-page">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
+            <ul class="breadcrumbs-register">
+                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
+                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
+                <li><a href="/register?step=3" class="">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
+                <li><a href="/register?step=4" class="active">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="header-title">{if $lang == 'en'}Add. services selection{else}Выбор доп.опций{/if}</h3>
+            <h4 class="form-title">{if $lang == 'en'}User Registration:{else}Основной участник:{/if}</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="form-control"><span>{$this.user->name} {$this.user->lastname}</span><a href="#" class="btn btn-link main-set-product">{if $lang == 'en'}Choose a product{else}Выбрать опции{/if}</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row main-product-select"> 
+                <div class="col-md-12">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs product-select-tabs" role="tablist">
+                        <li class="col-6 col-md-3" role="presentation"><a href="#business" class="active" aria-controls="business" role="tab" data-toggle="tab">Бизнес школа</a></li>
+                        <li class="col-6 col-md-3" role="presentation"><a href="#fuckup" aria-controls="fuckup" role="tab" data-toggle="tab">FuckUp Stories</a></li>
+                        <li class="col-6 col-md-3" role="presentation"><a href="#popup" aria-controls="popup" role="tab" data-toggle="tab">POP-UP SHOW</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content product-select-content">
+                        <div role="tabpanel" class="tab-pane active" id="business">
+                            <div class="container schedule-table">
+                                <div class="row">
+                                {foreach from=$this.products item=product name=productloop}
+                                    {if $product->areaId == 6}
+                                    {assign var=placeid value=$product->placeId}
+                                    {assign var=speakerid value=$product->speakerId}
+                                    {assign var=speaker value=$this.speakers.$speakerid}
+                                    {assign var=speaker2id value=$product->speaker2Id}
+                                    {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                    {assign var=speaker3id value=$product->speaker3Id}
+                                    {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                    {assign var=speaker4id value=$product->speaker4Id}
+                                    {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                    {assign var=speaker5id value=$product->speaker5Id}
+                                    {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                    {assign var=speaker6id value=$product->speaker6Id}
+                                    {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                    <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                    {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                    {if $product->pic1}
+                                                        {assign var=modalLink value=$product->pic1|getproductpic}
+                                                    {else}
+                                                        {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                    {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                        <div class="desc">
+                                                            <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                            <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                        </div>
+                                                    {else}
+                                                        <div class="desc">
+                                                            <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                            <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                            <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                            <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                            <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                            <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                            <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                </div>
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 col-md-4 td c-place">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                    {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                    <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                    <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="title">
+                                                    {if $product->description}
+                                                    <a href="#"
+                                                       data-toggle="modal"
+                                                       data-target="#mk-modal"
+                                                       data-type="{if $product->youtube}video{else}image{/if}"
+                                                       data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                       data-name="{$product->firstName}"
+                                                       data-second-name="{$product->secondName}"
+                                                       data-company="{$product->company}"
+                                                       data-city-name="{$product->cityName}"
+                                                       data-desc="{$product->description|dbtexttohtml|escape}"
+                                                       data-flag="{$speaker->country}"
+                                                       data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                       data-tags="{$product->tags|tagtocssclass|escape}"
+                                                       data-link="{$modalLink}"
+                                                       data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                    {else}
+                                                    <span> {$product->name|dbtexttohtml}</span>
+                                                    {/if}
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                    {foreach from=$this.includedProductIds item=includedProductId}
+                                                        {if $includedProductId == $product->id}
+                                                            {assign var=canShowButton value=0}
+                                                        {/if}
+                                                    {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                <div class="text-center">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/if}
+                                {/foreach}
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="fuckup">
+                            <div class="container schedule-table">
+                                <div class="row">
+                                {foreach from=$this.products item=product name=productloop}
+                                    {if $product->areaId == 14}
+                                    {assign var=placeid value=$product->placeId}
+                                    {assign var=speakerid value=$product->speakerId}
+                                    {assign var=speaker value=$this.speakers.$speakerid}
+                                    {assign var=speaker2id value=$product->speaker2Id}
+                                    {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                    {assign var=speaker3id value=$product->speaker3Id}
+                                    {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                    {assign var=speaker4id value=$product->speaker4Id}
+                                    {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                    {assign var=speaker5id value=$product->speaker5Id}
+                                    {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                    {assign var=speaker6id value=$product->speaker6Id}
+                                    {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                    <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                    {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                    {if $product->pic1}
+                                                        {assign var=modalLink value=$product->pic1|getproductpic}
+                                                    {else}
+                                                        {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                    {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                        <div class="desc">
+                                                            <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                            <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                        </div>
+                                                    {else}
+                                                        <div class="desc">
+                                                            <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                            <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                            <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                            <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                            <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                            <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                            <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                </div>
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 col-md-4 td c-place">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                    {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                    <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                    <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="title">
+                                                    {if $product->description}
+                                                    <a href="#"
+                                                       data-toggle="modal"
+                                                       data-target="#mk-modal"
+                                                       data-type="{if $product->youtube}video{else}image{/if}"
+                                                       data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                       data-name="{$product->firstName}"
+                                                       data-second-name="{$product->secondName}"
+                                                       data-company="{$product->company}"
+                                                       data-city-name="{$product->cityName}"
+                                                       data-desc="{$product->description|dbtexttohtml|escape}"
+                                                       data-flag="{$speaker->country}"
+                                                       data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                       data-tags="{$product->tags|tagtocssclass|escape}"
+                                                       data-link="{$modalLink}"
+                                                       data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                    {else}
+                                                    <span> {$product->name|dbtexttohtml}</span>
+                                                    {/if}
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                    {foreach from=$this.includedProductIds item=includedProductId}
+                                                        {if $includedProductId == $product->id}
+                                                            {assign var=canShowButton value=0}
+                                                        {/if}
+                                                    {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                <div class="text-center">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/if}
+                                {/foreach}
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="popup">
+                            <div class="container schedule-table">
+                                <div class="row">
+                                {foreach from=$this.products item=product name=productloop}
+                                    {if $product->areaId == 4}
+                                    {assign var=placeid value=$product->placeId}
+                                    {assign var=speakerid value=$product->speakerId}
+                                    {assign var=speaker value=$this.speakers.$speakerid}
+                                    {assign var=speaker2id value=$product->speaker2Id}
+                                    {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                    {assign var=speaker3id value=$product->speaker3Id}
+                                    {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                    {assign var=speaker4id value=$product->speaker4Id}
+                                    {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                    {assign var=speaker5id value=$product->speaker5Id}
+                                    {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                    {assign var=speaker6id value=$product->speaker6Id}
+                                    {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                    <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                    {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                    {if $product->pic1}
+                                                        {assign var=modalLink value=$product->pic1|getproductpic}
+                                                    {else}
+                                                        {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                    {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                        <div class="desc">
+                                                            <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                            <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                        </div>
+                                                    {else}
+                                                        <div class="desc">
+                                                            <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                            <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                            <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                            <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                            <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                            <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                        <div class="gss-margintop5 desc">
+                                                            <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                            <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                        </div>
+                                                    {/if}
+                                                </div>
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 col-md-4 td c-place">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                    {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                    <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                    <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-8 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="title">
+                                                    {if $product->description}
+                                                    <a href="#"
+                                                       data-toggle="modal"
+                                                       data-target="#mk-modal"
+                                                       data-type="{if $product->youtube}video{else}image{/if}"
+                                                       data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                       data-name="{$product->firstName}"
+                                                       data-second-name="{$product->secondName}"
+                                                       data-company="{$product->company}"
+                                                       data-city-name="{$product->cityName}"
+                                                       data-desc="{$product->description|dbtexttohtml|escape}"
+                                                       data-flag="{$speaker->country}"
+                                                       data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                       data-tags="{$product->tags|tagtocssclass|escape}"
+                                                       data-link="{$modalLink}"
+                                                       data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                    {else}
+                                                    <span> {$product->name|dbtexttohtml}</span>
+                                                    {/if}
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                    {foreach from=$this.includedProductIds item=includedProductId}
+                                                        {if $includedProductId == $product->id}
+                                                            {assign var=canShowButton value=0}
+                                                        {/if}
+                                                    {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                <div class="text-center">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/if}
+                                {/foreach}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-6">
+                    <div class="form-submit">
+                        <a href="#" class="btn btn-white product-close">{if $lang == 'en'}Close{else}Закрыть{/if}</a>
+                    </div>
+                </div>
+            </div>
+
+            {if $this.children}
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="form-title pt-4">{if $lang == 'en'}Additional members{else}Дополнительные участники{/if}:</h4>
+                </div>
+                {foreach from=$this.children item=child key=childid}
+                    {if $child->baseTicketId > 0}
+                    <div class="child-item col-md-12">
+                        <div class="form-group">
+                            <div class="form-control"><span>{$child->name} {$child->lastname}</span><a href="#" class="btn btn-link child-set-product">{if $lang == 'en'}Choose a ticket{else}Выбрать опции{/if}</a></div>
+                        </div>
+                    </div>
+                    <div class="child-product-select">
+                        <div class="col-md-12">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs product-select-tabs" role="tablist">
+                                <li class="col-6 col-md-3" role="presentation"><a href="#business_{$child->id}" class="active" aria-controls="business_{$child->id}" role="tab" data-toggle="tab">Бизнес школа</a></li>
+                                <li class="col-6 col-md-3" role="presentation"><a href="#fuckup_{$child->id}" aria-controls="fuckup_{$child->id}" role="tab" data-toggle="tab">Fuck Up Night</a></li>
+                                <li class="col-6 col-md-3" role="presentation"><a href="#popup_{$child->id}" aria-controls="popup_{$child->id}" role="tab" data-toggle="tab">Pop Up Ужины</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content product-select-content">
+                                <div role="tabpanel" class="tab-pane active" id="business_{$child->id}">
+                                    <div class="container schedule-table">
+                                        <div class="row">
+                                        {foreach from=$this.products item=product name=productloop}
+                                            {if $product->areaId == 6}
+                                            {assign var=placeid value=$product->placeId}
+                                            {assign var=speakerid value=$product->speakerId}
+                                            {assign var=speaker value=$this.speakers.$speakerid}
+                                            {assign var=speaker2id value=$product->speaker2Id}
+                                            {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                            {assign var=speaker3id value=$product->speaker3Id}
+                                            {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                            {assign var=speaker4id value=$product->speaker4Id}
+                                            {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                            {assign var=speaker5id value=$product->speaker5Id}
+                                            {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                            {assign var=speaker6id value=$product->speaker6Id}
+                                            {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                            <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                                <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="schedule-icon">
+                                                            {if $this.showcal}
+                                                            <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                            </a>
+                                                            {/if}
+                                                            <a href="#" class="d-none" title="Добавить в избранное">
+                                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                        {if $product->youtube}
+                                                            {assign var=modalLink value=$product->youtube}
+                                                        {else}
+                                                            {if $product->pic1}
+                                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                            {else}
+                                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                            {/if}
+                                                        {/if}
+                                                        <div class="street-label">{$product->tags|tagformat}</div>
+                                                        <div class="speaker">
+                                                            {if $speaker}
+                                                                <div class="desc">
+                                                                    <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                                    <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                                </div>
+                                                            {else}
+                                                                <div class="desc">
+                                                                    <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                                    <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker2}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                                    <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker3}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                                    <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker4}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                                    <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker5}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                                    <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker6}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                                    <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                        </div>
+                                                        <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 td c-place">
+                                                        {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                            {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                        {else}
+                                                            <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                            <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                        {/if}
+                                                        <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                        <div>{$this.plmArray.$placeid}</div>
+                                                    </div>
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                        <div class="title">
+                                                            {if $product->description}
+                                                            <a href="#"
+                                                               data-toggle="modal"
+                                                               data-target="#mk-modal"
+                                                               data-type="{if $product->youtube}video{else}image{/if}"
+                                                               data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                               data-name="{$product->firstName}"
+                                                               data-second-name="{$product->secondName}"
+                                                               data-company="{$product->company}"
+                                                               data-city-name="{$product->cityName}"
+                                                               data-desc="{$product->description|dbtexttohtml|escape}"
+                                                               data-flag="{$speaker->country}"
+                                                               data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                               data-tags="{$product->tags|tagtocssclass|escape}"
+                                                               data-link="{$modalLink}"
+                                                               data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                            {else}
+                                                            <span> {$product->name|dbtexttohtml}</span>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                        {assign var=canShowButton value=1}
+                                                        {if $this.includedProductIds}
+                                                            {foreach from=$this.includedProductIds item=includedProductId}
+                                                                {if $includedProductId == $product->id}
+                                                                    {assign var=canShowButton value=0}
+                                                                {/if}
+                                                            {/foreach}
+                                                        {/if}
+                                                        {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                        <div class="text-center">
+                                                            <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" data-extuser="{$child->id}" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                            <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                        </div>
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/if}
+                                        {/foreach}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="fuckup_{$child->id}">
+                                    <div class="container schedule-table">
+                                        <div class="row">
+                                        {foreach from=$this.products item=product name=productloop}
+                                            {if $product->areaId == 14}
+                                            {assign var=placeid value=$product->placeId}
+                                            {assign var=speakerid value=$product->speakerId}
+                                            {assign var=speaker value=$this.speakers.$speakerid}
+                                            {assign var=speaker2id value=$product->speaker2Id}
+                                            {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                            {assign var=speaker3id value=$product->speaker3Id}
+                                            {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                            {assign var=speaker4id value=$product->speaker4Id}
+                                            {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                            {assign var=speaker5id value=$product->speaker5Id}
+                                            {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                            {assign var=speaker6id value=$product->speaker6Id}
+                                            {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                            <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                                <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="schedule-icon">
+                                                            {if $this.showcal}
+                                                            <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                            </a>
+                                                            {/if}
+                                                            <a href="#" class="d-none" title="Добавить в избранное">
+                                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                        {if $product->youtube}
+                                                            {assign var=modalLink value=$product->youtube}
+                                                        {else}
+                                                            {if $product->pic1}
+                                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                            {else}
+                                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                            {/if}
+                                                        {/if}
+                                                        <div class="street-label">{$product->tags|tagformat}</div>
+                                                        <div class="speaker">
+                                                            {if $speaker}
+                                                                <div class="desc">
+                                                                    <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                                    <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                                </div>
+                                                            {else}
+                                                                <div class="desc">
+                                                                    <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                                    <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker2}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                                    <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker3}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                                    <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker4}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                                    <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker5}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                                    <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker6}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                                    <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                        </div>
+                                                        <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 td c-place">
+                                                        {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                            {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                        {else}
+                                                            <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                            <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                        {/if}
+                                                        <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                        <div>{$this.plmArray.$placeid}</div>
+                                                    </div>
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                        <div class="title">
+                                                            {if $product->description}
+                                                            <a href="#"
+                                                               data-toggle="modal"
+                                                               data-target="#mk-modal"
+                                                               data-type="{if $product->youtube}video{else}image{/if}"
+                                                               data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                               data-name="{$product->firstName}"
+                                                               data-second-name="{$product->secondName}"
+                                                               data-company="{$product->company}"
+                                                               data-city-name="{$product->cityName}"
+                                                               data-desc="{$product->description|dbtexttohtml|escape}"
+                                                               data-flag="{$speaker->country}"
+                                                               data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                               data-tags="{$product->tags|tagtocssclass|escape}"
+                                                               data-link="{$modalLink}"
+                                                               data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                            {else}
+                                                            <span> {$product->name|dbtexttohtml}</span>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                        {assign var=canShowButton value=1}
+                                                        {if $this.includedProductIds}
+                                                            {foreach from=$this.includedProductIds item=includedProductId}
+                                                                {if $includedProductId == $product->id}
+                                                                    {assign var=canShowButton value=0}
+                                                                {/if}
+                                                            {/foreach}
+                                                        {/if}
+                                                        {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                        <div class="text-center">
+                                                            <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" data-extuser="{$child->id}" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                            <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                        </div>
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/if}
+                                        {/foreach}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="popup_{$child->id}">
+                                    <div class="container schedule-table">
+                                        <div class="row">
+                                        {foreach from=$this.products item=product name=productloop}
+                                            {if $product->areaId == 4}
+                                            {assign var=placeid value=$product->placeId}
+                                            {assign var=speakerid value=$product->speakerId}
+                                            {assign var=speaker value=$this.speakers.$speakerid}
+                                            {assign var=speaker2id value=$product->speaker2Id}
+                                            {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                            {assign var=speaker3id value=$product->speaker3Id}
+                                            {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                            {assign var=speaker4id value=$product->speaker4Id}
+                                            {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                            {assign var=speaker5id value=$product->speaker5Id}
+                                            {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                            {assign var=speaker6id value=$product->speaker6Id}
+                                            {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                            <div class="col-md-6 block-body{$product->tags|tagtocssclass}">
+                                                <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="schedule-icon">
+                                                            {if $this.showcal}
+                                                            <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                            </a>
+                                                            {/if}
+                                                            <a href="#" class="d-none" title="Добавить в избранное">
+                                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                        {if $product->youtube}
+                                                            {assign var=modalLink value=$product->youtube}
+                                                        {else}
+                                                            {if $product->pic1}
+                                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                            {else}
+                                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                            {/if}
+                                                        {/if}
+                                                        <div class="street-label">{$product->tags|tagformat}</div>
+                                                        <div class="speaker">
+                                                            {if $speaker}
+                                                                <div class="desc">
+                                                                    <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                                    <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                                </div>
+                                                            {else}
+                                                                <div class="desc">
+                                                                    <span><a href="#">{$product->firstName} {$product->secondName}</a></span>
+                                                                    <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker2}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                                    <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker3}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                                    <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker4}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4->name} {$speaker4->secondName}</a></span>
+                                                                    <div>{$speaker4->company}{if $speaker4->company},<br> {/if}{if $speaker4->cityName}{$speaker4->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker5}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5->name} {$speaker5->secondName}</a></span>
+                                                                    <div>{$speaker5->company}{if $speaker5->company},<br> {/if}{if $speaker5->cityName}{$speaker5->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                            {if $speaker6}
+                                                                <div class="gss-margintop5 desc">
+                                                                    <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6->name} {$speaker6->secondName}</a></span>
+                                                                    <div>{$speaker6->company}{if $speaker6->company},<br> {/if}{if $speaker6->cityName}{$speaker6->cityName}{/if}</div>
+                                                                </div>
+                                                            {/if}
+                                                        </div>
+                                                        <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 td c-place">
+                                                        {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                            {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                        {else}
+                                                            <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                            <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                        {/if}
+                                                        <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                        <div>{$this.plmArray.$placeid}</div>
+                                                    </div>
+                                                    <div class="col-8 col-md-8 td c-title">
+                                                        <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                        <div class="title">
+                                                            {if $product->description}
+                                                            <a href="#"
+                                                               data-toggle="modal"
+                                                               data-target="#mk-modal"
+                                                               data-type="{if $product->youtube}video{else}image{/if}"
+                                                               data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                               data-name="{$product->firstName}"
+                                                               data-second-name="{$product->secondName}"
+                                                               data-company="{$product->company}"
+                                                               data-city-name="{$product->cityName}"
+                                                               data-desc="{$product->description|dbtexttohtml|escape}"
+                                                               data-flag="{$speaker->country}"
+                                                               data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                               data-tags="{$product->tags|tagtocssclass|escape}"
+                                                               data-link="{$modalLink}"
+                                                               data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                            {else}
+                                                            <span> {$product->name|dbtexttohtml}</span>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4 col-md-4 col-xs-12 td td-cart">
+                                                        {assign var=canShowButton value=1}
+                                                        {if $this.includedProductIds}
+                                                            {foreach from=$this.includedProductIds item=includedProductId}
+                                                                {if $includedProductId == $product->id}
+                                                                    {assign var=canShowButton value=0}
+                                                                {/if}
+                                                            {/foreach}
+                                                        {/if}
+                                                        {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.disableAllBecauseNoBaseTicket && !$this.productId}
+                                                        <div class="text-center">
+                                                            <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" data-extuser="{$child->id}" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0}&nbsp;₽{/if}</a>
+                                                            <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                        </div>
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/if}
+                                        {/foreach}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-submit">
+                                <a href="#" class="btn btn-white product-close">{if $lang == 'en'}Close{else}Закрыть{/if}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {/if}
+                {/foreach}
+            </div>
+            {/if}
+            <div class="row buttons{if $this.user->email} show{/if}">
+                <div class="col-md-6">
+                    <a href="/register?step=5" class="btn btn-link"><i class="fa fa-arrow-right" aria-hidden="true"></i> <span>{if $lang == 'en'}Next step{else}Продолжить{/if}</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="information">
+                {if $lang == 'en'}
+                {else}
+                    <p class="title">ИНФОРМАЦИЯ</p>
+                    <p>Здесь ты можешь приобрести билеты на дополнительные опции GASTREET'20. Сделай это сейчас, так как на самом мероприятии сделать это будет невозможно! Помни, что количество мест ограничено. Внимательно прочитай все ДОПОЛНИТЕЛЬНЫЕ ОПЦИИ, выбери одну или несколько для себя и&nbsp;своей команды. Когда ты закончил, проверь еще раз и&nbsp;нажми кнопку «ПРОДОЛЖИТЬ».</p>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="mk-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content popover-win">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="mk-teaser"></div>
+                <div class="mk-format"><span></span></div>
+                <p class="title"></p>
+                <div class="desc"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="speaker-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content popover-win">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>

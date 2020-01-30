@@ -1,0 +1,19 @@
+18.12.2019 POST: Array
+(
+    [comment] => 20062_1576663744
+    [phone_number] => 79834042270
+    [order_id] => 20062_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 76482f1e16a0785490feed1e13b52428
+    [name] => Оплата заказа №20062 - 79834042270
+    [system_income] => 30000.0
+    [partner_income] => 29430.0
+    [tid] => 367234453
+    [service_id] => 82125
+    [type] => spg_rfi4
+    [email] => ekimova.yulia@gmail.com
+)
+ GET: Array
+(
+)

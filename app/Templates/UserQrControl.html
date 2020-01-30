@@ -1,0 +1,59 @@
+{assign var=this value=$UserQrControl}
+
+<div class="user-qr">
+    {if ($this.id && $actor->id == $this.id) || !$this.id}
+        <div style="display: block;"><h4>{if $lang == 'en'}Your QR code:{else}Ваш QR код:{/if}</h4>
+        <img src="/qr/code.php?code={$this.qrmObj->code}" /><br/><br/></div>
+        <h4>{if $lang == 'en'}Download ticket:{else}Скачать билет:{/if}</h4>
+        {if $lang == 'en'}
+            <p><a class="btn btn-white" href="{link do=usergetbilet id=$this.id}" title="Download">Ticket</a></p>
+        {else}
+            <p><a class="btn btn-white" href="{link do=usergetbilet id=$this.id}" title="Скачать">Билет</a></p>
+        {/if}
+<!--        <h4>{if $lang == 'en'}Download coupon for accommodation:{else}Скачать купон на проживание:{/if}</h4>-->
+<!--        {if $lang == 'en'}-->
+<!--            <p><a class="btn btn-white" href="{link do=usergethotelkupon}" title="Download">Coupon</a></p>-->
+<!--        {else}-->
+<!--            <p><a class="btn btn-white" href="{link do=usergethotelkupon}" title="Скачать">Купон</a></p>-->
+<!--        {/if}-->
+        <div class="hidden">
+        <h4>{if $lang == 'en'}Download the contract:{else}Скачать договор:{/if}</h4>
+        {if $lang == 'en'}
+            <p><a class="btn btn-white" href="/oferta" target="_blank" title="Download">Contract</a></p>
+        {else}
+            <p><a class="btn btn-white" href="/oferta" target="_blank" title="Скачать">Договор</a></p>
+        {/if}
+        </div>
+<!--        <h4>{if $lang == 'en'}Download the memo:{else}Скачать памятку:{/if}</h4>-->
+<!--        {if $lang == 'en'}-->
+<!--            <p><a class="btn btn-white" href="/pdf/gastreet19_memo.pdf" target="_blank" title="Download">Memo</a></p>-->
+<!--        {else}-->
+<!--            <p><a class="btn btn-white" href="/pdf/gastreet19_memo.pdf" target="_blank" title="Скачать">Памятка</a></p>-->
+<!--        {/if}-->
+        <br/><br/>
+    {/if}
+
+    {if $this.childrenList}
+        {foreach from=$this.childrenList item=child}
+            {assign var=userid value=$child->id}
+            {if ($this.id && $this.id == $userid) || !$this.id}
+                <h4>{if $lang == 'en'}Download ticket:{else}Скачать билет:{/if}</h4>
+                {if $lang == 'en'}
+                    <p><a class="btn btn-white" href="{link do=usergetbilet id=$userid}" target="_blank" title="Download" />Ticket</a></p><br/>
+                {else}
+                    <p><a class="btn btn-white" href="{link do=usergetbilet id=$userid}" target="_blank" title="Скачать" />Билет</a></p><br/>
+                {/if}
+                <div class="hidden">
+                    <h4>{if $lang == 'en'}QR code for{else}QR код для{/if} <i>{$child->phone} {$child->lastname} {$child->name}</i></h4>
+                    <img class="img-responsive" src="/qr/code.php?code={$this.qrList.$userid}" /><br/>
+                </div>
+                <h4>{if $lang == 'en'}Download coupon for accommodation:{else}Скачать купон на проживание:{/if}</h4>
+                {if $lang == 'en'}
+                    <p><a class="btn btn-white" href="{link do=usergethotelkupon id=$userid}" target="_blank" title="Download">Coupon</a></p>
+                {else}
+                    <p><a class="btn btn-white" href="{link do=usergethotelkupon id=$userid}" target="_blank" title="Скачать">Купон</a></p>
+                {/if}
+            {/if}
+        {/foreach}
+    {/if}
+</div>

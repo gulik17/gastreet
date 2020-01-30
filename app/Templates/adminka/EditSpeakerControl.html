@@ -1,0 +1,169 @@
+{assign var=this value=$EditSpeakerControl}
+{formrestore id="form"}
+
+{loadscript file='/js/fckeditor/jquery.FCKEditor.js' type='js'}
+{loadscript file='/js/fckeditor/jquery.form.js' type='js'}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/adminkaeditspeaker.js' type='js'}
+
+<h2>{if $this.speaker}Редактирование {else}Создание {/if} спикера</h2>
+<form id="form" action="{alink do=savespeaker}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.speaker->id}" />
+    <div class="form-group row">
+        <div class="col-md-3">
+            <label>Порядок сортировки:</label>
+            <input class="form-control" type="text" name="sortOrder" id="sortOrder" value="{$this.speaker->sortOrder}"/>
+        </div>
+        <div class="col-md-3">
+            <label>Статус:</label>
+            <select class="form-control" name="status" id="status">
+                {html_options options=$this.statusList selected=$this.speaker->status}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Флаг страны:</label>
+            <select class="form-control chosen-select" name="country" id="country">
+                {html_options options=$this.countryList selected=$this.speaker->country}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Звезд Мишлен:</label>
+            <input class="form-control" type="text" name="michelin" id="michelin" value="{$this.speaker->michelin}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Имя (рус):</label>
+            <input class="form-control" type="text" name="name" id="name" value="{$this.speaker->name}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Имя (eng):</label>
+            <input class="form-control" type="text" name="name_en" id="name_en" value="{$this.speaker->name_en}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Фамилия (рус):</label>
+            <input class="form-control" type="text" name="secondName" id="secondName" value="{$this.speaker->secondName}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Фамилия (eng):</label>
+            <input class="form-control" type="text" name="secondName_en" id="secondName_en" value="{$this.speaker->secondName_en}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Компания (рус):</label>
+            <input class="form-control" type="text" name="company" id="company" value="{$this.speaker->company}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Компания (eng):</label>
+            <input class="form-control" type="text" name="company_en" id="company_en" value="{$this.speaker->company_en}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Должность (рус):</label>
+            <input class="form-control" type="text" name="position" id="position" value="{$this.speaker->position}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Должность (eng):</label>
+            <input class="form-control" type="text" name="position_en" id="position_en" value="{$this.speaker->position_en}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Город (рус):</label>
+            <input class="form-control" type="text" name="cityName" id="cityName" value="{$this.speaker->cityName}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Город (eng):</label>
+            <input class="form-control" type="text" name="cityName_en" id="cityName_en" value="{$this.speaker->cityName_en}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Теги:</label>
+            <input class="form-control" type="text" name="tags" id="tags" value="{$this.speaker->tags}"/>
+        </div>
+        <div class="col-md-6">
+            <label>Партнер:</label>
+            <select class="form-control chosen-select" name="partner_id" id="partner_id">
+                <option value="0">-- не выбран --</option>
+                {html_options options=$this.partners selected=$this.speaker->partner_id}
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>Года участия через запятую</label>
+            <input class="form-control" type="text" name="years" value="{$this.speaker->years}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Описание (рус):</label>
+            <textarea class="form-control" name="description" id="description" rows="8">{$this.speaker->description}</textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Описание (eng):</label>
+            <textarea class="form-control" name="description_en" id="description_en" rows="8">{$this.speaker->description_en}</textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Ссылка на Facebook:</label>
+            <input class="form-control" type="text" name="facebook" id="facebook" value="{$this.speaker->facebook}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Ссылка на VK:</label>
+            <input class="form-control" type="text" name="vk" id="vk" value="{$this.speaker->vk}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Ссылка на Instagram:</label>
+            <input class="form-control" type="text" name="instagram" id="instagram" value="{$this.speaker->instagram}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Ссылка на Twitter:</label>
+            <input class="form-control" type="text" name="twitter" id="twitter" value="{$this.speaker->twitter}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label>Ссылка на сайт</label>
+            <input class="form-control" type="text" name="site" id="site" value="{$this.speaker->site}"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <label>{if $this.speackerImg1}Заменить картинку: <a class="btn btn-danger" style="margin-left: 30px;" href="{alink do=deleteimg id=$this.speackerImg1 item=speackers}">Удалить картинку</a>{else}Загрузить картинку:{/if}</label>
+            {if $this.speackerImg1}<img class="img-responsive" src="/images/speackers/resized/{$this.speackerImg1}?v={$this.speaker->tsUpdated}" />{/if}
+            <br/>
+            <input class="form-control" name="file1" type="file" />
+        </div>
+        <div class="col-md-6">
+            <label>{if $this.speackerImg_app}Заменить картинку (ДЛЯ ПРИЛОЖЕНИЯ): <a class="btn btn-danger" style="margin-left: 30px;" href="{alink do=deleteimg id=$this.speackerImg_app item=speackers}">Удалить картинку</a>{else}Загрузить картинку (ДЛЯ ПРИЛОЖЕНИЯ):{/if}</label>
+            {if $this.speackerImg_app}<img class="img-responsive" src="/images/speackers/resized/{$this.speackerImg_app}?v={$this.speaker->tsUpdated}" />{/if}
+            <br/>
+            <input class="form-control" name="file2" type="file" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+        </div>
+    </div>
+</form>
+
+<br/>

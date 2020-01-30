@@ -1,0 +1,73 @@
+{assign var=this value=$ManageUsersControl}
+{formrestore id="users-filter"}
+
+<h2>Работа с пользователями</h2>
+
+<a role="button" data-toggle="collapse" href="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter"><h4>Фильтр для поиска <span class="caret"></span></h4></a>
+<div class="collapse in" id="collapseFilter">
+    <div class="well" style="max-width: 400px;">
+        <form id="users-filter" method="post" action="">
+            <input type="hidden" name="show" value="manageusers"/>
+            <input type="hidden" name="isalive" value="1"/>
+            <div class="filter-users">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" name="userid" id="userid" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Фамилия:</label>
+                    <input type="text" name="lastname" id="lastname" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Имя:</label>
+                    <input type="text" name="name" id="name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Номер мобильного:</label>
+                    <input type="text" name="phone" id="phone" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>E-Mail:</label>
+                    <input type="text" name="email" id="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="submit" value="Показать список отбора" class="btn btn-info"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="create">
+    <input type="button" onclick="window.location='{alink show=adminkaedituser}'" class="btn btn-primary" value="Создать нового пользователя" />
+</div>
+{if $this.userList}
+    <br>
+    <table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+        <tr>
+            <th>ID</th><th>ФИО</th><th>Телефон</th><th>E-Mail</th><th>Билет</th><th>Статус</th><th>Был на сайте</th><th>&nbsp;</th>
+        </tr>
+	{foreach item=user from=$this.userList}
+            {assign var=status value=$user->status}
+            {assign var=userid value=$user->id}
+            {assign var=parentid value=$user->parentUserId}
+            <tr class="{cycle values='color,'}">
+                <td><a href="{alink show=user id=$user->id}">{$user->id}</a></td>
+                <td><a href="{alink show=user id=$user->id}">{$user->lastname} {$user->name}</a></td>
+		        <td>{$user->phone}</td>
+                <td>{if $user->confirmedEmail}{$user->confirmedEmail}{else}{$user->email}{/if}</td>
+                <td>{$user->baseTicket}</td>
+                <td>{if $parentid}<i>добавлен от</i> {$this.parentList.$parentid}{else}{$this.userStatuses.$status}{/if}</td>
+                <td>{if $user->tsOnline}{$user->tsOnline|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+                <td class="text-center">
+                    <a href="{alink do=admindeluser id=$user->id}" title="Удалить" onclick="return confirm('Точно удалить?');">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+	{/foreach}
+    </table>
+    {if $this.total}
+        {pager total=$this.total per=$this.perPage}
+    {/if}
+{/if}

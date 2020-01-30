@@ -1,0 +1,31 @@
+{assign var=this value=$TicketDecisionControl}
+{formrestore id="ticket-decision"}
+
+{loadscript file='/css/ketchup/jquery.ketchup.css' type='css'}
+{loadscript file='/js/ketchup/jquery.ketchup.all.min.js' type='js'}
+{loadscript file='/js/pages/ticketdecision.js' type='js'}
+
+{if $this.tickets}
+    {foreach from=$this.tickets item=ticket}
+        <h4>Ваш билет: {$ticket.baseTicketName}</h4>
+        {assign var=canchange value=0}
+        {if $this.allTickets && $ticket.returnedAmount+$ticket.needAmount-$ticket.payAmount-$ticket.ulAmount-$ticket.discountAmount > 0}
+            <!-- возможна замена -->
+            {foreach from=$this.allTickets item=oneTicket}
+                {if $oneTicket->id != $ticket.baseTicketId}
+                {assign var=canchange value=1}
+                    <button class="ticket-decision ticket-{$oneTicket->id}">Можно заменить на {$oneTicket->name}</button>
+                {/if}
+            {/foreach}
+        {elseif $this.allTickets && $ticket.needAmount < $this.ticketObj->needAmount}
+            <!-- возможен апгрейд -->
+            {foreach from=$this.allTickets item=oneTicket}
+                {if $oneTicket->id != $ticket.baseTicketId && $oneTicket->price < $ticket.needAmount}
+                {assign var=canchange value=1}
+                    <button class="ticket-decision ticket-{$oneTicket->id}">Можно заменить на {$oneTicket->name}</button>
+                {/if}
+            {/foreach}
+        {/if}
+        <p>{if !$canchange}Нельзя заменить, но Вы можете оформить запрос на возврат.{/if}</p>
+    {/foreach}
+{/if}

@@ -1,0 +1,62 @@
+{assign var=this value=$AvatarControl}
+
+{loadscript file='app/avatar/css/style.css' type='css'}
+
+<div class="l-container">
+	<div class="page-container" id="page-container">
+		<div class="gss-avatar">
+            <div class="gss-avatar-upl-text">1. Загрузите фотографию</div>
+			<div class="wrapper">
+				<form id="imageform" method="post" action="app/avatar/ajaxImageUpload.php" style="clear:both">
+					<div class="block_left">
+						<div id="preview">
+							<img src="">
+						</div>
+                        <div class="btn">
+                            <div id="imageloadstatus" style="display:none;"><img src="app/avatar/loader.gif" style="width: 100%;" alt="Uploading...."/></div>
+                            <div id="imageloadbutton">
+                                <div class="file_upload">
+									<button type="button">Выбрать фото<br><p style="font-size: 5pt;margin-top:3px;">(не более 2 Мбайт)</p></button>
+                                    <input type="file" name="photos[]" id="photoimg" />
+                                </div>
+                                <input type="hidden" name="img_original" class="img_original" /> <!-- Путь к оригиналу -->
+                                <input type="hidden" name="img_final" class="img_final" /> <!-- Путь к обработанному изображению -->
+                                <input type="hidden" name="img_layer" class="img_layer" value="app/avatar/layer/30.png" /> <!-- Путь к слою -->
+                            </div>
+                            <div class="sc-answer"></div>
+                        </div>
+					</div>
+					<div class="block_right">
+                        <div class="gss-avatar-choose-text">2. Выберите фильтр</div>
+						<div class="prev">
+
+							<div class="box">
+								<ul class="gss-avatar-choose-ul">
+									<li><a href="#" class="active"><img src="app/avatar/layer/41.png"></a></li>
+									<li><a href="#" class=""><img src="app/avatar/layer/42.png"></a></li>
+									<li><a href="#" class=""><img src="app/avatar/layer/43.png"></a></li>
+									<li><a href="#" class=""><img src="app/avatar/layer/44.png"></a></li>
+									<li><a href="#" class=""><img src="app/avatar/layer/45.png"></a></li>
+									<li><a href="#" class=""><img src="app/avatar/layer/46.png"></a></li>
+								</ul>
+							</div>
+                            <div class="gss-avatar-share-text">3. Скачайте фотографию</div>
+							<div class="share">
+								<a class="download" style="font-size:16px;" href="app/avatar/download.php?file="></a>
+								<a class="vk" href="#"></a>
+								<a class="fb" href="#"></a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+			<script type="text/javascript" src="app/avatar/js/jquery.form.js"></script>
+			<script type="text/javascript" src="app/avatar/js/share.js"></script>
+			<script type="text/javascript" src="app/avatar/js/main.js"></script>
+
+		</div>
+	</div>
+</div>
+<br><br><br><br><br><br>&nbsp;

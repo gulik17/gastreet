@@ -1,0 +1,30 @@
+{assign var=this value=$EditStuffControl}
+{formrestore id="form"}
+
+{loadscript file='/js/jquery.placeholder.min.js' type='js'}
+{loadscript file='/js/pages/editstuff.js' type='js'}
+
+<h2>{if $this.umObj}Редактирование члена команды{else}Создание члена команды{/if}</h2>
+
+<form id="form" action="{alink do=savestuff}" method="post" style="max-width: 400px">
+    <input type="hidden" name="id" value="{$this.umObj->id}" />
+    <div class="form-group">
+        <label>Телефон:</label>
+        <input class="form-control" type="text" name="phone" id="phone" value="{$this.umObj->phone}"/>
+    </div>
+    <div class="form-group">
+        <label>E-Mail:</label>
+        <input class="form-control" type="text" name="email" id="email" value="{$this.umObj->email}"/>
+    </div>
+    <div class="form-group">
+        <label>Фамилия:</label>
+        <input class="form-control" type="text" name="lastname" id="lastname" value="{$this.umObj->lastname}"/>
+    </div>
+    <div class="form-group">
+        <label>Имя:</label>
+        <input class="form-control" type="text" name="name" id="name" value="{$this.umObj->name}"/>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" id="submitNews" type="submit" value="Сохранить"/>
+    </div>
+</form>

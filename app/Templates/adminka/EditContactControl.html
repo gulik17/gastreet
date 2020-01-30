@@ -1,0 +1,100 @@
+{assign var=this value=$EditContactControl}
+{formrestore id="form"}
+
+<!--{loadscript file='/js/fckeditor/jquery.FCKEditor.js' type='js'}-->
+<!--{loadscript file='/js/fckeditor/jquery.form.js' type='js'}-->
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/adminkaeditcontact.js' type='js'}
+
+<h2>{if $this.contact}Редактирование контактной информации{else}Создание контакта{/if}</h2>
+<form id="form" action="{alink do=savecontact}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.contact->id}" />
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Порядок сортировки:</label>
+            <input class="form-control" type="text" name="sortOrder" id="sortOrder" value="{$this.contact->sortOrder}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Категория:</label>
+            <select class="form-control" name="type" id="type">
+                {html_options options=$this.cType selected=$this.contact->type}
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Заголовок:</label>
+            <input class="form-control" type="text" name="title" id="title" value="{$this.contact->title}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Заголовок (англ):</label>
+            <input class="form-control" type="text" name="title_en" id="title_en" value="{$this.contact->title_en}"/>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Имя:</label>
+            <input class="form-control" type="text" name="name" id="name" value="{$this.contact->name}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Имя (англ):</label>
+            <input class="form-control" type="text" name="name_en" id="name_en" value="{$this.contact->name_en}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>E-Mail:</label>
+            <input class="form-control" type="email" name="email" id="email" value="{$this.contact->email}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Телефон:</label>
+            <input class="form-control" name="phone" id="phone" value="{$this.contact->phone}">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Телефон доп:</label>
+            <input class="form-control" name="phone2" id="phone2" value="{$this.contact->phone2}">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>WhatsApp:</label>
+            <input class="form-control" name="whatsapp" id="whatsapp" value="{$this.contact->whatsapp}">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Viber:</label>
+            <input class="form-control" name="viber" id="viber" value="{$this.contact->viber}">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Telegram:</label>
+            <input class="form-control" name="telegram" id="telegram" value="{$this.contact->telegram}">
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Адрес страницы на Facebook:</label>
+            <input class="form-control" type="url" name="facebookurl" id="facebookurl" value="{$this.contact->facebookurl}"/>
+        </div>
+        <div class="col-md-12 form-group" id="file-dl">
+            <label id="file-dt">Загрузить картинку:</label>
+            <div id="file-dd">
+                <input class="u-file form-control" name="file1" type="file" />
+            </div>
+        </div>
+        <!--<dl>-->
+        <!--<dt>Описание:</dt>-->
+        <!--<dd><textarea style="width: 400px; height: 150px;" name="info" id="info">{$this.contact->info}</textarea></dd>-->
+        <!--</dl>-->
+        <div class="col-md-12 form-group">
+            <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+        </div>
+    </div>
+    {if $this.contactImg}
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Фото:</label>
+                <div>
+                    <img src="/images/contacts/resized/{$this.contactImg}" />
+                </div>
+            </div>
+        </div>
+    {/if}
+</form>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+    <title>GASTREET 2018 - International Restaurant Show</title>
+    <base href="https://gastreet.com/"/>
+    <meta property="og:title" content="GASTREET 2018 - International Restaurant Show"/>
+    <meta property="og:description" content=""/>
+	<meta property="og:image" content="https://gastreet.com/images/fb_share_6.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/images/touch-icon-iphone.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon-ipad.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/touch-icon-iphone-retina.png"/>
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/touch-icon-ipad-retina.png"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body class="">
+	<div class="modal fade" id="video-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="videoModalLabel">Видео: Gastreet</h4>
+				</div>
+				<div class="modal-body">
+					<iframe allowfullscreen="" height="400" src="" width="100%"></iframe>
+				</div>
+			</div>
+        </div>
+    </div>
+	<div class="bg"></div>
+	<div class="form_panel">
+	    <a class="close">×</a>
+	    <div class="form_panel__inner">
+			<div class="form_panel__form">
+				<h1>Заполните Заявку</h1>
+				<form action="" method="post" class="ajax_form">
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" id="af_name" name="name" placeholder="Имя" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" id="af_lastname" name="lastname" placeholder="Фамилия" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<select id="af_country" name="country" placeholder="Страна" class="form-control" style="color:#999" onchange="this.style.color='black'">
+
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<select style="display:none" id="af__ru_city" name="city" placeholder="Город" class="form-control" style="color:#999" onchange="this.style.color='black'">
+							</select>
+							<input style="display:none" type="text" id="af__in_city" name="in_city" placeholder="Город" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" id="af_company" name="company" placeholder="Компания" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" id="af_phone" name="phone" placeholder="Телефон" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<input type="text" id="af_email" name="email" placeholder="E-MAIL" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="controls">
+							<select style="display:none;color:#999" id="af__usertype" name="usertype" placeholder="Тип учетной записи" class="form-control" onchange="this.style.color='black'">
+								<option disabled selected style='display:none' id="alltype">Тип учётной записи</option>
+								<option>Повар</option>
+								<option>Шеф-повар</option>
+								<option>Владелец</option>
+							</select>
+							<input style="display:none" type="text" id="af__in_usertype" value="" name="in_usertype" class="form-control">
+						</div>
+					</div>
+					<input style="display:none" type="text" value="" name="subject">
+					<div class="form-group">
+						<div class="controls">
+							<button type="submit" class="btn btn-black ajax-submit">Отправить запрос</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="form_panel__msg" style="display:none;">
+				<div>
+					<h4>Информация!</h4>
+					<p>Информация.</p>
+				</div>
+				<a href="#" class="btn btn-black back_form">Назад</a>
+			</div>
+		</div>
+	</div>
+
+	<section class="header">
+		<div class="main_screen">
+			<div class="main-bg"></div>
+			<nav class="navbar" id="navbar">
+				<div class="container">
+					<div class="navbar-header">
+						<div class="gastreet">
+							<div>
+								<img src="/images/gastreet_logo.png"/>
+							</div>
+							<div class="place">
+								<p>Сочи, Красная Поляна,<br />Горки Город, +540/+960</p>
+							</div>
+						</div>
+						<!--div class="barstreet">
+							<div>
+								<img src="/images/barstreet_logo.png"/>
+							</div>
+							<div class="place">
+								<p>Сочи, Красная Поляна,<br />Горки Город, уровень +540</p>
+							</div>
+						</div-->
+					</div>
+					<div class="navbar-header navbar-right">
+						<div class="con-block">
+							<div class="icon-block">
+								<a href="https://www.instagram.com/gastreetshow" class="icon instagram"></a>
+								<a href="https://www.facebook.com/gastreeshow" class="icon facebook"></a>
+							</div>
+							<p class="phone">8 800 700-93-20<br />+7 967 696-99-20</p>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="fix_left">
+				<div>
+					<div class="play_block" data-target="#video-modal" data-toggle="modal" data-link="OBwVnGCIgIo" data-title="2017">
+						<div class="play_btn"></div>
+						<p>Как это было в 2017</p>
+					</div>
+					<div class="video_block">
+						<div class="video v1" data-target="#video-modal" data-toggle="modal" data-link="B8L_3yvoL_Y" data-title="2016">
+							<div>
+								<span>
+									<p class="title">2016</p>
+								</span>
+							</div>
+						</div>
+						<div class="video v2" data-target="#video-modal" data-toggle="modal" data-link="80HISWnKeCg" data-title="2015">
+							<div>
+								<span>
+									<p class="title">2015</p>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fix_right">
+				<div>
+					<div class="form_block">
+						<p class="date">22 — 25 мая 2018</p>
+						<h1>Все рестораторы и&nbsp;шефы соберуться снова в&nbsp;Сочи</h1>
+						<p>самая большая образовательная отраслевая площадка в&nbsp;стране, 5000 участников со всего мира</p>
+						<div class="btn-block">
+							<a href="#" class="btn btn-black forMember">Стать участником</a>
+							<a href="#" class="btn btn-white forSmi">Для СМИ</a>
+							<a href="#" class="btn btn-white forSponsor">Для спонсоров</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							
+						</div>
+						<div class="col-md-6">
+                            <div class="copyright">
+                                <p class="design hidden-xs hidden-sm">Дизайн<br /><a href="#">Brainst.pro</a></p>
+                                <p class="gastreet">Gastreet — International Restaurant Show<br />Услуги оказывает ООО «Номер Один»</p>
+								<p class="design hidden-md hidden-lg">Дизайн<br /><a href="#">Brainst.pro</a></p>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/jquery.inputmask.min.js"></script>
+	<script src="/js/inputmask/phone-codes/phone.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

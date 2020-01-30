@@ -1,0 +1,38 @@
+14.01.2020 POST: Array
+(
+    [comment] => 20159_1578996236
+    [phone_number] => 79788201586
+    [order_id] => 20159_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => db155c080f50f6fe9be0b0db2ee8aeee
+    [name] => Оплата заказа №20159 - 79788201586
+    [system_income] => 24000.0
+    [partner_income] => 23544.0
+    [tid] => 372345396
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => nikolj76@mail.ru
+)
+ GET: Array
+(
+)
+14.01.2020 POST: Array
+(
+    [comment] => 20163_1579020579
+    [phone_number] => 79132095008
+    [order_id] => 20163_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => abd7cf198547519b8b21bd50d5fb182b
+    [name] => Оплата заказа №20163 - 79132095008
+    [system_income] => 29000.0
+    [partner_income] => 28449.0
+    [tid] => 372422010
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => i.zaikina_1987@mail.ru
+)
+ GET: Array
+(
+)

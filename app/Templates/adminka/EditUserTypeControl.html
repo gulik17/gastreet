@@ -1,0 +1,22 @@
+{assign var=this value=$EditUserTypeControl}
+{formrestore id="form"}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+
+<h2>{if $this.userType}Редактирование {else}Создание {/if} типа пользователей</h2>
+<form id="form" action="{alink do=saveusertype}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();" style="max-width: 400px">
+	<input type="hidden" name="id" value="{$this.userType->id}" />
+	<div class="form-group">
+            <label>Название:</label>
+            <input class="form-control" type="text" name="name" id="name" value="{$this.userType->name}"/>
+	</div>
+        <div class="form-group">
+            <label>Название (eng):</label>
+            <input class="form-control" type="text" name="name_en" id="name_en" value="{$this.userType->name_en}"/>
+	</div>
+	<div class="form-group">
+            <input class="btn btn-primary" id="submitPlace" type="submit" value="Сохранить"/>
+	</div>
+</form>

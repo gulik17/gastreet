@@ -1,0 +1,20 @@
+{assign var=this value=$ReportPayProductControl}
+
+<div class="container">
+    <div class="row">
+        <form action="{alink do=adminsavereportpayproductxls}" method="POST">
+            <div class="col-md-6">
+                <h2>Выгрузка списка купленных МК</h2>
+                <div class="form-group">
+                    <label>Мастер-класс:</label>
+                    <select class="form-control" name="product">
+                        {html_options options=$this.products}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" value="Выгрузить"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

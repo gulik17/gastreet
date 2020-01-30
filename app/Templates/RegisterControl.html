@@ -1,0 +1,304 @@
+{assign var=this value=$RegisterControl}
+
+{literal}
+<script> gtag('event', 'conversion', {'send_to': 'AW-869423439/G4tVCLCX3G4Qz7LJngM'}); </script>
+{/literal}
+
+{if $this.isItOldUser}
+    {loadscript file='/js/confetti.js' type='js'}
+    <div id="is-old-user" class="container text-center">
+        <h4>Привет {$this.oldUser.name}!<br>
+            Как круто, что ты снова с&nbsp;нами!<br>
+            Этот салют в&nbsp;твою честь!</h4>
+    </div>
+    <br/><br/>
+    <canvas width="1400" height="800" id="confetti" style="background:#fff;position:fixed;width:100%;height:100%;"></canvas>
+    {literal}
+    <script>
+        window.onload = function () {
+            var firework = JS_FIREWORKS.Fireworks({
+                id : 'confetti',
+                hue : 120,
+                particleCount : 120,
+                delay : 0,
+                minDelay : 20,
+                maxDelay : 40,
+                boundaries : {
+                        top: 50,
+                        bottom: 240,
+                        left: 50,
+                        right: 1400
+                },
+                fireworkSpeed : 2,
+                fireworkAcceleration : 1.05,
+                particleFriction : .95,
+                particleGravity : 1.1
+            });
+            firework.start();
+        };
+    </script>
+    {/literal}
+{/if}
+
+<div class="register-page">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
+            <ul class="breadcrumbs-register">
+                <li><a href="/register" class="active">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
+                <li><a href="/register?step=2" class="disabled">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
+                <li><a href="/register?step=3" class="disabled">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
+                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="header-title">{if $lang == 'en'}Data input{else}Ввод данных{/if}</h3>
+            <h4 class="form-title">{if $lang == 'en'}User Registration:{else}Основной участник:{/if}</h4>
+            <div class="row main-user-input-block{if $this.user->email} show{/if}">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Name Surname{else}Имя Фамилия{/if}</label>
+                        <div class="form-control"><span>{$this.user->name} {$this.user->lastname}</span><a href="#" class="btn btn-link" data-toggle="modal" data-target=".user-modal-edit">{if $lang == 'en'}Edit data{else}Редактировать{/if}</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row participant_additional{if $this.children} show{/if}">
+                <div class="col-md-12">
+                    <h4 class="form-title">{if $lang == 'en'}Additional members{else}Дополнительные участники{/if}:</h4>
+                </div>
+                {if $this.children}
+                    {foreach from=$this.children item=child key=childid}
+                        <div class="col-md-12" id="participant_edit_{$child->id}">
+                            <div class="form-group">
+                                <label>{if $lang == 'en'}Name Surname{else}Имя Фамилия{/if}</label>
+                                <div class="form-control"><span>{$child->name} {$child->lastname}</span><a href="#" data-id="{$child->id}" class="btn btn-link edit-user">{if $lang == 'en'}Edit data{else}Редактировать{/if}</a></div>
+                            </div>
+                        </div>
+                        <div id="participant_{$child->id}" class="col-md-12 participant_edit">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{if $lang == 'en'}Name{else}Имя{/if}</label>
+                                        <input class="form-control" autocomplete="off" name="name" type="text" value="{$child->name}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{if $lang == 'en'}Surname{else}Фамилия{/if}</label>
+                                        <input class="form-control" autocomplete="off" name="lastname" type="text" value="{$child->lastname}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input class="form-control" autocomplete="off" name="email" type="text" value="{$child->email}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{if $lang == 'en'}Clothing size{else}Размер одежды{/if}</label>
+                                        <select class="form-control chosen-select" name="usersize">
+                                            <option value="">-- {if $lang == 'en'}Clothing size{else}Размер одежды{/if} --</option>
+                                            {html_options values=$this.userSize output=$this.userSize selected=$child->userSize}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{if $lang == 'en'}Company{else}Компания{/if}</label>
+                                        <input class="form-control" autocomplete="off" name="company" type="text" value="{$child->company}" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{if $lang == 'en'}Position{else}Должность{/if}</label>
+                                        <select class="form-control chosen-select" name="position">
+                                            <option value="">-- {if $lang == 'en'}Position{else}Должность{/if} --</option>
+                                            {html_options values=$this.position output=$this.position selected=$child->position}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="hidden" name="country" value="{$child->countryName}">
+                                        <input type="hidden" name="city" value="{$child->cityName}">
+                                        <label>Город</label>
+                                        <input class="form-control" type="text" id="tmp_edit_city" name="tmp_edit_city" value="{$child->cityName}" autocomplete="off" maxlength="100">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-submit">
+                                        <button data-id="{$child->id}" class="btn btn-white reg_edit_user" type="submit">{if $lang == 'en'}Save{else}Сохранить{/if}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {/foreach}
+                {/if}
+            </div>
+
+            <div class="row participant_add">
+                <div class="col-md-12">
+                    <h4 class="form-title">{if $lang == 'en'}Additional member{else}Дополнительный участник{/if}:</h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Name{else}Имя{/if}</label>
+                        <input class="form-control" autocomplete="off" name="name" type="text" value="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Surname{else}Фамилия{/if}</label>
+                        <input class="form-control" autocomplete="off" name="lastname" type="text" value="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Phone{else}Телефон{/if}</label>
+                        <input class="form-control" autocomplete="off" name="phone" type="text" value="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input class="form-control" autocomplete="off" name="email" type="text" value="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Clothing size{else}Размер одежды{/if}</label>
+                        <select class="form-control chosen-select" name="usersize">
+                            <option value="">-- {if $lang == 'en'}Clothing size{else}Размер одежды{/if} --</option>
+                            {html_options values=$this.userSize output=$this.userSize}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Company{else}Компания{/if}</label>
+                        <input class="form-control" autocomplete="off" name="company" type="text" value="" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>{if $lang == 'en'}Position{else}Должность{/if}</label>
+                        <select class="form-control chosen-select" name="position">
+                            <option value="">-- {if $lang == 'en'}Position{else}Должность{/if} --</option>
+                            {html_options values=$this.position output=$this.position}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" name="country" value="">
+                        <input type="hidden" name="city" value="">
+                        <label>Город</label>
+                        <input class="form-control" type="text" id="tmp_add_city" name="tmp_add_city" value="" autocomplete="off" maxlength="100">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-submit">
+                        <button id="reg_add_user" class="btn btn-white" type="submit">{if $lang == 'en'}Add User{else}Добавить{/if}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row buttons{if $this.user->email} show{/if}">
+                <div class="col-md-6">
+                    <a href="#" class="btn btn-link" id="add_new"><i class="fa fa-plus" aria-hidden="true"></i> <span>{if $lang == 'en'}Add a member{else}Добавить участника{/if}</span></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/register?step=2" class="btn btn-link"><i class="fa fa-arrow-right" aria-hidden="true"></i> <span>{if $lang == 'en'}Next step{else}Продолжить{/if}</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="information">
+                {if $lang == 'en'}
+                {else}
+                    <p class="title">ИНФОРМАЦИЯ</p>
+                    <p>Внимательно заполни все поля анкеты. Если ты едешь не один – заполни поля остальных участников. Важно – укажи свои корректные данные номера телефона и почты, а&nbsp;также остальных участников. Благодаря этому, ты будешь получать эксклюзивную и&nbsp;важную информацию о&nbsp;событиях GASTREET'20 в&nbsp;режиме реального времени.</p>
+                    <p>Как только ты все закончишь, проверь еще раз и&nbsp;нажми кнопку «ПРОДОЛЖИТЬ».</p>
+                {/if}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade user-modal-edit" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_name">{if $lang == 'en'}Name{else}Имя{/if}</label>
+                                    <input class="form-control" autocomplete="off" id="reg_name" name="name" type="text" value="{$this.user->name}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_lastname">{if $lang == 'en'}Surname{else}Фамилия{/if}</label>
+                                    <input class="form-control" autocomplete="off" id="reg_lastname" name="lastname" type="text" value="{$this.user->lastname}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_born">{if $lang == 'en'}Date of Birth{else}Дата рождения{/if}</label>
+                                    <input class="form-control" autocomplete="off" id="reg_born" name="tsBorn" type="text" value="{$this.user->tsBorn}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_email">E-mail</label>
+                                    <input class="form-control" autocomplete="off" id="reg_email" name="email" type="text" value="{$this.user->email}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_usersize">{if $lang == 'en'}Clothing size{else}Размер одежды{/if}</label>
+                                    <select class="form-control chosen-select" id="reg_usersize" name="usersize">
+                                        <option value="">-- {if $lang == 'en'}Clothing size{else}Размер одежды{/if} --</option>
+                                        {html_options values=$this.userSize output=$this.userSize selected=$this.user->userSize}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_company">{if $lang == 'en'}Company{else}Компания{/if}</label>
+                                    <input class="form-control" autocomplete="off" id="reg_company" name="company" type="text" value="{$this.user->company}" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="hidden" id="countryName" name="countryName" value="{$this.user->countryName}">
+                                    <input type="hidden" id="cityName" name="cityName" value="{$this.user->cityName}">
+                                    <label for="tmpaddress">Город</label>
+                                    <input class="form-control" type="text" id="tmpaddress" name="tmpaddress" value="{$this.user->cityName}" autocomplete="off" maxlength="100">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="reg_position">{if $lang == 'en'}Position{else}Должность{/if}</label>
+                                    <select class="form-control chosen-select" id="reg_position" name="position">
+                                        <option value="">-- {if $lang == 'en'}Position{else}Должность{/if} --</option>
+                                        {html_options values=$this.position output=$this.position selected=$this.user->position}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">{if $lang == 'en'}Cancel{else}Отмена{/if}</button>
+                    <button type="submit" id="reg_save" class="btn btn-white">{if $lang == 'en'}Save{else}Сохранить{/if}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

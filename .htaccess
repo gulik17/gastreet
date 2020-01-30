@@ -1,0 +1,54 @@
+# set as OFF on the product sever
+php_value display_errors on
+
+# don't edit below
+php_value register_globals off
+php_value magic_quotes_gpc off
+
+php_value memory_limit 512M
+
+# Установка максимального размера файла для закачки
+php_value post_max_size 40M
+php_value upload_max_filesize 40M
+
+php_flag session.use_trans_sid 1
+
+# Установка кодировки по умолчанию
+AddDefaultCharset utf-8
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.gastreet\.com$ [NC]
+RewriteRule ^(.*)$ https://gastreet.com/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://gastreet.com/$1 [L,R=301]
+
+#RewriteCond %{HTTP:PORT} !^443$
+#RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+# Запрет просмотра каталогов по урлу
+Options -Indexes
+
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+    # RewriteCond %{SCRIPT_FILENAME} !index.php
+    # глюк с путями у tinymce, когда он находится в подкаталоге
+    RewriteRule ^page/storage[/]{0,1}(.*)$ /storage/$1 [NC,L,QSA]
+    RewriteRule ^forum[/]{0,1}(.*)$ forum/$1 [NC,L,QSA]	
+    RewriteRule ^adminka[/]{0,1}(.*)$ adminka/$1 [NC,L,QSA]
+    RewriteRule ^style[/]{0,1}(.*)$ style/$1 [NC,L,QSA]
+    RewriteRule ^([-a-z0-9]+)[/]{0,1}$ index.php?show=$1 [NC,L,QSA]
+    RewriteRule ^([-a-z0-9]+)/([^/\.]+)/([^/\.]+)[/]{0,1}$ index.php?show=$1&$2=$3 [NC,L,QSA]
+    RewriteRule ^([-a-z0-9]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)[/]{0,1}$ index.php?show=$1&$2=$3&$4=$5 [NC,L,QSA]
+    RewriteRule ^([-a-z0-9]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)/([^/\.]+)[/]{0,1}$ index.php?show=$1&$2=$3&$4=$5&$6=$7 [NC,L,QSA]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>

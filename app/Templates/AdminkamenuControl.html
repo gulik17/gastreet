@@ -1,0 +1,11 @@
+{assign var=this value=$AdminkamenuControl}
+{if $this.permissions}
+<ul>
+    <li><a href="{alink show=mainpage}"><i class="fa fa-fw fa-home"></i> Статистика</a></li>
+    {foreach item=perm from=$this.permissions}
+        {if $perm.perm == "Y"}
+            <li><a href="{alink show=$perm.name}"><i class="fa fa-fw {$perm.icon}"></i> {$perm.desc}</a></li>
+        {/if}
+    {/foreach}
+</ul>
+{/if}

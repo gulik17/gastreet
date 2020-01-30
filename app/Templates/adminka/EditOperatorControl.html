@@ -1,0 +1,51 @@
+{assign var=this value=$EditOperatorControl}
+{formrestore id="form"}
+
+<h2>{if $this.area}Редактирование {else}Создание {/if} оператора</h2>
+<form id="form" action="{alink do=saveoperator}" method="post" enctype="multipart/form-data" autocomplete="off">
+    <input type="hidden" name="id" value="{$this.operator->id}" />
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Статус:</label>
+            <select class="form-control" name="status" id="status">
+                {html_options options=$this.statusList selected=$this.operator->status}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Логин:</label>
+            <input class="form-control" autocomplete="off" type="text" name="login" id="login" value="{$this.operator->login}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Имя:</label>
+            <input class="form-control" autocomplete="off" type="text" name="name" id="name" value="{$this.operator->name}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Телефон:</label>
+            <input class="form-control" autocomplete="off" type="text" name="phone" id="phone" value="{$this.operator->phone}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Пароль:</label>
+            <input class="form-control" autocomplete="off" type="password" name="password" id="password" value=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <div class="bs-example">
+                {foreach item=perm from=$this.permissions}
+                    <div class="checkbox">
+                        <label><input name="{$perm.name}" type="checkbox" value="Y" {if $perm.perm == "Y"}checked{/if}> {$perm.desc}</label>
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-success" id="submitOperator" type="submit" value="Сохранить"/>
+    </div>
+</form>
+
+<br/><br/>

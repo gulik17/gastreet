@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;}
+body {
+    width: 100%;}
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0;
+    padding: 20px 0;}
+.block_left {
+    background-color: #282c57;
+    margin-top: 30px;
+    font-size: initial;}
+.block_left img {
+    width: 100%;}
+.l-site {
+    margin-bottom: 0;}
+.block_right .btn {}
+.block_right .prev {
+    font-size: 0;
+    *overflow-y: scroll;}
+.block_right .prev .box {}
+.block_right .prev .box a {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: initial;}
+.block_right .prev .box a.active {
+    background-color: #888;}
+.block_right .prev .box a img {
+    width: 100%;}
+.block_right .prev .box a.active img,
+.block_right .prev .box a:hover img {
+    background-color: #ddd;}
+.block_right .prev .box a:nth-child(2n) {}
+#preview {
+    color: #cc0000;}
+.imgList {}
+.file_upload {
+    position: relative;
+    font-size: 1em;}
+.file_upload > button {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #282c57;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Gastreet Font', serif;
+    line-height: 1;
+    padding-top: 8px;}
+.file_upload > div {
+    padding-left: 1em;}
+.file_upload input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;}
+.share {
+    margin-top: 7px;}
+.share a {
+    background-color: #282c57;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    line-height: 1;
+    margin: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 58px;}
+.share a.download {}
+.share a.twitter {
+    background-color: #0f8dd2;
+    padding: 1rem;}
+.share a.vk {
+    background-color: #0f8dd2;
+    padding: 1rem;}
+.share a.gplus {
+    background-color: #0f8dd2;
+    padding: 1rem;}
+.share a.fb {
+    background-color: #0f8dd2;
+    padding: 1rem;}
+.share a.ok {
+    background-color: #0f8dd2;
+    padding: 1rem;}
+.gss-avatar-upl-text, .gss-avatar-choose-text, .gss-avatar-share-text {
+    color: #000;
+    font-size: 1.44rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    overflow: hidden;}
+.gss-avatar-choose-text {
+    overflow: hidden;
+    margin: 15px 0 10px 0;}
+.gss-avatar-share-text {
+    margin-bottom: 10px;
+    margin-left: 2px;
+    margin-top: 2rem;
+    overflow: hidden;}
+.gss-avatar {}
+.gss-avatar-choose-ul {
+    list-style: none;
+    padding: 0;}
+.sc-answer {
+    margin-top: -51px;
+    color: white;
+    position: absolute;
+    width: 86%;
+    font-size: 10px;}
+#gsszoomBtns {
+    display: none !important;}
+#mobileCropper_getResult {
+    color: #fff!important;
+    font-weight: 600;
+    background: #191f4f!important;
+    bottom: 15px!important;}
+#mobileCropper_cancel {
+    color: #fff!important;
+    font-weight: 600;
+    background: #191f4f!important;
+    bottom: 15px!important;}
+.gss-avatar .owl-theme .owl-nav {
+    position: absolute;
+    top: calc(50% - 2rem);
+    margin: 0;
+    left: 0;
+    right: 0;}
+.gss-avatar .owl-theme .owl-nav [class*='owl-'] {
+    position: absolute;
+    font-size: 0;
+    height: 4rem;
+    border-radius: 0;
+    width: 2rem;
+    text-align: center;
+    margin: 0;
+    background: #000;}
+.gss-avatar .owl-theme .owl-nav [class*='owl-']:after {
+    content: "\f104";
+    font-family: FontAwesome;
+    color: #fff;
+    line-height: 1.3;
+    font-size: 2.5rem;}
+.gss-avatar .owl-theme .owl-nav .owl-next:after {
+    content: "\f105";}
+.gss-avatar .owl-theme .owl-nav .owl-prev {
+    left: -1rem;}
+.gss-avatar .owl-theme .owl-nav .owl-next {
+    right: -1rem;}
+#gssmainContainer {
+    z-index: 99;}
+#nsc_wnd {
+    z-index: 99!important;}
+.get-photo {
+    cursor: pointer;}
+@media all and (max-width: 991px) {
+    html, body {
+        height: 100%;}
+    .block_left {
+        width: 100%;
+        overflow: hidden;}
+    .wrapper {
+        padding: 0;
+        margin: 0 auto 0;}
+    #imageform {
+        margin-bottom: 20px;}
+}
+@media all and (max-width: 799px) {
+    .block_right .prev .box a {
+        width: auto !important;
+        height: auto !important;}
+    .site-footer {
+        position: relative;}
+}

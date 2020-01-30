@@ -1,0 +1,19 @@
+15.01.2020 POST: Array
+(
+    [comment] => 20165_1579072757
+    [phone_number] => 79063501439
+    [order_id] => 20165_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 419bacd0126d0f726187d3063edcd217
+    [name] => Оплата заказа №20165 - 79063501439
+    [system_income] => 48000.0
+    [partner_income] => 47088.0
+    [tid] => 372512830
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => stas20.92@mail.ru
+)
+ GET: Array
+(
+)

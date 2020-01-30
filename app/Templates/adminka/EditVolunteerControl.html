@@ -1,0 +1,125 @@
+{assign var=this value=$EditVolunteerControl}
+{formrestore id="form"}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+<h2>Редактирование волонтера</h2>
+<form id="form" action="{alink do=savevolunteer}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <div class="row">
+        <input type="hidden" name="id" value="{$this.volunteer->id}" />
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Статус:</label>
+                <select class="form-control" name="status" id="status">
+                    {html_options options=$this.statusList selected=$this.volunteer->status}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Сортировка:</label>
+                <input class="form-control" type="text" name="sort" id="sort" value="{$this.volunteer->sort}"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Номер мобильного: *</label>
+                <input class="form-control" type="text" name="phone" id="phone" value="{$this.volunteer->phone}"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>E-Mail: *</label>
+                <input class="form-control" type="text" name="email" id="email" value="{$this.volunteer->email}"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Фамилия:</label>
+                <input class="form-control" type="text" name="lastname" id="lastname" value="{$this.volunteer->lastname}"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Имя:</label>
+                <input class="form-control" type="text" name="name" id="name" value="{$this.volunteer->name}"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Страна:</label>
+                <select class="form-control" name="countryName">
+                    <option value="">-- Страна --</option>
+                    {html_options options=$this.country selected=$this.volunteer->countryName}
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Город:</label>
+                <input class="form-control" type="text" name="cityName" id="cityName" value="{$this.volunteer->cityName}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Компания:</label>
+                <input class="form-control" type="text" name="company" id="company" value="{$this.volunteer->company}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Должность:</label>
+                <input class="form-control" type="text" name="position" id="position" value="{$this.volunteer->position}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Года работы:</label>
+                <input class="form-control" type="text" name="years" id="years" value="{$this.volunteer->years}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Ссылка на Facebook:</label>
+                <input class="form-control" type="text" name="facebook" id="facebook" value="{$this.volunteer->facebook}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Ссылка на VK:</label>
+                <input class="form-control" type="text" name="vk" id="vk" value="{$this.volunteer->vk}"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Ссылка на Instagram:</label>
+                <input class="form-control" type="text" name="instagram" id="instagram" value="{$this.volunteer->instagram}"/>
+            </div>
+        </div>
+        
+        
+        
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Описание:</label>
+                <textarea class="form-control" name="description" id="description" rows="6">{$this.volunteer->description}</textarea>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>{if $this.volunteer->img}Заменить картинку: <a class="btn btn-danger" style="margin-left: 30px;" href="{alink do=deleteimg id=$this.volunteer->id file=$this.volunteer->img item=volunteer}">Удалить картинку</a>{else}Загрузить картинку:{/if}</label>
+                {if $this.volunteer->img}<img class="img-responsive" src="/images/volunteers/resized/{$this.volunteer->img}?v={$this.volunteer->ts_updated}" />{/if}
+                <br/>
+                <input class="form-control" name="file1" type="file" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+            </div>
+        </div>
+    </div>
+</form>

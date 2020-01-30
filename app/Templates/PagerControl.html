@@ -1,0 +1,49 @@
+<div class="pagination-limit">Лимит:
+    <a href="{$PagerControl.url}&amp;limit=30" class="{if $PagerControl.per == 30} active{/if}">30</a>
+    <a href="{$PagerControl.url}&amp;limit=50" class="{if $PagerControl.per == 50} active{/if}">50</a>
+    <a href="{$PagerControl.url}&amp;limit=70" class="{if $PagerControl.per == 70} active{/if}">70</a>
+    <a href="{$PagerControl.url}&amp;limit=100" class="{if $PagerControl.per == 100} active{/if}">100</a>
+    <a href="{$PagerControl.url}&amp;limit=1000" class="{if $PagerControl.per == 1000} active{/if}">1000</a>
+</div>
+
+{if ($PagerControl.totalPages) > 1}
+<ul class="pagination">
+    <li class="prev">
+        {if $PagerControl.prevPage ne 0}
+            <a href="{$PagerControl.url}&amp;{$PagerControl.param}={$PagerControl.prevPage}" rel="prev">&larr;</a>
+	{else}
+            <a href="#" onclick="return false">&larr;</a>
+	{/if}
+    </li>
+    {if ($PagerControl.currentPage >= 5)}
+        {assign var="pageStart" value=$PagerControl.currentPage-5}
+        {if ($PagerControl.currentPage+5 <= $PagerControl.totalPages)}
+            {assign var="pageEnd" value=$PagerControl.currentPage+5}
+        {else}
+            {assign var="pageEnd" value=$PagerControl.totalPages+1}
+        {/if}
+    {else}
+        {assign var="pageStart" value=1}
+        {assign var="pageEnd" value=$PagerControl.currentPage+10}
+    {/if}
+    {if ($PagerControl.totalPages < 10)}
+        {assign var="pageEnd" value=$PagerControl.totalPages+1}
+    {/if}
+    {section name=page start=$pageStart step=1 loop=$pageEnd} {*$PagerControl.totalPages+1*}
+        {assign var="page" value=$smarty.section.page.index}
+        {if ($page == $PagerControl.currentPage)}
+            <li class="current active"><a href="#" onclick="return false">{$page}</a></li>
+        {else}
+            <li><a href="{$PagerControl.url}&amp;{$PagerControl.param}={$page}">{$page}</a></li>
+        {/if}
+    {/section}
+    <li class="next">
+        {if $PagerControl.nextPage ne 0}
+            <a href="{$PagerControl.url}&amp;{$PagerControl.param}={$PagerControl.nextPage}" rel="next">&rarr;</a>
+        {else}
+            <a href="#" onclick="return false">&rarr;</a>
+	{/if}
+    </li>
+</ul>
+<p>Всего страниц: {$PagerControl.totalPages}</p>
+{/if}

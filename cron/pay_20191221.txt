@@ -1,0 +1,19 @@
+21.12.2019 POST: Array
+(
+    [comment] => 20070_1576924853
+    [phone_number] => 380953265626
+    [order_id] => 20070_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 216d8f5d083b67609dcc34efbd3acbd6
+    [name] => Оплата заказа №20070 - 380953265626
+    [system_income] => 30000.0
+    [partner_income] => 29430.0
+    [tid] => 367854684
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => alina_malik@mail.ru
+)
+ GET: Array
+(
+)

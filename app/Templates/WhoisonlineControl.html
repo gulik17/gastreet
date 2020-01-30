@@ -1,0 +1,22 @@
+{assign var=this value=$WhoisonlineControl}
+
+<div calss="whoisonline">
+
+{if $this.countOnline}
+    <h4>Сейчас на сайте:</h4>
+    <ul style="list-style: none; padding: 0;">
+    {foreach from=$this.users item=user}
+        {if $user->isOwner}
+            <li style="float: left; margin-right: 12px;"><a href="{link show=viewowner id=$user->id}" style="color: #ff7200;">{$user->nickName}</a>{if $this.ts-$user->tsOnline < 300}<img src="/images/online.png" width="5" height="5" class="onlineimg" />{/if}</li>
+        {else}
+            <li style="float: left; margin-right: 12px;"><a href="{link show=viewuser id=$user->id}">{$user->nickName}</a>{if $this.ts-$user->tsOnline < 300}<img src="/images/online.png" width="5" height="5" class="onlineimg" />{/if}</li>
+        {/if}
+    {/foreach}
+    </ul><br/><br/>
+{/if}
+
+{if $this.countUsers}
+    <p>Общая численность участников: <b>{$this.countUsers}</b></p>
+{/if}
+
+</div>

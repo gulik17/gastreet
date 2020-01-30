@@ -1,0 +1,19 @@
+23.12.2019 POST: Array
+(
+    [comment] => 20071_1577093376
+    [phone_number] => 79676124442
+    [order_id] => 20071_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 8116ae3a5accdc7cd19153aa33d59f06
+    [name] => Оплата заказа №20071 - 79676124442
+    [system_income] => 125000.0
+    [partner_income] => 122625.0
+    [tid] => 368231285
+    [service_id] => 82125
+    [type] => spg_rfi4
+    [email] => aatimchenko@yandex.ru
+)
+ GET: Array
+(
+)

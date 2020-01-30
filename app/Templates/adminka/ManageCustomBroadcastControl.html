@@ -1,0 +1,62 @@
+{assign var=this value=$ManageCustomBroadcastControl}
+
+<h2>Рассылки</h2>
+
+<div class="create">
+	<input class="btn btn-primary" type="button" onclick="window.location='{alink show=editcustombroadcast}'" value="Создать рассылку" />
+</div>
+
+{if $this.customBroadcastList}
+<br/>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+	<tr>
+		<th>ID</th>
+		<th>Дата и время создания</th>
+		<th>Название</th>
+		<th>Тип</th>
+		<th>Статус</th>
+		<th>Всего</th>
+		<th>Не обработано</th>
+		<th>Отправлено</th>
+		<th>Невозможно отправить</th>
+		<th>Действия</th>
+	</tr>
+	{foreach item=customBroadcast from=$this.customBroadcastList}
+	{assign var=status value=$customBroadcast->status}
+	{assign var=type value=$customBroadcast->type}
+	{assign var=id value=$customBroadcast->id}
+	{assign var=s0 value=$this.stat[$id][0]}
+	{assign var=s1 value=$this.stat[$id][1]}
+	{assign var=s2 value=$this.stat[$id][2]}
+	{assign var=s3 value=$this.stat[$id][3]}
+	<tr class="{cycle values='color,'}">
+		<td>{$customBroadcast->id}</td>
+		<td>{$customBroadcast->tsCreated|dateformat:'d.m.Y H:i:s'}</td>
+		<td>{$customBroadcast->name}</td>
+		<td>{$this.typeDesc.$type}</td>
+		<td>{$this.statusDesc.$status}</td>
+		<td>{$s0}</td>
+		<td>{$s1}</td>
+		<td>{$s2}</td>
+		<td>{$s3}</td>
+		<td>
+			{if $status != 1}
+			<a href="{alink show=editcustombroadcast id=$customBroadcast->id}">Редактировать</a>
+			{else}
+			Редактировать
+			{/if}
+			{if $status == 0}
+			|&nbsp;<a href="{alink do=runcustombroadcast id=$customBroadcast->id}" onclick="return confirm('Вы уверены что хотите запустить рассылку?');">Запуск</a>
+			{else}
+			|&nbsp;Запуск
+			{/if}
+			{if $status != 2}
+			|&nbsp;<a href="{alink do=stopcustombroadcast id=$customBroadcast->id}" onclick="return confirm('Вы уверены что хотите завершить рассылку? После завершения рассылка не может быть вновь запущена!');">Завершить</a>
+			{else}
+			|&nbsp;Завершить
+			{/if}
+		</td>
+	</tr>
+	{/foreach}
+</table>
+{/if}

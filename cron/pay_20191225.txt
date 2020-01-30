@@ -1,0 +1,19 @@
+25.12.2019 POST: Array
+(
+    [comment] => 20078_1577267400
+    [phone_number] => 79093563078
+    [order_id] => 20078_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => 0440578bf878d2d95a667b66ec71ff71
+    [name] => Оплата заказа №20078 - 79093563078
+    [system_income] => 30000.0
+    [partner_income] => 29430.0
+    [tid] => 368637676
+    [service_id] => 82125
+    [type] => spg_rfi6
+    [email] => a.ergunev@gmail.com
+)
+ GET: Array
+(
+)

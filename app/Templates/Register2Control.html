@@ -1,0 +1,278 @@
+{assign var=this value=$RegisterControl}
+
+<div class="register-page page_body">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
+            <ul class="breadcrumbs-register">
+                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
+                <li><a href="/register?step=2" class="active">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
+                <li><a href="/register?step=3" class="disabled">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
+                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 page_body">
+            <h3 class="header-title">{if $lang == 'en'}Ticket selection{else}Выбор билета{/if}</h3>
+            <h4 class="form-title">{if $lang == 'en'}User Registration:{else}Основной участник:{/if}</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="form-control{if $this.user->baseTicketId} ticket_{$this.user->baseTicketId}{/if}"><span>{$this.user->name} {$this.user->lastname}</span><a href="#" class="btn btn-link main-set-ticket" data-target=".user-modal-ticket" data-id="{$this.user->id|getuserticket}">{if $lang == 'en'}Choose a ticket{else}Выбрать билет{/if}</a></div>
+                    </div>
+                </div>
+            </div>
+
+            {if $this.children}
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="form-title">{if $lang == 'en'}Additional members{else}Дополнительные участники{/if}:</h4>
+                </div>
+                {foreach from=$this.children item=child key=childid}
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-control{if $child->baseTicketId} ticket_{$child->baseTicketId}{/if}"><span>{$child->name} {$child->lastname}</span><a href="#" data-id="{$child->id|getuserticket}" data-extuser="{$child->id}" data-target=".user-modal-ticket" class="btn btn-link child-set-ticket">{if $lang == 'en'}Choose a ticket{else}Выбрать билет{/if}</a></div>
+                        </div>
+                    </div>
+
+                {/foreach}
+            </div>
+            {/if}
+
+            <div class="row buttons{if $this.user->email} show{/if}">
+                <div class="col-md-6">
+                    <a href="/register?step=3" class="btn btn-link"><i class="fa fa-arrow-right" aria-hidden="true"></i> <span>{if $lang == 'en'}Next step{else}Продолжить{/if}</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="information">
+                {if $lang == 'en'}
+                {else}
+                    <p class="title">ИНФОРМАЦИЯ</p>
+                    <p>Сначала выбери тип билета для каждого участника. Внимательно прочитай описание каждого билета, чтобы выбрать подходящий для тебя и&nbsp;твоей команды.</p>
+                    <p><u>Помни, что ты не сможешь отдельно докупить участие в&nbsp;мастер-классах. Тебе доступны только те события, которые входят в&nbsp;выбранный тобой билет.</u></p>
+                    <p>Когда ты закончил, проверь еще раз и&nbsp;нажми кнопку «ПРОДОЛЖИТЬ».</p>
+                {/if}
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade user-modal-ticket" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Выберите билет</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {if $this.gastreetspecial}
+								<div class="col-md-12">
+									<p style="font-size:16px;">Ты — избранный. И&nbsp;только тебе доступны специальные цены. До 31&nbsp;декабря.</p>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=9} <!-- УКАЗАТЬ ID БИЛЕТА «Barstreet» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-barstreet" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=15} <!-- УКАЗАТЬ ID БИЛЕТА «Host Street» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-host" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=6} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-chef" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=7} <!-- УКАЗАТЬ ID БИЛЕТА «ПРОФИ» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-profi" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><div class="ticket-hit">Хит продаж</div>{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=13} <!-- УКАЗАТЬ ID БИЛЕТА «ReBro» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-rebro" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><img src="/images/rebro_green-logo.png"></h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+										<a href="{link do=add ticket=rebro}" class="btn btn-cart">Подать заявку</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=12} <!-- УКАЗАТЬ ID БИЛЕТА «Как король» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-king" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+                            {elseif $this.gastreetpartner}
+								<div class="col-md-12">
+									{assign var=ticketId value=3} <!-- УКАЗАТЬ ID БИЛЕТА «Профи» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-profi" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><div class="ticket-hit">Хит продаж</div>{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=12} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=13} <!-- УКАЗАТЬ ID БИЛЕТА «Staff» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+							{else}
+								<div class="col-md-12">
+									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=4} <!-- УКАЗАТЬ ID БИЛЕТА «Barstreet» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-barstreet" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=10} <!-- УКАЗАТЬ ID БИЛЕТА «Host street» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-host" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=2} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-chef" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=3} <!-- УКАЗАТЬ ID БИЛЕТА «ПРОФИ» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-profi" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><div class="ticket-hit">Хит продаж</div>{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=8} <!-- УКАЗАТЬ ID БИЛЕТА «ReBro» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-rebro" data-ri="{$ticketId}">
+										<h2 class="ticket_header"><img src="/images/rebro_green-logo.png"></h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="{link do=add ticket=rebro}" class="btn btn-cart">Подать заявку</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=5} <!-- УКАЗАТЬ ID БИЛЕТА «Как король» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-king" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+										{if $ticket->leftCount > 0}
+											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

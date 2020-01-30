@@ -1,0 +1,19 @@
+14.12.2019 POST: Array
+(
+    [comment] => 20044_1576296125
+    [phone_number] => 79138690236
+    [order_id] => 20044_P
+    [currency] => RUB
+    [partner_id] => 253456
+    [check] => a995b86cb5a084ebf04e4808ef8e521d
+    [name] => Оплата заказа №20044 - 79138690236
+    [system_income] => 50000.0
+    [partner_income] => 49050.0
+    [tid] => 366358076
+    [service_id] => 82125
+    [type] => spg_rfi4
+    [email] => margarita_gorezina@mail.ru
+)
+ GET: Array
+(
+)

@@ -1,0 +1,49 @@
+{assign var=this value=$SpeakersPrevControl}
+
+<div class="jumbotron-blank">
+    <div class="container">
+        <div class="content">
+            <ul class="breadcrumbs">
+                <li><a href="/">##home##</a></li>
+                <li><span>Презентации</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="gss-speakers-container">
+        <h1 class="page-headline gss-speakers-title">Презентации спикеров</h1>
+    </div>
+
+    <div class="speakers-grid js-speakers-grid">
+        <div class="row grid js-grid">
+            {if $this.spmList}
+            <!-- loop start -->
+            {foreach item=speaker from=$this.spmList}
+            <div class="col-6 col-md-3 grid-entry">
+                <div class="person-teaser" data-timer="on">
+                    <div class="icon-country {$speaker->country}"></div>
+                    {if $speaker->pic1}
+                        <img src="/images/speackers/resized/{$speaker->pic1}?v={$speaker->tsUpdated}" data-ratio="1">
+                    {else}
+                        <img src="/images/gss/speaker.jpg" data-ratio="1">
+                    {/if}
+                    <div class="about">
+                        {if !$this.actor}
+                            <p class="name mb-1">{$speaker->name}<br/>{$speaker->secondName}</p>
+                            <p class="job m-0" style="opacity: 1;">{$speaker->company}</p>
+                            <p class="job m-0 mt-3" style="opacity: 1;"><a href="/userlogin" onclick="alert('Перед загрузкой презентации необходимо авторизоваться');" target="_blank" class="buttonDownload">Скачать презентацию</a></p>
+                        {else}
+                            <p class="name mb-1">{$speaker->name}<br/>{$speaker->secondName}</p>
+                            <p class="job m-0" style="opacity: 1;">{$speaker->company}</p>
+                            <p class="job m-0 mt-3" style="opacity: 1;"><a href="/pdf/presentation/{$speaker->presentation}" target="_blank" class="buttonDownload">Скачать презентацию</a></p>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+            {/foreach}
+            <!-- loop end -->
+            {/if}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+{assign var=this value=$CatalogControl}
+
+
+<div class="container">
+    <div class="page-container" id="page-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="page-container-image" id="page-container-image">
+                    <picture>
+                        <source srcset="/images/areas/resized/03{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}" media="(min-width: 1200px)">
+                        <img src="/images/areas/resized/01{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}">
+                    </picture>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="page-container-inner" id="page-container-inner">
+                {if $this.amObj}
+                    <ul class="breadcrumbs">
+                        <li><a href="/">##home##</a></li>
+                        <li><a href="{link show=programms}">##program##</a></li>
+                        <li><span>{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</span></li>
+                    </ul>
+                    <h1 class="page-headline">{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</h1>
+                    <div class="tickects-video-catalog-page tickects-video-catalog-3 gss-video-watch-catalog-page">
+                        <div><a data-target="#video-modal" data-toggle="modal" data-link="3_YXLYJtCC4" data-title="{if $lang == 'en'}About MAIN STREET{else}О MAIN STREET{/if}" href="#"><span>{if $lang == 'en'}Watch the video<br>about MAIN STREET{else}Посмотрите ролик<br>о MAIN STREET{/if}</span></a></div>
+                    </div>
+                    <div class="textblock">{if $lang == 'en'}{$this.amObj->description_en|dbtexttohtml}{else}{$this.amObj->description|dbtexttohtml}{/if}</div>
+                {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-3 d-none">
+    <div class="row speakers-grid js-speakers-grid speakers_2019">
+        {if $this.spmList}
+        <!-- loop start -->
+        {foreach item=speaker from=$this.spmList}
+        <div class="col-6 col-md-3 grid-entry speaker">
+            <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#" data-speaker-id="{$speaker.id}" data-timer="on">
+                {assign var=isSpeackerImg2 value=$speaker.id|isspeakerpicpic:'_b'}
+                <div class="img-tags">
+                    {$speaker.tags|tagformat}
+                    {if $speaker.partner_id > 0}
+                        <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1">
+                    {/if}
+                </div>
+                <div class="icon-country {$speaker.country}"></div>
+                {if $speaker.pic1}
+                    <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1">
+                {else}
+                    <img src="/images/gss/speaker.jpg" data-ratio="1">
+                {/if}
+                <div class="about">
+                    {if $lang == 'en'}
+                        <p class="name">{$speaker.name_en}<br/>{$speaker.secondName_en}</p>
+                        <p class="job">{$speaker.company_en}{if $speaker.cityName_en}<br/>{$speaker.cityName_en}{/if}</p>
+                    {else}
+                        <p class="name">{$speaker.name}<br/>{$speaker.secondName}</p>
+                        <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
+                    {/if}
+                </div>
+            </a>
+        </div>
+        {/foreach}
+        <!-- loop end -->
+        {/if}
+    </div>
+</div>
+<div class="stick-to-footer container mt-3">
+    <div class="instagram-gallery">
+        <div class="gallery-col">
+            <h2 class="section-headline" style="margin-top: 4rem;margin-bottom: 2.75rem;">Gastreet<br> History</h2>
+            <img src="/images/collages/business1.jpg">
+        </div>
+        <div class="gallery-col">
+            <img src="/images/collages/business2.jpg">
+            <div class="gallery-row">
+                <div class="gallery-col-1of2"><img src="/images/collages/business3.jpg"></div>
+                <div class="gallery-col-1of2"><img src="/images/collages/business4.jpg"></div>
+            </div>
+        </div>
+        <div class="gallery-col">
+            <img src="/images/collages/business5.jpg">
+            <div class="gallery-row">
+                <div class="gallery-col-1of2"><img src="/images/collages/business6.jpg"></div>
+                <div class="gallery-col-1of2"><img src="/images/collages/business7.jpg"></div>
+            </div>
+            <img src="/images/collages/business8.jpg">
+        </div>
+    </div>
+</div>
+<div class="container gss-tag">#gastreetshow</div>
