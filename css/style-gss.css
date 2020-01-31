@@ -3154,7 +3154,8 @@ section.ticket.block_4 {
     font-size: .75rem;
     text-decoration: underline dashed!important;}
 .page_body .ticket .ticket-footer .btn-collapse {
-    font-size: 1.2rem;
+    display: none;
+    font-size: .8rem;
     color: #000;
     text-decoration: underline dashed!important;}
 #sputnikCollapse {
@@ -3164,8 +3165,10 @@ section.ticket.block_4 {
     padding-top: 20px;
     margin-left: -12px;
     margin-right: -12px;
-    margin-bottom: -34px;
+    margin-bottom: -12px;
     padding-bottom: 15px;}
+#sputnikCollapse .all-category p {
+    font-size: .8rem;}
 .page_body .ticket .ticket_cost {
     font-family: 'Gastreet Sans', sans-serif;
     font-weight: 600;
@@ -3305,6 +3308,8 @@ section.ticket.block_4 {
     font-size: 1.1rem;}
 .ticket .collapse {
     display: block;}
+.row-options .ticket .collapse:not(.show) {
+    display: none;}
 .page .page_body .row {
     display: flex;
     justify-content: space-around;}
@@ -5556,7 +5561,7 @@ main {
     align-items: center;
     display: flex;}
 .disabled .opportunities-item,.disabled .opportunities-text {
-    opacity: .3;}
+    opacity: .2;}
 .opportunities .opportunities-item .number, .ticket-january .opportunities-item .number {
     width: 50px;
     text-align: right;
@@ -5692,6 +5697,9 @@ a.credit {
     text-decoration: none;}
 .ticket-january .collapse {
     display: block;}
+.page_body .row-options .ticket {
+    padding-bottom: 1rem;
+    min-height: 210px;}
 
 @media (min-width: 300px) and (max-width: 767px) {
     .all-tickets .all-tick-block {
@@ -5871,4 +5879,7 @@ a.credit {
         display: none;}
     .ticket-footer.opened {
         background-color: rgba(0, 0, 0, 0.1);}
+    .page_body .ticket .ticket-footer .btn-collapse {
+        font-size: 1.2rem;
+        display: block;}
 }
