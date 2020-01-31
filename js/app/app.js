@@ -713,6 +713,11 @@ $(document).ready(function(){
         $('.main-image-block p').html(text_p);
         return false;
     });
+
+    $('.btn-collapse').on('click', function() {
+        $(this).parents('.ticket-body').next('.ticket-footer').toggleClass('opened');
+    });
+
 });
 
 function clearError() {

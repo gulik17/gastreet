@@ -92,7 +92,7 @@
                         <span class="number">8</span>
                         <div>
                             <p>выступлений</p>
-                            <p class="green">REBRO</p>
+                            <p class="c_rebro">REBRO</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                         <span class="number">50</span>
                         <div>
                             <p>выступлений</p>
-                            <p class="blue">MAIN STREET</p>
+                            <p class="c_mainstreet">MAIN STREET</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         <span class="number">20</span>
                         <div>
                             <p>кулинарных<br> мастер-классов</p>
-                            <p class="blue">CHEF STREET</p>
+                            <p class="c_chefstreet">CHEF STREET</p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                         <span class="number">16</span>
                         <div>
                             <p>выступлений</p>
-                            <p class="blue">BARSTREET</p>
+                            <p class="c_barstreet">BARSTREET</p>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                         <span class="number">8</span>
                         <div>
                             <p>семинаров</p>
-                            <p class="fuxi">БИЗНЕС-ШКОЛА</p>
+                            <p class="c_businessschool">БИЗНЕС-ШКОЛА</p>
                         </div>
                     </div>
                 </div>
@@ -152,226 +152,647 @@
                 </div>
             </div>
             <div class="col-md-2 king ticket-january">
+                {assign var=ticketId value=5}
+                {assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «Как король» -->
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>КАК КОРОЛЬ</h5>
                         <p>Могу себе позволить!</p>
                     </div>
                     <div class="ticket-body">
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
+                        <a class="btn-collapse" data-toggle="collapse" href="#kingCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="kingCollapse">
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>выступлений</p><p class="c_white">REBRO</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">50</span>
+                                    <div><p>выступлений</p><p class="c_white">MAIN STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">20</span>
+                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">16</span>
+                                    <div><p>выступлений</p><p class="c_white">BARSTREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>семинаров</p><p class="c_white">БИЗНЕС-ШКОЛА</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">5</span>
+                                    <div><p>ночей<br>звезд</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-text"><p>POP-UP SHOW</p></div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
+                            </div>
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <h3 class="ticket_cost">180 000 ₽</h3>
+                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
                         <p class="ticket_new_cost"><span>Повышение цены</span>
                             <span>с&nbsp;1&nbsp;марта — 190&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 200&nbsp;000&nbsp;₽</span></p>
-                        <a class="buy" type="button" href="#">Купить</a>
-                        <a class="credit" href="#">купить в рассрочку</a>
+                        <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
+                                ##buy##
+                            </a>
+                        </div>
+
+                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
+                        </div>
+                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
+                            <span>
+                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
+                                {$ticket->leftCount}
+                            </span>
+                        </div>
+                        <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-2 rebro ticket-january">
+                {assign var=ticketId value=8}
+                {assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «REBRO» -->
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <img src="images/rebro_green-logo.png" alt="">
                         <p>Для владельцев <br>бизнеса ONLY</p>
                     </div>
                     <div class="ticket-body">
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
+                        <a class="btn-collapse" data-toggle="collapse" href="#rebroCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="rebroCollapse">
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>выступлений</p><p class="c_white">REBRO</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">50</span>
+                                    <div><p>выступлений</p><p class="c_white">MAIN STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">20</span>
+                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">16</span>
+                                    <div><p>выступлений</p><p class="c_white">BARSTREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>семинаров</p><p class="c_white">БИЗНЕС-ШКОЛА</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">5</span>
+                                    <div><p>ночей<br>звезд</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>POP-UP SHOW</p></div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
+                            </div>
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <h3 class="ticket_cost">60 000 ₽</h3>
+                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
                         <p class="ticket_new_cost"><span>Повышение цены</span>
                             <span>с&nbsp;1&nbsp;марта — 65&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 70&nbsp;000&nbsp;₽</span></p>
-                        <a class="buy" type="button" href="#">Купить</a>
-                        <a class="credit" href="#">купить в рассрочку</a>
+
+                        {if $ticket->leftCount > 0}
+                            {if $this.child->wantRebro == 1 || $ticket->wantRebro == 1}
+                            <div class="capacity"><span>Мы приняли вашу заявку!</span></div>
+                            {else}
+                            <div>
+                                <a href="{link do=add ticket=rebro}" class="btn btn-white btn-line buy">
+                                    {if $lang == 'en'}Submit your application{else}Подать заявку{/if}
+                                </a>
+                            </div>
+                            {/if}
+                        {/if}
+
+                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
+                        </div>
+                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
+                            <span>
+                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
+                                {$ticket->leftCount}
+                            </span>
+                        </div>
+                        <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-2 profi ticket-january">
+                {assign var=ticketId value=3}
+                {assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «ПРОФИ» -->
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>ПРОФИ</h5>
-                        <p>Оптимальный<br>вариант, роднуль</p>
+                        <p>Оптимальный<br> вариант, роднуль</p>
                         <div class="window-hit">хит продаж</div>
                     </div>
                     <div class="ticket-body">
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
+                        <a class="btn-collapse" data-toggle="collapse" href="#profiCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="profiCollapse">
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>выступлений</p><p class="c_white">REBRO</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">50</span>
+                                    <div><p>выступлений</p><p class="c_white">MAIN STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">20</span>
+                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">16</span>
+                                    <div><p>выступлений</p><p class="c_white">BARSTREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>семинаров</p><p class="c_white">БИЗНЕС-ШКОЛА</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">5</span>
+                                    <div><p>ночей<br>звезд</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>POP-UP SHOW</p></div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
+                            </div>
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <h3 class="ticket_cost">35 000 ₽</h3>
+                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
                         <p class="ticket_new_cost"><span>Повышение цены</span>
                             <span>с&nbsp;1&nbsp;марта — 40&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 45&nbsp;000&nbsp;₽</span></p>
-                        <a class="buy" type="button" href="#">Купить</a>
-                        <a class="credit" href="#">купить в рассрочку</a>
+                        <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
+                                ##buy##
+                            </a>
+                        </div>
+
+                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
+                        </div>
+                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
+                            <span>
+                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
+                                {$ticket->leftCount}
+                            </span>
+                        </div>
+                        <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-2 chef ticket-january">
+                {assign var=ticketId value=2}
+                {assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>ШЕФСКИЙ</h5>
-                        <p>Для будущих<br>и настоящих шефов</p>
+                        <p>Для будущих <br>и настоящих шефов</p>
                     </div>
                     <div class="ticket-body">
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
+                        <a class="btn-collapse" data-toggle="collapse" href="#chefCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="chefCollapse">
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>выступлений</p><p class="c_white">REBRO</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">50</span>
+                                    <div><p>выступлений</p><p class="c_white">MAIN STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">20</span>
+                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">16</span>
+                                    <div><p>выступлений</p><p class="c_white">BARSTREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>семинаров</p><p class="c_white">БИЗНЕС-ШКОЛА</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">5</span>
+                                    <div><p>ночей<br>звезд</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>POP-UP SHOW</p></div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
+                            </div>
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <h3 class="ticket_cost">30 000 ₽</h3>
+                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
                         <p class="ticket_new_cost"><span>Повышение цены</span>
                             <span>с&nbsp;1&nbsp;марта — 35&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 40&nbsp;000&nbsp;₽</span></p>
-                        <a class="buy" type="button" href="#">Купить</a>
-                        <a class="credit" href="#">купить в рассрочку</a>
+                        <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
+                                ##buy##
+                            </a>
+                        </div>
+
+                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
+                        </div>
+                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
+                            <span>
+                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
+                                {$ticket->leftCount}
+                            </span>
+                        </div>
+                        <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-2 barstreet ticket-january">
+                {assign var=ticketId value=4}
+                {assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «BARSTREET» -->
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>BARSTREET</h5>
-                        <p>Для тех, кто<br>с баром и за баром</p>
+                        <p>Для тех, кто <br>с баром и за баром</p>
                     </div>
                     <div class="ticket-body">
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>+</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
-                        </div>
-                        <div class="ticket-row">
-                            <p>&nbsp;</p>
+                        <a class="btn-collapse" data-toggle="collapse" href="#barstreetCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="barstreetCollapse">
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>выступлений</p><p class="c_white">REBRO</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">50</span>
+                                    <div><p>выступлений</p><p class="c_white">MAIN STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">20</span>
+                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>+</p>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="opportunities-item">
+                                    <span class="number">16</span>
+                                    <div><p>выступлений</p><p class="c_white">BARSTREET</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">8</span>
+                                    <div><p>семинаров</p><p class="c_white">БИЗНЕС-ШКОЛА</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-item">
+                                    <span class="number">5</span>
+                                    <div><p>ночей<br>звезд</p></div>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>POP-UP SHOW</p></div>
+                            </div>
+                            <div class="ticket-row">
+                                <p>&nbsp;</p>
+                            </div>
+                            <div class="ticket-row disabled">
+                                <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
+                            </div>
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <h3 class="ticket_cost">20 000 ₽</h3>
+                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
                         <p class="ticket_new_cost"><span>Повышение цены</span>
                             <span>с&nbsp;1&nbsp;марта — 25&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 30&nbsp;000&nbsp;₽</span></p>
-                        <a class="buy" type="button" href="#">Купить</a>
-                        <a class="credit" href="#">купить в рассрочку</a>
+                        <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
+                                ##buy##
+                            </a>
+                        </div>
+
+                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
+                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
+                        </div>
+
+                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
+                            <span>
+                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
+                                {$ticket->leftCount}
+                            </span>
+                        </div>
+                        <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
     {/if}
-
-
-
     <div class="container all-tickets">
         <div class="row">
             <div class="col-md-2 all-tick">
@@ -386,12 +807,12 @@
                         <P>#BARSTREET</P>
                         <P>#ITТЕХНОЛОГИИ</P>
                     </div>
-                    <DIV class="col-6 col-md-3">
+                    <div class="col-6 col-md-3">
                         <h6 class="heading heading-none">&nbsp;</h6>
                         <p>#FRANCHISESTREET</p>
                         <p>#ШКОЛАСОМЕЛЬЕ</p>
                         <P>#ЗОЖ</P>
-                    </DIV>
+                    </div>
                     <div class="col-6 col-md-3">
                         <h6 class="heading">ОБЩЕНИЕ</h6>
                         <p>#FOODMARKET</p>
@@ -420,14 +841,37 @@
                 <div class="ticket" data-ri="t1">
                     <h2 class="ticket_header">
                         <span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span>
-                    <p style="color: #e51a4b;text-decoration: underline;">Только<br>
+                    <p style="color: #e51a4b;text-decoration: underline;">Билет только<br>
                         для дополнительных<br>
                         участников</p>
                     </h2>
                     <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
                     <p>&nbsp;</p>
                     <div class="ticket-footer">
-                        <a href="#" class="ticket_desc">Что входит в билет?</a>
+                        <a class="btn-collapse" data-toggle="collapse" href="#sputnikCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="sputnikCollapse">
+                            <div class="row all-category">
+                                <div class="col-6 col-md-3">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARSTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
