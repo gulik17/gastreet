@@ -1808,6 +1808,7 @@ div.form-control .btn {
 .page-headline {
     font-size: 2rem;
     margin-top: 0;
+    margin-bottom: 1rem;
     color: #10093B;
     width: auto;}
 .page-headline-sub {
@@ -2043,7 +2044,7 @@ h1.title {
 p.subtitle {
     color: #000;
     font-size: 14px;
-    margin: 2rem 0 1rem 0;}
+    margin: 0 0 1rem 0;}
 .row-options p.subtitle {
     font-weight: 600;
     text-decoration: underline;}
@@ -3294,6 +3295,14 @@ section.ticket.block_4 {
     text-decoration: none;
     border-bottom: 1px dashed;
     color: #fff;}
+.opportunities .tinkoff-credit a {
+    font-size: 12px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px dashed;
+    color: #f00;
+    padding: 10px 8px;
+    margin-top: 3.7rem;}
 .ticket-january .tinkoff-credit a {
     font-size: 14px;
     margin-top: 15px;}
@@ -5508,13 +5517,12 @@ main {
 .opportunities .fuxi {
     color: #315456;}
 .opportunities {
-    justify-content: flex-end;
-    margin-top: 91px;}
+    justify-content: flex-end;}
 .opportunities .opportunities-header {
     vertical-align: bottom;}
 .opportunities .section_transfer {
     font-weight: bold;
-    text-decoration: underline #a1a1a1;}
+    text-decoration: none;}
 .ticket-row {
     margin: 0 15px;
     text-align: center;
@@ -5522,28 +5530,31 @@ main {
     border-bottom: 1px solid rgba(40, 44, 87, 0.25);}
 .ticket-row p {
     font-size: 1.875rem;
-    margin: 15px 0;}
+    margin: 3px 0;}
 .ticket-row p[class^='c_'] {
     font-weight: 600;}
 .ticket-january .ticket-row:nth-child(even) {
     display: none;}
+.opportunities .section_transfer {
+    font-weight: 400;
+    margin: 22px 0;}
 .ticket-january .ticket-header {
     margin: 0;
     font-size: 14px;
     padding: 15px 0;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
-    height: 110px;
+    height: 64px;
     position: relative;}
 .ticket-january .ticket-header h5 {
     font-family: 'Gastreet Font', sans-serif;
-    font-size: 21px;
+    font-size: 20px;
     margin-bottom: 5px;}
 .ticket-january .ticket-header p {
     margin-bottom: 0;
     font-size: 12px;}
 .ticket-january .ticket-header {
-    padding: 25px 0;}
+    padding: 20px 0;}
 .ticket-january .btn-collapse {
     display: none;
     text-align: center;
@@ -5556,7 +5567,7 @@ main {
     font-size: 12px;}
 .opportunities .opportunities-item, .ticket-january .opportunities-item {
     justify-content: center;
-    height: 60px;
+    height: 36px;
     font-weight: 600;
     align-items: center;
     display: flex;}
@@ -5570,7 +5581,7 @@ main {
 .opportunities .opportunities-item .number + div, .ticket-january .opportunities-item .number + div {
     width: 110px;}
 .opportunities .opportunities-text, .ticket-january .opportunities-text {
-    height: 60px;
+    height: 36px;
     font-weight: 600;
     align-items: center;
     display: flex;}
@@ -5583,8 +5594,8 @@ main {
     color: #fff;}
 .ticket-january .ticket_cost {
     font-family: 'Gastreet Sans', sans-serif;
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 400;
+    font-size: 22px;
     text-align: center;
     margin: 0 0 5px 0;
     padding-bottom: 5px;}
@@ -5601,6 +5612,8 @@ main {
 .barstreet .ticket-item {
     background-color: #e51a4b;}
 .ticket-body .ticket-row:nth-last-child(-n+2) {
+    border: 0;}
+.ticket-body .ticket-row:nth-last-child(-n+3) {
     border: 0;}
 .ticket-footer {
     text-align: center;
@@ -5625,8 +5638,7 @@ main {
 .ticket-footer .ticket_new_cost span {
     display: block;
     font-weight: 600;
-    font-size: 12px;
-    padding-bottom: 4px;}
+    font-size: 12px;}
 .ticket-footer a.buy {
     background-color: #fff;
     font-weight: 600;
@@ -5646,8 +5658,7 @@ main {
 .rebro .ticket-header img {
     width: auto;
     height: 30px;
-    margin-bottom: 7px;
-    margin-top: -11px;}
+    margin-top: -4px;}
 a.credit {
     color: #fff;
     border-bottom: 1px dashed;

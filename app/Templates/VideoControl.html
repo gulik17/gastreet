@@ -2,10 +2,10 @@
 
 {if $this.vmList}
 <div class="container">
+
     <div class="row align-items-center">
         <div class="col-md-7">
-            <h2 class="section-headline m-0">After movie</h2>
-            <p>Окунись в атмосферу GASTREET</p>
+            <h2 class="section-headline m-0">GASTREET отвечает</h2>
         </div>
         <div class="col-md-5">
             <div class="g-emoji-content">
@@ -16,6 +16,29 @@
                     Смотри видосики со всех GASTREET'ов
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        {foreach item=video from=$this.vmList}
+        {if $video->v_group == 3}
+        <div class="col-md-4 mb-4">
+            <a class="video-teaser js-video-item" data-target="#video-modal" data-toggle="modal" data-link="{$video->url}" data-title="{if $lang == 'en'}{$video->name_en}{else}{$video->name}{/if}" href="https://youtu.be/{$video->url}">
+                <img src="https://i.ytimg.com/vi/{$video->url}/hqdefault.jpg">
+                <p class="title">{if $lang == 'en'}{$video->name_en}{else}{$video->name}{/if}</p>
+            </a>
+        </div>
+        {/if}
+        {/foreach}
+        <div class="controls">
+            <div class="dots js-dots-videos">&nbsp;</div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <h2 class="section-headline m-0">After movie</h2>
+            <p>Окунись в атмосферу GASTREET</p>
         </div>
     </div>
     <div class="row">

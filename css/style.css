@@ -4782,11 +4782,10 @@ footer.site-footer p.app_desc {
     border: 3px solid #e51a4b;}
 .indicator-toggle.gaz:after {
     border: 3px solid #008dd2;}
-
 .indicator-toggle.ne_sema {
     background-color: transparent;
-    text-shadow: 0px 0px 5px rgba(243, 146, 0, 1);
-    color: #f39200!important;}
+    text-shadow: 0 0 5px rgb(92, 202, 255);
+    color: rgb(92, 202, 255)!important;}
 .indicator-toggle.ne_sema:after {
     display: none;}
 @-webkit-keyframes pulsate {

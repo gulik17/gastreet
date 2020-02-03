@@ -24,9 +24,9 @@ class AddAction extends AuthorizedUserAction implements IPublicAction {
 
         if ($ticket === 'rebro') {
             if ($extuser) {
-                $res = UserManager::sendNotifyRebro('kategamaiun@gmail.com', $extuser);
+                $res = UserManager::sendNotifyRebro('request@gastreet.com', $extuser);
             } else {
-                $res = UserManager::sendNotifyRebro('kategamaiun@gmail.com', $this->actor->id);
+                $res = UserManager::sendNotifyRebro('request@gastreet.com', $this->actor->id);
             }
 
             if ($res == 'allReadyHave') {

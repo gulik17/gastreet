@@ -187,11 +187,17 @@ body {
     color: #fff;
     text-decoration: none;}
 .folk-page .pdf span {
-    font-weight: bold;
-    text-decoration: underline;
-    padding: 5px;
+    padding: 0 5px;
+    text-align: left;
     display: inline-block;
     vertical-align: middle;}
+.folk-page .pdf > span > a {
+    font-size: 12px;
+    margin-bottom: 3px;
+    display: inline-block;}
+.folk-page .pdf a > span, .folk-page .pdf a {
+    font-weight: 600;
+    text-decoration: underline;}
 .folk-page .pdf i {
     display: inline-block;
     vertical-align: middle;

@@ -33,7 +33,7 @@
                             <p class="subtitle">Всё как ты любишь! Там, где ты любишь.</p>
                         {else}
                             <p class="subtitle">Всё как ты любишь! Там, где ты любишь.<br>
-                                С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года. Остался один шаг. Погнали!</p>
+                                С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года. Остался один шаг</p>
                         {/if}
                     </div>
                     <div class="col-md-7">
@@ -75,7 +75,7 @@
         <div class="row row-nowrap">
             <div class="col-md-2 opportunities">
                 <div class="opportunities-header">
-                    <h6 class="section_transfer">Возможности</h6>
+                    <h6 class="section_transfer">Состав билета</h6>
                 </div>
                 <div class="ticket-row">
                     <div class="opportunities-item">
@@ -99,7 +99,7 @@
                     <div class="opportunities-item">
                         <span class="number">20</span>
                         <div>
-                            <p>кулинарных<br> мастер-классов</p>
+                            <p>мастер-классов</p>
                             <p class="c_chefstreet">CHEF STREET</p>
                         </div>
                     </div>
@@ -123,11 +123,8 @@
                     </div>
                 </div>
                 <div class="ticket-row">
-                    <div class="opportunities-item">
-                        <span class="number">5</span>
-                        <div>
-                            <p>ночей<br>звезд</p>
-                        </div>
+                    <div class="opportunities-text">
+                        <p>Проживание</p>
                     </div>
                 </div>
                 <div class="ticket-row">
@@ -140,6 +137,9 @@
                         <p>Закрытые вечеринки</p>
                     </div>
                 </div>
+                <div class="tinkoff-credit">
+                    <a href="#" data-toggle="modal" data-target="#tinkoffModal">Любой билет доступен в&nbsp;рассрочку</a>
+                </div>
             </div>
             <div class="col-md-2 king ticket-january">
                 {assign var=ticketId value=5}
@@ -147,7 +147,6 @@
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>КАК КОРОЛЬ</h5>
-                        <p>Могу себе позволить!</p>
                     </div>
                     <div class="ticket-body">
                         <a class="btn-collapse" data-toggle="collapse" href="#kingCollapse">
@@ -155,7 +154,7 @@
                         </a>
                         <div class="collapse multi-collapse" id="kingCollapse">
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -164,7 +163,7 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -173,16 +172,16 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
                                     <span class="number">20</span>
-                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                    <div><p>мастер-классов</p><p class="c_white">CHEF STREET</p></div>
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -191,7 +190,7 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -200,22 +199,21 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
-                                <div class="opportunities-item">
-                                    <span class="number">5</span>
-                                    <div><p>ночей<br>звезд</p></div>
+                                <div class="opportunities-text">
+                                    <p>Проживание</p>
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-text"><p>POP-UP SHOW</p></div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
@@ -243,23 +241,13 @@
                     </div>
                     <div class="ticket-footer">
                         <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-                        <p class="ticket_new_cost"><span>Повышение цены</span>
+                        <p class="ticket_new_cost">
                             <span>с&nbsp;1&nbsp;марта — 190&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 200&nbsp;000&nbsp;₽</span></p>
                         <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
                             <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
                                 ##buy##
                             </a>
-                        </div>
-
-                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
-                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
-                        </div>
-                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
-                            <span>
-                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
-                                {$ticket->leftCount}
-                            </span>
                         </div>
                         <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
                             <span></span>
@@ -273,7 +261,6 @@
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <img src="images/rebro_green-logo.png" alt="">
-                        <p>Для владельцев <br>бизнеса ONLY</p>
                     </div>
                     <div class="ticket-body">
                         <a class="btn-collapse" data-toggle="collapse" href="#rebroCollapse">
@@ -281,7 +268,7 @@
                         </a>
                         <div class="collapse multi-collapse" id="rebroCollapse">
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -290,7 +277,7 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -299,16 +286,16 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
                                     <span class="number">20</span>
-                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                    <div><p>мастер-классов</p><p class="c_white">CHEF STREET</p></div>
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -329,9 +316,8 @@
                                 <p>&nbsp;</p>
                             </div>
                             <div class="ticket-row disabled">
-                                <div class="opportunities-item">
-                                    <span class="number">5</span>
-                                    <div><p>ночей<br>звезд</p></div>
+                                <div class="opportunities-text">
+                                    <p>Проживание</p>
                                 </div>
                             </div>
                             <div class="ticket-row">
@@ -341,7 +327,7 @@
                                 <div class="opportunities-text"><p>POP-UP SHOW</p></div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-text"><p>Закрытые вечеринки</p></div>
@@ -369,7 +355,7 @@
                     </div>
                     <div class="ticket-footer">
                         <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-                        <p class="ticket_new_cost"><span>Повышение цены</span>
+                        <p class="ticket_new_cost">
                             <span>с&nbsp;1&nbsp;марта — 65&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 70&nbsp;000&nbsp;₽</span></p>
 
@@ -384,16 +370,6 @@
                             </div>
                             {/if}
                         {/if}
-
-                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
-                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
-                        </div>
-                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
-                            <span>
-                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
-                                {$ticket->leftCount}
-                            </span>
-                        </div>
                         <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
                             <span></span>
                         </div>
@@ -406,7 +382,6 @@
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>ПРОФИ</h5>
-                        <p>Оптимальный<br> вариант, роднуль</p>
                         <div class="window-hit">хит продаж</div>
                     </div>
                     <div class="ticket-body">
@@ -424,7 +399,7 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -433,16 +408,16 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
                                     <span class="number">20</span>
-                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                    <div><p>мастер-классов</p><p class="c_white">CHEF STREET</p></div>
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -463,9 +438,8 @@
                                 <p>&nbsp;</p>
                             </div>
                             <div class="ticket-row disabled">
-                                <div class="opportunities-item">
-                                    <span class="number">5</span>
-                                    <div><p>ночей<br>звезд</p></div>
+                                <div class="opportunities-text">
+                                    <p>Проживание</p>
                                 </div>
                             </div>
                             <div class="ticket-row">
@@ -503,23 +477,13 @@
                     </div>
                     <div class="ticket-footer">
                         <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-                        <p class="ticket_new_cost"><span>Повышение цены</span>
+                        <p class="ticket_new_cost">
                             <span>с&nbsp;1&nbsp;марта — 40&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 45&nbsp;000&nbsp;₽</span></p>
                         <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
                             <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
                                 ##buy##
                             </a>
-                        </div>
-
-                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
-                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
-                        </div>
-                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
-                            <span>
-                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
-                                {$ticket->leftCount}
-                            </span>
                         </div>
                         <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
                             <span></span>
@@ -533,7 +497,6 @@
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>ШЕФСКИЙ</h5>
-                        <p>Для будущих <br>и настоящих шефов</p>
                     </div>
                     <div class="ticket-body">
                         <a class="btn-collapse" data-toggle="collapse" href="#chefCollapse">
@@ -559,12 +522,12 @@
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
                                     <span class="number">20</span>
-                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                    <div><p>мастер-классов</p><p class="c_white">CHEF STREET</p></div>
                                 </div>
                             </div>
                             <div class="ticket-row">
@@ -589,9 +552,8 @@
                                 <p>&nbsp;</p>
                             </div>
                             <div class="ticket-row disabled">
-                                <div class="opportunities-item">
-                                    <span class="number">5</span>
-                                    <div><p>ночей<br>звезд</p></div>
+                                <div class="opportunities-text">
+                                    <p>Проживание</p>
                                 </div>
                             </div>
                             <div class="ticket-row">
@@ -629,23 +591,13 @@
                     </div>
                     <div class="ticket-footer">
                         <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-                        <p class="ticket_new_cost"><span>Повышение цены</span>
+                        <p class="ticket_new_cost">
                             <span>с&nbsp;1&nbsp;марта — 35&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 40&nbsp;000&nbsp;₽</span></p>
                         <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
                             <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
                                 ##buy##
                             </a>
-                        </div>
-
-                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
-                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
-                        </div>
-                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
-                            <span>
-                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
-                                {$ticket->leftCount}
-                            </span>
                         </div>
                         <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
                             <span></span>
@@ -659,7 +611,6 @@
                 <div class="ticket-item">
                     <div class="ticket-header">
                         <h5>BARSTREET</h5>
-                        <p>Для тех, кто <br>с баром и за баром</p>
                     </div>
                     <div class="ticket-body">
                         <a class="btn-collapse" data-toggle="collapse" href="#barstreetCollapse">
@@ -690,11 +641,11 @@
                             <div class="ticket-row disabled">
                                 <div class="opportunities-item">
                                     <span class="number">20</span>
-                                    <div><p>кулинарных<br> мастер-классов</p><p class="c_white">CHEF STREET</p></div>
+                                    <div><p>мастер-классов</p><p class="c_white">CHEF STREET</p></div>
                                 </div>
                             </div>
                             <div class="ticket-row">
-                                <p>+</p>
+                                <p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
                             </div>
                             <div class="ticket-row">
                                 <div class="opportunities-item">
@@ -715,9 +666,8 @@
                                 <p>&nbsp;</p>
                             </div>
                             <div class="ticket-row disabled">
-                                <div class="opportunities-item">
-                                    <span class="number">5</span>
-                                    <div><p>ночей<br>звезд</p></div>
+                                <div class="opportunities-text">
+                                    <p>Проживание</p>
                                 </div>
                             </div>
                             <div class="ticket-row">
@@ -755,24 +705,13 @@
                     </div>
                     <div class="ticket-footer">
                         <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-                        <p class="ticket_new_cost"><span>Повышение цены</span>
+                        <p class="ticket_new_cost">
                             <span>с&nbsp;1&nbsp;марта — 25&nbsp;000&nbsp;₽<br>
 									с&nbsp;1&nbsp;мая — 30&nbsp;000&nbsp;₽</span></p>
                         <div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
                             <a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
                                 ##buy##
                             </a>
-                        </div>
-
-                        <div class="tinkoff-credit {if $ticket->leftCount <= 0}btn-opacity{/if}">
-                            <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
-                        </div>
-
-                        <div class="capacity{if $ticket->leftCount <= 0} btn-opacity{/if}">
-                            <span>
-                                {if $lang == 'en'}Available tickets:{else}Доступно билетов:{/if}
-                                {$ticket->leftCount}
-                            </span>
                         </div>
                         <div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
                             <span></span>
@@ -1524,6 +1463,25 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="tinkoffModal" tabindex="-1" role="dialog" aria-labelledby="tinkoffModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body tinkoff-body">
+                <img src="/images/tinkoff-logo.png" alt="Тинькофф" class="img-fluid">
+                <div class="h5 mb-3">Билеты в рассрочку</div>
+                <p>Теперь билеты на GASTREET можно купить в&nbsp;рассрочку на 4&nbsp;месяца. Просто в&nbsp;корзине выбери способ оплаты купить в&nbsp;рассрочку, заполни заявку на странице «Тинькофф банка», дождись ее одобрения и&nbsp;билет твой!</p>
+                <p>Дополнительной наценки и&nbsp;процентов нет. Ты платишь только за билет равными платежами, а&nbsp;услуги банка мы берем на себя.</p>
+            </div>
         </div>
     </div>
 </div>
