@@ -1244,7 +1244,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             // Массив допустимых значений типа файла
             $types = array('image/png', 'image/jpeg', 'application/pdf');
             // Максимальный размер файла
-            $size = 2048000;
+            $size = 8048000;
             // Обработка запроса
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $fileinfo = pathinfo($_FILES['picture']['name']);

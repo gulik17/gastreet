@@ -608,6 +608,7 @@ $(function () {
     });
     $('.btn-next2').click(function () {
         let form = $(this).parents('form');
+        let user_type = form.find('[name=user_type]').val();
         let first_name = form.find('[name=first_name]').val();
         let last_name = form.find('[name=last_name]').val();
         let phone = form.find('[name=phone]').val();
@@ -616,13 +617,14 @@ $(function () {
         let position = form.find('[name=position]').val();
         let about = form.find('[name=about]').val();
 
-        if (!first_name || !last_name || !phone || !email || !company || !position || !about) {
+        if (!first_name || !last_name || !phone || !email || !company || !position || !about || !user_type) {
             alert("Все поля обязательны для заполнения");
-            return falseж
+            return false;
         }
 
         let text = "Имя: "+first_name+"<br>"+
                     "Фамилия: "+last_name+"<br>"+
+                    "Тематика: "+user_type+"<br>"+
                     "Телефон: "+phone+"<br>"+
                     "Ящик: "+email+"<br>"+
                     "Компания: "+company+"<br>"+
@@ -751,7 +753,7 @@ function ajaxUpload() {
                 $('.photo-file span').html( 'Файлы должны быть формата JPG, PNG, PDF' ).addClass('error');
                 clearError();
             } else if (answer.result === "error_too_big") {
-                $('.photo-file span').html( 'Файлы должны быть не более 2Мб' ).addClass('error');
+                $('.photo-file span').html( 'Файл должен быть не более 8Мб' ).addClass('error');
                 clearError();
             } else if (answer.result === "error_unknown") {
                 alert("Неизвестная ошибка");
