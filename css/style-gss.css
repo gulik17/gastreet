@@ -5665,19 +5665,22 @@ a.credit {
     font-size: 0.750rem;
     font-weight: 400;}
 .window-hit {
-    padding: 5px 15px;
     display: inline-block;
-    border-radius: 50px;
-    background-color: #e51a4b;
-    position: absolute;
     white-space: nowrap;
-    left: 50%;
-    bottom: -15px;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);}
-
+    position: absolute;
+    font-size: 12px;
+    right: 10px;
+    top: -1px;
+    text-align: center;
+    text-transform: initial;
+    font-family: 'Gastreet Sans', sans-serif;
+    font-weight: 600;
+    background-color: #e51a4b;
+    padding: 1px 5px;
+    border: 1px solid #fff;
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,.23);}
 .all-tickets {
     margin-top: 35px;
     margin-bottom: 35px;}
