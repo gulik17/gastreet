@@ -402,7 +402,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
 
         // Получение данных о дополнительном участнике
         if ($job == "edit_user") {
-           // die();
+            //die();
             $id          = FilterInput::add(new StringFilter("id",       true, "ID"));
             $email       = FilterInput::add(new StringFilter("email",    true, "E-Mail"));
             $lastname    = FilterInput::add(new StringFilter("lastname", true, "Фамилия"));
@@ -574,29 +574,16 @@ class AjaxControl extends BaseControl implements IAjaxControl {
         if ($job == "usergetcode") {
             $phone = Phone::phoneVerification(Request::getVar("phone"));
 
-            if (!$phone["isError"]) {
-                $token = "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1";
-                $secret = "a38db9106d09f2cfef9644087f883bbbcd2d805c";
-                $dadata = new Dadata($token, $secret);
-                $dadata->init();
-                // Стандартизовать одно значение
-                $result = $dadata->clean("PHONE", $phone["number"]);
-                $dadata->close();
-                if ( ($result[0]['qc'] === 1) || ($result[0]['qc'] === 3) || ($result[0]['qc'] === 2) ) { //Телефон распознан с допущениями или не распознан
-                    echo json_encode('90');
-                    exit;
-                }
+            if ( (!$phone["isError"]) && (!Phone::phoneDadataVerification($phone["number"])) ) {
+                echo json_encode('90');
+                exit;
             }
 
             $isNew = false;
             $youAboutUs = 'empty';
             $button = Request::getVar("button");
 
-            if ($button == 'reg_get_phone') {
-                $code = null;
-            } else {
-                $code = (int) Request::getVar("code");
-            }
+            $code = ($button == 'reg_get_phone') ? null : (int) Request::getVar("code");
 
             if ($button == 'reg_get_phone' && $phone["isError"]) { // попытка получения кода; номер неверный
                 echo json_encode($phone["code"]);
@@ -1342,6 +1329,40 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 echo json_encode($array);
                 exit;
             }
+        }
+
+        if ($job == 'get_pass_for_folk_speaker') {
+            $smsCode = rand(1000, 9999); // смс код, сформировать
+            $phone = Phone::phoneVerification(Request::getVar("phone"));
+
+            if ( ($phone["isError"]) || (!Phone::phoneDadataVerification($phone["number"])) ) {
+                echo json_encode('phone_invalid');
+                exit;
+            }
+
+            //if (UserManager::sendConfirmCodeSms($phone["number"], $smsCode)) {
+                echo json_encode("send_ok");
+                exit;
+            //}
+        }
+
+        if ($job == 'input_code_for_folk_speaker') {
+
+
+
+
+            $smsCode = rand(1000, 9999); // смс код, сформировать
+            $phone = Phone::phoneVerification(Request::getVar("phone"));
+
+            if ( ($phone["isError"]) || (!Phone::phoneDadataVerification($phone["number"])) ) {
+                echo json_encode('phone_invalid');
+                exit;
+            }
+
+            //if (UserManager::sendConfirmCodeSms($phone["number"], $smsCode)) {
+            echo json_encode("send_ok");
+            exit;
+            //}
         }
 
         if ($job == "sendAnyFolkMsg") {

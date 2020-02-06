@@ -92,7 +92,7 @@ body {
     height: 4.938rem;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: url(/images/folkspeaker/arrow3.svg);
+    background-image: url('/images/folkspeaker/arrow3.svg');
     background-size: cover;
     left: .5rem;
     bottom: -5.500rem;}
@@ -105,7 +105,7 @@ body {
 .folk-page .button {
     text-align: center;
     margin-bottom: 3rem;}
-.folk-page .btn, .modal .btn {
+.folk-page .btn-accept, .modal .btn-next {
     font-size: 1.2rem;
     border-radius: 30px;
     background-color: #e71873;
@@ -138,7 +138,7 @@ body {
     padding-left: 2px;}
 .speak a {
     color: #fff;}
-.folk-page .vote {
+.btn-vote {
     text-decoration: none;
     color: #fff;
     display: inline-block;
@@ -160,7 +160,7 @@ body {
     border: 1px solid #fff;
     text-decoration: none;
     border-radius: 50px;}
-.folk-page .share:hover, .folk-page .vote:hover {
+.folk-page .share:hover, .folk-page .btn-vote:hover {
     color: #fff;
     text-decoration: none;}
 .folk-page .fa-heart {
@@ -218,7 +218,7 @@ body {
     font-weight: bold;
     font-size: 16px;
     color: #141d5b;}
-.modal .next1, .modal .next2 {
+.modal .btn-next {
     text-align: center;}
 .warning {
     padding-bottom: 1rem;}
@@ -288,6 +288,21 @@ input.input {
     margin-left: 35px;
     color: #414467;
     text-decoration: underline;}
+#voting .modal-title {
+    font-size: 14px;}
+#voting .form-control {
+    padding: .3rem 1rem;}
+#voting label {
+    color: #333;
+    text-transform: initial;}
+#voting input + span {
+    font-size: 10px;
+    padding-left: 15px;
+    color: #aaa;}
+#voting .alert {
+    min-width: auto;}
+#voting .form-result, #voting .form-code {
+    display: none;}
 .form-group .photo-file {
     margin: 0;
     width: 100%;}

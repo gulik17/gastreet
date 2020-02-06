@@ -130,7 +130,7 @@
 									{assign var=ticketId value=13} <!-- УКАЗАТЬ ID БИЛЕТА «ReBro» -->
 									{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-rebro" data-ri="{$ticketId}">
-										<h2 class="ticket_header"><img src="/images/rebro_green-logo.png"></h2>
+										<h2 class="ticket_header"><img src="/images/rebro-skolkovo-logo.png"></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
 										{if $ticket->leftCount > 0}
 											<a href="{link do=add ticket=rebro}" class="btn btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
@@ -231,7 +231,7 @@
 									{assign var=ticketId value=8} <!-- УКАЗАТЬ ID БИЛЕТА «ReBro» -->
 									{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-rebro" data-ri="{$ticketId}">
-										<h2 class="ticket_header"><img src="/images/rebro_green-logo.png"></h2>
+										<h2 class="ticket_header"><img src="/images/rebro-skolkovo-logo.png"></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
 										{if $ticket->leftCount > 0}
 											<a href="{link do=add ticket=rebro}" class="btn btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>

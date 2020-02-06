@@ -461,6 +461,18 @@ class UserManager extends BaseEntityManager {
         return $isSent;
     }
 
+    public static function sendConfirmCodeSms($phone, $code) {
+        $isSent = false;
+        $btm = new BroadcastTemplateManager();
+        $template = $btm->getBySendAndTriggerType(BroadcastTemplate::SEND_TYPE_SMS, BroadcastTemplate::TRIGGER_TYPE_CONFIRM_PHONE);
+        if ($template) {
+            $vars = ["USER_CODE" => $code];
+            $message = Enviropment::prepareForMail(MailTextHelper::parseContent(str_replace("&quot;", '"', htmlspecialchars_decode($template->message, ENT_NOQUOTES)), $vars));
+            $isSent = self::sendOneSms($phone, null, $message, $template);
+        }
+        return $isSent;
+    }
+
     public static function notifyRegisterParticipantSms($phone, $userId) {
         $isSent = false;
 

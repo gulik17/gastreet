@@ -13,6 +13,7 @@ class BroadcastTemplate extends Entity {
     const SEND_TYPE_SMS = 'SEND_TYPE_SMS';
     const SEND_TYPE_EMAIL = 'SEND_TYPE_EMAIL';
     const TRIGGER_TYPE_REGISTER_PHONE = 'TRIGGER_TYPE_REGISTER_PHONE';
+    const TRIGGER_TYPE_CONFIRM_PHONE = 'TRIGGER_TYPE_CONFIRM_PHONE';
     const TRIGGER_TYPE_REGISTER_PARTICIPANT = 'TRIGGER_TYPE_REGISTER_PARTICIPANT';
     const TRIGGER_TYPE_EMAIL_CONFIRM_REQUEST = 'TRIGGER_TYPE_EMAIL_CONFIRM_REQUEST';
     const TRIGGER_TYPE_EMAIL_CONFIRM_SUCCESS = 'TRIGGER_TYPE_EMAIL_CONFIRM_SUCCESS';
@@ -61,7 +62,8 @@ class BroadcastTemplate extends Entity {
     public static function getTriggerTypeDesc($name = null) {
         $list = array(
             self::TRIGGER_TYPE_REGISTER_PHONE => "На телефон отправлен код регистрации",
-            self::TRIGGER_TYPE_REGISTER_PARTICIPANT => "Вас зарегистрировали на Gastreet",
+            self::TRIGGER_TYPE_CONFIRM_PHONE => "На телефон отправлен код подтверждения телефона",
+            self::TRIGGER_TYPE_REGISTER_PARTICIPANT => "Вас зарегистрировали на GASTREET",
             self::TRIGGER_TYPE_EMAIL_CONFIRM_REQUEST => "Отправлен код подтверждения e-mail",
             self::TRIGGER_TYPE_EMAIL_CONFIRM_SUCCESS => "E-mail подтвержден",
             self::TRIGGER_TYPE_NOTIFY_PRODUCT_CANCEL => "Уведомление об отмене события",

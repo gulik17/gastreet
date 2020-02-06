@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <div class="col-12 button">
-            <a href="#" class="btn btn-lg" data-toggle="modal" data-target="#registerModal">Принять участие</a>
+            <a href="#" class="btn btn-lg btn-accept" data-toggle="modal" data-target="#registerModal">Принять участие</a>
         </div>
     </div>
     <div class="row select d-none">
@@ -55,7 +55,9 @@
         </div>
     </div>
 </div>
-<div class="container photo-speak folk-page tabs-container d-none">
+
+{if $dev == 1}
+<div class="container photo-speak folk-page tabs-container">
     <div class="row py-3 speak-row">
         <div class="col-6 col-md-3 speak tab-item item-speaker">
             <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
@@ -67,7 +69,26 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
+            <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-speaker="1">Голосовать<i class="fa fa-heart"></i> 88K</a>
+            <a href="#" class="share" data-toggle="modal" data-target="#v_share">Поделиться</a>
+        </div>
+        <div class="col-6 col-md-3 speak tab-item item-speaker">
+            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
+                <div class="img-block">
+                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
+                    <div class="about">
+                        <h3 class="name">
+                            АЛЕКСАНДР<br>
+                            ВОЛКОВ-МЕДВЕДЕВ
+                        </h3>
+                        <p class="job">
+                            Ресторан GooseGoose<br>
+                            Санкт-Петербург
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
             <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
         </div>
         <div class="col-6 col-md-3 speak tab-item item-speaker">
@@ -86,26 +107,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
-            <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
-        </div>
-        <div class="col-6 col-md-3 speak tab-item item-speaker">
-            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
-                <div class="img-block">
-                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
-                    <div class="about">
-                        <h3 class="name">
-                            АЛЕКСАНДР<br>
-                            ВОЛКОВ-МЕДВЕДЕВ
-                        </h3>
-                        <p class="job">
-                            Ресторан GooseGoose<br>
-                            Санкт-Петербург
-                        </p>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
+            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
             <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
         </div>
         <div class="col-6 col-md-3 speak tab-item item-chef">
@@ -124,11 +126,12 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
+            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
             <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
         </div>
     </div>
 </div>
+{/if}
 
 <!-- Modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
@@ -281,7 +284,7 @@
                         </label>
                     </div>
                     <div class="text-center pt-3">
-                        <button type="button" id="next1" class="btn next1" data-dismiss="modal" data-toggle="modal" disabled data-target="#registerModal2">Следующий шаг</button>
+                        <button type="button" id="next1" class="btn btn-next next1" data-dismiss="modal" data-toggle="modal" disabled data-target="#registerModal2">Следующий шаг</button>
                     </div>
                 </div>
             </div>
@@ -341,7 +344,7 @@
                 <div class="modal-footer">
                     <div class="col-md-12">
                         <div class="text-center pt-3">
-                            <button type="button" class="btn next2 btn-next2">Следующий шаг</button>
+                            <button type="button" class="btn btn-next next2">Следующий шаг</button>
                         </div>
                     </div>
                 </div>
@@ -401,7 +404,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="text-center pt-3">
-                                <button type="button" class="btn next3 btn-next3">Отправить</button>
+                                <button type="button" class="btn btn-next next3">Отправить</button>
                             </div>
                         </div>
                     </div>
@@ -430,6 +433,38 @@
                             мы сообщим об этом в письме.<br>
                             <br>
                             Держим за тебя кулачки!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="voting" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title mr-3 text-center">Для того, чтобы проголосовать, введите и&nbsp;подтвердите свой номер телефона</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="staticPhone">Мобильный телефон</label>
+                            <input type="text" class="form-control" autocomplete="off" id="staticPhone" value="">
+                            <span>Например: 79058775544</span>
+                        </div>
+                        <div class="form-group form-code">
+                            <input type="" class="form-control" autocomplete="off" placeholder="Проверочный код" id="staticCode">
+                            <a href="#" class="btn btn-vote" onclick="inputCode(this);return false">Голосовать</a>
+                        </div>
+                        <div class="form-group form-result"></div>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-vote" onclick="getPass(this);return false">Получить пароль</a>
+                        </div>
                     </div>
                 </div>
             </div>

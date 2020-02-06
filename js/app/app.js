@@ -606,7 +606,7 @@ $(function () {
             $('#next1').prop( "disabled", true );
         }
     });
-    $('.btn-next2').click(function () {
+    $('.btn.next2').click(function () {
         let form = $(this).parents('form');
         let user_type = form.find('[name=user_type]').val();
         let first_name = form.find('[name=first_name]').val();
@@ -637,7 +637,7 @@ $(function () {
         $('#registerModal3').modal('show');
     });
 
-    $('.btn-next3').click(function () {
+    $('.btn.next3').click(function () {
         let form = $(this).parents('form');
         let photo = form.find('[name=photo]').val();
         let contact_text = form.find('[name=contact_text]').val();
@@ -649,9 +649,11 @@ $(function () {
 
         if (!video_link) {
             alert("Вы не загрузили видео");
+            return;
         }
         if (!photo) {
             alert("Вы не загрузили фото");
+            return;
         }
 
         var form_data = new FormData();
@@ -684,7 +686,7 @@ $(function () {
     });
 });
 
-$(document).ready(function(){
+$(document).ready(function() {
     $('.carousel-partner-page').owlCarousel({
         loop:true,
         margin:10,
@@ -722,10 +724,75 @@ $(document).ready(function(){
 
 });
 
-function clearError() {
+function clearError(selector, text = '', hide = false) {
     setTimeout(function() {
-        $('.photo-file span').html('Загрузи свое лучшее фото').removeClass('error').removeClass('success');
+        if (hide) {
+            $(selector).html(text).removeClass('error').removeClass('success').hide();
+        } else {
+            $(selector).html(text).removeClass('error').removeClass('success');
+        }
+
     }, 5000);
+}
+
+function inputCode(btn) {
+    let code = $('#staticCode').val();
+    var form_data = new FormData();
+    form_data.append('job', 'input_code_for_folk_speaker');
+    form_data.append('code', code);
+    console.log(form_data);
+    $.ajax({
+        url: '/ajax',
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(answer) {
+            if (answer === "send_ok") {
+                $('#voting .form-code').show();
+                $(btn).parent().hide()
+                $('#voting .form-code input').attr('type', 'password');
+            } else if (answer === "phone_invalid") {
+                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            } else {
+                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Неизвестная ошибка</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            }
+        }
+    });
+}
+
+function getPass(btn) {
+    let phone = $('#staticPhone').val();
+    var form_data = new FormData();
+    form_data.append('job', 'get_pass_for_folk_speaker');
+    form_data.append('phone', phone);
+    console.log(form_data);
+    $.ajax({
+        url: '/ajax',
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(answer) {
+            if (answer === "send_ok") {
+                $('#voting .form-code').show();
+                $(btn).parent().hide()
+                $('#voting .form-code input').attr('type', 'password');
+            } else if (answer === "phone_invalid") {
+                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            } else {
+                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Неизвестная ошибка</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            }
+        }
+    });
 }
 
 function ajaxUpload() {
@@ -748,13 +815,13 @@ function ajaxUpload() {
                 $('.folk-form [name=photo]').val(answer.file);
             } else if (answer.result === "error_upload") {
                 $('.photo-file span').html( 'Ошибка загрузки' ).addClass('error');
-                clearError();
+                clearError('.photo-file span', 'Загрузи свое лучшее фото');
             } else if (answer.result === "error_file_danger") {
                 $('.photo-file span').html( 'Файлы должны быть формата JPG, PNG, PDF' ).addClass('error');
-                clearError();
+                clearError('.photo-file span', 'Загрузи свое лучшее фото');
             } else if (answer.result === "error_too_big") {
                 $('.photo-file span').html( 'Файл должен быть не более 8Мб' ).addClass('error');
-                clearError();
+                clearError('.photo-file span', 'Загрузи свое лучшее фото');
             } else if (answer.result === "error_unknown") {
                 alert("Неизвестная ошибка");
             }

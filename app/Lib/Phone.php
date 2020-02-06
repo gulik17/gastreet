@@ -72,6 +72,21 @@ class Phone {
         }
     }
 
+
+    public static function phoneDadataVerification($phone) {
+        $token = "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1";
+        $secret = "a38db9106d09f2cfef9644087f883bbbcd2d805c";
+        $dadata = new Dadata($token, $secret);
+        $dadata->init();
+        // Стандартизовать одно значение
+        $result = $dadata->clean("PHONE", $phone);
+        $dadata->close();
+        if ( ($result[0]['qc'] === 1) || ($result[0]['qc'] === 3) || ($result[0]['qc'] === 2) ) { //Телефон распознан с допущениями или не распознан
+            return false;
+        }
+        return true;
+    }
+
     /* оформление результата проверки номера телефона */
     private static function resultDecorPhoneVerification($isError, $code, $description, $country, $number) {
         $array = array(
