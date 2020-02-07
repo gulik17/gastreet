@@ -725,7 +725,7 @@
 		</div>
 	</div>
 	<div class="col-md-2 king ticket-january">
-		{assign var=ticketId value=5}
+		{assign var=ticketId value=12}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «Как король» -->
 		<div class="ticket-item">
 			<div class="ticket-header">
@@ -824,13 +824,8 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;марта — 190&nbsp;000&nbsp;₽<br>
-										с&nbsp;1&nbsp;мая — 200&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-						##buy##
-					</a>
+					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">##buy##</a>
 				</div>
 				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
 					<span></span>
@@ -839,7 +834,7 @@
 		</div>
 	</div>
 	<div class="col-md-2 rebro ticket-january">
-		{assign var=ticketId value=8}
+		{assign var=ticketId value=13}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «REBRO» -->
 		<div class="ticket-item">
 			<div class="ticket-header">
@@ -938,18 +933,12 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;марта — 65&nbsp;000&nbsp;₽<br>
-										с&nbsp;1&nbsp;мая — 70&nbsp;000&nbsp;₽</span></p>
-
 				{if $ticket->leftCount > 0}
 				{if $this.child->wantRebro == 1 || $ticket->wantRebro == 1}
 				<div class="capacity"><span>Мы приняли вашу заявку!</span></div>
 				{else}
 				<div>
-					<a href="{link do=add ticket=rebro}" class="btn btn-white btn-line buy">
-						{if $lang == 'en'}Submit your application{else}Подать заявку{/if}
-					</a>
+					<a href="{link do=add ticket=rebro}" class="btn btn-white btn-line buy">{if $lang == 'en'}Submit your application{else}Подать заявку{/if}</a>
 				</div>
 				{/if}
 				{/if}
@@ -960,7 +949,7 @@
 		</div>
 	</div>
 	<div class="col-md-2 profi ticket-january">
-		{assign var=ticketId value=3}
+		{assign var=ticketId value=7}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «ПРОФИ» -->
 		<div class="ticket-item">
 			<div class="ticket-header">
@@ -1060,13 +1049,8 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;марта — 40&nbsp;000&nbsp;₽<br>
-										с&nbsp;1&nbsp;мая — 45&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-						##buy##
-					</a>
+					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">##buy##</a>
 				</div>
 				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
 					<span></span>
@@ -1075,7 +1059,7 @@
 		</div>
 	</div>
 	<div class="col-md-2 chef ticket-january">
-		{assign var=ticketId value=2}
+		{assign var=ticketId value=6}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
 		<div class="ticket-item">
 			<div class="ticket-header">
@@ -1174,13 +1158,8 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;марта — 35&nbsp;000&nbsp;₽<br>
-										с&nbsp;1&nbsp;мая — 40&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-						##buy##
-					</a>
+					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">##buy##</a>
 				</div>
 				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
 					<span></span>
@@ -1189,12 +1168,11 @@
 		</div>
 	</div>
 	<div class="col-md-2 barstreet ticket-january">
-		{assign var=ticketId value=4}
+		{assign var=ticketId value=9}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «BARSTREET» -->
 		<div class="ticket-item">
 			<div class="ticket-header">
 				<h5>BARSTREET</h5>
-				<img src="/images/9feb.png" class="img-fluid" style="width: 166px;position: absolute;left: 50%;bottom: -27px;transform: translate(-50%, 0);">
 			</div>
 			<div class="ticket-body">
 				<a class="btn-collapse" data-toggle="collapse" href="#barstreetCollapse">
@@ -1288,17 +1266,9 @@
 				</div>
 			</div>
 			<div class="ticket-footer">
-				<img src="/images/15000.png" class="img-fluid" style="width: 140px;position: absolute;left: 50%;top: -10px;transform: translate(-50%, 0);">
-				<!--                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>-->
-				<h3 class="ticket_cost">20&nbsp;000 ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;марта — 25&nbsp;000&nbsp;₽<br>
-										с&nbsp;1&nbsp;мая — 30&nbsp;000&nbsp;₽</span>
-				</p>
+				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-						##buy##
-					</a>
+					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">##buy##</a>
 				</div>
 				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
 					<span></span>

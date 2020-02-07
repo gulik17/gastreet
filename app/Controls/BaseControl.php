@@ -49,13 +49,13 @@ class BaseControl extends Control {
             $this->addData("gastreetpartner", 0);
         }
 
-        $code = Request::getVar("code");
-        if ( ( ($code == 'gastreetspecial') || (Context::getObject('code') == 'gastreetspecial') ) && (time() < 1577836800) ) {
-            //if (Request::getVar("code")) {
-            //    Context::setObject('code', 'gastreetspecial');
-            //}
-            //$this->gcode = 'gastreetspecial';
-            $this->addData("gastreetspecial", 0);
+        //if ( ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) && (time() < 1577836800) ) {
+        if ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'sukhih');
+            }
+            $this->gcode = 'sukhih';
+            $this->addData("gastreetspecial", 1);
         } else {
             $this->addData("gastreetspecial", 0);
         }
