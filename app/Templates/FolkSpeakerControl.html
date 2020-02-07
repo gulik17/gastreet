@@ -59,78 +59,66 @@
 {if $dev == 1}
 <div class="container photo-speak folk-page tabs-container">
     <div class="row py-3 speak-row">
-        <div class="col-6 col-md-3 speak tab-item item-speaker">
-            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
-                <div class="img-block">
-                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
-                    <div class="about">
-                        <h3 class="name">АЛЕКСАНДР<br>ВОЛКОВ-МЕДВЕДЕВ</h3>
-                        <p class="job">Ресторан GooseGoose<br>Санкт-Петербург</p>
-                    </div>
+        {if $this.speakers}
+            <!-- loop start -->
+            {foreach item=speaker from=$this.speakers}
+                <div class="col-6 col-md-3 speak tab-item item-speaker">
+                    <a href="#" class="" data-toggle="modal" data-target="#folkspeaker_{$speaker.id}">
+                        <div class="img-block">
+                            <img src="/images/folkspeaker/{$speaker.photo}" alt="{$speaker.first_name} {$speaker.last_name}" class="photo">
+                            <div class="about">
+                                <h3 class="name">{$speaker.first_name}<br>{$speaker.last_name}</h3>
+                                <p class="job">{$speaker.company}<br>{$speaker.position}</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i> 88K</a>
+                    <a href="#" class="share" data-toggle="modal" data-target="#v_share">Поделиться</a>
                 </div>
-            </a>
-            <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-speaker="1">Голосовать<i class="fa fa-heart"></i> 88K</a>
-            <a href="#" class="share" data-toggle="modal" data-target="#v_share">Поделиться</a>
-        </div>
-        <div class="col-6 col-md-3 speak tab-item item-speaker">
-            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
-                <div class="img-block">
-                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
-                    <div class="about">
-                        <h3 class="name">
-                            АЛЕКСАНДР<br>
-                            ВОЛКОВ-МЕДВЕДЕВ
-                        </h3>
-                        <p class="job">
-                            Ресторан GooseGoose<br>
-                            Санкт-Петербург
-                        </p>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
-            <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
-        </div>
-        <div class="col-6 col-md-3 speak tab-item item-speaker">
-            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
-                <div class="img-block">
-                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
-                    <div class="about">
-                        <h3 class="name">
-                            АЛЕКСАНДР<br>
-                            ВОЛКОВ-МЕДВЕДЕВ
-                        </h3>
-                        <p class="job">
-                            Ресторан GooseGoose<br>
-                            Санкт-Петербург
-                        </p>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
-            <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
-        </div>
-        <div class="col-6 col-md-3 speak tab-item item-chef">
-            <a href="#" class="" data-toggle="modal" data-target="#popover-win-865">
-                <div class="img-block">
-                    <img src="/images/folkspeaker/speaker1.png" alt="" class="photo">
-                    <div class="about">
-                        <h3 class="name">
-                            АЛЕКСАНДР<br>
-                            ВОЛКОВ-МЕДВЕДЕВ
-                        </h3>
-                        <p class="job">
-                            Ресторан GooseGoose<br>
-                            Санкт-Петербург
-                        </p>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="btn-vote">Голосовать<i class="fa fa-heart"></i> 88K</a>
-            <a href="#" data-toggle="modal" data-target="#v_share" class="share">Поделиться</a>
-        </div>
+            {/foreach}
+            <!-- loop end -->
+        {/if}
     </div>
 </div>
+{/if}
+
+{if $this.speakers}
+    <!-- loop start -->
+    {foreach item=speaker from=$this.speakers}
+    <div class="modal fade" id="folkspeaker_{$speaker.id}" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content popover-win">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                </div>
+                <div class="modal-body p-0">
+                    <figure class="thumb fg-container">
+                        <img src="/images/folkspeaker/{$speaker.photo}?v={$speaker.ts_update}" data-ratio="1">
+                    </figure>
+                    <p class="title">{$speaker.first_name}<br/>{$speaker.last_name}</p>
+                    <div class="desc">
+                        {$speaker.text}
+                        <div class="speaker-icon">
+                            {if $speaker.facebook}
+                                <a href="{$speaker.facebook}" class="fa fa-facebook" target="_blank"></a>
+                            {/if}
+                            {if $speaker.instagram}
+                                <a href="{$speaker.instagram}" class="fa fa-instagram" target="_blank"></a>
+                            {/if}
+                            {if $speaker.vkontakte}
+                                <a href="{$speaker.instagram}" class="fa fa-vk" target="_blank"></a>
+                            {/if}
+                            {if $speaker.ondoklassniki}
+                                <a href="{$speaker.ondoklassniki}" class="fa fa-ok" target="_blank"></a>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+    <!-- loop end -->
 {/if}
 
 <!-- Modal -->
@@ -523,50 +511,6 @@
                 <p><b>3 - 5 июня</b></p>
                 <p>- выступление финалистов на GASTREET. Жюри из амбассадоров оценивает выступления народных спикеров.</p>
                 <p>По итогам оценки победитель в&nbsp;номинации «Народный спикер» выступит на главной сцене 5&nbsp;июня. «Народный шеф-повар» автоматически выступает на площадке CHEF street согласно расписанию площадки.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="popover-win-865" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content popover-win  tag_2020 tag_biznesshkola">
-            <div class="modal-header">
-                <span class="close" data-dismiss="modal">&times;</span>
-            </div>
-            <div class="modal-body p-0">
-                <figure class="thumb fg-container">
-                    <div class="img-tags">
-                        <span class="tag_2020">#2020</span><span class="tag_biznesshkola">#БИЗНЕСШКОЛА</span>
-                        <img class="foreground" src="/images/parthners/resized/335.png?v=1579006073" data-ratio="1">
-                    </div>
-                    <div class="icon-country amb"></div>
-                    <img src="/images/speackers/resized/865.png?v=1579006073" data-ratio="1">
-                </figure>
-                <p class="title">Сергей<br/>Ицков</p>
-                <div class="desc">
-                    <p>Welcomepro Consulting<br/>Владивосток</p>
-                    <p><p>Ресторанный маркетолог с&nbsp;2007 года.</p>
-                    <p>С 2011 по 2017 год - директор по развитию и&nbsp;управляющий партнер Zuma (ресторан Zuma и&nbsp;Супра) в&nbsp;г.Владивосток. Основные направления деятельности &ndash; маркетинг и&nbsp;аналитика.</p>
-                    <p>Создатель аналитической платформы для рестораторов www.mozg.rest и&nbsp;консалтинговой компании Welcomepro.</p>
-                    <p>Постоянный участник-спикер выставки ПИР и&nbsp;ресторанного международного шоу GASTREET.</p>
-                    <p><a data-toggle="collapse" href="#collapse649" role="button" aria-expanded="false" aria-controls="collapse649">Сводка о&nbsp;компании </a></p>
-                    <div class="collapse" id="collapse649">
-                        <div class="card card-body">
-                            <p>Welcomepro Consulting</p>
-                            <p>Самая крупная консалтинговая компания в&nbsp;ресторанной индустрии.<br />
-                                В&nbsp;команде профессионалы по 12 направлениям: от управления залом и&nbsp;кухней до маркетинга и&nbsp;построения службы безопасности.<br />
-                                Более 50 ресторанных компании с&nbsp;помощью Welcomepro Consulting увеличили прибыль путем внедрения современных технологий управления и&nbsp;маркетинга.</p>
-                            <p>Ежегодно направление бизнес-школы Welcomepro проводит 12 крупных образовательных мероприятий, а&nbsp;так же онлайн-трансляций на популярные темы.<br />
-                                В&nbsp;январе 2019 года запустили услугу рекрутинга: в&nbsp;базе Welcomepro Consulting лучшие операционные директора, управляющие, шеф-повара и&nbsp;директора по маркетингу.</p>
-                        </div>
-                    </div></p>
-                    <div class="speaker-icon">
-                        <a href="https://www.facebook.com/sergey.itskov" class="fa fa-facebook" target="_blank"></a>
-                        <a href="https://www.instagram.com/itskov/" class="fa fa-instagram" target="_blank"></a>
-                        <a href="https://welcomepro.ru" class="fa fa-globe" target="_blank"></a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
