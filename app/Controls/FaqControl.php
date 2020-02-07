@@ -5,7 +5,6 @@
  */
 class FaqControl extends IndexControl {
     public $pageTitle = "ЧаВо - ответы на вопросы — GASTREET 2020";
-
     public function render() {
         //Enviropment::redirect('/');
         $this->controlName = "ЧаВо";
