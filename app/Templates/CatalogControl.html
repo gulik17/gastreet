@@ -34,7 +34,11 @@
                                         <img src="/images/emoji/4.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="g-emoji-balun">
-                                        Ну и&nbsp;чего ты еще думаешь? Только до 1&nbsp;марта покупай билеты по ценам прошлого года!
+                                        {if $this.gastreetspecial}
+                                            Ну и&nbsp;чего ты еще думаешь? Только для тебя специальная цена!
+                                        {else}
+                                            Ну и&nbsp;чего ты еще думаешь? Только до 1&nbsp;марта покупай билеты по ценам прошлого года!
+                                        {/if}
                                     </div>
                                 </div>
                             </div>
