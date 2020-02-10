@@ -724,6 +724,11 @@ $(document).ready(function() {
 
 });
 
+$('#voting').on('show.bs.modal', function (event) {
+    let button = $(event.relatedTarget);
+    $("#staticSpeaker").val( $(button).data("folkspeaker-id") );
+});
+
 function clearError(selector, text = '', hide = false) {
     setTimeout(function() {
         if (hide) {
@@ -736,9 +741,11 @@ function clearError(selector, text = '', hide = false) {
 }
 
 function inputCode(btn) {
+    let phone = $('#staticPhone').val();
     let code = $('#staticCode').val();
     var form_data = new FormData();
     form_data.append('job', 'input_code_for_folk_speaker');
+    form_data.append('phone', phone);
     form_data.append('code', code);
     console.log(form_data);
     $.ajax({
@@ -750,15 +757,20 @@ function inputCode(btn) {
         data: form_data,
         type: 'post',
         success: function(answer) {
-            if (answer === "send_ok") {
-                $('#voting .form-code').show();
-                $(btn).parent().hide()
-                $('#voting .form-code input').attr('type', 'password');
+            if (answer === "vote_ok") {
+                $.alert("Ваш голос принят", {title: false, type: 'success'});
+                $('#voting').modal('hide');
             } else if (answer === "phone_invalid") {
-                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            } else if (answer === "phone_not_found") {
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Номер телефона не найден!</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            } else if (answer === "code_error") {
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Код введен неправильно!</div>' ).show();
                 clearError('#voting .form-result', '', true);
             } else {
-                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Неизвестная ошибка</div>' ).show();
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Неизвестная ошибка</div>' ).show();
                 clearError('#voting .form-result', '', true);
             }
         }
@@ -766,9 +778,11 @@ function inputCode(btn) {
 }
 
 function getPass(btn) {
+    let speaker_id = $('#staticSpeaker').val();
     let phone = $('#staticPhone').val();
     var form_data = new FormData();
     form_data.append('job', 'get_pass_for_folk_speaker');
+    form_data.append('speaker_id', speaker_id);
     form_data.append('phone', phone);
     console.log(form_data);
     $.ajax({
@@ -782,13 +796,16 @@ function getPass(btn) {
         success: function(answer) {
             if (answer === "send_ok") {
                 $('#voting .form-code').show();
-                $(btn).parent().hide()
+                $(btn).parent().hide();
                 $('#voting .form-code input').attr('type', 'password');
             } else if (answer === "phone_invalid") {
-                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Номер телефона введен неправильно!</div>' ).show();
+                clearError('#voting .form-result', '', true);
+            } else if (answer === "already_voted") {
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Ваш номер уже участвовал в голосовании</div>' ).show();
                 clearError('#voting .form-result', '', true);
             } else {
-                $('#voting .form-result').html( '<div class="alert alert-warning" role="alert">Неизвестная ошибка</div>' ).show();
+                $('#voting .form-result').html( '<div class="alert alert-danger" role="alert">Неизвестная ошибка</div>' ).show();
                 clearError('#voting .form-result', '', true);
             }
         }

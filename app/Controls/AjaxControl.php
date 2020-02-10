@@ -1333,6 +1333,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
 
         if ($job == 'get_pass_for_folk_speaker') {
             $smsCode = rand(1000, 9999); // смс код, сформировать
+            $speaker_id = Request::getInt("speaker_id");
             $phone = Phone::phoneVerification(Request::getVar("phone"));
 
             if ( ($phone["isError"]) || (!Phone::phoneDadataVerification($phone["number"])) ) {
@@ -1340,18 +1341,31 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 exit;
             }
 
-            //if (UserManager::sendConfirmCodeSms($phone["number"], $smsCode)) {
+            $fpm = new FolkPhonesManager();
+            $folkPhone = $fpm->getByPhone($phone["number"]);
+            $folkPhone = $folkPhone[0];
+
+            if (!$folkPhone) {
+                $folkPhone = new folkPhones();
+            } else if ($folkPhone->status == folkPhones::STATUS_CONFIRM) {
+                echo json_encode("already_voted");
+                exit;
+            }
+            $folkPhone->phone = $phone["number"];
+            $folkPhone->speaker_id = $speaker_id;
+            $folkPhone->code = $smsCode;
+            $folkPhone->ts_update = time();
+            $folkPhone->status = folkPhones::STATUS_NEW;
+            $folkPhone = $fpm->save($folkPhone);
+
+            if (UserManager::sendConfirmCodeSms($phone["number"], $smsCode)) {
                 echo json_encode("send_ok");
                 exit;
-            //}
+            }
         }
 
         if ($job == 'input_code_for_folk_speaker') {
-
-
-
-
-            $smsCode = rand(1000, 9999); // смс код, сформировать
+            $smsCode = Request::getInt("code");
             $phone = Phone::phoneVerification(Request::getVar("phone"));
 
             if ( ($phone["isError"]) || (!Phone::phoneDadataVerification($phone["number"])) ) {
@@ -1359,10 +1373,24 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 exit;
             }
 
-            //if (UserManager::sendConfirmCodeSms($phone["number"], $smsCode)) {
-            echo json_encode("send_ok");
+            $fpm = new FolkPhonesManager();
+            $speaker = $fpm->getByPhone($phone["number"]);
+            $speaker = $speaker[0];
+
+            if (!$speaker) {
+                echo json_encode("phone_not_found");
+                exit;
+            }
+            if ($smsCode == $speaker->code) {
+                $speaker->status = folkPhones::STATUS_CONFIRM;
+                $speaker = $fpm->save($speaker);
+            } else {
+                echo json_encode("code_error");
+                exit;
+            }
+
+            echo json_encode("vote_ok");
             exit;
-            //}
         }
 
         if ($job == "sendAnyFolkMsg") {

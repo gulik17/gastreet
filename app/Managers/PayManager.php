@@ -240,7 +240,6 @@ class PayManager extends BaseEntityManager {
 
         if (count($inpIds) == 0)
             return null;
-
         $ids = implode(",", $inpIds);
         $res = $this->get(new SQLCondition("id IN ($ids)", null, "id"));
         return Utility::sort($inpIds, $res);

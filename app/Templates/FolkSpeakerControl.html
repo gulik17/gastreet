@@ -72,8 +72,8 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i> 88K</a>
-                    <a href="#" class="share" data-toggle="modal" data-target="#v_share">Поделиться</a>
+                    <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i>&nbsp;{$speaker.fp_count}</a>
+                    <a href="#" class="share d-none" data-toggle="modal" data-target="#v_share">Поделиться</a>
                 </div>
             {/foreach}
             <!-- loop end -->
@@ -441,6 +441,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <input type="hidden" id="staticSpeaker" value="">
                             <label for="staticPhone">Мобильный телефон</label>
                             <input type="text" class="form-control" autocomplete="off" id="staticPhone" value="">
                             <span>Например: 79058775544</span>
