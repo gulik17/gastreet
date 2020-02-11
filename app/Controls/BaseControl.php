@@ -9,6 +9,8 @@ class BaseControl extends Control {
     public $pageTitle_en = "GASTREET 2020 - International Restaurant Show";
     public $pageDesc     = "";
     public $pageDesc_en  = "";
+    public $pageImg  = "https://gastreet.com/images/fb_share_6.jpg";
+    public $pageUri  = "";
     public $lang    = null;
     public $time    = null;
     public $layout = "blank.html";

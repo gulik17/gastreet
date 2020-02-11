@@ -74,7 +74,7 @@
                         </div>
                     </a>
                     <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i>&nbsp;{$speaker.fp_count}</a>
-                    <a href="#" class="share d-none" data-toggle="modal" data-target="#v_share" data-folkspeaker-id="{$speaker.id}">Поделиться</a>
+                    <a href="#" class="share" data-toggle="modal" data-target="#v_share" data-folkspeaker-id="{$speaker.id}">Поделиться</a>
                 </div>
             {/foreach}
             <!-- loop end -->
@@ -299,7 +299,7 @@
                             <input class="form-control" type="text" name="last_name" placeholder="Фамилия">
                         </div>
                         <div class="form-group">
-                            <select name="user_type" class="form-control" placeholder="Фамилия">
+                            <select name="user_type" class="form-control">
                                 <option value="" disabled selected>Тематика выступления</option>
                                 <option value="финансы">финансы</option>
                                 <option value="гости / маркетинг">гости / маркетинг</option>
@@ -473,14 +473,15 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12 text-center px-0">
-                        <a data-href="https://www.facebook.com/sharer/sharer.php?u=" class="fb-xfbml-parse-ignore" href="#" data-layout="button_count"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-vk"></i></a>
-                        <a href="#"><i class="fa fa-odnoklassniki"></i></a>
-                        <a href="#"><i class="fa fa-twitter "></i></a>
+                        <a href="#" class="fb-parse-link" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="vk-parse-link" target="_blank"><i class="fa fa-vk"></i></a>
+                        <a href="#" class="ok-parse-link" target="_blank"><i class="fa fa-odnoklassniki"></i></a>
+                        <a href="#" class="tw-parse-link" target="_blank"><i class="fa fa-twitter "></i></a>
                     </div>
                     <div class="col-md-12">
-                        <img src="/images/folkspeaker/qr-code.jpg" alt="">
-                        <a class="copy" href="#">Копировать ссылку</a>
+                        <img src="http://qrcoder.ru/code/?https%3A%2F%2Fgastreet.com%2Ffolkspeaker&4&0" alt="">
+                        <input type="text" style="opacity: 0;position: absolute;" id="text_for_copy" onclick="select_all_and_copy(this)" value="https://gastreet.com/folkspeaker">
+                        <a class="copy" href="#" onclick="copy();return false">Копировать ссылку</a>
                     </div>
                 </div>
             </div>

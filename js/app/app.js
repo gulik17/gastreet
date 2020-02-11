@@ -731,9 +731,70 @@ $('#voting').on('show.bs.modal', function (event) {
     $("#staticSpeaker").val( $(button).data("folkspeaker-id") );
 });
 
+function OpenWin(url) {
+    window.open(url, "window_name", "width=800, height=600");
+}
+
+function copy() {
+    el = document.getElementById("text_for_copy");
+    //console.log(el);
+    select_all_and_copy(el);
+
+   /* navigator.clipboard.writeText(str)
+        .then(() => {
+            alert('Скопировано');
+        })
+        .catch(err => {
+            console.log('Ошибка', err);
+        });*/
+}
+
+function select_all_and_copy(el) {
+    //console.log(el)
+    // Copy textarea, pre, div, etc.
+    if (document.body.createTextRange) {
+        // IE
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(el);
+        textRange.select();
+        textRange.execCommand("Copy");
+        alert("Скопировано");
+    } else if (window.getSelection && document.createRange) {
+        // non-IE
+        var editable = el.contentEditable; // Record contentEditable status of element
+        var readOnly = el.readOnly; // Record readOnly status of element
+        el.contentEditable = true; // iOS will only select text on non-form elements if contentEditable = true;
+        el.readOnly = true; // iOS will not select in a read only form element // Version 1.2c - Changed from false to true; Prevents keyboard from appearing when copying from textarea
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range); // Does not work for Firefox if a textarea or input
+        if (el.nodeName == "TEXTAREA" || el.nodeName == "INPUT")
+            el.select(); // Firefox will only select a form element with select()
+        //if (el.setSelectionRange && navigator.userAgent.match(/ipad|ipod|iphone/i)) // Version 1.2c - iOS 12 might be defaulting to desktop mode so removed
+        if (el.setSelectionRange) // Version 1.2c - iOS 12 might be defaulting to desktop mode and no longer has iphone in user agent
+            el.setSelectionRange(0, 999999); // iOS only selects "form" elements with SelectionRange
+        el.contentEditable = editable; // Restore previous contentEditable status
+        el.readOnly = readOnly; // Restore previous readOnly status
+        if (document.queryCommandSupported("copy")) {
+            var successful = document.execCommand('copy');
+            if (successful)
+                alert("Скопировано");
+            else
+                alert("Нажмите CTRL+C чтобы скопировать");
+        } else {
+            if (!navigator.userAgent.match(/ipad|ipod|iphone|android|silk/i))
+                alert("Нажмите CTRL+C чтобы скопировать");
+        }
+    }
+
+}
+
 $('#v_share').on('show.bs.modal', function (event) {
     let button = $(event.relatedTarget);
     let id = $(button).data("folkspeaker-id");
+    var share_uri = "https://gastreet.com/folkspeaker?s="+id;
     var form_data = new FormData();
     form_data.append('job', 'get_folk_speaker');
     form_data.append('id', id);
@@ -747,11 +808,10 @@ $('#v_share').on('show.bs.modal', function (event) {
         type: 'post',
         success: function(answer) {
 
-            $('meta[property="og:url"]').attr("content", "https://gastreet.com/folkspeaker#folkspeaker_"+id);
-            $('meta[property="og:title"]').attr("content", "Голосуй за народного спикера "+answer.first_name+" "+answer.last_name);
-            $('meta[property="og:image"]').attr("content", "https://gastreet.com/images/folkspeaker/resize/"+answer.photo+"?ts_update="+answer.ts_update);
-            $('.fb-xfbml-parse-ignore').attr('data-href', "https://www.facebook.com/sharer/sharer.php?u=https://gastreet.com/folkspeaker#folkspeaker_"+id);
-
+            $('.fb-parse-link').attr('href', "https://www.facebook.com/sharer/sharer.php?u="+share_uri);
+            $('.vk-parse-link').attr('href', "https://vk.com/share.php?url="+share_uri);
+            $('.ok-parse-link').attr('href', "https://connect.ok.ru/offer?url="+share_uri);
+            $('.tw-parse-link').attr('href', "https://twitter.com/intent/tweet?url="+share_uri);
 
            /* status: "STATUS_ENABLED"
             first_name: "Амина"
