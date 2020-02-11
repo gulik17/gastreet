@@ -325,7 +325,7 @@ $(window).on('load', function () {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.12';
+        js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.0';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     
@@ -722,11 +722,60 @@ $(document).ready(function() {
         $(this).parents('.ticket-body').next('.ticket-footer').toggleClass('opened');
     });
 
+
+
 });
 
 $('#voting').on('show.bs.modal', function (event) {
     let button = $(event.relatedTarget);
     $("#staticSpeaker").val( $(button).data("folkspeaker-id") );
+});
+
+$('#v_share').on('show.bs.modal', function (event) {
+    let button = $(event.relatedTarget);
+    let id = $(button).data("folkspeaker-id");
+    var form_data = new FormData();
+    form_data.append('job', 'get_folk_speaker');
+    form_data.append('id', id);
+    $.ajax({
+        url: '/ajax',
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(answer) {
+
+            $('meta[property="og:url"]').attr("content", "https://gastreet.com/folkspeaker#folkspeaker_"+id);
+            $('meta[property="og:title"]').attr("content", "Голосуй за народного спикера "+answer.first_name+" "+answer.last_name);
+            $('meta[property="og:image"]').attr("content", "https://gastreet.com/images/folkspeaker/resize/"+answer.photo+"?ts_update="+answer.ts_update);
+            $('.fb-xfbml-parse-ignore').attr('data-href', "https://www.facebook.com/sharer/sharer.php?u=https://gastreet.com/folkspeaker#folkspeaker_"+id);
+
+
+           /* status: "STATUS_ENABLED"
+            first_name: "Амина"
+            last_name: "Фатуллаева"
+            user_type: ""
+            photo: "1.jpg"
+            email: ""
+            company: ""
+            position: "Ресторанный эксперт"
+            description: "<p>Ресторанный эксперт с 15-летним стажем.</p>
+↵<p>Обучила более 2200 рестораторов, открыла и развила с нуля более 40 заведений, а также являюсь наставником более 500 предпринимателей.</p>
+↵<p>Я хотела бы предложить себя в качестве одного из спикеров вашего форума.</p>
+↵<iframe width="100%" height="315" src="https://www.youtube.com/embed/xaaTwhl-Qaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>"
+            video: ""
+            instagram: "https://instagram.com/aminafatullaeva"
+            facebook: ""
+            vkontakte: ""
+            ondoklassniki: ""
+            sort_order: "1"
+            ts_update: "1581343261"
+            */
+
+        }
+    });
 });
 
 function clearError(selector, text = '', hide = false) {
@@ -736,7 +785,6 @@ function clearError(selector, text = '', hide = false) {
         } else {
             $(selector).html(text).removeClass('error').removeClass('success');
         }
-
     }, 5000);
 }
 

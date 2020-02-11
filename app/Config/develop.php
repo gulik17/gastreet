@@ -29,6 +29,7 @@ areasFolder = DOCUMENT_ROOT "/images/areas/"
 productsFolder = DOCUMENT_ROOT "/images/products/"
 prizesFolder = DOCUMENT_ROOT "/images/prizes/"
 speackersFolder = DOCUMENT_ROOT "/images/speackers/"
+folkSpeakerFolder = DOCUMENT_ROOT "/images/folkspeaker/"
 volunteersFolder = DOCUMENT_ROOT "/images/volunteers/"
 placesFolder = DOCUMENT_ROOT "/images/places/"
 contactsFolder = DOCUMENT_ROOT "/images/contacts/"
@@ -38,7 +39,7 @@ ticketsFolder = DOCUMENT_ROOT "/storage/"
 pdfFolder = DOCUMENT_ROOT "/pdf/battle/"
 paySystemCommision = 5
 seo = "rewrite"                                         ; ЧПУ (значения: url или rewrite)
-jivoSite = 0                                            ; Модуль JivoSite (1 - вкл./ 0 - выкл)
+jivoSite = 1                                            ; Модуль JivoSite (1 - вкл./ 0 - выкл)
 bitSync = 1                                             ; Синхронизация с БИТом (1 - вкл./ 0 - выкл)
 
 [adminka]

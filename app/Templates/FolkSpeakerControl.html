@@ -2,6 +2,8 @@
 
 {loadscript file='/css/FolkSpeakerStyle.css' type='css'}
 
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v6.0&appId=120553418618554&autoLogAppEvents=1"></script>
+
 <div class="container logo folk-page">
     <div class="row">
         <div class="col-12">
@@ -56,7 +58,6 @@
     </div>
 </div>
 
-{if $dev == 1}
 <div class="container photo-speak folk-page tabs-container">
     <div class="row py-3 speak-row">
         {if $this.speakers}
@@ -65,7 +66,7 @@
                 <div class="col-6 col-md-3 speak tab-item item-speaker">
                     <a href="#" class="" data-toggle="modal" data-target="#folkspeaker_{$speaker.id}">
                         <div class="img-block">
-                            <img src="/images/folkspeaker/{$speaker.photo}" alt="{$speaker.first_name} {$speaker.last_name}" class="photo">
+                            <img src="/images/folkspeaker/resized/{$speaker.photo}?v={$speaker.ts_update}" alt="{$speaker.first_name} {$speaker.last_name}" class="photo">
                             <div class="about">
                                 <h3 class="name">{$speaker.first_name}<br>{$speaker.last_name}</h3>
                                 <p class="job">{$speaker.company}<br>{$speaker.position}</p>
@@ -73,14 +74,13 @@
                         </div>
                     </a>
                     <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i>&nbsp;{$speaker.fp_count}</a>
-                    <a href="#" class="share d-none" data-toggle="modal" data-target="#v_share">Поделиться</a>
+                    <a href="#" class="share d-none" data-toggle="modal" data-target="#v_share" data-folkspeaker-id="{$speaker.id}">Поделиться</a>
                 </div>
             {/foreach}
             <!-- loop end -->
         {/if}
     </div>
 </div>
-{/if}
 
 {if $this.speakers}
     <!-- loop start -->
@@ -93,12 +93,12 @@
                 </div>
                 <div class="modal-body p-0">
                     <figure class="thumb fg-container">
-                        <img src="/images/folkspeaker/{$speaker.photo}?v={$speaker.ts_update}" data-ratio="1">
+                        <img src="/images/folkspeaker/resized/{$speaker.photo}?v={$speaker.ts_update}" data-ratio="1">
                     </figure>
                     <p class="title">{$speaker.first_name}<br/>{$speaker.last_name}</p>
                     <div class="desc">
-                        {$speaker.text}
-                        <div class="speaker-icon">
+                        {$speaker.description|dbtexttohtml}
+                        <div class="speaker-icon mt-3">
                             {if $speaker.facebook}
                                 <a href="{$speaker.facebook}" class="fa fa-facebook" target="_blank"></a>
                             {/if}
@@ -473,7 +473,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12 text-center px-0">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a data-href="https://www.facebook.com/sharer/sharer.php?u=" class="fb-xfbml-parse-ignore" href="#" data-layout="button_count"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-vk"></i></a>
                         <a href="#"><i class="fa fa-odnoklassniki"></i></a>
                         <a href="#"><i class="fa fa-twitter "></i></a>

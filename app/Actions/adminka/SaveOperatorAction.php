@@ -48,6 +48,7 @@ class SaveOperatorAction extends AdminkaAction {
         $settings['managegaz']              = Request::getVar("managegaz");
         $settings['managememory']           = Request::getVar("managememory");
         $settings['managevolunteer']        = Request::getVar("managevolunteer");
+        $settings['managefolkspeakers']     = Request::getVar("managefolkspeakers");
 
         $om = new OperatorManager();
         $omObj = null;

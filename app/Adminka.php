@@ -233,7 +233,8 @@ class Adminka extends BaseApplication {
         $perms[31]["name"] = "managecashback";          $perms[31]["desc"] = "CashBack";                        $perms[31]["icon"] = "fa-rub";
         $perms[32]["name"] = "managegaz";               $perms[32]["desc"] = "Чемпионат GAZ";                   $perms[32]["icon"] = "fa-g";
         $perms[33]["name"] = "managememory";            $perms[33]["desc"] = "Отзывы";                          $perms[33]["icon"] = "fa-g";
-        $perms[34]["name"] = "managevolunteer";            $perms[34]["desc"] = "Волонтеры";                          $perms[34]["icon"] = "fa-users";
+        $perms[34]["name"] = "managevolunteer";         $perms[34]["desc"] = "Волонтеры";                       $perms[34]["icon"] = "fa-users";
+        $perms[35]["name"] = "managefolkspeakers";      $perms[35]["desc"] = "Народные спикеры";                $perms[35]["icon"] = "fa-user-circle-o";
         return $perms;
     }
 

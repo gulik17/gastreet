@@ -883,7 +883,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             }
         }
 
-        // получить смс код
+        // получить пикера
         if ($job == "get_speaker") {
             $id = Request::getInt("id");
             $sm = new SpeakerManager();
@@ -923,6 +923,42 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 $array['twitter'] = $speaker->twitter;
                 $array['site'] = $speaker->site;
                 $array['tsUpdated'] = $speaker->tsUpdated;
+
+                echo json_encode($array);
+                exit;
+            } else {
+                $array['error'] = 1;
+                $array['msg'] = 'noSpeaker';
+                echo json_encode($array);
+                exit;
+            }
+        }
+
+        // получить народного спикера
+        if ($job == "get_folk_speaker") {
+            $id = Request::getInt("id");
+            $fsm = new FolkSpeakerManager();
+            $speaker = $fsm->getById($id);
+
+            if ($speaker) {
+                $array['error'] = 0;
+                $array['status'] = $speaker->status;
+                $array['first_name'] = $speaker->first_name;
+                $array['last_name'] = $speaker->last_name;
+                $array['user_type'] = $speaker->user_type;
+                $array['phone'] = $speaker->phone;
+                $array['email'] = $speaker->email;
+                $array['company'] = $speaker->company;
+                $array['position'] = $speaker->position;
+                $array['description'] = htmlspecialchars_decode($speaker->description);
+                $array['photo'] = $speaker->photo;
+                $array['video'] = $speaker->video;
+                $array['instagram'] = $speaker->instagram;
+                $array['facebook'] = $speaker->facebook;
+                $array['vkontakte'] = $speaker->vkontakte;
+                $array['ondoklassniki'] = $speaker->ondoklassniki;
+                $array['sort_order'] = $speaker->sort_order;
+                $array['ts_update'] = $speaker->ts_update;
 
                 echo json_encode($array);
                 exit;

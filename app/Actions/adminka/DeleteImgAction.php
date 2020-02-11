@@ -17,6 +17,8 @@ class DeleteImgAction extends AdminkaAction {
             $folder = Configurator::get("application:productsFolder");
         } else if ($item == 'speackers') {
             $folder = Configurator::get("application:speackersFolder");
+        } else if ($item == 'folkspeaker') {
+            $folder = Configurator::get("application:folkSpeakerFolder");
         } else if ($item == 'volunteer') {
             $folder = Configurator::get("application:volunteersFolder");
         } else {

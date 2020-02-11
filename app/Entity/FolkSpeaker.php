@@ -17,7 +17,7 @@ class FolkSpeaker extends Entity {
     public $email = null;
     public $company = null;
     public $position = null;
-    public $text = null;
+    public $description = null;
     public $photo = null;
     public $video = null;
     public $instagram = null;
@@ -47,7 +47,7 @@ class FolkSpeaker extends Entity {
             'email' => self::ENTITY_FIELD_STRING,
             'company' => self::ENTITY_FIELD_STRING,
             'position' => self::ENTITY_FIELD_STRING,
-            'text' => self::ENTITY_FIELD_STRING,
+            'description' => self::ENTITY_FIELD_STRING,
             'photo' => self::ENTITY_FIELD_STRING,
             'video' => self::ENTITY_FIELD_STRING,
             'instagram' => self::ENTITY_FIELD_STRING,
