@@ -813,35 +813,6 @@
                 </section>
 
                 {assign var=pkey value=0}
-                <section class="page-section">
-                    <div class="container">
-                        <h2 class="section-headline has-align-center has-size-sm">Партнеры по организации</h2>
-                        <div class="partners-list">
-                            <ul>
-                                {foreach from=$parthners item=parthner}
-                                    {if $parthner->parthnerTypeId == 5}
-                                        <li>
-                                            <div class="gss-parthner-text">{$parthner->title}</div>
-                                            <figure>
-                                                {if $parthner->url}
-                                                    <a href="{$parthner->url}" title="{$parthner->name}" target="_blank" rel="nofollow">
-                                                {/if}
-                                                <img src="/images/parthners/resized/{$parthner->pic}?v={$parthner->tsUpdate}" alt="">
-                                                {if $parthner->url}
-                                                    </a>
-                                                {/if}
-                                            </figure>
-                                        </li>
-                                        {assign var=pkey value=$pkey+1}
-                                    {/if}
-                                {/foreach}
-                            </ul>
-                            {if $pkey > 13}<div class="more" ><a class="more-link has-icon-down" href="#"><span>Посмотреть всех партнеров</span></a></div>{/if}
-                        </div>
-                    </div>
-                </section>
-
-                {assign var=pkey value=0}
                 <section class="page-section d-none">
                     <div class="container">
                         <h2 class="section-headline has-align-center has-size-sm">{if $lang == 'en'}Barstreet partners{else}Партнеры Барстрит{/if}</h2>
@@ -871,7 +842,7 @@
                 </section>
 
                 {assign var=pkey value=0}
-                <section class="page-section d-none">
+                <section class="page-section">
                     <div class="container">
                         <h2 class="section-headline has-align-center has-size-sm" style="font-size: 1.7rem;margin: 0;">{if $lang == 'en'}Information partners{else}Информационные партнеры{/if}</h2>
                         <div class="partners-list">
@@ -898,6 +869,36 @@
                         </div>
                     </div>
                 </section>
+
+                {assign var=pkey value=0}
+                <section class="page-section">
+                    <div class="container">
+                        <h2 class="section-headline has-align-center has-size-sm">Партнеры по организации</h2>
+                        <div class="partners-list">
+                            <ul>
+                                {foreach from=$parthners item=parthner}
+                                {if $parthner->parthnerTypeId == 5}
+                                <li>
+                                    <div class="gss-parthner-text">{$parthner->title}</div>
+                                    <figure>
+                                        {if $parthner->url}
+                                        <a href="{$parthner->url}" title="{$parthner->name}" target="_blank" rel="nofollow">
+                                            {/if}
+                                            <img src="/images/parthners/resized/{$parthner->pic}?v={$parthner->tsUpdate}" alt="">
+                                            {if $parthner->url}
+                                        </a>
+                                        {/if}
+                                    </figure>
+                                </li>
+                                {assign var=pkey value=$pkey+1}
+                                {/if}
+                                {/foreach}
+                            </ul>
+                            {if $pkey > 13}<div class="more" ><a class="more-link has-icon-down" href="#"><span>Посмотреть всех партнеров</span></a></div>{/if}
+                        </div>
+                    </div>
+                </section>
+
                 {/if}
                 {control name=Age}
             </div>
