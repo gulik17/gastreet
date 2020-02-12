@@ -1855,7 +1855,7 @@ footer .align-self-center p {
     vertical-align: middle;}
 .lang:hover {
     color: #fff;}
-.partners-list li:nth-child(n+13) {
+.partners-list li:nth-child(n+17) {
     display: none;}
 @media (min-width: 300px) and (max-width: 767px) {
     .user-qr img {
