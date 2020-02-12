@@ -14,18 +14,25 @@ class FolkSpeakerManager extends BaseEntityManager {
         return Utility::sort($inpIds, $res);
     }
 
-    public function getAll($sortType = "sort_order, last_name") {
+    public function getAll($sortType = "`sort_order`, `last_name`") {
         $sql = new SQLCondition();
         $sql->orderBy = $sortType;
         return $this->get($sql);
     }
 
-    public function getActive($limit = 0, $sortType = "sort_order, last_name") {
-        $sql = "SELECT `fs`.*, count(`fp`.`id`) AS fp_count FROM `folkSpeaker` AS fs LEFT JOIN `folkPhones` AS fp ON `fp`.`speaker_id` = `fs`.`id` AND `fp`.`status` = '".FolkPhones::STATUS_CONFIRM."' WHERE `fs`.`status` = '" . FolkSpeaker::STATUS_ENABLED . "' ORDER BY $sortType DESC";
+    public function getActive($limit = 0, $sortType = "`sort_order`, `last_name`") {
+        $sql = "SELECT `fs`.* FROM `folkSpeaker` AS fs WHERE `fs`.`status` = '" . FolkSpeaker::STATUS_ENABLED . "' ORDER BY $sortType DESC";
         if ($limit) {
             $sql .= " LIMIT 0, $limit";
         }
-        return $this->getByAnySQL($sql);
+        $result = $this->getByAnySQL($sql);
+        foreach ($result AS &$item) {
+            $sql = "SELECT COUNT(id) as scount FROM `folkPhones` WHERE `status` = 'STATUS_CONFIRM' AND `speaker_id` = '{$item["id"]}'";
+            $r = $this->getByAnySQL($sql);
+            $item['fp_count'] = $r[0]['scount'];
+           // deb($sql);
+        }
+        return $result;
     }
 
     public function delSpeaker($id) {
