@@ -62,6 +62,16 @@ class BaseControl extends Control {
             $this->addData("gastreetspecial", 0);
         }
 
+        if ( ($code == 'rebro') || (Context::getObject('code') == 'rebro') ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'rebro');
+            }
+            $this->gcode = 'rebro';
+            $this->addData("gastreetrebro", 1);
+        } else {
+            $this->addData("gastreetrebro", 0);
+        }
+
         // Устанавливаем язык пользователя
         if ($this->actor) {
             if ( (Request::getVar("lang")) && ( (Request::getVar("lang") == 'en') || (Request::getVar("lang") == 'ru') ) ) {
