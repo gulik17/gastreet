@@ -1,0 +1,138 @@
+.landing-smi-page .head-title {
+    font-family: 'Gastreet Font';
+    color: #282c57;
+    font-size: 4rem;
+    font-weight: 600;}
+.landing-smi-page .minus {    
+    width: 2.800em;
+    height: 0.10em;
+    display: inline-block;
+    background-color: #000;
+    margin: 0 4px 0.210em 4px;}
+.landing-smi-page .head-longtitle {
+    display: inline-block;
+    text-align: end;
+    align-self: center;}
+.landing-smi-page .jule {
+    font-size: 1.688rem;}
+.landing-smi-page .sochi {
+    font-size: 0.875rem;}
+.landing-smi-page .body-credit {
+    text-align: end;
+    padding: 0;}
+.landing-smi-page .body-text {
+    align-self: center;}
+.landing-smi-body .body {
+    margin-bottom: 2rem;}
+.landing-smi-page .row-nowrap {
+    justify-content: center;}
+.landing-smi-page .ticket-header {
+    margin: 0;
+    font-size: 0.8rem;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100px;
+    position: relative;
+    display: flex;}
+.landing-smi-page .ticket-header .ticket-title {
+    font-family: 'Gastreet Font', sans-serif;
+    font-size: 1.313rem;
+    margin-bottom: 5px;}
+.landing-smi-page .ticket-header .ticket-longtitle {
+    font-size: 0.750rem;
+    font-weight: 600;
+    line-height: 1;}
+.landing-smi-page .ticket-thematic {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 15px;}
+.landing-smi-page .ticket-thematic .opportunities-item {
+    margin: 0;
+    display: block;
+    vertical-align: top;
+    width: auto;}
+.landing-smi-page .barstreet .opportunities-item {
+    background-color: #e51a4b;}
+.landing-smi-page .profi .opportunities-item {
+    background-color: #008dd2;}
+.landing-smi-page .chef .opportunities-item {
+    background-color: #b0cb1f;}
+.landing-smi-page .ticket-footer {
+    background-color: #f6df34;
+    color: #000;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    align-self: center;}
+.landing-smi-page .ticket_up_price {
+    font-weight: 600;
+    color: #fff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px dashed;
+    padding: 5px 3px;}
+.landing-smi-page a.opportunities-buy {
+    background-color: #10093b;
+    font-weight: 600;
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    padding: 10px 100px;}
+.landing-smi-body .ticket-thematic .price-credit {
+    font-size: 1.8rem;
+    font-weight: 600;}
+.landing-smi-body .ticket-thematic .price-ticket {
+    font-size: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;}
+.landing-smi-page a.credit {
+    color: #fff;
+    border-bottom: 1px dashed;
+    font-size: 1.500rem;
+    font-weight: 400;}
+.landing-smi-page .buy {
+    text-align: center;}
+
+
+@media (min-width: 300px) and (max-width: 767px) {
+    html {
+        font-size: 12px;}
+    .landing-smi-page .head-title {
+        text-align: center;}
+    .landing-smi-page .ticket-header .ticket-title {
+        font-family: 'Gastreet Font', sans-serif;
+        font-size: 3.313rem;
+        margin-bottom: 5px;}
+    .landing-smi-page .body-credit {
+        text-align: center;}
+    .landing-smi-page .head-longtitle {
+        text-align: center;
+        margin-bottom: 2rem;}
+    br.br {
+        display: none;}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 14px;}
+    .landing-smi-page .head-title {
+        text-align: center;}
+    .landing-smi-page .body-credit {
+        text-align: center;}
+    .landing-smi-page .ticket-header .ticket-title {
+        font-family: 'Gastreet Font', sans-serif;
+        font-size: 3.313rem;
+        margin-bottom: 5px;}
+    .landing-smi-page .head-longtitle {
+        text-align: center;
+        margin-bottom: 2rem;}
+    br.br {
+        display: none;}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
