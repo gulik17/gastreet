@@ -82,6 +82,7 @@
     color: #fff;
     margin-bottom: 2rem;
     font-size: 1.5rem;
+    display: inline-block;
     padding: 10px 100px;}
 .landing-smi-body .ticket-thematic .price-credit {
     font-size: 1.8rem;
@@ -125,13 +126,15 @@
         text-align: center;}
     .landing-smi-page .ticket-header .ticket-title {
         font-family: 'Gastreet Font', sans-serif;
-        font-size: 3.313rem;
+        font-size: 1.313rem;
         margin-bottom: 5px;}
     .landing-smi-page .head-longtitle {
         text-align: center;
         margin-bottom: 2rem;}
     br.br {
         display: none;}
+    .landing-smi-page .ticket_up_price {
+        font-size: 0.7rem;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
 
