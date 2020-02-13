@@ -72,6 +72,26 @@ class BaseControl extends Control {
             $this->addData("gastreetrebro", 0);
         }
 
+        if ( ($code == 'lubimki') || (Context::getObject('code') == 'lubimki') ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'lubimki');
+            }
+            $this->gcode = 'lubimki';
+            $this->addData("gastreetlubimki", 1);
+        } else {
+            $this->addData("gastreetlubimki", 0);
+        }
+
+        if ( ($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'ambassadors');
+            }
+            $this->gcode = 'ambassadors';
+            $this->addData("gastreetambassadors", 1);
+        } else {
+            $this->addData("gastreetambassadors", 0);
+        }
+
         // Устанавливаем язык пользователя
         if ($this->actor) {
             if ( (Request::getVar("lang")) && ( (Request::getVar("lang") == 'en') || (Request::getVar("lang") == 'ru') ) ) {

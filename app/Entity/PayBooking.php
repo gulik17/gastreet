@@ -5,6 +5,7 @@
 class PayBooking extends Entity {
     const STATUS_NEW = 'STATUS_NEW';
     const STATUS_PAID = 'STATUS_PAID';
+    const STATUS_REJECT = 'STATUS_REJECT';
 
 	public $entityTable = 'payBooking';
 	public $primaryKey = 'id';
@@ -23,6 +24,7 @@ class PayBooking extends Entity {
         $statList = array(
             self::STATUS_NEW => "Новый",
             self::STATUS_PAID => "Оплачен",
+            self::STATUS_REJECT => "Отменен",
         );
         return $stat ? $statList[$stat] : $statList;
     }

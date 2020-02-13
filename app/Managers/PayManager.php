@@ -16,6 +16,12 @@ class PayManager extends BaseEntityManager {
         return (strlen($res['monetaOperationId']) > 30) ? $res : null;
     }
 
+    public function getAlfaPayBooking() {
+        $sql = "SELECT * FROM `payBooking` AS p WHERE `p`.`status` = '" . PayBooking::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
+        $res = $this->getByAnySQL($sql)[0];
+        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
+    }
+
     public function PayOrder($ORDER_ID, $SYSTEM_INCOME, $TRANSACTION_ID) {
         Logger::init(Configurator::getSection("logger"));
         $leftAmount = $SYSTEM_INCOME;
@@ -232,6 +238,43 @@ class PayManager extends BaseEntityManager {
 //            Logger::error($pmObj);
 //        }
         return 'ERROR, SEE LOG';
+    }
+
+    public function PayBooking($ORDER_ID, $SYSTEM_INCOME, $TRANSACTION_ID) {
+        // это бронирование
+        $orderIdArray = explode('_', $ORDER_ID);
+        $payId = $orderIdArray[0];
+        $pbm = new PayBookingManager();
+        $pbmObj = $pbm->getById($payId);
+        if ($pbmObj) {
+            $userId = $pbmObj->userId;
+            $payBookingIds = @unserialize($pbmObj->payForBookingIds);
+            $bom = new BookingManager();
+            if (is_array($payBookingIds) && count($payBookingIds)) {
+                // $bookingPayAmount = $RFI_SYSTEM_INCOME / count($payBookingIds);
+                $bookingPayAmount = intval(SettingsManager::getValue('amount_bron'));
+                $bomList = $bom->getByUserIdAndIds($userId, $payBookingIds);
+                if (is_array($bomList) && count($bomList)) {
+                    foreach ($bomList AS $bomItem) {
+                        // ставим "Оплачено" всем booking
+                        $bomItem->payAmount = $bookingPayAmount;
+                        $bomItem->monetaOperationId = $TRANSACTION_ID;
+                        $bomItem->status = Booking::STATUS_PAID;
+                        $bomItem->tsPay = time();
+                        $bomItem->tsFinish = time() + intval(SettingsManager::getValue('days_bron')) * 60 * 60 * 24; // 86400
+                        $bomItem = $bom->save($bomItem);
+                    }
+                }
+            }
+
+            $pbmObj->payAmount = $SYSTEM_INCOME;
+            $pbmObj->monetaOperationId = $TRANSACTION_ID;
+            $pbmObj->status = PayBooking::STATUS_PAID;
+            $pbmObj->tsUpdated = time();
+            $pbmObj = $pbm->save($pbmObj);
+        }
+        // result меняем на success
+        return 'SUCCESS';
     }
 
     public function getByIds($inpIds) {

@@ -59,3 +59,51 @@ if ($pmObj) {
         //deb($status, 0);
     }
 }
+$pmObj = null;
+$pbm = new PayBookingManager();
+$pmObj = $pm->getAlfaPayBooking();
+
+if ($pmObj) {
+    $service = new AlfaService();
+    $status = $service->getOrderStatus($pmObj['monetaOperationId']);
+
+    print_r($pmObj);
+
+    if (array_key_exists('ErrorCode', $status)) {
+        /**
+         *  Код ошибки      Описание
+         *      0           Обработка запроса прошла без системных ошибок.
+         *      2           Заказ отклонен по причине ошибки в реквизитах платежа.
+         *      5           Доступ запрещён;
+         *                  Пользователь должен сменить свой пароль;
+         *                  Номер заказа не указан.
+         *      6           Неизвестный номер заказа.
+         *      7           Системная ошибка.
+         *
+         *  Статус заказа   Описание
+         *      0           Заказ зарегистрирован, но не оплачен.
+         *      1           Предавторизованная сумма захолдирована (для двухстадийных платежей).
+         *      2           Проведена полная авторизация суммы заказа.
+         *      3           Авторизация отменена.
+         *      4           По транзакции была проведена операция возврата.
+         *      5           Инициирована авторизация через ACS банка-эмитента.
+         *      6           Авторизация отклонена. */
+
+        if ($status['ErrorCode'] > 0) {
+            $pmObj = $pbm->getById($pmObj['id']);
+            $pmObj->status = PayBooking::STATUS_REJECT;
+            $pmObj->tsUpdated = time();
+            $pmObj = $pbm->save($pmObj);
+        } else {
+            if ($status['OrderStatus'] == 2) {
+                $res = $pm->PayBooking($status['OrderNumber'], ($status['Amount']/100), $pmObj['monetaOperationId']);
+            } else if ($status['OrderStatus'] == 3) {
+                $pmObj = $pbm->getById($pmObj['id']);
+                $pmObj->status = PayBooking::STATUS_REJECT;
+                $pmObj->tsUpdated = time();
+                $pmObj = $pbm->save($pmObj);
+            }
+        }
+        //deb($status, 0);
+    }
+}
