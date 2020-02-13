@@ -180,6 +180,10 @@ body {
         margin-bottom: 20px;}
 }
 @media all and (max-width: 799px) {
+    .block_right .prev .box li {
+        display: inline-block;
+        width: 49%;
+    }
     .block_right .prev .box a {
         width: auto !important;
         height: auto !important;}
