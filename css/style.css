@@ -4246,6 +4246,8 @@ figure.thumb.fg-container > img.foreground.fg-hide.fg-not {
     background-color: #4f0ebd;}
 .tag_mainstreet figure.thumb.fg-container {
     background-color: #008dd2;}
+.tag_tedx figure.thumb.fg-container {
+    background-color: #000;}
 .tag_chefstreet figure.thumb.fg-container {
     background-color: #b0cb1f;}
 .tag_biznesshkola figure.thumb.fg-container {
@@ -4387,6 +4389,8 @@ div.thumb > iframe {
     color: #a0a0a0!important;}
 .tags-list-speakers ul li.tag_fuckup a, .c_fuckup {
     color: #4f0ebd!important;}
+.tags-list-speakers ul li.tag_tedx a, .c_tedx {
+    color: #d12e26!important;}
 .tags-list-speakers ul li.tag_rebro a, .c_rebro {
     color: #434242!important;}
 .tags-list-speakers ul li.tag_king a, .c_king {
@@ -4466,6 +4470,10 @@ div.thumb > iframe {
     display: inline-block!important;
     color: #fff!important;
     background-color: #b0cb1f;}
+.img-tags .tag_tedx, .tags-list-speakers .tag_tedx.active a {
+    display: inline-block!important;
+    color: #fff!important;
+    background-color: #d12e26;}
 .img-tags .tag_chefstreetnight, .tags-list-speakers .tag_chefstreetnight.active a {
     display: inline-block!important;
     color: #000!important;
@@ -4512,6 +4520,8 @@ div.thumb > iframe {
     background-color: #a0a0a0;}
 .speakers_2019 .tag_mainstreet, .mainstreet-item img {
     background-color: #008dd2;}
+.speakers_2019 .tag_tedx, .tedx-item img {
+    background-color: #000;}
 .speakers_2019 .tag_hoststreet, .hoststreet-item img {
     background-color: #d67e2a;}
 .speakers_2019 .tag_pizzastreet, .pizzastreet-item img {
@@ -4528,6 +4538,8 @@ div.thumb > iframe {
     background-color: #a75f4a;}
 .speakers_2019 .person-teaser .about {
     background-image: linear-gradient(transparent 50%, #10093B 100%);}
+.speakers_2019 .person-teaser.tag_tedx .about {
+    background-image: linear-gradient(transparent 50%, #d12e26 100%);}
 .presentation-speaker .desc>div {
     font-size: .7rem;
     color: #777;}
