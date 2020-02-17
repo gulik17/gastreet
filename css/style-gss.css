@@ -3515,6 +3515,11 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
 .page_body .ticket.ticket-barstreet .title_red {
     background: none;
     color: #fff;}
+.page_body .ticket.ticket-partner {
+    background-color: #10093B;
+    color: #fff;}
+.page_body .ticket.ticket-staff {
+    color: #008dd2;}
 .page_body .ticket.ticket-barstreet .ticket_item li.disabled {
     opacity: .5}
 .page .page_body .schedule .area p {
@@ -5558,6 +5563,7 @@ main {
     position: relative;}
 .ticket-january .ticket-header h5 {
     font-family: 'Gastreet Font', sans-serif;
+    text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 0;}
 .ticket-january .ticket-header p {
@@ -5624,6 +5630,10 @@ main {
     background-color: #b0cb1f;}
 .barstreet .ticket-item {
     background-color: #e51a4b;}
+.partner .ticket-item {
+    background-color: #10093B;}
+.staff .ticket-item {
+    color: #008dd2;}
 .ticket-body .ticket-row:nth-last-child(-n+2) {
     border: 0;}
 .ticket-body .ticket-row:nth-last-child(-n+3) {

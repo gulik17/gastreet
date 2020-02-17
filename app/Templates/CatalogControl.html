@@ -56,6 +56,8 @@
                                             Волонтеры! Роднулечки! Только для вас пожизненные стартовые цены на билеты GASTREET!
                                         {elseif $this.gastreetambassadors}
                                             Это секретная страница только для избранных, то есть для амбассадоров!
+                                        {elseif $this.gastreetpartner}
+                                            Твой менеджер уже всё-всё тебе рассказал про регистрацию промо-кода. Даже если ты - микро-зелень, у тебя всё получится!
                                         {else}
                                             Ну и&nbsp;чего ты еще думаешь? Только до 1&nbsp;марта покупай билеты по ценам прошлого года!
                                         {/if}
@@ -69,6 +71,8 @@
                                             Респект и уважуха, что тут скажешь!
                                         {elseif $this.gastreetambassadors}
                                             Ребятки, от души душевно в душу!
+                                        {elseif $this.gastreetpartner}
+                                            А купон на заселение ищи в личном кабинете после активации промо-кода. Бинго!
                                         {else}
                                             Кстати, к&nbsp;билетам можно докупить еще и&nbsp;<a href="#ext_option">дополнительные опции</a>
                                         {/if}
@@ -95,7 +99,7 @@
             {component name="Userticket"}
         </div>
     </div>
-
+    {if !$this.gastreetpartner}
     <div class="container all-tickets">
         <div class="row">
             <div class="col-md-2 all-tick">
@@ -132,7 +136,7 @@
             </div>
         </div>
     </div>
-
+    {/if}
     <div class="container">
         <div class="row row-condensed row-options">
             <div class="col-md-2">

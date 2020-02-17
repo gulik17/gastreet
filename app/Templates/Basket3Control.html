@@ -150,35 +150,52 @@
 								</div>
                             {elseif $this.gastreetpartner}
 								<div class="col-md-12">
-									{assign var=ticketId value=3} <!-- УКАЗАТЬ ID БИЛЕТА «Профи» -->
+									{assign var=ticketId value=3} <!-- УКАЗАТЬ ID БИЛЕТА «ПРОФИ» -->
 									{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-profi" data-ri="{$ticketId}">
 										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
-										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
 										{if $ticket->leftCount > 0}
-											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+										<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
 										{/if}
 									</div>
 								</div>
 								<div class="col-md-12">
-									{assign var=ticketId value=12} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
+									{assign var=ticketId value=2} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
 									{assign var=ticket value=$ticketId|getticket}
-									<div class="ticket" data-ri="{$ticketId}">
+									<div class="ticket ticket-chef" data-ri="{$ticketId}">
 										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
-										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
 										{if $ticket->leftCount > 0}
-											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+										<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
 										{/if}
 									</div>
 								</div>
 								<div class="col-md-12">
-									{assign var=ticketId value=13} <!-- УКАЗАТЬ ID БИЛЕТА «Staff» -->
+									{assign var=ticketId value=4} <!-- УКАЗАТЬ ID БИЛЕТА «Barstreet» -->
 									{assign var=ticket value=$ticketId|getticket}
-									<div class="ticket" data-ri="{$ticketId}">
+									<div class="ticket ticket-barstreet" data-ri="{$ticketId}">
 										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
-										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
 										{if $ticket->leftCount > 0}
-											<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+										<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=16} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-partner" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										{if $ticket->leftCount > 0}
+										<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
+										{/if}
+									</div>
+								</div>
+								<div class="col-md-12">
+									{assign var=ticketId value=17} <!-- УКАЗАТЬ ID БИЛЕТА «Staff» -->
+									{assign var=ticket value=$ticketId|getticket}
+									<div class="ticket ticket-staff" data-ri="{$ticketId}">
+										<h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
+										{if $ticket->leftCount > 0}
+										<a href="#" class="btn btn-cart buy-ticket-click" data-extuser="" data-id="{$ticket->id}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Выбрать</a>
 										{/if}
 									</div>
 								</div>
