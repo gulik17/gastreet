@@ -171,6 +171,8 @@ class UserGetHotelKuponAction extends AuthorizedUserAction implements IPublicAct
 
         $message = Enviropment::prepareForMail(MailTextHelper::parseContent($html, $vars));
 
+       // echo $message;
+        //die();
         // можно теперь отдать pdf
         $qrLibFileName = APPLICATION_DIR . "/html2pdf/vendor/autoload.php";
         require_once($qrLibFileName);

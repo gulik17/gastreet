@@ -4,7 +4,7 @@
  *
  */
 class UserQrControl extends AuthorizedUserControl {
-    public $pageTitle = "Распечатать билет — GASTREET 2020";
+    public $pageTitle = "Файлы для скачивания — GASTREET 2020";
     public $pageTitle_en = " Print Ticket — GASTREET 2020";
     public $lang = "ru";
 

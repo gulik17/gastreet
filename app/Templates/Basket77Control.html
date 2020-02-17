@@ -60,7 +60,7 @@
         <ul class="gss-basket-buttons-ul marginleft45">
             {if $this.purchasedTickets[0].status == 'STATUS_PAID'}
             <li class="print">
-                <a href="{link show=userqr}?id={$this.user->id}">{if $lang == 'en'}Print the ticket{else}Распечатать билет<br>Купон на проживание{/if}</a>
+                <a href="{link show=userqr}?id={$this.user->id}">{if $lang == 'en'}Print the ticket{else}Файлы для скачивания{/if}</a>
             </li>
             <li class="print">
                 <a href="{link do=usergetcert}">{if $lang == 'en'}Certificate<br> of participant{else}Сертификат<br> участника{/if}</a>
@@ -401,7 +401,7 @@
                 {if $this.purchasedChildTickets[$childid][0].status == 'STATUS_PAID'}
                 <li>
                     <div class="print margintop5">
-                        <a href="{link show=userqr}?id={$childid}">{if $lang == 'en'}Print the ticket{else}Распечатать билет<br>Купон на проживание{/if}</a>
+                        <a href="{link show=userqr}?id={$childid}">{if $lang == 'en'}Print the ticket{else}Файлы для скачивания{/if}</a>
                     </div>
                 </li>
                 <li class="print">
