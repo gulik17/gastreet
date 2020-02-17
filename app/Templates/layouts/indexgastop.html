@@ -37,7 +37,7 @@
         <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-869423439'); </script>
         {/literal}
     </head>
-    <body class="page load d-flex flex-column h-100 {if $gcode == 'gastreetspecial'}page-neo{/if}">
+    <body class="page load d-flex flex-column h-100 {$gcode} {if $gcode == 'gastreetspecial'}page-neo{/if}">
         {component name="Topmenu"}
         <main role="main" class="flex-shrink-0 pb-4">
             <div class="main_screen">

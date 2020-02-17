@@ -33,6 +33,7 @@ class CatalogControl extends IndexControl {
             $onlyAllowed = true;
         }
 
+
         // максимум до 11-ми пока
         if ($areaId > 0 && $areaId <= 29) {
             $this->layout = "indexgastop{$areaId}.html";

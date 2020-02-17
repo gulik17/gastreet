@@ -52,15 +52,47 @@ class BaseControl extends Control {
         }
 
         //if ( ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) && (time() < 1577836800) ) {
-        if ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) {
+        if (($code == 'sukhih') || (Context::getObject('code') == 'sukhih') || ($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ||
+            ($code == 'tatulova') || (Context::getObject('code') == 'tatulova') ||
+            ($code == 'breiova') || (Context::getObject('code') == 'breiova') ||
+            ($code == 'duving') || (Context::getObject('code') == 'duving') ||
+            ($code == 'shmakov ') || (Context::getObject('code') == 'shmakov ') ||
+            ($code == 'zhdanov') || (Context::getObject('code') == 'zhdanov') ||
+            ($code == 'redman') || (Context::getObject('code') == 'redman') ||
+            ($code == 'reimer') || (Context::getObject('code') == 'reimer') ||
+            ($code == 'konovalov') || (Context::getObject('code') == 'konovalov') ||
+            ($code == 'belkin') || (Context::getObject('code') == 'belkin') ||
+            ($code == 'gorensky') || (Context::getObject('code') == 'gorensky') ||
+            ($code == 'sokolov') || (Context::getObject('code') == 'sokolov') ||
+            ($code == 'martynenko') || (Context::getObject('code') == 'martynenko') ||
+            ($code == 'kachalova') || (Context::getObject('code') == 'kachalova') ||
+            ($code == 'burov') || (Context::getObject('code') == 'burov') ||
+            ($code == 'kholikberdiyev') || (Context::getObject('code') == 'kholikberdiyev') ||
+            ($code == 'akishkin') || (Context::getObject('code') == 'akishkin') ||
+            ($code == 'perelman') || (Context::getObject('code') == 'perelman') ||
+            ($code == 'itskov') || (Context::getObject('code') == 'itskov') ||
+            ($code == 'sukhikh') || (Context::getObject('code') == 'sukhikh') ||
+            ($code == 'popova') || (Context::getObject('code') == 'popova') ||
+            ($code == 'usanova') || (Context::getObject('code') == 'usanova') ||
+            ($code == 'sharifulin') || (Context::getObject('code') == 'sharifulin') ||
+            ($code == 'levitas') || (Context::getObject('code') == 'levitas') ||
+            ($code == 'ivanov') || (Context::getObject('code') == 'ivanov') ||
+            ($code == 'kozubov') || (Context::getObject('code') == 'kozubov') ||
+            ($code == 'bogdanova') || (Context::getObject('code') == 'bogdanova') ||
+            ($code == 'tyumeneva') || (Context::getObject('code') == 'tyumeneva') ||
+            ($code == 'starodubtseva') || (Context::getObject('code') == 'starodubtseva') ||
+            ($code == 'polzikov') || (Context::getObject('code') == 'polzikov') ||
+            ($code == 'morozenko') || (Context::getObject('code') == 'morozenko') ||
+            ($code == 'kumpan') || (Context::getObject('code') == 'kumpan') ) {
             if (Request::getVar("code")) {
                 Context::setObject('code', 'sukhih');
             }
-            $this->gcode = 'sukhih';
-            $this->addData("gastreetspecial", 1);
+            $this->gcode = 'ambassadors';
+            $this->addData("gastreetambassadors", 1);
         } else {
-            $this->addData("gastreetspecial", 0);
+            $this->addData("gastreetambassadors", 0);
         }
+
 
         if ( ($code == 'rebro') || (Context::getObject('code') == 'rebro') ) {
             if (Request::getVar("code")) {
@@ -80,16 +112,6 @@ class BaseControl extends Control {
             $this->addData("gastreetlubimki", 1);
         } else {
             $this->addData("gastreetlubimki", 0);
-        }
-
-        if ( ($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ) {
-            if (Request::getVar("code")) {
-                Context::setObject('code', 'ambassadors');
-            }
-            $this->gcode = 'ambassadors';
-            $this->addData("gastreetambassadors", 1);
-        } else {
-            $this->addData("gastreetambassadors", 0);
         }
 
         // Устанавливаем язык пользователя
