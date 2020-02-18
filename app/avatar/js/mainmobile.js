@@ -40,6 +40,7 @@ $(document).ready(function () {
                         $('html,body').scrollTop(0);
                         $('#mobileCropper_getResult').show();
                         $('#mobileCropper_cancel').show();
+                        $('.share').hide();
 
                         avatar_img_original = obj.img_original;
                         avatar_img_final = obj.img_final;
@@ -54,6 +55,7 @@ $(document).ready(function () {
                             // отресайзили
                             $('#mobileCropper_getResult').hide();
                             $('#mobileCropper_cancel').hide();
+                            $('.share').show();
 
                             /*
                              alert('originalWidth: '+ info.originalWidth +
@@ -97,6 +99,7 @@ $(document).ready(function () {
                         document.getElementById("mobileCropper_cancel").addEventListener('touchstart', function () {
                             $('#mobileCropper_getResult').hide();
                             $('#mobileCropper_cancel').hide();
+                            $('.share').show();
                             cropper.cancel();
                         }, false);
                     }
