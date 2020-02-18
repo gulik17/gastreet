@@ -106,6 +106,7 @@
             {if $total}
                 <div class="row register-total">
                     <div class="col-md-12">
+                        <a href="/basket?q=6" class="mb-3 mt-2 d-inline-block">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
                         <div class="desc">Общая сумма к оплате:</div>
                         <div class="total">{$total|numberformat}&nbsp;₽</div>
                     </div>
@@ -190,6 +191,9 @@
             {/if}
         </div>
         <div class="col-md-4">
+            <div class="list-group mb-5">
+                <a href="/basket?q=6" class="list-group-item list-group-item-action">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
+            </div>
             <div class="information">
                 <p class="title">ИНФОРМАЦИЯ</p>
                 <p>Ты почти справился - это последний этап регистрации.</p>
@@ -204,9 +208,6 @@
                 <p><b>Обязательно</b> подтвердите почту участника, чтобы получать важные email уведомления и&nbsp;новости, в&nbsp;том числе билет на почту после оплаты.</p>
             </div>
             {/if}
-            <div class="list-group mb-5">
-                <a href="/basket?q=6" class="list-group-item list-group-item-action">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
-            </div>
         </div>
     </div>
 </div>

@@ -565,8 +565,10 @@ $().ready(function () {
                $('#reg_email').addClass('error');
             if (!country)
                $('#countryName').addClass('error');
-            if (!city)
-               $('#cityName').addClass('error');
+            if (!city) {
+                $('#cityName').addClass('error');
+                alert("Выберите город из выпадающего списка");
+            }
             if (!position)
                $('#reg_position').addClass('error');
             if (!usersize)
@@ -645,7 +647,9 @@ $('.user-modal-edit').on('hidden.bs.modal', function (event) {
     }
 });
 $(function() {
-    $("#reg_born").datepicker($.datepicker.regional["ru"]);
+    $("#reg_born").datepicker({
+        dateFormat: "dd.mm.yy"
+    }, $.datepicker.regional["ru"]);
 });
 function loadOldUserData() {
    if ( !$('.main-user-input-block').hasClass('show') && !$('#reg_email').val() ) {

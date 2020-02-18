@@ -3594,6 +3594,8 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
     border-color: #0088d4;
     color: #0088d4;
     background-color: #fff;}
+.modal ::placeholder {
+    color: #e8e8e8;}
 #old18 {
     z-index: 10001;}
 .cashback-title {
