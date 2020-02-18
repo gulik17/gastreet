@@ -2153,9 +2153,9 @@ main {
 .jumbotron-slider .dots {
     position: absolute;
     bottom: 30px;
-    left: 0;
-    width: 100%;
+    left: 50%;
     padding-bottom: 5px;
+    transform: translate(-50%, 0);
     text-align: center;}
 
 .nav.js-nav {

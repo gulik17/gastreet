@@ -109,9 +109,9 @@ class Utility {
      */
     public static function sort($ids, $array, $key = "id") {
         if(!$ids || !$array) {
-            return array();
+            return [];
         }
-        $unsorted = array();
+        $unsorted = [];
         foreach($array as $item) {
             if ( (is_array($item)) && (array_key_exists($key, $item)) ) {
                 $unsorted[$item[$key]] = $item;
@@ -119,7 +119,7 @@ class Utility {
                 $unsorted[$item->$key] = $item;
             }
         }
-        $sorted = array();
+        $sorted = [];
         foreach($ids as $id) {
             if(array_key_exists($id, $unsorted)) {
                 $sorted[$id] = $unsorted[$id];
@@ -195,7 +195,7 @@ class Utility {
      */
     public static function pickerDateToTime($strData) {
         $strData = trim($strData);
-        $timeArr = array(0, 0, 0);
+        $timeArr = [0, 0, 0];
         // 30.07.2010 12:30
         // проверим не было ли выбрано время
         $seArr = explode(" ", $strData);
@@ -263,7 +263,7 @@ class Utility {
      * @return string текст на латинице
      */
     public static function rus2lat($str) {
-        $ttable = array(
+        $ttable = [
             "й" => "y",
             "ц" => "ts",
             "у" => "u",
@@ -332,7 +332,7 @@ class Utility {
             "Б" => "B",
             "Ю" => "JU",
             "Ё" => "Yo",
-	);
+	];
         $result = strtr($str, $ttable);
         return $result;
     }
@@ -364,7 +364,7 @@ class Utility {
      * @return boolean
      */
     public static function prepareMainUrlPart($url, $isSearch = false) {
-        $stopArray = array('www', 'ww', 'http', 'https');
+        $stopArray = ['www', 'ww', 'http', 'https'];
         $url = mb_strtolower($url,'utf8');
         $urlParts = explode('.', $url);
         if (!count($urlParts) && !$isSearch) {
@@ -391,14 +391,14 @@ class Utility {
      * @return type
      */
     public static function dateFormat($string, $format = "d-m-Y") {
-        $monthShortEn = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
-        $monthLongEn = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-        $daysLongEn = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
-        $daysShortEn = array('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
-        $monthShortRu = array("янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек");
-        $monthLongRu = array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-        // $monthLongRu = array("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь");
-        $daysRu = array("понедельник", "вторник","среда","четверг","пятница","суббота","воскресенье");
+        $monthShortEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        $monthLongEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        $daysLongEn = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        $daysShortEn = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        $monthShortRu = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+        $monthLongRu = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+        // $monthLongRu = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+        $daysRu = ["понедельник", "вторник","среда","четверг","пятница","суббота","воскресенье"];
         // если это timestamp
         if (preg_match("/^[0-9]+$/", $string)) {
             $string = date("c", $string);
@@ -459,7 +459,7 @@ class Utility {
         if (!$text || $text == '') {
             return false;
         }
-        $str_search = array(
+        $str_search = [
             "#\\\n#is",
             "#\[table\](.+?)\[\/table\]#is",
             "#\[tr\](.+?)\[\/tr\]#is",
@@ -479,8 +479,8 @@ class Utility {
             "#\[list\](.+?)\[\/list\]#is",
             "#\[list=(1|a|I)\](.+?)\[\/list\]#is",
             "#\[\*\](.+?)\[\/\*\]#"
-        );
-        $str_replace = array(
+        ];
+        $str_replace = [
             "<br />",
             "<table>\\1</table>",
             "<tr>\\1</tr>",
@@ -500,7 +500,7 @@ class Utility {
             "<ul>\\1</ul>",
             "<ol type='\\1'>\\2</ol>",
             "<li>\\1</li>"
-        );
+        ];
         $text = preg_replace($str_search, $str_replace, $text);
         // смайлы
         $text = str_replace(':)', '<img src="/images/smiles/sm1.png" class="sm">', $text);
@@ -588,7 +588,7 @@ class Utility {
      */
     public static function escape_win($path) {
         $path = strtoupper($path);
-        return strtr($path, array("\\U0430"=>"а", "\\U0431"=>"б", "\\U0432"=>"в",
+        return strtr($path, ["\\U0430"=>"а", "\\U0431"=>"б", "\\U0432"=>"в",
             "\\U0433"=>"г", "\\U0434"=>"д", "\\U0435"=>"е", "\\U0451"=>"ё", "\\U0436"=>"ж", "\\U0437"=>"з", "\\U0438"=>"и",
             "\\U0439"=>"й", "\\U043A"=>"к", "\\U043B"=>"л", "\\U043C"=>"м", "\\U043D"=>"н", "\\U043E"=>"о", "\\U043F"=>"п",
             "\\U0440"=>"р", "\\U0441"=>"с", "\\U0442"=>"т", "\\U0443"=>"у", "\\U0444"=>"ф", "\\U0445"=>"х", "\\U0446"=>"ц",
@@ -598,7 +598,7 @@ class Utility {
             "\\U041B"=>"Л", "\\U041C"=>"М", "\\U041D"=>"Н", "\\U041E"=>"О", "\\U041F"=>"П", "\\U0420"=>"Р", "\\U0421"=>"С",
             "\\U0422"=>"Т", "\\U0423"=>"У", "\\U0424"=>"Ф", "\\U0425"=>"Х", "\\U0426"=>"Ц", "\\U0427"=>"Ч", "\\U0428"=>"Ш",
             "\\U0429"=>"Щ", "\\U042A"=>"Ъ", "\\U042B"=>"Ы", "\\U042C"=>"Ь", "\\U042D"=>"Э", "\\U042E"=>"Ю", "\\U042F"=>"Я"
-        ));
+        ]);
     }
 
     /**
@@ -608,23 +608,23 @@ class Utility {
      * @return string
      */
     public static function num2str($num) {
-        $nul='ноль';
-        $ten=array(
-            array('','один','два','три','четыре','пять','шесть','семь', 'восемь','девять'),
-            array('','одна','две','три','четыре','пять','шесть','семь', 'восемь','девять'),
-        );
-        $a20=array('десять','одиннадцать','двенадцать','тринадцать','четырнадцать' ,'пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать');
-        $tens=array(2=>'двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят' ,'восемьдесят','девяносто');
-        $hundred=array('','сто','двести','триста','четыреста','пятьсот','шестьсот', 'семьсот','восемьсот','девятьсот');
-        $unit=array( // Units
-            array('копейка' ,'копейки' ,'копеек'    ,1),
-            array('рубль'   ,'рубля'   ,'рублей'    ,0),
-            array('тысяча'  ,'тысячи'  ,'тысяч'     ,1),
-            array('миллион' ,'миллиона','миллионов' ,0),
-            array('миллиард','милиарда','миллиардов',0),
-        );
+        $nul = 'ноль';
+        $ten = [
+            ['','один','два','три','четыре','пять','шесть','семь', 'восемь','девять'],
+            ['','одна','две','три','четыре','пять','шесть','семь', 'восемь','девять'],
+        ];
+        $a20 = ['десять','одиннадцать','двенадцать','тринадцать','четырнадцать' ,'пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать'];
+        $tens = [2 => 'двадцать', 'тридцать','сорок','пятьдесят','шестьдесят','семьдесят' ,'восемьдесят','девяносто'];
+        $hundred = ['', 'сто','двести','триста','четыреста','пятьсот','шестьсот', 'семьсот','восемьсот','девятьсот'];
+        $unit = [ // Units
+            ['копейка' ,'копейки' ,'копеек'    ,1],
+            ['рубль'   ,'рубля'   ,'рублей'    ,0],
+            ['тысяча'  ,'тысячи'  ,'тысяч'     ,1],
+            ['миллион' ,'миллиона','миллионов' ,0],
+            ['миллиард','милиарда','миллиардов',0],
+        ];
         list($rub,$kop) = explode('.',sprintf("%015.2f", floatval($num)));
-        $out = array();
+        $out = [];
         if (intval($rub)>0) {
             foreach(str_split($rub,3) as $uk=>$v) { // by 3 symbols
                 if (!intval($v)) continue;
@@ -670,7 +670,7 @@ class Utility {
      * @return type
      */
     public static function mobilephone($value) {
-        $strPhone  = "+";
+        $strPhone  = ( ($value[0] != "8") && ($value[0] != "+") ) ? "+" : "";
         $strPhone .= substr($value, 0, 1);
         $strPhone .= " (";
         $strPhone .= substr($value, 1, 3);
@@ -690,7 +690,7 @@ class Utility {
      * @return type
      */
     public static function preparePhone($phone) {
-        $phone = str_replace(array(' ','+','-','(',')'), '', $phone);
+        $phone = str_replace([' ','+','-','(',')'], '', $phone);
         if (substr($phone, 0, 1) == '8' || substr($phone, 0, 1) == '7') {
             $phone = '7' . substr($phone, 1, strlen($phone) - 1);
         } else if (strlen($phone) == 10) {
@@ -728,7 +728,7 @@ class Utility {
         if (strlen(trim($name)) < 3) {
             return false;
         }
-        $var_array = array('.',',',';','+','(',')','-');
+        $var_array = ['.',',',';','+','(',')','-'];
         return str_replace(' ', '-', mb_ucwords(trim(str_replace($var_array, ' ', strtolower($name)))));
     }
 

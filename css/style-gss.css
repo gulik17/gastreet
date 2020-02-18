@@ -1106,13 +1106,11 @@ p.oferta {
 .gss-speakers-hurma-logo img {
     width: 128px;}
 .gss-mainpage-statistics {
-    width: 100%;
     line-height: 1.8;
     padding: 0 0 15px 0;}
 .gss-mainpage-statistics-mobile {
     padding: 15px;
     width: 100%;
-    background: #10093b;
     overflow: hidden;}
 .gss-mainpage-statistics-text {
     color: #fff;
@@ -3565,6 +3563,37 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
     -webkit-box-shadow: rgba(16, 41, 47, 0.6) 0 24px 54px;
     -moz-box-shadow: rgba(16, 41, 47, 0.6) 0 24px 54px;
     box-shadow: rgba(16, 41, 47, 0.6) 0 24px 54px; }
+.social-icons {
+    text-align: right;}
+.social-icons a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 30px;
+    border: 2px solid;
+    line-height: 1.3;
+    min-width: 16px;
+    min-height: 20px;
+    margin: 0 3px;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: content-box;}
+.social-icons a:last-child {
+    font-size: 14px;
+    margin-left: 30px;
+    padding: 3px 10px;
+    box-shadow: 0 0 7px 0 #fff;}
+.gss-mainpage-statistics-mobile .social-icons {
+    text-align: center;}
+.gss-mainpage-statistics-mobile .social-icons a {
+    border-color: #0088d4;
+    background-color: #0088d4;}
+.gss-mainpage-statistics-mobile .social-icons a:last-child {
+    border-color: #0088d4;
+    color: #0088d4;
+    background-color: #fff;}
 #old18 {
     z-index: 10001;}
 .cashback-title {
@@ -4414,7 +4443,7 @@ p.border-gastreet-dashed {
     .for-mobile {
         display: block!important;}
     .gss-mainpage-statistics-mobile {
-        display: none;}
+        display: block;}
 }
 .has-fixed {
     position: fixed;

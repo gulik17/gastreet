@@ -30,8 +30,10 @@ class BaseControl extends Control {
         $this->time = time();
         $this->actor = Context::getActor();
         $this->lang = UIGenerator::getLang();
-        if (strpos($_SERVER['HTTP_USER_AGENT'], 'webview') !== false) {
-            $this->app = 1;
+        if (isset($_SERVER['HTTP_USER_AGENT'])) {
+            if (strpos($_SERVER['HTTP_USER_AGENT'], 'webview') !== false) {
+                $this->app = 1;
+            }
         }
 
         if (isset($_SERVER['HTTP_HOST'])) {

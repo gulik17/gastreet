@@ -146,8 +146,8 @@
                         <div class="container">
                             <div class="row content js-content">
                                 <div class="content-footer">
-                                    <div class="row">
-                                        <div class="gss-mainpage-statistics">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-8 gss-mainpage-statistics">
                                             <div class="gss-mainpage-statistics-col1">
                                                 <span class="gss-mainpage-statistics-text">{if $lang == 'en'}DAYS LEFT&nbsp;&nbsp;&nbsp;{else}ДО GASTREET&nbsp;&nbsp;&nbsp;{/if}</span>
                                                 <span class="gss-mainpage-statistics-digits">
@@ -168,9 +168,13 @@
                                                 </span>
                                             </div>
                                         </div>
-
-                                        <div class="{if $dev != 1}d-none{/if}">
-
+                                        <div class="col-md-4 d-none d-md-block">
+                                            <div class="social-icons">
+                                                <a href="https://www.instagram.com/gastreetshow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                <a href="https://www.instagram.com/explore/tags/gastreetshow/" target="_blank">#</a>
+                                                <a href="https://www.facebook.com/gastreetshow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                <a href="{link show=avatar}" target="_blank">Сделать аватар</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -180,9 +184,12 @@
                     </div>
                 </div>
 
-                <div class="gss-mainpage-statistics-mobile">
+                <div class="gss-mainpage-statistics-mobile d-block d-md-none">
                     <div class="social-icons">
-
+                        <a href="https://www.instagram.com/gastreetshow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/explore/tags/gastreetshow/" target="_blank">#</a>
+                        <a href="https://www.facebook.com/gastreetshow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="{link show=avatar}" target="_blank">Сделать аватар</a>
                     </div>
                 </div>
 
@@ -885,7 +892,6 @@
                         </div>
                     </div>
                 </section>
-
                 {/if}
                 {control name=Age}
             </div>
