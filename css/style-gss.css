@@ -5651,10 +5651,10 @@ main {
 .ticket-january .ticket-item {
     box-shadow: -8px 0 10px 0 rgba(0, 0, 0, .09);
     margin: 0 -13px;}
-.king .ticket-item {
-    background-color: #cc9900;}
 .rebro .ticket-item {
     background-color: #434242;}
+.king .ticket-item {
+    background-color: #cc9900;}
 .profi .ticket-item {
     background-color: #008dd2;}
 .chef .ticket-item {
