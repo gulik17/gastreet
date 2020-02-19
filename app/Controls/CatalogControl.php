@@ -33,45 +33,59 @@ class CatalogControl extends IndexControl {
             $onlyAllowed = true;
         }
 
+        // продукты
+        $pm = new ProductManager();
+        $products = $pm->getAllActive($areaId, $onlyAllowed);
+        $this->addData("products", $products);
 
         // максимум до 11-ми пока
         if ($areaId > 0 && $areaId <= 29) {
-            $this->layout = "indexgastop{$areaId}.html";
+            $this->layout = "indexgastop.html";
             $this->template = "CatalogControl{$areaId}.html";
             $spm = new SpeakerManager();
             $spmList = null;
             if ($areaId == 1) {
-                $spmList = $spm->getActiveByTag('partnerstreet', '2019');
+                $spmList = $spm->getActiveByTag('partnerstreet', '2020');
+            }
+            if ($areaId == 2) {
+                $this->gcode = 'has-theme-dark';
             }
             if ($areaId == 3) {
-                $spmList = $spm->getActiveByTag('mainstreet', '2019');
+                $spmList = $spm->getActiveByTag('mainstreet', '2020');
             }
             if ($areaId == 5) {
-                $spmList = $spm->getActiveByTag('rebro', '2019');
+                $spmList = $spm->getActiveByTag('rebro', '2020');
             }
             if ($areaId == 6) {
-                $spmList = $spm->getActiveByTag('бизнесшкола', '2019');
+                $spmList = $spm->getActiveByTag('бизнесшкола', '2020');
             }
             if ($areaId == 7) {
-                $spmList = $spm->getActiveByTag('barstreet', '2019');
+                $spmList = $spm->getActiveByTag('barstreet', '2020');
             }
             if ($areaId == 9) {
-                $spmList = $spm->getActiveByTag('chefstreet', '2019');
+                $this->gcode = 'thematik-chef-page';
+                $przm = new PrizeManager();
+                $prizes = $przm->getActive();
+                $this->addData("prizes", $prizes);
+                $spmList = $spm->getActiveByTag('chefstreet', '2020');
+                $pm = new ProductManager();
+                $products = $pm->getAllActive('', $onlyAllowed);
+                $this->addData("products", $products);
             }
             if ($areaId == 13) {
-                $spmList = $spm->getActiveByTag('pizzastreet', '2019');
+                $spmList = $spm->getActiveByTag('pizzastreet', '2020');
             }
             if ($areaId == 14) {
-                $spmList = $spm->getActiveByTag('fuckupnight', '2019');
+                $spmList = $spm->getActiveByTag('fuckupnight', '2020');
             }
             if ($areaId == 15) {
-                $spmList = $spm->getActiveByTag('winedome', '2019');
+                $spmList = $spm->getActiveByTag('winedome', '2020');
             }
             if ($areaId == 17) {
-                $spmList = $spm->getActiveByTag('baristastreet', '2019');
+                $spmList = $spm->getActiveByTag('baristastreet', '2020');
             }
             if ($areaId == 28) {
-                $spmList = $spm->getActiveByTag('центральнаяплощадь', '2019');
+                $spmList = $spm->getActiveByTag('центральнаяплощадь', '2020');
             }
             $this->addData("spmList", $spmList);
         }
@@ -142,10 +156,7 @@ class CatalogControl extends IndexControl {
             }
         }
         $this->addData("speakers", $speakersArray);
-        // продукты
-        $pm = new ProductManager();
-        $products = $pm->getAllActive($areaId, $onlyAllowed);
-        $this->addData("products", $products);
+
         // places
         $plmArray = array();
         $plm = new PlaceManager();

@@ -722,7 +722,37 @@ $(document).ready(function() {
         $(this).parents('.ticket-body').next('.ticket-footer').toggleClass('opened');
     });
 
-
+    $('#festCarousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        dots:true,
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:2
+            },
+            900:{
+                items:4
+            }
+        }
+    });
+    $('#spiakerCarousel').owlCarousel({
+        loop:true,
+        margin:10,
+        dots:true,
+        nav:true,
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:4
+            }
+        }
+    });
 
 });
 

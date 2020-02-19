@@ -60,7 +60,7 @@
             </div>
             <div class="l-site">
                 <div class="jumbotron-slider animated-background js-jumbotron-slider">
-                    <div class="owl-carousel slider js-slider">
+                    <div class="owl-carousel owl-theme slider js-slider">
                         <div class="slide js-slide main_1">
                             <div class="container">
                                 <div class="row align-items-center maininfo js-maininfo">
@@ -296,7 +296,7 @@
                                 </div>
                             </div>
                             <div class="speakers-carousel js-speakers-carousel">
-                                <ul class="owl-carousel carousel js-carousel speakers_2019">
+                                <ul class="owl-carousel owl-theme carousel js-carousel speakers_2019">
                                     <!-- loop start -->
                                     {foreach item=speaker from=$spmList}
                                     <li>
@@ -566,7 +566,7 @@
                                 </div>
                             </div>
                             <div class="speakers-carousel js-prizes-carousel">
-                                <ul class="owl-carousel carousel js-carousel">
+                                <ul class="owl-carousel owl-theme carousel js-carousel">
                                     <!-- loop start -->
                                     {foreach item=prize from=$prizes}
                                     {assign var=isPrizeImg1 value=$prize->id|isprizepic}
@@ -698,7 +698,7 @@
                             </div>
                         </div>
                         <div class="videos-carousel js-videos-gallery">
-                            <ul class="owl-carousel carousel js-carousel">
+                            <ul class="owl-carousel owl-theme carousel js-carousel">
                                 {foreach item=video from=$vmList}
                                 {if $video->v_group == 1}
                                 <li>

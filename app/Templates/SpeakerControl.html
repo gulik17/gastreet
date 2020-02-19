@@ -33,7 +33,7 @@
     <div class="l-container">
         <h2 class="section-headline">Спикеры</h2>
         <div class="speakers-carousel js-speakers-carousel">
-            <ul class="owl-carousel carousel js-carousel">
+            <ul class="owl-carousel owl-theme carousel js-carousel">
                 {foreach from=$this.spmList item=speaker}
                     {assign var=isimgspeaker value=$speaker->id|isspeakerpicpic}
                     <li><a class="person-teaser js-popover" href="#popover-win-{$speaker->id}" data-popover="#popover-win-{$speaker->id}">{if $isimgspeaker}<img class="photo" src="/images/speackers/resized/{$speaker->id}.jpg?v={$speaker->tsUpdated}" />{else}<img class="photo" src="/images/gss/speaker.jpg" />{/if}

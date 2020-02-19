@@ -40,9 +40,7 @@
     <body class="page load d-flex flex-column h-100 {$gcode} {if $gcode == 'gastreetspecial'}page-neo{/if}">
         {component name="Topmenu"}
         <main role="main" class="flex-shrink-0 pb-4">
-            <div class="main_screen">
-                {include file=$CURRENT_CONTROL_TEMPLATE}
-            </div>
+            {include file=$CURRENT_CONTROL_TEMPLATE}
         </main>
         {control name=Footer}
         {control name=Webstat}
