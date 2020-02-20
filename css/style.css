@@ -2025,7 +2025,7 @@ main {
     z-index: 3;
     border-radius: 50%;
     left: -1rem;
-    top: calc(50% - 1.5rem);
+    top: calc(42% - 1.5rem);
     text-align: center;
     font-size: 0;}
 .owl-carousel.owl-theme .owl-nav > div:hover {

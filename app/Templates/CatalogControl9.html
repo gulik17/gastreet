@@ -155,70 +155,43 @@
         </div>
     </div>
 </div>
+
 <div class="container carousel-fest-page">
     <div class="row mb-3 mt-4">
         <div class="col-md-12">
-            <div class="block-title">Новости GASTREET</div>
+            <div class="block-title">Как это будет</div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="owl-carousel owl-theme custom-owl-carousel" id="festCarousel">
-                <!-- loop start -->
-                {foreach item=prize from=$this.prizes}
-                {assign var=isPrizeImg1 value=$prize->id|isprizepic}
                 <div class="item">
-                    <a class="person-teaser js-popover" href="#popover-win-prize-{$prize->id}" data-popover="#popover-win-prize-{$prize->id}" data-idyoutubevideo="{$idYoutubeVideo}" data-timer="on">
-                        {if $isPrizeImg1}
-                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" class="img-fluid" data-ratio="1" alt="">
-                        {else}
-                        <img src="/images/gss/speaker.jpg" class="img-fluid" data-ratio="1" alt="">
-                        {/if}
-                        <div class="longtitle-carousel">{$prize->name}</div>
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-chef/news_1.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">Образовательная площадка для шеф-поваров, на которой мы вместе с партнерами строим настоящую высокотехнологичную кухню.</div>
                     </a>
                 </div>
-                {/foreach}
-            </div>
-        </div>
-    </div>
-
-    {foreach item=prize from=$this.prizes}
-    {assign var=idYoutubeVideo value=$prize->youtube|getidyoutubevideo}
-    {assign var=isPrizeImg1 value=$prize->id|isprizepic}
-    <div class="modal fade" id="popover-win-prize-{$prize->id}" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="popover-win">
-                    <span class="close" data-dismiss="modal">&times;</span>
-                    {if $prize->youtube}
-                    <div class="thumb">
-                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/{$prize->youtube}" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    {else}
-                    <figure class="thumb fg-container">
-                        {if $isPrizeImg1}
-                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" alt="">
-                        {else}
-                        <img src="/images/gss/speaker.jpg" alt="">
-                        {/if}
-                    </figure>
-                    {/if}
-                    {if $lang == 'en'}
-                    <p class="title">{$prize->name_en}</p>
-                    <div class="desc">
-                        <p>{$prize->description_en|dbtexttohtml}</p>
-                    </div>
-                    {else}
-                    <p class="title">{$prize->name}</p>
-                    <div class="desc">
-                        <p>{$prize->description|dbtexttohtml}</p>
-                    </div>
-                    {/if}
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-chef/news_2.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">Часовые мастер-классы от известных и признанных шефов со всего мира.</div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-chef/news_3.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">У тебя будет возможность не только увидеть и услышать, но и попробовать высокую кухню на вкус.</div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-chef/news_4.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">Мы перевернем твое понимание о еде, сочетании ингредиентов и подаче блюд.</div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    {/foreach}
 </div>
 
 <div class="container carousel-speak-page">
@@ -284,7 +257,7 @@
         <div class="col-md-10 in-all-ticket">
             <div class="row pt-3 pt-md-4">
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/central.png" alt="">
+                    <img src="/images/thematik-chef/central.png" width="138" alt="">
                     <div class="longtitle">
                         5 музыкальных концертов<br>
                         Welcome BBQ<br>
@@ -294,7 +267,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/drink.png" alt="">
+                    <img src="/images/thematik-chef/drink.png" width="70" alt="">
                     <div class="longtitle">
                         Объединение WINE STREET,<br>
                         BAR STREET и BARISTA STREET<br>
@@ -303,21 +276,21 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/barista.png" alt="">
+                    <img src="/images/thematik-chef/barista.png" width="89" alt="">
                     <div class="longtitle">
                         Образовательные мастер-классы<br>
                         от партнёров и лучший чайно-кофейный маркет<br>
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/food.png" alt="">
+                    <img src="/images/thematik-chef/food.png" width="85" alt="">
                     <div class="longtitle">
                         20 разнообразных<br>
                         форматов еды в одном месте
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/vecherinki.png" alt="">
+                    <img src="/images/thematik-chef/vecherinki.png" width="114" alt="">
                     <div class="longtitle">
                         Самые безумные тусовки<br>
                         в твоей жизни<br>
@@ -325,20 +298,20 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/zozh.png" alt="">
+                    <img src="/images/thematik-chef/zozh.png" width="53" alt="">
                     <div class="longtitle">
                         Площадка, где здоровая еда<br>
                         и спортивная движуха
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/bbq.png" alt="">
+                    <img src="/images/thematik-chef/bbq.png" width="108" alt="">
                     <div class="longtitle">
                         Мясо. Пиво. Рок-н-ролл.
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/franchise.png" alt="">
+                    <img src="/images/thematik-chef/franchise.png" width="110" alt="">
                     <div class="longtitle">
                         Поиск и продажа топовых франшиз
                     </div>
@@ -1026,7 +999,7 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 <div class="container timetable-page d-none">
@@ -1143,6 +1116,71 @@
     </div>
 </div>
 
+<div class="container carousel-fest-page">
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Новости Gastreet</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme custom-owl-carousel" id="newsCarousel">
+                <!-- loop start -->
+                {foreach item=prize from=$this.prizes}
+                {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#popover-win-prize-{$prize->id}" data-popover="#popover-win-prize-{$prize->id}" data-idyoutubevideo="{$idYoutubeVideo}" data-timer="on">
+                        {if $isPrizeImg1}
+                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" class="img-fluid" data-ratio="1" alt="">
+                        {else}
+                        <img src="/images/gss/speaker.jpg" class="img-fluid" data-ratio="1" alt="">
+                        {/if}
+                        <div class="longtitle-carousel">{$prize->name}</div>
+                    </a>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+
+    {foreach item=prize from=$this.prizes}
+    {assign var=idYoutubeVideo value=$prize->youtube|getidyoutubevideo}
+    {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+    <div class="modal fade" id="popover-win-prize-{$prize->id}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="popover-win">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    {if $prize->youtube}
+                    <div class="thumb">
+                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/{$prize->youtube}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    {else}
+                    <figure class="thumb fg-container">
+                        {if $isPrizeImg1}
+                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" alt="">
+                        {else}
+                        <img src="/images/gss/speaker.jpg" alt="">
+                        {/if}
+                    </figure>
+                    {/if}
+                    {if $lang == 'en'}
+                    <p class="title">{$prize->name_en}</p>
+                    <div class="desc">
+                        <p>{$prize->description_en|dbtexttohtml}</p>
+                    </div>
+                    {else}
+                    <p class="title">{$prize->name}</p>
+                    <div class="desc">
+                        <p>{$prize->description|dbtexttohtml}</p>
+                    </div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
 
 {literal}
 <style>
@@ -1195,8 +1233,8 @@
 #spiakerCarousel .owl-dots .owl-dot.active span, #festCarousel .owl-dots .owl-dot.active span {
     background-color: #12073f;}
 #festCarousel .owl-nav {
-    margin-bottom: 4rem;}
-#festCarousel .longtitle-carousel {
+    margin-bottom: 1rem;}
+#festCarousel .longtitle-carousel, #newsCarousel .longtitle-carousel {
     color: #000;
     font-size: 1rem;
     margin-top: 1rem;}
