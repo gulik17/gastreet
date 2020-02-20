@@ -1,114 +1,5 @@
 {assign var=this value=$CatalogControl}
-{if $dev != 1}
-<div class="container">
-    <div class="page-container" id="page-container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="page-container-image" id="page-container-image">
-                    <picture>
-                        <source srcset="/images/areas/resized/03{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}" media="(min-width: 1200px)">
-                        <img src="/images/areas/resized/01{$this.amObj->id}.jpg?v={$this.amObj->tsUpdated}">
-                    </picture>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="page-container-inner" id="page-container-inner">
-                    {if $this.amObj}
-                        <ul class="breadcrumbs">
-                            <li><a href="/">##home##</a></li>
-                            <li><a href="{link show=programms}">##program##</a></li>
-                            <li><span>{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</span></li>
-                        </ul>
-                        <h1 class="page-headline">{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</h1>
 
-                        <div class="tickects-video-catalog-page tickects-video-catalog-9 gss-video-watch-catalog-page">
-                            <div><a data-target="#video-modal" data-toggle="modal" data-link="76lIiYRRHSw" data-title="{if $lang == 'en'}About CHEF STREET{else}О CHEF STREET{/if}" href="#"><span>{if $lang == 'en'}Watch the video<br>about CHEF STREET{else}Посмотрите ролик<br>о CHEF STREET{/if}</span></a></div>
-                        </div>
-
-                        <div class="textblock">{if $lang == 'en'}{$this.amObj->description_en|dbtexttohtml}{else}{$this.amObj->description|dbtexttohtml}{/if}</div>
-
-                        <div class="row hidden">
-                            <div class="col-md-12">
-                                <div class="h3">Модераторы площадки:</div>
-                            </div>
-                            <div class="col-md-3 grid-entry js-grid-entry">
-                                <div class="h4">22 мая</div>
-                                <a class="person-teaser js-popover" href="#" data-popover="#popover-win-430" data-timer="on">
-                                    <img src="/images/speackers/resized/430.jpg?v=1522919929" data-ratio="1">
-                                    <div class="about">
-                                        <p class="name">Марк<br>Стаценко</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    {/if}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-3 d-none">
-    <div class="row speakers-grid js-speakers-grid speakers_2019">
-        {if $this.spmList}
-        <!-- loop start -->
-        {foreach item=speaker from=$this.spmList}
-        <div class="col-6 col-md-3 grid-entry speaker">
-            <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#" data-speaker-id="{$speaker.id}" data-timer="on">
-                {assign var=isSpeackerImg2 value=$speaker.id|isspeakerpicpic:'_b'}
-                <div class="img-tags">
-                    {$speaker.tags|tagformat}
-                    {if $speaker.partner_id > 0}
-                        <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1">
-                    {/if}
-                </div>
-                <div class="icon-country {$speaker.country}"></div>
-                {if $speaker.pic1}
-                    <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1">
-                {else}
-                    <img src="/images/gss/speaker.jpg" data-ratio="1">
-                {/if}
-                <div class="about">
-                    {if $lang == 'en'}
-                        <p class="name">{$speaker.name_en}<br/>{$speaker.secondName_en}</p>
-                        <p class="job">{$speaker.company_en}{if $speaker.cityName_en}<br/>{$speaker.cityName_en}{/if}</p>
-                    {else}
-                        <p class="name">{$speaker.name}<br/>{$speaker.secondName}</p>
-                        <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
-                    {/if}
-                </div>
-            </a>
-        </div>
-        {/foreach}
-        <!-- loop end -->
-        {/if}
-    </div>
-</div>
-
-<div class="stick-to-footer container mt-3">
-    <div class="instagram-gallery">
-        <div class="gallery-col">
-            <h2 class="section-headline" style="margin-top: 4rem;margin-bottom: 2.75rem;">Gastreet<br> History</h2>
-            <img src="/images/collages/chef1.jpg">
-        </div>
-        <div class="gallery-col"><img src="/images/collages/chef2.jpg">
-            <div class="gallery-row">
-                <div class="gallery-col-1of2"><img src="/images/collages/chef3.jpg"></div>
-                <div class="gallery-col-1of2"><img src="/images/collages/chef4.jpg"></div>
-            </div>
-        </div>
-        <div class="gallery-col">
-            <img src="/images/collages/chef5.jpg">
-            <div class="gallery-row">
-                <div class="gallery-col-1of2"><img src="/images/collages/chef6.jpg"></div>
-                <div class="gallery-col-1of2"><img src="/images/collages/chef7.jpg"></div>
-            </div>
-            <img src="/images/collages/chef8.jpg">
-        </div>
-    </div>
-</div>
-<div class="container gss-tag">#gastreetshow</div>
-{else}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 img-faces-page"></div>
@@ -167,25 +58,25 @@
             <div class="owl-carousel owl-theme custom-owl-carousel" id="festCarousel">
                 <div class="item">
                     <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
-                        <img src="/images/thematik-chef/news_1.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <img src="/images/thematik-page/news_1.jpg" class="img-fluid" data-ratio="1" alt="">
                         <div class="longtitle-carousel">Образовательная площадка для шеф-поваров, на которой мы вместе с партнерами строим настоящую высокотехнологичную кухню.</div>
                     </a>
                 </div>
                 <div class="item">
                     <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
-                        <img src="/images/thematik-chef/news_2.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <img src="/images/thematik-page/news_2.jpg" class="img-fluid" data-ratio="1" alt="">
                         <div class="longtitle-carousel">Часовые мастер-классы от известных и признанных шефов со всего мира.</div>
                     </a>
                 </div>
                 <div class="item">
                     <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
-                        <img src="/images/thematik-chef/news_3.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <img src="/images/thematik-page/news_3.jpg" class="img-fluid" data-ratio="1" alt="">
                         <div class="longtitle-carousel">У тебя будет возможность не только увидеть и услышать, но и попробовать высокую кухню на вкус.</div>
                     </a>
                 </div>
                 <div class="item">
                     <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
-                        <img src="/images/thematik-chef/news_4.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <img src="/images/thematik-page/news_4.jpg" class="img-fluid" data-ratio="1" alt="">
                         <div class="longtitle-carousel">Мы перевернем твое понимание о еде, сочетании ингредиентов и подаче блюд.</div>
                     </a>
                 </div>
@@ -257,7 +148,7 @@
         <div class="col-md-10 in-all-ticket">
             <div class="row pt-3 pt-md-4">
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/central.png" width="138" alt="">
+                    <img src="/images/thematik-page/central.png" width="138" alt="">
                     <div class="longtitle">
                         5 музыкальных концертов<br>
                         Welcome BBQ<br>
@@ -267,7 +158,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/drink.png" width="70" alt="">
+                    <img src="/images/thematik-page/drink.png" width="70" alt="">
                     <div class="longtitle">
                         Объединение WINE STREET,<br>
                         BAR STREET и BARISTA STREET<br>
@@ -276,21 +167,21 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/barista.png" width="89" alt="">
+                    <img src="/images/thematik-page/barista.png" width="89" alt="">
                     <div class="longtitle">
                         Образовательные мастер-классы<br>
                         от партнёров и лучший чайно-кофейный маркет<br>
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/food.png" width="85" alt="">
+                    <img src="/images/thematik-page/food.png" width="85" alt="">
                     <div class="longtitle">
                         20 разнообразных<br>
                         форматов еды в одном месте
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/vecherinki.png" width="114" alt="">
+                    <img src="/images/thematik-page/vecherinki.png" width="114" alt="">
                     <div class="longtitle">
                         Самые безумные тусовки<br>
                         в твоей жизни<br>
@@ -298,20 +189,20 @@
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/zozh.png" width="53" alt="">
+                    <img src="/images/thematik-page/zozh.png" width="53" alt="">
                     <div class="longtitle">
                         Площадка, где здоровая еда<br>
                         и спортивная движуха
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/bbq.png" width="108" alt="">
+                    <img src="/images/thematik-page/bbq.png" width="108" alt="">
                     <div class="longtitle">
                         Мясо. Пиво. Рок-н-ролл.
                     </div>
                 </div>
                 <div class="col-6 col-md-4">
-                    <img src="/images/thematik-chef/franchise.png" width="110" alt="">
+                    <img src="/images/thematik-page/franchise.png" width="110" alt="">
                     <div class="longtitle">
                         Поиск и продажа топовых франшиз
                     </div>
@@ -1057,12 +948,12 @@
                                     <div class="city">DSTAgE (Мадрид, Испания)</div>
                                 </div>
                                 <div class="order-1 order-md-2 col-8 col-md-4 corp">
-                                    <img src="/images/thematik-chef/305.png" alt="">
+                                    <img src="/images/thematik-page/305.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-chef/854.png');">
-                            <img src="/images/thematik-chef/854.png" alt="">
+                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
+                            <img src="/images/thematik-page/854.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1096,12 +987,12 @@
                                     <div class="city">DSTAgE (Мадрид, Испания)</div>
                                 </div>
                                 <div class="order-1 order-md-2 col-8 col-md-4 corp">
-                                    <img src="/images/thematik-chef/305.png" alt="">
+                                    <img src="/images/thematik-page/305.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-chef/854.png');">
-                            <img src="/images/thematik-chef/854.png" alt="">
+                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
+                            <img src="/images/thematik-page/854.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1186,7 +1077,7 @@
 <style>
 .thematik-chef-page .img-faces-page {
     height: 52rem;
-    background-image: url('/images/thematik-chef/main_chef.jpg');
+    background-image: url('/images/thematik-page/main_chef.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;}
@@ -1200,22 +1091,6 @@
     color: #10093B;
     line-height: 1;
     margin-bottom: .3rem}
-.thematik-chef-page .video {
-    background-color: #383838;
-    height: 35rem;
-    margin-bottom: 3rem;}
-.thematik-chef-page .video .btn-play {
-    width: 6.250rem;
-    height: 6.250rem;
-    padding: 0;
-    border: 0;
-    position: absolute;
-    top: calc(50% - 3.125rem);
-    left: calc(50% - 3.125rem);
-    background-image: url('/images/thematik-chef/btn-play.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;}
 .block-title {
     font-size: 2.1rem;
     color: #12073f;
@@ -1431,4 +1306,3 @@
 }
 </style>
 {/literal}
-{/if}

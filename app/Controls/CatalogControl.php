@@ -51,16 +51,37 @@ class CatalogControl extends IndexControl {
                 $this->gcode = 'has-theme-dark';
             }
             if ($areaId == 3) {
+                $this->gcode = 'thematik-main-page';
+                $przm = new PrizeManager();
+                $prizes = $przm->getActive();
+                $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('mainstreet', '2020');
+                $pm = new ProductManager();
+                $products = $pm->getAllActive('', $onlyAllowed);
+                $this->addData("products", $products);
             }
             if ($areaId == 5) {
+                $this->gcode = 'thematik-rebro-page';
+                $przm = new PrizeManager();
+                $prizes = $przm->getActive();
+                $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('rebro', '2020');
+                $pm = new ProductManager();
+                $products = $pm->getAllActive('', $onlyAllowed);
+                $this->addData("products", $products);
             }
             if ($areaId == 6) {
                 $spmList = $spm->getActiveByTag('бизнесшкола', '2020');
             }
             if ($areaId == 7) {
+                $this->gcode = 'thematik-barstreet-page';
+                $przm = new PrizeManager();
+                $prizes = $przm->getActive();
+                $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('barstreet', '2020');
+                $pm = new ProductManager();
+                $products = $pm->getAllActive('', $onlyAllowed);
+                $this->addData("products", $products);
             }
             if ($areaId == 9) {
                 $this->gcode = 'thematik-chef-page';

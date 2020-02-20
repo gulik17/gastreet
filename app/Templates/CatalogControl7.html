@@ -1,5 +1,6 @@
 {assign var=this value=$CatalogControl}
 
+{if $dev != 1}
 <div class="container">
     <div class="page-container" id="page-container">
         <div class="row">
@@ -92,3 +93,1304 @@
     </div>
 </div>
 <div class="container gss-tag">#gastreetshow</div>
+
+{else}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 img-faces-page"></div>
+    </div>
+</div>
+<div class="container description-header">
+    <div class="row text-center">
+        <div class="col-6 col-md-2">
+            <div class="entry">
+                <p class="num">16</p>
+                <p class="text">мастер-классов</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="entry">
+                <p class="num">300</p>
+                <p class="text">участников</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="entry">
+                <p class="num">20+</p>
+                <p class="text">концепций бара</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="entry">
+                <p class="num">+</p>
+                <p class="text">самая дружелюбная площадка</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-2 d-none d-md-block">
+            <div class="entry">
+                <p class="num">∞</p>
+                <p class="text">бесконечно часов нетворкинга</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/z8Nde1zaiyw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="container carousel-fest-page">
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Как это будет</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme custom-owl-carousel" id="festCarousel">
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-page/barstreet_news_01.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">Лучшие бар-менеджеры страны расскажут обо всем, что касается управления баром и&nbsp;экономики бара как департамента в&nbsp;заведении.</div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#" onclick="return false" data-timer="on" style="max-width: 100%;">
+                        <img src="/images/thematik-page/barstreet_news_02.jpg" class="img-fluid" data-ratio="1" alt="">
+                        <div class="longtitle-carousel">Вся необходимая информация о том, как подобрать персонал, выстроить работу и&nbsp;монетизировать бар.</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container carousel-speak-page d-none">
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Спикеры площадки</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme speakers_2019 speaker" id="spiakerCarousel">
+                <!-- loop start -->
+                {foreach item=speaker from=$this.spmList}
+                <div class="item">
+                    <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#" data-speaker-id="{$speaker.id}" data-timer="on">
+                        <div class="img-tags">
+                            {$speaker.tags|tagformat}
+                            {if $speaker.partner_id > 0}
+                            <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
+                            {/if}
+                        </div>
+                        {if $speaker.country != 'ru'}
+                        <div class="icon-country {$speaker.country}"></div>
+                        {/if}
+                        <div class="volunteer_medal_main speaker_medal_main">{$speaker.years|yeartomedal}</div>
+                        {if $speaker.pic1}
+                        <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
+                        {else}
+                        <img src="/images/gss/speaker.jpg" data-ratio="1" alt="">
+                        {/if}
+                        <div class="about">
+                            <p class="name">{$speaker.name}{if $speaker.michelin} <span class="michelin michelin_{$speaker.michelin}"></span>{/if}<br/>{$speaker.secondName}</p>
+                            <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
+                        </div>
+                    </a>
+                </div>
+                {/foreach}
+                <!-- loop end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row align-items-center mb-3 mt-4">
+        <div class="col-8 col-md-12">
+            <div class="block-title">Оптимальные билеты</div>
+        </div>
+        <div class="col-4 text-right d-md-none">
+            <a href="{link show=catalog}" class="more-link">Все билеты <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="row row-nowrap mb-5">
+        {component name="Userticket"}
+    </div>
+</div>
+
+<div class="container all-tickets">
+    <div class="row">
+        <div class="col-md-2 all-tick">
+            <p class="subtitle">Входит во&nbsp;все&nbsp;категории билетов</p>
+        </div>
+        <div class="col-md-10 in-all-ticket">
+            <div class="row pt-3 pt-md-4">
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/central.png" width="138" alt="">
+                    <div class="longtitle">
+                        5 музыкальных концертов<br>
+                        Welcome BBQ<br>
+                        Финал проекта «Народный спикер»<br>
+                        Карнавал еды<br>
+                        Промо-ивенты от партнеров<br>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/drink.png" width="70" alt="">
+                    <div class="longtitle">
+                        Объединение WINE STREET,<br>
+                        BAR STREET и BARISTA STREET<br>
+                        в одну большую улицу, где пьют всё<br>
+                        (и необязательно алкоголь)<br>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/barista.png" width="89" alt="">
+                    <div class="longtitle">
+                        Образовательные мастер-классы<br>
+                        от партнёров и лучший чайно-кофейный маркет<br>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/food.png" width="85" alt="">
+                    <div class="longtitle">
+                        20 разнообразных<br>
+                        форматов еды в одном месте
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/vecherinki.png" width="114" alt="">
+                    <div class="longtitle">
+                        Самые безумные тусовки<br>
+                        в твоей жизни<br>
+                        от наших партнёров<br>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/zozh.png" width="53" alt="">
+                    <div class="longtitle">
+                        Площадка, где здоровая еда<br>
+                        и спортивная движуха
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/bbq.png" width="108" alt="">
+                    <div class="longtitle">
+                        Мясо. Пиво. Рок-н-ролл.
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img src="/images/thematik-page/franchise.png" width="110" alt="">
+                    <div class="longtitle">
+                        Поиск и продажа топовых франшиз
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page_body">
+    <div class="container ">
+        <div class="row row-condensed row-options">
+            <div class="col-md-2">
+                <p class="subtitle" id="ext_option">Дополнительные опции</p>
+            </div>
+            <div class="col-md-2">
+                {assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «ТУРИСТ» -->
+                {assign var=ticket value=$ticketId|getticket}
+                <div class="ticket" data-ri="t1">
+                    <h2 class="ticket_header">
+                        <span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span>
+                        <p style="color: #e51a4b;text-decoration: underline;">Билет только<br>
+                            для дополнительных<br>
+                            участников</p>
+                    </h2>
+                    <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                    <p>&nbsp;</p>
+                    <div class="ticket-footer">
+                        <a class="btn-collapse collapsed" data-toggle="collapse" href="#sputnikCollapse">
+                            <span>Что входит в билет? <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                        </a>
+                        <div class="collapse multi-collapse" id="sputnikCollapse">
+                            <div class="row all-category">
+                                <div class="col-6 col-md-12">
+                                    <p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
+                                    <p>#FUCKUP</p>
+                                    <p>#BARISTASTREET</p>
+                                    <p>#ITТЕХНОЛОГИИ</p>
+                                    <p>#FRANCHISESTREET</p>
+                                    <p>#ШКОЛАСОМЕЛЬЕ</p>
+                                    <p>#ЗОЖ</p>
+                                </div>
+                                <div class="col-6 col-md-12">
+                                    <p>#FOODMARKET</p>
+                                    <p>#BBQBEERSTREET</p>
+                                    <p>#ЗОЖ</p>
+                                    <p>#КОНЦЕРТЫ</p>
+                                    <p>#ВЕЧЕРИНКИ</p>
+                                    <p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="ticket cat_business" data-ri="d2">
+                    <h2 class="ticket_header">
+                        {if $lang == 'en'}BUSINESS SCHOOL{else}БИЗНЕС-ШКОЛА{/if}
+                        <p>Глубокое погружение<br>
+                            в тему от лучших<br>
+                            бизнес-школ страны</p>
+                    </h2>
+                    <p class="ticket_cost">5 000 ₽</p>
+                    <p>{if $lang == 'en'}for one seminar{else}за один семинар{/if}</p>
+                    <div class="ticket-footer">
+                        <a href="#" class="ticket_desc d-none">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 d-none">
+                <div class="ticket cat_fuckup" data-ri="d3">
+                    <h2 class="ticket_header">FUCKUP</h2>
+                    <p class="ticket_cost">5 000 ₽</p>
+                    <p class="ticket_new_cost">{if $lang == 'en'}for one night{else}за один вечер{/if}<br>&nbsp;<br>&nbsp;</p>
+                    <div class="ticket-footer">
+                        <a href="#" class="ticket_desc">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="ticket cat_popup" data-ri="d4">
+                    <h2 class="ticket_header">
+                        POP-UP SHOW
+                        <p>Единственный. Звездный.<br>
+                            Ты точно будешь впечатлен.</p>
+                    </h2>
+                    <p class="ticket_cost">15 000 ₽</p>
+                    <p>&nbsp;</p>
+                    <div class="ticket-footer">
+                        <a href="#" class="ticket_desc">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 irc_land irc_bg t1">
+                <div class="ticket_desc">
+                    <a href="#" class="close" title="Закрыть"></a>
+                    <div class="irc-pc" style="top: -10px; bottom: auto; left: 140px;"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="ticket_item">
+                                <li>Обучение</li>
+                                <li class="c_rebro disabled">#REBRO</li>
+                                <li class="c_mainstreet disabled">#MAINSTREET</li>
+                                <li class="c_businessschool disabled">#БИЗНЕСШКОЛА</li>
+                                <li class="c_chefstreet disabled">#CHEFSTREET</li>
+                                <li class="c_barstreet disabled">#BARSTREET</li>
+                                <li class="c_hoststreet disabled">#HOSTSTREET</li>
+                                <li>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</li>
+                                <!--                                <li class="c_fuckup">#FUCKUP</li>-->
+                                <li class="c_baristastreet">#BARISTASTREET</li>
+                                <li class="c_winedome">#ITТЕХНОЛОГИИ</li>
+                                <li class="c_franchisestreet">#FRANCHISESTREET</li>
+                                <li>#ШКОЛАСОМЕЛЬЕ</li>
+                                <li>#ЗОЖ</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="ticket_item">
+                                <li>Общение</li>
+                                <li class="c_foodmarket">#FOODMARKET</li>
+                                <li class="c_drinkzone">#DRINKZONE</li>
+                                <li class="c_bbqstreet">#BBQBEERSTREET</li>
+                                <li class="c_zozh">#ЗОЖ</li>
+                                <li class="disabled">#POP-UPSHOW</li>
+                                <li><i class="fa fa-check-ok"></i> #КОНЦЕРТЫ</li>
+                                <li><i class="fa fa-check-ok"></i> #ВЕЧЕРИНКИ</li>
+                                <li><i class="fa fa-check-ok"></i> Лучшие поставщики</li>
+                                <li class="disabled"><i class="fa fa-check-ok"></i> {if $lang == 'en'}Accommodation in hotel 5 *{else}Проживание в отеле 5* (5&nbsp;ночей){/if}</li>
+                                <li class="disabled"><i class="fa fa-check-ok"></i> Выделенная телефонная VIP-линия поддержки</li>
+                                <li class="disabled"><i class="fa fa-check-ok"></i> Собственный ресторан</li>
+                                <li class="disabled"><i class="fa fa-check-ok"></i> Собственный бар</li>
+                                <li class="disabled"><i class="fa fa-check-ok"></i> Закрытые тусовки со спикерами</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 irc_land irc_bg d2">
+                <div class="ticket_desc">
+                    <a href="#" class="close" title="Закрыть"></a>
+                    <div class="irc-pc" style="top: -10px; bottom: auto; left: 10rem;"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container schedule-table">
+                                {foreach from=$this.products item=product name=productloop}
+                                {if $product->areaId == 6}
+                                {assign var=placeid value=$product->placeId}
+                                {assign var=speakerid value=$product->speakerId}
+                                {assign var=speaker value=$this.speakers.$speakerid}
+                                {assign var=speaker2id value=$product->speaker2Id}
+                                {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                {assign var=speaker3id value=$product->speaker3Id}
+                                {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                {assign var=speaker4id value=$product->speaker4Id}
+                                {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                {assign var=speaker5id value=$product->speaker5Id}
+                                {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                {assign var=speaker6id value=$product->speaker6Id}
+                                {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="col-md-12">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title  br-none">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                {if $product->pic1}
+                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                {else}
+                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                    <div class="desc">
+                                                        <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                        <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                    </div>
+                                                    {else}
+                                                    <div class="desc">
+                                                        <span><a href="#" onclick="return false">{$product->firstName} {$product->secondName}</a></span>
+                                                        <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                        <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                        <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4.name} {$speaker4.secondName}</a></span>
+                                                        <div>{$speaker4.company}{if $speaker4.company},<br> {/if}{if $speaker4.cityName}{$speaker4.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5.name} {$speaker5.secondName}</a></span>
+                                                        <div>{$speaker5.company}{if $speaker5.company},<br> {/if}{if $speaker5.cityName}{$speaker5.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6.name} {$speaker6.secondName}</a></span>
+                                                        <div>{$speaker6.company}{if $speaker6.company},<br> {/if}{if $speaker6.cityName}{$speaker6.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                </div>
+                                                {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                <div class="speaker-img d-none d-lg-block d-md-block d-sm-block" style="background-image:url('/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230');background-position:bottom center;background-size:80%;"></div>
+                                                {/if}
+                                                <div class="speaker-img d-lg-none d-md-none d-sm-none" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-md-1 td c-title d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 td c-place d-lg-none d-md-none d-sm-none">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="row m-0">
+                                                    <div class="col-9 col-md-12 p-0 pr-2 title">
+                                                        {if $product->description}
+                                                        <a href="#"
+                                                           data-toggle="modal"
+                                                           data-target="#mk-modal"
+                                                           data-type="{if $product->youtube}video{else}image{/if}"
+                                                           data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                           data-name="{$product->firstName}"
+                                                           data-second-name="{$product->secondName}"
+                                                           data-company="{$product->company}"
+                                                           data-city-name="{$product->cityName}"
+                                                           data-desc="{$product->description|dbtexttohtml|escape}"
+                                                           data-flag="{$speaker->country}"
+                                                           data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                           data-tags="{$product->tags|tagtocssclass|escape}"
+                                                           data-link="{$modalLink}"
+                                                           data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                        {else}
+                                                        <span> {$product->name|dbtexttohtml}</span>
+                                                        {/if}
+                                                    </div>
+                                                    <div class="col-3 p-0 td c-title d-lg-none d-md-none d-sm-none">
+                                                        {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                        <img src="/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230" alt="{$product->secondName}" class="img-fluid">
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-xs-12 td c-place d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-xs-12 td td-cart">
+                                                <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                {foreach from=$this.includedProductIds item=includedProductId}
+                                                {if $includedProductId == $product->id}
+                                                {assign var=canShowButton value=0}
+                                                {/if}
+                                                {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.productId}
+                                                <div class="mt-2">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0} ₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/if}
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 irc_land irc_bg d3">
+                <div class="ticket_desc">
+                    <a href="#" class="close" title="Закрыть"></a>
+                    <div class="irc-pc" style="top: -10px; bottom: auto; left: 10rem;"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container schedule-table">
+                                {foreach from=$this.products item=product name=productloop}
+                                {if $product->areaId == 14}
+                                {assign var=placeid value=$product->placeId}
+                                {assign var=speakerid value=$product->speakerId}
+                                {assign var=speaker value=$this.speakers.$speakerid}
+                                {assign var=speaker2id value=$product->speaker2Id}
+                                {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                {assign var=speaker3id value=$product->speaker3Id}
+                                {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                {assign var=speaker4id value=$product->speaker4Id}
+                                {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                {assign var=speaker5id value=$product->speaker5Id}
+                                {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                {assign var=speaker6id value=$product->speaker6Id}
+                                {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="col-md-12">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title  br-none">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                {if $product->pic1}
+                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                {else}
+                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                    <div class="desc">
+                                                        <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                        <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                    </div>
+                                                    {else}
+                                                    <div class="desc">
+                                                        <span><a href="#" onclick="return false">{$product->firstName} {$product->secondName}</a></span>
+                                                        <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                        <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                        <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4.name} {$speaker4.secondName}</a></span>
+                                                        <div>{$speaker4.company}{if $speaker4.company},<br> {/if}{if $speaker4.cityName}{$speaker4.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5.name} {$speaker5.secondName}</a></span>
+                                                        <div>{$speaker5.company}{if $speaker5.company},<br> {/if}{if $speaker5.cityName}{$speaker5.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6.name} {$speaker6.secondName}</a></span>
+                                                        <div>{$speaker6.company}{if $speaker6.company},<br> {/if}{if $speaker6.cityName}{$speaker6.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                </div>
+                                                {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                <div class="speaker-img d-none d-lg-block d-md-block d-sm-block" style="background-image:url('/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230');background-position:bottom center;background-size:80%;"></div>
+                                                {/if}
+                                                <div class="speaker-img d-lg-none d-md-none d-sm-none" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-md-1 td c-title d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 td c-place d-lg-none d-md-none d-sm-none">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="row m-0">
+                                                    <div class="col-9 col-md-12 p-0 pr-2 title">
+                                                        {if $product->description}
+                                                        <a href="#"
+                                                           data-toggle="modal"
+                                                           data-target="#mk-modal"
+                                                           data-type="{if $product->youtube}video{else}image{/if}"
+                                                           data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                           data-name="{$product->firstName}"
+                                                           data-second-name="{$product->secondName}"
+                                                           data-company="{$product->company}"
+                                                           data-city-name="{$product->cityName}"
+                                                           data-desc="{$product->description|dbtexttohtml|escape}"
+                                                           data-flag="{$speaker->country}"
+                                                           data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                           data-tags="{$product->tags|tagtocssclass|escape}"
+                                                           data-link="{$modalLink}"
+                                                           data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                        {else}
+                                                        <span> {$product->name|dbtexttohtml}</span>
+                                                        {/if}
+                                                    </div>
+                                                    <div class="col-3 p-0 td c-title d-lg-none d-md-none d-sm-none">
+                                                        {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                        <img src="/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230" class="img-fluid">
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-xs-12 td c-place d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-xs-12 td td-cart">
+                                                <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                {foreach from=$this.includedProductIds item=includedProductId}
+                                                {if $includedProductId == $product->id}
+                                                {assign var=canShowButton value=0}
+                                                {/if}
+                                                {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.productId}
+                                                <div class="mt-2">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0} ₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/if}
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 irc_land irc_bg d4">
+                <div class="ticket_desc">
+                    <a href="#" class="close" title="Закрыть"></a>
+                    <div class="irc-pc" style="top: -10px; bottom: auto; left: 10rem;"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container schedule-table">
+                                {foreach from=$this.products item=product name=productloop}
+                                {if $product->areaId == 4}
+                                {assign var=placeid value=$product->placeId}
+                                {assign var=speakerid value=$product->speakerId}
+                                {assign var=speaker value=$this.speakers.$speakerid}
+                                {assign var=speaker2id value=$product->speaker2Id}
+                                {assign var=speaker2 value=$this.speakers.$speaker2id}
+                                {assign var=speaker3id value=$product->speaker3Id}
+                                {assign var=speaker3 value=$this.speakers.$speaker3id}
+                                {assign var=speaker4id value=$product->speaker4Id}
+                                {assign var=speaker4 value=$this.speakers.$speaker4id}
+                                {assign var=speaker5id value=$product->speaker5Id}
+                                {assign var=speaker5 value=$this.speakers.$speaker5id}
+                                {assign var=speaker6id value=$product->speaker6Id}
+                                {assign var=speaker6 value=$this.speakers.$speaker6id}
+
+                                <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="col-md-12">
+                                        <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
+                                            <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title  br-none">
+                                                <div class="schedule-icon">
+                                                    {if $this.showcal}
+                                                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                                                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                                                    </a>
+                                                    {/if}
+                                                    <a href="#" class="d-none" title="Добавить в избранное">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                                {if $product->youtube}
+                                                {assign var=modalLink value=$product->youtube}
+                                                {else}
+                                                {if $product->pic1}
+                                                {assign var=modalLink value=$product->pic1|getproductpic}
+                                                {else}
+                                                {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                                                {/if}
+                                                {/if}
+                                                <div class="street-label">{$product->tags|tagformat}</div>
+                                                <div class="speaker">
+                                                    {if $speaker}
+                                                    <div class="desc">
+                                                        <span><a href="#" data-speaker-id="{$speakerid}">{$speaker.name} {$speaker.secondName}</a></span>
+                                                        <div>{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                                    </div>
+                                                    {else}
+                                                    <div class="desc">
+                                                        <span><a href="#" onclick="return false">{$product->firstName} {$product->secondName}</a></span>
+                                                        <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker2}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker2id}">{$speaker2.name} {$speaker2.secondName}</a></span>
+                                                        <div>{$speaker2.company}{if $speaker2.company},<br> {/if}{if $speaker2.cityName}{$speaker2.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker3}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker3id}">{$speaker3.name} {$speaker3.secondName}</a></span>
+                                                        <div>{$speaker3.company}{if $speaker3.company},<br> {/if}{if $speaker3.cityName}{$speaker3.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker4}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker4id}">{$speaker4.name} {$speaker4.secondName}</a></span>
+                                                        <div>{$speaker4.company}{if $speaker4.company},<br> {/if}{if $speaker4.cityName}{$speaker4.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker5}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker5id}">{$speaker5.name} {$speaker5.secondName}</a></span>
+                                                        <div>{$speaker5.company}{if $speaker5.company},<br> {/if}{if $speaker5.cityName}{$speaker5.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                    {if $speaker6}
+                                                    <div class="gss-margintop5 desc">
+                                                        <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6.name} {$speaker6.secondName}</a></span>
+                                                        <div>{$speaker6.company}{if $speaker6.company},<br> {/if}{if $speaker6.cityName}{$speaker6.cityName}{/if}</div>
+                                                    </div>
+                                                    {/if}
+                                                </div>
+                                                {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                <div class="speaker-img d-none d-lg-block d-md-block d-sm-block" style="background-image:url('/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230');background-position:bottom center;background-size:80%;"></div>
+                                                {/if}
+                                                <div class="speaker-img d-lg-none d-md-none d-sm-none" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-md-1 td c-title d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="speaker-img" style="background-image: url('{$modalLink}');"></div>
+                                            </div>
+                                            <div class="col-4 td c-place d-lg-none d-md-none d-sm-none">
+                                                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                                                {if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}
+                                                {else}
+                                                <b>{$product->eventTsStart|dateformat:'d F'}</b>
+                                                <div>{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                                                {/if}
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-8 col-md-3 td c-title">
+                                                <div class="mk-format"><span>{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}</span></div>
+                                                <div class="row m-0">
+                                                    <div class="col-9 col-md-12 p-0 pr-2 title">
+                                                        {if $product->description}
+                                                        <a href="#"
+                                                           data-toggle="modal"
+                                                           data-target="#mk-modal"
+                                                           data-type="{if $product->youtube}video{else}image{/if}"
+                                                           data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                                                           data-name="{$product->firstName}"
+                                                           data-second-name="{$product->secondName}"
+                                                           data-company="{$product->company}"
+                                                           data-city-name="{$product->cityName}"
+                                                           data-desc="{$product->description|dbtexttohtml|escape}"
+                                                           data-flag="{$speaker->country}"
+                                                           data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                                                           data-tags="{$product->tags|tagtocssclass|escape}"
+                                                           data-link="{$modalLink}"
+                                                           data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                                                        {else}
+                                                        <span> {$product->name|dbtexttohtml}</span>
+                                                        {/if}
+                                                    </div>
+                                                    <div class="col-3 p-0 td c-title d-lg-none d-md-none d-sm-none">
+                                                        {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                                        <img src="/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230" alt="{$product->secondName}" class="img-fluid">
+                                                        {/if}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-xs-12 td c-place d-none d-lg-block d-md-block d-sm-block">
+                                                <div class="street-logo{$product->tags|tagtocssclass|escape}"></div>
+                                                <div>{$this.plmArray.$placeid}</div>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-xs-12 td td-cart">
+                                                <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
+                                                <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
+                                                {assign var=canShowButton value=1}
+                                                {if $this.includedProductIds}
+                                                {foreach from=$this.includedProductIds item=includedProductId}
+                                                {if $includedProductId == $product->id}
+                                                {assign var=canShowButton value=0}
+                                                {/if}
+                                                {/foreach}
+                                                {/if}
+                                                {if $this.ts < $product->eventTsFinish && $product->leftCount > 0 && !$this.productId}
+                                                <div class="mt-2">
+                                                    <a href="#" class="buy-product-click-pc btn-cart" data-id="{$product->id}" data-night="false" id="buy-product-pc-{$product->id}" title="##buy##">{if $product->price}<i class="fa fa-shopping-cart" aria-hidden="true"></i> {$product->price|round0} ₽{/if}</a>
+                                                    <div class="cart-count">{if $product->maxCount == '-'}—{else}Осталось {$product->leftCount} мест{/if}</div>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/if}
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container timetable-page d-none">
+    <div class="row mb-5 mt-5 align-items-center">
+        <div class="col-8 col-md-12">
+            <div class="title-programm">
+                Программа площадки
+            </div>
+        </div>
+        <div class="col-md-7 mt-3 d-none d-md-block">
+            <nav class="timedata-menu d-flex flex-row flex-md-row  justify-content-around">
+                <a href="case/" class="first active">Все дни</a>
+                <a href="services.html">1 день</a>
+                <a href="services.html">2 день</a>
+                <a href="services.html">3 день</a>
+                <a href="services.html">4 день</a>
+                <a href="contacts.html" class="last">5 день</a>
+            </nav>
+        </div>
+        <div class="col-4 drop d-block d-md-none">
+            <div class="dropdown timedata-menu">
+                <a class="dropdown-toggle" type="" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    Все дни
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a class="dropdown-item" href="#">1 день</a>
+                    <a class="dropdown-item" href="#">2 день</a>
+                    <a class="dropdown-item" href="#">3 день</a>
+                    <a class="dropdown-item" href="#">4 день</a>
+                    <a class="dropdown-item" href="#">5 день</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row timetable">
+        <div class="col-md-2 col-4">
+            <div class="time-data">
+                <div class="data">1 июня</div>
+                <div class="time">11:30 – 12:30</div>
+                <div class="calendar d-md-none">
+                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-8">
+            <div class="row align-items-center timetable-item-bg">
+                <div class="order-2 order-md-1 col-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-7 col-md-8 pr-0">
+                            <div class="row align-items-center">
+                                <div class="order-2 order-md-1 col-8 col-md-8 pr-0">
+                                    <div class="name">Диего Герреро</div>
+                                    <div class="city">DSTAgE (Мадрид, Испания)</div>
+                                </div>
+                                <div class="order-1 order-md-2 col-8 col-md-4 corp">
+                                    <img src="/images/thematik-page/305.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
+                            <img src="/images/thematik-page/854.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 order-md-2 col-md-7 px-0 description-case">
+                    <div class="pt-3 py-md-0 name-city">
+                        Новый способ гармонизации ингредиентов.<br>
+                        Баланс белков и жиров
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row timetable">
+        <div class="col-md-2 col-4">
+            <div class="time-data">
+                <div class="data">1 июня</div>
+                <div class="time">11:30 – 12:30</div>
+                <div class="calendar d-md-none">
+                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-8">
+            <div class="row align-items-center timetable-item-bg">
+                <div class="order-2 order-md-1 col-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-7 col-md-8 pr-0">
+                            <div class="row align-items-center">
+                                <div class="order-2 order-md-1 col-8 col-md-8 pr-0">
+                                    <div class="name">Диего Герреро</div>
+                                    <div class="city">DSTAgE (Мадрид, Испания)</div>
+                                </div>
+                                <div class="order-1 order-md-2 col-8 col-md-4 corp">
+                                    <img src="/images/thematik-page/305.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
+                            <img src="/images/thematik-page/854.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 order-md-2 col-md-7 px-0 description-case">
+                    <div class="pt-3 py-md-0 name-city">
+                        Новый способ гармонизации ингредиентов.<br>
+                        Баланс белков и жиров
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container carousel-fest-page">
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Новости Gastreet</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme custom-owl-carousel" id="newsCarousel">
+                <!-- loop start -->
+                {foreach item=prize from=$this.prizes}
+                {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+                <div class="item">
+                    <a class="person-teaser js-popover" href="#popover-win-prize-{$prize->id}" data-popover="#popover-win-prize-{$prize->id}" data-idyoutubevideo="{$idYoutubeVideo}" data-timer="on">
+                        {if $isPrizeImg1}
+                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" class="img-fluid" data-ratio="1" alt="">
+                        {else}
+                        <img src="/images/gss/speaker.jpg" class="img-fluid" data-ratio="1" alt="">
+                        {/if}
+                        <div class="longtitle-carousel">{$prize->name}</div>
+                    </a>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+
+    {foreach item=prize from=$this.prizes}
+    {assign var=idYoutubeVideo value=$prize->youtube|getidyoutubevideo}
+    {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+    <div class="modal fade" id="popover-win-prize-{$prize->id}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="popover-win">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    {if $prize->youtube}
+                    <div class="thumb">
+                        <iframe width="100%" height="350" src="https://www.youtube.com/embed/{$prize->youtube}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    {else}
+                    <figure class="thumb fg-container">
+                        {if $isPrizeImg1}
+                        <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" alt="">
+                        {else}
+                        <img src="/images/gss/speaker.jpg" alt="">
+                        {/if}
+                    </figure>
+                    {/if}
+                    {if $lang == 'en'}
+                    <p class="title">{$prize->name_en}</p>
+                    <div class="desc">
+                        <p>{$prize->description_en|dbtexttohtml}</p>
+                    </div>
+                    {else}
+                    <p class="title">{$prize->name}</p>
+                    <div class="desc">
+                        <p>{$prize->description|dbtexttohtml}</p>
+                    </div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</div>
+
+{literal}
+<style>
+    .thematik-barstreet-page .img-faces-page {
+        height: 52rem;
+        background-image: url('/images/thematik-page/main_chef.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;}
+    .description-header .text {
+        margin-bottom: 2rem;
+        color: #000;}
+    .description-header .num {
+        font-family: 'Gastreet Font', sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        color: #10093B;
+        line-height: 1;
+        margin-bottom: .3rem}
+    .block-title {
+        font-size: 2.1rem;
+        color: #12073f;
+        font-weight: 600;}
+    #spiakerCarousel .owl-dots .owl-dot span, #festCarousel .owl-dots .owl-dot span {
+        width: 15px;
+        height: 15px;
+        margin: 5px 7px;
+        background: #fff;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity .2s ease;
+        border-radius: 30px;
+        border: 1px solid #12073f;}
+    #spiakerCarousel .owl-dots .owl-dot.active span, #festCarousel .owl-dots .owl-dot.active span {
+        background-color: #12073f;}
+    #festCarousel .owl-nav {
+        margin-bottom: 1rem;}
+    #festCarousel .longtitle-carousel, #newsCarousel .longtitle-carousel {
+        color: #000;
+        font-size: 1rem;
+        margin-top: 1rem;}
+    .thematik-barstreet-page .timetable .time-data {
+        text-align: left;}
+    .thematik-barstreet-page .timetable .data {
+        font-weight: 600;}
+    .thematik-barstreet-page .timetable .name-city {
+        color: #fff;
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: 600;}
+    .thematik-barstreet-page .timetable .name {
+        text-decoration: underline;
+        font-weight: 600;}
+    .thematik-barstreet-page .timetable .city {
+        font-size: 0.650rem;}
+    .thematik-barstreet-page .timetable {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-around;}
+    .thematik-barstreet-page .timetable .timetable-item-bg {
+        color: #fff;
+        background-color: #b0ca1f;
+        text-align: left;
+        height: 100%;}
+    .thematik-barstreet-page .timetable .timetable-item-bg .participant {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: right 15px bottom 0;}
+    .thematik-barstreet-page .timetable .timetable-item-bg .participant::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 15px;
+        background-color: #fff;
+        display: block;}
+    .thematik-barstreet-page .timetable .timetable-item-bg .participant img {
+        opacity: 0;}
+    .timetable-page .title-programm {
+        font-size: 2.250rem;
+        font-weight: 600;}
+    .chef.ticket-january, .rebro.ticket-january {
+        filter: grayscale(100%);
+        position: relative;
+        transition: all .3s ease-out;
+        opacity: .4;}
+    .chef.ticket-january:after, .rebro.ticket-january:after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 0;
+        bottom: 0;
+        right: 2px;
+        background-color: #000;
+        opacity: .4;}
+    .rebro.ticket-january:after {
+        right: 7px;}
+    .chef.ticket-january:hover:after, .rebro.ticket-january:hover:after {
+        display: none;
+        opacity: 0;}
+    .chef.ticket-january:hover, .rebro.ticket-january:hover {
+        filter: grayscale(0);
+        opacity: 1;}
+    .barstreet.ticket-january {
+        order: 1;}
+    .profi.ticket-january {
+        order: 2;}
+    .king.ticket-january {
+        order: 3;}
+    .rebro.ticket-january {
+        order: 4;}
+    .chef.ticket-january {
+        order: 5;}
+
+    @media (min-width: 300px) and (max-width: 767px) {
+        html {
+            font-size: 12px;}
+        .rebro.ticket-january, .chef.ticket-january {
+            display: none;}
+        .chef.ticket-january {
+            order: 1;}
+        .profi.ticket-january {
+            order: 2;}
+        .king.ticket-january {
+            order: 3;}
+        .more-link {
+            font-size: 10px;}
+        .thematik-barstreet-page iframe {
+            height: 20rem;}
+        .thematik-barstreet-page .img-faces-page {
+            height: 20rem;}
+        .img-faces-page {
+            overflow: hidden;}
+        .thematik-barstreet-page .video {
+            height: 22rem;
+            margin-bottom: 2.75rem}
+        .block-title {
+            font-size: 18px;}
+        .thematik-barstreet-page .video .btn-play {
+            width: 3.250rem;
+            height: 3.250rem;
+            top: calc(50% - 1.625rem);
+            left: calc(50% - 1.625rem);}
+        #festCarousel .owl-nav button.owl-prev {
+            left: -15px;}
+        #festCarousel .owl-nav button.owl-next {
+            right: -15px;}
+        #spiakerCarousel .owl-dots .owl-dot span, #festCarousel .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;}
+        .thematik-barstreet-page .timedata-menu, .thematik-barstreet-page .timedata-menu .dropdown-menu .dropdown-item{
+            font-size: 1.5rem;
+            color: #3070a5}
+        .thematik-barstreet-page .timetable .time-data .calendar {
+            text-align: center;
+            color: #3070a5;
+            font-size: 20px;}
+        .thematik-barstreet-page .timetable .time-data {
+            font-size: 12px;}
+        .thematik-barstreet-page .timetable .data {
+            font-weight: 600;}
+        .thematik-barstreet-page .timetable .corp {
+            text-align: center;
+            margin-bottom: 1rem;}
+        .thematik-barstreet-page .drop {
+            text-align: center;}
+        .timetable-page .title-programm {
+            font-size: 1.5rem;
+            font-weight: 600;}
+        .thematik-barstreet-page .timetable .timetable-item-bg .participant {
+            right: 0;
+            top: 0;
+            z-index: 1;
+            bottom: 0;
+            background-position: right bottom;}
+        .thematik-barstreet-page .timetable .timetable-item-bg .participant::after {
+            display: none;}
+        .timetable .time-data {
+            margin-top: -1px;}
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        body {
+            font-size: 12px;}
+        .thematik-barstreet-page .img-faces-page {
+            height: 30rem;}
+        #festCarousel img {
+            height: 190px;}
+        .thematik-barstreet-page .video  {
+            height: 18rem;
+            margin-bottom: 4.75rem;}
+        .block-title {
+            font-size: 20px;}
+        .thematik-barstreet-page .video .btn-play {
+            width: 3.250rem;
+            height: 3.250rem;
+            top: calc(50% - 1.625rem);
+            left: calc(50% - 1.625rem);}
+        .thematik-barstreet-page .logo-page .logo {
+            width: 70%;}
+        .thematik-barstreet-page .logo-page {
+            margin-left: 0;
+            padding: 0;}
+        .thematik-barstreet-page .camo {
+            width: 100%;
+            left: 0;
+            bottom: -4rem;}
+        .thematik-barstreet-page .img-faces-page .faces {
+            width: 80%;}
+        .thematik-barstreet-page .img-faces-page .title span {
+            font-size: 25px;}
+        .thematik-barstreet-page .img-faces-page .title {
+            vertical-align: middle;
+            font-size: 12px;
+            padding: 0;
+            margin-right: 1rem;
+            margin-left: 0.3rem;
+            margin-top: 1rem;}
+        #festCarousel img {
+            height: 190px;}
+        #festCarousel .owl-nav button.owl-prev {
+            left: -15px;}
+        #festCarousel .owl-nav button.owl-next {
+            right: -15px;}
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .thematik-barstreet-page .main_chef {
+            left: 0;
+            width: 100%;}
+    }
+</style>
+{/literal}
+
+
+{/if}
