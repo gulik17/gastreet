@@ -128,7 +128,7 @@
                 <p class="text">участников</p>
             </div>
         </div>
-        <div class="col-6 col-md-2">
+        <div class="col-6 col-md-2 d-none d-md-block">
             <div class="entry">
                 <p class="num">1</p>
                 <p class="text">высокотехнологичная застройка</p>
@@ -143,7 +143,7 @@
         <div class="col-6 col-md-2">
             <div class="entry">
                 <p class="num">∞</p>
-                <p class="text">концепций стритфуда</p>
+                <p class="text">гастрономических инсайтов</p>
             </div>
         </div>
     </div>
@@ -156,9 +156,13 @@
     </div>
 </div>
 <div class="container carousel-fest-page">
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Новости GASTREET</div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="title-carousel">Как это будет</div>
             <div class="owl-carousel owl-theme custom-owl-carousel" id="festCarousel">
                 <!-- loop start -->
                 {foreach item=prize from=$this.prizes}
@@ -218,39 +222,55 @@
 </div>
 
 <div class="container carousel-speak-page">
-    <div class="title-carousel">Спикеры площадки</div>
-    <div class="owl-carousel owl-theme speakers_2019 speaker" id="spiakerCarousel">
-        <!-- loop start -->
-        {foreach item=speaker from=$this.spmList}
-        <div class="item">
-            <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#" data-speaker-id="{$speaker.id}" data-timer="on">
-                <div class="img-tags">
-                    {$speaker.tags|tagformat}
-                    {if $speaker.partner_id > 0}
-                    <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
-                    {/if}
-                </div>
-                {if $speaker.country != 'ru'}
-                    <div class="icon-country {$speaker.country}"></div>
-                {/if}
-                    <div class="volunteer_medal_main speaker_medal_main">{$speaker.years|yeartomedal}</div>
-                {if $speaker.pic1}
-                    <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
-                {else}
-                    <img src="/images/gss/speaker.jpg" data-ratio="1" alt="">
-                {/if}
-                <div class="about">
-                    <p class="name">{$speaker.name}{if $speaker.michelin} <span class="michelin michelin_{$speaker.michelin}"></span>{/if}<br/>{$speaker.secondName}</p>
-                    <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
-                </div>
-            </a>
+    <div class="row mb-3 mt-4">
+        <div class="col-md-12">
+            <div class="block-title">Спикеры площадки</div>
         </div>
-        {/foreach}
-        <!-- loop end -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme speakers_2019 speaker" id="spiakerCarousel">
+                <!-- loop start -->
+                {foreach item=speaker from=$this.spmList}
+                <div class="item">
+                    <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#" data-speaker-id="{$speaker.id}" data-timer="on">
+                        <div class="img-tags">
+                            {$speaker.tags|tagformat}
+                            {if $speaker.partner_id > 0}
+                            <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
+                            {/if}
+                        </div>
+                        {if $speaker.country != 'ru'}
+                            <div class="icon-country {$speaker.country}"></div>
+                        {/if}
+                            <div class="volunteer_medal_main speaker_medal_main">{$speaker.years|yeartomedal}</div>
+                        {if $speaker.pic1}
+                            <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1" alt="">
+                        {else}
+                            <img src="/images/gss/speaker.jpg" data-ratio="1" alt="">
+                        {/if}
+                        <div class="about">
+                            <p class="name">{$speaker.name}{if $speaker.michelin} <span class="michelin michelin_{$speaker.michelin}"></span>{/if}<br/>{$speaker.secondName}</p>
+                            <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
+                        </div>
+                    </a>
+                </div>
+                {/foreach}
+                <!-- loop end -->
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="container">
+    <div class="row align-items-center mb-3 mt-4">
+        <div class="col-8 col-md-12">
+            <div class="block-title">Оптимальные билеты</div>
+        </div>
+        <div class="col-4 text-right d-md-none">
+            <a href="{link show=catalog}" class="more-link">Все билеты <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
     <div class="row row-nowrap mb-5">
         {component name="Userticket"}
     </div>
@@ -1128,7 +1148,7 @@
 <style>
 .thematik-chef-page .img-faces-page {
     height: 52rem;
-    background-image: url('/images/thematik-chef/main_chef.png');
+    background-image: url('/images/thematik-chef/main_chef.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;}
@@ -1158,14 +1178,10 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;}
-.carousel-fest-page .title-carousel, .carousel-speak-page .title-carousel {
+.block-title {
     font-size: 2.1rem;
     color: #12073f;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;}
-#spiakerCarousel {
-    margin-bottom: 4rem;}
+    font-weight: 600;}
 #spiakerCarousel .owl-dots .owl-dot span, #festCarousel .owl-dots .owl-dot span {
     width: 15px;
     height: 15px;
@@ -1228,21 +1244,62 @@
 .timetable-page .title-programm {
     font-size: 2.250rem;
     font-weight: 600;}
+.rebro.ticket-january, .barstreet.ticket-january {
+    filter: grayscale(100%);
+    position: relative;
+    transition: all .3s ease-out;
+    opacity: .4;}
+.rebro.ticket-january:after, .barstreet.ticket-january:after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0;
+    bottom: 0;
+    right: 7px;
+    background-color: #000;
+    opacity: .4;}
+.rebro.ticket-january:after {
+    right: 2px;}
+.rebro.ticket-january:hover:after, .barstreet.ticket-january:hover:after {
+    display: none;
+    opacity: 0;}
+.rebro.ticket-january:hover, .barstreet.ticket-january:hover {
+    filter: grayscale(0);
+    opacity: 1;}
+.chef.ticket-january {
+    order: 1;}
+.profi.ticket-january {
+    order: 2;}
+.king.ticket-january {
+    order: 3;}
+.rebro.ticket-january {
+    order: 4;}
+.barstreet.ticket-january {
+    order: 5;}
 @media (min-width: 300px) and (max-width: 767px) {
     html {
-        font-size: 9px;}
+        font-size: 12px;}
+    .rebro.ticket-january, .barstreet.ticket-january {
+        display: none;}
+    .chef.ticket-january {
+        order: 1;}
+    .profi.ticket-january {
+        order: 2;}
+    .king.ticket-january {
+        order: 3;}
+    .more-link {
+        font-size: 10px;}
     .thematik-chef-page iframe {
         height: 20rem;}
     .thematik-chef-page .img-faces-page {
-        height: 28rem;}
+        height: 20rem;}
     .img-faces-page {
         overflow: hidden;}
     .thematik-chef-page .video {
         height: 22rem;
         margin-bottom: 2.75rem}
-    .carousel-fest-page .title-carousel, .carousel-speak-page .title-carousel {
-        font-size: 20px;
-        margin-bottom: 1rem;}
+    .block-title {
+        font-size: 18px;}
     .thematik-chef-page .video .btn-play {
         width: 3.250rem;
         height: 3.250rem;
@@ -1252,7 +1309,7 @@
         left: -15px;}
     #festCarousel .owl-nav button.owl-next {
         right: -15px;}
-    #spiakerCarousel .owl-dots .owl-dot span {
+    #spiakerCarousel .owl-dots .owl-dot span, #festCarousel .owl-dots .owl-dot span {
         width: 10px;
         height: 10px;}
     .thematik-chef-page .timedata-menu, .thematik-chef-page .timedata-menu .dropdown-menu .dropdown-item{
@@ -1295,9 +1352,8 @@
     .thematik-chef-page .video  {
         height: 18rem;
         margin-bottom: 4.75rem;}
-    .carousel .title-carousel {
-        font-size: 20px;
-        margin-bottom: 0;}
+    .block-title {
+        font-size: 20px;}
     .thematik-chef-page .video .btn-play {
         width: 3.250rem;
         height: 3.250rem;
