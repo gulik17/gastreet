@@ -5770,6 +5770,39 @@ a.credit {
     padding-bottom: 1rem;
     min-height: 210px;}
 
+
+.main-interactive {
+    background-image: url("/images/main/main-interactive-bg.png");
+    height: 470px;}
+.main-interactive__menu-bg {
+    background-color: #282c57;
+    text-align: center;}
+.main-interactive__menu-bg a {
+    font-family: 'Gastreet Font', Georgia, serif;
+    font-size: 16px;
+    padding: 2.813rem 0;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;}
+.main-interactive__menu-bg a:after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 15px;
+    bottom: 15px;
+    background-color: #fff;
+    width: 1px;}
+.main-interactive__menu-bg .row>div:first-child a:before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 15px;
+    bottom: 15px;
+    background-color: #fff;
+    width: 1px;}
+
 @media (min-width: 300px) and (max-width: 767px) {
     .all-tickets .all-tick-block {
         box-shadow: none;}
