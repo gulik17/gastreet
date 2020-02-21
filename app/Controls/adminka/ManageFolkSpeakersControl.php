@@ -16,6 +16,6 @@ class ManageFolkSpeakersControl extends BaseAdminkaControl {
         $speakers = FrontPagerControl::limit($speakers, $perPage, "page");
         
         $this->addData("speakersList", $speakers);
-        $this->addData("statusDesc", FolkSpeaker::getStatusDesc());
+        $this->addData("statusDesc", folkSpeaker::getStatusDesc());
     }
 }

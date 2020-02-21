@@ -12,18 +12,20 @@ class SaveFolkSpeakerAction extends AdminkaAction {
         $first_name = Request::getVar("first_name");
         $last_name = Request::getVar("last_name");
         $user_type = Request::getVar("user_type");
+        $speaker_desc = Request::getVar("speaker_desc");
         $phone = Request::getVar("phone");
         $email = Request::getVar("email");
         $company = preg_replace('/\&quot;([^\"]*)\&quot;/ismU', "«$1»", Request::getVar("company"));
         $position = Request::getVar("position");
         $description = Request::getVar("description");
-        $photo = Request::getVar("photo");
         $video = Request::getVar("video");
         $instagram = Request::getVar("instagram");
         $facebook = Request::getVar("facebook");
         $vkontakte = Request::getVar("vkontakte");
         $ondoklassniki = Request::getVar("ondoklassniki");
         $sort_order = Request::getInt("sort_order");
+
+
 
         if (!$first_name) {
             Adminka::redirectBack("Незаполнено Имя спикера");
@@ -37,7 +39,7 @@ class SaveFolkSpeakerAction extends AdminkaAction {
         }
 
         if (!$fsmObj) {
-            $fsmObj = new FolkSpeaker();
+            $fsmObj = new folkSpeaker();
             $fsmObj->ts_create = time();
         } else {
             $doAct = "Спикер отредактирован";
@@ -47,12 +49,12 @@ class SaveFolkSpeakerAction extends AdminkaAction {
         $fsmObj->first_name    = $first_name;
         $fsmObj->last_name     = $last_name;
         $fsmObj->user_type     = $user_type;
+        $fsmObj->speaker_desc  = $speaker_desc;
         $fsmObj->phone         = $phone;
         $fsmObj->email         = $email;
         $fsmObj->company       = $company;
         $fsmObj->position      = $position;
         $fsmObj->description   = $description;
-        $fsmObj->photo         = $photo;
         $fsmObj->video         = $video;
         $fsmObj->instagram     = $instagram;
         $fsmObj->facebook      = $facebook;

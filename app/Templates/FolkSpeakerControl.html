@@ -44,24 +44,38 @@
             </div>
         </div>
     </div>
-
-    {if $dev == 1}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="timer">
-                <p class="timer-header">У тебя осталось</p>
+    <div class="container timer-speaker-page">
+        <div class="row text-center">
+            <div class="offset-1 col-10 offset-md-4 col-md-4 mt-5 pb-5">
+                <div class="row">
+                    <div class="col-md-12 timer-speaker-body">
+                        <div class="timer-title pt-3 pb-3">У тебя осталось</div>
+                        <div class="row time-number">
+                            <div class="col-4">
+                                <div id="timer_days" class="days number">&nbsp;</div>
+                                <div>дней</div>
+                            </div>
+                            <div class="col-4">
+                                <div id="timer_hours" class="hours number">&nbsp;</div>
+                                <div>часов</div>
+                            </div>
+                            <div class="col-4">
+                                <div id="timer_minutes" class="minutes number">&nbsp;</div>
+                                <div>минут</div>
+                            </div>
+                        </div>
+                        <div class="timer-title pt-3 pb-4">чтобы подать заявку</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {/if}
-
-
     <div class="row">
         <div class="col-12 button">
             <a href="#" class="btn btn-lg btn-accept" data-toggle="modal" data-target="#registerModal">Принять участие</a>
         </div>
     </div>
-    <div class="row select d-none">
+    <div class="row select">
         <div class="col-12 col-md-12">
             <a href="#" data-toggle="tabs" data-target=".tab-item" class="active">Все</a>
             <a href="#" data-toggle="tabs" data-target=".item-speaker">Спикеры</a>
@@ -75,7 +89,7 @@
         {if $this.speakers}
             <!-- loop start -->
             {foreach item=speaker from=$this.speakers}
-                <div class="col-6 col-md-3 speak tab-item item-speaker">
+                <div class="col-6 col-md-3 speak tab-item {if $speaker.user_type == 'TYPE_SPEAKER'}item-speaker{/if} {if $speaker.user_type == 'TYPE_CHEF'}item-chef{/if}">
                     <a href="#" class="" data-toggle="modal" data-target="#folkspeaker_{$speaker.id}">
                         <div class="img-block">
                             <img src="/images/folkspeaker/resized/{$speaker.photo}?v={$speaker.ts_update}" alt="{$speaker.first_name} {$speaker.last_name}" class="photo">
@@ -529,3 +543,20 @@
         </div>
     </div>
 </div>
+{literal}
+<script>
+    function setTimer() {
+        let date_now = new Date();
+        let date = new Date('04/01/2020');
+        let timer = date - date_now;
+        let days = parseInt( timer / (3600000 * 24) );
+        let hours = parseInt( (timer / 3600000 ) - (days*24) );
+        let minutes = parseInt( ( timer / 60000 ) - ( (days*1440) + (hours*60) ) );
+        document.getElementById("timer_days").innerHTML = days;
+        document.getElementById("timer_hours").innerHTML = hours;
+        document.getElementById("timer_minutes").innerHTML = minutes;
+    }
+    setTimer();
+    setInterval(setTimer, 1000);
+</script>
+{/literal}

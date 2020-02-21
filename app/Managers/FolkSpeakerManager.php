@@ -21,7 +21,7 @@ class FolkSpeakerManager extends BaseEntityManager {
     }
 
     public function getActive($limit = 0, $sortType = "`sort_order`, `last_name`") {
-        $sql = "SELECT `fs`.* FROM `folkSpeaker` AS fs WHERE `fs`.`status` = '" . FolkSpeaker::STATUS_ENABLED . "' ORDER BY $sortType DESC";
+        $sql = "SELECT `fs`.* FROM `folkSpeaker` AS fs WHERE `fs`.`status` = '" . folkSpeaker::STATUS_ENABLED . "' ORDER BY $sortType DESC";
         if ($limit) {
             $sql .= " LIMIT 0, $limit";
         }

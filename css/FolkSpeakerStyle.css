@@ -139,8 +139,7 @@ body {
     width: 100%;}
 .speak {
     width: 100%;
-    padding-right: 2px;
-    padding-left: 2px;}
+    padding: 2px;}
 .speak a {
     color: #fff;}
 .btn-vote {
@@ -180,10 +179,11 @@ body {
     position: relative;
     text-align: left;}
 .folk-page .name {
-    font-size: 12px;}
+    margin-bottom: .5rem;
+    font-size: 1.1rem;}
 .folk-page .job {
     margin-bottom: 0;
-    font-size: 8px;}
+    font-size: .750rem}
 .folk-page .pdf {
     margin-top: 1rem;
     margin-bottom: 3rem;
@@ -327,22 +327,74 @@ input.input {
 .photo-file span.error {
     border-color: #f00;
     color: #f00;}
-.timer {
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    background-color: rgb(20, 29, 91);
-    width: 275px;
-    height: 162px;
-    z-index: 7;}
+.timer-speaker-page .timer-speaker-ps .ps {
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-size: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;}
+.timer-speaker-page .timer-speaker-ps .ps::after {
+    content: "P.S.";
+    display: inline-block;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-weight: 600;
+    color: #008dd2;
+    font-size: 1.1rem;}
+.timer-speaker-page .timer-speaker-ps .ps a {
+    color: #fff;
+    text-decoration: underline;}
+.timer-speaker-page .timer-speaker-body .hours::before {
+    content: ":";
+    display: inline-block;
+    position: absolute;
+    left: -5px;
+    top: -5px;}
+.timer-speaker-page .timer-speaker-body .minutes::before {
+    content: ":";
+    display: inline-block;
+    position: absolute;
+    left: -5px;
+    top: -5px;}
+.timer-speaker-page .timer-speaker-body .minutes::before, .timer-speaker-page .timer-speaker-body .hours::before {
+    animation: blink 2s linear infinite;}
+@keyframes blink {
+    50% { color: rgb(255, 255, 255); }
+    51% { color: rgba(255, 255, 255, 0); }
+    100% { color: rgba(255, 255, 255, 0); }
+}
+.timer-speaker-page .timer-speaker-body .number {
+    font-size: 3rem;}
+.timer-speaker-page .timer-speaker-body .timer-title {
+    color: #ffb643;
+    text-shadow: 0 0 20px rgb(255, 182, 67)!important}
+.timer-speaker-page .timer-speaker-body {
+    font-size: 1.250rem;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #fff;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;}
+.timer-speaker-page .timer-speaker-body .time-number {
+    line-height: 1.2;}
 
-.timer .timer-header {
-    font-size: 12px;
-    color: rgb(255, 255, 255);
-    line-height: 1.5;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(234, 0, 187, 0.4);}
+@media (min-width: 300px) and (max-width: 767px) {
+    html {
+        font-size: 11px;}
+    .timer-speaker-page .timer-speaker-body {
+        font-size: 1.5rem;}
+    .timer-speaker-page .timer-speaker-body .number {
+        font-size: 2.7rem;}
+    .timer-speaker-page .timer-speaker-body .number + div {
+        font-size: 1rem;}
+}
+
 
 
 /* Extra small */
@@ -372,8 +424,7 @@ input.input {
         font-size: 14px;}
     .speak {
         width: 100%;
-        padding-right: 1rem;
-        padding-left: 1rem;}
+        padding: .5rem;}
 }
 /* Large */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -384,8 +435,7 @@ input.input {
         font-size: 14px;}
     .speak {
         width: 100%;
-        padding-right: 1rem;
-        padding-left: 1rem;}
+        padding: 1rem;}
 }
 /* Extra large */
 @media (min-width: 1200px) {
@@ -393,6 +443,5 @@ input.input {
         font-size: 14px;}
     .speak {
         width: 100%;
-        padding-right: 1rem;
-        padding-left: 1rem;}
+        padding: 1rem;}
 }

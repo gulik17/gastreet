@@ -23,6 +23,18 @@
                 {html_options options=$this.statusList selected=$this.speaker->status}
             </select>
         </div>
+        <div class="col-md-3">
+            <label>Тип спикера:</label>
+            <select class="form-control" name="user_type" id="user_type">
+                {html_options options=$this.userType selected=$this.speaker->user_type}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label>Описание спикера:</label>
+            <select class="form-control" name="speaker_desc" id="speaker_desc">
+                {html_options options=$this.speakerDesc selected=$this.speaker->speaker_desc}
+            </select>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-md-6">

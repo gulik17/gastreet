@@ -12,13 +12,30 @@
         <!--[if lte IE 6]>{loadscript file='/css/ie6.css' type='css'}<![endif]-->
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="alternate" type="application/rss+xml" title="rss новости" href="/rss" />
+
+        {loadscript file='/css/font-awesome.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.carousel.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.theme.default.css' type='css'}
+        {loadscript file='/css/bootstrap4/css/bootstrap.min.css' type='css'}
+
+        {loadscript file='/css/style.css' type='css'}
+        {loadscript file='/css/style-gss.css' type='css'}
 
         <script>
             var message = '{displaynotification}';
         </script>
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.viapush.com/cdn/v1/sdks/viapush.js" async="" charset="UTF-8"></script>
+        {literal}
+        <script>
+            var ViaPush = window.ViaPush || [];
+            ViaPush.push(["init", { appId: "b58fa8ab-cf0e-8196-4952-9be21bc2b1f6" }]);
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-869423439"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-869423439'); </script>
+        {/literal}
     </head>
-    <body>
+    <body class="page load d-flex flex-column h-100 {$gcode}">
         {include file=$CURRENT_CONTROL_TEMPLATE}
 
         {if $jivoSite == 1}

@@ -30,6 +30,8 @@ class EditFolkSpeakerControl extends BaseAdminkaControl {
             }
         }
 
-        $this->addData("statusList", FolkSpeaker::getStatusDesc());
+        $this->addData("statusList", folkSpeaker::getStatusDesc());
+        $this->addData("userType", folkSpeaker::getUserType());
+        $this->addData("speakerDesc", folkSpeaker::getSpeakerDesc());
     }
 }
