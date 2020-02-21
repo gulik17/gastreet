@@ -2,6 +2,7 @@
 <html lang="{$lang}">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{if $pageTitle}{$pageTitle}{/if}{if $p > 1} - ##page## {$p}{/if}</title>
         <meta name="description" content="{$pageDesc}" />
         <meta name="keywords" content="" />
@@ -37,10 +38,6 @@
     </head>
     <body class="page load d-flex flex-column h-100 {$gcode}">
         {include file=$CURRENT_CONTROL_TEMPLATE}
-
-        {if $jivoSite == 1}
-            {loadscript file='/js/jivosite.js' type='js'}
-        {/if}
 
         <script src="/js/jquery.min.js" type="text/javascript"></script>
         <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript"></script>

@@ -2,17 +2,17 @@
 
 <div class="container header">
     <div class="row align-items-center my-5">
-        <div class="col-md-5 logo">
-            <img src="/images/chatbot/logo.svg" alt="">
+        <div class="col-6 col-md-5 logo">
+            <img src="/images/chatbot/logo.svg" class="img-fluid" alt="">
         </div>
-        <div class="col-10 offset-md-3 offset-1 col-md-4 jule">
-            <img src="/images/chatbot/date.svg" alt="">
+        <div class="col-6 offset-md-3 col-md-4 jule">
+            <img src="/images/chatbot/date.svg" class="img-fluid" alt="">
         </div>
     </div>
 </div>
 <div class="container chat-bot-body">
     <div class="row">
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-md-5">
             <p class="title">
                 Дарим универсальный чек-лист для
                 <br>управляющего и&nbsp;ресторатора</p>
@@ -33,16 +33,16 @@
             <div class="socnet-icons text-center">
                 <div class="socnet-title">Куда тебе прислать чек-лист?</div>
                 <div class="socnet-body">
-                    <a href="#" class="icons telegram">
+                    <a href="https://teleg.run/GastreetShow_Bot/?start=gastreet_site" target="_blank" class="icons telegram">
                         <i class="fa fa-telegram" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="icons whats-app">
-                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    <a href="viber://pa?chatURI=gastreet&context=gastreet_site" target="_blank" class="icons viber">
+                        <i class="fa fa-viber" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="icons vk">
+                    <a href="https://vk.me/public111828331?ref=gastreet_site" target="_blank" class="icons vk">
                         <i class="fa fa-vk" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="icons facebook">
+                    <a href="https://m.me/1537360369885631/?ref=gastreet_site" target="_blank" class="icons facebook">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -63,11 +63,6 @@
         background-color: #464646;
         background-image:  url('/images/chatbot/check.jpg');
         background-repeat: no-repeat;}
-    .chat-bot-landing .header {
-        color: #fff;}
-    .chat-bot-landing .header .jule {
-        text-align: end;
-        width: 100%;}
     .chat-bot-landing .chat-bot-body .title {
         font-size: 2.550rem;
         font-weight: 600;
@@ -79,7 +74,7 @@
         border-radius: 10px;
         padding: 2rem 1rem;}
     .socnet-icons .socnet-title {
-        font-size: 1.550rem;
+        font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 2rem;}
     .socnet-icons .socnet-body .icons {
@@ -101,7 +96,7 @@
         padding: 0;
         color: #0088cc;
         background: radial-gradient(#fff 49%, #0088cc 50%);}
-    .socnet-icons .socnet-body .icons.whats-app {
+    .socnet-icons .socnet-body .icons.viber {
         background-color: #665cac;}
     .socnet-icons .socnet-body .icons.vk {
         background-color: #4d7198;}
@@ -110,11 +105,6 @@
     @media (min-width: 300px) and (max-width: 767px) {
         html {
             font-size: 11px;}
-        .chat-bot-landing .header .logo img {
-            width: 100%;
-            margin-bottom: 2rem;}
-        .chat-bot-landing .header .jule {
-            text-align: center;}
         .chat-bot-landing .chat-bot-body .title {
             font-size: 2.2rem;
             font-weight: 600;
@@ -127,6 +117,13 @@
             height: 4rem;}
         .socnet-icons .socnet-body .icons.telegram {
             font-size: 4rem;}
+    }
+    @media (min-width: 375px) and (max-width: 767px) {
+        .chat-bot-landing .chat-bot-body .title {
+            line-height: 1.5;
+            margin-top: 0;}
+        .chat-bot-landing .chat-bot-body .longtitle {
+            line-height: 1.6;}
     }
 </style>
 {/literal}
