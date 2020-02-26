@@ -5505,7 +5505,8 @@ main {
     padding: 5px 0;
     display: block;
     width: 100%;
-    text-align: left;}
+    text-align: left;
+    position: relative;}
 .accordion .card {
     border-radius: 0;
     border: 0;
@@ -5522,19 +5523,24 @@ main {
     display: none;}
 .accordion button>.fa {
     border: 1px solid #aeaeae;
-    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin-right: 15px;
     font-size: 22px;
     text-align: center;
-    line-height: 25px;
-    vertical-align: middle;}
+    line-height: 25px;}
+#accordionPayment button {
+    margin: 0;}
+#accordionPayment button>.fa {
+    position: absolute;
+    top: calc(50% - 12px);}
+#accordionPayment button>.fa + div {
+    padding-left: 35px;}
 .accordion .btn b, .accordion .btn img {
     display: inline-block;
     text-transform: initial;
-    vertical-align: middle;}
+    vertical-align: middle;
+    width: 200px;}
 .accordion .btn b {
     width: 250px;}
 .accordion .btn b {
@@ -5926,10 +5932,9 @@ a.credit {
 @media (min-width: 300px) and (max-width: 767px) {
     .all-tickets .all-tick-block {
         box-shadow: none;}
-    #headingTwo b {
-        display: none;}
     .accordion .btn b {
         width: auto;
+        display: block;
         font-size: 1.4rem;}
     .accordion .card-body {
         padding-top: 0;}

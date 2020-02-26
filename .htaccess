@@ -13,6 +13,9 @@ php_value upload_max_filesize 40M
 
 php_flag session.use_trans_sid 1
 
+php_value session.gc_maxlifetime 172800
+php_value session.cookie_lifetime 172800
+
 # Установка кодировки по умолчанию
 AddDefaultCharset utf-8
 
