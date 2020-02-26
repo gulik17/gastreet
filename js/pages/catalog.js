@@ -150,13 +150,12 @@ $().ready(function() {
         catalogSendAjaxRequest(gotParams, $(this));
     });
 
-    $('.tab-dates a').click(function (evt) {
+    $('.tab-dates a, .tab-dates-js a').click(function (evt) {
         evt.preventDefault();
         //tab-dates
-        var tagname = 'all';
         var tagname = $('.tags-list-speakers .gss-tag-li.active a').data('tag');
         var date = $(this).data('date');
-        $('.tab-dates a').removeClass('active');
+        $('.tab-dates a, .tab-dates-js a').removeClass('active');
         $(this).addClass('active');
         $('.row.block-body, .schedule-body .schedule-item').addClass('d-none');
         if (tagname == 'all') {

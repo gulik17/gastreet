@@ -387,16 +387,36 @@ function stopTimer() {
 if ( ($('.speaker a').length) && (!$('#speaker-modal').length) ) {
     var html = '<div class="modal fade" id="speaker-modal" tabindex="-1" role="dialog">'+
         '<div class="modal-dialog modal-md" role="document">'+
-            '<div class="modal-content popover-win">'+
-                '<div class="modal-header">'+
-                    '<button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>'+
-                '</div>'+
-                '<div class="modal-body"></div>'+
-            '</div>'+
+        '<div class="modal-content popover-win">'+
+        '<div class="modal-header">'+
+        '<button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>'+
         '</div>'+
-    '</div>';
+        '<div class="modal-body"></div>'+
+        '</div>'+
+        '</div>'+
+        '</div>';
     $('body').append(html);
 }
+
+if ( ($('[data-target=#mk-modal]').length) && (!$('#mk-modal').length) ) {
+    var html = '<div class="modal fade" id="mk-modal" tabindex="-1" role="dialog">'+
+            '<div class="modal-dialog modal-md" role="document">'+
+                '<div class="modal-content popover-win">'+
+                    '<div class="modal-header">'+
+                        '<button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>'+
+                    '</div>'+
+                    '<div class="modal-body">'+
+                        '<div class="mk-teaser"></div>'+
+                        '<div class="mk-format"><span></span></div>'+
+                        '<p class="title"></p>'+
+                        '<div class="desc"></div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+    $('body').append(html);
+}
+
 if ( ($('a[data-target="#video-modal"]').length) && (!$('#video-modal').length) ) {
     var html = '<div class="modal fade" id="video-modal" tabindex="-1" role="dialog">'+
             '<div class="modal-dialog modal-lg" role="document">'+

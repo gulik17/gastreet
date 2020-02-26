@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/main/burov-m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/popova-m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/shmakov-m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/tatulova-m.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/RegisterControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/RegisterControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket6Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket6Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register3Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/ProductManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/catalog.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +46,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
@@ -67,11 +56,11 @@
       <recent name="D:\YandexDisk\phpStormProject\gastreet\css\jquery-ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\images" />
       <recent name="D:\GitHub\gastreet\images\main" />
       <recent name="D:\GitHub\gastreet\images\chatbot" />
       <recent name="D:\GitHub\gastreet\app\Controls" />
       <recent name="D:\GitHub\gastreet\app\Templates" />
-      <recent name="D:\GitHub\gastreet\images\thematik-page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,7 +145,8 @@
       <workItem from="1582107558157" duration="15690000" />
       <workItem from="1582179296909" duration="13496000" />
       <workItem from="1582268277590" duration="16660000" />
-      <workItem from="1582611517210" duration="27742000" />
+      <workItem from="1582611517210" duration="41161000" />
+      <workItem from="1582729209424" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Before open new ticket page">
       <created>1580481197809</created>
@@ -403,7 +393,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582698744214</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Открыл доп опции и аватарку при регистрации">
+      <created>1582706179747</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1582706179748</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Правки на странице способы оплаты">
+      <created>1582716504658</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1582716504658</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,8 +428,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Many updates" />
-    <MESSAGE value="After refactor ticket paage" />
     <MESSAGE value="After add special link ticket page" />
     <MESSAGE value="Correct text on the ticket page" />
     <MESSAGE value="Deleted ITTEHNOLOGY from menu" />
@@ -449,6 +451,8 @@
     <MESSAGE value="Добавил страницу Чатбот" />
     <MESSAGE value="Начало работы над главным баннером" />
     <MESSAGE value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
+    <MESSAGE value="Открыл доп опции и аватарку при регистрации" />
+    <MESSAGE value="Правки на странице способы оплаты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки на странице способы оплаты" />
   </component>
 </project>

@@ -90,7 +90,7 @@ class CatalogControl extends IndexControl {
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('chefstreet', '2020');
                 $pm = new ProductManager();
-                $products = $pm->getAllActive('', $onlyAllowed);
+                $products = $pm->getAllActive(9, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 13) {
