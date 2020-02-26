@@ -1370,14 +1370,6 @@ span.stretch {
     -o-transform:scale(2,1); /* Opera */
     transform:scale(2,1); /* W3C */
     padding: 0 20px;}
-.register-page .owl-theme .owl-nav [class*='owl-'] {
-    position: absolute;
-    font-size: 0;
-    height: 4rem;
-    border-radius: 0;
-    width: 2rem;
-    margin: 0;
-    background: #000;}
 .register-page .owl-theme .owl-nav [class*='owl-']:after {
     content: "\f104";
     font:normal normal normal 14px/1 FontAwesome;
@@ -5814,7 +5806,7 @@ a.credit {
     margin-left: -60px;
     margin-bottom: -60px;
     transition: all .4s cubic-bezier(0.61, 0.02, 0.47, 0.99)}
-.container__main-interactive .img-item:hover {
+.container__main-interactive .img-item.hover {
     z-index: 1;}
 .container__main-interactive .img-item:after {
     content: "";
@@ -5902,6 +5894,34 @@ a.credit {
     bottom: 15px;
     background-color: #fff;
     width: 1px;}
+
+.banner-mobile-page .banner-mobile-body .banner-mobile-img {
+    padding-left: 0;}
+.banner-mobile-page .banner-mobile-body:after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    right: 15px;;
+    height: 1px;
+    background:#151d58}
+.banner-mobile-page .banner-mobile-body .description {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Gastreet Font';
+    color: #151d58;}
+.banner-mobile-page .banner-mobile-body a {
+    text-decoration: none;}
+.banner-mobile-page .banner-mobile-body .description::after {
+    content: "\f054";
+    font: normal normal normal 18px/1 FontAwesome;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);}
 
 @media (min-width: 300px) and (max-width: 767px) {
     .all-tickets .all-tick-block {

@@ -1,46 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="Добавил партнерские илеты">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/burov.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/item-bar-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/item-chef-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/item-main-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/item-rebro-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/popova.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/shmakov.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/spot-bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/spot-chef.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/spot-main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/spot-rebro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/tatulova.png" afterDir="false" />
+    <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/main/burov-m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/popova-m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/shmakov-m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/tatulova-m.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/PayManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/PayManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/VideoControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/VideoControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/battle.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/battle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/blank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/empty.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/empty.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/memory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/RegisterControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/RegisterControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket6Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket6Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register3Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/place.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/rss.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/rss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +156,7 @@
       <workItem from="1582107558157" duration="15690000" />
       <workItem from="1582179296909" duration="13496000" />
       <workItem from="1582268277590" duration="16660000" />
-      <workItem from="1582611517210" duration="23370000" />
+      <workItem from="1582611517210" duration="27742000" />
     </task>
     <task id="LOCAL-00001" summary="Before open new ticket page">
       <created>1580481197809</created>
@@ -418,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582297373014</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику">
+      <created>1582698744214</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1582698744214</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +424,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Hit style update" />
     <MESSAGE value="Many updates" />
     <MESSAGE value="After refactor ticket paage" />
     <MESSAGE value="After add special link ticket page" />
@@ -464,6 +448,7 @@
     <MESSAGE value="Правки" />
     <MESSAGE value="Добавил страницу Чатбот" />
     <MESSAGE value="Начало работы над главным баннером" />
-    <option name="LAST_COMMIT_MESSAGE" value="Начало работы над главным баннером" />
+    <MESSAGE value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
   </component>
 </project>

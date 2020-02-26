@@ -31,12 +31,11 @@ class RegisterControl extends AuthorizedUserControl {
         $this->addData("oldUser", $oldUser[0]);
 
         if ($step == 4) {
-            Enviropment::redirect("/register?step=5");
             $this->includedJS .= Enviropment::loadScript('/js/pages/catalog.js', 'js');
         }
         
         if ($step == 3) {
-            Enviropment::redirect("/register?step=4");
+            //Enviropment::redirect("/register?step=4");
             $this->controlName = "Аватар";
             $touch = Request::getInt('touch');
             $this->addData("touch", $touch);

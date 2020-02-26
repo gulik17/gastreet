@@ -48,6 +48,8 @@ class MainpageControl extends BaseAdminkaControl {
             $baseTicketPlan = '—';
         }
 
+
+
         $this->addData("baseTicketPlan", $baseTicketPlan);
 
         $btm = new BaseTicketManager();
@@ -83,36 +85,32 @@ class MainpageControl extends BaseAdminkaControl {
             $this->addData("ticketTotal", $ticketTotal);
             $this->addData("planTotal", $planTotal);
         }
-        
+
         $pm = new ProductManager();
         $products = $pm->getAllActive(null,false,null,'areaId');
         $planProductTotal = 0;
-        
-        $productTotal = 0;
+
+        $productTotal = [];
         if ($products) {
-        foreach ($products as $product) {
-            if ($product->price > 0) {
-                $sql = "SELECT count(id) AS count FROM `basketProduct` WHERE `productId` = " . $product->id;
-                $basketProductCount = $um->getByAnySQL($sql);
+            foreach ($products as $product) {
+                if ($product->price > 0) {
+                    $sql = "SELECT count(id) AS count FROM `basketProduct` WHERE `productId` = " . $product->id;
+                    $basketProductCount = $um->getByAnySQL($sql);
 
-                $sql = "SELECT count(id) AS count FROM `basketProduct` WHERE `productId` = " . $product->id . " AND `status` = 'STATUS_PAID'";
-                $basketProductPayCount = $um->getByAnySQL($sql);
+                    $sql = "SELECT count(id) AS count FROM `basketProduct` WHERE `productId` = " . $product->id . " AND `status` = 'STATUS_PAID'";
+                    $basketProductPayCount = $um->getByAnySQL($sql);
 
-                $productTotal[$product->id]['name'] = $product->name;
-                $productTotal[$product->id]['plan'] = $product->plan;
-                $productTotal[$product->id]['areaId'] = $product->areaId;
-                $productTotal[$product->id]['eventTsStart'] = $product->eventTsStart;
-                $productTotal[$product->id]['all']  = $basketProductCount[0]['count'];
-                $productTotal[$product->id]['pay']  = $basketProductPayCount[0]['count'];
-                $planProductTotal = $planProductTotal + $product->plan;
-                
-                if ( $product->plan ) {
-                    $productTotal[$product->id]['percent'] = round( ( $basketProductPayCount[0]['count'] / $product->plan ) * 100 , 2);
-                } else {
-                    $ticketTotal[$ticket->id]['percent'] = '—';
+                    $productTotal[$product->id]['name'] = $product->name;
+                    $productTotal[$product->id]['plan'] = $product->plan;
+                    $productTotal[$product->id]['areaId'] = $product->areaId;
+                    $productTotal[$product->id]['eventTsStart'] = $product->eventTsStart;
+                    $productTotal[$product->id]['all']  = $basketProductCount[0]['count'];
+                    $productTotal[$product->id]['pay']  = $basketProductPayCount[0]['count'];
+                    $planProductTotal = $planProductTotal + $product->plan;
+
+                    $productTotal[$product->id]['percent'] = ( $product->plan ) ? round( ( $basketProductPayCount[0]['count'] / $product->plan ) * 100 , 2) : '—';
                 }
             }
-        }
         }
 
         if ($productTotal) {
