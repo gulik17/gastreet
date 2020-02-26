@@ -5769,14 +5769,112 @@ a.credit {
 .page_body .row-options .ticket {
     padding-bottom: 1rem;
     min-height: 210px;}
+.main-interactive {}
+.container__main-interactive {
+    position: relative;
+    background-image: linear-gradient(to right, transparent 0%, #545454 10%, #545454 50%, #e51a4b  50%, #e51a4b 90%, transparent 100%), url(/images/main/main-interactive-bg.png);
+    background-blend-mode: multiply;
+    background-position: center;
+    max-width: 1600px;
+    height: 470px;
+    transition: all .5s ease-out;}
+.container-inner__main-interactive {
+    background-image: linear-gradient(to right, #545454 0%, #545454 25%, #008dd2 25%, #008dd2 50%, #b6c947 50%, #b6c947 75%, #e51a4b 75%, #e51a4b 100%), url(/images/main/main-interactive-bg.png);
+    background-blend-mode: multiply;
+    background-position: center;
+    height: 100%;
+    position: relative;
+    transition: all .5s ease-out;}
+.container__main-interactive.container__hover.v_1 {
+    background-image: linear-gradient(to right, transparent 0%, #545454 10%, #545454 50%, transparent  50%, transparent 90%, transparent 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_2, .container__main-interactive.container__hover.v_3 {
+    background-image: linear-gradient(to right, transparent 0%, transparent 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_4 {
+    background-image: linear-gradient(to right, transparent 0%, transparent 10%, transparent 50%, #e51a4b  50%, #e51a4b 90%, #e51a4b 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_1 .container-inner__main-interactive {
+    background-image: linear-gradient(to right, #545454 0%, #545454 25%, #fff 25%, #fff 50%, #fff 50%, #fff 75%, #fff 75%, #fff 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_2 .container-inner__main-interactive {
+    background-image: linear-gradient(to right, #fff 0%, #fff 25%, #008dd2 25%, #008dd2 50%, #fff 50%, #fff 75%, #fff 75%, #fff 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_3 .container-inner__main-interactive {
+    background-image: linear-gradient(to right, #fff 0%, #fff 25%, #fff 25%, #fff 50%, #b6c947 50%, #b6c947 75%, #fff 75%, #fff 100%), url(/images/main/main-interactive-bg.png);}
+.container__main-interactive.container__hover.v_4 .container-inner__main-interactive {
+    background-image: linear-gradient(to right, #fff 0%, #fff 25%, #fff 25%, #fff 50%, #fff 50%, #fff 75%, #e51a4b 75%, #e51a4b 100%), url(/images/main/main-interactive-bg.png);}
 
+.container-inner__main-interactive h2 {
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: -130px;
+    font-size: 60px;
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.2);}
+.container-inner__main-interactive img {
+    -webkit-filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.4));
+    display: block;
+    max-width: none;
+    margin-left: -60px;
+    margin-bottom: -60px;
+    transition: all .4s cubic-bezier(0.61, 0.02, 0.47, 0.99)}
+.container__main-interactive .img-item:hover {
+    z-index: 1;}
+.container__main-interactive .img-item:after {
+    content: "";
+    display: block;
+    height: 210px;
+    position: absolute;
+    bottom: -50px;
+    left: -60px;
+    background-image: url(/images/main/spot-rebro.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+    z-index: 9;
+    transition: all .5s ease-out;
+    width: calc(100% + 120px);}
+.container__main-interactive .img-item.hover:after {
+    bottom: -30px;}
+.container__main-interactive .img-item:nth-child(1):after {
+    background-image: url(/images/main/spot-rebro.png);}
+.container__main-interactive .img-item:nth-child(2):after {
+    background-image: url(/images/main/spot-main.png);}
+.container__main-interactive .img-item:nth-child(3):after {
+    background-image: url(/images/main/spot-chef.png);}
+.container__main-interactive .img-item:nth-child(4):after {
+    background-image: url(/images/main/spot-bar.png);}
 
-.main-interactive {
-    background-image: url("/images/main/main-interactive-bg.png");
-    height: 470px;}
+.main-interactive__menu-bg .menu-item_1.hover {
+    background-image: url(/images/main/item-rebro-hover.png);}
+.main-interactive__menu-bg .menu-item_2.hover {
+    background-image: url(/images/main/item-main-hover.png);}
+.main-interactive__menu-bg .menu-item_3.hover {
+    background-image: url(/images/main/item-chef-hover.png);}
+.main-interactive__menu-bg .menu-item_4.hover {
+    background-image: url(/images/main/item-bar-hover.png);}
+
+.container-inner__main-interactive .hover img {
+    margin-bottom: 0;}
+.container__main-interactive.container__hover .img-item {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);}
+.container__main-interactive.container__hover .img-item.hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);}
+.container__main-interactive:after, .container__main-interactive:before {
+    content: '';
+    background-image: linear-gradient(to right, #fff, transparent);
+    width: 13%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;}
+.container__main-interactive:after {
+    background-image: linear-gradient(to left, #fff, transparent);
+    left: auto;
+    right: 0;}
 .main-interactive__menu-bg {
     background-color: #282c57;
-    text-align: center;}
+    text-align: center;
+    position: relative;
+    z-index: 9;}
 .main-interactive__menu-bg a {
     font-family: 'Gastreet Font', Georgia, serif;
     font-size: 16px;
@@ -5785,11 +5883,13 @@ a.credit {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    position: relative;}
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;}
 .main-interactive__menu-bg a:after {
     content: '';
     position: absolute;
-    right: -15px;
+    right: 0;
     top: 15px;
     bottom: 15px;
     background-color: #fff;
@@ -5797,7 +5897,7 @@ a.credit {
 .main-interactive__menu-bg .row>div:first-child a:before {
     content: '';
     position: absolute;
-    left: -15px;
+    left: 0;
     top: 15px;
     bottom: 15px;
     background-color: #fff;

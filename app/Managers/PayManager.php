@@ -93,6 +93,8 @@ class PayManager extends BaseEntityManager {
                                 $balanceAmount = $balanceAmount + $basket->payAmount;
                             }
                         }
+                    } else if (!is_array($payForProductIds) && !count($payForProductIds)) {
+                        $balanceAmount = $SYSTEM_INCOME;
                     }
                 }
                 if (is_array($payForProductIds) && count($payForProductIds)) {

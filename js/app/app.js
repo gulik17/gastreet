@@ -780,6 +780,20 @@ $('#voting').on('show.bs.modal', function (event) {
     $("#staticSpeaker").val( $(button).data("folkspeaker-id") );
 });
 
+$(".container-inner__main-interactive .img-item, .main-interactive__menu-bg a").hover(
+    function() {
+        let id = $(this).data("item");
+        $(".container__main-interactive").addClass("container__hover").addClass("v_"+id);
+        $(".img-item_"+id).addClass("hover");
+        $(".menu-item_"+id).addClass("hover");
+    }, function() {
+        let id = $(this).data("item");
+        $(".container__main-interactive").removeClass("container__hover").removeClass("v_"+id);
+        $(".img-item_"+id).removeClass("hover");
+        $(".menu-item_"+id).removeClass("hover");
+    }
+);
+
 function OpenWin(url) {
     window.open(url, "window_name", "width=800, height=600");
 }

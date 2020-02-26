@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="" />
+    <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="Добавил партнерские илеты">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/burov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/item-bar-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/item-chef-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/item-main-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/item-rebro-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/popova.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/shmakov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/spot-bar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/spot-chef.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/spot-main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/spot-rebro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/tatulova.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/PayManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/PayManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/VideoControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/VideoControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/battle.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/battle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/blank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/empty.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/empty.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/memory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/place.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/rss.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/rss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,29 +63,37 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TBxFHwFTjJgCs5FrcFcZDlrfxt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/main" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\YandexDisk\phpStormProject\gastreet\images" />
-      <recent name="D:\YandexDisk\phpStormProject\gastreet\images\becomePartner" />
-      <recent name="D:\YandexDisk\phpStormProject\gastreet\images\emoji" />
-      <recent name="D:\YandexDisk\phpStormProject\gastreet\css" />
-      <recent name="D:\YandexDisk\phpStormProject\gastreet\app\Templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\images\folkspeaker\resized" />
       <recent name="D:\YandexDisk\phpStormProject\gastreet\css\jquery-ui" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\images\main" />
+      <recent name="D:\GitHub\gastreet\images\chatbot" />
+      <recent name="D:\GitHub\gastreet\app\Controls" />
+      <recent name="D:\GitHub\gastreet\app\Templates" />
+      <recent name="D:\GitHub\gastreet\images\thematik-page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -113,10 +161,309 @@
       <workItem from="1579510458898" duration="43696000" />
       <workItem from="1579765185927" duration="16239000" />
       <workItem from="1580399311708" duration="1563000" />
+      <workItem from="1580453967733" duration="23356000" />
+      <workItem from="1580717127055" duration="1107000" />
+      <workItem from="1580724345553" duration="460000" />
+      <workItem from="1580726839733" duration="7534000" />
+      <workItem from="1580799979544" duration="14052000" />
+      <workItem from="1580882615195" duration="4669000" />
+      <workItem from="1580906501889" duration="217000" />
+      <workItem from="1580906740477" duration="6398000" />
+      <workItem from="1580969733974" duration="23905000" />
+      <workItem from="1581083470111" duration="744000" />
+      <workItem from="1581087034549" duration="578000" />
+      <workItem from="1581314963440" duration="21712000" />
+      <workItem from="1581919088626" duration="15426000" />
+      <workItem from="1582006322536" duration="18969000" />
+      <workItem from="1582107558157" duration="15690000" />
+      <workItem from="1582179296909" duration="13496000" />
+      <workItem from="1582268277590" duration="16660000" />
+      <workItem from="1582611517210" duration="23370000" />
     </task>
+    <task id="LOCAL-00001" summary="Before open new ticket page">
+      <created>1580481197809</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580481197809</updated>
+    </task>
+    <task id="LOCAL-00002" summary="After open new ticket page">
+      <created>1580481356195</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580481356195</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix bag on Ticket page">
+      <created>1580482697897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580482697897</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix bag on Ticket page">
+      <created>1580483700611</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580483700611</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix bag on Ticket page">
+      <created>1580726920849</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580726920849</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Any update">
+      <created>1580742279687</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580742279687</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Hit style update">
+      <created>1580801634536</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580801634536</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Many updates">
+      <created>1581001344294</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1581001344295</updated>
+    </task>
+    <task id="LOCAL-00009" summary="After refactor ticket paage">
+      <created>1581058062653</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1581058062653</updated>
+    </task>
+    <task id="LOCAL-00010" summary="After add special link ticket page">
+      <created>1581060070709</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1581060070709</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Correct text on the ticket page">
+      <created>1581060699228</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581060699228</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Deleted ITTEHNOLOGY from menu">
+      <created>1581083833756</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1581083833756</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update FAQ page">
+      <created>1581083977235</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1581083977235</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update FAQ page">
+      <created>1581087101163</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1581087101163</updated>
+    </task>
+    <task id="LOCAL-00015" summary="FolkSpeaker Update">
+      <created>1581087183215</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1581087183215</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add GitIgnore">
+      <created>1581087582327</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1581087582327</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Folk Speaker vote finish">
+      <created>1581330506739</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581330506739</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Folk Speaker vote finish">
+      <created>1581400918023</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1581400918023</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Разместил купон на проживание">
+      <created>1581936574575</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1581936574575</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Добавил партнерские илеты">
+      <created>1581949124003</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1581949124003</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Добавил партнерские илеты">
+      <created>1581952394821</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1581952394821</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Корректировки на главной и где жить">
+      <created>1582009847334</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1582009847334</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Корректировки на странице Билеты">
+      <created>1582010166866</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1582010166866</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Добавил ссылки на соц сети и аватар">
+      <created>1582022973246</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1582022973246</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Правки на страницах моб аватар, оферта, политика, где жить">
+      <created>1582027723868</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1582027723868</updated>
+    </task>
+    <task id="LOCAL-00026" summary="priceup страница">
+      <created>1582038342448</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1582038342448</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Пофиксил повышение цены и билеты">
+      <created>1582110444689</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1582110444689</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Правки страницы CHEFSTREET">
+      <created>1582128428886</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1582128428886</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Мелкие правки">
+      <created>1582186127576</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1582186127576</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Запуск шефской страницы">
+      <created>1582205356375</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1582205356375</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Добавлены тематические страницы">
+      <created>1582210792138</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1582210792138</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Правки">
+      <created>1582283479244</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1582283479244</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Добавил страницу Чатбот">
+      <created>1582293683237</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1582293683238</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Начало работы над главным баннером">
+      <created>1582297373014</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1582297373014</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Hit style update" />
+    <MESSAGE value="Many updates" />
+    <MESSAGE value="After refactor ticket paage" />
+    <MESSAGE value="After add special link ticket page" />
+    <MESSAGE value="Correct text on the ticket page" />
+    <MESSAGE value="Deleted ITTEHNOLOGY from menu" />
+    <MESSAGE value="Update FAQ page" />
+    <MESSAGE value="FolkSpeaker Update" />
+    <MESSAGE value="Add GitIgnore" />
+    <MESSAGE value="Folk Speaker vote finish" />
+    <MESSAGE value="Разместил купон на проживание" />
+    <MESSAGE value="Добавил партнерские илеты" />
+    <MESSAGE value="Корректировки на главной и где жить" />
+    <MESSAGE value="Корректировки на странице Билеты" />
+    <MESSAGE value="Добавил ссылки на соц сети и аватар" />
+    <MESSAGE value="Правки на страницах моб аватар, оферта, политика, где жить" />
+    <MESSAGE value="priceup страница" />
+    <MESSAGE value="Пофиксил повышение цены и билеты" />
+    <MESSAGE value="Правки страницы CHEFSTREET" />
+    <MESSAGE value="Мелкие правки" />
+    <MESSAGE value="Запуск шефской страницы" />
+    <MESSAGE value="Добавлены тематические страницы" />
+    <MESSAGE value="Правки" />
+    <MESSAGE value="Добавил страницу Чатбот" />
+    <MESSAGE value="Начало работы над главным баннером" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начало работы над главным баннером" />
   </component>
 </project>

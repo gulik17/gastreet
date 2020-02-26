@@ -37,11 +37,27 @@
             var ViaPush = window.ViaPush || [];
             ViaPush.push(["init", { appId: "b58fa8ab-cf0e-8196-4952-9be21bc2b1f6" }]);
         </script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-869423439"></script>
-        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-869423439'); </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159058716-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159058716-1');
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5PLBL8S');</script>
+        <!-- End Google Tag Manager -->
         {/literal}
     </head>
     <body class="d-flex flex-column h-100 main-page">
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PLBL8S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {component name="Topmenu"}
 		
         <main role="main" class="flex-shrink-0 pb-4">
@@ -196,30 +212,43 @@
                 {if $dev == 1}
 
                 <section class="main-interactive">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-
+                    <div class="container container__main-interactive">
+                        <div class="container container-inner__main-interactive">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>Развивайся или закрывайся</h2>
+                                </div>
                             </div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3"></div>
+                            <div class="h-100 row align-items-end">
+                                <div class="col-md-3 img-item img-item_1" data-item="1">
+                                    <img src="/images/main/tatulova.png" alt="Татулова" class="img-fluid">
+                                </div>
+                                <div class="col-md-3 img-item img-item_2" data-item="2">
+                                    <img src="/images/main/popova.png" alt="Попова" class="img-fluid">
+                                </div>
+                                <div class="col-md-3 img-item img-item_3" data-item="3">
+                                    <img src="/images/main/shmakov.png" alt="Шмаков" class="img-fluid">
+                                </div>
+                                <div class="col-md-3 img-item img-item_4" data-item="4">
+                                    <img src="/images/main/burov.png" alt="Буров" class="img-fluid">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="main-interactive__menu-bg">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <a href="#">Владельцу</a>
+                                    <a href="#" class="menu-item menu-item_1" data-item="1">Владельцу</a>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="#">Руководителю</a>
+                                    <a href="#" class="menu-item menu-item_2" data-item="2">Руководителю</a>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="#">Шефу</a>
+                                    <a href="#" class="menu-item menu-item_3" data-item="3">Шефу</a>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="#">Бар-менеджеру</a>
+                                    <a href="#" class="menu-item menu-item_4" data-item="4">Бар-менеджеру</a>
                                 </div>
                             </div>
                         </div>
