@@ -16,7 +16,7 @@ class CashBack extends Entity {
     public $tsUsed = null;
 
     function getFields() {
-        return array (
+        return [
             "id" => self::ENTITY_FIELD_INT,
             "lastname" => self::ENTITY_FIELD_STRING,
             "name" => self::ENTITY_FIELD_STRING,
@@ -26,6 +26,6 @@ class CashBack extends Entity {
             "summa" => self::ENTITY_FIELD_STRING,
             "balance" => self::ENTITY_FIELD_STRING,
             "tsUsed" => self::ENTITY_FIELD_STRING,
-        );
+        ];
     }
 }
