@@ -5529,19 +5529,20 @@ main {
     font-size: 22px;
     text-align: center;
     line-height: 25px;}
-#accordionPayment button {
+.accordion button {
     margin: 0;}
-#accordionPayment button>.fa {
+.accordion button>.fa {
     position: absolute;
     top: calc(50% - 12px);}
-#accordionPayment button>.fa + div {
+.accordion button>.fa + div {
     padding-left: 35px;}
 .accordion .btn b, .accordion .btn img {
     display: inline-block;
     text-transform: initial;
-    vertical-align: middle;
+    vertical-align: middle;}
+#accordionPayment .btn b, #accordionPayment .btn img {
     width: 200px;}
-.accordion .btn b {
+#accordionPayment .btn b {
     width: 250px;}
 .accordion .btn b {
     padding-right: 15px;}

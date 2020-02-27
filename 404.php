@@ -27,7 +27,7 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                 font-size:14px;
                 text-align: center;
                 padding: 5% 0 0 0;
-                background: url(/images/404-bg.jpg);
+                background: url('/images/404-bg.jpg');
                 width: 100%;
                 height: 100%;
                 background-size: cover;}
