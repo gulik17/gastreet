@@ -153,9 +153,9 @@ class Adminka extends BaseApplication {
 
         // если текущее действие не задано в конфиге безопасности
         // то считаем, что оно разрешено
-        if (count($permName) == 0)
+        if (count($permName) == 0) {
             return true;
-
+        }
         // пересечение нужных разрешений и разрешений актора
         $intersect = array_intersect($permName, $perms);
 
