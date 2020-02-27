@@ -54,7 +54,8 @@ class BaseControl extends Control {
         }
 
         //if ( ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) && (time() < 1577836800) ) {
-        if (($code == 'sukhih') || (Context::getObject('code') == 'sukhih') || ($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ||
+        if (($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ||
+            ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ||
             ($code == 'tatulova') || (Context::getObject('code') == 'tatulova') ||
             ($code == 'breiova') || (Context::getObject('code') == 'breiova') ||
             ($code == 'duving') || (Context::getObject('code') == 'duving') ||
@@ -71,7 +72,9 @@ class BaseControl extends Control {
             ($code == 'burov') || (Context::getObject('code') == 'burov') ||
             ($code == 'kholikberdiyev') || (Context::getObject('code') == 'kholikberdiyev') ||
             ($code == 'akishkin') || (Context::getObject('code') == 'akishkin') ||
+            ($code == 'pavlov') || (Context::getObject('code') == 'pavlov') ||
             ($code == 'perelman') || (Context::getObject('code') == 'perelman') ||
+            ($code == 'ivlev') || (Context::getObject('code') == 'ivlev') ||
             ($code == 'itskov') || (Context::getObject('code') == 'itskov') ||
             ($code == 'sukhikh') || (Context::getObject('code') == 'sukhikh') ||
             ($code == 'popova') || (Context::getObject('code') == 'popova') ||
