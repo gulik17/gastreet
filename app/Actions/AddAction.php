@@ -47,13 +47,13 @@ class AddAction extends AuthorizedUserAction implements IPublicAction {
                 if ($this->lang == 'en') {
                     $array['error'] = 'The application has been sent. Our manager will contact you!';
                 } else {
-                    $array['error'] = 'Ваша заявка будет рассмотрена в течении 5 рабочих дней!';
+                    $array['error'] = 'Ваша заявка будет рассмотрена в течении 3 рабочих дней!';
                     //$array['error'] = 'Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!';
                 }
                 echo json_encode($array);
                 exit;
             } else {
-                Enviropment::redirectBack("Ваша заявка будет рассмотрена в течении 5 рабочих дней!", "success");
+                Enviropment::redirectBack("Ваша заявка будет рассмотрена в течении 3 рабочих дней!", "success");
                 //Enviropment::redirectBack("Ваша заявка будет рассмотрена после 27&nbsp;января в&nbsp;течении 5&nbsp;рабочих дней!", "success");
             }
         }
