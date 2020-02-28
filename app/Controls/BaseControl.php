@@ -53,6 +53,17 @@ class BaseControl extends Control {
             $this->addData("gastreetpartner", 0);
         }
 
+        $code = Request::getVar("code");
+        if ( ($code == 'artpeople') || Context::getObject('code') == 'artpeople' ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'artpeople');
+            }
+            $this->gcode = 'artpeople';
+            $this->addData("artpeople", 1);
+        } else {
+            $this->addData("artpeople", 0);
+        }
+
         //if ( ( ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ) && (time() < 1577836800) ) {
         if (($code == 'ambassadors') || (Context::getObject('code') == 'ambassadors') ||
             ($code == 'sukhih') || (Context::getObject('code') == 'sukhih') ||
