@@ -779,7 +779,7 @@ $(document).ready(function() {
     });
 
     $('#spiakerCarousel').owlCarousel({
-        loop:true,
+        loop:false,
         margin:10,
         dots:true,
         nav:true,

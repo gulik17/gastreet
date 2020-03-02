@@ -5,7 +5,7 @@
  */
 class AmoConfigManager extends BaseEntityManager {
 
-    public function getOne() {
+    public function getConfig() {
         $ent = self::newEntity($this->defineClass());
         $sql = "SELECT * FROM `{$ent->entityTable}` WHERE {$ent->primaryKey} = 1";
         $result = $this->getReadConnection()->getOneRow($sql);

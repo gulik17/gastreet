@@ -95,8 +95,18 @@ try {
 
 
 
-
-
 // echo "done\n";
 // Освобождаем ресурс
 $mutex->release();
+
+$acm = new AmoConfigManager();
+$conf = $acm->getConfig();
+$time = time();
+
+if ($conf->expires_in < $time + 3600) {
+    echo "Нужно обновить токен<br>";
+    $conf->expires_in = time() + 3600*10;
+    $conf = $acm->save($conf);
+}
+
+deb($conf);

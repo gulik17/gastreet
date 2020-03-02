@@ -67,8 +67,6 @@ if ($pmObj) {
     $service = new AlfaService();
     $status = $service->getOrderStatus($pmObj['monetaOperationId']);
 
-    print_r($pmObj);
-
     if (array_key_exists('ErrorCode', $status)) {
         /**
          *  Код ошибки      Описание

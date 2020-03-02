@@ -292,7 +292,7 @@
                     <p class="ticket_cost">15 000 ₽</p>
                     <p>&nbsp;</p>
                     <div class="ticket-footer">
-                        <a href="#" class="ticket_desc">Подробнее</a>
+                        <a href="#" class="ticket_desc d-none">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -906,7 +906,6 @@
         <div class="col-md-7 mt-3 d-none d-md-block">
             <nav class="timedata-menu d-flex flex-row flex-md-row justify-content-around tab-dates-js">
                 <a href="#" data-date="all" class="active">Все дни</a>
-                <a href="#" data-date="01">1 июня</a>
                 <a href="#" data-date="02">2 июня</a>
                 <a href="#" data-date="03">3 июня</a>
                 <a href="#" data-date="04">4 июня</a>
@@ -918,7 +917,6 @@
                 <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Все дни</a>
                 <div class="dropdown-menu tab-dates-js" aria-labelledby="dropdownMenu">
                     <a class="dropdown-item" data-date="all" class="active" href="#">Все дни</a>
-                    <a class="dropdown-item" data-date="01" href="#">1 июня</a>
                     <a class="dropdown-item" data-date="02" href="#">2 июня</a>
                     <a class="dropdown-item" data-date="03" href="#">3 июня</a>
                     <a class="dropdown-item" data-date="04" href="#">4 июня</a>
@@ -1009,7 +1007,7 @@
                            data-link="{$modalLink}"
                            data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
                         {else}
-                            {$product->name|dbtexttohtml}
+                            <span class="name-city">{$product->name|dbtexttohtml}</span>
                         {/if}
                     </div>
                 </div>

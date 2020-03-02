@@ -373,7 +373,7 @@
                     <p class="ticket_cost">15 000 ₽</p>
                     <p>&nbsp;</p>
                     <div class="ticket-footer">
-                        <a href="#" class="ticket_desc">Подробнее</a>
+                        <a href="#" class="ticket_desc d-none">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -974,7 +974,10 @@
     </div>
 </div>
 
-<div class="container timetable-page d-none">
+{if $this.products}
+<div class="container timetable-page">
+    <!-- Для правильной работы скрипта таба -->
+    <div class="tags-list-speakers d-none"><div class="gss-tag-li active"><a href="#" data-tag="all"></a></div></div>
     <div class="row mb-5 mt-5 align-items-center">
         <div class="col-8 col-md-12">
             <div class="title-programm">
@@ -982,111 +985,119 @@
             </div>
         </div>
         <div class="col-md-7 mt-3 d-none d-md-block">
-            <nav class="timedata-menu d-flex flex-row flex-md-row  justify-content-around">
-                <a href="case/" class="first active">Все дни</a>
-                <a href="services.html">1 день</a>
-                <a href="services.html">2 день</a>
-                <a href="services.html">3 день</a>
-                <a href="services.html">4 день</a>
-                <a href="contacts.html" class="last">5 день</a>
+            <nav class="timedata-menu d-flex flex-row flex-md-row justify-content-around tab-dates-js">
+                <a href="#" data-date="all" class="active">Все дни</a>
+                <a href="#" data-date="02">2 июня</a>
+                <a href="#" data-date="03">3 июня</a>
+                <a href="#" data-date="04">4 июня</a>
+                <a href="#" data-date="05">5 июня</a>
             </nav>
         </div>
         <div class="col-4 drop d-block d-md-none">
             <div class="dropdown timedata-menu">
-                <a class="dropdown-toggle" type="" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">
-                    Все дни
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                    <a class="dropdown-item" href="#">1 день</a>
-                    <a class="dropdown-item" href="#">2 день</a>
-                    <a class="dropdown-item" href="#">3 день</a>
-                    <a class="dropdown-item" href="#">4 день</a>
-                    <a class="dropdown-item" href="#">5 день</a>
+                <a class="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Все дни</a>
+                <div class="dropdown-menu tab-dates-js" aria-labelledby="dropdownMenu">
+                    <a class="dropdown-item" data-date="all" class="active" href="#">Все дни</a>
+                    <a class="dropdown-item" data-date="02" href="#">2 июня</a>
+                    <a class="dropdown-item" data-date="03" href="#">3 июня</a>
+                    <a class="dropdown-item" data-date="04" href="#">4 июня</a>
+                    <a class="dropdown-item" data-date="05" href="#">5 июня</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row timetable">
+    {foreach from=$this.products item=product name=productloop}
+    {assign var=placeid value=$product->placeId}
+    {assign var=speakerid value=$product->speakerId}
+    {assign var=speaker value=$this.speakers.$speakerid}
+    {assign var=speaker2id value=$product->speaker2Id}
+    {assign var=speaker2 value=$this.speakers.$speaker2id}
+    <div class="row block-body timetable row-date-{$product->eventTsStart|dateformat:'d'}">
         <div class="col-md-2 col-4">
             <div class="time-data">
-                <div class="data">1 июня</div>
-                <div class="time">11:30 – 12:30</div>
+                {if $product->eventTsStart|dateformat:'H' == '00' && $product->eventTsFinish|dateformat:'H' == '00'}
+                <div class="data">{if $lang == 'en'}Time to be confirmed{else}Время уточняется{/if}</div>
+                {else}
+                <div class="data">{$product->eventTsStart|dateformat:'d F'}</div>
+                <div class="time">{$product->eventTsStart|dateformat:'H:i'}&nbsp;—&nbsp;{$product->eventTsFinish|dateformat:'H:i'}</div>
+                {/if}
                 <div class="calendar d-md-none">
-                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                    <a href="/calendar.php?id={$product->id}" title="Добавить в календарь">
+                        <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-md-10 col-8">
             <div class="row align-items-center timetable-item-bg">
                 <div class="order-2 order-md-1 col-md-5">
-                    <div class="row align-items-center">
-                        <div class="col-7 col-md-8 pr-0">
+                    <div class="row align-items-end">
+                        <div class="col-7 col-md-9 pr-0">
                             <div class="row align-items-center">
-                                <div class="order-2 order-md-1 col-8 col-md-8 pr-0">
-                                    <div class="name">Диего Герреро</div>
-                                    <div class="city">DSTAgE (Мадрид, Испания)</div>
+                                <div class="order-2 order-md-1 col-8 col-md-8 pr-0 py-md-3 py-2">
+                                    {if $speaker}
+                                    <a href="#" data-speaker-id="{$speakerid}" class="name">{$speaker.name} {$speaker.secondName}</a>
+                                    <div class="city">{if $speaker.company}{$speaker.company},<br> {/if}{$speaker.cityName}</div>
+                                    {else}
+                                    <a href="#" onclick="return false" class="name">{$product->firstName} {$product->secondName}</a>
+                                    <div>{if $product->company}{$product->company},<br> {/if}{$product->cityName}</div>
+                                    {/if}
+                                    {if $speaker2}
+                                    <a href="#" data-speaker-id="{$speaker2id}" class="name">{$speaker2.name} {$speaker2.secondName}</a>
+                                    <div class="city">{if $speaker2.company}{$speaker2.company},<br> {/if}{$speaker2.cityName}</div>
+                                    {/if}
                                 </div>
                                 <div class="order-1 order-md-2 col-8 col-md-4 corp">
-                                    <img src="/images/thematik-page/305.png" alt="">
+                                    {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
+                                    <img src="/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230" class="img-fluid" alt="">
+                                    {/if}
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
-                            <img src="/images/thematik-page/854.png" alt="">
+                        {if $product->youtube}
+                        {assign var=modalLink value=$product->youtube}
+                        {else}
+                        {if $product->pic1}
+                        {assign var=modalLink value=$product->pic1|getproductpic}
+                        {else}
+                        {assign var=modalLink value=$product->speakerId|isspeakerpicpic}
+                        {/if}
+                        {/if}
+                        <div class="col-5 col-md-3 participant" style="background-image: url('{$modalLink}');">
+                            <img src="{$modalLink}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="order-1 order-md-2 col-md-7 px-0 description-case">
-                    <div class="pt-3 py-md-0 name-city">
-                        Новый способ гармонизации ингредиентов.<br>
-                        Баланс белков и жиров
+                    <div class="pt-3 py-md-0">
+                        {if $product->description}
+                        <a class="name-city" href="#"
+                           data-toggle="modal"
+                           data-target="#mk-modal"
+                           data-type="{if $product->youtube}video{else}image{/if}"
+                           data-partner="{$product->partner_id|ispartnerpic:'_b'}"
+                           data-name="{$product->firstName}"
+                           data-second-name="{$product->secondName}"
+                           data-company="{$product->company}"
+                           data-city-name="{$product->cityName}"
+                           data-desc="{$product->description|dbtexttohtml|escape}"
+                           data-flag="{$speaker->country}"
+                           data-format="{if $product->tag_desc}{$product->tag_desc}{else}{$product->tags|tag2desc}{/if}"
+                           data-tags="{$product->tags|tagtocssclass|escape}"
+                           data-link="{$modalLink}"
+                           data-title="{$product->name|dbtexttohtml|strip_tags}"> {$product->name|dbtexttohtml}</a>
+                        {else}
+                        <span class="name-city">{$product->name|dbtexttohtml}</span>
+                        {/if}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row timetable">
-        <div class="col-md-2 col-4">
-            <div class="time-data">
-                <div class="data">1 июня</div>
-                <div class="time">11:30 – 12:30</div>
-                <div class="calendar d-md-none">
-                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-10 col-8">
-            <div class="row align-items-center timetable-item-bg">
-                <div class="order-2 order-md-1 col-md-5">
-                    <div class="row align-items-center">
-                        <div class="col-7 col-md-8 pr-0">
-                            <div class="row align-items-center">
-                                <div class="order-2 order-md-1 col-8 col-md-8 pr-0">
-                                    <div class="name">Диего Герреро</div>
-                                    <div class="city">DSTAgE (Мадрид, Испания)</div>
-                                </div>
-                                <div class="order-1 order-md-2 col-8 col-md-4 corp">
-                                    <img src="/images/thematik-page/305.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5 col-md-4 participant" style="background-image: url('/images/thematik-page/854.png');">
-                            <img src="/images/thematik-page/854.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 order-md-2 col-md-7 px-0 description-case">
-                    <div class="pt-3 py-md-0 name-city">
-                        Новый способ гармонизации ингредиентов.<br>
-                        Баланс белков и жиров
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {/foreach}
 </div>
+{/if}
 
 <div class="container carousel-fest-page">
     <div class="row mb-3 mt-4">
@@ -1158,7 +1169,7 @@
 <style>
     .thematik-main-page .img-faces-page {
         height: 52rem;
-        background-image: url('/images/thematik-page/main_chef.jpg');
+        background-image: url('/images/thematik-page/main_mainstreet.jpg');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;}
@@ -1207,6 +1218,8 @@
         padding-right: 15px;
         font-weight: 600;}
     .thematik-main-page .timetable .name {
+        color: #fff;
+        display: block;
         text-decoration: underline;
         font-weight: 600;}
     .thematik-main-page .timetable .city {
@@ -1217,14 +1230,15 @@
         justify-content: space-around;}
     .thematik-main-page .timetable .timetable-item-bg {
         color: #fff;
-        background-color: #b0ca1f;
+        background-color: #008dd2;
         text-align: left;
         height: 100%;}
     .thematik-main-page .timetable .timetable-item-bg .participant {
         position: relative;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: right 15px bottom 0;}
-    .thematik-main-page .timetable .timetable-item-bg .participant::after {
+    .thematik-main-page .timetable .timetable-item-bg>div:first-child::after {
         content: '';
         position: absolute;
         top: 0;
@@ -1238,12 +1252,12 @@
     .timetable-page .title-programm {
         font-size: 2.250rem;
         font-weight: 600;}
-    .rebro.ticket-january, .chef.ticket-january, .barstreet.ticket-january {
+    .chef.ticket-january, .barstreet.ticket-january, .rebro.ticket-january {
         filter: grayscale(100%);
         position: relative;
         transition: all .3s ease-out;
         opacity: .4;}
-    .rebro.ticket-january:after, .chef.ticket-january:after, .barstreet.ticket-january:after {
+    .chef.ticket-january:after, .barstreet.ticket-january:after, .rebro.ticket-january:after {
         content: '';
         position: absolute;
         left: 2px;
@@ -1254,10 +1268,10 @@
         opacity: .4;}
     .barstreet.ticket-january:after {
         right: 7px;}
-    .rebro.ticket-january:hover:after, .chef.ticket-january:hover:after, .barstreet.ticket-january:hover:after {
+    .chef.ticket-january:hover:after, .barstreet.ticket-january:hover:after, .rebro.ticket-january:hover:after {
         display: none;
         opacity: 0;}
-    .rebro.ticket-january:hover, .chef.ticket-january:hover, .barstreet.ticket-january:hover {
+    .chef.ticket-january:hover, .barstreet.ticket-january:hover, .rebro.ticket-january:hover {
         filter: grayscale(0);
         opacity: 1;}
     .profi.ticket-january {
@@ -1270,10 +1284,20 @@
         order: 4;}
     .barstreet.ticket-january {
         order: 5;}
+    .timetable-page .timedata-menu a {
+        color: #000;
+        text-decoration: none;
+        font-size: 1.2rem;}
+    .timetable-page .timedata-menu a:hover {
+        text-decoration: underline;}
+    .timetable-page .timedata-menu a.active {
+        color: #008dd2;
+        text-decoration: underline;
+        font-weight: 600;}
     @media (min-width: 300px) and (max-width: 767px) {
         html {
             font-size: 12px;}
-        .rebro.ticket-january, .barstreet.ticket-january, .chef.ticket-january {
+        .barstreet.ticket-january, .chef.ticket-january, .rebro.ticket-january {
             display: none;}
         .chef.ticket-january {
             order: 1;}
@@ -1331,7 +1355,7 @@
             z-index: 1;
             bottom: 0;
             background-position: right bottom;}
-        .thematik-main-page .timetable .timetable-item-bg .participant::after {
+        .thematik-main-page .timetable .timetable-item-bg>div:first-child::after {
             display: none;}
         .timetable .time-data {
             margin-top: -1px;}
@@ -1384,7 +1408,7 @@
         .thematik-main-page .main_chef {
             left: 0;
             width: 100%;}
-    }
+    } 
 </style>
 {/literal}
 

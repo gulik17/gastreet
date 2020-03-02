@@ -57,7 +57,7 @@ class CatalogControl extends IndexControl {
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('mainstreet', '2020');
                 $pm = new ProductManager();
-                $products = $pm->getAllActive('', $onlyAllowed);
+                $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 5) {
@@ -67,7 +67,7 @@ class CatalogControl extends IndexControl {
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('rebro', '2020');
                 $pm = new ProductManager();
-                $products = $pm->getAllActive('', $onlyAllowed);
+                $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 6) {
@@ -80,7 +80,7 @@ class CatalogControl extends IndexControl {
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('barstreet', '2020');
                 $pm = new ProductManager();
-                $products = $pm->getAllActive('', $onlyAllowed);
+                $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 9) {
@@ -90,7 +90,7 @@ class CatalogControl extends IndexControl {
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('chefstreet', '2020');
                 $pm = new ProductManager();
-                $products = $pm->getAllActive(9, $onlyAllowed);
+                $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 13) {
