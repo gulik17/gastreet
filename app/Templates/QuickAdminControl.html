@@ -1,0 +1,64 @@
+{assign var=this value=$QuickAdminControl}
+
+<div class="container quick-admin">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <p class="mt-5 text-center" style="font-weight:500;color:#10093b;">Введите телефон участника</p>
+            <form class="mt-3" method="post">
+                <div class="row">
+                    <div class="offset-md-2 col-md-4 form-group">
+                        <input type="text" name="phone" class="form-control" placeholder="Телефон" value="{$this.phone}">
+                    </div>
+                    <div class="col-md-4 form-group form-check">
+                        <button type="submit" class="btn btn-red" style="width:100%;">Искать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            {if $this.result}
+                <h3 class="mb-1">{$this.result.lastname} {$this.result.name}</h3>
+                <p>
+                    {if $this.tickets.status == 'STATUS_PAID'}
+                        <span class="badge badge-success">ОПЛАЧЕН</span>
+                    {/if}
+                    {if $this.tickets.status == 'STATUS_NEW'}
+                        <span class="badge badge-danger">НЕ ОПЛАЧЕН</span>
+                    {/if}
+                    Билет: {$this.tickets.baseTicketName} 
+                </p>
+                {if $this.tickets.discountId > 0}<p>Скидка: {$this.tickets.discountPercent}</p>{/if}
+                {if $this.products}
+                    <h5 class="mt-4 mb-1">Дополнительные продукты</h5>
+                    {foreach item=product from=$this.products}
+                    <p class="product-item">
+                        {if $product.status == 'STATUS_PAID'}
+                            <span class="badge badge-success">ОПЛАЧЕН</span>
+                        {/if}
+                        {if $product.status == 'STATUS_NEW'}
+                            <span class="badge badge-danger">НЕ ОПЛАЧЕН</span>
+                        {/if}
+                        {$product.productName|dbtexttohtml|strip_tags}
+                        <br>
+                        {if $product.eventTsStart || $product.eventTsFinish}{$product.eventTsStart|dateformat:'d.m.Y, H:i'}{if $product.eventTsFinish} - {$product.eventTsFinish|dateformat:'H:i'}{/if}{/if}
+                    </p>
+                    {/foreach}
+                {/if}
+                
+                <img class="img-fluid" src="/qr/code.php?code={$this.qrmObj->code}" />
+                
+            {/if}
+        </div>
+    </div>
+
+    {if !$this.result}
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <p class="text-center mt-4">Мы ничего не нашли...</p>
+            </div>
+        </div>
+    {/if}
+</div>

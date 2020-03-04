@@ -16,6 +16,8 @@ try {
     if (Configurator::get("application:nocache")) {
         Request::sendNoCacheHeaders();
     }
+    // отправляем заголовки, чтобы контент был в нужной кодировке
+    Request::sendHeaderContentType(Configurator::get("application:encoding"));
 
     // start application context
     Context::start(Configurator::get("application:name"));
@@ -42,11 +44,6 @@ try {
     
     // execute action or render control
     $gen->exec($action, $control);
-
-
-
-    // отправляем заголовки, чтобы контент был в нужной кодировке
-    Request::sendHeaderContentType(Configurator::get("application:encoding"));
 
     // print HTMLs
     $gen->display();

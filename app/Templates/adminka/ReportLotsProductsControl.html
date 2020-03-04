@@ -1,0 +1,87 @@
+{assign var=this value=$ReportLotsProductsControl}
+{formrestore id="lotsproducts-filter"}
+
+<h2>Большой остаток товаров</h2>
+<form id="lotsproducts-filter" method="post" action="" style="max-width: 400px;">
+    <div class="well">
+        <input type="hidden" name="isalive" value="1" />
+        <div class="filter form-group">
+            <label style="display: block;">Осталось более:</label>
+            <select class="form-control" name="quantity">
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" id="submit" value="Показать список"/>
+        </div>
+    </div>
+</form>
+
+{if $this.btmList}
+<h4>Основной билет:</h4>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Статус</th>
+        <th>Цена</th>
+        <th>Кол-во</th>
+        <th><b>Осталось</b></th>
+        <th>С ... по ...</th>
+        <th>Актуализировано</th>
+    </tr>
+    {foreach item=ticket from=$this.btmList}
+    {assign var=status value=$ticket->status}
+    <tr class="{cycle values='color,'}">
+        <td>{$ticket->id}</td>
+        <td>{$ticket->name}</td>
+        <td>{$this.btmStatuses.$status}</td>
+        <td>{$ticket->price}</td>
+        <td>{if $ticket->maxCount}{$ticket->maxCount}{else}-{/if}</td>
+        <td><b>{if $ticket->leftCount}{$ticket->leftCount}{else}-{/if}</b></td>
+        <td>{if $ticket->eventTsStart || $ticket->eventTsFinish}{$ticket->eventTsStart|dateformat:'d.m.Y, H:i'}{if $ticket->eventTsFinish} - {$ticket->eventTsFinish|dateformat:'d.m.Y, H:i'}{/if}{/if}</td>
+        <td>{if $ticket->leftCountTs}{$ticket->leftCountTs|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+    </tr>
+    {/foreach}
+</table>
+{/if}
+
+{if $this.pmList}
+<h4>Мастер-класс, ужин:</h4>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Тег</th>
+        <th>Статус</th>
+        <th>Цена</th>
+        <th><nobr>Кол-во</nobr></th>
+        <th><b>Осталось</b></th>
+        <th>С ... по ...</th>
+        <th>Актуализировано</th>
+    </tr>
+    {foreach item=product from=$this.pmList}
+    {assign var=status value=$product->status}
+    <tr class="{cycle values='color,'}">
+        <td>{$product->id}</td>
+        <td>{$product->name}</td>
+        <td>{$product->tags}</td>
+        <td>{$this.pmStatuses.$status}</td>
+        <td>{$product->price}</td>
+        <td>{if $product->maxCount}{$product->maxCount}{else}-{/if}</td>
+        <td><b>{if $product->leftCount}{$product->leftCount}{else}-{/if}</b></td>
+        <td>{if $product->eventTsStart || $product->eventTsFinish}{$product->eventTsStart|dateformat:'d.m.Y, H:i'}{if $product->eventTsFinish} - {$product->eventTsFinish|dateformat:'d.m.Y, H:i'}{/if}{/if}</td>
+        <td>{if $product->leftCountTs}{$product->leftCountTs|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+    </tr>
+    {/foreach}
+</table>
+{/if}

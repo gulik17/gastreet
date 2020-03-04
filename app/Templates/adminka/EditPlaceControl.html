@@ -1,0 +1,124 @@
+{assign var=this value=$EditPlaceControl}
+{formrestore id="form"}
+
+{loadscript file='/js/fckeditor/jquery.FCKEditor.js' type='js'}
+{loadscript file='/js/fckeditor/jquery.form.js' type='js'}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/adminkaeditplace.js' type='js'}
+
+<h2>{if $this.place}Редактирование {else}Создание {/if} места проживания</h2>
+<form id="form" action="{alink do=saveplace}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.place->id}" />
+    <div class="form-group">
+        <label>Порядок сортировки:</label>
+        <input class="form-control" type="text" name="sortOrder" id="sortOrder" value="{$this.place->sortOrder}"/>
+    </div>
+    <div class="form-group">
+        <label>Статус:</label>
+        <select class="form-control" name="status" id="status">
+            {html_options options=$this.statusList selected=$this.place->status}
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Название:</label>
+            <input class="form-control" type="text" name="name" id="name" value="{$this.place->name}"/>
+            <label>Название (англ):</label>
+            <input class="form-control" type="text" name="name_en" id="name_en" value="{$this.place->name_en}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Sup Title:</label>
+            <input class="form-control" type="text" name="suptitle" id="suptitle" value="{$this.place->suptitle}"/>
+            <label>Sub Title:</label>
+            <input class="form-control" type="text" name="subtitle" id="subtitle" value="{$this.place->subtitle}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Телефон:</label>
+            <input class="form-control" type="text" name="phone" id="phone" value="{$this.place->phone}"/>
+            <label>E-mail:</label>
+            <input class="form-control" type="text" name="email" id="email" value="{$this.place->email}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Уровень:</label>
+            <input class="form-control" type="text" name="level" id="level" value="{$this.place->level}"/>
+            <label>Цена от:</label>
+            <input class="form-control" type="text" name="price" id="price" value="{$this.place->price}"/>
+            <label>Звезд:</label>
+            <select class="form-control" type="text" name="stars" id="stars">
+                <option value="1" {if $this.place->stars == 1}selected{/if}>★☆☆☆☆</option>
+                <option value="2" {if $this.place->stars == 2}selected{/if}>★★☆☆☆</option>
+                <option value="3" {if $this.place->stars == 3}selected{/if}>★★★☆☆</option>
+                <option value="4" {if $this.place->stars == 4}selected{/if}>★★★★☆</option>
+                <option value="5" {if $this.place->stars == 5}selected{/if}>★★★★★</option>
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>В стоимость проживания входит</label>
+            <select class="form-control" name="inclusive[]" size="8" multiple="multiple">
+                <option value="1" {if $this.inclusive[1] == 1}selected{/if}>Завтрак</option>
+                <option value="2" {if $this.inclusive[2] == 2}selected{/if}>Бассейн</option>
+                <option value="3" {if $this.inclusive[3] == 3}selected{/if}>СПА</option>
+                <option value="4" {if $this.inclusive[4] == 4}selected{/if}>Тренажерный зал</option>
+                <option value="5" {if $this.inclusive[5] == 5}selected{/if}>Номера для инвалидов</option>
+                <option value="6" {if $this.inclusive[6] == 6}selected{/if}>Детская комната</option>
+                <option value="7" {if $this.inclusive[7] == 7}selected{/if}>Возможно размещение с дом. животными</option>
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Платные услуги</label>
+            <select class="form-control" name="notinclusive[]" size="8" multiple="multiple">
+                <option value="1" {if $this.notinclusive[1] == 1}selected{/if}>Завтрак</option>
+                <option value="2" {if $this.notinclusive[2] == 2}selected{/if}>Бассейн</option>
+                <option value="3" {if $this.notinclusive[3] == 3}selected{/if}>СПА</option>
+                <option value="4" {if $this.notinclusive[4] == 4}selected{/if}>Тренажерный зал</option>
+                <option value="5" {if $this.notinclusive[5] == 5}selected{/if}>Номера для инвалидов</option>
+                <option value="6" {if $this.notinclusive[6] == 6}selected{/if}>Детская комната</option>
+                <option value="7" {if $this.notinclusive[7] == 7}selected{/if}>Возможно размещение с дом. животными</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Описание:</label>
+            <textarea class="form-control" name="description" rows="8" id="description">{$this.place->description}</textarea>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Описание (англ):</label>
+            <textarea class="form-control" name="description_en" rows="8" id="description_en">{$this.place->description_en}</textarea>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Описание в модальном окне:</label>
+            <textarea class="form-control" name="modal_desc" rows="8" id="modal_desc">{$this.place->modal_desc}</textarea>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Описание в модальном окне (англ):</label>
+            <textarea class="form-control" name="modal_desc_en" rows="8" id="modal_desc_en">{$this.place->modal_desc_en}</textarea>
+        </div>
+        <div class="col-md-12 form-group">
+            <label>Видеоролик (только ID видео на YouTube):</label>
+            <input class="form-control" type="text" name="videoUrl" id="videoUrl" value="{$this.place->videoUrl}"/>
+        </div>
+        {if $this.placeImg}
+        <div class="col-md-12 form-group">
+            <label>Картинка:</label>
+            <div>
+                <img src="/images/places/resized/{$this.placeImg}" />
+            </div>
+        </div>
+        {/if}
+        <div class="col-md-12 form-group" id="file-dl">
+            <label id="file-dt">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <div id="file-dd">
+                <input class="form-control u-file" name="file1" type="file" />
+            </div>
+        </div>
+        <div class="col-md-12 form-group">
+            <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+        </div>
+    </div>
+</form>

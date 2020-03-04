@@ -1,0 +1,14 @@
+{assign var=this value=$BalanceCardSelectControl}
+
+<h2>Выберите карту для оплаты:</h2>
+
+<form action="{link do=addbalancecard}" method="POST">
+    <input type="hidden" name="amount" value="{$this.amount}"/>
+    <select name="cardId">
+        <option value="0">-- Оплатить новой картой --</option>
+        {foreach from=$this.ucmObjs item=card name=cardselect}
+            <option value="{$card->id}"{if $smarty.foreach.cardselect.last} selected="selected"{/if}>{$card->cardnumber}</option>
+        {/foreach}
+    </select><br/><br/>
+    <input type="submit" value="Оплатить" />
+</form>

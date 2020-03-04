@@ -1,0 +1,46 @@
+{assign var=this value=$ManageCashBackControl}
+
+<h2>Управление Кэшбэком</h2>
+
+<div class="create">
+    <a class="btn btn-primary hidden" href="#">Создать скидку</a>
+</div>
+<br/>
+
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Владелец</th>
+        <th>Город</th>
+        <th>Телефон</th>
+        <th>E-mail</th>
+        <th>Баланс</th>
+        <th>Использован</th>
+    </tr>
+    {if $this.list}
+        {foreach item=item from=$this.list}
+            <tr>
+                <td>{$item->id}</td>
+                <td>{$item->lastname} {$item->name}</td>
+                <td>{$item->city}</td>
+                <td>{$item->phone}</td>
+                <td>{$item->email}</td>
+                <td>{$item->balance}</td>
+                <td>
+                    {if $item->tsUsed}
+                        {$item->tsUsed|dateformat:'d.m.Y H:i'}
+                    {else}
+                        <a href="{alink do=applycashback id=$item->id}" class="btn btn-danger">Использовать</a>
+                    {/if}
+                </td>
+            </tr>
+        {/foreach}
+    {else}
+    <tr>
+        <td colspan="9" class="text-center">Список пуст</td>
+    </tr>
+    {/if}
+</table>
+{if $this.total}
+    {pager total=$this.total per=$this.perPage}
+{/if}

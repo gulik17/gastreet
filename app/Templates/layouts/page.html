@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{$lang}">
+    <head>
+        <meta charset="utf-8">
+        <title>{if $pageTitle}{$pageTitle}{/if}{if $p > 1} - ##page## {$p}{/if}</title>
+        <meta name="description" content="{$pageDesc}" />
+        <meta name="keywords" content="" />
+        <meta name="robots" content="index,follow,noodp,noydir" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/docs.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+                <script src="/js/html5.js"></script>
+        <![endif]-->
+        <link href="/css/gss/styles.css" rel="stylesheet">
+
+        <script src="/js/jquery.min.js" type="text/javascript"></script>
+        
+        <script>
+            var message = '{displaynotification}';
+        </script>
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.viapush.com/cdn/v1/sdks/viapush.js" async="" charset="UTF-8"></script>
+        {literal}
+        <script>
+            var ViaPush = window.ViaPush || [];
+            ViaPush.push(["init", { appId: "b58fa8ab-cf0e-8196-4952-9be21bc2b1f6" }]);
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-869423439"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-869423439'); </script>
+        {/literal}
+    </head>
+    <body>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PLBL8S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <div class="navbar">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    {component name="Prologo"}
+                </div>
+                <div class="navbar-collapse" id="mp-top-menu">
+                    {component name="Topmenu"}
+                    <div class="pull-right">
+                        <form class="navbar-form" role="search" method="get" action="{link show=search}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Поиск участника" name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Begin Body -->
+        <div class="container set-height-100">
+            <div class="row">
+                <div class="col-md-3" id="leftCol">
+                    <div class="well affix-top" id="leftmenu">
+                        {component name="Leftmenu"}
+                    </div>
+                </div>
+                <div class="col-md-9" id="maincontainer" style="margin-top: 10px;">
+                    {include file=$CURRENT_CONTROL_TEMPLATE}
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer navbar-fixed-bottom">
+            <p>{if $lang == 'en'}The services are provided by SIROKKO, LLC<br>INN 2320238493, OGRN 1162366052705{else}Услуги оказывает ООО «СИРОККО»<br>ИНН 2320238493, ОГРН 1162366052705{/if}</p>
+        </div>
+
+        <!-- script references -->
+        
+        <script src="/js/bootstrap.js"></script>
+        <script src="/js/app/app.js"></script>
+        <script src="/js/docs.min.js"></script>
+        <script src="/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="/js/gss/scripts.js"></script>
+
+        <div style="display: none;" class="reserveddiv"></div>
+
+        {control name=Webstat}
+        {$includedJS}
+    </body>
+</html>

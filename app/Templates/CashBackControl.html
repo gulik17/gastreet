@@ -1,0 +1,85 @@
+{assign var=this value=$CashBackControl}
+
+<div class="container">
+    <div class="gss-speakers-container">
+        <h1 class="page-headline text-center mt-5 mb-0 cashback-title">##cashback##</h1>
+        <div id="popover_content">
+            <p>Ты можешь потратить кэшбэк:<br>
+                • на покупку нового билета;<br>
+                • на апгрейд билета, если он у тебя уже есть;<br>
+                • на дополнительные услуги: Бизнес-Школу, Fuckup Night, POP-UP SHOW.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <p class="text-center mt-4">Мы вернули тебе 10% с каждой поездки на GASTREET show прошлых лет!</p>
+            <p class="mt-5 text-center" style="font-weight:500;color:#10093b;">Просто найди себя и забирай!</p>
+            <form class="mt-3" method="post">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <input type="text" name="lastname" class="form-control" placeholder="Фамилия" value="{$this.lastname}">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" name="value" class="form-control" placeholder="Телефон или Email" value="{$this.value}">
+                    </div>
+                    <div class="col-md-4 form-group form-check">
+                        <button type="submit" class="btn btn-red" style="width:100%;">Искать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            {if $this.result}
+                <p class="text-center mt-4" style="color:#10093b;">Вау! У тебя целых</p>
+                <p class="text-center mt-3 big-font" style="color:#10093b;">{$this.result->balance} ₽</p>
+            {/if}
+            <p class="text-center mt-5">Как использовать кэшбэк:</p>
+            <div class="row cashback-row">
+                <div class="col-6 col-md-3">
+                    <a href="/catalog">
+                        <div class="cb-ticket mb-2">
+                            <img src="/images/cashback/ticket.png" alt=""/>
+                            <span>Покупка или апгрейд билетов</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="/catalog?area=6">
+                    <div class="cb-seminars mb-2">
+                        <img src="/images/cashback/seminars.png" alt=""/>
+                        <span>Семинары бизнес-школы</span>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="/catalog?area=14">
+                    <div class="cb-fuckup mb-2">
+                        <img src="/images/cashback/fuckup.png" alt=""/>
+                        <span>FuckUp night</span>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="/catalog?area=4">
+                    <div class="cb-popup mb-2">
+                        <img src="/images/cashback/popup.png" alt=""/>
+                        <span>POP-UP SHOW</span>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {if $this.error}
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <p class="text-center mt-4">Мы ничего не нашли...</p>
+            </div>
+        </div>
+    {/if}
+</div>

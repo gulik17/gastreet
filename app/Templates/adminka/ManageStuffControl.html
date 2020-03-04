@@ -1,0 +1,69 @@
+{assign var=this value=$ManageStuffControl}
+{formrestore id="users-filter"}
+
+<h2>Работа с командой</h2>
+
+<a role="button" data-toggle="collapse" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter"><h4>Фильтр для поиска <span class="caret"></span></h4></a>
+<div class="collapse" id="collapseFilter">
+    <form id="users-filter" method="post" action="" style="max-width: 400px;">
+        <div class="well">
+            <input type="hidden" name="show" value="managestuff"/>
+            <input type="hidden" name="isalive" value="1"/>
+            <div class="filter-users">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input class="form-control" type="text" name="userid" id="userid" />
+                </div>
+                <div class="form-group">
+                    <label>Номер мобильного:</label>
+                    <input class="form-control" type="text" name="phone" id="phone" />
+                </div>
+                <div class="form-group">
+                    <label>E-Mail:</label>
+                    <input class="form-control" type="text" name="email" id="email" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-info" type="submit" id="submit" value="Показать список отбора"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="man-con-create">
+    <input class="btn btn-primary" type="button" onclick="window.location='{alink show=editstuff}'" value="Создать члена команды" />
+</div>
+<br/>
+
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Номер мобильного</th>
+        <th>E-Mail</th>
+        <th>Действия</th>
+    </tr>
+    {if $this.userList}
+        {foreach item=user from=$this.userList}
+            {assign var=status value=$user->status}
+            {assign var=userid value=$user->id}
+            {assign var=parentid value=$user->parentUserId}
+            <tr class="{cycle values='color,'}">
+                <td>{$user->id}</td>
+                <td>{$user->phone}</td>
+                <td>{if $user->confirmedEmail}{$user->confirmedEmail}{else}{$user->email}{/if}</td>
+                <td>
+                    <a href="{alink show=stuff id=$user->id}">Информация</a> | 
+                    <a href="{alink show=editstuff id=$user->id}">Редактировать</a>
+                </td>
+            </tr>
+        {/foreach}
+    {else}
+        <tr class="{cycle values='color,'}">
+            <td colspan="4" class="text-center">Список пуст</td>
+        </tr>
+    {/if}
+</table>
+
+{if $this.userList}
+{pager total=$this.total per=$this.perPage}
+{/if}

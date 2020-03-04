@@ -1,0 +1,34 @@
+{assign var=this value=$MapControl}
+
+<div class="jumbotron-blank">
+    <div class="container">
+        <div class="row content">
+            <div class="col-md-12">
+                <ul class="breadcrumbs">
+                    <li><a href="/">##home##</a></li>
+                    <li><span>##map##</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid container-map">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="/images/g20-map.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+{literal}
+<style>
+    body {
+        background: #10093b;}
+    .jumbotron-blank {
+        display: none;
+        z-index: 999;}
+    .breadcrumbs li a {
+        color: #fff;}
+</style>
+{/literal}

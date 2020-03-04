@@ -1,0 +1,30 @@
+{assign var=this value=$EditNewsControl}
+{formrestore id="form"}
+
+{loadscript file='/js/jquery.placeholder.min.js' type='js'}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/editnews.js' type='js'}
+
+
+<h2>{if $this.news}Редактирование новости{else}Создание новости{/if}</h2>
+<form id="form" action="{alink do=savenews}" method="post" onsubmit="ignoreSnapshot();">
+	<input type="hidden" name="newsId" value="{$this.news->id}" />
+	<div class="form-group">
+            <label>Дата:</label>
+            <input class="form-control" type="text" placeholder="дд-мм-гггг" name="dateFrom" id="dateFrom" value="{$this.news->showDate|dateformat}"/>
+	</div>
+	<div class="form-group">
+            <label>Заголовок:</label>
+            <input class="form-control" type="text" name="subject" maxlength="255" value="{$this.news->subject}"/>
+	</div>
+	<div class="form-group">
+            <label>Текст:</label>
+            <textarea class="form-control" name="body" rows="8" cols="50">{$this.news->body}</textarea>
+	</div>
+	<div class="form-group">
+            <input class="btn btn-success" id="submitNews" type="submit" value="Сохранить"/>
+	</div>
+</form>

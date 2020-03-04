@@ -1,0 +1,30 @@
+{assign var=this value=$ManageMemoryControl}
+
+<h2>Отзывы</h2>
+
+{if $this.memories}
+<br/>
+<table class="table table-striped table-bordered table-hover table-memories" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>Отзыв</th>
+        <th>Статус</th>
+        <th>Действия</th>
+    </tr>
+    {foreach item=memory from=$this.memories}
+    {assign var=status value=$memory.status}
+    <tr>
+        <td>{$memory.id}</td>
+        <td>
+            <h4 class="m-0">{$memory.subject}</h4>
+            <p>{$memory.message}</p>
+            <p><a href="{alink show=user id=$memory.user_id}">Карточка участника</a></p>
+        </td>
+        <td>{$this.statusDesc.$status}</td>
+        <td>
+            <nobr><a href="{alink do=confirmmemory id=$memory.id}">Опубликовать</a> | <a href="{alink do=delmemory id=$memory.id}">Удалить</a></nobr>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+{/if}

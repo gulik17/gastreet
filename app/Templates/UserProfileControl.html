@@ -1,0 +1,178 @@
+{assign var=this value=$UserProfileControl}
+
+<div class="row">
+    <div class="col-md-9">
+        <form action="" id="user_profile" method="post">
+            <input type="hidden" name="id" value="{$actor->id}">
+            <input type="hidden" id="reg_company" name="company" value="{$actor->company}">
+            <h3 class="title mb-4">Заполните учетную запись</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="mb-3">Откуда вы</h6>
+                    <div class="form-group">
+                        <input type="hidden" id="countryName" name="countryName" value="{$actor->countryName}">
+                        <input type="hidden" id="cityName" name="cityName" value="{$actor->cityName}">
+                        <label for="tmpaddress">Город</label>
+                        <input class="form-control" type="text" id="tmpaddress" name="tmpaddress" value="{$actor->cityName}" autocomplete="off" maxlength="100">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h6 class="mb-3">Чем занимаетесь</h6>
+                    <div class="form-group">
+                        <label for="reg_position">Роль в бизнесе</label>
+                        <select class="form-control chosen-select" id="reg_position" name="position">
+                            <option value="">-- {if $lang == 'en'}Position{else}Должность{/if} --</option>
+                            {html_options values=$this.position output=$this.position selected=$actor->position}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                    <h6 class="mb-3">Информация о компании</h6>
+                    <div class="alert alert-info d-flex" style="align-items:center;justify-content:space-between;">
+                        <div class="pr-5 text-left company_info">
+                            <p>{$this.detail->company}</p>
+                            <p>ИНН: {$this.detail->inn}, КПП: {$this.detail->kpp}</p>
+                            <p>{$this.detail->address}</p>
+                        </div>
+                        <div>
+                            <a href="javascript:void(0);" data-toggle="modal" data-target="#dadataOrganizationModal">Изменить</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="mb-3">Ваши данные</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="reg_lastname">Фамилия</label>
+                                <input class="form-control" type="text" id="reg_lastname" name="lastname" value="{$actor->lastname}" autocomplete="off" maxlength="100">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="reg_name">Имя</label>
+                                <input class="form-control" type="text" id="reg_name" name="name" value="{$actor->name}" autocomplete="off" maxlength="100">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="reg_name">Дата рождения</label>
+                                <input class="form-control" type="text" id="reg_born" name="tsBorn" value="{$actor->tsBorn}" autocomplete="off" maxlength="100">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="reg_usersize">Размер одежды</label>
+                                <select class="form-control chosen-select" id="reg_usersize" name="usersize">
+                                    <option value="">-- {if $lang == 'en'}Clothing Size{else}Размер одежды{/if} --</option>
+                                    {html_options values=$this.userSize output=$this.userSize selected=$actor->userSize}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="mb-3">Как связаться</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone">Мобильный телефон</label>
+                                <input class="form-control" type="text" id="phone" name="phone" value="{$actor->phone}" autocomplete="off" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="reg_email">E-mail</label>
+                                <input class="form-control" type="text" id="reg_email" name="email" value="{$actor->email}" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+                <div class="col-md-9">
+                    <label for="check_policy" class="mb-3">
+                        <input id="check_policy" class="" value="1" type="checkbox">
+                        Согласие с <a href="{link show=policy}" target="_blank">Политикой конфиденциальности</a>
+                    </label>
+                </div>
+                <div class="col-md-3">
+                <button type="submit" class="btn btn-black" id="reg_save">Сохранить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <div class="alert">
+            <div id="applepay_btn"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="fulllogconsole"></div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="dadataOrganizationModal" tabindex="-1" role="dialog" aria-labelledby="dadataOrganizationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dadataOrganizationModalLabel">Выбрать огранизацию</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="tmpinn">ИНН или название организации</label>
+                                <input class="form-control" type="text" id="tmpinn" name="tmpinn" value="{$this.detail->inn}" autocomplete="off" maxlength="100">
+                                <input type="hidden" name="tmp_company" value="{$this.detail->company}">
+                                <input type="hidden" name="tmp_inn" value="{$this.detail->inn}">
+                                <input type="hidden" name="tmp_kpp" value="{$this.detail->kpp}">
+                                <input type="hidden" name="tmp_address" value="{$this.detail->address}">
+                                <input type="hidden" name="tmp_company_type" value="{$this.detail->company_type}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-white btn-tmpinn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{literal}
+<script>
+    if (window.ApplePaySession) {
+        let merchantIdentifier = "merchant.com.gastreet";
+        let promise = ApplePaySession.canMakePaymentsWithActiveCard(merchantIdentifier);
+        console.log(promise);
+        promise.then(function (canMakePayments) {
+      //      if (canMakePayments) {
+                let btn = document.getElementById("applepay_btn");
+                btn.innerHTML = "<button lang=\"ru\" onclick=\"javascript:startApplePaySession()\" style=\"-webkit-appearance: -apple-pay-button; -apple-pay-button-type: buy;\" class=\"apple-pay-button apple-pay-button-white\"></button>";
+       //     }
+        });
+    }
+</script>
+{/literal}
+
+
+
+

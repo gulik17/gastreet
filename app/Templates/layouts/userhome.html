@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{$lang}">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>{if $pageTitle}{$pageTitle}{/if}{if $p > 1} - ##page## {$p}{/if}</title>
+        <meta name="description" content="{$pageDesc}"/>
+        <meta name="keywords" content=""/>
+        <meta name="robots" content="index,follow,noodp,noydir"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+        <meta property="og:image" content="https://gastreet.com/images/fb_share_6.jpg">
+
+        {loadscript file='/css/jquery-ui/jquery-ui.css' type='css'}
+        {loadscript file='/css/modal-window.css' type='css'}
+        {loadscript file='/css/font-awesome.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.carousel.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.theme.default.css' type='css'}
+        {loadscript file='/js/plugins/chosen/chosen.min.css' type='css'}
+        {loadscript file='/css/bootstrap4/css/bootstrap.min.css' type='css'}
+        {loadscript file='/css/docs.min.css' type='css'}
+        {loadscript file='/css/half-slider.css' type='css'}
+
+        {loadscript file='/css/gss/styles-new.css' type='css'}
+        {loadscript file='/css/style.css' type='css'}
+        {loadscript file='/css/style-gss.css' type='css'}
+        
+        {loadscript file='/js/jquery.min.js' type='js'}
+        {loadscript file='/js/jquery-ui.min.js' type='js'}
+
+        <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@19.8.0/dist/css/suggestions.min.css" rel="stylesheet" />
+
+        <script>
+            var message = '{displaynotification}';
+        </script>
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.viapush.com/cdn/v1/sdks/viapush.js" async="" charset="UTF-8"></script>
+        {literal}
+        <script>
+            var ViaPush = window.ViaPush || [];
+            ViaPush.push(["init", { appId: "b58fa8ab-cf0e-8196-4952-9be21bc2b1f6" }]);
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159058716-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159058716-1');
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5PLBL8S');</script>
+        <!-- End Google Tag Manager -->
+        {/literal}
+    </head>
+    <body class="d-flex flex-column h-100">
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PLBL8S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        {component name="Topmenu"}
+        <main role="main" class="flex-shrink-0 pb-4">
+            <div class="l-site">
+                <div class="container mt-5">
+                    {include file=$CURRENT_CONTROL_TEMPLATE}
+                </div>
+                {control name=Age}
+            </div>
+        </main>
+        {control name=Footer}
+        {control name=Webstat}
+        {control name=Avatarlink}
+
+        {if $jivoSite == 1 && !$app && !$dev}
+            {loadscript file='/js/jivosite.js' type='js'}
+        {/if}
+
+        {loadscript file='/js/modernizr/modernizr.js' type='js'}
+        {loadscript file='/js/viewport-size/viewportSize-min.js' type='js'}
+        {loadscript file='/js/plugins/chosen/chosen.jquery.min.js' type='js'}
+        {loadscript file='/css/bootstrap4/js/popper.min.js' type='js'}
+        {loadscript file='/css/bootstrap4/js/bootstrap.js' type='js'}
+        {loadscript file='/js/owl.carousel/owl.carousel.min.js' type='js'}
+        {loadscript file='/js/lightgallery/js/lightgallery.min.js' type='js'}
+        {loadscript file='/js/lightgallery/js/lg-video.min.js' type='js'}
+        {loadscript file='/js/isotope/isotope.pkgd.min.js' type='js'}
+        {loadscript file='/js/jquery.cookie.js' type='js'}
+        {loadscript file='/js/jquery.capSlide.js' type='js'}
+        {loadscript file='/js/app/layout.js' type='js'}
+        {loadscript file='/js/app/app.js' type='js'}
+        {loadscript file='/js/vkpixel.js' type='js'}
+        {loadscript file='/js/fbpixel.js' type='js'}
+
+        {$includedJS}
+        <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@19.8.0/dist/js/jquery.suggestions.min.js"></script>
+        {literal}
+        <script>
+            $("#tmp_add_city").suggestions({
+                // Замените на свой API-ключ
+                token: "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1",
+                type: "ADDRESS",
+                geoLocation: false,
+                constraints: {
+                    locations: { country: "*" },
+                    label: ""
+                },
+                onSelect: function(suggestion) {
+                    $("#tmp_add_city").parents(".form-group").find('input[name=country]').val(suggestion.data.country_iso_code.toLowerCase());
+                    $("#tmp_add_city").parents(".form-group").find('input[name=city]').val(suggestion.data.city);
+                }
+            });
+            $("#tmp_edit_city").suggestions({
+                // Замените на свой API-ключ
+                token: "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1",
+                type: "ADDRESS",
+                geoLocation: false,
+                constraints: {
+                    locations: { country: "*" },
+                    label: ""
+                },
+                onSelect: function(suggestion) {
+                    $("#tmp_edit_city").parents(".form-group").find('input[name=country]').val(suggestion.data.country_iso_code.toLowerCase());
+                    $("#tmp_edit_city").parents(".form-group").find('input[name=city]').val(suggestion.data.city);
+                }
+            });
+            $("#tmpaddress").suggestions({
+                // Замените на свой API-ключ
+                token: "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1",
+                type: "ADDRESS",
+                geoLocation: false,
+                constraints: {
+                    locations: { country: "*" },
+                    label: ""
+                },
+                onSelect: function(suggestion) {
+                    $("#tmpaddress").parents(".form-group").find('input[name=countryName]').val(suggestion.data.country_iso_code.toLowerCase());
+                    $("#tmpaddress").parents(".form-group").find('input[name=cityName]').val(suggestion.data.city);
+                }
+            });
+
+            $("#tmpinn").suggestions({
+                // Замените на свой API-ключ
+                token: "130f8f12a29f4f7ca990ad4be6fe1f1e5bc497c1",
+                type: "PARTY",
+                onSelect: function(suggestion) {
+                    console.log(suggestion.data.address);
+                    $('#dadataOrganizationModal input[name=tmp_company]').val(suggestion.value);
+                    $('#dadataOrganizationModal input[name=tmp_inn]').val(suggestion.data.inn);
+                    $('#dadataOrganizationModal input[name=tmp_kpp]').val(suggestion.data.kpp);
+                    $('#dadataOrganizationModal input[name=tmp_address]').val(suggestion.data.address.value);
+                    if (suggestion.data.opf.short === "ИП") {
+                        $('#dadataOrganizationModal input[name=tmp_company_type]').val(3);
+                    } else {
+                        $('#dadataOrganizationModal input[name=tmp_company_type]').val(2);
+                    }
+                }
+            });
+
+            $(document).ready(function() {
+                $("select.chosen-select").chosen();
+            });
+        </script>
+        {/literal}
+    </body>
+</html>

@@ -1,0 +1,193 @@
+{assign var=this value=$RefundPayControl}
+{assign var=rrmstatus value=$this.rrmObj->status}
+{assign var=rrmtype value=$this.rrmObj->type}
+
+<h2>Выплата</h2>
+<p><b>Затребовано:</b> {$this.rrmObj->requestAmount}{if $this.rrmObj->requestAmount > $this.rrmObj->needAmount}, (либо только переплату: {$this.rrmObj->requestAmount-$this.rrmObj->needAmount} руб.){/if}</p>
+<p><b>Дата и время требования:</b> {$this.rrmObj->tsCreated|dateformat:'d.m.Y, в H:i'}</p>
+{if $this.rrmObj->returnedAmount}
+    <p><b>Выплачено:</b> {$this.rrmObj->returnedAmount}</p>
+    {if $this.rrmObj->tsUpdated}<p><b>Дата выплаты:</b> {$this.rrmObj->tsUpdated|dateformat:'d.m.Y, в H:i'}</p>{/if}
+    <p><b>Тип:</b> {$this.rrmTypes.$rrmtype}</p>
+{/if}
+
+<br/><br/>
+{if $this.paymObj->type == 'TYPE_INVOICE'}
+<form action="{alink do=refundpay}" method="post" />
+<input type="hidden" name="id" value="{$this.id}" />
+<input type="hidden" name="paytype" value="{$this.paymObj->type}" />
+<h4>Если Вы уже вернули <b><u>безналом</u></b>:</h4>
+<select name="amount">
+    <option value="{$this.rrmObj->requestAmount}">Всю сумму {$this.rrmObj->requestAmount}</option>
+    {if $this.rrmObj->requestAmount > $this.rrmObj->needAmount}<option value="{$this.rrmObj->requestAmount-$this.rrmObj->needAmount}">Только переплату {$this.rrmObj->requestAmount-$this.rrmObj->needAmount} руб.</option>{/if}
+</select>
+<p>То нажмите чтобы:<br/>
+<input type="submit" value="Отметить что возврат был осуществлен" /></p>
+</form>
+{/if}
+
+{if $this.paymObj->type == 'TYPE_CARD' || $this.paymObj->type == 'TYPE_CARD_RECURRENT'}
+<form action="{alink do=refundpay}" method="post" />
+<input type="hidden" name="id" value="{$this.id}" />
+<input type="hidden" name="paytype" value="{$this.paymObj->type}" />
+<h4>Чтобы вернуть:</h4>
+<select name="amount">
+    <option value="{$this.rrmObj->requestAmount}">Всю сумму {$this.rrmObj->requestAmount}</option>
+    {if $this.rrmObj->requestAmount > $this.rrmObj->needAmount}<option value="{$this.rrmObj->requestAmount-$this.rrmObj->needAmount}">Только переплату {$this.rrmObj->requestAmount-$this.rrmObj->needAmount} руб.</option>{/if}
+</select>
+<p>Нажмите:<br/>
+    <input type="submit" value="Вернуть" /></p>
+</form>
+{/if}
+
+{assign var=userTypeId value=$this.user->typeId}
+<br/><br/><h2>Данные пользователя</h2>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>ID:</td>
+        <td>{$this.user->id}</td>
+    </tr>
+    <tr>
+        <td>Тип пользователя:</td>
+        <td>{if !$userTypeId}Покупатель{else}{$this.userTypes.$userTypeId}{/if}</td>
+    </tr>
+    <tr>
+        <td>Номер мобильного:</td>
+        <td>{$this.user->phone}</td>
+    </tr>
+    <tr>
+        <td>E-Mail:</td>
+        <td>{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if}</td>
+    </tr>
+    <tr>
+        <td>Статус:</td>
+        <td>{$this.userStatuses.$status}</td>
+    </tr>
+    <tr>
+        <td>Баланс на авансовом счёте:</td>
+        <td>
+            <form action="{alink do=adminsavenewbalance}" method="post">
+                <input type="hidden" name="id" value="{$this.user->id}" />
+                <input type="text" name="balance" value="{if $this.user->ulBalance}{$this.user->ulBalance|round0}{else}0{/if}"/>
+                <input type="submit" value="Обновить" />
+            </form>
+        </td>
+    </tr>
+    {if $this.user->status == 'STATUS_REGISTERED'}
+    <tr>
+        <td>Дата регистрации:</td>
+        <td>{if $this.user->tsCreated}{$this.user->tsCreated|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+    </tr>
+    {/if}
+    <tr>
+        <td>Был на сайте:</td>
+        <td>{if $this.user->tsOnline}{$this.user->tsOnline|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+    </tr>
+</table>
+
+<h2>За что возврат:</h2>
+<!-- ticket -->
+{if $this.bmObj}
+{assign var=bmstatus value=$this.bmObj->productStatus}
+<h4>Основной билет:</h4>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Билет</th>
+        <th>Статус</th>
+        <th>Цена</th>
+    </tr>
+    <tr>
+        <td>{$this.bmObj->baseTicketName}</td>
+        <td>{$this.pmStatuses.$bmstatus}</td>
+        <td>{$this.bmObj->needAmount}</td>
+    </tr>
+</table>
+{/if}
+
+<!-- product -->
+{if $this.bpmObj}
+{assign var=bpmstatus value=$this.bpmObj->productStatus}
+<h4>Мастер-класс, ужин:</h4>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Наименование</th>
+        <th>Статус</th>
+        <th>Цена</th>
+    </tr>
+    <tr>
+        <td>{$this.bpmObj->productName}</td>
+        <td>{$this.pmStatuses.$bpmstatus}</td>
+        <td>{$this.bpmObj->needAmount}</td>
+    </tr>
+</table>
+{/if}
+
+<h2>Информация о совершенной оплате:</h2>
+{assign var=paymstatus value=$this.paymObj->status}
+{assign var=paymtype value=$this.paymObj->type}
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>Тип</th>
+        <th>Статус</th>
+        <th>Сумма</th>
+        <th>Дата оплаты</th>
+    </tr>
+    <tr>
+        <td><b>{$this.paymTypes.$paymtype}</b>{if $this.paymObj->monetaOperationId} ID операции в Монете: {$this.paymObj->monetaOperationId}{/if}</td>
+        <td>{$this.paymStatuses.$paymstatus}</td>
+        <td>{$this.paymObj->payAmount}</td>
+        <td>{$this.paymObj->tsUpdated|dateformat:'d.m.Y, в H:i'}</td>
+    </tr>
+</table>
+
+{if $this.udmObj}
+<h2>Реквизиты пользователя:</h2>
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>Компания:</td>
+        <td>{$this.udmObj->company}</td>
+    </tr>
+    {if $this.udmObj->countryName}<tr>
+        <td>Страна:</td>
+        <td>{$this.udmObj->countryName}</td>
+    </tr>{/if}
+    {if $this.udmObj->cityName}<tr>
+        <td>Город:</td>
+        <td>{$this.udmObj->cityName}</td>
+    </tr>{/if}
+    {if $this.udmObj->inn}<tr>
+        <td>ИНН:</td>
+        <td>{$this.udmObj->inn}</td>
+    </tr>{/if}
+    {if $this.udmObj->kpp}<tr>
+        <td>КПП:</td>
+        <td>{$this.udmObj->kpp}</td>
+    </tr>{/if}
+    {if $this.udmObj->rs}<tr>
+        <td>р/с:</td>
+        <td>{$this.udmObj->rs}</td>
+    </tr>{/if}
+    {if $this.udmObj->bank}<tr>
+        <td>Банк:</td>
+        <td>{$this.udmObj->bank}</td>
+    </tr>{/if}
+    {if $this.udmObj->corr}<tr>
+        <td>к/с:</td>
+        <td>{$this.udmObj->corr}</td>
+    </tr>{/if}
+    {if $this.udmObj->bik}<tr>
+        <td>БИК:</td>
+        <td>{$this.udmObj->bik}</td>
+    </tr>{/if}
+    {if $this.udmObj->director}<tr>
+        <td>Директор:</td>
+        <td>{$this.udmObj->director}</td>
+    </tr>{/if}
+    {if $this.udmObj->buh}<tr>
+        <td>Гл. бухгалтер:</td>
+        <td>{$this.udmObj->buh}</td>
+    </tr>{/if}
+</table>
+{/if}
+
+<br/>&nbsp;

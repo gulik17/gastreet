@@ -1,0 +1,71 @@
+{assign var=this value=$EditCustomBroadcastControl}
+{formrestore id="form"}
+
+{loadscript file='/js/fckeditor/jquery.FCKEditor.js' type='js'}
+{loadscript file='/js/fckeditor/jquery.form.js' type='js'}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/adminkaeditcustombroadcast.js' type='js'}
+
+
+<h2>{if $this.customBroadcast}Редактирование {else}Создание {/if} рассылки</h2>
+<form id="form" action="{alink do=savecustombroadcast}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.customBroadcast->id}" />
+    <!--<div class="form-group">-->
+        <!--<label>Статус:</label>-->
+	<!--<select class="form-control" name="status" id="status">-->
+            <!--{html_options options=$this.statusList selected=$this.customBroadcast->status}-->
+	<!--</select>-->
+    <!--</div>-->
+    <div class="form-group">
+        <label>Тип:</label>
+        <select class="form-control" name="type" id="type" onchange="hideFormControl(this.value)">
+            {html_options options=$this.typeList selected=$this.customBroadcast->type}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Тип пользователя:</label>
+        <select class="form-control" name="userType" id="userType">
+            <option value="0">-- по всем --</option>
+            {html_options options=$this.userTypes selected=$this.customBroadcast->userType}
+            <option value="1001">Зарегистрировались, но ничего не оплатили</option>
+            <option value="1002">Тем, кто купил заданный основной билет</option>
+            <option value="1003">Тем, кто купил заданный мастер-класс</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Задать основной билет:</label>
+        <select class="form-control" name="ticketId" id="ticketId">
+            <option value="0">-- не выбран --</option>
+            {html_options options=$this.tickets selected=$this.customBroadcast->ticketId}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Задать мастер-класс:</label>
+        <select class="form-control" name="productId" id="productId">
+            <option value="0">-- не выбран --</option>
+            {html_options options=$this.products selected=$this.customBroadcast->productId}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Название:</label>
+        <input class="form-control" type="text" name="name" id="name" value="{$this.customBroadcast->name}"/>
+    </div>
+    <div class="form-group" id="subjectEl">
+        <label>Тема:</label>
+        <input class="form-control" type="text" name="subject" id="subject" value="{$this.customBroadcast->subject}"/>
+    </div>
+    <div class="form-group" id="messageEl">
+        <label>Сообщение:</label>
+        <textarea class="form-control" name="message" id="message" rows="8">{$this.customBroadcast->message}</textarea>
+    </div>
+    <div class="form-group" id="smsEl">
+        <label>SMS:</label>
+	<textarea class="form-control" name="sms" id="sms" rows="8">{$this.customBroadcast->sms}</textarea>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+    </div>
+</form>

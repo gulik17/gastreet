@@ -1,0 +1,85 @@
+{assign var=this value=$AdminkaEditUserControl}
+{formrestore id="form"}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+<h2>Редактирование пользователей</h2>
+<form id="form" action="{alink do=adminsaveuser}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <div class="row">
+        <input type="hidden" name="id" value="{$this.user->id}" />
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Тип пользователя:</label>
+                <select class="form-control" name="type">
+                    <option value="0">-- Тип пользователя --</option>
+                    {html_options options=$this.types selected=$this.user->typeId}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Номер мобильного: *</label>
+                <input class="form-control" type="text" name="phone" id="phone" value="{$this.user->phone}"/>
+            </div>
+            <div class="form-group">
+                <label>E-Mail: *</label>
+                <input class="form-control" type="text" name="email" id="email" value="{$this.user->email}"/>
+            </div>
+            <div class="form-group">
+                <label>Подтвержденный E-Mail:</label>
+                <input class="form-control" type="text" name="confirmedEmail" id="confirmedEmail" value="{$this.user->confirmedEmail}"/>
+            </div>
+            <div class="form-group">
+                <label>Фамилия:</label>
+                <input class="form-control" type="text" name="lastname" id="lastname" value="{$this.user->lastname}"/>
+            </div>
+            <div class="form-group">
+                <label>Имя:</label>
+                <input class="form-control" type="text" name="name" id="name" value="{$this.user->name}"/>
+            </div>
+            <div class="form-group">
+                <label>Текущий код доступа (СМС):</label>
+                <input class="form-control" type="text" name="code" id="code" value="{$this.user->code}"/>
+            </div>
+            <div class="form-group">
+                <label>Страна:</label>
+                <select class="form-control" name="countryName">
+                    <option value="">-- Страна --</option>
+                    {html_options options=$this.country selected=$this.user->countryName}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Город:</label>
+                <input class="form-control" type="text" name="cityName" id="cityName" value="{$this.user->cityName}"/>
+            </div>
+            <div class="form-group">
+                <label>Компания:</label>
+                <input class="form-control" type="text" name="company" id="company" value="{$this.user->company}"/>
+            </div>
+            <div class="form-group">
+                <label>Должность:</label>
+                <input class="form-control" type="text" name="position" id="position" value="{$this.user->position}"/>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Запретить пользователю редактирвать свой профиль:</label>
+                <select class="form-control" name="hasEdit">
+                    <option value="0" {if $this.user->hasEdit == 0}selected{/if}>Нет</option>
+                    <option value="1" {if $this.user->hasEdit == 1}selected{/if}>Да</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Информация для пользователя (Раздел «Важно»):</label>
+                <textarea class="form-control" rows="6" name="userInfo">{$this.user->userInfo}</textarea>
+            </div>
+            <div class="form-group alert alert-info">
+                <label>ID родителя:</label>
+                <input class="form-control" type="text" name="parentUserId" id="parentUserId" value="{$this.user->parentUserId}"/>
+                <p class="" style="margin-top: 15px;">Изменение этого параметра влияет на статус участника.<br>Если это поле пустое, то данный участник станет основным.<br>Будьте внимательны при редактировании этого поля!</p>
+            </div>
+        </div>
+    </div>
+</form>

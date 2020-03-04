@@ -1,0 +1,231 @@
+{assign var=this value=$EditProductControl}
+{formrestore id="form"}
+
+{loadscript file='/js/jquery.placeholder.min.js' type='js'}
+
+{loadscript file='/js/fckeditor/jquery.FCKEditor.js' type='js'}
+{loadscript file='/js/fckeditor/jquery.form.js' type='js'}
+
+{loadscript file='/js/md5.js' type='js'}
+{loadscript file='/js/caretaker.js' type='js'}
+
+{loadscript file='/js/pages/editproduct.js' type='js'}
+
+
+<h2>{if $this.product}Редактирование {else}Создание {/if} мастер-класса, ужина 
+    <span style="float:right;font-size:12px;font-weight:200;margin:-5px 0 0 0;">
+        <a class="btn btn-default" href="/adminka/index.php?do=copyproduct&id={$this.product->id}">Копировать</a>
+    </span>
+</h2>
+<form id="form" action="{alink do=saveproduct}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
+    <input type="hidden" name="id" value="{$this.product->id}" />
+    <div class="form-group">
+        <label>Статус:</label>
+        <select class="form-control" name="status" id="status">
+            {html_options options=$this.statusList selected=$this.product->status}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>
+            <input type="checkbox" name="showInSchedule" id="showInSchedule" {if $this.product->showInSchedule}checked="checked"{/if} />
+            Показывать в расписании:
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Название:</label>
+        <input class="form-control" type="text" name="name" id="name" value="{$this.product->name}"/>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Цена:</label>
+            <input class="form-control" type="text" name="price" id="price" value="{$this.product->price}"/>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Кол-во билетов:</label>
+            <input class="form-control" type="text" name="maxCount" id="maxCount" value="{$this.product->maxCount}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Имя:</label>
+            <input class="form-control" type="text" name="firstName" id="firstName" value="{$this.product->firstName}"/>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Фамилия:</label>
+            <input class="form-control" type="text" name="secondName" id="secondName" value="{$this.product->secondName}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 form-group">
+            <label>Компания:</label>
+            <input class="form-control" type="text" name="company" id="company" value="{$this.product->company}"/>
+        </div>
+        <div class="col-md-4 form-group">
+            <label>Должность:</label>
+            <input class="form-control" type="text" name="position" id="position" value="{$this.product->position}"/>
+        </div>
+        <div class="col-md-4 form-group">
+            <label>Город:</label>
+            <input class="form-control" type="text" name="cityName" id="cityName" value="{$this.product->cityName}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-inline">
+                <label style="display:block;padding-top:10px;">Дата и время начала мероприятия:</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="startDay" placeholder="дд" value="{if $this.startDay != null}{$this.startDay}{/if}" style="width: 44px;" /> . 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="startMonth" placeholder="мм" value="{if $this.startMonth != null}{$this.startMonth}{/if}" style="width: 44px;" /> . 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="startYear" placeholder="гггг" value="{if $this.startYear != null}{$this.startYear}{/if}" style="width: 60px;" /> в 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="startHours" value="{if $this.startHours != null}{$this.startHours}{else}00{/if}" style="width: 44px;" /> : 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="startMinutes" value="{if $this.startMinutes != null}{$this.startMinutes}{else}00{/if}" style="width: 44px;" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-inline">
+                <label style="display:block;padding-top:10px;">Дата и время завершения мероприятия:</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="finishDay" placeholder="дд" value="{if $this.finishDay != null}{$this.finishDay}{/if}" style="width: 44px;" /> . 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="finishMonth" placeholder="мм" value="{if $this.finishMonth != null}{$this.finishMonth}{/if}" style="width: 44px;" /> . 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="finishYear" placeholder="гггг" value="{if $this.finishYear != null}{$this.finishYear}{/if}" style="width: 60px;" /> в 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="finishHours" value="{if $this.finishHours != null}{$this.finishHours}{else}23{/if}" style="width: 44px;" /> : 
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="finishMinutes" value="{if $this.finishMinutes != null}{$this.finishMinutes}{else}59{/if}" style="width: 44px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label style="display:block;padding-top:10px">Спикер 1:</label>
+            <select class="form-control chosen-select" name="speakerId" id="speakerId">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speakerId}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label style="display:block;padding-top:10px">Спикер 2:</label>
+            <select class="form-control chosen-select" name="speaker2Id" id="speaker2Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker2Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Спикер 3:</label>
+            <select class="form-control chosen-select" name="speaker3Id" id="speaker3Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker3Id}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Спикер 4:</label>
+            <select class="form-control chosen-select" name="speaker4Id" id="speaker4Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker4Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Спикер 5:</label>
+            <select class="form-control chosen-select" name="speaker5Id" id="speaker5Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker5Id}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Спикер 6:</label>
+            <select class="form-control chosen-select" name="speaker6Id" id="speaker6Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker6Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Место проведения:</label>
+            <select class="form-control chosen-select" name="placeId" id="placeId">
+                {html_options options=$this.places selected=$this.product->placeId}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Программа:</label>
+            <select class="form-control chosen-select" name="areaId" id="areaId">
+                {html_options options=$this.areas selected=$this.product->areaId}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label>Теги:</label>
+            <input class="form-control" type="text" name="tags" id="tags" value="{$this.product->tags}"/>
+        </div>
+        <div class="col-md-3 form-group">
+            <label>Описание тега:</label>
+            <input class="form-control" type="text" name="tag_desc" id="tag_desc" value="{$this.product->tag_desc}"/>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Партнер мероприятия:</label>
+            <select class="form-control chosen-select" name="partner_id" id="partner_id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.partners selected=$this.product->partner_id}
+            </select>
+        </div>
+    </div>
+    <div class="form-group" id="desc-dl">
+        <label id="desc-dt">Описание:</label>
+        <div id="desc-dd">
+            <textarea class="form-control" name="description" id="description">{$this.product->description}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Ссылка на YouTube:</label>
+        <input class="form-control" type="text" name="youtube" id="youtube" value="{$this.product->youtube}" />
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>{if $this.product->pic1}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <input class="form-control" name="file1" type="file" />
+        </div>
+        <div class="col-md-6 form-group">
+            <label>{if $this.product->pic2}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <input class="form-control" name="file2" type="file" />
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-success" id="submitProduct" type="submit" value="Сохранить"/>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-6">
+        {if $this.product->pic1}
+        <h4>Картинка: <a class="btn btn-danger" style="margin-left: 30px;" href="{alink do=deleteimg id=$this.product->pic1 item=products}">Удалить картинку</a></h4>
+        <img class="img-responsive" src="/images/products/resized/{$this.product->pic1}?v={$this.product->tsUpdate}" />
+        {/if}
+    </div>
+    <div class="col-md-6">
+        {if $this.product->pic2}
+        <h4>Картинка: <a class="btn btn-danger" style="margin-left: 30px;" href="{alink do=deleteimg id=$this.product->pic2 item=products}">Удалить картинку</a></h4>
+        <img class="img-responsive" src="/images/products/resized/{$this.product->pic2}?v={$this.product->tsUpdate}" />
+        {/if}
+    </div>
+</div>

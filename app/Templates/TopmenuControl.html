@@ -1,0 +1,153 @@
+{assign var=this value=$TopmenuControl}
+{if !$app}
+<header class="site-header has-fixed" id="site-header">
+    <div class="container">
+        <div class="content">
+            <div class="col-left">
+                <a class="logo {if $time < '1578960000'}santa{/if}" href="/">Gastreet</a>
+<!--                <a class="logo logo-metro" target="_blank" href="http://www.metro-cc.ru/">METRO</a>-->
+            </div>
+            <nav class="nav nav-menu" id="nav-menu">
+                <ul class="menu">
+                    <li class="for-mobile"><a href="{link show=programms}"><span>{if $lang == 'en'}Business program{else}Описание площадок{/if}</span></a></li>
+                    <li class="has-sub-menu">
+                        <a href="{link show=programms}"><span>{if $lang == 'en'}Program{else}Площадки{/if}</span></a>
+                        <span></span>
+                        <div>
+                            <ul>
+                                <li style="margin-bottom: 5px;"><b>{if $lang == 'en'}TRAINING{else}ОБУЧЕНИЕ{/if}</b></li>
+                                <li><a href="{link show=catalog area=5}">REBRO</a></li>
+                                <li><a href="{link show=catalog area=3}">MAIN STREET</a></li>
+                                <li><a href="{link show=catalog area=9}">CHEF STREET</a></li>
+                                <li><a href="{link show=catalog area=7}">BARSTREET</a></li>
+                                <li><a href="{link show=catalog area=6}">БИЗНЕС-ШКОЛА</a></li>
+                                <li><a href="{link show=catalog area=28}">ЦЕНТРАЛЬНАЯ ПЛОЩАДЬ</a></li>
+<!--                                <li><a href="{link show=catalog area=14}">FUCKUP</a></li>-->
+                            </ul>
+                            <ul class="has-border">
+                                <li style="margin-bottom: 5px;"><b>{if $lang == 'en'}COMMUNICATION{else}ОБЩЕНИЕ{/if}</b></li>
+                                <li><a href="{link show=catalog area=8}">FOOD MARKET</a></li>
+                                <li><a href="{link show=catalog area=10}">DRINK ZONE</a></li>
+                                <li><a href="{link show=catalog area=16}">BBQxBEER STREET</a></li>
+                                <li><a href="{link show=catalog area=24}">ЗОЖ</a></li>
+                                <!--<li><a href="{link show=catalog area=13}">#НОЧНОЕBBQ</a></li>-->
+                                <li><a href="{link show=catalog area=4}">POP-UP SHOW</a></li>
+                                <li><a href="{link show=catalog area=2}">{if $lang == 'en'}CONCERTS{else}КОНЦЕРТЫ{/if}</a></li>
+                                <li><a href="{link show=catalog area=19}">{if $lang == 'en'}PARTIES{else}ВЕЧЕРИНКИ{/if}</a></li>
+                            </ul>
+                            <ul class="has-border">
+                                <li style="margin-bottom: 5px;"><b>ОТ ПАРТНЕРОВ</b></li>
+                                <li><a href="{link show=catalog area=15}">ШКОЛА СОМЕЛЬЕ</a></li>
+                                <li><a href="{link show=catalog area=17}">BARISTA STREET</a></li>
+                                <!--<li><a href="{link show=catalog area=11}">#ITТЕХНОЛОГИИ</a></li>-->
+                                <li><a href="{link show=catalog area=18}">FRANCHISE STREET</a></li>
+                                <li><a href="{link show=catalog area=20}">ЗОЖ</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="{link show=catalog}" class="indicator-toggle cashback"><span>##tickets##</span></a></li>
+                    <li><a href="{link show=speakers}"><span>##speakers##</span></a></li>
+                    <li><a href="{link show=folkspeaker}" class="indicator-toggle ne_sema"><span>Стать спикером</span></a></li>
+                    <li><a href="{link show=schedule}"><span>##scheduleOff##</span></a></li>
+                    <li><a href="{link show=becomepartner}" class="indicator-toggle partner"><span>Стать партнером</span></a></li>
+                    <!--<li class="d-none"><a href="{link show=presentation}"><span>##presentation##</span></a></li>-->
+                    <li class="for-mobile"><a href="{link show=video}"><span>{if $lang == 'en'}Video{else}Кинотеатр{/if}</span></a></li>
+                    <li class="for-mobile"><a href="{link show=place}"><span>{if $lang == 'en'}Where to live{else}Где жить{/if}</span></a></li>
+                    <li class="for-mobile"><a href="{link show=faq}"><span>{if $lang == 'en'}FAQ{else}ЧаВо{/if}</span></a></li>
+                    <li class="for-mobile"><a href="{link show=volunteers}"><span>##volunteers##</span></a></li>
+                    <li class="for-mobile"><a href="{link show=map}"><span>{if $lang == 'en'}Gastreet City Map{else}Карта Gastreet City{/if}</span></a></li>
+                    <!--<li class="for-mobile"><a href="{link show=memory}"><span>##memory##</span></a></li>-->
+                    <li class="for-mobile"><a href="{link show=contacts}"><span>##contacts##</span></a></li>
+                    <li class="has-sub-menu">
+                        <a href="javascript:void(0)"><span>{if $lang == 'en'}Info{else}Инфо{/if}</span></a>
+                        <span></span>
+                        <div>
+                            <ul>
+                                <li><a href="{link show=video}">{if $lang == 'en'}Video{else}Кинотеатр{/if}</a></li>
+                                <li><a href="{link show=place}">{if $lang == 'en'}Where to live{else}Где жить{/if}</a></li>
+                                <li><a href="{link show=faq}">{if $lang == 'en'}FAQ{else}ЧаВо{/if}</a></li>
+                                <li><a href="{link show=volunteers}"><span>##volunteers##</span></a></li>
+                                <li><a href="{link show=map}">{if $lang == 'en'}Gastreet City Map{else}Карта Gastreet City{/if}</a></li>
+                                <!--<li><a href="{link show=memory}">##memory##</a></li>-->
+                                <li><a href="{link show=contacts}">##contacts##</a></li>
+                            </ul>
+                        </div> 
+                    </li>
+                    {if !$this.actor}
+                    <li class="for-mobile"><a href="{link show=userregister}"><span>##registration##</span></a></li>
+                    <li class="for-mobile"><a href="{link show=userlogin}"><span>##logIn##</span></a></li>
+                    {else}
+                        {if $this.child}
+                            <li class="for-mobile"><a href="{link show=usereditprofile}" style="text-decoration: none; color: red !important;"><span>{$this.child->lastname} {$this.child->name|truncate:2:"."}</span></a></li>
+                            <li class="for-mobile"><a href="{link show=basket}"><span>{if $lang == 'en'}Basket{else}Корзина{/if}{if $ticketsCount > 0}</span> <span class="badge">{$ticketsCount}</span>{/if}</a></li>
+                            <li class="for-mobile"><a href="{link do=userparticipantlogout}" style="color: red;"><span class="glyphicon glyphicon-log-out" aria-hidden="true" title="##signOut##"></span> <span>##signOut##</span></a>
+                        {else}
+                            <li class="for-mobile"><a href="{link show=usereditprofile}" style="text-decoration: none;"><span>{$this.actor->lastname} {$this.actor->name|truncate:2:"."}</span></a></li>
+                            <li class="for-mobile"><a href="{link show=basket}"><span>{if $lang == 'en'}Basket{else}Корзина{/if}{if $ticketsCount > 0}</span> <span class="badge">{$ticketsCount}</span>{/if}</a></li>
+                            <li class="for-mobile"><a href="{link do=logout}"><span class="glyphicon glyphicon-log-out" aria-hidden="true" title="##signOut##"></span> <span>##signOut##</span></a></li>
+                        {/if}
+                    {/if}
+                </ul>
+                <!--                    <div class="for-mobile social-operations text-center d-none">-->
+                <!--                        <a class="text" href="/avatar">Сделать аватар</a>-->
+                <!--                    </div>-->
+            </nav>
+            <div class="col-right" id="header-col-right">
+                {if !$this.actor}
+                    <a id="dLabel" class="indicator-toggle gaz" href="{link show=userregister}">##registration##</a>
+                    <div class="user user-panel js-user-panel">
+                        <a class="login" href="{link show=userlogin}"><span class="icon"></span>{if $lang == 'en'}Login{else}Вход{/if}</a>
+                    </div>
+<!--                    <div class="dropdown">-->
+<!--                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+<!--                            {if $lang == 'en'}Sign In{else}Войти{/if} <i class="fa fa-caret-down" aria-hidden="true"></i>-->
+<!--                        </a>-->
+<!--                        <ul class="dropdown-menu" aria-labelledby="dLabel">-->
+<!--                            <li><a href="{link show=userregister}">##registration##</a></li>-->
+<!--                            <li><a href="{link show=userlogin}"><span class="icon"></span>{if $lang == 'en'}Sign In{else}Авторизация{/if}</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+                {else}
+                    {if $this.child}
+                        <div class="dropdown">
+                            <a id="dLabel" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none; color: red !important;">
+                                {$this.child->lastname} {$this.child->name|truncate:2:"."} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li><a href="/basket?q=2">{if $lang == 'en'}Profile{else}Профиль{/if}</a></li>
+                                <li><a class="basket" href="{link show=basket}">{if $lang == 'en'}Basket{else}Корзина{/if}{if $ticketsCount > 0} <span class="badge badge-info">{$ticketsCount}</span>{/if}</a></li>
+                                <li><a href="{link do=userparticipantlogout}"><i class="fa fa-sign-out" aria-hidden="true"></i> <span>##signOut##</span></a></li>
+                            </ul>
+                        </div>
+                    {else}
+                        <div class="dropdown">
+                            <a id="dLabel" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;">
+                                {$this.actor->lastname} {$this.actor->name|truncate:2:"."} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li><a href="/basket?q=2">{if $lang == 'en'}Profile{else}Профиль{/if}</a></li>
+                                <li><a class="basket" href="{link show=basket}">{if $lang == 'en'}Basket{else}Корзина{/if}{if $ticketsCount > 0} <span class="badge badge-info">{$ticketsCount}</span>{/if}</a></li>
+                                <li><a href="{link do=logout}"><i class="fa fa-sign-out" aria-hidden="true"></i> <span>##signOut##</span></a></li>
+                            </ul>
+                        </div>
+                    {/if}
+                {/if}
+                <button type="button" id="nav-mobile-toggle" class="menu-toggle"><span></span></button>
+                <a href="{link show=avatar}" class="avatar-link bounce d-none" data-toggle="tooltip" data-placement="bottom" aria-hidden="true" data-original-title="Сделать аватар"><i class="fa fa-id-badge" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-mobile-area">
+        <nav class="nav-mobile" id="nav-mobile-nav">
+            <div class="l-container" id="nav-mobile"></div>
+        </nav>
+    </div>
+    {if $time < '1578960000'}
+        <div id="snow">
+            <div class="lay_1"></div>
+            <div class="lay_2"></div>
+            <div class="lay_3"></div>
+        </div>
+    {/if}
+</header>
+{/if}

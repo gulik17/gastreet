@@ -1,0 +1,23 @@
+{assign var=this value=$AdminCodeusedControl}
+
+<h2>Применение промо-кода</h2>
+<h4>{$this.discount->code}</h4>
+
+{if $this.users}
+<table class="table table-striped table-bordered table-hover" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>ID</th>
+        <th>ФИО</th>
+        <th>Телефон</th>
+    </tr>
+    {foreach item=user from=$this.users}
+    <tr class="{cycle values='color,'}">
+        <td>{$user->id}</td>
+        <td>{$user->lastname} {$user->name}</td>
+        <td>{$user->phone}</td>
+    </tr>
+    {/foreach}
+</table>
+{else}
+    <h4>Никто не применял</h4>
+{/if}

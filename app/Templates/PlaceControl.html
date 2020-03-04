@@ -1,0 +1,449 @@
+{assign var=this value=$PlaceControl}
+
+<div class="jumbotron-blank">
+    <div class="container">
+        <div class="content">
+            <ul class="breadcrumbs">
+                <li><a href="/">##home##</a></li>
+                <li><span>##hotels##</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<!--    <div class="row">-->
+<!--        <div class="col-md-12">-->
+<!--            <p class="h3 title">Бронирование будет доступно с&nbsp;18&nbsp;февраля 2020&nbsp;года</p>-->
+<!--            &lt;!&ndash;<p class="h3 title">Консультация по отелям <nobr>8 800 770-09-63</nobr></p>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="g-emoji-content">
+                <div class="g-emoji-icon">
+                    <img src="/images/emoji/11.png" class="img-fluid" alt="">
+                </div>
+                <div class="g-emoji-balun">Роднули, бронирование возможно только после покупки основного билета на GASTREET</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <h1 class="page-headline m-0 mb-1">ОТЕЛИ<br> В GASTREET CITY +960</h1>
+            <!--<p class="page-headline-sub">на уровне +960</p>-->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-container p-0" id="page-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-container-inner" id="page-container-inner">
+                    <div class="page-subsection">
+                        {if $this.pmList}
+                        <div class="row place-title d-none d-md-flex">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-1">Мин. срок<br> проживания</div>
+                            <div class="col-md-2">В стоимость<br> проживания входит</div>
+                            <div class="col-md-1">Платные<br> услуги</div>
+                            <div class="col-md-2">Цена<br> за сутки</div>
+                            <div class="col-md-2">Отдел<br> бронирования</div>
+                        </div>
+                        {foreach item=place from=$this.pm960}
+                        <div class="row">
+                            <div class="col-6 col-md-2 bg-gray col-title">
+                                {if $place->videoUrl}
+                                    <a href="javascript:void(0)" class="place-video" data-toggle="modal" data-target="#video-modal" data-link="{$place->videoUrl}" data-title="{if $lang == 'en'}{$place->name_en}{else}{$place->name}{/if}"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                                {/if}
+                                <div class="title">
+                                    {if $place->suptitle}<div class="suptitle"><span>{$place->suptitle}</span></div>{/if}
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#placeModal{$place->id}">{if $lang == 'en'}{$place->name_en|dbtexttohtml}{else}{$place->name|dbtexttohtml}{/if}</a>
+                                    {if $place->subtitle}<div class="subtitle"><span>{$place->subtitle}</span></div>{/if}
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-right stars">
+                                {if $place->stars == 1}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 2}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 3}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 4}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 5}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                {else}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {/if}
+                            </div>
+                            <div class="d-none d-md-block col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Отель можно забронировать при условии заезда не позже 1 июня">5&nbsp;ночей</a></div>
+                            <div class="col-8 col-md-2 bg-gray place-icons">
+                                <i class="fa fa-cutlery {if $place->inclusive[1]}active{/if}" data-toggle="tooltip" data-placement="top" title="Завтрак" aria-hidden="true"></i> 
+                                <i class="fa fa-pool {if $place->inclusive[2]}active{/if}" data-toggle="tooltip" data-placement="top" title="Бассейн" aria-hidden="true"></i> 
+                                <i class="fa fa-spa {if $place->inclusive[3]}active{/if}" data-toggle="tooltip" data-placement="top" title="СПА" aria-hidden="true"></i> 
+                                <i class="fa fa-gum {if $place->inclusive[4]}active{/if}" data-toggle="tooltip" data-placement="top" title="Тренажерный зал" aria-hidden="true"></i> 
+                                <i class="fa fa-wheelchair {if $place->inclusive[5]}active{/if}" data-toggle="tooltip" data-placement="top" title="Номера для людей с ограниченными возможностями" aria-hidden="true"></i>
+                                <i class="fa fa-baby-room {if $place->inclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                            </div>
+                            <div class="col-4 col-md-1 bg-gray place-icons">
+                                <i class="fa fa-baby-room {if $place->notinclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                                <i class="fa fa-paw {if $place->notinclusive[7]}active{/if}" data-toggle="tooltip" data-placement="top" title="Возможно размещение с домашними животными" aria-hidden="true"></i>
+                            </div>
+                            <div class="d-md-none col-3 col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Отель можно забронировать при условии заезда не позже 1 июня">5&nbsp;ночей</a></div>
+                            <div class="col-3 col-md-2 bg-white text-center">
+                                {if $place->price > 0}
+                                    <span class="title price" data-toggle="modal" data-target="#placePriceModal{$place->id}">{if $place->price}{if $lang == 'en'}form {$place->price} ₽{else}от {$place->price} ₽{/if}{else}-{/if}</span>
+                                {elseif $place->price == 'хз'}
+                                    <div class="capacity capacity-cart specified" style="position:relative;"></div>
+                                {else}
+                                    <div class="capacity capacity-cart sold-out" style="position:relative;"></div>
+                                {/if}
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-center">
+                                <div class="place-phone">{$place->phone}</div>
+                                {if $place->email}
+                                <div class="place-email"><a href="mailto:{$place->email}">Написать на почту</a></div>
+                                {/if}
+                            </div>
+                        </div>
+                        {/foreach}
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="page-headline m-0 mb-1">ОТЕЛИ<br> КРАСНАЯ ПОЛЯНА +540</h1>
+            <p class="page-headline-sub">подъемник на уровень +960 — бесплатно</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-container p-0" id="page-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-container-inner" id="page-container-inner">
+                    <div class="page-subsection">
+                        {if $this.pmList}
+                        <div class="row place-title d-none d-md-flex">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-1">Мин. срок<br> проживания</div>
+                            <div class="col-md-2">В стоимость<br> проживания входит</div>
+                            <div class="col-md-1">Платные<br> услуги</div>
+                            <div class="col-md-2">Цена<br>за сутки</div>
+                            <div class="col-md-2">Отдел<br> бронирования</div>
+                        </div>
+                        {foreach item=place from=$this.pm540}
+                        <div class="row">
+                            <div class="col-6 col-md-2 bg-gray col-title">
+                                {if $place->videoUrl}
+                                    <a href="javascript:void(0)" class="place-video" data-toggle="modal" data-target="#video-modal" data-link="{$place->videoUrl}" data-title="{if $lang == 'en'}{$place->name_en}{else}{$place->name}{/if}"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                                {/if}
+                                <div class="title">
+                                    {if $place->suptitle}<div class="suptitle"><span>{$place->suptitle}</span></div>{/if}
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#placeModal{$place->id}">{if $lang == 'en'}{$place->name_en|dbtexttohtml}{else}{$place->name|dbtexttohtml}{/if}</a>
+                                    {if $place->subtitle}<div class="subtitle"><span>{$place->subtitle}</span></div>{/if}
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-right stars">
+                                {if $place->stars == 1}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 2}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 3}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 4}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 5}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                {else}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {/if}
+                            </div>
+                            <div class="d-none d-md-block col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Минимальный срок проживания 2 ночи">2 ночи</a></div>
+                            <div class="col-8 col-md-2 bg-gray place-icons">
+                                <i class="fa fa-cutlery {if $place->inclusive[1]}active{/if}" data-toggle="tooltip" data-placement="top" title="Завтрак" aria-hidden="true"></i> 
+                                <i class="fa fa-pool {if $place->inclusive[2]}active{/if}" data-toggle="tooltip" data-placement="top" title="Бассейн" aria-hidden="true"></i> 
+                                <i class="fa fa-spa {if $place->inclusive[3]}active{/if}" data-toggle="tooltip" data-placement="top" title="СПА" aria-hidden="true"></i> 
+                                <i class="fa fa-gum {if $place->inclusive[4]}active{/if}" data-toggle="tooltip" data-placement="top" title="Тренажерный зал" aria-hidden="true"></i> 
+                                <i class="fa fa-wheelchair {if $place->inclusive[5]}active{/if}" data-toggle="tooltip" data-placement="top" title="Номера для людей с ограниченными возможностями" aria-hidden="true"></i>
+                                <i class="fa fa-baby-room {if $place->inclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                            </div>
+                            <div class="col-4 col-md-1 bg-gray place-icons">
+                                <i class="fa fa-baby-room {if $place->notinclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                                <i class="fa fa-paw {if $place->notinclusive[7]}active{/if}" data-toggle="tooltip" data-placement="top" title="Возможно размещение с домашними животными" aria-hidden="true"></i>
+                            </div>
+                            <div class="d-md-none col-3 col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Минимальный срок проживания 2 ночи">2 ночи</a></div>
+                            <div class="col-3 col-md-2 bg-white text-center">
+                                {if $place->price > 0}
+                                <span class="title price" data-toggle="modal" data-target="#placePriceModal{$place->id}">{if $place->price}{if $lang == 'en'}form {$place->price} ₽{else}от {$place->price} ₽{/if}{else}-{/if}</span>
+                                {elseif $place->price == 'хз'}
+                                <div class="capacity capacity-cart specified" style="position:relative;"></div>
+                                {else}
+                                <div class="capacity capacity-cart sold-out" style="position:relative;"></div>
+                                {/if}
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-center">
+                                <div class="place-phone">{$place->phone}</div>
+                                {if $place->email}
+                                <div class="place-email"><a href="mailto:{$place->email}">Написать на почту</a></div>
+                                {/if}
+                            </div>
+                        </div>
+                        {/foreach}
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container d-none">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="page-headline m-0 mb-1">ОТЕЛИ<br> Роза Хутор +560</h1>
+            <p class="page-headline-sub">подъемник на уровень +960 — бесплатно</p>
+        </div>
+    </div>
+</div>
+
+<div class="container d-none">
+    <div class="page-container p-0" id="page-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-container-inner" id="page-container-inner">
+                    <div class="page-subsection">
+                        {if $this.pmList}
+                        <div class="row place-title d-none d-md-flex">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-1">Мин. срок<br> проживания</div>
+                            <div class="col-md-2">В стоимость<br> проживания входит</div>
+                            <div class="col-md-1">Платные<br> услуги</div>
+                            <div class="col-md-2">Цена <br>за сутки</div>
+                            <div class="col-md-2">Отдел<br> бронирования</div>
+                        </div>
+                        {foreach item=place from=$this.pm560}
+                        <div class="row">
+                            <div class="col-6 col-md-2 bg-gray col-title">
+                                {if $place->videoUrl}
+                                    <a href="javascript:void(0)" class="place-video" data-toggle="modal" data-target="#video-modal" data-link="{$place->videoUrl}" data-title="{if $lang == 'en'}{$place->name_en}{else}{$place->name}{/if}"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                                {/if}
+                                <div class="title">
+                                    {if $place->suptitle}<div class="suptitle"><span>{$place->suptitle}</span></div>{/if}
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#placeModal{$place->id}">{if $lang == 'en'}{$place->name_en|dbtexttohtml}{else}{$place->name|dbtexttohtml}{/if}</a>
+                                    {if $place->subtitle}<div class="subtitle"><span>{$place->subtitle}</span></div>{/if}
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-right stars">
+                                {if $place->stars == 1}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 2}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 3}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 4}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {elseif $place->stars == 5}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                {else}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {/if}
+                            </div>
+                            <div class="d-none d-md-block col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Минимальный срок проживания 2 ночи">2 ночи</a></div>
+                            <div class="col-8 col-md-2 bg-gray place-icons">
+                                <i class="fa fa-cutlery {if $place->inclusive[1]}active{/if}" data-toggle="tooltip" data-placement="top" title="Завтрак" aria-hidden="true"></i> 
+                                <i class="fa fa-pool {if $place->inclusive[2]}active{/if}" data-toggle="tooltip" data-placement="top" title="Бассейн" aria-hidden="true"></i> 
+                                <i class="fa fa-spa {if $place->inclusive[3]}active{/if}" data-toggle="tooltip" data-placement="top" title="СПА" aria-hidden="true"></i> 
+                                <i class="fa fa-gum {if $place->inclusive[4]}active{/if}" data-toggle="tooltip" data-placement="top" title="Тренажерный зал" aria-hidden="true"></i> 
+                                <i class="fa fa-wheelchair {if $place->inclusive[5]}active{/if}" data-toggle="tooltip" data-placement="top" title="Номера для людей с ограниченными возможностями" aria-hidden="true"></i>
+                                <i class="fa fa-baby-room {if $place->inclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                            </div>
+                            <div class="col-4 col-md-1 bg-gray place-icons">
+                                <i class="fa fa-baby-room {if $place->notinclusive[6]}active{/if}" data-toggle="tooltip" data-placement="top" title="Детская комната" aria-hidden="true"></i> 
+                                <i class="fa fa-paw {if $place->notinclusive[7]}active{/if}" data-toggle="tooltip" data-placement="top" title="Возможно размещение с домашними животными" aria-hidden="true"></i>
+                            </div>
+                            <div class="d-md-none col-3 col-md-1 bg-white text-center place-term"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Минимальный срок проживания 2 ночи">2 ночи</a></div>
+                            <div class="col-3 col-md-2 bg-white text-center">
+                                {if $place->price > 0}
+                                <span class="title price" data-toggle="modal" data-target="#placePriceModal{$place->id}">{if $place->price}{if $lang == 'en'}form {$place->price} ₽{else}от {$place->price} ₽{/if}{else}-{/if}</span>
+                                {elseif $place->price == 'хз'}
+                                <div class="capacity capacity-cart specified" style="position:relative;"></div>
+                                {else}
+                                <div class="capacity capacity-cart sold-out" style="position:relative;"></div>
+                                {/if}
+                            </div>
+                            <div class="col-6 col-md-2 bg-gray text-center">
+                                <div class="place-phone">{$place->phone}</div>
+                                {if $place->email}
+                                <div class="place-email"><a href="mailto:{$place->email}">Написать на почту</a></div>
+                                {/if}
+                            </div>
+                        </div>
+                        {/foreach}
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- loop start -->
+{foreach item=place from=$this.pmList}
+<div class="row">
+    <div class="modal fade" id="placeModal{$place->id}" tabindex="-1" role="dialog" aria-labelledby="placeModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    {assign var=isimgplace value=$place->id|isplacepicpic}
+                    {if $isimgplace}
+                        <img class="img-responsive" src="/images/places/resized/{$place->id}.jpg" data-ratio="1">
+                    {else}
+                        <img class="img-responsive" src="/content/hotel.jpg">
+                    {/if}
+                </div>
+                {if $place->modal_desc}
+                <div class="modal-footer">
+                    {if $lang == 'en'}{$place->description_en|dbtexttohtml}{else}{$place->description|dbtexttohtml}{/if}
+                </div>
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="placePriceModal{$place->id}" tabindex="-1" role="dialog" aria-labelledby="placePriceModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    {assign var=isimgplace value=$place->id|isplacepicpic}
+                    {if $isimgplace}
+                        <img class="img-responsive" src="/images/places/resized/{$place->id}.jpg" data-ratio="1">
+                    {else}
+                        <img class="img-responsive" src="/content/hotel.jpg">
+                    {/if}
+                </div>
+                {if $place->modal_desc}
+                <div class="modal-footer">
+                    {if $place->price > 0}
+                        <p class="h3">{if $lang == 'en'}Cost of accommodation{else}Стоимость размещения{/if}</p>
+                        {if $lang == 'en'}{$place->modal_desc_en|dbtexttohtml}{else}{$place->modal_desc|dbtexttohtml}{/if}
+                    {else}
+                        <div class="capacity capacity-cart sold-out" style="position:relative;height:90px;"></div>
+                    {/if}
+                </div>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+{/foreach}
+<!-- loop end -->
+
+<section class="s7-section d-none">
+    <div class="container">
+        <div class="row">
+            <a href="https://www.s7.ru/special-offers/gastreet2019/index.dot" target="_blank">
+                <img src="/images/s7-special.png" class="img-fluid">
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="videoModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+                <iframe height="400" src="" style="width:100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

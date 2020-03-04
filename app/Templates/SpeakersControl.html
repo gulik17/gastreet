@@ -1,0 +1,291 @@
+{assign var=this value=$SpeakersControl}
+
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="##close##"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="videoModalLabel">##videoModalLabel##</h4>
+            </div>
+            <div class="modal-body">
+                <iframe allowfullscreen="" height="400" src="" style="width:100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron-blank">
+    <div class="container">
+        <div class="content">
+            <ul class="breadcrumbs">
+                <li><a href="/">##home##</a></li>
+                <li><span>##speakers##</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h1 class="page-headline gss-speakers-title">##speakers##</h1>
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-6 pr-0">
+                    <div class="g-emoji-content">
+                        <div class="g-emoji-icon">
+                            <img src="/images/emoji/6.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="g-emoji-balun">
+                            А&nbsp;почему у&nbsp;всех спикеров разный фон?
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="g-emoji-content">
+                        <div class="g-emoji-balun">
+                            Все просто! Цвет фона - это цвет площадки
+                        </div>
+                        <div class="g-emoji-icon">
+                            <img src="/images/emoji/7.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-none">
+        <div class="col-md-12 tags-list-speakers">
+            <ul>
+                <li class="gss-tag-li tag_ambassador {if $this.tag == 'амбассадор'}active{/if} ">
+                    <a title="#амбассадор" href="{link show=speakers tag=амбассадор}"><i class="fa fa-ambassador" aria-hidden="true"></i> АМБАССАДОРЫ</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == ''}active{/if} ">
+                    <a title="#2020" href="{link show=speakers}">#2020</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2019'}active{/if} ">
+                    <a title="#2019" href="{link show=speakers tag=2019}">#2019</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2018'}active{/if} ">
+                    <a title="#2018" href="{link show=speakers tag=2018}">#2018</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2017'}active{/if} ">
+                    <a title="#2017" href="{link show=speakers tag=2017}">#2017</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2016'}active{/if} ">
+                    <a title="#2016" href="{link show=speakers tag=2016}">#2016</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2015'}active{/if} ">
+                    <a title="#2015" href="{link show=speakers tag=2015}">#2015</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == 'barstreet'}active{/if} ">
+                    <a title="#barstreet" href="{link show=speakers tag=barstreet2016}">#barstreet</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 tags-list-speakers">
+            <p class="note">{if $lang == 'en'}SELECT TAG{else}ВЫБЕРИТЕ ТЕГ{/if}:</p>
+        </div>
+        <div class="col-md-12 tags-list-speakers">
+            <ul class="m-0">
+                <li class="gss-tag-li {if $this.tag == ''}active{/if} ">
+                    <a title="#ВСЕ" href="{link show=speakers}">#ВСЕ</a>
+                </li>
+                <li class="gss-tag-li tag_mainstreet {if $this.tag == 'mainstreet'}active{/if} ">
+                    <a title="#mainstreet" href="{link show=speakers tag=mainstreet y=2020}">#MAINSTREET</a>
+                </li>
+                <li class="gss-tag-li tag_businessschool {if $this.tag == 'бизнесшкола'}active{/if} ">
+                    <a title="#бизнесшкола" href="{link show=speakers tag=бизнесшкола y=2020}">#БИЗНЕСШКОЛА</a>
+                </li>
+                <li class="gss-tag-li tag_chefstreet {if $this.tag == 'chefstreet'}active{/if} ">
+                    <a title="#chefstreet" href="{link show=speakers tag=chefstreet y=2020}">#CHEFSTREET</a>
+                </li>
+                <li class="gss-tag-li tag_barstreet {if $this.tag == 'barstreet'}active{/if} ">
+                    <a title="#barstreet" href="{link show=speakers tag=barstreet y=2020}">#BARSTREET</a>
+                </li>
+                <li class="gss-tag-li tag_rebro {if $this.tag == 'rebro'}active{/if} ">
+                    <a title="#rebro" href="{link show=speakers tag=rebro y=2020}">#REBRO</a>
+                </li>
+                <li class="gss-tag-li d-none tag_tedx {if $this.tag == 'tedx'}active{/if} ">
+                    <a title="#TEDx" href="{link show=speakers tag=tedx y=2020}">#TEDx</a>
+                </li>
+<!--                <li class="gss-tag-li tag_fuckup {if $this.tag == 'fuckup'}active{/if} ">-->
+<!--                    <a title="#fuckup" href="{link show=speakers tag=fuckup y=2020}" onclick="return false">#FUCKUP</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_partnerstreet {if $this.tag == 'partnerstreet'}active{/if} ">-->
+<!--                    <a title="#partnerstreet" href="{link show=speakers tag=partnerstreet y=2020}">#PARTNERSTREET</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_winedome {if $this.tag == 'winedome'}active{/if} ">-->
+<!--                    <a title="#winedome" href="{link show=speakers tag=winedome y=2020}">#WINEDOME</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_baristastreet {if $this.tag == 'baristastreet'}active{/if} ">-->
+<!--                    <a title="#baristastreet" href="{link show=speakers tag=baristastreet y=2020}">#BARISTASTREET</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_centralnayaploshchad {if $this.tag == 'центральнаяплощадь'}active{/if} ">-->
+<!--                    <a title="#центральнаяплощадь" href="{link show=speakers tag=центральнаяплощадь y=2020}">#центральнаяплощадь</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_franchisestreet {if $this.tag == 'franchisestreet'}active{/if} ">-->
+<!--                    <a title="#franchisestreet" href="{link show=speakers tag=franchisestreet y=2020}">#franchisestreet</a>-->
+<!--                </li>-->
+                <li class="gss-tag-li tag_ambassador {if $this.tag == 'амбассадор'}active{/if} ">
+                    <a title="#амбассадор" href="{link show=speakers tag=амбассадор}"><i class="fa fa-ambassador" aria-hidden="true"></i> АМБАССАДОРЫ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="speakers-grid js-speakers-grid {if $this.tag != '2018' and $this.tag != '2017' and $this.tag != '2016' and $this.tag != '2015' and $this.tag != 'barstreet2016'}speakers_2019{/if}">
+        <div class="row">
+            <div class="col-md-12">
+                {if $this.tag == '2018'}
+                    <div class="speakers-video-bg" data-target="#video-modal" data-toggle="modal" data-link="lzh8QITXavI" data-title="Как это было в 2018 году" style="background-image: url(/images/v-2017.jpg);">
+                        <p><span>{if $lang == 'en'}Watch how it was in 2018{else}Смотреть как это было в 2018 году{/if}</span></p>
+                    </div>
+                {/if}
+                {if $this.tag == '2017'}
+                    <div class="speakers-video-bg" data-target="#video-modal" data-toggle="modal" data-link="OBwVnGCIgIo" data-title="Как это было в 2017 году" style="background-image: url(/images/v-2017.jpg);">
+                        <p><span>{if $lang == 'en'}Watch how it was in 2017{else}Смотреть как это было в 2017 году{/if}</span></p>
+                    </div>
+                {/if}
+                {if $this.tag == '2016'}
+                    <div class="speakers-video-bg" data-target="#video-modal" data-toggle="modal" data-link="B8L_3yvoL_Y" data-title="Как это было в 2016 году" style="background-image: url(/images/v-2016.jpg);">
+                        <p><span>{if $lang == 'en'}Watch how it was in 2016{else}Смотреть как это было в 2016 году{/if}</span></p>
+                    </div>
+                {/if}
+                {if $this.tag == '2015'}
+                    <div class="speakers-video-bg" data-target="#video-modal" data-toggle="modal" data-link="80HISWnKeCg" data-title="Как это было в 2015 году" style="background-image: url(/images/v-2015.jpg);">
+                        <p><span>{if $lang == 'en'}Watch how it was in 2015{else}Смотреть как это было в 2015 году{/if}</span></p>
+                    </div>
+                {/if}
+            </div>
+        </div>
+        <div class="row grid js-grid">
+            <div class="col-6 col-md-3 grid-entry">
+                <a class="person-teaser tag_2020 tag_chefstreet tag_biznesshkola tag_mainstreet " href="/folkspeaker">
+                    <img src="/images/folk_speaker_btn.png" data-ratio="1" class="img-fluid">
+                    <div class="about" style="background-image: none"></div>
+                </a>
+            </div>
+            {if $this.spmList}
+                <!-- loop start -->
+                {foreach item=speaker from=$this.spmList}
+                <div class="col-6 col-md-3 grid-entry">
+                    <a class="person-teaser js-popover {$speaker.tags|tagtocssclass}" href="#popover-win-{$speaker.id}" data-popover="#popover-win-{$speaker.id}" data-timer="on">
+                        {assign var=isSpeackerImg2 value=$speaker.id|isspeakerpicpic:'_b'}
+                        <div class="img-tags">
+                            {$speaker.tags|tagformat}
+                            {if $speaker.partner_id > 0}
+                                <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1">
+                            {/if}
+                        </div>
+                        {if $speaker.country != 'ru'}
+                        <div class="icon-country {$speaker.country}"></div>
+                        {/if}
+                        <div class="volunteer_medal_main speaker_medal_main">{$speaker.years|yeartomedal}</div>
+                        {if $speaker.pic1}
+                            <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1">
+                        {else}
+                            <img src="/images/gss/speaker.jpg" data-ratio="1">
+                        {/if}
+                        <div class="about">
+                            {if $lang == 'en'}
+                                <p class="name">{$speaker.name_en}{if $speaker.michelin} <span class="michelin michelin_{$speaker.michelin}"></span>{/if}<br/>{$speaker.secondName_en}</p>
+                                <p class="job">{$speaker.company_en}{if $speaker.cityName_en}<br/>{$speaker.cityName_en}{/if}</p>
+                            {else}
+                                <p class="name">{$speaker.name}{if $speaker.michelin} <span class="michelin michelin_{$speaker.michelin}"></span>{/if}<br/>{$speaker.secondName}</p>
+                                <p class="job">{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}</p>
+                            {/if}
+                        </div>
+                    </a>
+                </div>
+                {/foreach}
+                <!-- loop end -->
+            {/if}
+        </div>
+    </div>
+</div>
+
+{foreach from=$this.spmList item=speaker}
+{assign var=isSpeackerImg2 value=$speaker.id|isspeakerpicpic:'_b'}
+<div class="modal fade" id="popover-win-{$speaker.id}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <a href="#" class="nav-btn prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        <a href="#" class="nav-btn next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div class="modal-content popover-win {$speaker.tags|tagtocssclass}">
+            <div class="modal-header">
+                <span class="close" data-dismiss="modal">&times;</span>
+            </div>
+            <div class="modal-body p-0">
+                <figure class="thumb fg-container">
+                    <div class="img-tags">
+                        {$speaker.tags|tagformat}
+                        {if $speaker.partner_id > 0}
+                            <img class="foreground" src="/images/parthners/resized/{$speaker.p_pic}?v={$speaker.tsUpdated}" data-ratio="1">
+                        {/if}
+                    </div>
+                    <div class="icon-country {$speaker.country}"></div>
+                    {if $speaker.pic1}
+                        <img src="/images/speackers/resized/{$speaker.pic1}?v={$speaker.tsUpdated}" data-ratio="1">
+                    {else}
+                        <img src="/images/gss/speaker.jpg" data-ratio="1">
+                    {/if}
+                </figure>
+                {if $lang == 'en'}
+                    <p class="title">{$speaker.name_en}<br/>{$speaker.secondName_en}</p>
+                    <div class="desc">
+                        <p>{$speaker.company_en}{if $speaker.cityName_en}<br/>{$speaker.cityName_en}{/if}{if $speaker.position_en}<br/><br/>{$speaker.position_en|dbtexttohtml}{/if}</p>
+                        <p>{$speaker.description_en|dbtexttohtml}</p>
+                        <div class="speaker-icon">
+                        {if $speaker.facebook}<a href="{$speaker.facebook}" class="fa fa-facebook" target="_blank"></a>{/if}
+                        {if $speaker.vk}<a href="{$speaker.vk}" class="fa fa-vk" target="_blank"></a>{/if}
+                        {if $speaker.instagram}<a href="{$speaker.instagram}" class="fa fa-instagram" target="_blank"></a>{/if}
+                        {if $speaker.twitter}<a href="{$speaker.twitter}" class="fa fa-twitter" target="_blank"></a>{/if}
+                        {if $speaker.site}<a href="{$speaker.site}" class="fa fa-globe" target="_blank"></a>{/if}
+                        </div>
+                    </div>
+                {else}
+                    <p class="title">{$speaker.name}<br/>{$speaker.secondName}</p>
+                    <div class="desc">
+                        <p>{$speaker.company}{if $speaker.cityName}<br/>{$speaker.cityName}{/if}{if $speaker.position}<br/><br/>{$speaker.position|dbtexttohtml}{/if}</p>
+                        <p>{$speaker.description|dbtexttohtml}</p>
+                        <div class="speaker-icon">
+                        {if $speaker.facebook}<a href="{$speaker.facebook}" class="fa fa-facebook" target="_blank"></a>{/if}
+                        {if $speaker.vk}<a href="{$speaker.vk}" class="fa fa-vk" target="_blank"></a>{/if}
+                        {if $speaker.instagram}<a href="{$speaker.instagram}" class="fa fa-instagram" target="_blank"></a>{/if}
+                        {if $speaker.twitter}<a href="{$speaker.twitter}" class="fa fa-twitter" target="_blank"></a>{/if}
+                        {if $speaker.site}<a href="{$speaker.site}" class="fa fa-globe" target="_blank"></a>{/if}
+                        </div>
+                    </div>
+                {/if}
+                <div class="speaker-mk">
+                    {getmkbyspeaker id=$speaker.id}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/foreach}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5 mb-3 tags-list-oldspeakers text-center">
+            <ul class="nav navbar-nav navbar-right">
+                <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Спикеры прошлых лет <span class="caret"></span> </a>
+                    <ul class="dropdown-menu" aria-labelledby="drop3">
+                        <li><a href="{link show=speakers tag=2019}">#2019</a></li>
+                        <li><a href="{link show=speakers tag=2018}">#2018</a></li>
+                        <li><a href="{link show=speakers tag=2017}">#2017</a></li>
+                        <li><a href="{link show=speakers tag=2016}">#2016</a></li>
+                        <li><a href="{link show=speakers tag=2015}">#2015</a></li>
+                        <li><a href="{link show=speakers tag=barstreet2016}">#barstreet</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
