@@ -2107,7 +2107,7 @@ main {
         min-height: 46rem;}
     .main-page header {
         position: absolute;
-        background-color: #000;
+        background-color: #000!important;
         z-index: 10001;}
 }
 
