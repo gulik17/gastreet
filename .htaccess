@@ -23,8 +23,11 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.gastreet\.com$ [NC]
 RewriteRule ^(.*)$ https://gastreet.com/$1 [R=301,L]
 
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://gastreet.com/$1 [L,R=301]
+RewriteCond %{HTTP:Front-End-Https} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+#RewriteCond %{HTTPS} ^off$
+#RewriteRule ^(.*)$ https://gastreet.com/$1 [L,R=301]
 
 #RewriteCond %{HTTP:PORT} !^443$
 #RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]

@@ -130,6 +130,16 @@ class BaseControl extends Control {
             $this->addData("gastreetlubimki", 0);
         }
 
+        if ( ($code == 'hells_kitchen') || (Context::getObject('code') == 'hells_kitchen') ) {
+            if (Request::getVar("code")) {
+                Context::setObject('code', 'hells_kitchen');
+            }
+            $this->gcode = 'hells_kitchen';
+            $this->addData("hells_kitchen", 1);
+        } else {
+            $this->addData("hells_kitchen", 0);
+        }
+
         // Устанавливаем язык пользователя
         if ($this->actor) {
             if ( (Request::getVar("lang")) && ( (Request::getVar("lang") == 'en') || (Request::getVar("lang") == 'ru') ) ) {

@@ -1107,13 +1107,14 @@ p.oferta {
     width: 128px;}
 .gss-mainpage-statistics {
     line-height: 1.8;
-    padding: 0 0 15px 0;}
+    padding-top: 15px;
+    padding-bottom: 15px;}
 .gss-mainpage-statistics-mobile {
     padding: 15px;
     width: 100%;
     overflow: hidden;}
 .gss-mainpage-statistics-text {
-    color: #fff;
+    color: #000;
     font-weight: 400;}
 .gss-mainpage-statistics-digits {
     color: #e51a4b;
@@ -3577,12 +3578,12 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
     margin-left: 30px;
     padding: 3px 10px;
     box-shadow: 0 0 7px 0 #fff;}
-.gss-mainpage-statistics-mobile .social-icons {
+.gss-mainpage-statistics .social-icons {
     text-align: center;}
-.gss-mainpage-statistics-mobile .social-icons a {
+.gss-mainpage-statistics .social-icons a {
     border-color: #0088d4;
     background-color: #0088d4;}
-.gss-mainpage-statistics-mobile .social-icons a:last-child {
+.gss-mainpage-statistics .social-icons a:last-child {
     border-color: #0088d4;
     color: #0088d4;
     background-color: #fff;}
@@ -5814,6 +5815,7 @@ a.credit {
     margin-bottom: -60px;
     transition: all .4s cubic-bezier(0.61, 0.02, 0.47, 0.99)}
 .container__main-interactive .img-item.hover {
+    cursor: pointer;
     z-index: 1;}
 .container__main-interactive .img-item:after {
     content: "";

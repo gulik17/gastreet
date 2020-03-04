@@ -20,11 +20,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-5">
                         <h1 class="page-headline">Билеты</h1>
                         {if $this.gastreetrebro}
                             <p class="subtitle">С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года.</p>
+                        {elseif $this.hells_kitchen}
+                            <p class="subtitle">Приветствуем тебя, участник кастинга «Адской Кухни»! С&nbsp;1&nbsp;по 5&nbsp;июня 2020 года состоится самый огненный ивент в&nbsp;ресторанной отрасли, где встретятся 5000 лучших шефов и рестораторов. И ты можешь стать участником этого события на особых условиях.<br>
+                                Кстати, обрати особое внимание на билет ШЕФСКИЙ - это самый оптимальный вариант для как начинающего, так и&nbsp;супер-опытного шефа! Более подробно о площадке CHEF STREET ты можешь узнать <a href="{link show=catalog area=9}">здесь</a>!</p>
                         {else}
                             <p class="subtitle">Всё как ты любишь! Там, где ты любишь.<br>
                                 С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года. Остался один шаг</p>
@@ -45,6 +48,22 @@
                             </div>
                             <div class="offset-md-0 col-md-3 offset-3 col-6 mb-4">
                                 <img src="/images/rebro_full_logo.png" class="img-fluid" alt="ReBro">
+                            </div>
+                        </div>
+                        {elseif $this.hells_kitchen}
+                        <div class="row">
+                            <div class="col-md-7 offset-md-1">
+                                <div class="g-emoji-content mt-5 mt-md-0">
+                                    <div class="g-emoji-balun">
+                                        Если ты на этой странице, значит ты знаешь не понаслышке, что такое «Адская Кухня», поэтому для тебя действует специальная цена!
+                                    </div>
+                                    <div class="g-emoji-icon">
+                                        <img src="/images/emoji/16.png" class="img-fluid" alt="Левицкий">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offset-md-0 col-md-3 offset-3 col-6 mb-4">
+                                <img src="/images/ad_k_logo.png" class="img-fluid" alt="Адская кухня">
                             </div>
                         </div>
                         {else}
