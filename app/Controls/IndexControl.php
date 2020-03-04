@@ -19,7 +19,8 @@ class IndexControl extends BaseControl {
         $this->layout = '/index.html';
         if ($this->actor) {
             $this->addData("actor", $this->actor);
-            if (isset($this->actor->tsOnline) && time() - $this->actor->tsOnline > 60 * 3) {
+            $tsOnline = ($this->actor->tsOnline) ? $this->actor->tsOnline : 0;
+            if (isset($tsOnline) && (time() - $tsOnline > 60 * 3) ) {
                 $um = new UserManager();
                 $this->actor = $um->checkRegistered($this->actor);
                 $um->updateVisitTime($this->actor->id);

@@ -1169,11 +1169,15 @@ class UserManager extends BaseEntityManager {
         if ( isset($actor) && ($actor->parentUserId == null) ) {
             $userTickets = $bm->getTicketsByUserIdNoPay($actor->id);
             $userProducts = $bpm->getProductsByUserIdNoPay($actor->id);
-            return count($userTickets) + count($userProducts);
+			$userTickets = ($userTickets) ? count($userTickets) : 0;
+			$userProducts = ($userProducts) ? count($userProducts) : 0;
+            return $userTickets + $userProducts;
         } else {
             $userTickets = $bm->getTicketsByChildIdNoPay($actor->id);
             $userProducts = $bpm->getProductsByChildIdNoPay($actor->id);
-            return count($userTickets) + count($userProducts);
+			$userTickets = ($userTickets) ? count($userTickets) : 0;
+			$userProducts = ($userProducts) ? count($userProducts) : 0;
+            return $userTickets + $userProducts; 
         }
         return 0;
     }

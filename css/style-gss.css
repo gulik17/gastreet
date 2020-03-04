@@ -3849,11 +3849,11 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
     transition:         transform .15s ease-in-out;}
 .nav-menu .menu > li.has-sub-menu > div {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 8px);
     left: -20px;
     display: none;
     padding: 20px 20px;
-    background: #000;
+    background: rgba(0, 0, 0, .9);
     width: auto;}
 .nav-menu .menu > li.has-sub-menu > div > ul {
     display: inline-block;
@@ -4519,7 +4519,7 @@ main {
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    background: transparent;}
+    background: rgba(0, 0, 0, 0.7);}
 .subscribtion_form * {
     color: #000;
     text-align: center;}
@@ -5901,7 +5901,8 @@ a.credit {
     bottom: 15px;
     background-color: #fff;
     width: 1px;}
-
+.banner-mobile-page {
+    padding-top: 4rem;}
 .banner-mobile-page .banner-mobile-body .banner-mobile-img {
     padding-left: 0;}
 .banner-mobile-page .banner-mobile-body:after{

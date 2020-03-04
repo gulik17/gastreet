@@ -1401,6 +1401,11 @@ textarea {
     display: block;
     text-decoration: none;
     color: inherit;}
+.nav-menu .menu>li>a {
+    padding-top: 8px;
+    margin-top: -8px;
+    padding-bottom: 8px;
+    margin-bottom: -8px;}
 
 .nav-menu .menu > li {
     display: inline-block;
@@ -2101,8 +2106,8 @@ main {
     .jumbotron-slider .slider .slide {
         min-height: 46rem;}
     .main-page header {
-        background-color: #000!important;
         position: absolute;
+        background-color: #000;
         z-index: 10001;}
 }
 

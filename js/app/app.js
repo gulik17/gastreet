@@ -186,7 +186,7 @@ jQuery(document).ready(function ($) {
             var h = $(this).height();
             $(this).find('.js-slide').height(h);
         });
-    })
+    });
     $(window).trigger('resize.jumbotron-slider');
 
     // Карусель спикеров
@@ -610,14 +610,14 @@ $(function () {
         trigger: 'focus'
     });
     // Scroll Plugin
-    $(window).scroll(function() {
-        let scroll = $(window).scrollTop();
-        if (scroll >= 20) {
-            $(".main-page header").css({'background':'#000'});
-        } else {
-            $(".main-page header").css({'background':'transparent'});
-        }
-    });
+    // $(window).scroll(function() {
+    //     let scroll = $(window).scrollTop();
+    //     if (scroll >= 20) {
+    //         $(".main-page header").css({'background':'#000'});
+    //     } else {
+    //         $(".main-page header").css({'background':'rgba(0, 0, 0, .7)'});
+    //     }
+    // });
 
     $('#defaultCheck1').click(function () {
         if ( $('#defaultCheck1').prop("checked") ) {

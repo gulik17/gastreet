@@ -1,1 +1,0 @@
-2016-12-23 14:57:07: strlen() expects parameter 1 to be string, object given

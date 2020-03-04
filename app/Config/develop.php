@@ -17,10 +17,10 @@ url = "https://gastreet.com"                            ; URL проекта (б
 urlHttps = "http://gss"                                 ; SSL-URL проекта (протокол https://, без конечного слеша)
 internalIp = "http://127.0.0.1"                         ; Ip проекта относительно монеты
 baseHost = "gss"
-basePath = "/"						; Каталог, в котором находится приложение
-nocache = true						; Отправлять HTTP заголовки запрещающие кеширование
-encoding = "utf-8"					; Кодировка HTML содержимого
-debug = false						; Режим отладки
+basePath = "/"						                    ; Каталог, в котором находится приложение
+nocache = true						                    ; Отправлять HTTP заголовки запрещающие кеширование
+encoding = "utf-8"					                    ; Кодировка HTML содержимого
+debug = false						                    ; Режим отладки
 protocol = "https://"                                   ; Протокол
 revisionFile = DOCUMENT_ROOT "/version.xml"             ; XML файл, который содержит номер текущей ревизии
 tempDir = DOCUMENT_ROOT "/app/var/tmp/"                 ; Каталог для временных файлов, например, для lock-файлов Mutex
@@ -65,10 +65,10 @@ password = "nepir2019"                  ; пароль от ящика указ�
 
 [master]
 debug = true
-user = "c484884"				; u430747
-password = "H0nja0Kgzz"			; uNeMiSmAC3I.le
-host = "localhost" 				; u430747.mysql.masterhost.ru
-database = "gstrt_main"			; u430747_2017
+user = "srv163959_gstrt"				; u430747
+password = "NFmAlo0Cgp"			        ; uNeMiSmAC3I.le
+host = "mysql-163959.srv.hoster.ru" 	; u430747.mysql.masterhost.ru
+database = "srv163959_g20"			    ; u430747_2017
 driver = "MySQL"
 encoding = "utf8"
 persist = false							; set persistent connection
@@ -124,7 +124,7 @@ ApiKey = "AC7B435B-E804-3887-4E5B-06745A3F578B"         ; Ключ доступ�
 
 [moneta]    ; Старое
 accountId = 11493408;
-accountCode = "";
+accountCode = ""; 
 reccurentAccount = 0;
 
 [rfi]

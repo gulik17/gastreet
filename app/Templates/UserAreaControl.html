@@ -1,9 +1,0 @@
-{assign var=this value=$UserAreaControl}
-
-{if $this.parent}
-    <p><span style="color: red;">Внимание!</span> Ваш аккаунт был добавлен пользователем: <i>{$this.parent->phone} {$this.parent->lastname} {$this.parent->name}</i></p>
-{/if}
-
-<h3>{$this.hellotimeday}{if $actor->lastname}, {$actor->lastname} {$actor->name}{/if}!</h3>
-{component name="NewsShort"}
-<h4>Приятных покупок!</h4>

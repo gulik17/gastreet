@@ -16,6 +16,9 @@ $().ready(function () {
         var phone = $('#reg_phone').val();
         var youAboutUs = $('#reg_you_about_us');
         var code = $('#reg_code').val();
+        var thisBtn = $(this);
+        var thisBtnText = $(this).html();
+        var reg_phone = $('#reg_phone');
         var button = $('#reg_get_phone').attr('class');
 
         if (!youAboutUs.val()) {
@@ -26,6 +29,10 @@ $().ready(function () {
 
         button = button.split(' btn btn-white').join('');
         button = button.split('btn btn-white ').join('');
+
+        thisBtn.prop("disabled", true);
+        thisBtn.html("Отправка кода...");
+        reg_phone.prop("disabled", true);
 
         // ajax запрос
         var gotdata = 'job=usergetcode'
@@ -39,6 +46,9 @@ $().ready(function () {
             url: '/ajax',
             data: gotdata,
             success: function (data) {
+                thisBtn.prop("disabled", false);
+                reg_phone.prop("disabled", false);
+                thisBtn.html(thisBtnText);
                 if (data.error) {
                     $.alert(data.error, {title: false, type: 'danger'});
                     return false;

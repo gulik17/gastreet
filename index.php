@@ -12,6 +12,11 @@ try {
     // init logger
     Logger::init(Configurator::getSection("logger"));
 
+    // send headers
+    if (Configurator::get("application:nocache")) {
+        Request::sendNoCacheHeaders();
+    }
+
     // start application context
     Context::start(Configurator::get("application:name"));
 	
@@ -38,10 +43,7 @@ try {
     // execute action or render control
     $gen->exec($action, $control);
 
-    // send headers
-    if (Configurator::get("application:nocache")) {
-        Request::sendNoCacheHeaders();
-    }
+
 
     // отправляем заголовки, чтобы контент был в нужной кодировке
     Request::sendHeaderContentType(Configurator::get("application:encoding"));

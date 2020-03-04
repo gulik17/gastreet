@@ -3,14 +3,14 @@
  * Базовый класс для приложений
  */
 class BaseApplication extends Application {
-    private static $scripts = array();
-    private static $files_js = array();
-    private static $files_css = array();
+    private static $scripts = [];
+    private static $files_js = [];
+    private static $files_css = [];
     private static $rev = null;
 
     /**
      * Функция осуществляет контроль загрузки JS и CSS на страницу
-     * 
+     *
      * @param $fileName путь к файлу
      * @param $type тип файла, м.б. js, css
      */
