@@ -343,7 +343,7 @@ h1.title {
     flex-direction: column;
     justify-content: space-between;}
 .hotels .modal-dialog .modal-img-big, .hotels .modal-dialog .body .modal-img {
-    display: block;}
+    *display: block;}
 .hotels .modal-dialog .modal-hotels-price-title {
     font-size: 2.000rem;
     font-weight: 600;
@@ -435,7 +435,8 @@ h1.title {
     .hotels .carousel {
         margin-top: 1rem;}
     .hotels .modal-dialog .body .modal-img {
-        width: 33%;}
+        width: 33%;
+        height: 82px;}
     .hotels .modal-dialog .body .hotel-price {
         font-size: 0.8rem;}
     .hotels .modal-dialog .body .title, .hotels .modal-dialog .body .longtitle {

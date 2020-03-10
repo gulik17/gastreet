@@ -21,7 +21,7 @@
         </div>
         <div class="col-6 col-md-2">
             <div class="entry">
-                <p class="num">+</p>
+                <p class="num">6+</p>
                 <p class="text">доступ на все образоваельные площадки</p>
             </div>
         </div>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-6 col-md-2">
             <div class="entry">
-                <p class="num">+</p>
+                <p class="num" style="font-size: 2rem;line-height: 3rem;">Novotel</p>
                 <p class="text">закрытый отель</p>
             </div>
         </div>
@@ -1089,7 +1089,7 @@
 {literal}
 <style>
     .thematik-rebro-page .img-faces-page {
-        height: 52rem;
+        height: 44rem;
         background-image: url('/images/thematik-page/main_rebro.jpg');
         background-size: contain;
         background-repeat: no-repeat;
@@ -1173,12 +1173,12 @@
     .timetable-page .title-programm {
         font-size: 2.250rem;
         font-weight: 600;}
-    .chef.ticket-january, .barstreet.ticket-january {
+    .chef.ticket-january, .barstreet.ticket-january, .profi.ticket-january {
         filter: grayscale(100%);
         position: relative;
         transition: all .3s ease-out;
         opacity: .4;}
-    .chef.ticket-january:after, .barstreet.ticket-january:after {
+    .chef.ticket-january:after, .barstreet.ticket-january:after, .profi.ticket-january:after {
         content: '';
         position: absolute;
         left: 2px;
@@ -1189,18 +1189,18 @@
         opacity: .4;}
     .barstreet.ticket-january:after {
         right: 7px;}
-    .chef.ticket-january:hover:after, .barstreet.ticket-january:hover:after {
+    .chef.ticket-january:hover:after, .barstreet.ticket-january:hover:after, .profi.ticket-january:hover:after {
         display: none;
         opacity: 0;}
-    .chef.ticket-january:hover, .barstreet.ticket-january:hover {
+    .chef.ticket-january:hover, .barstreet.ticket-january:hover, .profi.ticket-january:hover {
         filter: grayscale(0);
         opacity: 1;}
     .rebro.ticket-january {
         order: 1;}
     .profi.ticket-january {
-        order: 2;}
-    .king.ticket-january {
         order: 3;}
+    .king.ticket-january {
+        order: 2;}
     .chef.ticket-january {
         order: 4;}
     .barstreet.ticket-january {
@@ -1218,12 +1218,10 @@
     @media (min-width: 300px) and (max-width: 767px) {
         html {
             font-size: 12px;}
-        .barstreet.ticket-january, .chef.ticket-january {
+        .barstreet.ticket-january, .chef.ticket-january, .profi.ticket-january {
             display: none;}
         .chef.ticket-january {
             order: 1;}
-        .profi.ticket-january {
-            order: 2;}
         .king.ticket-january {
             order: 3;}
         .more-link {

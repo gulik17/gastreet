@@ -6026,7 +6026,10 @@ a.credit {
     .page_body .ticket.main-ticket.ticket-rebro .btn {
         font-size: 1rem;}
     .page_body .ticket.main-ticket .ticket_new_cost {
-        font-size: .8rem;}
+        margin-top: 1rem;
+        font-size: .8rem;
+        margin-bottom: 0;
+        display: block;}
     .page_body .ticket.main-ticket .ticket_header {
         font-size: 1.6rem;}
     .page_body .ticket.main-ticket .ticket-hit {}

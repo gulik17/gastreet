@@ -12,7 +12,7 @@
       <paths name="Number Odin">
         <serverdata>
           <mappings>
-            <mapping deploy="/gastreet.com/www" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/gastreet.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

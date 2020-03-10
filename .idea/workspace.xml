@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/ProductManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.well-known/acme-challenge/nSas3DJ0Fvm-yh5splTu9lzavBTWsJKFSeFBpDvbNb4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.well-known/acme-challenge/sdlmMFrbHZfjxC4Oue7tZ_WGlFrNC3CEgeb1vPlUhPo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/catalog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/place.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/place.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_barstreet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_barstreet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_mainstreet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_mainstreet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +55,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/thematik-page" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -56,11 +65,11 @@
       <recent name="D:\YandexDisk\phpStormProject\gastreet\css\jquery-ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\images\thematik-page" />
+      <recent name="D:\GitHub\gastreet\images\place" />
       <recent name="D:\GitHub\gastreet\images" />
-      <recent name="D:\GitHub\gastreet\images\main" />
-      <recent name="D:\GitHub\gastreet\images\chatbot" />
-      <recent name="D:\GitHub\gastreet\app\Controls" />
-      <recent name="D:\GitHub\gastreet\app\Templates" />
+      <recent name="D:\GitHub\gastreet\app\Managers" />
+      <recent name="D:\GitHub\gastreet\app\Entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -147,6 +156,19 @@
       <workItem from="1582268277590" duration="16660000" />
       <workItem from="1582611517210" duration="41161000" />
       <workItem from="1582729209424" duration="36000" />
+      <workItem from="1583129655135" duration="18056000" />
+      <workItem from="1583223748903" duration="1212000" />
+      <workItem from="1583236138215" duration="3391000" />
+      <workItem from="1583303273320" duration="7772000" />
+      <workItem from="1583317642649" duration="1678000" />
+      <workItem from="1583320513183" duration="6335000" />
+      <workItem from="1583326912585" duration="1932000" />
+      <workItem from="1583329469339" duration="2944000" />
+      <workItem from="1583389581472" duration="7400000" />
+      <workItem from="1583409223261" duration="8337000" />
+      <workItem from="1583485340590" duration="6292000" />
+      <workItem from="1583498670824" duration="8553000" />
+      <workItem from="1583821431848" duration="4830000" />
     </task>
     <task id="LOCAL-00001" summary="Before open new ticket page">
       <created>1580481197809</created>
@@ -407,7 +429,70 @@
       <option name="project" value="LOCAL" />
       <updated>1582716504658</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Правки">
+      <created>1582792868989</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1582792868989</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Переделал Чаво">
+      <created>1582801615166</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1582801615166</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Начало интеграции AmoCRM">
+      <created>1582895378536</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1582895378536</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Перед открытием тематических страниц">
+      <created>1583158264911</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1583158264911</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Перенос сайта">
+      <created>1583317474126</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1583317474126</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Фиксы в связи с переносом">
+      <created>1583323011654</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1583323011654</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Корректировки на тематических страницах">
+      <created>1583325543586</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1583325543586</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Мелкие правки">
+      <created>1583332631255</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1583332631255</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Начало дня">
+      <created>1583821496118</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1583821496118</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,14 +512,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="After add special link ticket page" />
-    <MESSAGE value="Correct text on the ticket page" />
-    <MESSAGE value="Deleted ITTEHNOLOGY from menu" />
-    <MESSAGE value="Update FAQ page" />
-    <MESSAGE value="FolkSpeaker Update" />
-    <MESSAGE value="Add GitIgnore" />
-    <MESSAGE value="Folk Speaker vote finish" />
     <MESSAGE value="Разместил купон на проживание" />
     <MESSAGE value="Добавил партнерские илеты" />
     <MESSAGE value="Корректировки на главной и где жить" />
@@ -444,7 +523,6 @@
     <MESSAGE value="priceup страница" />
     <MESSAGE value="Пофиксил повышение цены и билеты" />
     <MESSAGE value="Правки страницы CHEFSTREET" />
-    <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Запуск шефской страницы" />
     <MESSAGE value="Добавлены тематические страницы" />
     <MESSAGE value="Правки" />
@@ -453,6 +531,14 @@
     <MESSAGE value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
     <MESSAGE value="Открыл доп опции и аватарку при регистрации" />
     <MESSAGE value="Правки на странице способы оплаты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Правки на странице способы оплаты" />
+    <MESSAGE value="Переделал Чаво" />
+    <MESSAGE value="Начало интеграции AmoCRM" />
+    <MESSAGE value="Перед открытием тематических страниц" />
+    <MESSAGE value="Перенос сайта" />
+    <MESSAGE value="Фиксы в связи с переносом" />
+    <MESSAGE value="Корректировки на тематических страницах" />
+    <MESSAGE value="Мелкие правки" />
+    <MESSAGE value="Начало дня" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начало дня" />
   </component>
 </project>
