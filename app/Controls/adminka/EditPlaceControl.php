@@ -37,6 +37,12 @@ class EditPlaceControl extends BaseAdminkaControl {
                 if (file_exists($fullFileName)) {
                     $this->addData("placeImg3", $file);
                 }
+
+                $file = $plmObj->pic4;
+                $fullFileName = Configurator::get("application:placesFolder") . "resized/" . $file;
+                if (file_exists($fullFileName)) {
+                    $this->addData("placeImg4", $file);
+                }
             }
         }
         $this->addData("statusList", Place::getStatusDesc());

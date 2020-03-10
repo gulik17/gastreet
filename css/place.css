@@ -1,11 +1,9 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 06.02.2018, 11:20:10
-    Author     : Gulik
+/**
+ *  To change this license header, choose License Headers in Project Properties.
+ *  To change this template file, choose Tools | Templates
+ *  and open the template in the editor.
+ *  Created on : 06.02.2018, 11:20:10
+ *  Author     : Gulik
 */
 .bg-gray {
     background-color: #ececec;}
@@ -238,11 +236,11 @@ h1.title {
     right: 29.4rem;
     top: 14rem;}
 .hotels .header .rixos {
-    right: 27.5rem;
-    bottom: 5.7rem;}
+    right: 28.5rem;
+    bottom: -20.3rem;}
 .hotels .header .royal {
-    right: 22.8rem;
-    bottom: 11.1rem;}
+    right: 24.8rem;
+    bottom: -14.9rem;}
 .hotels .header .novotel {
     right: -13px;
     top: 24px;}
@@ -281,9 +279,9 @@ h1.title {
     right: 0;
     height: 1px;
     background: #badaf1;}
-.hotels .header .map-page .free-numbers {
+.hotels .free-numbers {
     font-weight: 600;}
-.hotels .header .map-page .free-numbers span {
+.hotels .free-numbers span {
     color: #e51a4b;}
 .hotels .header .map-page .free .free-title {
     text-decoration: underline;}
@@ -343,7 +341,9 @@ h1.title {
     flex-direction: column;
     justify-content: space-between;}
 .hotels .modal-dialog .modal-img-big, .hotels .modal-dialog .body .modal-img {
-    *display: block;}
+    display: block;}
+.hotels .modal-dialog .body .modal-img {
+    cursor: pointer;}
 .hotels .modal-dialog .modal-hotels-price-title {
     font-size: 2.000rem;
     font-weight: 600;
@@ -460,40 +460,40 @@ h1.title {
         border-radius: 30px;}
     .hotels .header .pick {
         left: 6.6rem;
-        top: 7.3rem;}
+        top: 0rem;}
     .hotels .header .dolina {
-        left: 5.4rem;
-        top: 8.7rem;}
+        left: 5.6rem;
+        top: 1.65rem;}
     .hotels .header .congress {
         left: 8.2rem;
-        top: 8.8rem;}
+        top: 1.6rem;}
     .hotels .header .panorama {
-        left: 6.8rem;
-        top: 10.4rem}
+        left: 6.6rem;
+        top: 3.4rem;}
     .hotels .header .ibis {
-        left: 11.2rem;
-        top: 8.25rem;}
+        left: 11.6rem;
+        top: 1.1rem;}
     .hotels .header .sber {
         right: 11.5rem;
-        top: 11.5rem;}
+        top: 4.7rem;}
     .hotels .header .rixos {
-        right: 10.8rem;
-        bottom: 16.35rem;}
+        right: 11.2rem;
+        bottom: 4.85rem;}
     .hotels .header .royal {
-        right: 9.26rem;
-        bottom: 18.2rem;}
+        right: 9.8rem;
+        bottom: 6.6rem;}
     .hotels .header .novotel {
-        right: 1.46rem;
-        top: 6.8rem;}
+        right: 1.2rem;
+        top: 0.5rem;}
     .hotels .header .polyana .courtyard {
-        left: 4.6rem;
-        top: 3.8rem;}
+        left: 5.3rem;
+        top: 2.9rem;}
     .hotels .header .polyana .courtyard_2 {
-        left: 6.8rem;
-        top: 3.8rem;}
+        left: 7.4rem;
+        top: 3rem;}
     .hotels .header .polyana .marriott {
-        right: 2.5rem;
-        top: 4.15rem;}
+        right: 3.5rem;
+        top: 3.3rem;}
 }
 @media (min-width: 375px) and (max-width: 414px) {
     .hotels .header .marker-touch {
@@ -503,41 +503,41 @@ h1.title {
         z-index: 1;
         border-radius: 30px;}
     .hotels .header .pick {
-        left: 7.7rem;
-        top: 7.4rem;}
+        left: 7.8rem;
+        top: 0;}
     .hotels .header .dolina {
-        left: 6.3rem;
-        top: 9.25rem;}
+        left: 6.6rem;
+        top: 2.25rem;}
     .hotels .header .congress {
-        left: 9.6rem;
-        top: 9.28rem;}
+        left: 9.5rem;
+        top: 2rem;}
     .hotels .header .panorama {
-        left: 8rem;
-        top: 11.2rem;}
+        left: 7.8rem;
+        top: 4.2rem;}
     .hotels .header .ibis {
-        left: 13.2rem;
-        top: 8.6rem;}
+        left: 13.7rem;
+        top: 1.3rem;}
     .hotels .header .sber {
-        right: 13.5rem;
-        top: 12.6rem;}
+        right: 13.55rem;
+        top: 5.8rem;}
     .hotels .header .rixos {
-        right: 12.75rem;
-        bottom: 16.7rem;}
+        right: 13.2rem;
+        bottom: 5.1rem;}
     .hotels .header .royal {
-        right: 10.8rem;
-        bottom: 18.85rem;}
+        right: 11.5rem;
+        bottom: 7.35rem;}
     .hotels .header .novotel {
-        right: 1.62rem;
-        top: 7rem;}
+        right: 1.3rem;
+        top: 0.6rem;}
     .hotels .header .polyana .courtyard {
-        left: 5.45rem;
-        top: 3.9rem;}
+        left: 6.2rem;
+        top: 3rem;}
     .hotels .header .polyana .courtyard_2 {
-        left: 8.1rem;
-        top: 4rem;}
+        left: 8.6rem;
+        top: 3rem;}
     .hotels .header .polyana .marriott {
-        right: 3.1rem;
-        top: 4.3rem;}
+        right: 4.1rem;
+        top: 3.3rem;}
 }
 @media (min-width: 414px) and (max-width: 576px) {
     .hotels .header .marker-touch {
@@ -548,40 +548,40 @@ h1.title {
         border-radius: 30px;}
     .hotels .header .pick {
         left: 8.45rem;
-        top: 7.53rem;}
+        top: 0;}
     .hotels .header .dolina {
-        left: 6.95rem;
-        top: 9.5rem;}
+        left: 7.2rem;
+        top: 2.5rem;}
     .hotels .header .congress {
-        left: 10.58rem;
-        top: 9.59rem;}
+        left: 10.45rem;
+        top: 2.25rem;}
     .hotels .header .panorama {
-        left: 8.78rem;
-        top: 11.75rem;}
+        left: 8.5rem;
+        top: 4.75rem;}
     .hotels .header .ibis {
-        left: 14.6rem;
-        top: 8.8rem;}
+        left: 15.1rem;
+        top: 1.6rem;}
     .hotels .header .sber {
         right: 14.95rem;
-        top: 13.27rem;}
+        top: 6.45rem;}
     .hotels .header .rixos {
-        right: 14.06rem;
-        bottom: 16.9rem;}
+        right: 14.6rem;
+        bottom: 5.4rem;}
     .hotels .header .royal {
-        right: 11.95rem;
-        bottom: 19.33rem;}
+        right: 12.7rem;
+        bottom: 7.8rem;}
     .hotels .header .novotel {
-        right: 1.68rem;
-        top: 7rem;}
+        right: 1.4rem;
+        top: 0.76rem;}
     .hotels .header .polyana .courtyard {
-        left: 6.02rem;
-        top: 4rem;}
+        left: 6.8rem;
+        top: 3rem;}
     .hotels .header .polyana .courtyard_2 {
-        left: 9rem;
-        top: 4rem;}
+        left: 9.5rem;
+        top: 3rem;}
     .hotels .header .polyana .marriott {
-        right: 3.5rem;
-        top: 4.3rem;}
+        right: 4.4rem;
+        top: 3.45rem;}
 }
 @media (min-width: 576px) and (max-width: 768px) {
     .hotels .header .marker-touch {
@@ -634,9 +634,11 @@ h1.title {
         width: 80px;}
 }
 /* Medium */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 @media (min-width: 768px) and (max-width: 992px) {
+    .hotels .modal-dialog .body .hotels-mini-img {
+        padding-top: .5rem;
+        flex-direction: row;}
     .hotels .header .marker-touch {
         position: absolute;
         width: 2.5rem;
@@ -644,32 +646,32 @@ h1.title {
         z-index: 1;
         border-radius: 30px;}
     .hotels .header .pick {
-        left: 10.5rem;
-        top: 7.6rem;}
+        left: 10.7rem;
+        top: 0;}
     .hotels .header .dolina {
-        left: 8.5rem;
-        top: 10.3rem;}
+        left: 8.9rem;
+        top: 3.2rem;}
     .hotels .header .congress {
-        left: 13.4rem;
-        top: 10.45rem;}
+        left: 13.2rem;
+        top: 2.95rem;}
     .hotels .header .panorama {
-        left: 10.9rem;
-        top: 13.3rem;}
+        left: 10.6rem;
+        top: 6.2rem;}
     .hotels .header .ibis {
-        left: 18.8rem;
-        top: 9.4rem}
+        left: 19.5rem;
+        top: 2rem}
     .hotels .header .sber {
         right: 19.3rem;
-        top: 15.4rem;}
+        top: 8.6rem;}
     .hotels .header .rixos {
-        right: 18.1rem;
-        bottom: 16rem;}
+        right: 18.8rem;
+        bottom: 6rem;}
     .hotels .header .royal {
-        right: 15.4rem;
-        bottom: 19.3rem;}
+        right: 16.3rem;
+        bottom: 9.3rem;}
     .hotels .header .novotel {
-        right: 1.45rem;
-        top: 6.9rem;}
+        right: 1rem;
+        top: 1rem;}
     .hotels .header .polyana .courtyard {
         left: 7.8rem;
         top: 4rem;}
@@ -697,8 +699,8 @@ h1.title {
         font-size: 0.9rem}
     .hotels .header .map-page .map {
         position: relative;}
-    .hotels .header .transfer {
-        font-size: 0.7rem;}
+    .hotels .header .polyana .transfer {
+        margin-top: 0;}
 }
 @media (min-width: 993px) and (max-width: 1040px) {
     .hotels .header .marker-touch {
@@ -708,11 +710,11 @@ h1.title {
         z-index: 1;
         border-radius: 30px;}
     .hotels .header .pick {
-        left: 13.9rem;
-        top: 1rem;}
+        left: 14rem;
+        top: 0;}
     .hotels .header .dolina {
-        left: 11.2rem;
-        top: 4.7rem;}
+        left: 11.5rem;
+        top: 4.4rem;}
     .hotels .header .congress {
         left: 18rem;
         top: 4.8rem;}
@@ -720,20 +722,20 @@ h1.title {
         left: 14.6rem;
         top: 8.6rem;}
     .hotels .header .ibis {
-        left: 25.5rem;
-        top: 3.1rem;}
+        left: 26.5rem;
+        top: 2.5rem;}
     .hotels .header .sber {
         right: 24.4rem;
         top: 11.7rem;}
     .hotels .header .rixos {
-        right: 22.7rem;
-        bottom: 10rem;}
+        right: 23.7rem;
+        bottom: -16rem;}
     .hotels .header .royal {
-        right: 18.8rem;
-        bottom: 14.6rem;}
+        right: 20rem;
+        top: 17rem;}
     .hotels .header .novotel {
-        right: 0;
-        top: 0;}
+        right: -1rem;
+        top: 1rem;}
     .hotels .header .polyana .courtyard {
         left: 10rem;
         top: 3rem;}
@@ -741,8 +743,8 @@ h1.title {
         left: 15rem;
         top: 3.2rem;}
     .hotels .header .polyana .marriott {
-        right: 5.5rem;
-        top: 4.3rem;}
+        right: 6rem;
+        top: 3.6rem;}
 }
 /* Large */
 @media (min-width: 992px) {
@@ -750,6 +752,4 @@ h1.title {
         height: 100% !important;}
 }
 /* Extra large */
-@media (min-width: 1200px) {
-
-}
+@media (min-width: 1200px) {}

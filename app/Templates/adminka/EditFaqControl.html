@@ -8,28 +8,34 @@
 <h2>{if $this.faq}Редактирование {else}Создание {/if} вопроса</h2>
 <form id="form" action="{alink do=savefaq}" method="post" enctype="multipart/form-data" onsubmit="ignoreSnapshot();">
 	<input type="hidden" name="id" value="{$this.faq->id}" />
-	<div class="form-group">
-		<label>Сортировка:</label>
-		<input type="text" name="sortOrder" class="form-control" value="{$this.faq->sortOrder}" />
-	</div>
-	<div class="form-group">
-		<label>Вопрос:</label>
-		<textarea class="form-control" rows="5" name="question" id="question">{$this.faq->question}</textarea>
-	</div>
-	<div class="form-group">
-		<label>Вопрос (eng):</label>
-		<textarea class="form-control" rows="5" name="question_en" id="question_en">{$this.faq->question_en}</textarea>
-	</div>
-	<div class="form-group">
-		<label>Ответ:</label>
-		<textarea class="form-control" rows="12" name="answer" id="answer">{$this.faq->answer}</textarea>
-	</div>
-	<div class="form-group">
-		<label>Ответ (eng):</label>
-		<textarea class="form-control" rows="12" name="answer_en" id="answer_en">{$this.faq->answer_en}</textarea>
-	</div>
-	<div class="form-group">
-		<input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+	<div class="row">
+		<div class="form-group col-md-6">
+			<label>Сортировка:</label>
+			<input type="text" name="sortOrder" class="form-control" value="{$this.faq->sortOrder}" />
+		</div>
+		<div class="form-group col-md-6">
+			<label>Группа:</label>
+			<input type="text" name="ggroup" class="form-control" value="{$this.faq->ggroup}" />
+		</div>
+		<div class="form-group col-md-6">
+			<label>Вопрос:</label>
+			<textarea class="form-control" rows="5" name="question" id="question">{$this.faq->question}</textarea>
+		</div>
+		<div class="form-group col-md-6">
+			<label>Вопрос (eng):</label>
+			<textarea class="form-control" rows="5" name="question_en" id="question_en">{$this.faq->question_en}</textarea>
+		</div>
+		<div class="form-group col-md-6">
+			<label>Ответ:</label>
+			<textarea class="form-control" rows="12" name="answer" id="answer">{$this.faq->answer}</textarea>
+		</div>
+		<div class="form-group col-md-6">
+			<label>Ответ (eng):</label>
+			<textarea class="form-control" rows="12" name="answer_en" id="answer_en">{$this.faq->answer_en}</textarea>
+		</div>
+		<div class="form-group col-md-12">
+			<input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
+		</div>
 	</div>
 </form>
 <br/>

@@ -147,6 +147,20 @@
                 <input class="form-control u-file" name="file3" type="file" />
             </div>
         </div>
+        {if $this.placeImg4}
+        <div class="col-md-12 form-group">
+            <label>Картинка:</label>
+            <div>
+                <img src="/images/places/resized/{$this.placeImg4}?v={$this.tsUpdated}" />
+            </div>
+        </div>
+        {/if}
+        <div class="col-md-12 form-group">
+            <label id="file-dt4">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <div id="file-dd4">
+                <input class="form-control u-file" name="file4" type="file" />
+            </div>
+        </div>
         <div class="col-md-12 form-group">
             <input class="btn btn-success" id="submitPlace" type="submit" value="Сохранить"/>
         </div>

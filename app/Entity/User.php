@@ -15,6 +15,8 @@ class User extends Entity {
     const SIZE_XL = 'SIZE_XL';
     const SIZE_XXL = 'SIZE_XXL';
     const SIZE_XXXL = 'SIZE_XXXL';
+    const SIZE_XXXXL = 'SIZE_XXXXL';
+    const SIZE_XXXXXL = 'SIZE_XXXXXL';
 
     public $entityTable = 'user';
     public $primaryKey = 'id';
@@ -71,6 +73,8 @@ class User extends Entity {
             self::SIZE_XL => 'XL',
             self::SIZE_XXL => 'XXL',
             self::SIZE_XXXL => 'XXXL',
+            self::SIZE_XXXXL => 'XXXXL',
+            self::SIZE_XXXXXL => 'XXXXXL',
         ];
         return $size ? $sizeList[$size] : $sizeList;
     }

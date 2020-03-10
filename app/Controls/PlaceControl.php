@@ -11,6 +11,8 @@ class PlaceControl extends IndexControl {
         $this->layout = 'place.html';
         $this->controlName = "Place";
         $this->gcode = "hotels";
+        $fm = new FaqManager();
+        $fmList = $fm->getForPlace();
         $pm = new PlaceManager();
         $pmList = $pm->getActive();
         //deb($pmList);
@@ -29,6 +31,7 @@ class PlaceControl extends IndexControl {
             }
         }
 
+        $this->addData("fmList", $fmList);
         $this->addData("pmList", $pmList);
         $this->addData("pm960", $pm960);
         $this->addData("pm540", $pm540);

@@ -112,6 +112,17 @@ class SavePlaceAction extends AdminkaAction {
             $plmObj = $plm->save($plmObj);
         }
 
+        $fileNameParam = 'file4';
+        if (Request::isFile($fileNameParam)) {
+            $file = "4_" . $plmObj->id . ".jpg";
+            $image = new UploadedFile($fileNameParam);
+            $image->rename($file);
+            $image->saveTo(Configurator::get("application:placesFolder") . "resized/");
+
+            $plmObj->pic4 = $file;
+            $plmObj = $plm->save($plmObj);
+        }
+
         $eventicious = new Eventicious();
         $eventicious->setHost(Configurator::get("eventicious:host"));
         $eventicious->setCode(Configurator::get("eventicious:code"));

@@ -298,6 +298,12 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+    $('.hotels .modal-dialog .body .modal-img').click(function () {
+        let img = $(this).attr('src');
+        $('.hotels .modal-dialog .modal-img-big').attr('src', img);
+        return false;
+    });
+
     $('.partners-list .more .more-link').click(function (evt) {
         let partners = $(this).parents('.partners-list').find('ul');
         $(partners).find('li').css('display', 'inline-block');

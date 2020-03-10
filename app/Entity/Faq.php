@@ -7,6 +7,7 @@ class Faq extends Entity {
 	public $entityTable = 'faq';
 	public $primaryKey = 'id';
 
+	public $ggroup = null;
 	public $sortOrder = null;
 	public $question = null;
 	public $answer = null;
@@ -18,6 +19,7 @@ class Faq extends Entity {
 	function getFields() {
 		return array(
 			'id' => self::ENTITY_FIELD_INT,
+			'ggroup' => self::ENTITY_FIELD_INT,
 			'sortOrder' => self::ENTITY_FIELD_INT,
 			'question' => self::ENTITY_FIELD_STRING,
 			'answer' => self::ENTITY_FIELD_STRING,

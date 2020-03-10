@@ -29,6 +29,7 @@ class Place extends Entity {
     public $pic1 = null;
     public $pic2 = null;
     public $pic3 = null;
+    public $pic4 = null;
     public $videoUrl = null;
     public $status = null;
     public $tsCreated = null;
@@ -65,6 +66,7 @@ class Place extends Entity {
             'pic1' => self::ENTITY_FIELD_STRING,
             'pic2' => self::ENTITY_FIELD_STRING,
             'pic3' => self::ENTITY_FIELD_STRING,
+            'pic4' => self::ENTITY_FIELD_STRING,
             'videoUrl' => self::ENTITY_FIELD_STRING,
             'status' => self::ENTITY_FIELD_STRING,
             'tsCreated' => self::ENTITY_FIELD_INT,

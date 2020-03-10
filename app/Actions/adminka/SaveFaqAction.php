@@ -11,6 +11,7 @@ class SaveFaqAction extends AdminkaAction {
 		$doAct = "Вопрос добавлен";
 		$id          = Request::getInt("id");
 		$sortOrder   = Request::getInt("sortOrder");
+		$ggroup      = Request::getInt("ggroup");
 		$question    = Request::getVar("question");
 		$answer      = Request::getVar("answer");
 		$question_en = Request::getVar("question_en");
@@ -27,6 +28,7 @@ class SaveFaqAction extends AdminkaAction {
 			$doAct = "Вопрос отредактирован";
 		}
 		$fmObj->sortOrder   = $sortOrder;
+		$fmObj->ggroup      = $ggroup;
 		$fmObj->question    = $question;
 		$fmObj->answer      = $answer;
 		$fmObj->question_en = $question_en;

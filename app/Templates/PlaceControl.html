@@ -2,7 +2,7 @@
 
 <div class="jumbotron-blank">
     <div class="container">
-        <div class="content">
+        <div class="content pt-md-3">
             <ul class="breadcrumbs">
                 <li><a href="/">##home##</a></li>
                 <li><span>##hotels##</span></li>
@@ -12,14 +12,28 @@
 </div>
 
 <div class="container">
+    <div class="row header">
+        <div class="col-md-6 gastreet-city">
+            <div class="hotels-title">Красная Поляна +960<br>
+                Gastreet City</div>
+            <div class="free-numbers mb-3">Осталось <span>893</span> из 1000 номеров</div>
+        </div>
+        <div class="col-md-6">
+            <div class="g-emoji-content">
+                <div class="g-emoji-icon">
+                    <img src="/images/emoji/11.png" class="img-fluid" alt="">
+                </div>
+                <div class="g-emoji-balun">Бронирование возможно только после покупки основного билета на GASTREET</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     <div class="row header mb-5 pb-5">
         <div class="col-lg-12 map-page">
             <div class="row h-lg-100">
-                <div class="col-12 d-lg-none gastreet-city">
-                    <div class="hotels-title">Gastreet City</div>
-                    <div class="level-960 mb-1">Красная Поляна +960</div>
-                    <div class="free-numbers mb-3">Осталось <span>893</span> из 1000 номеров</div>
-                </div>
                 <div class="col-lg-12">
                     <a href="#" class="d-block marker-touch pick" data-target="#hotelsModal_pick" data-toggle="modal"></a>
                     <a href="#" class="d-block marker-touch dolina" data-target="#hotelsModal_dolina" data-toggle="modal"></a>
@@ -34,23 +48,16 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="row align-items-end h-lg-100">
-                        <div class="col-12 col-lg-10 gastreet-city d-none d-lg-block">
-                            <div class="hotels-title">gastreet city</div>
-                            <div class="level-960 mb-4">Красная Поляна +960</div>
-                            <div class="free-numbers mb-lg-0 mb-3">
-                                Осталось <span>893</span> из 1000 номеров
-                            </div>
-                        </div>
-                        <div class="offset-1 offset-lg-0 col-10 col-lg-2 free pt-2 pb-2">
+                        <div class="offset-1 offset-lg-10 col-10 col-lg-2 free pt-2 pb-2">
                             <div class="row align-items-end">
                                 <div class="col-12 free-title mb-2">Бесплатно</div>
                                 <div class="col-6 col-lg-12">
-                                    <img class="img-fluid mb-2" src="/images/place/cable.png" alt="">
-                                    <div class="free-subtitle mb-lg-3">Канатная дорога<br> с 9:00 до 1:00</div>
+                                    <img class="img-fluid mb-2" src="/images/place/cableway.svg" style="width: 40%;" alt="">
+                                    <div class="free-subtitle mb-lg-3">Канатная дорога<br>(01 - 05 июня)<br> с 7:00 до 1:00</div>
                                 </div>
                                 <div class="col-6 col-lg-12">
-                                    <img class="img-fluid mb-2" src="/images/place/bus.png" alt="">
-                                    <div class="free-subtitle">Трансфер 540–960м<br> с 9:00 до 1:00</div>
+                                    <img class="img-fluid mb-2" src="/images/place/transfer.svg" style="width: 60%;" alt="">
+                                    <div class="free-subtitle">Трансфер 540–960м<br>(01 - 06 июня)<br> с 9:00 до 1:00</div>
                                 </div>
                             </div>
                         </div>
@@ -71,9 +78,9 @@
                 </div>
                 <div class="offset-lg-7 col-lg-4 pl-lg-0">
                     <div class="d-flex align-items-center transfer">
-                        <img class="img-fluid img-transfer" src="/images/place/bus.png" alt="">
+                        <img class="img-fluid img-transfer" src="/images/place/transfer.svg" alt="">
                         <div class="ml-2">
-                            Трансфер из аэропорта <a href="#" class="timetable">Расписание</a>
+                            Трансфер из аэропорта <a href="#" class="timetable" data-target="#textPlaceModal" data-toggle="modal">Расписание</a>
                         </div>
                     </div>
                 </div>
@@ -88,9 +95,9 @@
         <div class="col-md-6">
             <div class="g-emoji-content">
                 <div class="g-emoji-icon">
-                    <img src="/images/emoji/11.png" class="img-fluid" alt="">
+                    <img src="/images/emoji/4.png" class="img-fluid" alt="">
                 </div>
-                <div class="g-emoji-balun">Бронирование возможно только после покупки основного билета на GASTREET</div>
+                <div class="g-emoji-balun">Все отели в GASTREET CITY можно забронировать минимум на 5 суток!</div>
             </div>
         </div>
     </div>
@@ -106,6 +113,9 @@
                 </div>
                 <div class="item" data-target="#hotelsModal_{$place->alias}" data-toggle="modal">
                     <img class="img-fluid" src="/images/places/resized/{$place->pic3}?v={$place->tsUpdated}" data-ratio="3">
+                </div>
+                <div class="item" data-target="#hotelsModal_{$place->alias}" data-toggle="modal">
+                    <img class="img-fluid" src="/images/places/resized/{$place->pic4}?v={$place->tsUpdated}" data-ratio="4">
                 </div>
             </div>
             <div class="row align-items-center pt-2">
@@ -147,6 +157,9 @@
                 <div class="item" data-target="#hotelsModal_{$place->alias}" data-toggle="modal">
                     <img class="img-fluid" src="/images/places/resized/{$place->pic3}?v={$place->tsUpdated}" data-ratio="3">
                 </div>
+                <div class="item" data-target="#hotelsModal_{$place->alias}" data-toggle="modal">
+                    <img class="img-fluid" src="/images/places/resized/{$place->pic4}?v={$place->tsUpdated}" data-ratio="4">
+                </div>
             </div>
             <div class="row align-items-center pt-2">
                 <div class="col hotels-price-title">{if $lang == 'en'}{$place->name_en|dbtexttohtml}{else}{$place->name|dbtexttohtml}{/if}</div>
@@ -166,6 +179,31 @@
             {if $place->suptitle}<div class="only">{$place->suptitle}</div>{/if}
         </div>
         {/foreach}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {if $this.fmList}
+            <div class="accordion pt-5" id="accordionFaq">
+                <!-- loop start -->
+                {foreach item=faq from=$this.fmList}
+                <div class="card">
+                    <div class="card-header" id="heading{$faq->id}">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                        </button>
+                    </div>
+                    <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq">
+                        <div class="card-body">
+                            {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+                <!-- loop end -->
+            </div>
+            {/if}
+        </div>
     </div>
 </div>
 
@@ -188,6 +226,7 @@
                         <img class="img-fluid modal-img" src="/images/places/resized/{$place->pic1}" alt="">
                         <img class="img-fluid modal-img" src="/images/places/resized/{$place->pic2}" alt="">
                         <img class="img-fluid modal-img" src="/images/places/resized/{$place->pic3}" alt="">
+                        <img class="img-fluid modal-img d-lg-block d-none" src="/images/places/resized/{$place->pic4}" alt="">
                     </div>
                 </div>
                 <div class="row align-items-center mb-4">
@@ -304,3 +343,27 @@
 </div>
 
 {/foreach}
+
+<!-- Modal -->
+<div class="modal fade" id="textPlaceModal" tabindex="-1" role="dialog" aria-labelledby="textModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-close container mb-3 mt-3 mr-lg-4 mr-0">
+                <h3 class="d-inline-block mt-2">Расписание</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container body pb-3">
+                <p>Для посадки в автобус необходимо предъявить свой билет участника!</p>
+                <p>Маршрут (01 и 02 июня): Аэропорт - Красная Поляна +540 – Роза Хутор – GASTREET City (Красная Поляна +960)</p>
+                <p><b>Точка отправления: 1-я линия встречи</b></p>
+                <p>Время отправления: 9:00 / 9:40 / 10:20 / 11:00 / 11:40 / 12:20 / 13:00 / 13:40 / 14:20 / 15:00 / 15:40 / 16:20 / 17:00 / 17:40 / 18:20 / 19:00 / 19:40 / 20:20 / 21:00 / 21:40 / 22:20 / 23:00 / 23:40 / 24:20 / 01:00</p>
+                <p>Маршрут (05 и 06 июня): GASTREET City - Аэропорт</p>
+                <p><b>Точка отправления: магазин «Гастроном» (GASTREET City, отель Novotel Congress)</b></p>
+                <p>Время отправления: 9:00 / 10:00 / 11:00 / 11:30 / 12:00 / 12:30 / 13:00 / 13:30 / 14:00 / 14:30 / 15:00 / 15:30 / 16:00 / 17:00 / 18:00 / 19:00 / 20:00 / 21:00 / 22:00 / 23:00 / 24:00</p>
+                <p>ВНИМАНИЕ! 06 июня последний автобус отправляется в 18.00</p>
+            </div>
+        </div>
+    </div>
+</div>
