@@ -447,13 +447,18 @@ class UserQrCodeManager extends BaseEntityManager {
             return false;
         }
         $answer = json_decode($result['content']);
-
-        if (!$answer->error && $answer->token) {
-            $this->token = $answer->token;
-            return true;
+        if ( is_object($answer) ) {
+            if (!$answer->error && $answer->token) {
+                $this->token = $answer->token;
+                return true;
+            } else {
+                $this->token = '';
+                $this->last_error = $answer->description;
+                return false;
+            }
         } else {
             $this->token = '';
-            $this->last_error = $answer->description;
+            $this->last_error = "Неожиданный ответ от сервера";
             return false;
         }
     }

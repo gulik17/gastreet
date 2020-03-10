@@ -34,6 +34,14 @@ class BaseControl extends Control {
             if (strpos($_SERVER['HTTP_USER_AGENT'], 'webview') !== false) {
                 $this->app = 1;
             }
+            $user_agent = $_SERVER["HTTP_USER_AGENT"];
+            if (strpos($user_agent, "Firefox") !== false) $this->browser = "Firefox";
+            elseif (strpos($user_agent, "Opera") !== false) $this->browser = "Opera";
+            elseif (strpos($user_agent, "Chrome") !== false) $this->browser = "Chrome";
+            elseif ( (strpos($user_agent, "MSIE") !== false) || (strpos($user_agent, "Edge") !== false) ) $this->browser = "Internet Explorer";
+            elseif (strpos($user_agent, "Safari") !== false) $this->browser = "Safari";
+        } else {
+            $this->browser = "Неизвестный";
         }
 
         if (isset($_SERVER['HTTP_HOST'])) {
@@ -76,6 +84,7 @@ class BaseControl extends Control {
             ($code == 'reimer') || (Context::getObject('code') == 'reimer') ||
             ($code == 'konovalov') || (Context::getObject('code') == 'konovalov') ||
             ($code == 'belkin') || (Context::getObject('code') == 'belkin') ||
+            ($code == 'belkovich') || (Context::getObject('code') == 'belkovich') ||
             ($code == 'gorensky') || (Context::getObject('code') == 'gorensky') ||
             ($code == 'sokolov') || (Context::getObject('code') == 'sokolov') ||
             ($code == 'martynenko') || (Context::getObject('code') == 'martynenko') ||
@@ -171,14 +180,6 @@ class BaseControl extends Control {
         unset($clm);
         $this->dev = Request::getVar("dev");
         $this->addData("dev", $this->dev);
-
-        $user_agent = $_SERVER["HTTP_USER_AGENT"];
-	if (strpos($user_agent, "Firefox") !== false) $this->browser = "Firefox";
-	elseif (strpos($user_agent, "Opera") !== false) $this->browser = "Opera";
-	elseif (strpos($user_agent, "Chrome") !== false) $this->browser = "Chrome";
-	elseif ( (strpos($user_agent, "MSIE") !== false) || (strpos($user_agent, "Edge") !== false) ) $this->browser = "Internet Explorer";
-	elseif (strpos($user_agent, "Safari") !== false) $this->browser = "Safari";
-	else $this->browser = "Неизвестный";
     }
 
     // будет переназначен

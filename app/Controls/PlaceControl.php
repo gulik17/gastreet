@@ -10,9 +10,13 @@ class PlaceControl extends IndexControl {
         //Enviropment::redirect("catalog");
         $this->layout = 'place.html';
         $this->controlName = "Place";
+        $this->gcode = "hotels";
         $pm = new PlaceManager();
         $pmList = $pm->getActive();
         //deb($pmList);
+        $pm960 = [];
+        $pm540 = [];
+        $pm560 = [];
         foreach ($pmList as $key => $place) {
             $place->inclusive = unserialize($place->inclusive);
             $place->notinclusive = unserialize($place->notinclusive);

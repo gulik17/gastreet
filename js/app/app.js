@@ -179,6 +179,14 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    $('.hotels-carousel').owlCarousel({
+        loop:true,
+        nav:false,
+        responsive:{
+            0:{items:1}
+        }
+    });
+
     // Установка размеров главного слайдера
     $(window).bind('resize.jumbotron-slider', function () {
         $('.js-jumbotron-slider').each(function () {

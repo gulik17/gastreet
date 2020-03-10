@@ -20,10 +20,22 @@ class EditPlaceControl extends BaseAdminkaControl {
                 $this->addData("inclusive", $inclusive);
                 $this->addData("notinclusive", $notinclusive);
                 // image
-                $file = $plmObj->id . ".jpg";
+                $file = $plmObj->pic1;
                 $fullFileName = Configurator::get("application:placesFolder") . "resized/" . $file;
                 if (file_exists($fullFileName)) {
-                    $this->addData("placeImg", $file);
+                    $this->addData("placeImg1", $file);
+                }
+
+                $file = $plmObj->pic2;
+                $fullFileName = Configurator::get("application:placesFolder") . "resized/" . $file;
+                if (file_exists($fullFileName)) {
+                    $this->addData("placeImg2", $file);
+                }
+
+                $file = $plmObj->pic3;
+                $fullFileName = Configurator::get("application:placesFolder") . "resized/" . $file;
+                if (file_exists($fullFileName)) {
+                    $this->addData("placeImg3", $file);
                 }
             }
         }

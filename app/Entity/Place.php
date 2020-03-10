@@ -14,6 +14,7 @@ class Place extends Entity {
     public $name_en = null;
     public $suptitle = null;
     public $subtitle = null;
+    public $alias = null;
     public $phone = null;
     public $email = null;
     public $inclusive = null;
@@ -26,29 +27,30 @@ class Place extends Entity {
     public $modal_desc = null;
     public $modal_desc_en = null;
     public $pic1 = null;
+    public $pic2 = null;
+    public $pic3 = null;
     public $videoUrl = null;
     public $status = null;
     public $tsCreated = null;
     public $tsUpdated = null;
 
-	function __construct() {}
-
     public static function getStatusDesc($stat = null) {
-        $statList = array(
+        $statList = [
             self::STATUS_ENABLED => "Включено",
             self::STATUS_DISABLED => "Выключено",
-        );
+        ];
         return $stat ? $statList[$stat] : $statList;
     }
 
     function getFields() {
-        return array(
+        return [
             'id' => self::ENTITY_FIELD_INT,
             'sortOrder' => self::ENTITY_FIELD_INT,
             'name' => self::ENTITY_FIELD_STRING,
             'name_en' => self::ENTITY_FIELD_STRING,
             'suptitle' => self::ENTITY_FIELD_STRING,
             'subtitle' => self::ENTITY_FIELD_STRING,
+            'alias' => self::ENTITY_FIELD_STRING,
             'phone' => self::ENTITY_FIELD_STRING,
             'email' => self::ENTITY_FIELD_STRING,
             'inclusive' => self::ENTITY_FIELD_STRING,
@@ -61,10 +63,12 @@ class Place extends Entity {
             'modal_desc' => self::ENTITY_FIELD_STRING,
             'modal_desc_en' => self::ENTITY_FIELD_STRING,
             'pic1' => self::ENTITY_FIELD_STRING,
+            'pic2' => self::ENTITY_FIELD_STRING,
+            'pic3' => self::ENTITY_FIELD_STRING,
             'videoUrl' => self::ENTITY_FIELD_STRING,
             'status' => self::ENTITY_FIELD_STRING,
             'tsCreated' => self::ENTITY_FIELD_INT,
             'tsUpdated' => self::ENTITY_FIELD_INT,
-        );
+        ];
     }
 }

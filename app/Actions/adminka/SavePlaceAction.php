@@ -24,7 +24,6 @@ class SavePlaceAction extends AdminkaAction {
         $description_en = Request::getVar("description_en");
         $modal_desc = Request::getVar("modal_desc");
         $modal_desc_en = Request::getVar("modal_desc_en");
-        $pic1 = Request::getVar("pic1");
         $videoUrl = Request::getVar("videoUrl");
         $inclusive = Request::getArray("inclusive");
         $notinclusive = Request::getArray("notinclusive");
@@ -73,59 +72,65 @@ class SavePlaceAction extends AdminkaAction {
         $plmObj->description_en = $description_en;
         $plmObj->modal_desc = $modal_desc;
         $plmObj->modal_desc_en = $modal_desc_en;
-        $plmObj->pic1 = $pic1;
         $plmObj->videoUrl = $videoUrl;
+        $plmObj->tsUpdated = time();
         $plmObj = $plm->save($plmObj);
 
         // был ли добавлен файл
+        require_once APPLICATION_DIR . "/Lib/resize.class.php";
         $fileNameParam = 'file1';
         if (Request::isFile($fileNameParam)) {
-            require_once APPLICATION_DIR . "/Lib/resize.class.php";
+             $file = $plmObj->id . ".jpg";
+             @unlink(Configurator::get("application:placesFolder") . "resized/" . $file);
+             $image = new UploadedFile($fileNameParam);
+             $image->rename($file);
+             $image->saveTo(Configurator::get("application:placesFolder") . "resized/");
 
-            $file = $plmObj->id . ".jpg";
+             $plmObj->pic1 = $file;
+             $plmObj = $plm->save($plmObj);
+        }
+
+        $fileNameParam2 = 'file2';
+        if (Request::isFile($fileNameParam2)) {
+            $file = "2_" . $plmObj->id . ".jpg";
+            $image = new UploadedFile($fileNameParam2);
+            $image->rename($file);
+            $image->saveTo(Configurator::get("application:placesFolder") . "resized/");
+
+            $plmObj->pic2 = $file;
+            $plmObj = $plm->save($plmObj);
+        }
+
+        $fileNameParam = 'file3';
+        if (Request::isFile($fileNameParam)) {
+            $file = "3_" . $plmObj->id . ".jpg";
             $image = new UploadedFile($fileNameParam);
             $image->rename($file);
-            $image->saveTo(Configurator::get("application:placesFolder") . "uploaded/");
+            $image->saveTo(Configurator::get("application:placesFolder") . "resized/");
 
-            // сделаем копию
-            $w = 510;
-            $h = 223;
-            $fullFileName = Configurator::get("application:placesFolder") . "uploaded/" . $file;
-            if (file_exists($fullFileName)) {
-                @unlink(Configurator::get("application:placesFolder") . "resized/" . $file);
-                $newFileName = Configurator::get("application:placesFolder") . "resized/" . $file;
-                try {
-                    $obj = new Resize($fullFileName);
-                    $obj->setNewImage($newFileName);
-                    $obj->setProportionalFlag('A');
-                    $obj->setProportional(1);
-                    $obj->setNewSize($h, $w);
-                    $obj->make();
-                } catch (Exception $e) {
-                    Logger::error($e);
-                }
-            }
+            $plmObj->pic3 = $file;
+            $plmObj = $plm->save($plmObj);
         }
-        
+
         $eventicious = new Eventicious();
         $eventicious->setHost(Configurator::get("eventicious:host"));
         $eventicious->setCode(Configurator::get("eventicious:code"));
         
         // Это сообщение должно замениться, если этого не произойдет, то значит была ошибка
-        $mes = "Eventicious: ID $plmObj->id Ошибка";
+        $mes = "Eventicious: ID ".$plmObj->id." Ошибка";
 
         // Т.к. инфу о наличии записи получить нет возможности, пробуем отредактировать
         $result = $eventicious->locationsUpdate($plmObj->id, $plmObj->id, $plmObj->name);
         // Проверяем код ответа сервера на запрос редактирования записи
         if ($result['result_code'] == 200) {
-            $mes = "Eventicious: ID $plmObj->id Отредактирован";
+            $mes = "Eventicious: ID ".$plmObj->id." Отредактирован";
         }
 
         // Если редактируемая запись не была найдена, сервер приложения вернет код 404
         if ($result['result_code'] == 404) {
             // Создаем запись
             $result = $eventicious->locationsCreate($plmObj->id, $plmObj->id, $plmObj->name);
-            $mes = "Eventicious: ID $plmObj->id Создан";
+            $mes = "Eventicious: ID ".$plmObj->id." Создан";
         }
 
         // Пишем НЕизвестную ошибку в логи
@@ -135,5 +140,6 @@ class SavePlaceAction extends AdminkaAction {
         }
 
         Adminka::redirect("manageplaces", $doAct."<br>".$mes);
+       // Adminka::redirect("manageplaces", $doAct);
     }
 }

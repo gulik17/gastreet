@@ -211,3 +211,544 @@ h1.title {
     .h3.title {
         font-size: 20px;}
 }
+
+
+.hotels .header .marker-touch {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;;
+    z-index: 1;
+    border-radius: 30px;}
+.hotels .header .pick {
+    left: 16.9rem;
+    top: 1.2rem; }
+.hotels .header .dolina {
+    left: 13.5rem;
+    top: 5.7rem;}
+.hotels .header .congress {
+    left: 21.6rem;
+    top: 5.8rem;}
+.hotels .header .panorama {
+    left: 17.6rem;
+    top: 10.6rem;}
+.hotels .header .ibis {
+    left: 30.5rem;
+    top: 4.1rem;}
+.hotels .header .sber {
+    right: 29.4rem;
+    top: 14rem;}
+.hotels .header .rixos {
+    right: 27.5rem;
+    bottom: 5.7rem;}
+.hotels .header .royal {
+    right: 22.8rem;
+    bottom: 11.1rem;}
+.hotels .header .novotel {
+    right: -13px;
+    top: 24px;}
+.hotels .header .map-page {
+    height: 35rem;}
+.hotels .header .map-page::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #badaf1;}
+.hotels .header .map-page .map {
+    position: absolute;}
+.hotels .header .free {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.8rem;}
+.hotels .header a.timetable  {
+    display: block;
+    text-decoration: underline;
+    color: #008dd2;}
+.hotels .header .polyana .img-transfer {
+    width: 50px;}
+.hotels .header .polyana .transfer {
+    margin-top: -2.9rem;
+    font-size: 12px;}
+.hotels .header .polyana::before {
+    content: "";
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #badaf1;}
+.hotels .header .map-page .free-numbers {
+    font-weight: 600;}
+.hotels .header .map-page .free-numbers span {
+    color: #e51a4b;}
+.hotels .header .map-page .free .free-title {
+    text-decoration: underline;}
+.hotels .header .polyana .courtyard {
+    left: 12.3rem;
+    top: 3.8rem;}
+.hotels .header .polyana .courtyard_2 {
+    left: 18.2rem;
+    top: 3.8rem;}
+.hotels .header .polyana .marriott {
+    right: 6.9rem;
+    top: 4.5rem;}
+.hotels .hotels-title {
+    font-family: 'Gastreet Font';
+    font-size: 2.000rem;}
+.hotels .level-960 {
+    color: #80c6e9;}
+.hotels .hotels-price-title, .hotels .hotels-price-longtitle {
+    font-size: 1.125rem;}
+.hotels .hotels-price-title {
+    padding-right: 0;
+    font-weight: 700;}
+.hotels .hotels-stars {
+    font-family: 'Gastreet Font';
+    text-align: right;
+    font-size: 1.313rem;}
+.hotels .star {
+    font-size: 1.5rem;
+    line-height: 1.1;}
+.hotels .only {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 0.750rem;
+    border: 1px solid #008dd2;
+    color: #008dd2;}
+.hotels .sold-out {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 0.750rem;
+    border: 1px solid #e51a4b;
+    color: #e51a4b;}
+.hotels .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 0;
+    position: absolute;
+    bottom: 0.5rem;
+    max-width: 100%;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);}
+.hotels .modal-close .close {
+    font-size: 3rem;}
+.hotels .modal-dialog .modal-header {
+    border: none;}
+.hotels .modal-dialog .body .hotels-mini-img {
+    flex-direction: column;
+    justify-content: space-between;}
+.hotels .modal-dialog .modal-img-big, .hotels .modal-dialog .body .modal-img {
+    display: block;}
+.hotels .modal-dialog .modal-hotels-price-title {
+    font-size: 2.000rem;
+    font-weight: 600;
+    color: #282c57;}
+.hotels .modal-dialog .marker {
+    color: #008dd2;}
+.hotels .modal-dialog .marker .marker-icon {
+    font-size: 1rem;}
+.hotels .modal-dialog .modal-hotels-price-title .modal-star {
+    font-family: 'Gastreet Font';}
+.hotels .modal-dialog .title {
+    font-weight: 600;
+    color: #e51a4b;
+    font-size: 1.125rem;}
+.hotels .modal-dialog .longtitle span {
+    font-weight: 600;}
+.hotels .modal-dialog .longtitle a {
+    color: #008dd2;}
+.hotels .modal-dialog .video .img {
+    height: 85%;}
+.hotels .modal-dialog .video .btn-play {
+    width: 4.250rem;
+    height: 4.250rem;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: calc(50% - 3rem);
+    left: calc(50% - 2rem);
+    background-image: url('/images/place/btn-play.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;}
+.hotels .modal-dialog .video a {
+    text-decoration: underline;
+    color: #008dd2;}
+.hotels .modal-dialog .hotel-price-title {
+    font-size: 1.313rem;
+    font-weight: 600;}
+.hotels .modal-dialog .hotel-price:last-of-type {
+    border-bottom: 1px solid #e9e9e9;}
+.hotels .modal-dialog  .hotel-price {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e9e9e9;
+    height: 3.750rem;
+    align-items: center;
+    font-size: 1.125rem;}
+.hotels .modal-dialog .have-in-price {
+    color: #ccc;
+    padding: 15px;
+    background-color: #f6f6f6;
+    border-radius: 10px;}
+.hotels .modal-dialog .have-in-price .active {
+    color: #000;}
+.hotels .modal-dialog .have-in-price i {
+    font-size: 1.8rem;}
+.hotels .modal-dialog .have-in-price i.fa-gum {
+    font-size: 1.3rem;}
+.hotels .modal-dialog .have-in-price .have-in-price-title {
+    color: #000;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 1rem;}
+.hotels .modal-dialog .have-in-price .row {
+    padding-bottom: 0.69rem;}
+.hotels .modal-dialog .have-in-price .end {
+    margin-bottom: 0.65rem;
+    position: relative;}
+.hotels .modal-dialog .have-in-price .end::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: #e9e9e9;}
+
+@media (min-width: 300px) and (max-width: 575px) {
+    html {
+        font-size: 12px;}
+    .hotels .header .map-page {
+        height: auto}
+    .hotels .hotels-title {
+        font-size: 1.8rem;}
+    .hotels .owl-carousel .owl-dots .owl-dot span {
+        width: 5px;
+        height: 5px;
+        margin: 3px 3px;}
+    .hotels .carousel {
+        margin-top: 1rem;}
+    .hotels .modal-dialog .body .modal-img {
+        width: 33%;}
+    .hotels .modal-dialog .body .hotel-price {
+        font-size: 0.8rem;}
+    .hotels .modal-dialog .body .title, .hotels .modal-dialog .body .longtitle {
+        font-size: 0.9rem}
+    .hotels .header .map-page .map {
+        position: relative;}
+    .hotels .header .transfer {
+        font-size: 0.7rem;}
+    .hotels .modal-dialog .body .hotels-mini-img {
+        padding-top: .5rem;
+        flex-direction: row;}
+    .hotels .header .polyana .transfer {
+        margin-top: 0;}
+}
+@media (min-width: 300px) and (max-width: 374px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 6.6rem;
+        top: 7.3rem;}
+    .hotels .header .dolina {
+        left: 5.4rem;
+        top: 8.7rem;}
+    .hotels .header .congress {
+        left: 8.2rem;
+        top: 8.8rem;}
+    .hotels .header .panorama {
+        left: 6.8rem;
+        top: 10.4rem}
+    .hotels .header .ibis {
+        left: 11.2rem;
+        top: 8.25rem;}
+    .hotels .header .sber {
+        right: 11.5rem;
+        top: 11.5rem;}
+    .hotels .header .rixos {
+        right: 10.8rem;
+        bottom: 16.35rem;}
+    .hotels .header .royal {
+        right: 9.26rem;
+        bottom: 18.2rem;}
+    .hotels .header .novotel {
+        right: 1.46rem;
+        top: 6.8rem;}
+    .hotels .header .polyana .courtyard {
+        left: 4.6rem;
+        top: 3.8rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 6.8rem;
+        top: 3.8rem;}
+    .hotels .header .polyana .marriott {
+        right: 2.5rem;
+        top: 4.15rem;}
+}
+@media (min-width: 375px) and (max-width: 414px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 1.6rem;
+        height: 1.6rem;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 7.7rem;
+        top: 7.4rem;}
+    .hotels .header .dolina {
+        left: 6.3rem;
+        top: 9.25rem;}
+    .hotels .header .congress {
+        left: 9.6rem;
+        top: 9.28rem;}
+    .hotels .header .panorama {
+        left: 8rem;
+        top: 11.2rem;}
+    .hotels .header .ibis {
+        left: 13.2rem;
+        top: 8.6rem;}
+    .hotels .header .sber {
+        right: 13.5rem;
+        top: 12.6rem;}
+    .hotels .header .rixos {
+        right: 12.75rem;
+        bottom: 16.7rem;}
+    .hotels .header .royal {
+        right: 10.8rem;
+        bottom: 18.85rem;}
+    .hotels .header .novotel {
+        right: 1.62rem;
+        top: 7rem;}
+    .hotels .header .polyana .courtyard {
+        left: 5.45rem;
+        top: 3.9rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 8.1rem;
+        top: 4rem;}
+    .hotels .header .polyana .marriott {
+        right: 3.1rem;
+        top: 4.3rem;}
+}
+@media (min-width: 414px) and (max-width: 576px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 1.7rem;
+        height: 1.7rem;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 8.45rem;
+        top: 7.53rem;}
+    .hotels .header .dolina {
+        left: 6.95rem;
+        top: 9.5rem;}
+    .hotels .header .congress {
+        left: 10.58rem;
+        top: 9.59rem;}
+    .hotels .header .panorama {
+        left: 8.78rem;
+        top: 11.75rem;}
+    .hotels .header .ibis {
+        left: 14.6rem;
+        top: 8.8rem;}
+    .hotels .header .sber {
+        right: 14.95rem;
+        top: 13.27rem;}
+    .hotels .header .rixos {
+        right: 14.06rem;
+        bottom: 16.9rem;}
+    .hotels .header .royal {
+        right: 11.95rem;
+        bottom: 19.33rem;}
+    .hotels .header .novotel {
+        right: 1.68rem;
+        top: 7rem;}
+    .hotels .header .polyana .courtyard {
+        left: 6.02rem;
+        top: 4rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 9rem;
+        top: 4rem;}
+    .hotels .header .polyana .marriott {
+        right: 3.5rem;
+        top: 4.3rem;}
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 11rem;
+        top: 0.8rem;}
+    .hotels .header .dolina {
+        left: 8.9rem;
+        top: 3.6rem;}
+    .hotels .header .congress {
+        left: 14rem;
+        top: 3.68rem;}
+    .hotels .header .panorama {
+        left: 11.45rem;
+        top: 6.75rem}
+    .hotels .header .ibis {
+        left: 19.6rem;
+        top: 2.8rem;}
+    .hotels .header .sber {
+        right: 18.25rem;
+        top: 8.9rem;}
+    .hotels .header .rixos {
+        right: 17.06rem;
+        bottom: 16.5rem}
+    .hotels .header .royal {
+        right: 14.1rem;
+        bottom: 19.95rem;}
+    .hotels .header .novotel {
+        right: 0;
+        top: 0;}
+    .hotels .header .polyana .courtyard {
+        left: 7.8rem;
+        top: 4rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 11.5rem;
+        top: 4rem;}
+    .hotels .header .polyana .marriott {
+        right: 4.4rem;
+        top: 4.3rem;}
+    .hotels .owl-carousel .owl-dots .owl-dot span {
+        width: 6px;
+        height: 6px;
+        margin: 4px 4px;}
+    .hotels .header .polyana .img-transfer {
+        width: 80px;}
+}
+/* Medium */
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 2.5rem;
+        height: 2.5rem;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 10.5rem;
+        top: 7.6rem;}
+    .hotels .header .dolina {
+        left: 8.5rem;
+        top: 10.3rem;}
+    .hotels .header .congress {
+        left: 13.4rem;
+        top: 10.45rem;}
+    .hotels .header .panorama {
+        left: 10.9rem;
+        top: 13.3rem;}
+    .hotels .header .ibis {
+        left: 18.8rem;
+        top: 9.4rem}
+    .hotels .header .sber {
+        right: 19.3rem;
+        top: 15.4rem;}
+    .hotels .header .rixos {
+        right: 18.1rem;
+        bottom: 16rem;}
+    .hotels .header .royal {
+        right: 15.4rem;
+        bottom: 19.3rem;}
+    .hotels .header .novotel {
+        right: 1.45rem;
+        top: 6.9rem;}
+    .hotels .header .polyana .courtyard {
+        left: 7.8rem;
+        top: 4rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 11.5rem;
+        top: 4rem;}
+    .hotels .header .polyana .marriott {
+        right: 4.4rem;
+        top: 4.3rem;}
+    .hotels .header .map-page {
+        height: auto}
+    .hotels .hotels-title {
+        font-size: 1.8rem;}
+    .hotels .owl-carousel .owl-dots .owl-dot span {
+        width: 5px;
+        height: 5px;
+        margin: 3px 3px;}
+    .hotels .carousel {
+        margin-top: 1rem;}
+    .hotels .modal-dialog .body .modal-img {
+        width: 33%;}
+    .hotels .modal-dialog .body .hotel-price {
+        font-size: 0.8rem;}
+    .hotels .modal-dialog .body .title, .hotels .modal-dialog .body .longtitle {
+        font-size: 0.9rem}
+    .hotels .header .map-page .map {
+        position: relative;}
+    .hotels .header .transfer {
+        font-size: 0.7rem;}
+}
+@media (min-width: 993px) and (max-width: 1040px) {
+    .hotels .header .marker-touch {
+        position: absolute;
+        width: 4rem;
+        height: 4rem;;
+        z-index: 1;
+        border-radius: 30px;}
+    .hotels .header .pick {
+        left: 13.9rem;
+        top: 1rem;}
+    .hotels .header .dolina {
+        left: 11.2rem;
+        top: 4.7rem;}
+    .hotels .header .congress {
+        left: 18rem;
+        top: 4.8rem;}
+    .hotels .header .panorama {
+        left: 14.6rem;
+        top: 8.6rem;}
+    .hotels .header .ibis {
+        left: 25.5rem;
+        top: 3.1rem;}
+    .hotels .header .sber {
+        right: 24.4rem;
+        top: 11.7rem;}
+    .hotels .header .rixos {
+        right: 22.7rem;
+        bottom: 10rem;}
+    .hotels .header .royal {
+        right: 18.8rem;
+        bottom: 14.6rem;}
+    .hotels .header .novotel {
+        right: 0;
+        top: 0;}
+    .hotels .header .polyana .courtyard {
+        left: 10rem;
+        top: 3rem;}
+    .hotels .header .polyana .courtyard_2 {
+        left: 15rem;
+        top: 3.2rem;}
+    .hotels .header .polyana .marriott {
+        right: 5.5rem;
+        top: 4.3rem;}
+}
+/* Large */
+@media (min-width: 992px) {
+    .h-lg-100 {
+        height: 100% !important;}
+}
+/* Extra large */
+@media (min-width: 1200px) {
+
+}

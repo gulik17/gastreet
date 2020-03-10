@@ -103,18 +103,48 @@
             <label>Видеоролик (только ID видео на YouTube):</label>
             <input class="form-control" type="text" name="videoUrl" id="videoUrl" value="{$this.place->videoUrl}"/>
         </div>
-        {if $this.placeImg}
+        {if $this.placeImg1}
         <div class="col-md-12 form-group">
             <label>Картинка:</label>
             <div>
-                <img src="/images/places/resized/{$this.placeImg}" />
+                <img src="/images/places/resized/{$this.placeImg1}?v={$this.tsUpdated}" />
             </div>
         </div>
         {/if}
-        <div class="col-md-12 form-group" id="file-dl">
-            <label id="file-dt">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
-            <div id="file-dd">
+        <div class="col-md-12 form-group">
+            <label id="file-dt1">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <div id="file-dd1">
                 <input class="form-control u-file" name="file1" type="file" />
+            </div>
+        </div>
+
+        {if $this.placeImg2}
+        <div class="col-md-12 form-group">
+            <label>Картинка:</label>
+            <div>
+                <img src="/images/places/resized/{$this.placeImg2}?v={$this.tsUpdated}" />
+            </div>
+        </div>
+        {/if}
+        <div class="col-md-12 form-group">
+            <label id="file-dt2">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <div id="file-dd2">
+                <input class="form-control u-file" name="file2" type="file" />
+            </div>
+        </div>
+
+        {if $this.placeImg3}
+        <div class="col-md-12 form-group">
+            <label>Картинка:</label>
+            <div>
+                <img src="/images/places/resized/{$this.placeImg3}?v={$this.tsUpdated}" />
+            </div>
+        </div>
+        {/if}
+        <div class="col-md-12 form-group">
+            <label id="file-dt3">{if $this.placeImg}Заменить картинку:{else}Загрузить картинку:{/if}</label>
+            <div id="file-dd3">
+                <input class="form-control u-file" name="file3" type="file" />
             </div>
         </div>
         <div class="col-md-12 form-group">

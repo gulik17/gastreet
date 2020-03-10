@@ -17,6 +17,8 @@
         <link rel="apple-touch-icon" sizes="167x167" href="/images/touch-icon-ipad-retina.png"/>
 
         {loadscript file='/css/font-awesome.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.carousel.min.css' type='css'}
+        {loadscript file='/js/owl.carousel/assets/owl.theme.default.css' type='css'}
         {loadscript file='/css/bootstrap4/css/bootstrap.min.css' type='css'}
         {loadscript file='/css/style.css' type='css'}
         {loadscript file='/css/style-gss.css' type='css'}
@@ -52,7 +54,7 @@
         <!-- End Google Tag Manager -->
         {/literal}
     </head>
-    <body class="page load d-flex flex-column h-100">
+    <body class="page load d-flex flex-column h-100 {$gcode}">
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PLBL8S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {component name="Topmenu"}
         <main role="main" class="flex-shrink-0 pb-4">
@@ -69,6 +71,7 @@
         {loadscript file='/js/jquery.min.js' type='js'}
         {loadscript file='/css/bootstrap4/js/popper.min.js' type='js'}
         {loadscript file='/css/bootstrap4/js/bootstrap.js' type='js'}
+        {loadscript file='/js/owl.carousel/owl.carousel.min.js' type='js'}
         {loadscript file='/js/jquery.cookie.js' type='js'}
         {loadscript file='/js/app/app.js' type='js'}
         {loadscript file='/js/pages/place.js' type='js'}
