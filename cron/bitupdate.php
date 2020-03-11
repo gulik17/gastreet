@@ -27,7 +27,7 @@ if ($mutex->isAcquired()) {
 
 // если не выполняется, лочим для других потоков
 $mutex->lock();
-
+/*
 try {
 // перезагрузка наименований
     $um = new UserManager();
@@ -47,7 +47,7 @@ try {
     //Logger::error($e->getMessage() . " " . $e->getTraceAsString() . "\n");
     echo $e->getMessage() . " " . $e->getTraceAsString() . "\n";
 }
-
+*/
 // echo "done\n";
 // Освобождаем ресурс
 $mutex->release();

@@ -50,5 +50,10 @@
 .fa-viber:before{content:"\f409"}
 .fa-specified:before{content:"\f500"}
 .fa-ambassador:before{content:"\f501"}
+.fa-n_breakfast:before{content:"\f502"}
+.fa-n_pool:before{content:"\f503"}
+.fa-confetti:before{content:"\f504"}
+.fa-g_smile:before{content:"\f505"}
+.fa-wine-glass:before{content:"\f506"}
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
