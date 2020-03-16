@@ -3,8 +3,6 @@
 /**
  * Базовый класс для менеджеров сущностей
  * 
- * PHP version 5
- * 
  * @category Framework
  * @package  Core
  * @author   Andrey Filippov <afi@i-loto.ru>
@@ -78,11 +76,13 @@ abstract class EntityManager {
 
     /**
      * Сохраняет сущность в БД
-     * 
+     *
      * @param Entity &$object Экземпляр сущности
-     * 
+     *
      * @return Entity
-     * */
+     *
+     * @throws Exception
+     */
     public function save(Entity &$object) {
         if ($object->getId() == null) {
             $sql = $this->buildInsert($object);
@@ -98,10 +98,11 @@ abstract class EntityManager {
 
     /**
      * Удаляет сущность из базы по заданному идентификатору
-     * 
+     *
      * @param int $id Идентификатор сущности
-     * 
-     * @return void
+     *
+     * @return Int
+     * @throws Exception
      */
     public function remove($id) {
         $ent = self::newEntity($this->defineClass());
@@ -112,10 +113,11 @@ abstract class EntityManager {
 
     /**
      * Удаляет записи, опредененные в SqlCondition
-     * 
+     *
      * @param SQLCondition $condition object of SQLCondition class
-     * 
-     * @return void
+     *
+     * @return Int
+     * @throws Exception
      */
     public function removeByCondition(SQLCondition $condition) {
         $table = ucfirst($this->defineClass());
@@ -126,10 +128,11 @@ abstract class EntityManager {
 
     /**
      * Возвращает сущность по идентификатору
-     * 
+     *
      * @param int $id идентификатор сущности
-     * 
+     *
      * @return object
+     * @throws Exception
      */
     public function getById($id) {
         $ent = self::newEntity($this->defineClass());
@@ -167,10 +170,11 @@ abstract class EntityManager {
 
     /**
      * Возвращает список сущностей по условию
-     * 
+     *
      * @param SQLCondition $condition Объект класса SQLCondition
-     * 
+     *
      * @return null or array
+     * @throws Exception
      */
     public function get(SQLCondition $condition = null) {
         $object = self::newEntity($this->defineClass());
@@ -189,11 +193,12 @@ abstract class EntityManager {
     /**
      * Возвращает список сущностей текущего типа по сложному
      * SQL запросу. Важно, чтобы запрос возвращал данные только(!) из соответствующей
-     * таблицы. Если запрос возвращает поля не определенные в сущности, они игнорируются. 
-     * 
+     * таблицы. Если запрос возвращает поля не определенные в сущности, они игнорируются.
+     *
      * @param string $sql текст SQL запроса
-     * 
+     *
      * @return mixed
+     * @throws Exception
      */
     public function getBySQL($sql) {
         $result = $this->getReadConnection()->getRows($sql);
@@ -213,9 +218,11 @@ abstract class EntityManager {
      * Существует нюанс при включенном кэше:
      * при удалении всех записей, помечаются все данные к кэше как устаревшие,
      * т.к. таблицы могут быть связаны, и данные для другой таблицы из кэша не удалятся
-     * 
-     * @return void
-     * */
+     *
+     * @return Int
+     *
+     * @throws Exception
+     */
     public function removeAll() {
         $object = self::newEntity($this->defineClass());
         $sql = "DELETE FROM `{$object->entityTable}`";
@@ -224,10 +231,11 @@ abstract class EntityManager {
 
     /**
      * Возвращает только одну запись из результирующего набора
-     * 
-     * @param SQLCondition $condition Объект класса SQLCondition 
-     * 
+     *
+     * @param SQLCondition $condition Объект класса SQLCondition
+     *
      * @return entity or null
+     * @throws Exception
      */
     public function getOne(SQLCondition $condition) {
         $res = $this->get($condition);
@@ -242,22 +250,25 @@ abstract class EntityManager {
 
     /**
      * Выполняет произвольный запрос и возвращает список массивов
-     * 
+     *
      * @param string $sql SQL запрос
-     * 
+     *
      * @return array
-     * */
+     * @throws Exception
+     */
     public function getByAnySQL($sql) {
         return $this->getReadConnection()->getRows($sql);
     }
 
     /**
-     * Выполняет произвольный запрос и возвращает 
+     * Выполняет произвольный запрос и возвращает
      * только одну запись из результирующего набора
-     * 
+     *
      * @param string $sql Текст SQL запроса
-     * 
+     *
      * @return mixed
+     *
+     * @throws Exception
      */
     public function getOneByAnySQL($sql) {
         $res = $this->getByAnySQL($sql);
@@ -265,8 +276,7 @@ abstract class EntityManager {
             if (count($res) > 1)
                 throw new Exception("More then one record returned");
             return $res[0];
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -288,10 +298,11 @@ abstract class EntityManager {
 
     /**
      * Генерирует SQL запрос на вставку данных в БД
-     * 
+     *
      * @param Entity $object Экземпляр сущности
-     * 
+     *
      * @return string текст SQL запроса
+     * @throws Exception
      */
     protected function buildInsert(Entity $object) {
         $object->selfTest();
@@ -342,9 +353,9 @@ abstract class EntityManager {
         $result = array();
         foreach ($types as $name => $type) {
             // нет такого поля - если убрали вручную, чтобы не обновлять
-            if (!property_exists($object, $name))
+            if (!property_exists($object, $name)) {
                 continue;
-
+            }
             $val = $object->$name;
             // если поле заполняется в базе автоматически, то его исключаем из
             // генерации SQL
@@ -356,8 +367,7 @@ abstract class EntityManager {
                     $val = 0;
                 else
                     $val = 'null';
-            }
-            else {
+            } else {
                 if ($type == Entity::ENTITY_FIELD_STRING) {
                     $val = $this->escape($val);
                     $val = "'{$val}'";
@@ -382,8 +392,9 @@ abstract class EntityManager {
 
     /**
      * Стартуем транзакцию
-     * 
+     *
      * @return void
+     * @throws Exception
      */
     public function startTransaction() {
         $this->getWriteConnection()->startTransaction();
@@ -391,8 +402,9 @@ abstract class EntityManager {
 
     /**
      * Завершение транзакции
-     * 
+     *
      * @return void
+     * @throws Exception
      */
     public function commitTransaction() {
         $this->getWriteConnection()->commitTransaction();
@@ -400,8 +412,9 @@ abstract class EntityManager {
 
     /**
      * откат транзакции
-     * 
+     *
      * @return void
+     * @throws Exception
      */
     public function rollbackTransaction() {
         $this->getWriteConnection()->rollbackTransaction();
@@ -444,7 +457,7 @@ abstract class EntityManager {
     /**
      * Возвращает соединение к Master серверу
      * 
-     * @return IDBAdapter object
+     * @return resource
      * @throws Exception
      */
     public function getWriteConnection() {
@@ -458,7 +471,7 @@ abstract class EntityManager {
     /**
      * Возвращает соединение к Slave серверу
      * 
-     * @return IDBAdapter object
+     * @return resource
      * @throws Exception
      */
     public function getReadConnection() {
@@ -472,10 +485,11 @@ abstract class EntityManager {
     /**
      * Выполняет SQL запрос не требующий возврата
      * каких-либо данных
-     * 
+     *
      * @param string $sql SQL запрос
-     * 
+     *
      * @return void
+     * @throws Exception
      */
     public function executeNonQuery($sql) {
         $this->getWriteConnection()->executeNonQuery($sql);
@@ -503,9 +517,10 @@ abstract class EntityManager {
     /**
      * Форматирование даты и времени в Формат базы данных
      *
-     * @param string $date Дата в формате strtotime() 
-     * 
+     * @param string $date Дата в формате strtotime()
+     *
      * @return string
+     * @throws Exception
      */
     public function formatDateTimeIn($date) {
         if ($date === null) {
@@ -517,10 +532,11 @@ abstract class EntityManager {
 
     /**
      * Форматирование даты и времени в Формат представления
-     * 
+     *
      * @param string $date Дата в формате базы данных
-     * 
+     *
      * @return string
+     * @throws Exception
      */
     public function formatDateTimeOut($date) {
         if ($date === null) {

@@ -78,13 +78,13 @@ if ($payObj) {
     }
 }
 
-die();
+
 
 $payObj = $service->getAlfaPayBalance();
 
 if ($payObj) {
     $status = $service->getOrderStatus($payObj['monetaOperationId']);
-
+    die();
     if (array_key_exists('ErrorCode', $status)) {
         $pbm = new PayBalanceManager();
         if ($status['ErrorCode'] > 0) {

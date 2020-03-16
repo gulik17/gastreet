@@ -20,10 +20,11 @@ class AlfaService {
      * Функция для работы с CRON
      * Находит оплаты которые были сформированы для шлюза Альфа банка
      * Возвращает одну оплату, чтобы не нагружать систему
+     * @throws Exception
      */
     public function getAlfaPay() {
         $bem = new BaseEntityManager();
-        $sql = "SELECT * FROM `pay` AS p WHERE `p`.`type` = '" . Pay::TYPE_CARD . "' AND `p`.`tsCreated` > '" . (time() - 7200) . "' AND `p`.`status` = '" . Pay::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
+        $sql = "SELECT * FROM `pay` AS p WHERE `p`.`type` = '" . Pay::TYPE_CARD . "' AND `p`.`tsCreated` > '" . (time() - 720000) . "' AND `p`.`status` = '" . Pay::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
         $res = $bem->getByAnySQL($sql)[0];
         return (strlen($res['monetaOperationId']) > 30) ? $res : null;
     }
@@ -57,12 +58,12 @@ class AlfaService {
      */
     private function gateway($method, $data) {
         $curl = curl_init(); // Инициализируем запрос
-        curl_setopt_array($curl, array(
+        curl_setopt_array($curl, [
             CURLOPT_URL => static::GATEWAY_URL.$method, // Полный адрес метода
             CURLOPT_RETURNTRANSFER => true, // Возвращать ответ
             CURLOPT_POST => true, // Метод POST
             CURLOPT_POSTFIELDS => http_build_query($data) // Данные в запросе
-        ));
+        ]);
         $response = curl_exec($curl); // Выполняем запрос
 
         $response = json_decode($response, true); // Декодируем из JSON в массив
@@ -126,7 +127,7 @@ class AlfaService {
         $data = [
             'userName' => static::USERNAME,
             'password' => static::PASSWORD,
-            'orderId' => $orderId,
+            'orderId'  => $orderId,
             'language' => $language,
         ];
 
