@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="note schedule-filter d-none">ФИЛЬТР <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a> <a href="javascript:void(0);" class="" data-target=".schedule-filter-ticket">ПО БИЛЕТУ</a> <a href="javascript:void(0);"  data-target=".schedule-filter-theme">ПО ТЕМЕ</a></p>
+                        <p class="note schedule-filter">ФИЛЬТР <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a> <a href="javascript:void(0);" class="" data-target=".schedule-filter-ticket">ПО БИЛЕТУ</a> <a href="javascript:void(0);" class="d-none" data-target=".schedule-filter-theme">ПО ТЕМЕ</a></p>
                     </div>
                     <div class="container">
                         <div class="tags-list tags-list-speakers schedule-filter-ticket" style="display: none;">
@@ -60,13 +60,11 @@
                                 <li class="gss-tag-li tag_mainstreet"><a class="gss-tag-link" data-tag="t_profi" href="#">ПРОФИ</a></li>
                                 <li class="gss-tag-li tag_chefstreet"><a class="gss-tag-link" data-tag="t_chefs" href="#">ШЕФСКИЙ</a></li>
                                 <li class="gss-tag-li tag_barstreet"><a class="gss-tag-link" data-tag="t_barstreet" href="#">BARSTREET</a></li>
-                                <li class="gss-tag-li tag_pizzastreet"><a class="gss-tag-link" data-tag="t_pizzastreet" href="#">PIZZASTREET</a></li>
-                                <li class="gss-tag-li tag_fun"><a class="gss-tag-link" data-tag="t_fun" href="#">FUN</a></li>
-                                <li class="gss-tag-li tag_tourist"><a class="gss-tag-link" data-tag="t_tourist" href="#">ТУРИСТ</a></li>
+                                <li class="gss-tag-li tag_tourist"><a class="gss-tag-link" data-tag="t_tourist" href="#">СПУТНИК</a></li>
                                 <li class="gss-tag-li tag_buy"><a class="gss-tag-link" data-tag="t_buy" href="#">КУПИТЬ К БИЛЕТУ</a></li>
                             </ul>
                         </div>
-                        <div class="tags-list tags-list-speakers schedule-filter-area d-none" style="position: relative;right: auto;top: auto;margin: 0;">
+                        <div class="tags-list tags-list-speakers schedule-filter-area" style="position: relative;right: auto;top: auto;margin: 0;">
                             <ul>
                                 <li class="gss-tag-li active"><a class="gss-tag-link" data-tag="all" title="" href="#">{if $lang == 'en'}#All{else}#Все{/if}</a></li>
                                 <li class="gss-tag-li tag_centralnayaploshchad"><a class="gss-tag-link" data-tag="tag_centralnayaploshchad" title="#центральнаяплощадь" href="#">#центральнаяплощадь</a></li>
@@ -74,10 +72,8 @@
                                 <li class="gss-tag-li tag_mainstreet"><a class="gss-tag-link" data-tag="tag_mainstreet" title="#mainstreet" href="#">#mainstreet</a></li>
                                 <li class="gss-tag-li tag_chefstreet"><a class="gss-tag-link" data-tag="tag_chefstreet" title="#chefstreet" href="#">#chefstreet</a></li>
                                 <li class="gss-tag-li tag_barstreet"><a class="gss-tag-link" data-tag="tag_barstreet" title="#barstreet" href="#">#barstreet</a></li>
-                                <li class="gss-tag-li tag_pizzastreet"><a class="gss-tag-link" data-tag="tag_pizzastreet" title="#pizzastreet" href="#">#pizzastreet</a></li>
                                 <li class="gss-tag-li tag_businessschool"><a class="gss-tag-link" data-tag="tag_biznesshkola" title="#бизнесшкола" href="#">#бизнесшкола</a></li>
-                                <li class="gss-tag-li tag_popupujiny"><a class="gss-tag-link" data-tag="tag_popupujiny" title="#бизнесшкола" href="#">#popup</a></li>
-                                <li class="gss-tag-li tag_fuckup"><a class="gss-tag-link" data-tag="tag_fuckup" title="#fuckup" href="#">#fuckup</a></li>
+                                <li class="gss-tag-li tag_popupujiny d-none"><a class="gss-tag-link" data-tag="tag_popupujiny" title="#бизнесшкола" href="#">#popup</a></li>
                             </ul>
                         </div>
                         <div class="tags-list tags-list-speakers schedule-filter-theme" style="display: none;">

@@ -73,7 +73,7 @@ class BroadcastManager extends BaseEntityManager {
         if (count($list) > 0) {
             foreach ($list as $item) {
                 $body = Utility::prepareStringForMail($bcArray['message']);
-                $res = Mail::send($fromName . " новости", $body, $item['login'], $fromEmail, $fromName);
+                $res = Mail::sendUniMail($fromName . " новости", $item['login'], $body, $fromEmail, $fromName);
 
                 $totalSent++;
                 if ($totalSent % $usend == 0) {

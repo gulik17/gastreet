@@ -48,7 +48,7 @@ enableWYSIWYG = false; // отображать HTML редактор
 [mail]
 enabled = true
 connection = "smtp"
-from = "ticket@gastreet.com"
+from = "info@gastreet.com"
 fromName = "GASTREET"
 support = "ticket@gastreet.com"
 admin = "dev@gastreet.com"

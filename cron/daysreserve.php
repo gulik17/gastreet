@@ -13,6 +13,7 @@ require_once SOLO_CORE_PATH . '/Config/framework.php';
 require_once SOLO_CORE_PATH . '/BaseApplication.php';
 require_once SOLO_CORE_PATH . '/Enviropment.php';
 require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
+require_once APPLICATION_DIR .'/Lib/Swift/Mail.php';
 
 Logger::init(Configurator::getSection("logger"));
 
@@ -29,17 +30,13 @@ if ($mutex->isAcquired()) {
     // если файл создан более часа назад,
     // то была оошибка при выполнени скрипта,
     // необходимо удалить lock-файл и перезапустить скрипт
-    if ($endtime > (60 * 60)) {
+    if ($endtime > (60*60)) {
         // отправить уведомление на админскую почту
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/plain;  charset=\"utf-8\"\r\n";
-        $headers .= "From: Gastreet Info <" . Configurator::get('mail:from') . ">\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-        $msg = "Было прекращено выполнение скрипта CRON" . "\r\n";
-        $msg .= "Необходимо проверить скрипт" . "\r\n";
-        $msg .= $mutex->getLockFile() . "\r\n";
-        $msg .= "Файл создан $endtime секунд назад" . "\r\n";
-        mail(Configurator::get('mail:admin'), "Gastreet Info", $msg, $headers);
+        $msg  = "Было прекращено выполнение скрипта CRON" . "<br>";
+        $msg .= "Необходимо проверить скрипт" . "<br>";
+        $msg .= $mutex->getLockFile() . "<br>";
+        $msg .= "Файл создан $endtime секунд назад" . "<br>";
+        Mail::sendAdminNotify(Configurator::get('mail:admin'), $msg, "Gastreet Info");
         // Освободим lock-файл
         $mutex->release();
     }

@@ -17,6 +17,32 @@ class AlfaService {
     const FAIL_URL = 'https://gastreet.com/basket';
 
     /**
+     * Функция для работы с CRON
+     * Находит оплаты которые были сформированы для шлюза Альфа банка
+     * Возвращает одну оплату, чтобы не нагружать систему
+     */
+    public function getAlfaPay() {
+        $bem = new BaseEntityManager();
+        $sql = "SELECT * FROM `pay` AS p WHERE `p`.`type` = '" . Pay::TYPE_CARD . "' AND `p`.`tsCreated` > '" . (time() - 7200) . "' AND `p`.`status` = '" . Pay::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
+        $res = $bem->getByAnySQL($sql)[0];
+        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
+    }
+
+    public function getAlfaPayBooking() {
+        $bem = new BaseEntityManager();
+        $sql = "SELECT * FROM `payBooking` AS p WHERE `p`.`status` = '" . PayBooking::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
+        $res = $bem->getByAnySQL($sql)[0];
+        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
+    }
+
+    public function getAlfaPayBalance() {
+        $bem = new BaseEntityManager();
+        $sql = "SELECT * FROM `payBalance` AS p WHERE `p`.`status` = '" . PayBalance::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
+        $res = $bem->getByAnySQL($sql)[0];
+        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
+    }
+
+    /**
      * ФУНКЦИЯ ДЛЯ ВЗАИМОДЕЙСТВИЯ С ПЛАТЕЖНЫМ ШЛЮЗОМ
      *
      * Для отправки POST запросов на платежный шлюз используется

@@ -14,11 +14,7 @@ class ManageMessageLogControl extends BaseAdminkaControl {
 
         // если не заполнили основные поля формы
         // 1 - выключен, 2 - включен
-        if (!$phone && !$email)
-            $basicfilter = 1;
-        else
-            $basicfilter = 2;
-
+        $basicfilter = (!$phone && !$email) ? 1 : 2;
         // свернем переменные фильтра в массив
         $sendArray = compact("mode", "basicfilter", "phone", "email");
 

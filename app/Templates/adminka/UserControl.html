@@ -52,7 +52,7 @@
     </tr>
     <tr>
         <td>E-Mail:</td>
-        <td>{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if}</td>
+        <td>{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if} {$this.user->checkUnsubscribe}</td>
     </tr>
     <tr>
         <td>Статус:</td>

@@ -407,7 +407,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="copyright">
-                                    <p class="gastreet">Gastreet — International Restaurant Show<br />Услуги оказывает ООО «Номер Один»</p>
+                                    <p class="gastreet">Gastreet — International Restaurant Show<br />Услуги оказывает ООО «СИРОККО»</p>
                                 </div>
                             </div>
                         </div>

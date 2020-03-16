@@ -3307,6 +3307,8 @@ section.ticket.block_4 {
 .tinkoff-body img {
     width: 70%;
     margin-bottom: 1.5rem;}
+.tinkoff-body {
+    color: #000;}
 .tinkoff-body p {
     font-size: 1.1rem;}
 .ticket .collapse {
@@ -3661,6 +3663,32 @@ div[class^='row block-body tag_popupshow'] .gss-tag-tr {
     position: absolute;
     margin-top: 16px;
     margin-left: -355px;}
+.thematic-menu {
+    margin-top: -10px;
+    margin-bottom: -20px;}
+.thematic-menu-item {
+    font-family: 'Gastreet Font', Georgia, serif;
+    font-size: 12px;
+    color: #d1d1d1;
+    text-decoration: none;}
+.thematic-menu-item:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #333;}
+.thematic-menu>div:last-child .thematic-menu-item:after {
+    display: none;}
+.thematic-menu-rebro:hover, .thematic-menu-rebro.active {
+    color: #434242;}
+.thematic-menu-profi:hover, .thematic-menu-profi.active {
+    color: #008dd2;}
+.thematic-menu-chef:hover, .thematic-menu-chef.active {
+    color: #b0cb1f;}
+.thematic-menu-bar:hover, .thematic-menu-bar.active {
+    color: #e51a4b;}
 @media all and (max-width: 1199px) {
     .site-header .content .nav,
     .site-header .content .indicator,
@@ -4445,34 +4473,6 @@ p.border-gastreet-dashed {
     width: 100%;
     top: 0;
     left: 0;}
-.speakers_2019 .person-teaser:hover .about {
-    box-shadow: 0 0 21px 0 #10093B;}
-.speakers_2019 .person-teaser.tag_ambassador:hover .about {
-    box-shadow: 0 0 21px 0 #10093B;}
-.speakers_2019 .person-teaser.tag_2019.tag_centralnayaploshchad:hover .about {
-    box-shadow: 0 0 21px 0 #000;}
-.speakers_2019 .person-teaser.tag_2019.tag_chefstreet:hover .about {
-    box-shadow: 0 0 21px 0 #b0cb1f;}
-.speakers_2019 .person-teaser.tag_2019.tag_barstreet:hover .about {
-    box-shadow: 0 0 21px 0 #e51a4b;}
-.speakers_2019 .person-teaser.tag_2019.tag_partnerstreet:hover .about {
-    box-shadow: 0 0 21px 0 #a0a0a0;}
-.speakers_2019 .person-teaser.tag_2019.tag_baristastreet:hover .about {
-    box-shadow: 0 0 21px 0 #a75f4a;}
-.speakers_2019 .person-teaser.tag_2019.tag_winedome:hover .about {
-    box-shadow: 0 0 21px 0 #850a26;}
-.speakers_2019 .person-teaser.tag_2019.tag_fuckup:hover .about {
-    box-shadow: 0 0 21px 0 #4f0ebd;}
-.speakers_2019 .person-teaser.tag_2019.tag_franchisestreet:hover .about {
-    box-shadow: 0 0 21px 0 #f3a6da;}
-.speakers_2019 .person-teaser.tag_2019.tag_biznesshkola:hover .about {
-    box-shadow: 0 0 21px 0 #295f61;}
-.speakers_2019 .person-teaser.tag_2019.tag_mainstreet:hover .about {
-    box-shadow: 0 0 21px 0 #008dd2;}
-.speakers_2019 .person-teaser.tag_2019.tag_rebro:hover .about {
-    box-shadow: 0 0 21px 0 #434242;}
-.speakers_2019 .person-teaser.tag_2019.tag_pizzastreet:hover .about {
-    box-shadow: 0 0 21px 0 #d67e2a;}
 .speakers_2019 .person-teaser:hover .about p {
     color: #fff;}
 .g-emoji-content {
@@ -4557,6 +4557,25 @@ main {
 @media (min-width: 300px) and (max-width: 767px) {
     html, body {
         font-size: 11px;}
+    .thematic-menu {
+        margin-top: 15px;
+        margin-bottom: -20px;}
+    .thematic-menu>div .thematic-menu-item:after {
+        display: none;}
+    .thematic-menu-rebro {
+        color: #434242;}
+    .thematic-menu-profi {
+        color: #008dd2;}
+    .thematic-menu-chef {
+        color: #b0cb1f;}
+    .thematic-menu-bar {
+        color: #e51a4b;}
+    .thematic-menu-item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;}
+    .thematic-menu-item.active {
+        text-decoration: underline;}
     .container.all-tickets {
         display: none;}
     .page-container .page-container-image .img-fixed {

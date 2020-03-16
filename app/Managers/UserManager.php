@@ -95,7 +95,7 @@ class UserManager extends BaseEntityManager {
         return $userObj;
     }
 
-    private static function sendOneEmail($email, $userId, $shortTitle, $message, $template, $vars, $attachFullPathFileName = null, $attachFileName = null) {
+    private static function sendOneEmail($email, $userId, $shortTitle, $message, $template, $vars, $attachArray = null) {
         $header = Enviropment::prepareForMail(MailTextHelper::parse("header.html", $vars));
         $footer = Enviropment::prepareForMail(MailTextHelper::parse("footer.html", $vars));
         // сохранить в лог
@@ -115,7 +115,8 @@ class UserManager extends BaseEntityManager {
         $fromName = Configurator::get("mail:fromName");
 
         require_once APPLICATION_DIR . "/Lib/Swift/Mail.php";
-        $countSent = Mail::send($shortTitle, $header . $message . $footer, $email, $fromEmail, $fromName, $attachFullPathFileName, $attachFileName);
+
+        $countSent = Mail::sendUniMail($shortTitle, $email, $header . $message . $footer, $fromEmail, $fromName, $attachArray);
 
         // отметить в логе
         if ($countSent) {
@@ -156,7 +157,7 @@ class UserManager extends BaseEntityManager {
 
         // список неоплаченных билетов, которые лежат у пользователя в корзине
         $bm = new BasketManager();
-        $unPayedTickets = array();
+        $unPayedTickets = [];
         $tickets = ($user->parentUserId) ? $bm->getTicketsByChildId($user->id) : $bm->getTicketsByUserIdNoChildren($user->id);
         if (count($tickets)) {
             foreach ($tickets AS $oneTicket) {
@@ -167,7 +168,7 @@ class UserManager extends BaseEntityManager {
         }
 
         $bpm = new BasketProductManager();
-        $unPayedProducts = array();
+        $unPayedProducts = [];
         $products = ($user->parentUserId) ? $bpm->getProductsByChildId($user->id) : $bpm->getProductsByUserIdNoChildren($user->id);
         if (count($products)) {
             foreach ($products AS $oneProduct) {
@@ -208,12 +209,13 @@ class UserManager extends BaseEntityManager {
         $isSent = false;
         $btm = new BroadcastTemplateManager();
         $template = $btm->getBySendAndTriggerType(BroadcastTemplate::SEND_TYPE_EMAIL, BroadcastTemplate::TRIGGER_TYPE_NOTIFY_OLD_BASKET);
+        //deb($template);
         if ($template) {
-            $vars = array(
+            $vars = [
                 "SIGNATURE" => Configurator::get("mail:sign"),
                 "LOGIN_LINK" => $confirmLink, // для автологина в корзину
                 "UNPAYED_BASKET" => $unpayedBasket,
-            );
+            ];
 
             $shortTitle = BroadcastTemplate::getTriggerTypeDesc(BroadcastTemplate::TRIGGER_TYPE_NOTIFY_OLD_BASKET);
             $message = Enviropment::prepareForMail(MailTextHelper::parseContent(str_replace("&quot;", '"', htmlspecialchars_decode($template->message, ENT_NOQUOTES)), $vars));
@@ -1444,8 +1446,7 @@ class UserManager extends BaseEntityManager {
     }
 
     public static function realSendTicketViaEmail($userId = 0) {
-        $attachFullPathFileNameArray = array();
-        $attachFileNameArray = array();
+        $attachArray = [];
         if (!$userId) {
             return false;
         }
@@ -1480,9 +1481,7 @@ class UserManager extends BaseEntityManager {
         // генерация
         try {
             $html2pdf = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8');
-            // $html2pdf->setModeDebug();
             $html2pdf->setDefaultFont('freeserif');
-            //$fontName = TCPDF_FONTS::addTTFfont('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 'TrueTypeUnicode');
             $fontName = 'liberationsans';
             $html2pdf->addFont('LiberationSans', '', $fontName);
             $html2pdf->writeHTML($message);
@@ -1490,16 +1489,14 @@ class UserManager extends BaseEntityManager {
         } catch (HTML2PDF_exception $e) {
             $isOk = false;
         }
-        $attachFullPathFileNameArray[1] = $newFileName;
-        // $attachFileNameArray[1] = $qrCode->code . "_" . time() . ".pdf";
-        $attachFileNameArray[1] = "билет.pdf";
+        $attachArray[0]['content'] = $newFileName;
+        $attachArray[0]['type'] = 'application/pdf';
+        $attachArray[0]['name'] = "билет.pdf";
         // надо собрать ещё один pdf файл (с данными о заказе $messageProducts)
         if ($messageProducts) {
             try {
                 $html2pdf_mk = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8');
-                // $html2pdf_mk->setModeDebug();
                 $html2pdf_mk->setDefaultFont('freeserif');
-                //$fontName = TCPDF_FONTS::addTTFfont('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 'TrueTypeUnicode');
                 $fontName = 'liberationsans';
                 $html2pdf_mk->addFont('LiberationSans', '', $fontName);
                 $html2pdf_mk->writeHTML($messageProducts);
@@ -1508,29 +1505,28 @@ class UserManager extends BaseEntityManager {
                 $isOk = false;
                 print_r($e);
             }
-            $attachFullPathFileNameArray[2] = $newFileNameMk;
-            // $attachFileNameArray[2] = $qrCode->code . "_mk_" . time() . ".pdf";
-            $attachFileNameArray[2] = "мк.pdf";
+            $attachArray[1]['content'] = $newFileNameMk;
+            $attachArray[1]['type'] = "application/pdf";
+            $attachArray[1]['name'] = "мк.pdf";
         }
         // автолоадер обратно
         spl_autoload_register(array("Configurator", "autoload"));
         if (!$isOk) {
             return false;
         }
-        //$attachFullPathFileNameArray[3] = DOCUMENT_ROOT."/pdf/gastreet19_memo.pdf";
-        //$attachFileNameArray[3] = "gastreet_memo.pdf";
-        //$attachFileNameArray[3] = "памятка.pdf";
+        //$attachArray[2]['content'] = DOCUMENT_ROOT."/pdf/gastreet19_memo.pdf";
+        //$attachArray[2]['type'] = "application/pdf";
+        //$attachArray[2]['name'] = "памятка.pdf";
         // отправить E-Mail с аттачем $newFileName
         //$email = ($user->confirmedEmail) ? $user->confirmedEmail : $user->email;
         $email = $user->confirmedEmail;
-        // $shortTitle = "Распечатайте билет на Gastreet " . date("d.m.Y");
         $shortTitle = "Билет на GASTREET'20";
-        $vars = array(
+        $vars = [
             "SIGNATURE" => Configurator::get("mail:sign"),
-        );
+        ];
 
         //Уважаемый(-ая) ".$user->lastname . " " . $user->name."
-        $emailMessage = "Всем Gastreet!<br><br>
+        $emailMessage = "<div style=\"padding:30px;padding-bottom:45px;\">Всем Gastreet!<br><br>
                 Наконец мы выходим на финишную прямую, до нашей грандиозной встречи остались считанные часы. Поэтому просим ОЧЕНЬ ВНИМАТЕЛЬНО ознакомиться с «памяткой гастритовца», которую мы заботливо составили и вложили в это письмо.<br><br>
 
                 Из памятки вы узнаете:<br>
@@ -1547,26 +1543,24 @@ class UserManager extends BaseEntityManager {
 
                 Перестали спать, очень ждем.<br><br>
 
-                С любовью, Gastreet Теам.";
-        
-        
+                С любовью, Gastreet Теам.</div>";
+
         // Меняем текст
-        $emailMessage = "Поздравляем! Ты едешь на Gastreet!<br>
+        $emailMessage = "<div style=\"padding:30px;padding-bottom:45px;\">Поздравляем! Ты едешь на Gastreet!<br>
             Мы очень рады видеть тебя в числе участников! Твой билет во вложении, также его можно скачать в личном кабинете на сайте gastreet.com.<br>
-            До встречи на GASTREET 2020!";
-        
-        
+            До встречи на GASTREET 2020!</div>";
+
         if ($user->baseTicketId == 1) {
-        $emailMessage = "Поздравляем! Ты едешь на Gastreet!<br>
+        $emailMessage = "<div style=\"padding:30px;padding-bottom:45px;\">Поздравляем! Ты едешь на Gastreet!<br>
             Мы очень рады видеть тебя в числе участников! Твой билет во вложении, также его можно скачать в личном кабинете на сайте gastreet.com.<br>
             Не забывай, что с билетом «Спутник» ты НЕ сможешь посещать мастер-классы и семинары. ВООБЩЕ.<br>
             Для тебя открыта только развлекательная и «поедательная» часть нашего грандиозного мероприятия:)<br>
-            До встречи на GASTREET 2020!";
+            До встречи на GASTREET 2020!</div>";
         }
         
         // сама отправка письма
         if ($user->confirmedEmail) {
-            $isSent = self::sendOneEmail($email, $userId, $shortTitle, $emailMessage, null, $vars, $attachFullPathFileNameArray, $attachFileNameArray);
+            $isSent = self::sendOneEmail($email, $userId, $shortTitle, $emailMessage, null, $vars, $attachArray);
         } else {
             $isSent = false;
         }

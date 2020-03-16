@@ -1,13 +1,29 @@
 {assign var=this value=$CatalogControl}
 
 <div class="container-fluid">
+    <div class="container" style="z-index: 1;position: relative;">
+        <div class="row thematic-menu">
+            <div class="col-6 col-md-2 py-1 text-center offset-md-2">
+                <a href="{link show=catalog area=5}" class="thematic-menu-item thematic-menu-rebro">Владельцу</a>
+            </div>
+            <div class="col-6 col-md-2 py-1 text-center">
+                <a href="{link show=catalog area=3}" class="thematic-menu-item thematic-menu-profi">Руководителю</a>
+            </div>
+            <div class="col-6 col-md-2 py-1 text-center">
+                <a href="{link show=catalog area=9}" class="thematic-menu-item thematic-menu-chef">Шефу</a>
+            </div>
+            <div class="col-6 col-md-2 py-1 text-center">
+                <a href="{link show=catalog area=7}" class="thematic-menu-item thematic-menu-bar active">Бар-менеджеру</a>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12 img-faces-page"></div>
     </div>
 </div>
 <div class="container description-header">
     <div class="row text-center">
-        <div class="col-6 col-md-2">
+        <div class="offset-md-1 col-6 col-md-2">
             <div class="entry">
                 <p class="num">16</p>
                 <p class="text">мастер-классов</p>
@@ -27,7 +43,7 @@
         </div>
         <div class="col-6 col-md-2">
             <div class="entry">
-                <p class="num">+</p>
+                <p class="num"><i class="fa fa-g_smile" aria-hidden="true"></i></p>
                 <p class="text">самая дружелюбная площадка</p>
             </div>
         </div>

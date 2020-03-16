@@ -363,6 +363,6 @@ try {
     echo $e->getMessage() . " " . $e->getTraceAsString() . "\n";
 }
 
-// echo "done\n";
+//echo "done\n";
 // Освобождаем ресурс
 $mutex->release();

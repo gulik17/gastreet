@@ -1,14 +1,13 @@
 <?php
+require_once __DIR__ . '/config.core.php';
 
-$params = ['api_key'=>'apiKey', 'username'=>'userName', 'domain'=>"gastreet.com"];
-$defaults = array(
-    CURLOPT_URL => 'http://myremoteservice/',
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $params,
-);
-$ch = curl_init();
-curl_setopt_array($ch, ($options + $defaults));
+//set_time_limit(0);
+// требуется полный путь к файлам для запуска в режиме cli
+require_once SOLO_CORE_PATH . '/Config/framework.php';
+require_once SOLO_CORE_PATH . '/BaseApplication.php';
+require_once SOLO_CORE_PATH . '/Enviropment.php';
+require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
+require_once APPLICATION_DIR .'/Lib/Swift/Mail.php';
 
-
-//die();
-//phpinfo();
+$isSent = UserManager::realSendTicketViaEmail(1);
+echo $isSent;

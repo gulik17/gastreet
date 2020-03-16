@@ -3,18 +3,41 @@
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/develop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/develop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageMessageLogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageMessageLogControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/UserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/UserControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/MessageLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/MessageLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/PayBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/PayBalance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/PayBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/PayBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lib/Swift/Mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lib/Swift/Mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/BroadcastManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/BroadcastManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/PayBookingManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/PayBookingManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/PayManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/PayManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/bitupdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/bitupdate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ChatbotControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ContactsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ContactsControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/PolicyControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PolicyControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/adminka/UserControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/UserControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/alfa-client/alfa.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/alfa-client/alfa.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/landing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/landing/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/landing/ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/landing/ticket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.core.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/alfapay.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/alfapay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/daysreserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/daysreserve.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/reportworker.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/reportworker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.eot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fonts/FontAwesome.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/FontAwesome.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_barstreet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_barstreet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_mainstreet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_mainstreet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/sadf.html" beforeDir="false" afterPath="$PROJECT_DIR$/framework/sadf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/info.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,22 +77,22 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/thematik-page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fonts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\gastreet\images\thematik-page" />
-      <recent name="D:\GitHub\gastreet\fonts" />
-      <recent name="D:\GitHub\gastreet\images\place" />
-      <recent name="D:\GitHub\gastreet\images" />
-      <recent name="D:\GitHub\gastreet\app\Managers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
       <recent name="D:\GitHub\gastreet\images\folkspeaker\resized" />
       <recent name="D:\YandexDisk\phpStormProject\gastreet\css\jquery-ui" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\fonts" />
+      <recent name="D:\GitHub\gastreet\images\thematik-page" />
+      <recent name="D:\GitHub\gastreet\images\place" />
+      <recent name="D:\GitHub\gastreet\images" />
+      <recent name="D:\GitHub\gastreet\app\Managers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -169,7 +192,12 @@
       <workItem from="1583485340590" duration="6292000" />
       <workItem from="1583498670824" duration="8553000" />
       <workItem from="1583821431848" duration="21306000" />
-      <workItem from="1583908261816" duration="4207000" />
+      <workItem from="1583908261816" duration="8900000" />
+      <workItem from="1583994959107" duration="26595000" />
+      <workItem from="1584102566551" duration="84000" />
+      <workItem from="1584102673504" duration="179000" />
+      <workItem from="1584102923139" duration="3926000" />
+      <workItem from="1584338899600" duration="4249000" />
     </task>
     <task id="LOCAL-00001" summary="Before open new ticket page">
       <created>1580481197809</created>
@@ -507,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583852528619</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Мелкие правки, шрифт, тематические страницы">
+      <created>1583913319497</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1583913319497</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +564,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Добавил партнерские илеты" />
     <MESSAGE value="Корректировки на главной и где жить" />
     <MESSAGE value="Корректировки на странице Билеты" />
     <MESSAGE value="Добавил ссылки на соц сети и аватар" />
@@ -554,6 +588,7 @@
     <MESSAGE value="Начало дня" />
     <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Конец дня, сохранение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Конец дня, сохранение" />
+    <MESSAGE value="Мелкие правки, шрифт, тематические страницы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Мелкие правки, шрифт, тематические страницы" />
   </component>
 </project>

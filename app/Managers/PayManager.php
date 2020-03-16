@@ -5,23 +5,6 @@
  */
 class PayManager extends BaseEntityManager {
 
-    /**
-     * Функция для работы с CRON
-     * Находит оплаты которые были сформированы для шлюза Альфа банка
-     * Возвращает одну оплату, чтобы не нагружать систему
-    */
-    public function getAlfaPay() {
-        $sql = "SELECT * FROM `pay` AS p WHERE `p`.`type` = '" . Pay::TYPE_CARD . "' AND `p`.`tsCreated` > '" . (time() - 7200) . "' AND `p`.`status` = '" . Pay::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
-        $res = $this->getByAnySQL($sql)[0];
-        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
-    }
-
-    public function getAlfaPayBooking() {
-        $sql = "SELECT * FROM `payBooking` AS p WHERE `p`.`status` = '" . PayBooking::STATUS_NEW . "' AND `p`.`monetaOperationId` IS NOT NULL ORDER BY `p`.`id` ASC";
-        $res = $this->getByAnySQL($sql)[0];
-        return (strlen($res['monetaOperationId']) > 30) ? $res : null;
-    }
-
     public function PayOrder($ORDER_ID, $SYSTEM_INCOME, $TRANSACTION_ID) {
         Logger::init(Configurator::getSection("logger"));
         $leftAmount = $SYSTEM_INCOME;

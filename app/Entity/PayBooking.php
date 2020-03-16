@@ -21,16 +21,16 @@ class PayBooking extends Entity {
     public $payForBookingIds = null;
 
     public static function getStatusDesc($stat = null) {
-        $statList = array(
+        $statList = [
             self::STATUS_NEW => "Новый",
             self::STATUS_PAID => "Оплачен",
             self::STATUS_REJECT => "Отменен",
-        );
+        ];
         return $stat ? $statList[$stat] : $statList;
     }
 
 	function getFields() {
-		return array(
+		return [
 			'id' => self::ENTITY_FIELD_INT,
             'userId' => self::ENTITY_FIELD_INT,
             'parenentId' => self::ENTITY_FIELD_INT,
@@ -42,6 +42,6 @@ class PayBooking extends Entity {
             'tsUpdated' => self::ENTITY_FIELD_INT,
             'monetaOperationId' => self::ENTITY_FIELD_STRING,
             'payForBookingIds' => self::ENTITY_FIELD_STRING,
-		);
+		];
 	}
 }

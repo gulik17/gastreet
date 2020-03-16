@@ -5,8 +5,9 @@
 class PayBalance extends Entity {
     const STATUS_NEW = 'STATUS_NEW';
     const STATUS_PAID = 'STATUS_PAID';
+    const STATUS_REJECT = 'STATUS_REJECT';
 
-	public $entityTable = 'payBalance';
+    public $entityTable = 'payBalance';
 	public $primaryKey = 'id';
     public $userId = null;
     public $parenentId = null;
@@ -18,18 +19,17 @@ class PayBalance extends Entity {
     public $tsUpdated = null;
     public $monetaOperationId = null;
 
-	function __construct() {}
-
     public static function getStatusDesc($stat = null) {
-        $statList = array(
+        $statList = [
             self::STATUS_NEW => "Новый",
             self::STATUS_PAID => "Оплачен",
-        );
+            self::STATUS_REJECT => "Отменен",
+        ];
         return $stat ? $statList[$stat] : $statList;
     }
 
 	function getFields() {
-		return array(
+		return [
 			'id' => self::ENTITY_FIELD_INT,
             'userId' => self::ENTITY_FIELD_INT,
             'parenentId' => self::ENTITY_FIELD_INT,
@@ -40,6 +40,6 @@ class PayBalance extends Entity {
             'tsCreated' => self::ENTITY_FIELD_INT,
             'tsUpdated' => self::ENTITY_FIELD_INT,
             'monetaOperationId' => self::ENTITY_FIELD_STRING,
-		);
+		];
 	}
 }
