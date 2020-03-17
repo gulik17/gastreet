@@ -135,4 +135,19 @@ class Mail {
         return $result;
     }
 
+    public static function listUnsubscribe($date) {
+        $params = json_encode(['api_key'=>'6gim3bwxw9p13k5xtogmpfgkcfruxo1a3kz5u96o', 'username'=>'info@gastreet.com', "date_from"=>$date]);
+        $defaults = [
+            CURLOPT_URL => 'https://api.unisender.com/ru/transactional/api/v1/unsubscribed/list.json',
+            CURLOPT_POST => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => $params,
+        ];
+        $ch = curl_init();
+        curl_setopt_array($ch, $defaults);
+        $result = json_decode(curl_exec($ch));
+        curl_close($ch);
+        return $result;
+    }
+
 }

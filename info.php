@@ -9,5 +9,5 @@ require_once SOLO_CORE_PATH . '/Enviropment.php';
 require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
 require_once APPLICATION_DIR .'/Lib/Swift/Mail.php';
 
-$isSent = UserManager::realSendTicketViaEmail(1);
-echo $isSent;
+$res = Mail::listUnsubscribe("2019-01-01");
+print_r($res);

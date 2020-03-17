@@ -38,7 +38,7 @@
         {foreach item=log from=$this.logList}
             <tr class="{cycle values='color,'}">
                 <td>{$log->tsCreate|dateformat:'d.m.Y, в H:i'}</td>
-                <td>{if $log->tsSent}{$log->tsSent|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+                <td>{if $log->tsSent}{$log->tsSent|dateformat:'d.m.Y, в H:i'}{else}-{/if}<br>ID пользователя: {$log->userId}</td>
                 <td>{if $log->phone}{$log->phone}{else}-{/if}</td>
                 <td>{if $log->email}{$log->email}{else}-{/if}</td>
                 <td>{$log->message|htmltoplaintext|truncate:200:"...":true|nl2br}</td>
