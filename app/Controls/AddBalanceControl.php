@@ -51,21 +51,22 @@ class AddBalanceControl extends AuthorizedUserControl {
                 $paybObj->tsCreated = time();
                 $paybObj = $payb->save($paybObj);
 
-                include_once APPLICATION_DIR . "/alba-client/alba.php";
-
-                if ($this->lang == 'en') {
-                    $service_id = Configurator::get("rfi:service_id_en");
-                    $key = Configurator::get("rfi:key_en");
-                } else {
-                    $service_id = Configurator::get("rfi:key");
-                    $key = Configurator::get("rfi:key");
-                }
-
                 $descText = ($this->lang == 'en') ? "Deposit of balance" : "Пополнение баланса";
+                if ($mode != "alfa") {
+                    include_once APPLICATION_DIR . "/alba-client/alba.php";
 
-                $service = new AlbaService($service_id, Configurator::get("rfi:secretKey"));
-                try {
-                    $result = $service->showPaymentForm(
+                    if ($this->lang == 'en') {
+                        $service_id = Configurator::get("rfi:service_id_en");
+                        $key = Configurator::get("rfi:key_en");
+                    } else {
+                        $service_id = Configurator::get("rfi:key");
+                        $key = Configurator::get("rfi:key");
+                    }
+
+
+                    $service = new AlbaService($service_id, Configurator::get("rfi:secretKey"));
+                    try {
+                        $result = $service->showPaymentForm(
                             'spg',
                             $amount,
                             $descText . " №" . $paybObj->id . ' - ' . $this->actor->phone,
@@ -74,12 +75,35 @@ class AddBalanceControl extends AuthorizedUserControl {
                             $this->actor->phone,
                             $paybObj->id . '_U', // _U - пополнение нутреннего баланса. _B оплата брони. _P - оплата 
                             $key
+                        );
+                    } catch (AlbaException $e) {
+                        echo $e->getMessage();
+                    }
+                    echo $result;
+                } else {
+                    include_once APPLICATION_DIR . "/alfa-client/alfa.class.php";
+                    $service = new AlfaService();
+                    $data = [
+                        'email' => ($this->actor->confirmedEmail) ? $this->actor->confirmedEmail : $this->actor->email,
+                        'phone' => $this->actor->phone,
+                    ];
+
+                    $result = $service->getPaymentData(
+                        $paybObj->id . '_U', // _U - пополнение внутреннего баланса. _B оплата брони. _P - оплата
+                        $amount*100,
+                        $descText . " №" . $paybObj->id . ' - ' . $this->actor->phone,
+                        $data
                     );
-                } catch (AlbaException $e) {
-                    echo $e->getMessage();
+
+                    if (array_key_exists('ErrorCode', $result)) {
+                        echo "<b>Error code:</b> {$result['ErrorCode']}<br><b>Error description:</b> {$result['errorMessage']}<br>";
+                    } else {
+                        $paybObj->monetaOperationId = $result['orderId'];
+                        $paybObj = $payb->save($paybObj);
+                        Request::redirect($result['formUrl']);
+                    }
                 }
 
-                echo $result;
                 exit;
             }
         }

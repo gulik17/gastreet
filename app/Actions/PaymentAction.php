@@ -126,7 +126,6 @@ class PaymentAction extends AuthorizedUserAction implements IPublicAction {
                     echo $e->getMessage();
                 }
                 echo $result;
-                exit;
             } else {
                 include_once APPLICATION_DIR . "/alfa-client/alfa.class.php";
                 $service = new AlfaService();
@@ -149,9 +148,8 @@ class PaymentAction extends AuthorizedUserAction implements IPublicAction {
                     $paymObj = $paym->save($paymObj);
                     Request::redirect($result['formUrl']);
                 }
-
-                exit;
             }
+            exit;
             // автолоадер обратно
             spl_autoload_register(["Configurator", "autoload"]);
         }

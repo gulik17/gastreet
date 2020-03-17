@@ -78,13 +78,9 @@ if ($payObj) {
     }
 }
 
-
-
 $payObj = $service->getAlfaPayBalance();
-
 if ($payObj) {
     $status = $service->getOrderStatus($payObj['monetaOperationId']);
-    die();
     if (array_key_exists('ErrorCode', $status)) {
         $pbm = new PayBalanceManager();
         if ($status['ErrorCode'] > 0) {
@@ -94,7 +90,7 @@ if ($payObj) {
             $payObj = $pbm->save($payObj);
         } else {
             if ($status['OrderStatus'] == 2) {
-                $res = $pm->PayBooking($status['OrderNumber'], ($status['Amount']/100), $payObj['monetaOperationId']);
+                $res = $pbm->PayBalance($status['OrderNumber'], ($status['Amount']/100), $payObj['monetaOperationId']);
             } else if ($status['OrderStatus'] == 3) {
                 $payObj = $pbm->getById($payObj['id']);
                 $payObj->status = PayBooking::STATUS_REJECT;

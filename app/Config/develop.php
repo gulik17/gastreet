@@ -65,10 +65,10 @@ password = "nepir2019"                  ; пароль от ящика указ�
 
 [master]
 debug = true
-user = "srv163959_gstrt"				; u430747
-password = "NFmAlo0Cgp"			        ; uNeMiSmAC3I.le
-host = "mysql-163959.srv.hoster.ru" 	; u430747.mysql.masterhost.ru
-database = "srv163959_g20"			    ; u430747_2017
+user = "ooosirokko_gstrt"				; u430747
+password = "eupY4*wC"			        ; uNeMiSmAC3I.le
+host = "localhost" 						; u430747.mysql.masterhost.ru
+database = "ooosirokko_gstrt"			; u430747_2017
 driver = "MySQL"
 encoding = "utf8"
 persist = false							; set persistent connection
