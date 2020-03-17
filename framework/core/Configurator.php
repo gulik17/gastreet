@@ -36,7 +36,7 @@ abstract class Configurator {
      * 
      * @param IConfigurator $object Обработчик файла конфигурации
      * 
-     * @return void
+     * @return bool
      */
     public static function init(IConfiguratorParser $object) {
         if (self::$config == null) {
@@ -57,13 +57,15 @@ abstract class Configurator {
 
     /**
      * Возвращает значение параметра, определенного в файле конфигурации
-     * 
-     * @param string $param Имя параметра в формате section:option 
-     * 
-     * @example $dbPassword = Configurator::get("first_connection:password");
-     * 
+     *
+     * @param string $param Имя параметра в формате section:option
+     *
      * @return mixed
-     * */
+     *
+     * @throws Exception
+     * @example $dbPassword = Configurator::get("first_connection:password");
+     *
+     */
     public static function get($param) {
         if (self::$config == null) {
             throw new Exception("Configurator not initialized.");
@@ -98,13 +100,14 @@ abstract class Configurator {
     /**
      * Реализует автозагрузку файлов с классами
      * Читает файл репозитория.
-     * 
+     *
      * Можно переопределить в любом месте. Здесь сделан для
      * работоспособности "из коробки"
-     * 
+     *
      * @param string $class Имя класса
-     * 
-     * @return void
+     *
+     * @return bool
+     * @throws Exception
      */
     public static function autoload($class) {
         if (self::$repository == null) {

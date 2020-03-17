@@ -5,61 +5,53 @@
  the Free Software Foundation; either version 2 of the License.
 
  Home:   http://www.it2k.ru/projects/class-ipgeo/
- Author: Egor N. Zuskin
+ Author: Gulik
 
  Simple for php:
  $ipList = new IPGeo("xxx.xxx.xxx.xxx,xxx.xxx.xxx.xxx");
  print $ipList->ip("xxx.xxx.xxx.xxx"); // city: xxxx
  or
- $ipList = new IPGeo(array("xxx.xxx.xxx.xxx", "xxx.xxx.xxx.xxx"));
+ $ipList = new IPGeo(["xxx.xxx.xxx.xxx", "xxx.xxx.xxx.xxx"]);
  print $ipList->ip("xxx.xxx.xxx.xxx","region"); // region: xxxx
  or
  $ipList = new IPGeo("xxx.xxx.xxx.xxx");
  print $ipList->ip("xxx.xxx.xxx.xxx", "district"); // district: xxxx
 */
 
-DEFINE("IPGEO_SERVER", "194.85.91.253"); // ������ ip geo
-DEFINE("IPGEO_SERVER_PORT", 8090);       // ����
-DEFINE("IPGEO_DEFAULT_PARAM", "city");   // ���� ������������ �����������
-DEFINE("IPGEO_DEBUG", false);            // ������� ������� (�� ���������� � �������)
+DEFINE("IPGEO_SERVER", "194.85.91.253"); // сервер ip geo
+DEFINE("IPGEO_SERVER_PORT", 8090); // порт
+DEFINE("IPGEO_DEFAULT_PARAM", "city"); // поле возвращаемое поумолчанию
+DEFINE("IPGEO_DEBUG", false); // признак отладки (не обращается к серверу)
+DEFINE("IPGEO_CHARSET", "UTF-8"); // Кодировка в которой выводить поле UTF-8 by default
+DEFINE("IPGEO_NOTFOUND", "Не найден"); // Что выводить если ip не найден
 
 /**
- * @author ice
- * ����� ��� ��������� ip ������� � ������� ipgeobase.ru
+ * @author Gulik
+ * Класс для получения ip адресов с сервиса ipgeobase.ru
  */
 class IPGeo {
+    var $xml = ""; // текст возвращаемого xml
+    var $ip_arr = []; // массив ip адресов
+    var $fields_arr = ["all"]; // список запрашиваемых полей
+//	var $fields_arr = ["city"];
+    var $cache = []; // кешь ответа
 
-	var $xml        = "";           // ����� ������������� xml
-	var $ip_arr     = array();      // ������ ip �������
-	var $fields_arr = array("all"); // ������ ������������� �����
-//	var $fields_arr = array("city");
-	var $cache      = array();      // ���� ������
-
-	/**
-	 * �������� ������ � ������ � �������
-	 * @param $AIpList ������ ip �������, ������� ���� ������� ����� ������� ���� ��������
-	 * @return bool
-	 */
-	function IPGeo($AIpList)
-	{
-        
-		if (IPGEO_DEBUG)
-		{
+    /**
+     * Создание класса и запрос к серверу
+     * @param $AIpList список ip адресов, строкой либо строкой через запятую либо массивом
+     * @return bool
+     */
+	function __construct($AIpList) {
+		if (IPGEO_DEBUG) {
 			return true;			
 		}
 		
-		if (is_array($AIpList))
-		{
+		if (is_array($AIpList)) {
 			$ip_arr = $AIpList;
-		}
-		else
-		{
-			if (strpos($AIpList, ",") === False)
-			{
-				$ip_arr = array(trim($AIpList));
-			}
-			else
-			{
+		} else {
+			if (strpos($AIpList, ",") === False) {
+				$ip_arr = [trim($AIpList)];
+			} else {
 				$ip_arr = explode(",",trim($AIpList));
 			}
 		}
@@ -67,9 +59,9 @@ class IPGeo {
 		$ip_arr = array_unique($ip_arr);
 		$ip_arr = $this->check_ip_list_valid($ip_arr);
 		
-		if (count($ip_arr) == 0)
-			return false;
-
+		if (count($ip_arr) == 0) {
+            return false;
+        }
 		$ips = "<ip>" . implode("</ip><ip>",$ip_arr) . "</ip>";
 		$fields = "<" . implode("/><", $this->fields_arr)."/>";
 		$post_string = "<ipquery><fields>".$fields."</fields><ip-list>".$ips."</ip-list></ipquery>";
@@ -85,8 +77,7 @@ class IPGeo {
 
 		$response = "";
 		fwrite($socket, $query);
-		while (!feof($socket))
-		{
+		while (!feof($socket)) {
 			$response .= fgets($socket, 2048);
 		}
 		fclose($socket);
@@ -95,37 +86,29 @@ class IPGeo {
 		return true;
 	}
 
-	/**
-	 * ���������� ����������� ���� ��� ip ������
-	 * @param $AIp        IP �����
-	 * @param $AFiledName ����
-	 * @return string
-	 */
-	function ip($AIp, $AFiledName = IPGEO_DEFAULT_PARAM)
-	{
-        if (IPGEO_DEBUG)
-        {
+    /**
+     * Возвращает запрошенное поле для ip адреса
+     * @param $AIp string IP адрес
+     * @param $AFiledName string Поле
+     * @return string
+     */
+	function ip($AIp, $AFiledName = IPGEO_DEFAULT_PARAM) {
+        if (IPGEO_DEBUG) {
             return "not found";            
         }
         
-		if (isset($this->cache[$AIp][$AFiledName]))
-		{
+		if (isset($this->cache[$AIp][$AFiledName])) {
 			return $this->cache[$AIp][$AFiledName];
-		}
-		else
-		{
-			if ($this->xml)
-			{
+		} else {
+			if ($this->xml) {
 				$doc = new DOMDocument;
 				$doc->loadXML($this->xml);
 				$xmlpath = new domxpath($doc);
 				$ip_ansver = $doc->getElementsByTagName("ip-answer")->item(0);
 				$items     = $xmlpath->query("ip", $ip_ansver);
-				foreach ($items as $it)
-				{
+				foreach ($items as $it) {
 					$ip = $it->getAttribute('value');
-					if ($ip == $AIp)
-					{
+					if ($ip == $AIp) {
 						$message = @$xmlpath->query("message", $it)->item(0)->nodeValue;
 						$field_value = ($message<>"") ? strtolower($message) : iconv("UTF-8", "CP1251", $xmlpath->query($AFiledName, $it)->item(0)->nodeValue);
 						$this->cache[$AIp][$AFiledName] = $field_value;
@@ -137,29 +120,21 @@ class IPGeo {
         return "not found";
 	}
 
-	/**
-	 * ���������� ������ ���������� ip ������� ����������� �� ����� xxx.xxx.xxx.xxx < 256
-	 * @param $AIpList ����� ip �������
-	 * @return array
-	 */
-	function check_ip_list_valid($AIpList)
-	{
-		$return = array();
-
-		foreach($AIpList as $ip)
-		{
-			if (preg_match("/([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3}).([0-9]{1,3})/",$ip, $par))
-			{
-				if ($par[1] < 256 && $par[2] < 256 && $par[3] < 256 && $par[4] < 256)
-				{
+    /**
+     * Возвращает список правильных ip адресов проверенных по маске xxx.xxx.xxx.xxx < 256
+     * @param $AIpList масив ip адресов
+     * @return array
+     */
+	function check_ip_list_valid($AIpList) {
+		$return = [];
+		foreach($AIpList as $ip) {
+			if (preg_match("/([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3}).([0-9]{1,3})/",$ip, $par)) {
+				if ($par[1] < 256 && $par[2] < 256 && $par[3] < 256 && $par[4] < 256) {
 					$return[] = $ip;
 				}
 			}
 		}
-
 		return $return;
 	}
 
 }
-
-?>

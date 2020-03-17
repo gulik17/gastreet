@@ -13,27 +13,27 @@ class Dadata {
     public function init() {
         $this->handle = curl_init();
         curl_setopt($this->handle, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($this->handle, CURLOPT_HTTPHEADER, array(
+        curl_setopt($this->handle, CURLOPT_HTTPHEADER, [
             "Content-Type: application/json",
             "Accept: application/json",
             "Authorization: Token " . $this->token,
             "X-Secret: " . $this->secret,
-        ));
+        ]);
         curl_setopt($this->handle, CURLOPT_POST, 1);
     }
 
     public function clean($type, $value) {
         $url = $this->base_url . "/$type";
-        $fields = array($value);
+        $fields = [$value];
         return $this->executeRequest($url, $fields);
     }
 
     public function cleanRecord($structure, $record) {
         $url = $this->base_url;
-        $fields = array(
+        $fields = [
             "structure" => $structure,
-            "data" => array($record)
-        );
+            "data" => [$record],
+        ];
         return $this->executeRequest($url, $fields);
     }
 

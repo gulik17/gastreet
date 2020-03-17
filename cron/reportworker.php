@@ -16,7 +16,7 @@ require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
 
 Logger::init(Configurator::getSection("logger"));
 
-$tmp = Configurator::get("application:tempDir");
+$tmp = SOLO_CORE_PATH . '/..' . Configurator::get("application:tempDir");
 $mutex = new Mutex("reportworker", $tmp, false);
 
 // скрипт уже выполняется

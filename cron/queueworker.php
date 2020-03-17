@@ -31,15 +31,11 @@ if ($mutex->isAcquired()) {
     // необходимо удалить lock-файл и перезапустить скрипт
     if ($endtime > (60 * 60)) {
         // отправить уведомление на админскую почту
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/plain;  charset=\"utf-8\"\r\n";
-        $headers .= "From: Gastreet Info <" . Configurator::get('mail:from') . ">\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
         $msg = "Было прекращено выполнение скрипта CRON" . "\r\n";
         $msg .= "Необходимо проверить скрипт" . "\r\n";
         $msg .= $mutex->getLockFile() . "\r\n";
         $msg .= "Файл создан $endtime секунд назад" . "\r\n";
-        mail(Configurator::get('mail:admin'), "Gastreet Info", $msg, $headers); // включить когда скрипт нужен
+        Mail::sendAdminNotify(Configurator::get('mail:admin'), $msg, "Gastreet Info");
         // Освободим lock-файл
         $mutex->release();
     }

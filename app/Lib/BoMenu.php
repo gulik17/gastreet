@@ -2,8 +2,7 @@
 /**
 * Класс - набор констант для использования в меню БО
 */
-class BoMenu
-{
+class BoMenu {
 	const MENU_NO = "no";
 	const MENU_ROLE = "role";
 	const MENU_OPERATOR = "operator";
@@ -23,4 +22,3 @@ class BoMenu
 	const MENU_TEMPLATE_MANAGER = "templatemanager";
 	const MENU_SERVICE_REPORT = "servicereport";
 }
-?>

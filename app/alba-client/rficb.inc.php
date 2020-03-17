@@ -12,6 +12,7 @@ class RfiLib {
      * @param type $email - ящик
      * @param type $amount - сумма
      * @return string HTML форма оплаты
+     * @throws Exception
      */
     public function showPaymentFrom($order_id, $phone, $email, $amount) {
         if (!$order_id) {

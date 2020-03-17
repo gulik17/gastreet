@@ -15,8 +15,7 @@ require_once SOLO_CORE_PATH . '/Enviropment.php';
 require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
 
 Logger::init(Configurator::getSection("logger"));
-
-$tmp = Configurator::get("application:tempDir");
+$tmp = SOLO_CORE_PATH . '/..' . Configurator::get("application:tempDir");
 $mutex = new Mutex("bitupdate", $tmp, false);
 
 // скрипт уже выполняется
@@ -48,6 +47,6 @@ try {
     echo $e->getMessage() . " " . $e->getTraceAsString() . "\n";
 }
 */
-// echo "done\n";
+echo "done\n";
 // Освобождаем ресурс
 $mutex->release();

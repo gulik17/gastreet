@@ -2,8 +2,6 @@
 
 /**
  * Уведомление о том, что заканчивается срок резервирования
- * 
- * 
  */
 require_once __DIR__ . '/../config.core.php';
 
@@ -17,7 +15,7 @@ require_once APPLICATION_DIR .'/Lib/Swift/Mail.php';
 
 Logger::init(Configurator::getSection("logger"));
 
-$tmp = Configurator::get("application:tempDir");
+$tmp = SOLO_CORE_PATH . '/..' . Configurator::get("application:tempDir");
 $mutex = new Mutex("daysreserve", $tmp, false);
 
 // скрипт уже выполняется

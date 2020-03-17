@@ -38,13 +38,14 @@ class FormRestore {
 	 * Нельзя создавать экземпляры
 	 */
 	private function __construct() {}
-	
-	/**
-	 * Добавляем данные формы
-	 * 
-	 * @param string $formId Значение атрибута id формы
-	 * @return void
-	 */
+
+    /**
+     * Добавляем данные формы
+     *
+     * @param string $formId Значение атрибута id формы
+     * @return void
+     * @throws Exception
+     */
 	public static function add($formId) {		
             if (Request::isPost()) {
                 // удаляем все записи
@@ -59,13 +60,14 @@ class FormRestore {
                 Session::set("__formrestore__", $data);
             }
 	}
-	
-	/**
-	 * Возвращает данные для формы
-	 * 
-	 * @param string $formId Значение атрибута id формы, для 
-	 * 		которой происходит восстановление
-	 */
+
+    /**
+     * Возвращает данные для формы
+     *
+     * @param string $formId Значение атрибута id формы, для
+     *        которой происходит восстановление
+     * @return |null
+     */
 	public static function get($formId) {
             $res = Session::push("__formrestore__");
             if (isset($res[$formId])) {
