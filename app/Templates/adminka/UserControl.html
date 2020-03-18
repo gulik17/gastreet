@@ -52,7 +52,7 @@
     </tr>
     <tr>
         <td>E-Mail:</td>
-        <td>{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if} {$this.user->checkUnsubscribe}</td>
+        <td>{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if} <span class="unsub_check"></span></td>
     </tr>
     <tr>
         <td>Статус:</td>
@@ -427,14 +427,19 @@
 {/if}
 
 <br/><p>&nbsp;</p>
+
+<script>
+    var email = "{if $this.user->confirmedEmail}{$this.user->confirmedEmail}{else}{$this.user->email}{/if}";
+</script>
+
 {literal}
 <script type="text/javascript">
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         $('.booking_plus').click(function () {
             var id      = $(this).data('id');
             var btn     = $(this);
             var btnText = $(this).html();
-            var gotdata = 'job=booking_plus' + '&id=' + id;
+            var gotdata = 'job=booking_plus&id=' + id;
             $(this).addClass('disabled');
             $(this).html('Секунду...');
             $.ajax({
@@ -456,5 +461,22 @@
             return false;
         });
     });
+
+    window.onload = function() {
+        let xhr = new XMLHttpRequest();
+        let body = 'job=check_unsubscribe&email=' + encodeURIComponent(email);
+        xhr.open("POST", '/ajax', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (this.readyState !== 4) return;
+            let data = JSON.parse(this.responseText);
+            if (data['unsubscribe'] === 0) {
+                document.getElementsByClassName('unsub_check')[0].innerHTML = '<i class="fa fa-check-circle" title="Получает уведомления" aria-hidden="true"></i>';
+            } else {
+                document.getElementsByClassName('unsub_check')[0].innerHTML = '<i class="fa fa-times-circle" title="Отписан от уведомлений" aria-hidden="true"></i>';
+            }
+        };
+        xhr.send(body);
+    };
 </script>
 {/literal}

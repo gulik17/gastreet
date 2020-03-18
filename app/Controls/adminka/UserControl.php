@@ -23,11 +23,6 @@ class UserControl extends BaseAdminkaControl {
             $parentObj = $um->getById($user->parentUserId);
             $this->addData("parentObj", $parentObj);
         }
-        if ($user->email) {
-            require_once APPLICATION_DIR .'/Lib/Swift/Mail.php';
-            $checkResult = Mail::checkUnsubscribe($user->email);
-            $user->checkUnsubscribe = ($checkResult->is_unsubscribed) ? ' <i class="fa fa-times-circle" aria-hidden="true"></i>' : ' <i class="fa fa-check-circle" aria-hidden="true"></i>';
-        }
 
         $this->addData("user", $user);
         $this->addData("userStatuses", User::getStatusDesc());

@@ -299,8 +299,11 @@ jQuery(document).ready(function ($) {
     });
 
     $('.hotels .modal-dialog .body .modal-img').click(function () {
+        let modal = $(this).parents('.modal');
         let img = $(this).attr('src');
-        $('.hotels .modal-dialog .modal-img-big').attr('src', img);
+        $(modal).find('img').removeClass('active');
+        $(this).addClass('active');
+        $(modal).find('.modal-img-big').attr('src', img);
         return false;
     });
 

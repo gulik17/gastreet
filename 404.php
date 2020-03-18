@@ -38,16 +38,17 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                 display: none;}
             button {
                 padding: 8px;}
-            a,a:hover{color:#fff;}
-            b,strong{
+            a, a:hover{color:#fff;}
+            b, strong{
                 font-weight:bold;
                 color:#fff;}
-            h1,h2,h3,h4,h5,h6{
+            h1, h2,h3,h4,h5,h6{
                 font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
                 line-height:1.2;
                 text-transform:uppercase;
                 font-weight:normal;}
-            h2 {font-size:26px;}
+            h2 {
+                font-size:26px;}
             #block-on-center{
                 position: relative;
                 margin-bottom: 4rem;
@@ -64,7 +65,7 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                 background-color:rgba(0,0,0,.4);
                 top:0;
                 left:0;}
-            @media all and (max-width:600px){
+            @media all and (max-width:600px) {
                 h2{font-size:20px;}
             }
         </style>
@@ -90,8 +91,6 @@ if ( isset($_SESSION["lang"]) && ($_SESSION["lang"] == 'en') ) {
                 // При нажатии клавиши вызываем функцию processKey()
                 window.onkeydown = processKey;
             };
-
-
             // Таймер, включающий и отключающий новый лабиринт в любое время
             var timer;
 

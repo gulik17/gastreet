@@ -142,6 +142,15 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             echo json_encode($array);
             exit;
         }
+
+        if ($job == "check_unsubscribe") {
+            require_once APPLICATION_DIR . '/Lib/Swift/Mail.php';
+            $email = Request::getVar("email");
+            $checkResult = Mail::checkUnsubscribe($email);
+            $arr['unsubscribe'] = ($checkResult->is_unsubscribed) ? 1 : 0;
+            echo json_encode($arr);
+            exit;
+        }
 		
 		// Создание записи в таблице оплаты для ApplePay
 		if ($job == "apple_pay") {
@@ -169,7 +178,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
 			$bookbman = new BookingManager();
 			// что в корзине по основному билету
 			$bm = new BasketManager();
-			$purchasedTicketIds = array();
+			$purchasedTicketIds = [];
 			$purchasedTickets = ($umObj->parentUserId) ? $bm->getTicketsByChildId($this->actor->id) : $bm->getTicketsByUserId($this->actor->id);
 			// далее покупка
 			if (count($purchasedTickets)) {
@@ -196,7 +205,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
 			
 			// что в корзине по мастер-классам
 			$bpm = new BasketProductManager();
-			$purchasedProductIds = array();
+			$purchasedProductIds = [];
 			$purchasedProducts = ($umObj->parentUserId) ? $bpm->getProductsByChildId($this->actor->id) : $bpm->getProductsByUserId($this->actor->id);
 			if (count($purchasedProducts)) {
 				foreach ($purchasedProducts AS $purchasedProduct) {

@@ -6,6 +6,8 @@
     require_once SOLO_CORE_PATH  . '/Config/framework.php';
     require_once SOLO_CORE_PATH  . '/BaseApplication.php';
     require_once SOLO_CORE_PATH  . '/Enviropment.php';
+	
+	Logger::init(Configurator::getSection("logger"));
 
 	define('USERNAME', 'gastreet-api');
 	define('PASSWORD', '9nE+jXy+SYz+2uU');
@@ -49,9 +51,12 @@
 		$data = json_encode($data);
 		$response = gateway('applepay/payment.do', $data);
 
-		print_r($response);
+		//print_r($response);
+		
+		Logger::info("APPLE PAY NOTIFY APFABANK (response):");
+        Logger::info($response);
 
-        if (isset($response['success']) && ($response['success'] == 1) ) { // В случае ошибки вывести ее
+        if (isset($response['success']) && ($response['success'] == 1) ) { // В случае успеха запишем полученый ID транзакции в базу
             $pm = new PayManager();
             $pmObj = $pm->getById($json['orderNumber']);
             $pmObj->monetaOperationId = $response['data']['orderId'];
