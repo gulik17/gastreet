@@ -1376,6 +1376,72 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             }
         }
 
+        if ($job == "sendKidsAction") {
+            $subject = "Заявка на GASTREET Kids";
+            $name = Request::getVar("name");
+            $phone = Phone::phoneVerification(Request::getVar("phone"));
+            $email = Request::getVar("email");
+
+            $domain = str_replace('www.','',$_SERVER['SERVER_NAME']);
+            $ip = $_SERVER['REMOTE_ADDR'];
+
+            $to = "911@gastreet.com";
+            $from = "no-reply@".$domain;
+            $url = $_SERVER['HTTP_REFERER'];
+
+            $user_agent = $_SERVER["HTTP_USER_AGENT"];
+            if (strpos($user_agent, "Firefox") !== false) $browser = "Firefox";
+            elseif (strpos($user_agent, "Opera") !== false) $browser = "Opera";
+            elseif (strpos($user_agent, "Chrome") !== false) $browser = "Chrome";
+            elseif ( (strpos($user_agent, "MSIE") !== false) || (strpos($user_agent, "Edge") !== false) ) $browser = "Internet Explorer";
+            elseif (strpos($user_agent, "Safari") !== false) $browser = "Safari";
+            else $browser = "Неизвестный";
+
+            if ($phone["isError"]) {
+                $array['result'] = "error";
+                $array['message'] = $phone["description"];
+                echo json_encode($array);
+                exit;
+            } else {
+                $phone = $phone["number"];
+            }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $array['result'] = "error";
+                $array['message'] = ($this->lang == 'en') ? 'Invalid E-Mail Format':'Неверный формат E-Mail';
+                echo json_encode($array);
+                exit;
+            }
+
+            $subject = "=?UTF-8?B?".base64_encode(trim($subject))."?=";
+            $headers  = "MIME-Version: 1.0"."\r\n";
+            $headers .= "Content-type: text/plain; charset=utf-8\r\n";
+            $headers .= "From: ".$from."\r\n";
+            $headers .= "X-Mailer: PHP/".phpversion()."\r\n";
+            $mess  = "\nИмя Фамилия: ".trim($name);
+            $mess .= "\nEmail: ".trim($email);
+            $mess .= "\nТелефон: ".trim($phone);
+
+            $mess .= "\n\n--\nОтправлено со страницы:\n".$url;
+            $mess .= "\nIP: ".$ip;
+            $mess .= "\nБраузер: ".$browser;
+
+            if ( mail($to, $subject, $mess, $headers) ) {
+                $_SESSION['stime'] = time();
+                $array['result'] = "success";
+                $array['cls'] = "c_success";
+                $array['message'] = "Спасибо, сообщение отправлено.";
+                echo json_encode($array);
+                exit;
+            } else {
+                $array['result'] = "error";
+                $array['cls'] = "c_error";
+                $array['message'] = "Ошибка отправки сообщения. Просим связаться с нами по телефону.";
+                echo json_encode($array);
+                exit;
+            }
+        }
+
         if ($job == 'get_pass_for_folk_speaker') {
             $smsCode = rand(1000, 9999); // смс код, сформировать
             $speaker_id = Request::getInt("speaker_id");

@@ -217,7 +217,7 @@
                 </button>
             </div>
             <div class="container body">
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-12 col-lg-8 offset-lg-1 hotels-big-img">
                         <img class="img-fluid  modal-img-big" src="/images/places/resized/{$place->pic1}" alt="">
                     </div>
@@ -241,7 +241,10 @@
                         {/if}
                         <div class="longtitle">
                             {if $place->phone}<span>Отдел бронирования:</span> {$place->phone}{/if}
-                            {if $place->email}<a class="d-block" href="mailto:{$place->email}"><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>Отправить запрос</a>{/if}
+                            {if $place->email}
+                                <a class="d-block" href="#" onclick="return false" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="• Купон на проживание + паспортные данные<br>• Название Отеля<br>• Даты проживания<br>• Категория номера<br>• Количество гостей<br>• ФИО<br>* при наличии детей в номере - обязательно ФИО/возраст ребенка"><i class="fa fa-info-circle mr-2" aria-hidden="true"></i>Какие данные нужно отправить для бронирования номера?</a>
+                                <a class="d-block" href="mailto:{$place->email}"><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>Отправить запрос</a>
+                            {/if}
                         </div>
                     </div>
                     <div class="col-lg-3"></div>

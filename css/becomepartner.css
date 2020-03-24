@@ -77,7 +77,7 @@ body {
     text-decoration: none;}
 .owl-carousel .owl-stage-outer {
     margin-top: 4.2rem;}
-.owl-carousel .owl-item img {
+.owl-carousel .owl-item img:not(.img-fluid) {
     margin-bottom: .7rem;}
 .carousel-partner-page .owl-dots {
     margin-top: 4rem !important;}

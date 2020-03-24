@@ -28,14 +28,14 @@
     overflow: hidden;
     /* fix for flashing background */
     -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
+  .owl-carousel .owl-item:not(.img-fluid) {
     position: relative;
     min-height: 1px;
     float: left;
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
+  .owl-carousel .owl-item img:not(.img-fluid) {
     display: block;
     width: 100%;
     -webkit-transform-style: preserve-3d; }
