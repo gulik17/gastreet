@@ -13,9 +13,9 @@ require_once SOLO_CORE_PATH . '/Config/framework.php';
 require_once SOLO_CORE_PATH . '/BaseApplication.php';
 require_once SOLO_CORE_PATH . '/Enviropment.php';
 require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
+require_once SOLO_CORE_PATH . '/amocrm/AmoCRM.php';
 
 Logger::init(Configurator::getSection("logger"));
-
 $tmp = Configurator::get("application:tempDir");
 $mutex = new Mutex("queueworker", $tmp, false);
 
@@ -84,25 +84,17 @@ try {
     Logger::error($e->getMessage() . " " . $e->getTraceAsString());
 }
 
-
-
-
-
-
-
-
 // echo "done\n";
 // Освобождаем ресурс
 $mutex->release();
 
-$acm = new AmoConfigManager();
-$conf = $acm->getConfig();
+$filetime = filectime(SOLO_CORE_PATH.'/amocrm/cookie.txt');
+
 $time = time();
+$endtime = $time - $filetime;
 
-if ($conf->expires_in < $time + 3600) {
-    echo "Нужно обновить токен<br>";
-    $conf->expires_in = time() + 3600*10;
-    $conf = $acm->save($conf);
+if ($endtime > (60 * 13)) {
+    echo "Обновляем токен<br>";
+    $acrm = new AmoCRM();
+    $acrm->getCookieFile();
 }
-
-deb($conf);
