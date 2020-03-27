@@ -113,7 +113,7 @@ $(document).ready(function () {
         margin:10,
         nav:true,
         dots:true,
-        loop:true,
+        loop:false,
         responsive:{
             0:{items:1},
             600:{items:3}

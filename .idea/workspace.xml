@@ -2,10 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/kids/btn-play.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/kids/dialog_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/kids/dialog_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/oferta20.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pdf/policy20.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/alfa-client/alfa.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/alfa-client/alfa.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cron/alfapay.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/alfapay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/core/EntityManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/core/EntityManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/PlaceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PlaceControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/AvatarControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/AvatarControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/AvatarMobileControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/AvatarMobileControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/FooterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FooterControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/KidsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/KidsControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/place.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/avatar/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/01.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/avatar/layer/01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/02.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/avatar/layer/02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/layer/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/app/avatar/loader.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/avatar/secondfiximg.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/avatar/secondfiximg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/description.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/feedback.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/feedback.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/kids_img_boy.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/kids_img_boy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/modal-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/modal-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/modal-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/modal-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/modal-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/modal-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/subtitle-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/subtitle-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/timetable.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/timetable.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/title-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/title-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kids/zvuchi.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/kids/zvuchi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/partner_2020.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/partner_2020.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +84,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,6 +97,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -58,9 +105,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/fonts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/avatar/layer" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,11 +116,11 @@
       <recent name="D:\YandexDisk\phpStormProject\gastreet\css\jquery-ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gastreet\app\avatar\layer" />
+      <recent name="D:\GitHub\gastreet\images\kids" />
+      <recent name="D:\GitHub\gastreet\pdf" />
       <recent name="D:\GitHub\gastreet\fonts" />
       <recent name="D:\GitHub\gastreet\images\thematik-page" />
-      <recent name="D:\GitHub\gastreet\images\place" />
-      <recent name="D:\GitHub\gastreet\images" />
-      <recent name="D:\GitHub\gastreet\app\Managers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -178,42 +225,13 @@
       <workItem from="1584102566551" duration="84000" />
       <workItem from="1584102673504" duration="179000" />
       <workItem from="1584102923139" duration="3926000" />
-      <workItem from="1584338899600" duration="10201000" />
-    </task>
-    <task id="LOCAL-00002" summary="After open new ticket page">
-      <created>1580481356195</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1580481356195</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fix bag on Ticket page">
-      <created>1580482697897</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1580482697897</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Fix bag on Ticket page">
-      <created>1580483700611</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1580483700611</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Fix bag on Ticket page">
-      <created>1580726920849</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1580726920849</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Any update">
-      <created>1580742279687</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1580742279687</updated>
+      <workItem from="1584338899600" duration="10229000" />
+      <workItem from="1584370776785" duration="12000" />
+      <workItem from="1584431647307" duration="368000" />
+      <workItem from="1584432035380" duration="14180000" />
+      <workItem from="1584512697900" duration="4837000" />
+      <workItem from="1584944896762" duration="383000" />
+      <workItem from="1585203478883" duration="35137000" />
     </task>
     <task id="LOCAL-00007" summary="Hit style update">
       <created>1580801634536</created>
@@ -523,7 +541,42 @@
       <option name="project" value="LOCAL" />
       <updated>1584360561674</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Сохранение перед переездом">
+      <created>1584370719001</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1584370719001</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Мелкие корректировки в связи с переездом">
+      <created>1584434075324</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1584434075325</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Пополнение баланса от Альфа">
+      <created>1584443955832</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1584443955832</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Мелкие правки в админке">
+      <created>1584450790281</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1584450790281</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Мелкие правки в админке и в проживании">
+      <created>1584530162372</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1584530162373</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,10 +598,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Корректировки на странице Билеты" />
-    <MESSAGE value="Добавил ссылки на соц сети и аватар" />
-    <MESSAGE value="Правки на страницах моб аватар, оферта, политика, где жить" />
-    <MESSAGE value="priceup страница" />
     <MESSAGE value="Пофиксил повышение цены и билеты" />
     <MESSAGE value="Правки страницы CHEFSTREET" />
     <MESSAGE value="Запуск шефской страницы" />
@@ -570,6 +619,10 @@
     <MESSAGE value="Конец дня, сохранение" />
     <MESSAGE value="Мелкие правки, шрифт, тематические страницы" />
     <MESSAGE value="Сохранение перед переездом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сохранение перед переездом" />
+    <MESSAGE value="Мелкие корректировки в связи с переездом" />
+    <MESSAGE value="Пополнение баланса от Альфа" />
+    <MESSAGE value="Мелкие правки в админке" />
+    <MESSAGE value="Мелкие правки в админке и в проживании" />
+    <option name="LAST_COMMIT_MESSAGE" value="Мелкие правки в админке и в проживании" />
   </component>
 </project>

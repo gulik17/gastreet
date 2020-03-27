@@ -2627,7 +2627,7 @@ main {
     position: relative;
     padding: 20px;
     height: auto;
-    width: 110px;}
+    width: 110px!important;}
 .person-teaser .about {
     position: absolute;
     z-index: 2;

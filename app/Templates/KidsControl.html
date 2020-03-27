@@ -1,16 +1,24 @@
 <div class="kids-bg">
-    <div class="container-fluid kids">
+    <div class="container kids">
         <div class="row">
-            <div class="col-md-7 kids_logo">
+            <div class="col-md-6 kids_logo">
                 <img class="img-fluid" src="/images/kids/logo.png" alt="">
             </div>
-            <div class="offset-md-4 col-md-8 kids_img_boy">
-                <img class="img-fluid" src="/images/kids/kids_img_boy.png" alt="">
+            <div class="col-md-12 kids_img_boy">
+                <img class="img-fluid" style="margin-top:-5px;width: 95%;" src="/images/kids/kids_img_boy.png" alt="">
             </div>
-            <div class="col-md-6 kids_img_description">
-                <img class="img-fluid" src="/images/kids/description.png" alt="">
+            <div class="col-md-4 kids_img_description_1">
+                <img class="img-fluid" src="/images/kids/dialog_1.png" alt="">
+            </div>
+            <div class="col-md-5 kids_img_description_2">
+                <img class="img-fluid" src="/images/kids/dialog_2.png" alt="">
             </div>
         </div>
+    </div>
+    <div class="container kids_description">
+        <p class="Kids_description-title">Решение есть!<br>
+            Впервые на GASTREET —<br>
+            детский кэмп ГАСТРИТИК</p>
     </div>
     <div class="container short_description">
         <div class="row">
@@ -103,7 +111,7 @@
                 <a class="description_modal" data-toggle="modal" data-target="#KidsPoolModal" href="#">
                     <img class="img-description" src="/images/kids/7.png" alt="">
                     <div class="subtitle text-7">
-                        Бассейн
+                        SPA-зона
                     </div>
                 </a>
             </div>
@@ -172,7 +180,7 @@
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">12:00</div>
-                    <div class="col-8 description_time">Бассейн</div>
+                    <div class="col-8 description_time">SPA-зона</div>
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">13:00</div>
@@ -273,7 +281,7 @@
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">12:00</div>
-                    <div class="col-8 description_time">Бассейн</div>
+                    <div class="col-8 description_time">SPA-зона</div>
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">13:00</div>
@@ -328,7 +336,7 @@
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">12:00</div>
-                    <div class="col-8 description_time">Бассейн</div>
+                    <div class="col-8 description_time">SPA-зона</div>
                 </div>
                 <div class="row data_description">
                     <div class="col-4 time">13:00</div>
@@ -366,12 +374,36 @@
             </div>
         </div>
     </div>
-    <div class="container feedback">
+    <div class="container kids_video">
+        <div class="row">
+            <div class="offset-md-3 offset-2 col-8 d-flex align-items-center">
+                <div class="partner-zvuchi">Парнер по организации</div>
+                <a href="https://www.zvuchi-camp.ru/" target="_blank"><img class="img-fluid logo-partners" src="/images/kids/zvuchi.png" alt=""></a>
+            </div>
+            <div class="col-md-6 text-center">
+                <p class="video-title">Как это было</p>
+                <div class="video">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/7g2sOXso66I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <p class="video-title">
+                    Отзывы родителей
+                </p>
+                <div class="video">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/9zaFFZaz4Eg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid feedback">
         <div class="row">
             <div class="col-md-12 feedback-page text-center">
                 <p class="feedback-title">Цена путевки: 10 000 ₽</p>
+                <p class="feedback-longtitle mb-0">Возраст детей от 7 до 17 лет.</p>
                 <p class="feedback-longtitle">Оставляй заявку! Мы свяжемся с тобой в ближайшее время.</p>
-                <form method="POST">
+                <form action="">
                     <div class="row">
                         <div class="col-md-4">
                             <input placeholder="Телефон" type="text" name="phone">
@@ -387,16 +419,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-        <div class="container partners">
-            <div class="row text-center">.thematik-rebro-page .img-faces-page
-                <div class="col-md-12">
-                    <p class="partner-zvuchi">Партнер по&nbsp;организации</p>
-                    <a href="https://www.zvuchi-camp.ru/?utm_source=gastreetkids&utm_medium=site&utm_campaign=zvuchi_06" target="_blank">
-                        <img class="img-fluid logo-partners" src="/images/kids/zvuchi.png" alt="">
-                    </a>
-                </div>
+                <p class="places">Осталось 28 из 30 мест</p>
             </div>
         </div>
     </div>
@@ -559,9 +582,9 @@
                 </div>
                 <div class="img-description text-left">
                     <div class="subtitle-modal">
-                        Наш кэмп «Гастритики» расположится в самом сердце фестиваля, на высоте 960 в 2х соседних таунхаусах общей площадью 600 м2. Свои сан. узлы, уютные кухни для чаепития, места для отдыха и даже сна. А в больших просторных залах будут проходить сборы кэмпа, репетиции и творческие мастер-классы. Таунхаусы имеют несколько этажей, что позволяет разделить детей по интересам и возрастам, чтобы всех занять по интересам.                        </div>
+                        Наш кэмп «Гастритик» расположится в самом сердце фестиваля, на высоте 960 в 2х соседних таунхаусах общей площадью 600 м<sup>2</sup>. Свои сан. узлы, уютные кухни для чаепития, места для отдыха и даже сна. А в больших просторных залах будут проходить сборы кэмпа, репетиции и творческие мастер-классы. Таунхаусы имеют несколько этажей, что позволяет разделить детей по интересам и возрастам, чтобы всех занять по интересам.
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -579,7 +602,7 @@
                 <div class="img-title text-left ">
                     <div class="title-modal d-flex justify-content-around align-items-center">
                         <a class="d-block angle left" data-toggle="modal" data-target="#KidsСlothesModal" data-dismiss="modal" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                        Бассейн
+                        SPA-зона
                         <a class="d-block angle right" data-toggle="modal" data-target="#KidsAnthemModal" data-dismiss="modal" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -611,8 +634,7 @@
                 </div>
                 <div class="img-description text-left">
                     <div class="subtitle-modal">
-                        Участие в съемках детского гимна гастрит
-                        В течение 5 дней гастритики будут создавать новый музыкальный шедевр под руководством настоящих мастеров. Придумать текст, записаться на профессиональной студии звукозаписи, поучаствовать в съемках видеоклипа и, конечно, выйти на главную сцену фестиваля в финальный день, чтобы презентовать свое творчество. Так что ваше чадо попадет во всех хроники, интернеты и, конечно, в историю GASTREET.                        </div>
+                        Участие в&nbsp;съемках детского гимна GASTREET. В&nbsp;течение 5&nbsp;дней гастритики будут создавать новый музыкальный шедевр под руководством настоящих мастеров. Придумать текст, записаться на профессиональной студии звукозаписи, поучаствовать в&nbsp;съемках видеоклипа и, конечно, выйти на главную сцену фестиваля в&nbsp;финальный день, чтобы презентовать свое творчество. Так что ваше чадо попадет во всех хроники, интернеты и, конечно, в&nbsp;историю GASTREET.                        </div>
                 </div>
             </div>
         </div>
@@ -627,7 +649,7 @@
     html {
         font-size: 16px;
         background-image: url('/images/kids/background.png');
-        background-color: #fdb0fe;
+        background-color: rgba(0,52,213,1);
         -moz-background-size: 100%; /* Firefox 3.6+ */
         -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
         -o-background-size: 100%; /* Opera 9.6+ */
@@ -636,21 +658,23 @@
         font-family: 'Gastreet Sans';
         color: #fff;
         font-weight: normal;
-        background: url('/images/kids/background.png'), linear-gradient(135deg, rgba(0,52,213,1) 0%, rgba(98,0,151,1) 100%);
+        background-image: url('/images/kids/background.png'), linear-gradient(135deg, rgba(0,52,213,1) 0%, rgba(98,0,151,1) 100%);
         -moz-background-size: 100%; /* Firefox 3.6+ */
         -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
         -o-background-size: 100%; /* Opera 9.6+ */
         background-size: 100%; /* Современные браузеры */}
     body.h-100 {
         height: auto!important;}
-    main {
+    html body main.pb-4 {
+        padding-bottom: 0!important;
         padding-top: 2.95rem;}
     .kids_body_page .kids .kids_img_boy {
+        text-align: center;
         position: relative;}
     .kids_body_page .kids .kids_logo {
         position: absolute;
-        left: 0;
-        top: 0;
+        right: 0;
+        top: 45px;
         z-index: 1;}
     .kids_body_page .kids .kids_img_description {
         position: absolute;
@@ -658,7 +682,7 @@
         left: 0;}
     .kids_body_page .short_description {
         margin-top: 5rem;
-        margin-bottom: 5rem;}
+        margin-bottom: 3rem;}
     .kids_body_page .short_description .description {
         line-height: 1;
         font-size: 1.3rem;}
@@ -669,38 +693,41 @@
     .kids_body_page .included .child_relaxation {
         font-size: 3.95rem;
         font-weight: 600;
-        line-height: 1;}
+        line-height: 1;
+        padding-top: 4rem;}
     .kids_body_page .included .img-description {
-        width: 100%;
-        height: 100%;}
+        max-width: 100%;
+        max-height: 400px;
+        padding: 2rem 1rem;}
     .kids_body_page .included .subtitle {
         position: absolute;
         text-align: center;
-        font-weight: 600;}
+        font-weight: 600;
+        line-height: 1.5;}
     .kids_body_page .included .subtitle.text-1 {
-        bottom: 6.5rem;
-        padding-left: 5.5rem;}
+        bottom: 4.5rem;
+        padding-left: 3.5rem;}
     .kids_body_page .included .subtitle.text-2 {
-        bottom: 5.5rem;
-        padding-left: 5.5rem;}
+        bottom: 4rem;
+        padding-left: 3.5rem;}
     .kids_body_page .included .subtitle.text-3 {
-        bottom: 7.3rem;
-        padding-left: 5.5rem;}
+        bottom: 5rem;
+        padding-left: 4.5rem;}
     .kids_body_page .included .subtitle.text-4 {
-        bottom: 7rem;
-        padding-left: 6.5rem;}
+        bottom: 5rem;
+        padding-left: 5rem;}
     .kids_body_page .included .subtitle.text-5 {
-        bottom: 6.6rem;
-        padding-left: 6.8rem}
+        bottom: 4.5rem;
+        padding-left: 4.8rem;}
     .kids_body_page .included .subtitle.text-6 {
-        bottom: 7rem;
-        padding-left: 7rem;}
+        bottom: 5.5rem;
+        padding-left: 4.5rem;}
     .kids_body_page .included .subtitle.text-7 {
-        bottom: 9rem;
-        padding-left: 8rem;}
+        bottom: 6rem;
+        padding-left: 6.5rem;}
     .kids_body_page .included .subtitle.text-8 {
-        bottom: 7.3rem;
-        padding-left: 6rem;}
+        bottom: 4.5rem;
+        padding-left: 5rem;}
     .kids_body_page .included .description_modal {
         color: #fff;}
     .kids_body_page .timetable {
@@ -729,13 +756,18 @@
         background-size: 100% 100%;
         padding-bottom: 4rem;}
     .kids_body_page .feedback .feedback-page .feedback-title {
-        padding-top: 8rem;
+        padding-top: 14rem;
         font-size: 4.063rem;
         line-height: 1.5;
         font-weight: 600;}
+    .kids_body_page .feedback .places {
+        font-size: 2.250rem;
+        text-decoration: underline;
+        margin-top: 3rem;
+        margin-bottom: 3rem;}
     .kids_body_page .feedback .feedback-page .feedback-longtitle {
         font-size: 1.313rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
         line-height: 1.5;}
     .kids_body_page .feedback .feedback-page  form input::placeholder {
         color: #fff;}
@@ -745,7 +777,7 @@
         width: 100%;
         display: block;
         color: #fff;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
         height: 2.5rem;}
     .kids_body_page .feedback .feedback-page .feedback-button {
         text-decoration: none;
@@ -756,8 +788,7 @@
         font-size: 1.438rem;
         font-weight: 600;
         color: #0034d5;
-        display: inline-block;
-        margin-top: 1rem;}
+        display: inline-block;}
     .kids_body_page .partners {
         margin-top: 2rem;
         margin-bottom: 2rem;}
@@ -772,8 +803,8 @@
     .kids_body_page .modal_description_kids .modal-content .img-title {
         background: url('/images/kids/title-img.png');
         background-size: 100% 100%;
-        height: 14rem;
-        margin-top: -10rem;
+        height: 9rem;
+        margin-top: -4rem;
         position: relative;
         z-index: 1;}
     .kids_body_page .modal_description_kids .modal-content {
@@ -781,62 +812,131 @@
     .kids_body_page .modal_description_kids .modal-content .img-description {
         background: url('/images/kids/subtitle-img.png')50% 100% no-repeat;
         background-size: 90% 100%;
-        height: 28rem;
-        margin-top: -4rem;}
+        margin-top: -3rem;
+        padding-bottom: 1rem;}
     .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
         color: #000;
-        padding-top: 6rem;
-        padding-left: 7rem;
-        padding-right: 7rem;
-        font-size: 1.313rem;}
+        padding-top: 3.5rem;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        font-size: 0.9rem;}
     .kids_body_page .modal_description_kids .modal-content .title-modal {
         position: relative;
-        top: 5rem;
+        top: 3.5rem;
         line-height: 1;
         font-weight: 600;
-        font-size: 2.500em;}
+        font-size: 1.3rem;}
     .kids_body_page #KidsFoodModal .modal-content .title-modal {
         position: relative;
-        top: 4rem;
+        top: 3rem;
         line-height: 1;
         font-weight: 600;
-        font-size: 2.500em;}
-    .kids_body_page #KidsFoodModal .modal-content .title-modal .angle.left {
-        margin-right: -10rem;}
-    .kids_body_page #KidsFoodModal .modal-content .title-modal .angle.right {
-        margin-left: -5rem;}
-    .kids_body_page #KidsPoolModal .modal-content .title-modal {
-        top: 6rem;}
-    .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.left {
+        font-size: 1.3rem;}
+    .kids_body_page #KidsTimeModal .modal-content .title-modal .angle.left {
         margin-right: -3rem;}
+    .kids_body_page #KidsTimeModal .modal-content .title-modal .angle.right {
+        margin-left: 1rem;}
+    .kids_body_page #KidsFoodModal .modal-content .title-modal .angle.left {
+        margin-right: -3rem;}
+    .kids_body_page #KidsFoodModal .modal-content .title-modal .angle.right {
+        margin-right: 0;}
+    .kids_body_page #KidsTeachModal .modal-content .title-modal .angle.left {
+        margin-right: -2.5rem;}
+    .kids_body_page #KidsTeachModal .modal-content .title-modal .angle.right {
+        margin-left: 1rem;}
     .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.right {
-        margin-left : 0;}
+        margin-left: 6rem;}
+    .kids_body_page #KidsExcursModal .modal-content .title-modal .angle.left {
+        margin-right: -2rem;}
+    .kids_body_page #KidsExcursModal .modal-content .title-modal .angle.right {
+        margin-left: 3rem;}
+    .kids_body_page #KidsCookingModal .modal-content .title-modal .angle.left {
+        margin-right: -3rem;}
+    .kids_body_page #KidsCookingModal .modal-content .title-modal .angle.right {
+        margin-left: -3rem;}
+    .kids_body_page #KidsСlothesModal .modal-content .title-modal .angle.left {
+        margin-right: -1rem;}
+    .kids_body_page #KidsСlothesModal .modal-content .title-modal .angle.right {
+        margin-left: 5rem;}
+    .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.left {
+        margin-right: -2rem;}
+    .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.right {
+        margin-left: 8rem;}
+    .kids_body_page #KidsAnthemModal .modal-content .title-modal .angle.left {
+        margin-right: -3rem;}
+    .kids_body_page #KidsAnthemModal .modal-content .title-modal .angle.right {
+        margin-left: -1rem;}
     .kids_body_page .modal_description_kids .modal-content .title-modal .angle {
         font-size: 2.5rem;
         color: #fff;}
-    .kids_body_page .modal_description_kids .modal-content .title-modal .angle.left {
-        margin-right: -10rem;}
-    .kids_body_page .modal_description_kids .modal-content .title-modal .angle.right {
-        margin-left : -10rem;}
+    .kids_body_page #KidsPoolModal .modal-content .title-modal {
+        top: 3.5rem;}
     .kids_body_page .modal_description_kids .modal-content .close {
         color: #0034d5;
         font-weight: 600;
         background-color: #fff;
-        padding: 0.55rem 0.9rem;
+        padding: 0.3rem 0.6rem;
         border-radius: 50px;
         position: absolute;
-        right: 7rem;
-        top: 2rem;
+        right: 4rem;
+        top: 1rem;
         opacity: 1;}
     .kids_body_page .timetable .day_2, .kids_body_page .timetable .day_3, .kids_body_page .timetable .day_4,.kids_body_page .timetable .day_5{
         display: none;}
     .kids_body_page .modal-sl {
-        max-width: 900px;}
+        max-width: 500px;}
     .kids_body_page .timetable .day_month {
         text-decoration: none;}
     .kids_body_page .timetable .day_month.active {
-        text-decoration: underline;
-    }
+        text-decoration: underline;}
+    .kids_body_page .modal_description_kids .modal-content .big-img-title {
+        width: 90%;}
+    .kids_body_page .kids .kids_img_description_1 {
+        position: relative;
+        top: -9rem;
+        left: 5rem;}
+    .kids_body_page .kids .kids_img_description_2 {
+        position: relative;
+        top: -11rem;
+        right: -10rem;}
+    .kids_description .Kids_description-title {
+        margin-top: -8rem;
+        font-size: 4.063rem;
+        line-height: 1;
+        font-weight: 600;}
+    .kids_body_page .kids_video {
+        margin-top: 2rem;}
+    .kids_body_page .partner-zvuchi {
+        font-family: 'Gastreet Font';
+        font-size: 2rem;}
+    .kids_body_page .logo-partners {
+        margin-left: 1rem;
+        height: 4rem;}
+    .kids_body_page .kids_video .video-title {
+        padding-top: 3rem;
+        font-size: 2rem;
+        font-weight: 600;}
+    .kids_body_page .video {
+        background-color: transparent;
+        margin-top: 1rem;}
+    .kids_body_page .video .btn-play {
+        width: 5rem;
+        height: 5rem;
+        padding: 0;
+        border: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-image: url('/images/kids/btn-play.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;}
+    .video:before {
+        display: none;}
     @media (min-width: 300px) and (max-width: 575px) {
         html {
             font-size: 12px;}
@@ -858,43 +958,33 @@
             text-align: center;
             font-size: 1rem;
             padding-bottom: 1rem;}
+        .kids_body_page .included .img-description {
+            max-width: 100%;
+            max-height: 400px;
+            padding: 0.5rem;}
         .kids_body_page .short_description .description span {
             font-size: 4.25rem;}
         .kids_body_page .included .child_relaxation {
-            font-size: 2.3rem;
+            font-size: 1.7rem;
             font-weight: 600;
-            line-height: 1;}
+            line-height: 1;
+            padding-top: 0;}
         .kids_body_page .included .subtitle {
-            font-size: 0.6rem;}
-        .kids_body_page .included .subtitle.text-1 {
-            bottom: 6.5rem;
-            padding-left: 5.5rem;}
-        .kids_body_page .included .subtitle.text-2 {
-            bottom: 5.5rem;
-            padding-left: 5.5rem;}
-        .kids_body_page .included .subtitle.text-3 {
-            bottom: 7.3rem;
-            padding-left: 5.5rem;}
-        .kids_body_page .included .subtitle.text-4 {
-            bottom: 7rem;
-            padding-left: 6.5rem;}
-        .kids_body_page .included .subtitle.text-5 {
-            bottom: 6.6rem;
-            padding-left: 6.8rem}
-        .kids_body_page .included .subtitle.text-6 {
-            bottom: 7rem;
-            padding-left: 6rem;}
-        .kids_body_page .included .subtitle.text-7 {
-            bottom: 8rem;
-            padding-left: 8rem;}
-        .kids_body_page .included .subtitle.text-8 {
-            bottom: 7rem;
-            padding-left: 6rem;}
+            font-size: 0.8rem;
+            line-height: 1.2;}
+        .kids_body_page .partner-zvuchi {
+            font-size: 1.7rem;}
+        .kids_body_page .kids_video .video-title {
+            padding-top: 3rem;
+            font-size: 2rem;
+            font-weight: 600;}
+        .kids_body_page .feedback .places {
+            font-size: 1.25rem;}
         .kids_body_page .timetable  {
             background-color: #0034d5;
             padding-top: 1rem;}
         .kids_body_page .timetable .title_timetable {
-            font-size: 4.063rem;
+            font-size: 1.7rem;
             margin-bottom: 1.5rem;}
         .kids_body_page .timetable .data_description {
             padding-bottom: 1.8rem;}
@@ -912,7 +1002,7 @@
             font-size: 1.125rem;}
         .kids_body_page .feedback .feedback-page .feedback-title {
             padding-top: 14rem;
-            font-size: 2rem;}
+            font-size: 1.7rem;}
         .kids_body_page .feedback .feedback-page .feedback-longtitle {
             font-size: 0.7rem;
             margin-bottom: 1.5rem;}
@@ -934,11 +1024,11 @@
         .kids_body_page .modal_description_kids .modal-content .img-description {
             background: url('/images/kids/subtitle-img.png')48% 100% no-repeat;
             background-size: 90% 100%;
-            height: 15rem;
-            margin-top: -5rem;}
+            margin-top: -5rem;
+            margin-bottom: 1rem;}
         .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
             color: #000;
-            padding-top: 4rem;
+            padding-top: 5.3rem;
             padding-left: 4.5rem;
             padding-right: 4.5rem;
             font-size: 0.6rem;}
@@ -948,19 +1038,13 @@
             line-height: 1;
             font-weight: 600;
             font-size: 1rem}
-        .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.left {
-            margin-right: -3rem;}
-        .kids_body_page #KidsPoolModal .modal-content .title-modal .angle.right {
-            margin-left : 3rem;}
-        .kids_body_page #KidsFoodModal .modal-content .title-modal, .kids_body_page #KidsPoolModal .modal-content .title-modal {
+        .kids_body_page #KidsFoodModal .modal-content .title-modal {
             top: 3rem;}
+        .kids_body_page #KidsPoolModal .modal-content .title-modal {
+            top: 2.3rem;}
         .kids_body_page .modal_description_kids .modal-content .title-modal .angle {
             font-size: 2.5rem;
             color: #fff;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.left {
-            margin-right: -3rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.right {
-            margin-left : -3rem;}
         .kids_body_page .modal_description_kids .modal-content .close {
             color: #0034d5;
             font-weight: 600;
@@ -970,40 +1054,54 @@
             position: absolute;
             right: 5rem;
             top: 1rem;
-            opacity: 1}
+            opacity: 1;}
     }
     @media (min-width: 300px) and (max-width: 374px) {
         .kids_body_page .kids .kids_img_boy {
             position: relative;
             top: 6.5rem;}
+        .kids_body_page .kids .kids_img_description_1 {
+            top: 3.5rem;
+            left: 1rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: 2.5rem;
+            right: 1rem;
+            width: 55%;}
+        .kids_description .Kids_description-title {
+            padding-top: 12rem;
+            font-size: 1.7rem;}
         .kids_body_page .timetable .day_month {
             font-size: 1rem;}
         .kids_body_page .kids .kids_img_description {
             top: 1rem;}
+        .kids_body_page .included .subtitle {
+            font-size: 0.6rem;
+            line-height: 1.5}
         .kids_body_page .included .subtitle.text-1 {
             bottom: 3rem;
-            padding-left: 2rem;}
+            padding-left: 1.8rem;}
         .kids_body_page .included .subtitle.text-2 {
-            bottom: 2.5rem;
-            padding-left: 2rem;}
+            bottom: 2rem;
+            padding-left: 2.4rem;}
         .kids_body_page .included .subtitle.text-3 {
             bottom: 3rem;
             padding-left: 2.2rem;}
         .kids_body_page .included .subtitle.text-4 {
-            bottom: 3rem;
+            bottom: 2.3rem;
             padding-left: 2.7rem;}
         .kids_body_page .included .subtitle.text-5 {
-            bottom: 3.2rem;
-            padding-left: 2.8rem;}
+            bottom: 2.4rem;
+            padding-left: 3rem;}
         .kids_body_page .included .subtitle.text-6 {
-            bottom: 3.5rem;
-            padding-left: 2.5rem;}
+            bottom: 3rem;
+            padding-left: 2.8rem;}
         .kids_body_page .included .subtitle.text-7 {
-            bottom: 4rem;
+            bottom: 3rem;
             padding-left: 4rem;}
         .kids_body_page .included .subtitle.text-8 {
-            bottom: 3rem;
-            padding-left: 2.3rem;}
+            bottom: 2.4rem;
+            padding-left: 2.9rem;}
         .kids_body_page .timetable .title_timetable {
             font-size: 3.063rem;}
         .kids_body_page .timetable .data_description {
@@ -1026,11 +1124,10 @@
             width: 90%;}
         .kids_body_page .modal_description_kids .modal-content .img-description {
             background-size: 90% 100%;
-            height: 15rem;
             margin-top: -3rem;}
         .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
             color: #000;
-            padding-top: 4rem;
+            padding-top: 3.5rem;
             padding-left: 3rem;
             padding-right: 3rem;
             font-size: 0.6rem;}
@@ -1061,35 +1158,46 @@
             top: 1rem;
             opacity: 1}
     }
-    @media (min-width: 375px) and (max-width: 414px) {
+    @media (min-width: 375px) and (max-width: 411px) {
+        .kids_body_page .kids .kids_img_description_1 {
+            top: 4rem;
+            left: 1rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: 3rem;
+            right: 1rem;
+            width: 55%;}
+        .kids_description .Kids_description-title {
+            padding-top: 12rem;
+            font-size: 1.7rem;}
         .kids_body_page .timetable .day_month {
             font-size: 1rem;}
         .kids_body_page .kids .kids_img_description {
             top: 2.5rem;}
         .kids_body_page .included .subtitle.text-1 {
-            bottom: 3.8rem;
-            padding-left: 3.4rem;}
+            bottom: 3.4rem;
+            padding-left: 1.7rem;}
         .kids_body_page .included .subtitle.text-2 {
-            bottom: 3.5rem;
-            padding-left: 3.5rem;}
+            bottom: 2.4rem;
+            padding-left: 2.3rem;}
         .kids_body_page .included .subtitle.text-3 {
-            bottom: 4rem;
-            padding-left: 3.5rem;}
+            bottom: 3.7rem;
+            padding-left: 2.2rem;}
         .kids_body_page .included .subtitle.text-4 {
-            bottom: 4rem;
-            padding-left: 4rem;}
+            bottom: 2.8rem;
+            padding-left: 3.2rem;}
         .kids_body_page .included .subtitle.text-5 {
-            bottom: 4rem;
-            padding-left: 4.2rem;}
+            bottom: 2.8rem;
+            padding-left: 3.2rem;}
         .kids_body_page .included .subtitle.text-6 {
-            bottom: 4.5rem;
-            padding-left: 3.7rem;}
+            bottom: 3.6rem;
+            padding-left: 3.1rem;}
         .kids_body_page .included .subtitle.text-7 {
-            bottom: 4.7rem;
-            padding-left: 5rem;}
+            bottom: 3.2rem;
+            padding-left: 4.5rem;}
         .kids_body_page .included .subtitle.text-8 {
-            bottom: 4rem;
-            padding-left: 3.5rem;}
+            bottom: 2.6rem;
+            padding-left: 3rem;}
         .kids_body_page .modal_description_kids .modal-content .img-title {
             height: 8rem;
             margin-top: -3rem;}
@@ -1097,51 +1205,65 @@
             padding-top: 8rem;
             border: none;}
         .kids_body_page .modal_description_kids .modal-content .img-description {
-            height: 16.2rem;
             margin-top: -3rem;}
         .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
-            padding-top: 4rem;
-            padding-left: 3.5rem;
-            padding-right: 3.5rem;
+            padding-top: 3.5rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
             font-size: 0.7rem;}
         .kids_body_page .modal_description_kids .modal-content .title-modal {
             top: 3rem;
             font-weight: 600;
             font-size: 1rem;}
         .kids_body_page #KidsFoodModal .modal-content .title-modal {
-            top: 2.6rem;
+            top: 2.2rem;
             font-size: 1.4rem;}
         .kids_body_page .modal_description_kids .modal-content .close {
             right: 4.5rem;
             top: 1.5rem;}
     }
-    @media (min-width: 411px) and (max-width: 576px) {
+    @media (min-width: 411px) and (max-width: 539px) {
+        .kids_body_page .kids .kids_img_boy {
+            position: relative;
+            top: 8rem;
+            left: 0;}
+        .kids_body_page .kids .kids_img_description_1 {
+            top: 4.5rem;
+            left: 1rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: 3.5rem;
+            right: 1rem;
+            width: 55%;}
         .kids_body_page .timetable .day_month {
             font-size: 1rem;}
+        .kids_description .Kids_description-title {
+            padding-top: 12rem;
+            font-size: 1.7rem;}
         .kids_body_page .included .subtitle.text-1 {
-            bottom: 4.5rem;
-            padding-left: 4rem;}
-        .kids_body_page .included .subtitle.text-2 {
             bottom: 4rem;
-            padding-left: 4rem;}
+            padding-left: 2.7rem;}
+        .kids_body_page .included .subtitle.text-2 {
+            bottom: 3rem;
+            padding-left: 3.3rem;}
         .kids_body_page .included .subtitle.text-3 {
             bottom: 4.5rem;
-            padding-left: 4rem;}
+            padding-left: 3rem;}
         .kids_body_page .included .subtitle.text-4 {
-            bottom: 4.5rem;
-            padding-left: 4.5rem;}
+            bottom: 3.1rem;
+            padding-left: 3.9rem;}
         .kids_body_page .included .subtitle.text-5 {
-            bottom: 4.6rem;
-            padding-left: 4.8rem;}
+            bottom: 3.2rem;
+            padding-left: 4rem;}
         .kids_body_page .included .subtitle.text-6 {
-            bottom: 5rem;
-            padding-left: 4.5rem;}
+            bottom: 4rem;
+            padding-left: 4rem;}
         .kids_body_page .included .subtitle.text-7 {
-            bottom: 5.5rem;
-            padding-left: 5.5rem;}
+            bottom: 4rem;
+            padding-left: 5rem;}
         .kids_body_page .included .subtitle.text-8 {
-            bottom: 4.5rem;
-            padding-left: 4.3rem;}
+            bottom: 3rem;
+            padding-left: 4rem;}
         .kids_body_page .modal_description_kids .modal-content .img-title {
             height: 10rem;
             margin-top: -5em;}
@@ -1150,8 +1272,6 @@
             border: none;}
         .kids_body_page .modal_description_kids .modal-content .big-img-title {
             width: 90%;}
-        .kids_body_page .modal_description_kids .modal-content .img-description {
-            height: 14.5rem;}
         .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
             padding-left: 4rem;
             padding-right: 4rem;}
@@ -1159,12 +1279,27 @@
             top: 4rem;
             font-size: 1.3rem;}
         .kids_body_page #KidsFoodModal .modal-content .title-modal {
-            top: 3.5rem;}
+            top: 3.3rem;}
         .kids_body_page .modal_description_kids .modal-content .close {
             right: 5rem;
             top: 1.5rem;}
     }
-    @media (min-width: 576px) and (max-width: 768px) {
+    @media (min-width: 540px) and (max-width: 767px) {
+        .kids_description .Kids_description-title {
+            padding-top: 3rem;
+            font-size: 2rem;}
+        .kids_body_page .included .img-description {
+            max-width: 100%;
+            max-height: 400px;
+            padding: 0.5rem;}
+        .kids_body_page .kids .kids_img_description_1 {
+            top: -4.5rem;
+            left: 4rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: -5.5rem;
+            right: -6rem;
+            width: 55%;}
         .kids_body_page .short_description .description {
             line-height: 1.3;
             text-align: center;
@@ -1181,7 +1316,7 @@
         .kids_body_page .included .subtitle {
             font-size: 0.6rem;}
         .kids_body_page .included .subtitle.text-1 {
-            bottom: 6.5rem;
+            bottom: 7.5rem;
             padding-left: 5.5rem;}
         .kids_body_page .included .subtitle.text-2 {
             bottom: 5.5rem;
@@ -1204,37 +1339,17 @@
         .kids_body_page .included .subtitle.text-8 {
             bottom: 7rem;
             padding-left: 6rem;}
-        .kids_body_page .modal_description_kids .modal-content .img-title {
-            height: 14rem;
-            margin-top: -6rem;}
-        .kids_body_page .modal_description_kids .modal-content {
-            padding-top: 8rem;
-            border: none;}
-        .kids_body_page .modal_description_kids .modal-content .big-img-title {
-            width: 90%;}
-        .kids_body_page .modal_description_kids .modal-content .img-description {
-            height: 20rem;
-            margin-top: -3rem;}
-        .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
-            padding-left: 6rem;
-            padding-right: 6rem;
-            font-size: 1rem;
-            padding-top: 4rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal {
-            top: 5.5rem;
-            font-size: 2rem;}
-        .kids_body_page #KidsFoodModal .modal-content .title-modal {
-            top: 4rem;}
-        .kids_body_page .modal_description_kids .modal-content .close {
-            right: 6rem;
-            top: 1rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.left {
-            margin-right: -3rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.right {
-            margin-left : -3rem;}
     }
     /* Medium */
     @media (min-width: 768px) and (max-width: 992px) {
+        .kids_body_page .kids .kids_img_description_1 {
+            top: -6rem;
+            left: 4rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: -7rem;
+            right: -6rem;
+            width: 55%;}
         .kids_body_page .short_description .description {
             line-height: 1.3;
             text-align: center;
@@ -1249,31 +1364,39 @@
         .kids_body_page .included .subtitle {
             font-size: 0.6rem;}
         .kids_body_page .included .subtitle.text-1 {
-            bottom: 4rem;
-            padding-left: 3.2rem;}
+            bottom: 4.8rem;
+            padding-left: 3rem;}
         .kids_body_page .included .subtitle.text-2 {
-            bottom: 3.5rem;
+            bottom: 3.9rem;
             padding-left: 3.5rem;}
         .kids_body_page .included .subtitle.text-3 {
-            bottom: 4.5rem;
-            padding-left: 3.5rem;}
+            bottom: 6.4rem;
+            padding-left: 3.4rem;}
         .kids_body_page .included .subtitle.text-4 {
-            bottom: 4.5rem;
+            bottom: 5.5rem;
             padding-left: 3.8rem;}
         .kids_body_page .included .subtitle.text-5 {
             bottom: 4.1rem;
             padding-left: 4rem;}
         .kids_body_page .included .subtitle.text-6 {
-            bottom: 4rem;
+            bottom: 4.5rem;
             padding-left: 3.7rem;}
         .kids_body_page .included .subtitle.text-7 {
-            bottom: 5rem;
+            bottom: 5.5rem;
             padding-left: 5rem;}
         .kids_body_page .included .subtitle.text-8 {
-            bottom: 4rem;
-            padding-left: 3.5rem;}
+            bottom: 4.5rem;
+            padding-left: 4.2rem;}
     }
     @media (min-width: 993px) and (max-width: 1040px) {
+        .kids_body_page .kids .kids_img_description_1 {
+            top: -6rem;
+            left: 4rem;
+            width: 45%;}
+        .kids_body_page .kids .kids_img_description_2 {
+            top: -7rem;
+            right: -6rem;
+            width: 55%;}
         .kids_body_page .short_description .description {
             line-height: 1.3;
             text-align: center;
@@ -1285,41 +1408,36 @@
             font-size: 2.3rem;
             font-weight: 600;
             line-height: 1;}
-        .kids_body_page .included .subtitle {
-            font-size: 0.6rem;}
         .kids_body_page .included .subtitle.text-1 {
             bottom: 5.8rem;
+            padding-left: 4.2rem;}
+        .kids_body_page .included .subtitle.text-2 {
+            bottom: 4.5rem;
+            padding-left: 5rem;}
+        .kids_body_page .included .subtitle.text-3 {
+            bottom: 7.5rem;
+            padding-left: 4.5rem;}
+        .kids_body_page .included .subtitle.text-4 {
+            bottom: 6rem;
+            padding-left: 6rem;}
+        .kids_body_page .included .subtitle.text-5 {
+            bottom: 5rem;
             padding-left: 5.5rem;}
-        .kids_body_page .modal_description_kids .modal-content .img-title {
-            height: 17rem;
-            margin-top: -7.5rem;}
-        .kids_body_page .modal_description_kids .modal-content {
-            padding-top: 8rem;
-            border: none;}
-        .kids_body_page .modal_description_kids .modal-content .big-img-title {
-            width: 90%;}
-        .kids_body_page .modal_description_kids .modal-content .img-description {
-            height: 20rem;
-            margin-top: -3rem;}
-        .kids_body_page .modal_description_kids .modal-content .subtitle-modal {
-            padding-left: 7rem;
-            padding-right: 7rem;
-            font-size: 1rem;
-            padding-top: 4rem}
-        .kids_body_page .modal_description_kids .modal-content .title-modal {
-            top: 7rem;
-            font-size: 2.5rem}
-        .kids_body_page #KidsFoodModal .modal-content .title-modal {
-            top: 5rem;}
-        .kids_body_page .modal_description_kids .modal-content .close {
-            right: 7.5rem;
-            top: 1.5rem;}
-        .kids_body_page #KidsCookingModal .modal-content .title-modal .angle.left {
-            margin-right: -5rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.left {
-            margin-right: -3rem;}
-        .kids_body_page .modal_description_kids .modal-content .title-modal .angle.right {
-            margin-left : -3rem;}
+        .kids_body_page .included .subtitle.text-6 {
+            bottom: 5.7rem;
+            padding-left: 5rem;}
+        .kids_body_page .included .subtitle.text-7 {
+            bottom: 7rem;
+            padding-left: 7rem;}
+        .kids_body_page .included .subtitle.text-8 {
+            bottom: 5.5rem;
+            padding-left: 5.8rem;}
+        .kids_body_page .included .child_relaxation {
+            font-size: 2.3rem;
+            font-weight: 600;
+            line-height: 1;}
+        .kids_body_page .included .subtitle {
+            font-size: 0.8rem;}
     }
 </style>
 {/literal}
