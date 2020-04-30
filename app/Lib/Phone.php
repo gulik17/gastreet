@@ -79,7 +79,7 @@ class Phone {
         $dadata = new Dadata($token, $secret);
         $dadata->init();
         // Стандартизовать одно значение
-        $result = $dadata->clean("PHONE", $phone);
+        $result = $dadata->clean("phone", $phone);
         $dadata->close();
         if ( ($result[0]['qc'] === 1) || ($result[0]['qc'] === 3) || ($result[0]['qc'] === 2) ) { //Телефон распознан с допущениями или не распознан
             return false;

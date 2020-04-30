@@ -1,6 +1,6 @@
 <?php
 class Dadata {
-    private $base_url = "https://dadata.ru/api/v2/clean";
+    private $base_url = "https://cleaner.dadata.ru/api/v1/clean";
     private $token;
     private $secret;
     private $handle;

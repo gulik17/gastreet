@@ -884,8 +884,6 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;мая — 200&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -996,9 +994,6 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;мая — 70&nbsp;000&nbsp;₽</span></p>
-
 				{if $ticket->leftCount > 0}
 				{if $this.child->wantRebro == 1 || $ticket->wantRebro == 1}
 				<div class="capacity"><span>Мы приняли вашу заявку!</span></div>
@@ -1116,8 +1111,6 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;мая — 45&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -1228,8 +1221,6 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;мая — 40&nbsp;000&nbsp;₽</span></p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -1342,9 +1333,9 @@
 <!--				<img src="/images/15000.png" class="img-fluid" style="width: 140px;position: absolute;left: 50%;top: -10px;transform: translate(-50%, 0);">-->
 				                        <h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
 <!--				<h3 class="ticket_cost">20&nbsp;000 ₽</h3>-->
-				<p class="ticket_new_cost">
-								<span>с&nbsp;1&nbsp;мая — 30&nbsp;000&nbsp;₽</span>
-				</p>
+<!--				<p class="ticket_new_cost">-->
+<!--								<span>с&nbsp;1&nbsp;мая — 30&nbsp;000&nbsp;₽</span>-->
+<!--				</p>-->
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##

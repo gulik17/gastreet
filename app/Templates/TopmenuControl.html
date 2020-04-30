@@ -5,7 +5,7 @@
         <div class="content">
             <div class="col-left">
                 <a class="logo {if $time < '1578960000'}santa{/if}" href="/">Gastreet</a>
-<!--                <a class="logo logo-metro" target="_blank" href="http://www.metro-cc.ru/">METRO</a>-->
+                <!--<a class="logo logo-metro" target="_blank" href="http://www.metro-cc.ru/">METRO</a>-->
             </div>
             <nav class="nav nav-menu" id="nav-menu">
                 <ul class="menu">
@@ -22,7 +22,7 @@
                                 <li><a href="{link show=catalog area=7}">BARSTREET</a></li>
                                 <li><a href="{link show=catalog area=6}">БИЗНЕС-ШКОЛА</a></li>
                                 <li><a href="{link show=catalog area=28}">ЦЕНТРАЛЬНАЯ ПЛОЩАДЬ</a></li>
-<!--                                <li><a href="{link show=catalog area=14}">FUCKUP</a></li>-->
+                                <!--<li><a href="{link show=catalog area=14}">FUCKUP</a></li>-->
                             </ul>
                             <ul class="has-border">
                                 <li style="margin-bottom: 5px;"><b>{if $lang == 'en'}COMMUNICATION{else}ОБЩЕНИЕ{/if}</b></li>
@@ -48,9 +48,10 @@
                     <li><a href="{link show=catalog}" class="indicator-toggle cashback"><span>##tickets##</span></a></li>
                     <li><a href="{link show=speakers}"><span>##speakers##</span></a></li>
                     <li><a href="{link show=folkspeaker}" class="indicator-toggle ne_sema"><span>Стать спикером</span></a></li>
-                    <li><a href="{link show=schedule}"><span>##scheduleOff##</span></a></li>
+<!--                    <li><a href="{link show=schedule}"><span>##scheduleOff##</span></a></li>-->
                     <li><a href="{link show=becomepartner}" class="indicator-toggle partner"><span>Стать партнером</span></a></li>
                     <!--<li class="d-none"><a href="{link show=presentation}"><span>##presentation##</span></a></li>-->
+                    <li class="for-mobile"><a href="{link show=kids}"><span>{if $lang == 'en'}Gastreet Kids{else}Детский кэмп{/if}</span></a></li>
                     <li class="for-mobile"><a href="{link show=video}"><span>{if $lang == 'en'}Video{else}Кинотеатр{/if}</span></a></li>
                     <li class="for-mobile"><a href="{link show=place}"><span>{if $lang == 'en'}Where to live{else}Где жить{/if}</span></a></li>
                     <li class="for-mobile"><a href="{link show=faq}"><span>{if $lang == 'en'}FAQ{else}ЧаВо{/if}</span></a></li>
@@ -63,6 +64,7 @@
                         <span></span>
                         <div>
                             <ul>
+                                <li><a href="{link show=kids}">{if $lang == 'en'}Gastreet Kids{else}Детский кэмп{/if}</a></li>
                                 <li><a href="{link show=video}">{if $lang == 'en'}Video{else}Кинотеатр{/if}</a></li>
                                 <li><a href="{link show=place}">{if $lang == 'en'}Where to live{else}Где жить{/if}</a></li>
                                 <li><a href="{link show=faq}">{if $lang == 'en'}FAQ{else}ЧаВо{/if}</a></li>

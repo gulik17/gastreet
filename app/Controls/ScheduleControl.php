@@ -7,7 +7,7 @@ class ScheduleControl extends IndexControl {
     public $pageTitle_en = "Schedule — GASTREET 2020";
 
     public function render() {
-        //Enviropment::redirect("/");
+        Enviropment::redirect("/");
         $this->controlName = "Schedule";
         $this->layout = 'indexgastop.html';
         $useAjax = Request::getVar("useAjax");

@@ -582,7 +582,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
         // получить смс код
         if ($job == "usergetcode") {
             $phone = Phone::phoneVerification(Request::getVar("phone"));
-
+//deb($phone);
             if ( (!$phone["isError"]) && (!Phone::phoneDadataVerification($phone["number"])) ) {
                 echo json_encode('90');
                 exit;
@@ -614,6 +614,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                     }
                     // попытка регистрации, зафиксировать
                     RegisterAttemptManager::add($phone["number"], $smsCode);
+
                     // отправка
                     if (UserManager::sendRegisterCodeSms($phone["number"], $smsCode, $userObj->id)) {
                         if ($isNew) {
