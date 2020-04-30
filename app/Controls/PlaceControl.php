@@ -12,7 +12,7 @@ class PlaceControl extends IndexControl {
         $this->controlName = "Place";
         $this->gcode = "hotels";
         $fm = new FaqManager();
-        $fmList = $fm->getForPlace();
+        $fmList = $fm->getForPlace('sortOrder');
         $pm = new PlaceManager();
         $pmList = $pm->getActive();
         //deb($pmList);

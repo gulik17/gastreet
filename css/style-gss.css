@@ -4540,6 +4540,7 @@ p.border-gastreet-dashed {
     background-image: url(/images/main/mart/slider_rebro_bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     z-index: 4;}
 .main-slider-carousel_mart .owl-stage-outer {
     z-index: 9;}

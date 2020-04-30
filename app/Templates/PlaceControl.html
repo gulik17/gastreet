@@ -242,7 +242,7 @@
                         <div class="longtitle">
                             {if $place->phone}<span>Отдел бронирования:</span> {$place->phone}{/if}
                             {if $place->email}
-                                <a class="d-block" href="#" onclick="return false" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="• Купон на проживание + паспортные данные<br>• Название Отеля<br>• Даты проживания<br>• Категория номера<br>• Количество гостей<br>• ФИО<br>* при наличии детей в номере - обязательно ФИО/возраст ребенка"><i class="fa fa-info-circle mr-2" aria-hidden="true"></i>Какие данные нужно отправить для бронирования номера?</a>
+                                <button class="d-block btn-link" style="border: 0;background-color: #fff;cursor: pointer" role="button" data-container="body" data-toggle="popover" data-placement="top" data-html="true" data-content="• Купон на проживание + паспортные данные<br>• Название Отеля<br>• Даты проживания<br>• Категория номера<br>• Количество гостей<br>• ФИО<br>* при наличии детей в номере - обязательно ФИО/возраст ребенка"><i class="fa fa-info-circle mr-2" aria-hidden="true"></i>Какие данные нужно отправить для бронирования номера?</button>
                                 <a class="d-block" href="mailto:{$place->email}"><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>Отправить запрос</a>
                             {/if}
                         </div>
