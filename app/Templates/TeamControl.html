@@ -1,0 +1,184 @@
+{assign var=this value=$TeamControl}
+
+<div class="container">
+    <div class="page-container" id="page-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-container-inner" id="page-container-inner">
+                    <ul class="breadcrumbs mb-md-3">
+                        <li><a href="/">Главная</a></li>
+                        <li><span>Команда</span></li>
+                    </ul>
+                    <h1 class="page-headline">Жизнь команды</h1>
+                    {if $this.fmList}
+                        <div class="accordion" id="accordionFaq1">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-1'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq1">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                        </div>
+                    {/if}
+                    <h1 class="page-headline">Спонсоринг</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq2">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-2'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq2">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                    <h1 class="page-headline">Спикеры</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq3">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-3'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq3">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                    <h1 class="page-headline">Участники</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq4">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-4'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq4">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                    <h1 class="page-headline">Маркетинг</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq5">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-5'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq5">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                    <h1 class="page-headline">Бронирование</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq6">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-6'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq6">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                    <h1 class="page-headline">Офис</h1>
+                    {if $this.fmList}
+                    <div class="accordion" id="accordionFaq7">
+                        <!-- loop start -->
+                        {foreach item=faq from=$this.fmList}
+                            {if $faq->ggroup == '-7'}
+                            <div class="card">
+                                <div class="card-header" id="heading{$faq->id}">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{$faq->id}" aria-expanded="false" aria-controls="collapse{$faq->id}">
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <div><b>{if $lang == 'en'}{$faq->question_en}{else}{$faq->question}{/if}</b></div>
+                                    </button>
+                                </div>
+                                <div id="collapse{$faq->id}" class="collapse" aria-labelledby="heading{$faq->id}" data-parent="#accordionFaq7">
+                                    <div class="card-body">
+                                        {if $lang == 'en'}{$faq->answer_en|dbtexttohtml}{else}{$faq->answer|dbtexttohtml}{/if}
+                                    </div>
+                                </div>
+                            </div>
+                            {/if}
+                        {/foreach}
+                        <!-- loop end -->
+                    </div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
