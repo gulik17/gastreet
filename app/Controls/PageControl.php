@@ -18,6 +18,7 @@ class PageControl extends IndexControl {
     public $slr3 = 1;
     public $spmList = null;
     public $parthners = null;
+    public $fmList = null;
     public $prizes = null;
     public $vmList = null;
     public $leftDays = 0;
@@ -69,6 +70,13 @@ class PageControl extends IndexControl {
 
             // сюда данные для главной
             $this->layout = '/pageindex.html';
+
+            //if ($this->dev == 1) {
+                $this->layout = '/pageindexdev.html';
+                $fm = new FaqManager();
+                $this->fmList = $fm->getByGroup(2,'sortOrder');
+                //$this->addData("fmList", $fmList);
+            //}
 
             // рандомы для 3-х слайдов
             $this->slr1 = rand(1, 3);

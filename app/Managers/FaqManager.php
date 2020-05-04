@@ -18,4 +18,10 @@ class FaqManager extends BaseEntityManager {
         $sql->orderBy = ($sort) ? $sort : "id";
         return $this->get($sql);
     }
+
+    public function getByGroup($g = 1, $sort = null) {
+        $sql = new SQLCondition("`ggroup` = {$g}");
+        $sql->orderBy = ($sort) ? $sort : "id";
+        return $this->get($sql);
+    }
 }

@@ -6006,6 +6006,10 @@ a.credit {
 @media (min-width: 300px) and (max-width: 767px) {
     .all-tickets .all-tick-block {
         box-shadow: none;}
+    .main-slider_may {
+        margin-top: 4.7rem;}
+    .main_video {
+        height: 300px;}
     .accordion .btn b {
         width: auto;
         display: block;
