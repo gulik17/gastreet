@@ -148,6 +148,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $email = Request::getVar("email");
             $checkResult = Mail::checkUnsubscribe($email);
             $arr['unsubscribe'] = ($checkResult->is_unsubscribed) ? 1 : 0;
+
             echo json_encode($arr);
             exit;
         }

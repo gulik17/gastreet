@@ -4,8 +4,8 @@
  *
  */
 class BalanceCardSelectControl extends AuthorizedUserControl {
-    public $pageTitle = "Выбор карты для пополнения баланса — GASTREET 2020";
-    public $pageTitle_en = "Select a card to replenish balance — GASTREET 2020";
+    public $pageTitle = "Выбор карты для пополнения баланса — GASTREET 2021";
+    public $pageTitle_en = "Select a card to replenish balance — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

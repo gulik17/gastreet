@@ -3,8 +3,8 @@
 *
 */
 class UserProfileControl extends AuthorizedUserControl {
-    public $pageTitle    = "Учетная запись — GASTREET 2020";
-    public $pageTitle_en = "User Profile — GASTREET 2020";
+    public $pageTitle    = "Учетная запись — GASTREET 2021";
+    public $pageTitle_en = "User Profile — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

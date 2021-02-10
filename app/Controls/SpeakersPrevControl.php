@@ -3,8 +3,8 @@
  *
  */
 class SpeakersPrevControl extends IndexControl {
-    public $pageTitle = "Спикеры — GASTREET 2020";
-    public $pageTitle_en = "Speakers — GASTREET 2020";
+    public $pageTitle = "Спикеры — GASTREET 2021";
+    public $pageTitle_en = "Speakers — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Спикеры";

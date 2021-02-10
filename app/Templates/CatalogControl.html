@@ -24,13 +24,13 @@
                     <div class="col-md-5">
                         <h1 class="page-headline">Билеты</h1>
                         {if $this.gastreetrebro}
-                            <p class="subtitle">С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года.</p>
+                            <p class="subtitle">С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2021&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года.</p>
                         {elseif $this.hells_kitchen}
-                            <p class="subtitle">Приветствуем тебя, участник кастинга «Адской Кухни»! С&nbsp;1&nbsp;по 5&nbsp;июня 2020 года состоится самый огненный ивент в&nbsp;ресторанной отрасли, где встретятся 5000 лучших шефов и рестораторов. И ты можешь стать участником этого события на особых условиях.<br>
+                            <p class="subtitle">Приветствуем тебя, участник кастинга «Адской Кухни»! С&nbsp;1&nbsp;по 5&nbsp;июня 2021 года состоится самый огненный ивент в&nbsp;ресторанной отрасли, где встретятся 5000+ лучших шефов и рестораторов. И ты можешь стать участником этого события на особых условиях.<br>
                                 Кстати, обрати внимание на билет ШЕФСКИЙ - это самый оптимальный вариант для как начинающего, так и&nbsp;супер-опытного шефа! Более подробно о площадке CHEF STREET ты можешь узнать <a href="{link show=catalog area=9}">здесь</a>!</p>
                         {else}
                             <p class="subtitle">Всё как ты любишь! Там, где ты любишь.<br>
-                                С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2020&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года. Остался один шаг</p>
+                                С&nbsp;1&nbsp;по&nbsp;5&nbsp;июня 2021&nbsp;года ты станешь частью самого огненного и&nbsp;полезного ивента года. Остался один шаг</p>
                         {/if}
                     </div>
                     <div class="col-md-7">
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="g-emoji-balun">
                                         {if $this.gastreetspecial}
-                                            Ну и&nbsp;чего ты еще думаешь? Только для тебя специальная цена!
+                                            Успей купить билеты до повышения цен! Только для тебя специальная цена!
                                         {elseif $this.gastreetlubimki}
                                             Волонтеры! Роднулечки! Только для вас пожизненные стартовые цены на билеты GASTREET!
                                         {elseif $this.artpeople}
@@ -89,7 +89,7 @@
                                         {elseif $this.gastreetpartner}
                                             Твой менеджер уже всё-всё тебе рассказал про регистрацию промо-кода. Даже если ты - микро-зелень, у тебя всё получится!
                                         {else}
-                                            Ну и&nbsp;чего ты еще думаешь? Только до 1&nbsp;мая покупай билеты по ценам прошлого года!
+                                            Успей купить билеты до повышения цен! Только до 1&nbsp;марта покупай билеты по ценам прошлого года!
                                         {/if}
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
     <div class="container all-tickets">
         <div class="row">
             <div class="col-md-2 all-tick">
-                <p class="subtitle">Входит во&nbsp;все&nbsp;категории билетов</p>
+                <p class="subtitle">Общие зоны фестиваля</p>
             </div>
             <div class="col-md-10 in-all-ticket">
                 <div class="row pt-3 pt-md-4">
@@ -208,7 +208,7 @@
             <div class="col-md-2">
                 <p class="subtitle" id="ext_option">Дополнительные опции</p>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 d-none">
                 {assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «ТУРИСТ» -->
                 {assign var=ticket value=$ticketId|getticket}
                 <div class="ticket" data-ri="t1">
@@ -248,7 +248,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 d-none">
                 <div class="ticket cat_business" data-ri="d2">
                     <h2 class="ticket_header">
                         {if $lang == 'en'}BUSINESS SCHOOL{else}БИЗНЕС-ШКОЛА{/if}
@@ -263,27 +263,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 d-none">
+            <div class="col-md-2">
                 <div class="ticket cat_fuckup" data-ri="d3">
-                    <h2 class="ticket_header">FUCKUP</h2>
-                    <p class="ticket_cost">5 000 ₽</p>
-                    <p class="ticket_new_cost">{if $lang == 'en'}for one night{else}за один вечер{/if}<br>&nbsp;<br>&nbsp;</p>
-                    <div class="ticket-footer">
-                        <a href="#" class="ticket_desc">Подробнее</a>
+                    <h2 class="ticket_header">Место в&nbsp;палаточном лагере</h2>
+                    <p class="ticket_cost">3 000 ₽</p>
+                    <p class="ticket_new_cost">Место в палаточном галере - зона выката уровень +960</p>
+                    <div class="mt-2">
+                        <a href="#" class="buy-product-click-pc btn btn-white" data-id="82" data-night="false" id="buy-product-pc-82" title="##buy##">Купить</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="ticket cat_popup" data-ri="d4">
-                    <h2 class="ticket_header">
-                        POP-UP SHOW
-                        <p>Единственный. Звездный.<br>
-                            Ты точно будешь впечатлен.</p>
-                    </h2>
-                    <p class="ticket_cost">15 000 ₽</p>
-                    <p>&nbsp;</p>
-                    <div class="ticket-footer">
-                        <a href="#" class="ticket_desc d-none">Подробнее</a>
+                    <h2 class="ticket_header">Детский кемп «Гастритик»<br>&nbsp;</h2>
+                    <p class="ticket_cost" style="margin-bottom: 1.25rem;">10 000 ₽</p>
+                    <p class="ticket_new_cost">ДЕТСКИЙ кемп - GASTREET city</p>
+                    <div class="mt-2">
+                        <a href="#" class="buy-product-click-pc btn btn-white" data-id="84" data-night="false" id="buy-product-pc-84" title="##buy##">Купить</a>
                     </div>
                 </div>
             </div>
@@ -300,7 +296,7 @@
                                 <li class="c_mainstreet disabled">#MAINSTREET</li>
                                 <li class="c_businessschool disabled">#БИЗНЕСШКОЛА</li>
                                 <li class="c_chefstreet disabled">#CHEFSTREET</li>
-                                <li class="c_barstreet disabled">#BARSTREET</li>
+                                <li class="c_fun disabled">#FUN</li>
                                 <li class="c_hoststreet disabled">#HOSTSTREET</li>
                                 <li>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</li>
 <!--                                <li class="c_fuckup">#FUCKUP</li>-->
@@ -355,7 +351,7 @@
                                     {assign var=speaker6id value=$product->speaker6Id}
                                     {assign var=speaker6 value=$this.speakers.$speaker6id}
 
-                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_fun{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
                                         <div class="col-md-12">
                                             <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
                                                 <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
@@ -487,7 +483,7 @@
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                    <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
                                                     {assign var=canShowButton value=1}
@@ -538,7 +534,7 @@
                                     {assign var=speaker6id value=$product->speaker6Id}
                                     {assign var=speaker6 value=$this.speakers.$speaker6id}
 
-                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_fun{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
                                         <div class="col-md-12">
                                             <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
                                                 <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
@@ -670,7 +666,7 @@
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                    <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
                                                     {assign var=canShowButton value=1}
@@ -721,7 +717,7 @@
                                     {assign var=speaker6id value=$product->speaker6Id}
                                     {assign var=speaker6 value=$this.speakers.$speaker6id}
 
-                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_barstreet{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                                    <div class="row block-body{$product->tags|tagtocssclass} {if $product->id|inticket:1}t_tourist{/if} {if $product->id|inticket:2}t_chefs{/if} {if $product->id|inticket:3}t_profi{/if} {if $product->id|inticket:4}t_fun{/if} {if $product->id|inticket:5}t_king{/if} {if $product->id|inticket:8}t_rebro{/if} {if $product->id|inticket:10}t_hoststreet{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
                                         <div class="col-md-12">
                                             <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
                                                 <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
@@ -853,7 +849,7 @@
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                                    <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
                                                     {assign var=canShowButton value=1}

@@ -4,8 +4,8 @@
  *
  */
 class CardSelectControl extends AuthorizedUserControl {
-    public $pageTitle = "Выбор карты для оплаты — GASTREET 2020";
-    public $pageTitle_en = "Choose a card for payment — GASTREET 2020";
+    public $pageTitle = "Выбор карты для оплаты — GASTREET 2021";
+    public $pageTitle_en = "Choose a card for payment — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

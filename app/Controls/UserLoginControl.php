@@ -6,7 +6,7 @@
  */
 class UserLoginControl extends IndexControl {
 
-    public $pageTitle = "Вход пользователя — GASTREET 2020";
+    public $pageTitle = "Вход пользователя — GASTREET 2021";
 
     public function render() {
         if ($this->actor instanceof User) {

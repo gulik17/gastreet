@@ -3,11 +3,11 @@
 *
 */
 class ScheduleControl extends IndexControl {
-    public $pageTitle = "Расписание — GASTREET 2020";
-    public $pageTitle_en = "Schedule — GASTREET 2020";
+    public $pageTitle = "Расписание — GASTREET 2021";
+    public $pageTitle_en = "Schedule — GASTREET 2021";
 
     public function render() {
-        Enviropment::redirect("/");
+        //Enviropment::redirect("/");
         $this->controlName = "Schedule";
         $this->layout = 'indexgastop.html';
         $useAjax = Request::getVar("useAjax");

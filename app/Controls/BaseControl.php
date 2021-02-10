@@ -5,11 +5,11 @@
  */
 
 class BaseControl extends Control {
-    public $pageTitle    = "GASTREET 2020 - International Restaurant Show";
-    public $pageTitle_en = "GASTREET 2020 - International Restaurant Show";
+    public $pageTitle    = "GASTREET 2021 - International Restaurant Show";
+    public $pageTitle_en = "GASTREET 2021 - International Restaurant Show";
     public $pageDesc     = "";
     public $pageDesc_en  = "";
-    public $pageImg  = "https://gastreet.com/images/fb_share_6.jpg";
+    public $pageImg  = "https://gastreet.com/images/fb_share_6.jpg?v=1";
     public $pageUri  = "";
     public $lang    = null;
     public $time    = null;

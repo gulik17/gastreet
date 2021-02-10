@@ -1,6 +1,9 @@
 <?php
 
 class Mail {
+    const TOKEN = "6gim3bwxw9p13k5xtogmpfgkcfruxo1a3kz5u96o";
+    const URL = "https://eu1.unione.io";
+    const EMAIL = "info@gastreet.com";
 
     // отправка сообщения
     public static function send($subject, $body, $to, $fromEmail = null, $fromName = null, $attachArray = null) {
@@ -14,7 +17,11 @@ class Mail {
         try {
             // Choose transport
             // TODO: поменять на параметры из настроек
-            $transport = Swift_SmtpTransport::newInstance(Configurator::get('smtp:server'), Configurator::get('smtp:port'), 'ssl');
+            $transport = Swift_SmtpTransport::newInstance(
+                Configurator::get('smtp:server'),
+                Configurator::get('smtp:port'),
+                'ssl'
+            );
             $transport->setUsername(Configurator::get('smtp:login'));
             $transport->setPassword(Configurator::get('smtp:password'));
 
@@ -36,16 +43,14 @@ class Mail {
             $fromName = $fromName ? $fromName : Configurator::get('mail:fromName');
             $message->setFrom(array($fromEmail => $fromName));
 
-            if ($attachArray) {
-                if (is_array($attachArray) && is_array($attachArray)) {
-                    foreach ($attachArray AS $key => $attachItem) {
-                        $message->attach(
-                                Swift_Attachment::fromPath($attachItem[$key]['content'])->setFilename($attachItem[$key]['name'])
-                        );
-                    }
-                } else {
-                    $message->attach(Swift_Attachment::fromPath($attachArray[1]['content'])->setFilename($attachArray[0]['name']));
+            if ($attachArray && is_array($attachArray)) {
+                foreach ($attachArray AS $key => $attachItem) {
+                    $message->attach(
+                        Swift_Attachment::fromPath($attachItem[$key]['content'])->setFilename($attachItem[$key]['name'])
+                    );
                 }
+            } else {
+                $message->attach(Swift_Attachment::fromPath($attachArray[1]['content'])->setFilename($attachArray[0]['name']));
             }
             $numSent = $mailer->send($message);
         } catch (Exception $e) {
@@ -60,26 +65,24 @@ class Mail {
 
     public static function sendUniMail($subject, $email, $message, $fromEmail, $fromName, $attachArray = null) {
         $message = [
-            "body"=>[
-                "html"=>$message,
+            "body" => [
+                "html" => $message,
             ],
-            "subject"=>$subject,
-            "from_email"=>$fromEmail,
-            "from_name"=>$fromName,
-            "recipients"=> [
+            "subject" => $subject,
+            "from_email" => $fromEmail,
+            "from_name" => $fromName,
+            "recipients" => [
                 [
-                    "email"=> $email,
+                    "email" => $email,
                 ],
             ],
         ];
 
-        if ($attachArray) {
-            if (is_array($attachArray) && is_array($attachArray)) {
-                foreach ($attachArray AS $key => &$attachItem) {
-                    $attachItem['content'] = base64_encode(file_get_contents($attachItem['content']));
-                }
-                $message['attachments'] = $attachArray;
+        if ($attachArray && is_array($attachArray)) {
+            foreach ($attachArray AS $key => &$attachItem) {
+                $attachItem['content'] = base64_encode(file_get_contents($attachItem['content']));
             }
+            $message['attachments'] = $attachArray;
         }
 
         $result = Mail::sendUniOne($message);
@@ -88,13 +91,13 @@ class Mail {
 
     public static function sendAdminNotify($subject, $email, $message) {
         $message = [
-            "body"=>[
-                "html"=>$message,
+            "body" => [
+                "html" => $message,
             ],
-            "subject"=>$subject,
-            "from_email"=>"info@gastreet.com",
-            "from_name"=>"GASTREET Script",
-            "recipients"=> [
+            "subject" => $subject,
+            "from_email" => self::EMAIL,
+            "from_name" => "GASTREET Script",
+            "recipients" => [
                 [
                     "email"=> $email,
                 ],
@@ -106,9 +109,9 @@ class Mail {
     }
 
     private static function sendUniOne($message) {
-        $params = json_encode(['api_key'=>'6gim3bwxw9p13k5xtogmpfgkcfruxo1a3kz5u96o', 'username'=>'info@gastreet.com', "message"=>$message]);
+        $params = json_encode(["api_key" => self::TOKEN, "message" => $message]);
         $defaults = [
-            CURLOPT_URL => 'https://api.unisender.com/ru/transactional/api/v1/email/send.json',
+            CURLOPT_URL => self::URL . "/ru/transactional/api/v1/email/send.json",
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $params,
@@ -121,9 +124,9 @@ class Mail {
     }
 
     public static function checkUnsubscribe($email) {
-        $params = json_encode(['api_key'=>'6gim3bwxw9p13k5xtogmpfgkcfruxo1a3kz5u96o', 'username'=>'info@gastreet.com', "address"=>$email]);
+        $params = json_encode(["api_key" => self::TOKEN, "address" => $email]);
         $defaults = [
-            CURLOPT_URL => 'https://api.unisender.com/ru/transactional/api/v1/unsubscribed/check.json',
+            CURLOPT_URL => self::URL . "/ru/transactional/api/v1/unsubscribed/check.json",
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $params,
@@ -136,9 +139,9 @@ class Mail {
     }
 
     public static function listUnsubscribe($date) {
-        $params = json_encode(['api_key'=>'6gim3bwxw9p13k5xtogmpfgkcfruxo1a3kz5u96o', 'username'=>'info@gastreet.com', "date_from"=>$date]);
+        $params = json_encode(["api_key" => self::TOKEN, "date_from" => $date]);
         $defaults = [
-            CURLOPT_URL => 'https://api.unisender.com/ru/transactional/api/v1/unsubscribed/list.json',
+            CURLOPT_URL => self::URL . "/ru/transactional/api/v1/unsubscribed/list.json",
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => $params,

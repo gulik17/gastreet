@@ -3,7 +3,7 @@
 /**
  */
 class ProductDecisionControl extends AuthorizedUserControl {
-    public $pageTitle = "Покупка — GASTREET 2020";
+    public $pageTitle = "Покупка — GASTREET 2021";
 
     public function render() {
         $ts = time();

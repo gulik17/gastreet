@@ -3,7 +3,7 @@
 *
 */
 class CatalogControl extends IndexControl {
-    public $pageTitle = "Билеты и дополнительные опции — GASTREET 2020";
+    public $pageTitle = "Билеты и дополнительные опции — GASTREET 2021";
 
     public function render() {
         //Enviropment::redirect("/");
@@ -39,13 +39,13 @@ class CatalogControl extends IndexControl {
         $this->addData("products", $products);
 
         // максимум до 11-ми пока
-        if ($areaId > 0 && $areaId <= 29) {
+        if ($areaId > 0 && $areaId <= 33) {
             $this->layout = "indexgastop.html";
             $this->template = "CatalogControl{$areaId}.html";
             $spm = new SpeakerManager();
             $spmList = null;
             if ($areaId == 1) {
-                $spmList = $spm->getActiveByTag('partnerstreet', '2020');
+                $spmList = $spm->getActiveByTag('partnerstreet', '2021');
             }
             if ($areaId == 2) {
                 $this->gcode = 'has-theme-dark';
@@ -55,7 +55,7 @@ class CatalogControl extends IndexControl {
                 $przm = new PrizeManager();
                 $prizes = $przm->getActive();
                 $this->addData("prizes", $prizes);
-                $spmList = $spm->getActiveByTag('mainstreet', '2020');
+                $spmList = $spm->getActiveByTag('mainstreet', '2021');
                 $pm = new ProductManager();
                 $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
@@ -65,20 +65,20 @@ class CatalogControl extends IndexControl {
                 $przm = new PrizeManager();
                 $prizes = $przm->getActive();
                 $this->addData("prizes", $prizes);
-                $spmList = $spm->getActiveByTag('rebro', '2020');
+                $spmList = $spm->getActiveByTag('rebro', '2021');
                 $pm = new ProductManager();
                 $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 6) {
-                $spmList = $spm->getActiveByTag('бизнесшкола', '2020');
+                $spmList = $spm->getActiveByTag('бизнесшкола', '2021');
             }
             if ($areaId == 7) {
                 $this->gcode = 'thematik-barstreet-page';
                 $przm = new PrizeManager();
                 $prizes = $przm->getActive();
                 $this->addData("prizes", $prizes);
-                $spmList = $spm->getActiveByTag('barstreet', '2020');
+                $spmList = $spm->getActiveByTag('barstreet', '2021');
                 $pm = new ProductManager();
                 $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
@@ -88,25 +88,25 @@ class CatalogControl extends IndexControl {
                 $przm = new PrizeManager();
                 $prizes = $przm->getActive();
                 $this->addData("prizes", $prizes);
-                $spmList = $spm->getActiveByTag('chefstreet', '2020');
+                $spmList = $spm->getActiveByTag('chefstreet', '2021');
                 $pm = new ProductManager();
                 $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
             }
             if ($areaId == 13) {
-                $spmList = $spm->getActiveByTag('pizzastreet', '2020');
+                $spmList = $spm->getActiveByTag('pizzastreet', '2021');
             }
             if ($areaId == 14) {
-                $spmList = $spm->getActiveByTag('fuckupnight', '2020');
+                $spmList = $spm->getActiveByTag('fuckupnight', '2021');
             }
             if ($areaId == 15) {
-                $spmList = $spm->getActiveByTag('winedome', '2020');
+                $spmList = $spm->getActiveByTag('winedome', '2021');
             }
             if ($areaId == 17) {
-                $spmList = $spm->getActiveByTag('baristastreet', '2020');
+                $spmList = $spm->getActiveByTag('baristastreet', '2021');
             }
             if ($areaId == 28) {
-                $spmList = $spm->getActiveByTag('центральнаяплощадь', '2020');
+                $spmList = $spm->getActiveByTag('центральнаяплощадь', '2021');
             }
             $this->addData("spmList", $spmList);
         }

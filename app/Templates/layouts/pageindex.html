@@ -12,7 +12,7 @@
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
         <meta name="yandex-verification" content="41ad686aace54a72" />
-        <meta property="og:image" content="https://gastreet.com/images/fb_share_6.jpg">
+        <meta property="og:image" content="{$pageImg}">
 
         {loadscript file='/css/modal-window.css' type='css'}
         {loadscript file='/js/owl.carousel/assets/owl.carousel.min.css' type='css'}
@@ -86,24 +86,18 @@
                         <div class="item main-slider-chefstreet">
                             <img src="/images/main/mart/shmakov.png" class="img-fluid" alt="">
                         </div>
-                        <div class="item main-slider-barstreet">
-                            <img src="/images/main/mart/burov.png" class="img-fluid" alt="">
-                        </div>
                     </div>
                     <div class="main-slider-carousel_mart_navigation">
                         <div class="container" style="z-index: 1;position: relative;">
-                            <div class="row thematic-menu m-0">
+                            <div class="row thematic-menu m-0 justify-content-center">
                                 <div class="col-6 col-md-3 py-2 text-center">
-                                    <a href="/catalog?area=5" data-target=".main-slider-rebro" class="thematic-menu-item thematic-menu-rebro active">Владельцу</a>
+                                    <a href="javascript:void(0)" data-target=".main-slider-rebro" class="thematic-menu-item thematic-menu-rebro active">Владельцу</a>
                                 </div>
                                 <div class="col-6 col-md-3 py-2 text-center">
-                                    <a href="/catalog?area=3" data-target=".main-slider-mainstreet" class="thematic-menu-item thematic-menu-profi">Руководителю</a>
+                                    <a href="javascript:void(0)" data-target=".main-slider-mainstreet" class="thematic-menu-item thematic-menu-profi">Руководителю</a>
                                 </div>
                                 <div class="col-6 col-md-3 py-2 text-center">
-                                    <a href="/catalog?area=9" data-target=".main-slider-chefstreet" class="thematic-menu-item thematic-menu-chef">Шефу</a>
-                                </div>
-                                <div class="col-6 col-md-3 py-2 text-center">
-                                    <a href="/catalog?area=7" data-target=".main-slider-barstreet" class="thematic-menu-item thematic-menu-bar">Бар-менеджеру</a>
+                                    <a href="javascript:void(0)" data-target=".main-slider-chefstreet" class="thematic-menu-item thematic-menu-chef">Шефу</a>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +113,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 banner-mobile-body">
-                            <a href="{link show=catalog area=5}">
+                            <a href="/catalog">
                                 <div class="row align-items-center">
                                     <div class="col-5 banner-mobile-img">
                                         <img src="/images/main/mart/levitsky_m.png" alt="">
@@ -131,7 +125,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 banner-mobile-body">
-                            <a href="{link show=catalog area=3}">
+                            <a href="/catalog">
                                 <div class="row align-items-center">
                                     <div class="col-5 banner-mobile-img">
                                         <img src="/images/main/mart/popova_m.png" alt="">
@@ -143,7 +137,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 banner-mobile-body">
-                            <a href="{link show=catalog area=9}">
+                            <a href="/catalog">
                                 <div class="row align-items-center">
                                     <div class="col-5 banner-mobile-img">
                                         <img src="/images/main/mart/shmakov_m.png" alt="">
@@ -153,22 +147,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 banner-mobile-body">
-                            <a href="{link show=catalog area=7}">
-                                <div class="row align-items-center">
-                                    <div class="col-5 banner-mobile-img">
-                                        <img src="/images/main/mart/burov_m.png" alt="">
-                                    </div>
-                                    <div class="col-7 description">БАР-МЕНЕДЖЕРУ</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
                 <div class="gss-mainpage-statistics container mt-md-3">
                     <div class="row align-items-center">
-                        <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="col-md-4 mb-3 mb-md-0">
                             <div class="gss-mainpage-statistics-col1">
                                 <span class="gss-mainpage-statistics-text">{if $lang == 'en'}DAYS LEFT&nbsp;&nbsp;&nbsp;{else}ДО GASTREET&nbsp;&nbsp;&nbsp;{/if}</span>
                                 <span class="gss-mainpage-statistics-digits">
@@ -189,7 +171,11 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+						<div class="col-md-4 text-center">
+							<span class="gss-mainpage-statistics-text d-block" style="font-size: 22px;">1-5 июня 2021</span>
+							<a href="https://krasnayapolyanaresort.ru/" target="_blank"><img src="/images/kp_logo.svg" style="width: 180px;" /></a>
+						</div>
+                        <div class="col-md-4">
                             <div class="social-icons text-md-right">
                                 <a href="https://www.instagram.com/gastreetshow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                 <a href="https://www.instagram.com/explore/tags/gastreetshow/" target="_blank">#</a>
@@ -211,7 +197,7 @@
                                         <div class="col-6">
                                             <div class="entry">
                                                 <p class="num">5</p>
-                                                <p class="text">дней в закрытом учебном полигоне</p>
+                                                <p class="text">дней в закрытом учебном лагере для рестораторов</p>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -222,26 +208,26 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="entry">
-                                                <p class="num">10</p>
+                                                <p class="num">10+</p>
                                                 <p class="text">образовательных площадок</p>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="entry">
-                                                <p class="num">150</p>
+                                                <p class="num">100+</p>
                                                 <p class="text">мастер-классов и&nbsp;семинаров</p>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="entry">
-                                                <p class="num">5000</p>
+                                                <p class="num">5000+</p>
                                                 <p class="text">участников</p>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="entry">
-                                                <p class="num">5</p>
-                                                <p class="text">концертов</p>
+                                                <p class="num">🤟</p>
+                                                <p class="text">Концерты каждый день</p>
                                             </div>
                                         </div>
                                     </div>
@@ -283,14 +269,14 @@
                     </div>
                 </section>
 
-                <!-- блок СПИКЕРЫ -->
+                <!-- блок АМБАССАДОРЫ и СПИКЕРЫ -->
                 {if $spmList}
                 <section class="page-section mt-4">
                     <div class="container">
                         <section class="page-section">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h2 class="section-headline">{if $lang == 'en'}Speakers{else}Спикеры{/if}</h2>
+                                    <h2 class="section-headline">{if $lang == 'en'}Speakers{else}АМБАССАДОРЫ и СПИКЕРЫ{/if}</h2>
                                 </div>
                                 <div class="col-md-6 text-right">
                                     <div class="more">
@@ -387,6 +373,10 @@
                                     </div>
                                     <div>
                                         <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                                        <p class="ticket_new_cost">
+											<span>с 1 марта - 180 000 ₽</span>
+											<span>с 1 мая - 190 000 ₽</span>
+										</p>
                                         {if $ticket->leftCount > 0}
                                         <div>
                                             <a href="#" class="btn btn-white btn-line buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
@@ -413,6 +403,10 @@
                                     </div>
                                     <div>
                                         <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                                        <p class="ticket_new_cost">
+											<span>с 1 марта - 65 000 ₽</span>
+                                            <span>с 1 мая - 70 000 ₽</span>
+										</p>
                                         {if $ticket->leftCount > 0}
                                         {if $this.child->wantRebro == 1 || $ticket->wantRebro == 1}
                                         <div class="capacity"><span>Мы приняли вашу заявку!</span></div>
@@ -444,6 +438,10 @@
                                     </div>
                                     <div>
                                         <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                                        <p class="ticket_new_cost">
+											<span>с 1 марта - 35 000 ₽</span>
+											<span>с 1 мая - 40 000 ₽</span>
+										</p>
                                         {if $ticket->leftCount > 0}
                                         <div>
                                             <a href="#" class="btn btn-white btn-line buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
@@ -470,6 +468,10 @@
                                     </div>
                                     <div>
                                         <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                                        <p class="ticket_new_cost">
+											<span>с 1 марта - 30 000 ₽</span>
+											<span>с 1 мая - 35 000 ₽</span>
+										</p>
                                         {if $ticket->leftCount > 0}
                                         <div>
                                             <a href="#" class="btn btn-white btn-line buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
@@ -482,13 +484,12 @@
                             </div>
                             <div class="col-md-6 col-lg-4 mb-3">
                                 <div class="ticket main-ticket ticket-barstreet">
-                                    {assign var=ticketId value=4} <!-- УКАЗАТЬ ID БИЛЕТА «Barstreet» -->
+                                    {assign var=ticketId value=18} <!-- УКАЗАТЬ ID БИЛЕТА «Fun» -->
                                     {assign var=ticket value=$ticketId|getticket}
                                     <div>
                                         <a href="/catalog">
                                             <h2 class="ticket_header">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</h2>
-                                            <p>Для тех, кто<br>
-                                                с баром и за баром</p>
+                                            <p>Для всех<br>&nbsp;</p>
                                         </a>
                                         <div class="tinkoff-credit">
                                             <a href="#" data-toggle="modal" data-target="#tinkoffModal">Купить в рассрочку</a>
@@ -496,6 +497,10 @@
                                     </div>
                                     <div>
                                         <p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
+                                        <p class="ticket_new_cost">
+											<span>фиксированная</span>
+											<span>стоимость</span>
+										</p>
                                         {if $ticket->leftCount > 0}
                                         <div>
                                             <a href="#" class="btn btn-white btn-line buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">

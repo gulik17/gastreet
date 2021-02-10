@@ -3,7 +3,7 @@
  *
  */
 class ParthnersControl extends IndexControl {
-    public $pageTitle = "Партнеры — GASTREET 2020";
+    public $pageTitle = "Партнеры — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Партнеры";

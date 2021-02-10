@@ -4,8 +4,8 @@
  * Контрол покажет инфу о владельце
  */
 class ViewUserControl extends AuthorizedUserControl {
-    public $pageTitle = "Информация об пользователе — GASTREET 2020";
-    public $pageTitle_en = "User Information — GASTREET 2020";
+    public $pageTitle = "Информация об пользователе — GASTREET 2021";
+    public $pageTitle_en = "User Information — GASTREET 2021";
 
     public function render() {
         $id = Request::getInt("id");

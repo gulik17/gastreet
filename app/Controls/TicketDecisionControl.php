@@ -2,7 +2,7 @@
 /**
 */
 class TicketDecisionControl extends AuthorizedUserControl {
-    public $pageTitle = "Покупка билета — GASTREET 2020";
+    public $pageTitle = "Покупка билета — GASTREET 2021";
 
     public function render() {
         $ts = time();

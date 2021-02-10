@@ -3,8 +3,8 @@
  *
 */
 class QuickAdminControl extends IndexControl {
-    public $pageTitle = "QuickAdmin — GASTREET 2020";
-    public $pageTitle_en = "QuickAdmin — GASTREET 2020";
+    public $pageTitle = "QuickAdmin — GASTREET 2021";
+    public $pageTitle_en = "QuickAdmin — GASTREET 2021";
 
     public function render() {
         $this->layout = 'index.html';

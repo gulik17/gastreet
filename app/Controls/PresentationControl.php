@@ -3,8 +3,8 @@
  *
  */
 class PresentationControl extends AuthorizedUserControl {
-    public $pageTitle = "Презентации — GASTREET 2020";
-    public $pageTitle_en = "Presentations — GASTREET 2020";
+    public $pageTitle = "Презентации — GASTREET 2021";
+    public $pageTitle_en = "Presentations — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Presentation";

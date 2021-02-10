@@ -3,8 +3,8 @@
  *
  */
 class MemoryControl extends IndexControl {
-    public $pageTitle = "Воспоминания — GASTREET 2020: ";
-    public $pageTitle_en = "Memory — GASTREET 2020";
+    public $pageTitle = "Воспоминания — GASTREET 2021";
+    public $pageTitle_en = "Memory — GASTREET 2021";
 
     public function render() {
         $this->layout = 'memory.html';

@@ -3,7 +3,7 @@
  *
 */
 class PriceUpControl extends IndexControl {
-    public $pageTitle = "Повышение цены — GASTREET 2020";
+    public $pageTitle = "Повышение цены — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Pricing";

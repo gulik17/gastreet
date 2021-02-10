@@ -4,8 +4,8 @@
  *
  */
 class BookingControl extends AuthorizedUserControl {
-    public $pageTitle = "Забронировать — GASTREET 2020";
-    public $pageTitle_en = "Reservation — GASTREET 2020";
+    public $pageTitle = "Забронировать — GASTREET 2021";
+    public $pageTitle_en = "Reservation — GASTREET 2021";
 
     public function render() {
         $ts = time();

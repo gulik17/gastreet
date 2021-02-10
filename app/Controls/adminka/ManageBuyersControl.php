@@ -65,12 +65,16 @@ class ManageBuyersControl extends BaseAdminkaControl {
                 $userNeedAmount = 0;
                 $userPayAmount = 0;
                 $userAmount = 0;
+                $baseTicketName = "";
+                $datePayStr = "";
                 if (is_array($tickets) && count($tickets)) {
                     foreach ($tickets AS $ticket) {
                         $userAmount = $userAmount + $ticket['payAmount'] + $ticket['ulAmount'] - $ticket['returnedAmount'];
                         $userPayAmount = $userPayAmount + $ticket['payAmount'] + $ticket['ulAmount'];
                         $userNeedAmount = $userNeedAmount + $ticket['needAmount'] - $ticket['discountAmount'] + $ticket['returnedAmount'] - $ticket['payAmount'] - $ticket['ulAmount'];
                         $totalPrice = $totalPrice + $ticket['needAmount'];
+                        $baseTicketName .= " " . $ticket['baseTicketName'];
+                        $datePayStr = date("Y-m-d H:i:s", $ticket['tsPay']);
                     }
                 }
                 if (is_array($products) && count($products)) {
@@ -79,9 +83,12 @@ class ManageBuyersControl extends BaseAdminkaControl {
                         $userPayAmount = $userPayAmount + $product['payAmount'] + $product['ulAmount'];
                         $userNeedAmount = $userNeedAmount + $product['needAmount'] - $product['discountAmount'] + $product['returnedAmount'] - $product['payAmount'] - $product['ulAmount'];
                         $totalPrice = $totalPrice + $product['needAmount'];
+                        //$baseTicketName .= " " . $product['productName'];
                     }
                 }
                 $userAmountArray[$user->id] = $userAmount;
+                $baseTicket[$user->id] = $baseTicketName;
+                $datePay[$user->id] = $datePayStr;
                 if ($user->parentUserId) {
                     $parentIds[$user->parentUserId] = $user->parentUserId;
                 }
@@ -91,6 +98,8 @@ class ManageBuyersControl extends BaseAdminkaControl {
                 }
             }
 
+            $this->addData("baseTicket", $baseTicket);
+            $this->addData("datePay", $datePay);
             $this->addData("userAmountArray", $userAmountArray);
             if (count($parentIds)) {
                 $parentList = $um->getByIds($parentIds);

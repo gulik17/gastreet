@@ -5,7 +5,7 @@
  * регистрации нового пользователя
  */
 class UserRegisterControl extends IndexControl {
-    public $pageTitle = "Регистрация нового пользователя — GASTREET 2020";
+    public $pageTitle = "Регистрация нового пользователя — GASTREET 2021";
 
     public function render() {
         if (Request::getVar("recode") == 'rebro') {

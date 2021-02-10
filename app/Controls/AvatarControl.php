@@ -5,7 +5,7 @@
  * layout = index.html
  */
 class AvatarControl extends IndexControl {
-    public $pageTitle = "Создай Аватар, поделить им в FaceBook и Вконтакте — GASTREET 2020";
+    public $pageTitle = "Создай Аватар, поделить им в FaceBook и Вконтакте — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Аватар";

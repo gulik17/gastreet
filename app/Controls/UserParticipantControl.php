@@ -4,8 +4,8 @@
  *
  */
 class UserParticipantControl extends AuthorizedUserControl {
-    public $pageTitle    = "Участники — GASTREET 2020";
-    public $pageTitle_en = "Participants — GASTREET 2020";
+    public $pageTitle    = "Участники — GASTREET 2021";
+    public $pageTitle_en = "Participants — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

@@ -4,8 +4,8 @@
  *
  */
 class AddBalanceControl extends AuthorizedUserControl {
-    public $pageTitle    = "Пополнить баланс — GASTREET 2020";
-    public $pageTitle_en = "Add Balance — GASTREET 2020";
+    public $pageTitle    = "Пополнить баланс — GASTREET 2021";
+    public $pageTitle_en = "Add Balance — GASTREET 2021";
     public $lang = "ru";
     public $jivoSite = 0;
     public $ticketsCount = 0;

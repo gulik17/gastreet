@@ -4,8 +4,8 @@
  *
  */
 class ContactsControl extends IndexControl {
-    public $pageTitle = "Контакты — GASTREET 2020";
-    public $pageTitle_en = "Contacts — GASTREET 2020";
+    public $pageTitle = "Контакты — GASTREET 2021";
+    public $pageTitle_en = "Contacts — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Контакты";

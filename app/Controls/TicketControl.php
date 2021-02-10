@@ -4,8 +4,8 @@
  * Компонент для отображения страниц, созданных админом
  */
 class TicketControl extends IndexControl {
-    public $pageTitle    = "Билеты — GASTREET 2020";
-    public $pageTitle_en = "Tickets — GASTREET 2020";
+    public $pageTitle    = "Билеты — GASTREET 2021";
+    public $pageTitle_en = "Tickets — GASTREET 2021";
     public $pageDesc = "Самое ожидаемое отраслевое образовательное событие в стране, 5000 участников со всего мира";
     public $pageDesc_en = "The largest educational industry-specific event in the country, 5,000 participants from all over the world";
 

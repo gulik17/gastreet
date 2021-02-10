@@ -5,11 +5,11 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>GASTREET 2018 - International Restaurant Show</title>
+        <title>GASTREET 2021 - International Restaurant Show</title>
         <base href="https://gastreet.com/"/>
-        <meta property="og:title" content="GASTREET 2018 - International Restaurant Show"/>
+        <meta property="og:title" content="GASTREET 2021 - International Restaurant Show"/>
         <meta property="og:description" content=""/>
-        <meta property="og:image" content="https://gastreet.com/images/fb_share_6.jpg">
+        <meta property="og:image" content="{$pageImg}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="shortcut icon" href="/app/landing/favicon.ico"/>

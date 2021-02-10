@@ -4,8 +4,8 @@
  * Компонент для отображения страниц, созданных админом
  */
 class LandingControl extends IndexControl {
-    public $pageTitle    = "GASTREET 2020 - International Restaurant Show";
-    public $pageTitle_en = "GASTREET 2020 - International Restaurant Show";
+    public $pageTitle    = "GASTREET 2021 - International Restaurant Show";
+    public $pageTitle_en = "GASTREET 2021 - International Restaurant Show";
     public $pageDesc = "Самое ожидаемое отраслевое образовательное событие в стране, 5000 участников со всего мира";
     public $pageDesc_en = "The largest educational industry-specific event in the country, 5,000 participants from all over the world";
 

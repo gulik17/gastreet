@@ -5,7 +5,7 @@
  * регистрации участника
  */
 class RegisterControl extends AuthorizedUserControl {
-    public $pageTitle = "Регистрация участника — GASTREET 2020";
+    public $pageTitle = "Регистрация участника — GASTREET 2021";
 
     public function render() {
         parent::preRender();

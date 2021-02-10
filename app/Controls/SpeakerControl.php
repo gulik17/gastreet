@@ -3,8 +3,8 @@
  *
 */
 class SpeakerControl extends IndexControl {
-    public $pageTitle = "Спикер — GASTREET 2020";
-    public $pageTitle_en = "Speaker — GASTREET 2020";
+    public $pageTitle = "Спикер — GASTREET 2021";
+    public $pageTitle_en = "Speaker — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Спикеры";

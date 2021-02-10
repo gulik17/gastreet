@@ -3,8 +3,8 @@
  *
  */
 class VolunteersControl extends IndexControl {
-    public $pageTitle = "Волонтеры — GASTREET 2020";
-    public $pageTitle_en = "Volunteers — GASTREET 2020";
+    public $pageTitle = "Волонтеры — GASTREET 2021";
+    public $pageTitle_en = "Volunteers — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Волонтеры";

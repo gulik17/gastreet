@@ -3,8 +3,8 @@
 *
 */
 class SchedulePartnerControl extends IndexControl {
-    public $pageTitle = "Партнерская программа — GASTREET 2020";
-    public $pageTitle_en = "Partner Schedule — GASTREET 2020";
+    public $pageTitle = "Партнерская программа — GASTREET 2021";
+    public $pageTitle_en = "Partner Schedule — GASTREET 2021";
 
     public function render() {
         //Enviropment::redirect("/");

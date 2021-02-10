@@ -3,8 +3,8 @@
  *
 */
 class ProgrammsControl extends IndexControl {
-    public $pageTitle = "Программы по тематикам — GASTREET 2020";
-    public $pageTitle_en = "Programs by subjects — GASTREET 2020";
+    public $pageTitle = "Программы по тематикам — GASTREET 2021";
+    public $pageTitle_en = "Programs by subjects — GASTREET 2021";
 
     public function render() {
         $this->controlName = "Программы";

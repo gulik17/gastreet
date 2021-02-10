@@ -29,8 +29,8 @@
                 <div class="col-md-12">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs product-select-tabs" role="tablist">
-                        <li class="col-6 col-md-3" role="presentation"><a href="#business" class="active" aria-controls="business" role="tab" data-toggle="tab">Бизнес школа</a></li>
-<!--                        <li class="col-6 col-md-3" role="presentation"><a href="#popup" aria-controls="popup" role="tab" data-toggle="tab">POP-UP SHOW</a></li>-->
+                        <li class="col-md-6" role="presentation"><a href="#business" class="active" aria-controls="business" role="tab" data-toggle="tab">Детский кемп «Гастритик»</a></li>
+                        <li class="col-md-6" role="presentation"><a href="#popup" aria-controls="popup" role="tab" data-toggle="tab">ПАЛАТОЧНЫЙ ЛАГЕРЬ</a></li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content product-select-content">
@@ -38,7 +38,7 @@
                             <div class="container schedule-table">
                                 <div class="row">
                                 {foreach from=$this.products item=product name=productloop}
-                                    {if $product->areaId == 6}
+                                    {if $product->areaId == 32}
                                     {assign var=placeid value=$product->placeId}
                                     {assign var=speakerid value=$product->speakerId}
                                     {assign var=speaker value=$this.speakers.$speakerid}
@@ -182,7 +182,7 @@
                             <div class="container schedule-table">
                                 <div class="row">
                                 {foreach from=$this.products item=product name=productloop}
-                                    {if $product->areaId == 4}
+                                    {if $product->areaId == 33}
                                     {assign var=placeid value=$product->placeId}
                                     {assign var=speakerid value=$product->speakerId}
                                     {assign var=speaker value=$this.speakers.$speakerid}
@@ -347,8 +347,8 @@
                         <div class="col-md-12">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs product-select-tabs" role="tablist">
-                                <li class="col-6 col-md-3" role="presentation"><a href="#business_{$child->id}" class="active" aria-controls="business_{$child->id}" role="tab" data-toggle="tab">Бизнес школа</a></li>
-<!--                                <li class="col-6 col-md-3" role="presentation"><a href="#popup_{$child->id}" aria-controls="popup_{$child->id}" role="tab" data-toggle="tab">POP-UP SHOW</a></li>-->
+                                <li class="col-md-6" role="presentation"><a href="#business_{$child->id}" class="active" aria-controls="business_{$child->id}" role="tab" data-toggle="tab">Детский кемп «Гастритик»</a></li>
+                                <li class="col-md-6" role="presentation"><a href="#popup_{$child->id}" aria-controls="popup_{$child->id}" role="tab" data-toggle="tab">ПАЛАТОЧНЫЙ ЛАГЕРЬ</a></li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content product-select-content">
@@ -356,7 +356,7 @@
                                     <div class="container schedule-table">
                                         <div class="row">
                                         {foreach from=$this.products item=product name=productloop}
-                                            {if $product->areaId == 6}
+                                            {if $product->areaId == 32}
                                             {assign var=placeid value=$product->placeId}
                                             {assign var=speakerid value=$product->speakerId}
                                             {assign var=speaker value=$this.speakers.$speakerid}
@@ -500,7 +500,7 @@
                                     <div class="container schedule-table">
                                         <div class="row">
                                         {foreach from=$this.products item=product name=productloop}
-                                            {if $product->areaId == 4}
+                                            {if $product->areaId == 33}
                                             {assign var=placeid value=$product->placeId}
                                             {assign var=speakerid value=$product->speakerId}
                                             {assign var=speaker value=$this.speakers.$speakerid}

@@ -3,8 +3,8 @@
  *
 */
 class CashBackControl extends IndexControl {
-    public $pageTitle = "Кэшбэк — GASTREET 2020";
-    public $pageTitle_en = "Cashback — GASTREET 2020";
+    public $pageTitle = "Кэшбэк — GASTREET 2021";
+    public $pageTitle_en = "Cashback — GASTREET 2021";
 
     public function render() {
         $this->layout = 'cashback.html';

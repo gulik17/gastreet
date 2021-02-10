@@ -22,11 +22,7 @@
                         </ul>
                         {/if}
                         <h1 class="page-headline">{if $lang == 'en'}{$this.amObj->name_en}{else}{$this.amObj->name}{/if}</h1>
-                        <div class="tickects-video-catalog-page tickects-video-catalog-4 gss-video-watch-catalog-page">
-                            <div class="js-videos-gallery">
-                                <div><a data-target="#video-modal" data-toggle="modal" data-link="QM0iXj08IuQ" data-title="{if $lang == 'en'}about POP-UP SHOW{else}О POP-UP SHOW{/if}" href="#"><span>{if $lang == 'en'}Watch the video<br>about POP-UP SHOW{else}Посмотрите ролик<br>о POP-UP SHOW{/if}</span></a></div>
-                            </div>
-                        </div>
+
                         <div class="textblock">{if $lang == 'en'}{$this.amObj->description_en|dbtexttohtml}{else}{$this.amObj->description|dbtexttohtml}{/if}</div>
                     {/if}
                 </div>
@@ -109,27 +105,5 @@
         </div>
     </div>
 </div>
-<div class="stick-to-footer container">
-    <div class="instagram-gallery">
-        <div class="gallery-col">
-            <h2 class="section-headline" style="margin-top: 4rem;margin-bottom: 2.75rem;">Gastreet<br> History</h2>
-            <img src="/images/collages/gala1.jpg">
-        </div>
-        <div class="gallery-col">
-            <img src="/images/collages/gala2.jpg">
-            <div class="gallery-row">
-                <div class="gallery-col-1of2"><img src="/images/collages/gala3.jpg"></div>
-                <div class="gallery-col-1of2"><img src="/images/collages/gala4.jpg"></div>
-            </div>
-        </div>
-        <div class="gallery-col">
-            <img src="/images/collages/gala5.jpg">
-            <div class="gallery-row">
-                <div class="gallery-col-1of2"><img src="/images/collages/gala6.jpg"></div>
-                <div class="gallery-col-1of2"><img src="/images/collages/gala7.jpg"></div>
-            </div>
-            <img src="/images/collages/gala8.jpg">
-        </div>
-    </div>
-</div>
+
 <div class="container gss-tag">#gastreetshow</div>

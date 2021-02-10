@@ -3,8 +3,8 @@
 * Контрол редактирования профайла
 */
 class UserEditProfileControl extends AuthorizedUserControl {
-    public $pageTitle    = "Редактирование профайла — GASTREET 2020";
-    public $pageTitle_en = "Edit Profile — GASTREET 2020";
+    public $pageTitle    = "Редактирование профайла — GASTREET 2021";
+    public $pageTitle_en = "Edit Profile — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoLogin($this->actor, '/');

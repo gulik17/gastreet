@@ -1,7 +1,7 @@
 <?php
 
 class FolkSpeakerControl extends IndexControl {
-    public $pageTitle = "Народный спикер — GASTREET 2020";
+    public $pageTitle = "Народный спикер — GASTREET 2021";
 
     public function render() {
         $fsm = new FolkSpeakerManager();

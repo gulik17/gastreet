@@ -6,7 +6,7 @@
  *
  */
 class UserAreaControl extends AuthorizedUserControl {
-    public $pageTitle = "Новости — GASTREET 2020";
+    public $pageTitle = "Новости — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

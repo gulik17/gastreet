@@ -3,8 +3,8 @@
  * Контроллер корзины
  */
 class BasketControl extends AuthorizedUserControl {
-    public $pageTitle    = "Корзина — GASTREET 2020";
-    public $pageTitle_en = "Basket — GASTREET 2020";
+    public $pageTitle    = "Корзина — GASTREET 2021";
+    public $pageTitle_en = "Basket — GASTREET 2021";
 
     public function render() {
         UserManager::redirectIfNoProfile($this->actor);

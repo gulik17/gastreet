@@ -3,8 +3,8 @@
  *
 */
 class PlaceControl extends IndexControl {
-    public $pageTitle = "Где жить — GASTREET 2020";
-    public $pageTitle_en = "Where to live — GASTREET 2020";
+    public $pageTitle = "Где жить — GASTREET 2021";
+    public $pageTitle_en = "Where to live — GASTREET 2021";
 
     public function render() {
         //Enviropment::redirect("catalog");

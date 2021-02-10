@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="SIROKKO" autoUploadExternalChanges="true" notifyRemoteChanges="true" showNewOnSourceInSync="false" showExcludedInSync="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="gastreet" autoUploadExternalChanges="true" notifyRemoteChanges="true" showNewOnSourceInSync="false" showExcludedInSync="true">
     <serverData>
-      <paths name="EMW">
+      <paths name="gastreet">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="SIROKKO">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/gastreet.com/public_html" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="crm.loc">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

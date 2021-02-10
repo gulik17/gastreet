@@ -5,8 +5,8 @@
  */
 class PageControl extends IndexControl {
     /** Это глобальные переменные шаблона */
-    public $pageTitle = "GASTREET 2020 - International Restaurant Show - Отраслевая площадка для рестораторов: выступления спикеров, мастер-классы лучших в отрасли, информация, общение.";
-    public $pageTitle_en = "GASTREET 2020 - International Restaurant Show - Branch platform for restaurateurs: speakers' speeches, master classes of the best in the industry, information, communication.";
+    public $pageTitle = "GASTREET 2021 - International Restaurant Show - Отраслевая площадка для рестораторов: выступления спикеров, мастер-классы лучших в отрасли, информация, общение.";
+    public $pageTitle_en = "GASTREET 2021 - International Restaurant Show - Branch platform for restaurateurs: speakers' speeches, master classes of the best in the industry, information, communication.";
     public $pageDesc = "";
     public $pageKeys = "";
     public $controlName = "";
@@ -72,7 +72,7 @@ class PageControl extends IndexControl {
             $this->layout = '/pageindex.html';
 
             //if ($this->dev == 1) {
-                $this->layout = '/pageindexdev.html';
+                $this->layout = '/pageindex.html';
                 $fm = new FaqManager();
                 $this->fmList = $fm->getByGroup(2,'sortOrder');
                 //$this->addData("fmList", $fmList);
@@ -85,7 +85,7 @@ class PageControl extends IndexControl {
 
             // спикеры
             $spm = new SpeakerManager();
-            $this->spmList = $spm->getActiveByTag('2020', null, 8);
+            $this->spmList = $spm->getActiveByTag('2021', null, 8);
 
             $vm = new VideoManager();
             $this->vmList = $vm->getActive();
@@ -101,7 +101,7 @@ class PageControl extends IndexControl {
             $this->prizes = $przm->getActive();
 
             // сколько осталось дней
-            $leftSeconds = 1590969600 - time();
+            $leftSeconds = 1622505600 - time();
             $this->leftDays = round($leftSeconds / 86400); // (60 * 60 * 24) = 86400 секунд в сутках
 
             $um = new UserManager();
