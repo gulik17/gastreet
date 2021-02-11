@@ -91,7 +91,7 @@
             {foreach from=$this.amList item=amObj}
             {if $amObj->areaTypeId == 2}
             <div class="col-md-3 p-1">
-                <div class="blank-img gss-programms-img ic_container capslide_img_cont3" onclick="window.location.href = '{link show=catalog area=$amObj->id}';">
+                <div class="blank-img gss-programms-img ic_container capslide_img_cont3" onclick="window.location.href = '{$amObj->url}';">
                     <img src="/images/areas/resized/01{$amObj->id}.jpg?v={$amObj->tsUpdated}" alt="{$amObj->name}" class="img-fluid">
                     <div class="ic_caption">
                         <h3>{if $lang == 'en'}{$amObj->name_en}{else}{$amObj->name}{/if}</h3>

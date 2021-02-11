@@ -2,207 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Controls/TestControl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pdf/dogovor_gastreet_camp.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/AddAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/AddAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AddBalanceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AddBalanceControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AjaxControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AuthorizedUserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AuthorizedUserControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AvatarControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AvatarControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BalanceCardSelectControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BalanceCardSelectControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BaseControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BaseControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BasketControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BasketControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BattleControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BattleControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BecomePartnerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BecomePartnerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BookingControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BookingControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CardSelectControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CardSelectControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CashBackControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CashBackControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ChangeTicketControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ChangeTicketControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ChatbotControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ChatbotControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ContactsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ContactsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/FaqControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/FaqControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/FrontPagerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/FrontPagerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/GazControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/GazControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/GetInvoiceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/GetInvoiceControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/GetsomemessagesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/GetsomemessagesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/IndexControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/IndexControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/InstallmentControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/InstallmentControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/InvoiceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/InvoiceControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/KidsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/KidsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/LandingControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/LandingControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/LeftmenuControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/LeftmenuControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/LoginControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/LoginControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/MapControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/MapControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/MemoryControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/MemoryControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/MenuPagesBottomControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/MenuPagesBottomControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/MessagesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/MessagesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/NewsShortControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/NewsShortControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/OfertaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/OfertaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PageControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PageControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PagerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PagerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ParthnersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ParthnersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PaymentControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PaymentControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PlaceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PlaceControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PolicyControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PolicyControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PresentationControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PresentationControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PriceUpControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PriceUpControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PricingControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PricingControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PrizesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PrizesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ProductDecisionControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ProductDecisionControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ProgrammControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ProgrammControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ProgrammsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ProgrammsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/PrologoControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PrologoControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/QuickAdminControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/QuickAdminControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/RedirectControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/RedirectControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/RegisterControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/RegisterControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ScheduleControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ScheduleControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ShareControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ShareControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SocialuauthControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SocialuauthControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SpeakerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SpeakerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SpeakersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SpeakersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SpeakersPrevControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SpeakersPrevControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/TabmenuControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/TabmenuControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/TeamControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/TeamControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/TicketControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/TicketControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/TicketDecisionControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/TicketDecisionControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/TopmenuControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/TopmenuControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserAreaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserAreaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserDetailsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserDetailsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserEditProfileControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserEditProfileControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserLoginControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserLoginControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserParticipantControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserParticipantControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserProfileControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserProfileControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserQrControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserQrControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserRegisterControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserRegisterControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/UserticketControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/UserticketControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/VideoControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/VideoControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ViewUserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ViewUserControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/VolunteersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/VolunteersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/WhoisonlineControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/WhoisonlineControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/AdminInvoiceDetailsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/AdminInvoiceDetailsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/AdminkaEditUserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/AdminkaEditUserControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/AdminkaindexControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/AdminkaindexControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/AdminkamenuControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/AdminkamenuControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/AuthorizedAdminkaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/AuthorizedAdminkaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/BaseAdminkaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/BaseAdminkaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/BuyerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/BuyerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditAreaControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditAreaControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditAreaTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditAreaTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditBaseTicketControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditBaseTicketControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditContactControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditContactControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditCustomBroadcastControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditCustomBroadcastControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditCustomBroadcastManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditCustomBroadcastManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditDiscountControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditDiscountControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditFaqControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditFaqControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditNewsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditNewsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditOperatorControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditOperatorControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditParthnerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditParthnerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditParthnerTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditParthnerTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditPlaceControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditPlaceControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditPrizesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditPrizesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditProductControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditProductControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditRealEmailControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditRealEmailControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditSpeakerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditSpeakerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditStuffControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditStuffControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditUserTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditUserTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditVideoControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditVideoControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditVolunteerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditVolunteerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditcontentControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditcontentControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/MainpageControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageAreaTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageAreaTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageAreasControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageAreasControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageBaseTicketsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageBaseTicketsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageBroadcastControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageBroadcastControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageBuyersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageBuyersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageContactsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageContactsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageContentControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageContentControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageCustomBroadcastControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageCustomBroadcastControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageFaqControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageFaqControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageGazControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageGazControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageInvoicesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageInvoicesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageMemoryControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageMemoryControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageMessageLogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageMessageLogControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageOlimpicControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageOlimpicControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageOperatorsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageOperatorsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageParthnerTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageParthnerTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageParthnersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageParthnersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManagePlacesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManagePlacesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageProductsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageProductsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageRefundsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageRefundsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageRegisterAttemptsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageRegisterAttemptsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageReportControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageReportControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageReportsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageReportsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageSpeakersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageSpeakersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageStuffControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageStuffControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageSyncControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageSyncControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageUserPermissionsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageUserPermissionsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageUserTypeControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageUserTypeControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageUsersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageUsersControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageVideoControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageVideoControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ManageVolunteerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ManageVolunteerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/MasterpasswordControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/MasterpasswordControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/OperatorpasswordControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/OperatorpasswordControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/RefundPayControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/RefundPayControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportCountProductsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportCountProductsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportFewProductsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportFewProductsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportLotsProductsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportLotsProductsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportPayProductControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportPayProductControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportPurchasesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportPurchasesControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/ReportRegistrationsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/ReportRegistrationsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/SettingsManagerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/SettingsManagerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/StuffControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/StuffControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/UserControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/UserControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/VolunteerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/VolunteerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Lib/Swift/Mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lib/Swift/Mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl4.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/FooterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FooterControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/KidsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/KidsControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/MapControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/MapControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register2Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register3Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register5Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ProgrammsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ProgrammsControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/adminka/ManageBuyersControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/ManageBuyersControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/battle.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/battle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/memory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindexdev.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindexdev.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/place.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/landing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/landing/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/landing/ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/landing/ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/core/Configurator.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/core/Configurator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/core/IAjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/core/IAjaxControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/phpunit/resources/TestControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/phpunit/resources/TestControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/install/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install/install.php" beforeDir="false" afterPath="$PROJECT_DIR$/install/install.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,15 +80,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Templates" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\pdf" />
       <recent name="C:\OpenServer\domains\gastreet.loc\app\Controls" />
       <recent name="D:\GitHub\gastreet\app\avatar\layer" />
@@ -386,14 +198,8 @@
       <workItem from="1584944896762" duration="383000" />
       <workItem from="1585203478883" duration="35137000" />
       <workItem from="1612292801591" duration="12159000" />
-      <workItem from="1612977492048" duration="13163000" />
-    </task>
-    <task id="LOCAL-00007" summary="Hit style update">
-      <created>1580801634536</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1580801634536</updated>
+      <workItem from="1612977492048" duration="13511000" />
+      <workItem from="1613066330909" duration="3794000" />
     </task>
     <task id="LOCAL-00008" summary="Many updates">
       <created>1581001344294</created>
@@ -731,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584530162373</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Правки по сайту от 10-02-2021">
+      <created>1612996316649</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1612996316649</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,9 +563,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Пофиксил повышение цены и билеты" />
     <MESSAGE value="Правки страницы CHEFSTREET" />
     <MESSAGE value="Запуск шефской страницы" />
     <MESSAGE value="Добавлены тематические страницы" />
@@ -777,6 +590,7 @@
     <MESSAGE value="Пополнение баланса от Альфа" />
     <MESSAGE value="Мелкие правки в админке" />
     <MESSAGE value="Мелкие правки в админке и в проживании" />
-    <option name="LAST_COMMIT_MESSAGE" value="Мелкие правки в админке и в проживании" />
+    <MESSAGE value="Правки по сайту от 10-02-2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="Правки по сайту от 10-02-2021" />
   </component>
 </project>

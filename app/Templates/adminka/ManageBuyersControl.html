@@ -46,6 +46,8 @@
         <th>E-Mail</th>
         <th>Статус</th>
         <th>Был на сайте</th>
+        <th>Билет</th>
+        <th>Дата покупки</th>
         <th>Сумма покупок</th>
         <th>Действия</th>
     </tr>
@@ -61,6 +63,8 @@
                 <td>{if $user->confirmedEmail}{$user->confirmedEmail}{else}{$user->email}{/if}</td>
                 <td>{if $parentid}<i>добавлен от</i> {$this.parentList.$parentid}{else}{$this.userStatuses.$status}{/if}</td>
                 <td>{if $user->tsOnline}{$user->tsOnline|dateformat:'d.m.Y, в H:i'}{else}-{/if}</td>
+                <td align="right">{$this.baseTicket.$userid}</td>
+                <td align="right">{$this.datePay.$userid}</td>
                 <td align="right">{$this.userAmountArray.$userid}</td>
                 <td><a href="{alink show=buyer id=$user->id}">Покупки</a></td>
             </tr>

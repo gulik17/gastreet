@@ -2764,7 +2764,9 @@ main {
 
 @media (min-width: 1200px) {
     .page-container .page-container-image {
-        width: 100%;}
+        width: 100%;
+        position: sticky;
+        top: 80px;}
 }
 
 .person-teaser .about .job {
@@ -3511,7 +3513,10 @@ main {
     text-transform: uppercase;
     font-size: 1.4rem;
     text-decoration: none;}
-
+.tab-dates>a small {
+    font-size: 10px;
+    display: block;
+    font-family: 'Gastreet Sans', sans-serif;}
 .tab-dates>a.active, .tab-dates>a:hover {
     background-color: #10093B;
     color: #fff;}
