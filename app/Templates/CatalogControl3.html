@@ -220,6 +220,16 @@
                 <p class="subtitle" id="ext_option">Дополнительные опции</p>
             </div>
             <div class="col-md-2">
+                <div class="ticket cat_fuckup" data-ri="d3">
+                    <h2 class="ticket_header">Место в&nbsp;палаточном лагере</h2>
+                    <p class="ticket_cost">3 000 ₽</p>
+                    <p class="ticket_new_cost">Место в палаточном лагере - зона выката уровень +960</p>
+                    <div class="mt-2">
+                        <a href="#" class="buy-product-click-pc btn btn-white" data-id="82" data-night="false" id="buy-product-pc-82" title="##buy##">Купить</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
                 <div class="ticket cat_popup" data-ri="d4">
                     <h2 class="ticket_header">Детский кемп «Гастритик»<br>&nbsp;</h2>
                     <p class="ticket_cost" style="margin-bottom: 1.25rem;">10 000 ₽</p>
@@ -511,12 +521,12 @@
     .timetable-page .title-programm {
         font-size: 2.250rem;
         font-weight: 600;}
-    .chef.ticket-january, .fun.ticket-january {
+    .chef.ticket-january, .fun.ticket-january, .king.ticket-january {
         filter: grayscale(100%);
         position: relative;
         transition: all .3s ease-out;
         opacity: .4;}
-    .chef.ticket-january:after, .fun.ticket-january:after {
+    .chef.ticket-january:after, .fun.ticket-january:after, .king.ticket-january:after {
         content: '';
         position: absolute;
         left: 2px;
@@ -527,10 +537,10 @@
         opacity: .4;}
     .fun.ticket-january:after {
         right: 7px;}
-    .chef.ticket-january:hover:after, .fun.ticket-january:hover:after {
+    .chef.ticket-january:hover:after, .fun.ticket-january:hover:after, .king.ticket-january:hover:after {
         display: none;
         opacity: 0;}
-    .chef.ticket-january:hover, .fun.ticket-january:hover {
+    .chef.ticket-january:hover, .fun.ticket-january:hover, .king.ticket-january:hover {
         filter: grayscale(0);
         opacity: 1;}
     .timetable-page .timedata-menu a {
@@ -546,7 +556,7 @@
     @media (min-width: 300px) and (max-width: 767px) {
         html {
             font-size: 12px;}
-        .fun.ticket-january, .chef.ticket-january {
+        .fun.ticket-january, .chef.ticket-january, .king.ticket-january {
             display: none;}
         .more-link {
             font-size: 10px;}

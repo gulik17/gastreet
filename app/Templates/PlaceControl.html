@@ -23,7 +23,8 @@
                 <div class="g-emoji-icon">
                     <img src="/images/emoji/11.png" class="img-fluid" alt="">
                 </div>
-                <div class="g-emoji-balun">Бронирование возможно только после покупки основного билета на GASTREET</div>
+                <!--div class="g-emoji-balun d-none">Бронирование возможно только после покупки основного билета на GASTREET</div-->
+                <div class="g-emoji-balun">Бронирование гостиниц будет доступно с 1 марта</div>
             </div>
         </div>
     </div>
@@ -96,7 +97,7 @@
                 <div class="g-emoji-icon">
                     <img src="/images/emoji/4.png" class="img-fluid" alt="">
                 </div>
-                <div class="g-emoji-balun">Все отели в GASTREET CITY можно забронировать минимум на 5 суток!</div>
+                <div class="g-emoji-balun">Все отели в GASTREET CITY можно забронировать минимум на 4 суток!</div>
             </div>
         </div>
     </div>
@@ -124,7 +125,16 @@
             <div class="row">
                 <div class="col-lg-12 hotels-price-longtitle">
                     {if $place->price > 0}
-                        <span class="title price">от {$place->price} ₽/сут.</span>
+                        {if $place->id == 73}
+                            <span class="title price">{$place->price} ₽</span>
+                            <div class="page_body pt-0">
+                                <div class="hotel">
+                                    <a href="#" class="buy-product-click-pc btn btn-white w-auto px-5" data-id="82" data-night="false" id="buy-product-pc-82" title="##buy##">Купить</a>
+                                </div>
+                            </div>
+                        {else}
+                            <span class="title price">от {$place->price} ₽/сут.</span>
+                        {/if}
                     {elseif $place->price == 'хз'}
                         <span class="title" style="color:#f00;font-weight:600">уточняется</span>
                     {else}
@@ -233,11 +243,13 @@
                     <div class="col-4 col-lg-2 text-right marker"><i class="fa fa-map-marker marker-icon" aria-hidden="true"></i>&nbsp;{$place->level}</div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-lg-8 offset-lg-1">
+                    <div class="col-lg-7 offset-lg-1">
                         {if $place->level == '+960'}
-                            <div class="title">Минимальный срок бронирования 5 суток</div>
+                            {if $place->id != 73}
+                                <div class="title  mb-5">Минимальный срок бронирования 4 суток</div>
+                            {/if}
                         {else}
-                            <div class="title">Минимальный срок бронирования 2-е суток</div>
+                            <div class="title mb-5">Минимальный срок бронирования 2-е суток</div>
                         {/if}
                         <div class="longtitle">
                             {if $place->phone}<span>Отдел бронирования:</span> {$place->phone}{/if}
@@ -246,36 +258,25 @@
                                 <a class="d-block" href="mailto:{$place->email}"><i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>Отправить запрос</a>
                             {/if}
                         </div>
-                    </div>
-                    <div class="col-lg-3"></div>
-                </div>
-                <div class="row">
-                    <div class="mb-5 mb-lg-0 col-lg-7 offset-lg-1">
                         {$place->description|dbtexttohtml}
-                    </div>
-                    <div class="col-lg-3 mb-5 text-center">
-                        {if $place->videoUrl}
-                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/{$place->videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        {if $place->id != 73}
+                            <div class="hotel-price-title mb-4">Стоимость размещения за сутки</div>
                         {/if}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="hotel-price-title mb-4">Стоимость размещения за сутки</div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-lg-7 offset-lg-1 mb-3 mb-lg-0">
                         {$place->modal_desc|dbtexttohtml}
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 text-center">
+                        {if $place->videoUrl}
+                            <div class="mb-5">
+                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/{$place->videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        {/if}
                         <div class="have-in-price">
                             <div class="have-in-price-title">Входит в стоимость</div>
                             <div class="row align-items-center {if $place->inclusive[1]}active{/if}">
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-breakfast"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Завтрак</div>
                                 </div>
                             </div>
@@ -283,7 +284,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-pool"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Бассейн</div>
                                 </div>
                             </div>
@@ -291,7 +292,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-spa"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Спа</div>
                                 </div>
                             </div>
@@ -299,7 +300,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-gum"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Тренажёрный зал</div>
                                 </div>
                             </div>
@@ -307,7 +308,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-baby-room"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Детская комната</div>
                                 </div>
                             </div>
@@ -315,7 +316,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-wheelchair" aria-hidden="true"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Номера для людей с&nbsp;ограниченными возможностями</div>
                                 </div>
                             </div>
@@ -324,7 +325,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-baby-room"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Детская комната</div>
                                 </div>
                             </div>
@@ -332,7 +333,7 @@
                                 <div class="col-2 col-lg-2">
                                     <i class="fa fa-paw"></i>
                                 </div>
-                                <div class="col-10 col-lg-10">
+                                <div class="col-10 col-lg-10 text-left">
                                     <div>Размещение с&nbsp;домашними животными</div>
                                 </div>
                             </div>

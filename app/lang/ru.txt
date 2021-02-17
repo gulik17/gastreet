@@ -92,4 +92,5 @@ scheduleOff=Программа
 memory=Воспоминания
 presentation=Презентации
 volunteers=Волонтеры
+be_volunteer=Стать волонтером
 oferta=Оферта

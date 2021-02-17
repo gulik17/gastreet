@@ -84,7 +84,7 @@ body {
 .text-under, .text-above {
     font-family: 'Gastreet font', sans-serif;
     font-size: 4.6rem;
-    color: rgba(56, 56, 56, .1);
+    color: #24264c;
     text-align: center;}
 @media (max-width: 575px) {
     html {

@@ -3249,7 +3249,7 @@ section.ticket.block_4 {
     *overflow: hidden;}
 .page_body .ticket-container .collapse.in {
     *display: block;}
-.page_body .ticket .btn {
+.page_body .ticket .btn, .page_body .hotel .btn {
     margin-top: 15px;
     border-radius: 50px;
     font-size: 13px;
@@ -3286,6 +3286,8 @@ section.ticket.block_4 {
     text-decoration: none;
     border-bottom: 1px dashed;
     color: #fff;}
+.hotels-carousel .item {
+    cursor: pointer;}
 .opportunities .tinkoff-credit a {
     font-size: 12px;
     display: inline-block;

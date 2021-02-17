@@ -92,4 +92,5 @@ scheduleOff=Schedule
 memory=Memory
 presentation=Presentations
 volunteers=Volunteers
+be_volunteer=Become a Volunteer
 oferta=Offer
