@@ -55,6 +55,23 @@ function __autoload($class) {
 }
 
 /**
+ * Функция для реализации мультиязычности
+ * @param $text
+ * @param string $lang
+ * @return mixed
+ */
+
+function __($text, $lang = "ru")
+{
+    if (!file_exists(APPLICATION_DIR."/lang/$lang.json")) {
+        return $text;
+    }
+    $langs = file_get_contents(APPLICATION_DIR."/lang/$lang.json", true);
+    $langs_arr = json_decode($langs, true);
+    return (array_key_exists($text, $langs_arr)) ? $langs_arr[$text] : $text;
+}
+
+/**
  * Функция отладки. Останавливает работу скрипта выводя значение $value
  * 
  * @param $value переменная передаваемая в функцию отладки для вывода

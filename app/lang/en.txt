@@ -94,3 +94,4 @@ presentation=Presentations
 volunteers=Volunteers
 be_volunteer=Become a Volunteer
 oferta=Offer
+guideline=Guideline

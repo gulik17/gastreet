@@ -210,42 +210,52 @@ h1.title {
         font-size: 20px;}
 }
 
-
 .hotels .header .marker-touch {
+    display: block;
     position: absolute;
-    width: 4rem;
-    height: 4rem;;
+    width: 63px;
+    height: 94px;
     z-index: 1;
-    border-radius: 30px;}
+    background-repeat: no-repeat;
+    background-size: contain;}
 .hotels .header .pick {
-    left: 16.9rem;
-    top: 1.2rem; }
+    left: 250px;
+    top: 82px;
+    background-image: url('/images/place/movenpik_baloon.png');}
 .hotels .header .dolina {
-    left: 13.5rem;
-    top: 5.7rem;}
+    left: 225px;
+    top: 166px;
+    background-image: url('/images/place/dolina_baloon.png');}
 .hotels .header .congress {
-    left: 21.6rem;
-    top: 5.8rem;}
+    left: 344px;
+    top: 146px;
+    background-image: url('/images/place/novotel_congres_baloon.png');}
 .hotels .header .panorama {
-    left: 17.6rem;
-    top: 10.6rem;}
+    left: 270px;
+    top: 243px;
+    background-image: url('/images/place/gorkigorod_baloon.png');}
 .hotels .header .ibis {
-    left: 30.5rem;
-    top: 4.1rem;}
+    left: 511px;
+    top: 121px;
+    background-image: url('/images/place/ibis_baloon.png');}
 .hotels .header .sber {
-    right: 29.4rem;
-    top: 14rem;}
+    right: 474px;
+    top: 260px;
+    background-image: url('/images/place/sber_baloon.png');}
 .hotels .header .rixos {
-    right: 28.5rem;
-    bottom: -20.3rem;}
-.hotels .header .royal {
-    right: 24.8rem;
-    bottom: -14.9rem;}
+    right: 473px;
+    top: 474px;
+    background-image: url('/images/place/rixos_baloon.png');}
+.hotels .header .camping {
+    right: 436px;
+    top: 71px;
+    background-image: url('/images/place/camping_baloon.png');}
 .hotels .header .novotel {
-    right: -13px;
-    top: 24px;}
+    right: 69px;
+    top: 62px;
+    background-image: url('/images/place/novotel_baloon.png');}
 .hotels .header .map-page {
-    height: 35rem;}
+    height: 40rem;}
 .hotels .header .map-page::after {
     content: "";
     position: absolute;
@@ -256,6 +266,8 @@ h1.title {
     background: #badaf1;}
 .hotels .header .map-page .map {
     position: absolute;}
+.hotels .header .map-page .map.map-mobile {
+    display: none;}
 .hotels .header .free {
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -440,9 +452,14 @@ h1.title {
     .hotels .modal-dialog .body .hotel-price {
         font-size: 0.8rem;}
     .hotels .modal-dialog .body .title, .hotels .modal-dialog .body .longtitle {
-        font-size: 0.9rem}
+        font-size: 0.9rem;}
+    .hotels .header .marker-touch {
+        display: none;}
     .hotels .header .map-page .map {
-        position: relative;}
+        position: relative;
+        display: none;}
+    .hotels .header .map-page .map.map-mobile {
+        display: block;}
     .hotels .header .transfer {
         font-size: 0.7rem;}
     .hotels .modal-dialog .body .hotels-mini-img {
@@ -457,10 +474,11 @@ h1.title {
         width: 1.5rem;
         height: 1.5rem;
         z-index: 1;
-        border-radius: 30px;}
+        border-radius: 30px;
+        display: none;}
     .hotels .header .pick {
         left: 6.6rem;
-        top: 0rem;}
+        top: 0;}
     .hotels .header .dolina {
         left: 5.6rem;
         top: 1.65rem;}
@@ -484,7 +502,7 @@ h1.title {
         bottom: 6.6rem;}
     .hotels .header .novotel {
         right: 1.2rem;
-        top: 0.5rem;}
+        top: .5rem;}
     .hotels .header .polyana .courtyard {
         left: 5.3rem;
         top: 2.9rem;}

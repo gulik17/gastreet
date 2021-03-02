@@ -7,15 +7,23 @@
 
 <div class="register-page">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
             <ul class="breadcrumbs-register">
-                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
-                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
-                <li><a href="/register?step=3" class="active">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
-                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
-                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}<small>Личные данные</small></a></li>
+                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}<small>Выбор билета</small></a></li>
+                <li><a href="/register?step=3" class="active">{if $lang == 'en'}Step 3{else}Шаг 3{/if}<small>Сделать аватар</small></a></li>
+                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}<small>Выбор опций</small></a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}<small>Оплата</small></a></li>
             </ul>
+        </div>
+        <div class="col-md-4">
+            {if $this.user->ulBalance > 0}
+            <div class="user_balance">
+                твои бонусы:&nbsp;&nbsp;&nbsp;<span>{$this.user->ulBalance} ₽</span><br>
+                <a href="{link show=addbalance}">Пополнить</a>
+            </div>
+            {/if}
         </div>
     </div>
     <div class="page-container" id="page-container">
@@ -102,15 +110,23 @@
 
 <div class="register-page">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
             <ul class="breadcrumbs-register">
-                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
-                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
-                <li><a href="/register?step=3" class="active">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
-                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
-                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}<small>Личные данные</small></a></li>
+                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}<small>Выбор билета</small></a></li>
+                <li><a href="/register?step=3" class="active">{if $lang == 'en'}Step 3{else}Шаг 3{/if}<small>Сделать аватар</small></a></li>
+                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}<small>Выбор опций</small></a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}<small>Оплата</small></a></li>
             </ul>
+        </div>
+        <div class="col-md-4">
+            {if $this.user->ulBalance > 0}
+            <div class="user_balance">
+                твои бонусы:&nbsp;&nbsp;&nbsp;<span>{$this.user->ulBalance} ₽</span><br>
+                <a href="{link show=addbalance}">Пополнить</a>
+            </div>
+            {/if}
         </div>
     </div>
     <div class="row">

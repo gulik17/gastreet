@@ -309,7 +309,7 @@ class UserManager extends BaseEntityManager {
                     . "Мыло: ".$user->email;
 
             $isSent = self::sendOneEmail($email, $userId, $shortTitle, $template, null, null);
-            $isSent = self::sendOneEmail('ticket@gastreet.com', $userId, $shortTitle, $template, null, null);
+            //$isSent = self::sendOneEmail('ticket@gastreet.com', $userId, $shortTitle, $template, null, null);
 
             //$message = "Заявка на ReBro принята, ответ после 21 января";
 
@@ -650,11 +650,7 @@ class UserManager extends BaseEntityManager {
                 echo json_encode("go_userlogin");
                 exit;
             } else {
-                if (UIGenerator::getLang() == 'en') {
-                    Enviropment::redirect("userlogin", "To perform this action, you need to login.", "danger");
-                } else {
-                    Enviropment::redirect("userlogin", "Для выполнения данного действия необходимо авторизоваться", "danger");
-                }
+                Enviropment::redirect("userlogin", __("To perform this action, you need to login.", UIGenerator::getLang()), "danger");
             }
         }
         if (!$actor->lastname || !$actor->name || !$actor->email || !$actor->company || !$actor->position) {
@@ -662,11 +658,7 @@ class UserManager extends BaseEntityManager {
                 echo json_encode("go_usereditprofile");
                 exit;
             } else {
-                if ($actor->lang == 'en') {
-                    Enviropment::redirect("register", "Before you buy, you must fill out your Profile", "danger");
-                } else {
-                    Enviropment::redirect("register", "Перед покупками заполните Ваш профиль", "danger");
-                }
+                Enviropment::redirect("register", __("Before you buy, you must fill out your Profile", $actor->lang), "danger");
             }
         }
     }
@@ -680,12 +672,7 @@ class UserManager extends BaseEntityManager {
      */
     public static function redirectIfNoLogin($actor, $url = '/') {
         if (!$actor) {
-            if (UIGenerator::getLang() == 'en') {
-                Enviropment::redirect($url, "You have to log in to perform this action", "danger");
-            } else {
-                Enviropment::redirect($url, "Для выполнения данного действия необходимо авторизоваться", "danger");
-            }
-            
+            Enviropment::redirect($url, __("You have to log in to perform this action", UIGenerator::getLang()), "danger");
         }
     }
 
@@ -713,14 +700,14 @@ class UserManager extends BaseEntityManager {
         // пользователь
         $um = new UserManager();
         $user = $um->getById($userId);
-        $userTypeName = 'Участник';
+        $userTypeName = __("Participant", UIGenerator::getLang());
         if ($user->typeId) {
             $utm = new UserTypeManager();
             $utmObj = $utm->getById($user->typeId);
             $userTypeName = $utmObj->name;
         }
         if ( ($user->typeId > 7) && ($user->typeId != 14) ) {
-            $userTypeName = 'Участник';
+            $userTypeName = __("Participant", UIGenerator::getLang());
         }
         // сумма оплаченная за билеты: $amount
         // список доступных мероприятий: $accessListString
@@ -1142,11 +1129,7 @@ class UserManager extends BaseEntityManager {
         $cm = new ContentManager();
         $contentObj = $cm->getByAlias($alias);
         if (!$contentObj) {
-            if (UIGenerator::getLang() == 'en') {
-                Enviropment::redirectBack("Ticket issuance error", "danger");
-            } else {
-                Enviropment::redirectBack("Ошибка формирования билета", "danger");
-            }
+             Enviropment::redirectBack(__("Ticket issuance error", UIGenerator::getLang()), "danger");
         }
         $html = str_replace("&quot;", '"', htmlspecialchars_decode($contentObj->text, ENT_NOQUOTES));
         $html = str_replace("&#123;", "{", $html);
@@ -1199,16 +1182,17 @@ class UserManager extends BaseEntityManager {
         $ustatus = null;
         $qrcode = null;
         $prods = null;
+        $ext_option = null;
         $site = Configurator::get("application:url");
         // сумма, оплаченная за билеты
         $amount = 0;
         // наименования дополнительных МК
         $productsArray = array();
         // название типа покупателя
-        $ustatus = ($lang == 'en') ? 'Participant':'Участник';
+        $ustatus = __('Participant', $lang);
         if ($user->typeId) {
             if (($user->typeId >= 8) && ($user->typeId <= 11)) {
-                $ustatus = ($lang == 'en') ? 'Participant' : 'Участник';
+                $ustatus = __('Participant', $lang);
             } else {
                 $utm = new UserTypeManager();
                 $utmObj = $utm->getById($user->typeId);
@@ -1238,48 +1222,45 @@ class UserManager extends BaseEntityManager {
         } else {
             $purchasedProducts = $bpm->getProductsByUserIdNoChildren($user->id);
         }
+
         if (is_array($purchasedProducts) && count($purchasedProducts)) {
             foreach ($purchasedProducts AS $oneProduct) {
                 if ($oneProduct['status'] == BasketProduct::STATUS_PAID && $oneProduct['payAmount'] + $oneProduct['ulAmount'] >= $oneProduct['needAmount'] + $oneProduct['returnedAmount'] - $oneProduct['discountAmount']) {
-                    $productsArray[] = array("eventTsStart" => $oneProduct['eventTsStart'], "productName" => $oneProduct['productName'], "price" => $oneProduct['needAmount']);
+                    $productsArray[] = [
+                        "productId" => $oneProduct['productId'],
+                        "eventTsStart" => $oneProduct['eventTsStart'],
+                        "productName" => $oneProduct['productName'],
+                        "price" => $oneProduct['needAmount']
+                    ];
                 }
                 //$amount = $amount + ($oneProduct['payAmount'] + $oneProduct['ulAmount'] + $oneProduct['discountAmount'] - $oneProduct['returnedAmount']);
                 $amount = $amount + ($oneProduct['payAmount'] + $oneProduct['ulAmount'] - $oneProduct['returnedAmount']);
             }
         }
-        
-        if ( $amount > 0 ) {
-            $alias = 'biletamount';
-        } else {
-            $alias = 'bilet';
-        }
-        
-        
+
+        $alias = ($amount > 0) ? 'biletamount' : 'bilet';
+
         // сформировать табличку МК
         $prods = "";
         if (count($productsArray)) {
             // не будем менять шаблон пока
             // $alias .= "prods"; // шаблон с добавлением названий МК
-            if ($lang == 'en') {
-                $prods .= "<b>List of additional master classes:</b><br/><br/><table width=700>";
-            } else {
-                $prods .= "<b>Список дополнительных мастер-классов:</b><br/><br/><table width=700>";
-            }
+            $prods .= "<b>".__("List of additional master classes:", $lang)."</b><br/><br/><table width=700>";
             foreach ($productsArray AS $prodItem) {
+                if ($prodItem['productId'] == 84 || $prodItem['productId'] == 82) {
+                    $ext_option .= "{$prodItem['productName']} <br>";
+                }
                 $showDateTime = date("Y-m-d, в H:i", $prodItem['eventTsStart']);
                 $prods .= "<tr><td valign=top>[{$showDateTime}] </td><td valign=top width=500> {$prodItem['productName']}</td></tr>";
             }
             $prods .= "</table>";
+            $alias = ($amount > 0) ? 'biletamountprods' : 'biletprods';
         }
         // сформировать билет
         $cm = new ContentManager();
         $contentObj = $cm->getByAlias($alias);
         if (!$contentObj) {
-            if ($lang == 'en') {
-                Enviropment::redirectBack("Ticket issuance error", "danger");
-            } else {
-                Enviropment::redirectBack("Ошибка формирования билета", "danger");
-            }
+            Enviropment::redirectBack(__("Ticket issuance error", $lang), "danger");
         }
         $qrm = new UserQrCodeManager();
         $qrmObj = $qrm->getOneActiveByUserId($user->id);
@@ -1349,6 +1330,7 @@ class UserManager extends BaseEntityManager {
             "ustatus" => $ustatus,
             "qrcode" => $qrcode,
             "prods" => $prods,
+            "ext_option" => $ext_option,
         );
         $message = Enviropment::prepareForMail(MailTextHelper::parseContent($html, $vars));
         return $message;

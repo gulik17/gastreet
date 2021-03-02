@@ -205,7 +205,7 @@ class PayBalanceAction extends AuthorizedUserAction implements IPublicAction {
                 if ($this->lang == 'en') {
                     Enviropment::redirectBack("Insufficient funds", "danger");
                 } else {
-                    Enviropment::redirectBack("Недостаточно средств", "danger");
+                    Enviropment::redirectBack("Бро, чтобы оплатить, пополни баланс до полной стоимости покупки", "emoji8");
                 }
             } else {
                 if ($this->lang == 'en') {

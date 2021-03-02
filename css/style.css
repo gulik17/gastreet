@@ -1104,6 +1104,8 @@ textarea {
     margin: 3px 0;
     transition: all .3s ease-out;
     background-size: 100%;}
+.site-header .content .logo:hover {
+    background: url('../images/g19-logo-shot-hover.svg') no-repeat 0 0;}
 .site-header .content .logo.santa {
     background: url('../images/g19-logo-shot-santa.svg') no-repeat 0 0;
     height: 32px;

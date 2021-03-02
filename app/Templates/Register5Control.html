@@ -13,15 +13,23 @@
 
 <div class="register-page">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
             <ul class="breadcrumbs-register">
-                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
-                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
-                <li><a href="/register?step=3" class="">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
-                <li><a href="/register?step=4" class="">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
-                <li><a href="/register?step=5" class="active">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+                <li><a href="/register" class="">{if $lang == 'en'}Step 1{else}Шаг 1{/if}<small>Личные данные</small></a></li>
+                <li><a href="/register?step=2" class="">{if $lang == 'en'}Step 2{else}Шаг 2{/if}<small>Выбор билета</small></a></li>
+                <li><a href="/register?step=3" class="">{if $lang == 'en'}Step 3{else}Шаг 3{/if}<small>Сделать аватар</small></a></li>
+                <li><a href="/register?step=4" class="">{if $lang == 'en'}Step 4{else}Шаг 4{/if}<small>Выбор опций</small></a></li>
+                <li><a href="/register?step=5" class="active">{if $lang == 'en'}Step 5{else}Шаг 5{/if}<small>Оплата</small></a></li>
             </ul>
+        </div>
+        <div class="col-md-4">
+            {if $this.user->ulBalance > 0}
+                <div class="user_balance">
+                    твои бонусы:&nbsp;&nbsp;&nbsp;<span>{$this.user->ulBalance} ₽</span><br>
+                    <a href="{link show=addbalance}">Пополнить</a>
+                </div>
+            {/if}
         </div>
     </div>
 
@@ -106,7 +114,7 @@
             {if $total}
                 <div class="row register-total">
                     <div class="col-md-12">
-                        <a href="/basket?q=6" class="mb-3 mt-2 d-inline-block">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
+                        <a href="/basket?q=6" class="mb-4 mt-2 d-inline-block list-group-item list-group-item-action w-auto">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
                         <div class="desc">Общая сумма к оплате:</div>
                         <div class="total">{$total|numberformat}&nbsp;₽</div>
                     </div>
@@ -118,8 +126,9 @@
                             <div><input type="radio" name="pay" id="check1" checked> <label for="check1">Банковской картой</label></div>
                             <div><input type="radio" name="pay" id="check2"> <label for="check2">Выставить счет</label></div>
                             <div><input type="radio" name="pay" id="check3"> <label for="check3">Забронировать на {$this.daysBron} дней</label></div>
-<!--                            <div><input type="radio" name="pay" id="check3"> <label for="check3">Забронировать до 15 января</label></div>-->
-                            <div><input type="radio" name="pay" id="check6"> <label for="check3">Купить в рассрочку</label></div>
+<!--                            <div><input type="radio" name="pay" id="check4"> <label for="check4">Забронировать до 15 января</label></div>-->
+                            <div><input type="radio" name="pay" id="check6"> <label for="check6">Купить в рассрочку</label></div>
+                            <div><input type="radio" name="pay" id="check7"> <label for="check7">Оплатить бонусами</label></div>
                         </div>
                         <div class="ul-detail">
                             <div class="row">
@@ -158,6 +167,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="balance-btn">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" id="basket-balance-pay" class="btn btn-white">Оплатить</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="pay-card-btn">
                             <div class="row">
                                 <div class="col-md-6">
@@ -191,9 +207,6 @@
             {/if}
         </div>
         <div class="col-md-4">
-            <div class="list-group mb-5">
-                <a href="/basket?q=6" class="list-group-item list-group-item-action">{if $lang == 'en'}Add promo-code{else}Ввести промо-код{/if}</a>
-            </div>
             <div class="information">
                 <p class="title">ИНФОРМАЦИЯ</p>
                 <p>Ты почти справился - это последний этап регистрации.</p>

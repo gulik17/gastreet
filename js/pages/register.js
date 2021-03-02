@@ -10,6 +10,17 @@ $().ready(function () {
         return s;
     }
 
+    function getDiscountCodes() {
+        var userCodesPairs = '';
+        $('.discount-code').each(function () {
+            var getUserId = $(this).attr('id').split('discount-code-').join('');
+            var getCode = $('#discount-code-' + getUserId).val();
+            userCodesPairs = userCodesPairs + getUserId + ":" + getCode + "|";
+        });
+        userCodesPairs = userCodesPairs.split('&').join('').split('=').join('');
+        return userCodesPairs;
+    }
+
     // функция для отправки AJAX запроса
     function catalogSendAjaxRequest(gotParams, eltId) {
         var btnText = $(eltId).html();
@@ -50,6 +61,7 @@ $().ready(function () {
                         $(eltId).removeClass('disabled');
                         $(eltId).html(btnText);
                         $(eltId).parents('.modal').modal('hide');
+                        $('.g-emoji-content-show').show();
                         //window.location.href = "/basket";
                     } else if (data == 'no_ticketorproduct') {
                         $.alert("Не выбран товар", {title: false, type: 'danger'});
@@ -130,6 +142,7 @@ $().ready(function () {
         $('.ul-detail').slideUp();
         $('.bron-btn').slideUp();
         $('.installment-btn').slideUp();
+        $('.balance-btn').slideUp();
         $('.pay-card-btn').slideDown();
     });
 
@@ -137,6 +150,7 @@ $().ready(function () {
         $('.bron-btn').slideUp();
         $('.installment-btn').slideUp();
         $('.pay-card-btn').slideUp();
+        $('.balance-btn').slideUp();
         $('.ul-detail').slideDown();
     });
 
@@ -144,6 +158,7 @@ $().ready(function () {
         $('.ul-detail').slideUp();
         $('.pay-card-btn').slideUp();
         $('.installment-btn').slideUp();
+        $('.balance-btn').slideUp();
         $('.bron-btn').slideDown();
     });
 
@@ -151,7 +166,16 @@ $().ready(function () {
         $('.ul-detail').slideUp();
         $('.bron-btn').slideUp();
         $('.pay-card-btn').slideUp();
+        $('.balance-btn').slideUp();
         $('.installment-btn').slideDown();
+    });
+
+    $(document).on('click', '#check7', function() {
+        $('.ul-detail').slideUp();
+        $('.bron-btn').slideUp();
+        $('.pay-card-btn').slideUp();
+        $('.installment-btn').slideUp();
+        $('.balance-btn').slideDown();
     });
 
     $(document).on('click', '.main-set-product', function() {
@@ -183,6 +207,21 @@ $().ready(function () {
         $('#inn').attr('maxlength', '10');
     });
 
+    $('#basket-balance-pay').click(function (evt) {
+        evt.preventDefault();
+        var goUrl = "/index.php?do=paybalance";
+        var code = $('#code').val();
+        if (code) {
+            goUrl = goUrl + '&code=' + code;
+        }
+        var codes = getDiscountCodes();
+        if (codes) {
+            goUrl = goUrl + '&codes=' + codes;
+        }
+        window.location.href = goUrl;
+        return false;
+    });
+
     $(document).on('click', '.main-set-ticket', function() {
         let id          = $(this).data('id');
         let btn         = $(this);
@@ -195,7 +234,7 @@ $().ready(function () {
             if (confirm('Удалить текущий билет, чтобы выбрать новый?')) {
                 $(btn).addClass('disabled');
                 $(btn).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
-
+                $('.g-emoji-content-show').hide();
                 let gotdata = 'id='+delAmp(id)+'&isAjax=1';
 
                 $.ajax({

@@ -94,3 +94,4 @@ presentation=Презентации
 volunteers=Волонтеры
 be_volunteer=Стать волонтером
 oferta=Оферта
+guideline=Гайдлайн

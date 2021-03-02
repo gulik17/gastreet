@@ -35,16 +35,17 @@
         <div class="col-lg-12 map-page">
             <div class="row h-lg-100">
                 <div class="col-lg-12">
-                    <a href="#" class="d-block marker-touch pick" data-target="#hotelsModal_pick" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch dolina" data-target="#hotelsModal_dolina" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch congress" data-target="#hotelsModal_congress" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch panorama" data-target="#hotelsModal_panorama" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch ibis" data-target="#hotelsModal_ibis" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch sber" data-target="#hotelsModal_sber" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch rixos" data-target="#hotelsModal_rixos" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch royal" data-target="#hotelsModal_rixos" data-toggle="modal"></a>
-                    <a href="#" class="d-block marker-touch novotel" data-target="#hotelsModal_novotel" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch pick" data-target="#hotelsModal_pick" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch dolina" data-target="#hotelsModal_dolina" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch congress" data-target="#hotelsModal_congress" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch panorama" data-target="#hotelsModal_panorama" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch ibis" data-target="#hotelsModal_ibis" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch sber" data-target="#hotelsModal_sber" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch rixos" data-target="#hotelsModal_rixos" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch camping" data-target="#hotelsModal_camping" data-toggle="modal"></a>
+                    <a href="#" class="marker-touch novotel" data-target="#hotelsModal_novotel" data-toggle="modal"></a>
                     <img class="img-fluid map mb-5 mb-lg-0" src="/images/place/map.jpg" alt="">
+                    <img class="img-fluid map map-mobile mb-5 mb-lg-0" src="/images/place/map-mobile.jpg" alt="">
                 </div>
                 <div class="col-lg-12">
                     <div class="row align-items-end h-lg-100">
@@ -259,7 +260,7 @@
                             {/if}
                         </div>
                         {$place->description|dbtexttohtml}
-                        {if $place->id != 73}
+                        {if $place->id != 73 && $place->modal_desc}
                             <div class="hotel-price-title mb-4">Стоимость размещения за сутки</div>
                         {/if}
                         {$place->modal_desc|dbtexttohtml}

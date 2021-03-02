@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center contacts-tabs d-none justify-content-center">
+        <div class="row text-center contacts-tabs justify-content-center">
             <div class="col h5"><a href="#" data-target=".type_participants" class="active">{if $lang == 'en'}For participants{else}Участникам{/if}</a></div>
             <div class="col h5"><a href="#" data-target=".type_partners">{if $lang == 'en'}For partners{else}Партнёрам{/if}</a></div>
             <div class="col h5"><a href="#" data-target=".type_media">{if $lang == 'en'}PR/Media{else}PR / СМИ{/if}</a></div>
@@ -65,8 +65,10 @@
                                     {/if}
                                 </div>
                                 {/if}
-                            {elseif $contact->email == 'smi@gastreet.com'}
-                                <a target="_blank" href="https://forms.gle/7qR74LHQ2SAGJfJM7" class="btn-press-form">Заполнить форму аккредитации для прессы</a>
+                            {elseif $contact->email == 'pr@gastreet.com'}
+                                <a target="_blank" href="https://forms.gle/22nh5awZZYrUwFRw6" class="btn-press-form mb-3">Заполнить форму аккредитации для прессы</a>
+                                <a target="_blank" href="https://forms.gle/CSEqUqvnE1XEJ9LLA" class="btn-press-form mb-3">Заполнить форму аккредитации для фотографов и видеографов</a>
+                                <a target="_blank" href="https://forms.gle/uCyPZxiDtMFnojHh8" class="btn-press-form mb-3">Заполнить форму аккредитации для артистов</a>
                             {elseif $contact->email == 'kategamaiun@gmail.com'}
                                 <a target="_blank" href="mailto:kategamaiun@gmail.com" class="btn-press-form">Отправить запрос на участие</a>
                             {elseif $contact->email == 'crazy@gastreet.com'}

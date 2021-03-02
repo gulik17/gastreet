@@ -42,15 +42,23 @@
 
 <div class="register-page">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <h1 class="header-title">{if $lang == 'en'}Registration{else}Регистрация{/if}</h1>
             <ul class="breadcrumbs-register">
-                <li><a href="/register" class="active">{if $lang == 'en'}Step 1{else}Шаг 1{/if}</a></li>
-                <li><a href="/register?step=2" class="disabled">{if $lang == 'en'}Step 2{else}Шаг 2{/if}</a></li>
-                <li><a href="/register?step=3" class="disabled">{if $lang == 'en'}Step 3{else}Шаг 3{/if}</a></li>
-                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}</a></li>
-                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}</a></li>
+                <li><a href="/register" class="active">{if $lang == 'en'}Step 1{else}Шаг 1{/if}<small>Личные данные</small></a></li>
+                <li><a href="/register?step=2" class="disabled">{if $lang == 'en'}Step 2{else}Шаг 2{/if}<small>Выбор билета</small></a></li>
+                <li><a href="/register?step=3" class="disabled">{if $lang == 'en'}Step 3{else}Шаг 3{/if}<small>Сделать аватар</small></a></li>
+                <li><a href="/register?step=4" class="disabled">{if $lang == 'en'}Step 4{else}Шаг 4{/if}<small>Выбор опций</small></a></li>
+                <li><a href="/register?step=5" class="disabled">{if $lang == 'en'}Step 5{else}Шаг 5{/if}<small>Оплата</small></a></li>
             </ul>
+        </div>
+        <div class="col-md-4">
+            {if $this.user->ulBalance > 0}
+            <div class="user_balance">
+                твои бонусы:&nbsp;&nbsp;&nbsp;<span>{$this.user->ulBalance} ₽</span><br>
+                <a href="{link show=addbalance}">Пополнить</a>
+            </div>
+            {/if}
         </div>
     </div>
 
@@ -222,7 +230,7 @@
                 {if $lang == 'en'}
                 {else}
                     <p class="title">ИНФОРМАЦИЯ</p>
-                    <p>Внимательно заполни все поля анкеты. Если ты едешь не один – заполни поля остальных участников. Важно – укажи свои корректные данные номера телефона и почты, а&nbsp;также остальных участников. Благодаря этому, ты будешь получать эксклюзивную и&nbsp;важную информацию о&nbsp;событиях GASTREET'20 в&nbsp;режиме реального времени.</p>
+                    <p>Внимательно заполни все поля анкеты. Если ты едешь не один – заполни поля остальных участников. Важно – укажи свои корректные данные номера телефона и почты, а&nbsp;также остальных участников. Благодаря этому, ты будешь получать эксклюзивную и&nbsp;важную информацию о&nbsp;событиях GASTREET'21 в&nbsp;режиме реального времени.</p>
                     <p>Как только ты все закончишь, проверь еще раз и&nbsp;нажми кнопку «ПРОДОЛЖИТЬ».</p>
                 {/if}
             </div>
