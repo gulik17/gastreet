@@ -31,6 +31,12 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>Тип:</label>
+                <select class="form-control" name="type" id="type">
+                    {html_options options=$this.typeList selected=$this.prize->type}
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Заголовок:</label>
                 <input type="text" class="form-control" name="name" maxlength="255" value="{$this.prize->name}"/>
             </div>

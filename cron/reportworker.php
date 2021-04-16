@@ -16,7 +16,7 @@ require_once SOLO_CORE_PATH . '/Lib/Mutex/Mutex.php';
 
 Logger::init(Configurator::getSection("logger"));
 
-$tmp = SOLO_CORE_PATH . '/..' . Configurator::get("application:tempDir");
+$tmp = Configurator::get("application:tempDir");
 $mutex = new Mutex("reportworker", $tmp, false);
 
 // скрипт уже выполняется
@@ -305,6 +305,7 @@ try {
                     $reportLine->position = $user->position;
                     $reportLine->ulBalance = $user->ulBalance;
                     $reportLine->youAboutUs = $user->youAboutUs;
+                    $reportLine->metroCard = $user->metro_card;
 
                     // реквизиты
                     $details = $udm->getByUserId($user->id);

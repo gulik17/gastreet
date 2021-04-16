@@ -16,7 +16,7 @@ class SpeakersControl extends IndexControl {
             $spmList = $spm->getActiveByTag($tag, $year);
         } else {
             //$spmList = $spm->getActive();
-            $spmList = $spm->getActiveByTag('2020');
+            $spmList = $spm->getActiveByTag('2021');
             
             //deb($spmList);
         }

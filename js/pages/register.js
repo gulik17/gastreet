@@ -475,6 +475,7 @@ $().ready(function () {
         let city        = $(form).find('[name=city]');
         let position    = $(form).find('[name=position]');
         let usersize    = $(form).find('[name=usersize]');
+        let metro_card    = $(form).find('[name=metro_card]');
         let btn         = $(this);
         let btnText     = $(this).html();
         $(this).addClass('disabled');
@@ -510,6 +511,7 @@ $().ready(function () {
             + '&country='   + delAmp(country.val())
             + '&city='      + delAmp(city.val())
             + '&position='  + delAmp(position.val())
+            + '&metro_card='+ delAmp(metro_card.val())
             + '&usersize='  + delAmp(usersize.val());
 
         $.ajax({
@@ -586,6 +588,7 @@ $().ready(function () {
         let city      = $('#cityName').val();
         let position  = $('#reg_position').val();
         let usersize  = $('#reg_usersize').val();
+        let metro_card= $('#reg_metro_card').val();
         let btn       = $(this);
         let btnText   = $(this).html();
 
@@ -628,6 +631,7 @@ $().ready(function () {
             + '&country='   + delAmp(country)
             + '&city='      + delAmp(city)
             + '&position='  + delAmp(position)
+            + '&metro_card='+ delAmp(metro_card)
             + '&usersize='  + delAmp(usersize);
         $.ajax({
             type: 'POST',

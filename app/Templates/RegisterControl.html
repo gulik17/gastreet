@@ -139,6 +139,24 @@
                                         <input class="form-control" type="text" id="tmp_edit_city" name="tmp_edit_city" value="{$child->cityName}" autocomplete="off" maxlength="100">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>
+                                            <div class="row">
+                                                <div class="col-3 pl-0 pr-2">
+                                                    <img src="/images/metro_logo.png" class="img-fluid">
+                                                </div>
+                                                <div class="col-5 pl-0 pr-2">
+                                                    Введите номер карты METRO и получите подарок на Gastreet
+                                                </div>
+                                                <div class="col-4 pl-0 pr-0">
+                                                    Оформить карту если ее нет
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input class="form-control" autocomplete="off" id="metro_card" name="metro_card" type="text" value="{$child->metro_card}" />
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-submit">
                                         <button data-id="{$child->id}" class="btn btn-white reg_edit_user" type="submit">{if $lang == 'en'}Save{else}Сохранить{/if}</button>
@@ -210,6 +228,24 @@
                         <input class="form-control" type="text" id="tmp_add_city" name="tmp_add_city" value="" autocomplete="off" maxlength="100">
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>
+                            <div class="row">
+                                <div class="col-3 pl-0 pr-2">
+                                    <img src="/images/metro_logo.png" class="img-fluid">
+                                </div>
+                                <div class="col-5 pl-0 pr-2">
+                                    Введите номер карты METRO и получите подарок на Gastreet
+                                </div>
+                                <div class="col-4 pl-0 pr-0">
+                                    Оформить карту если ее нет
+                                </div>
+                            </div>
+                        </label>
+                        <input class="form-control" autocomplete="off" id="tmp_metro_card" name="tmp_metro_card" type="text" value="" />
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="form-submit">
                         <button id="reg_add_user" class="btn btn-white" type="submit">{if $lang == 'en'}Add User{else}Добавить{/if}</button>
@@ -240,6 +276,13 @@
                 <p><a href="/pdf/Employee_Release_Algorithm.pdf" target="_blank" style="color: #fff"><i class="fa fa-download" aria-hidden="true"></i> Алгоритм высвобождения сотрудников</a></p>
                 <p><a href="/pdf/How_to_raise_the_morale_of_employees_and_customers.pdf" target="_blank" style="color: #fff"><i class="fa fa-download" aria-hidden="true"></i> Как поднять боевой дух сотрудников</a></p>
             </div>
+            {if $this.showMetroPrize}
+            <div class="badge-metro mt-4">
+                <a href="{link show=basket q=2}">
+                    <img src="/images/metro_prize.png" alt="" class="img-fluid">
+                </a>
+            </div>
+            {/if}
         </div>
     </div>
 
@@ -303,6 +346,24 @@
                                         <option value="">-- {if $lang == 'en'}Position{else}Должность{/if} --</option>
                                         {html_options values=$this.position output=$this.position selected=$this.user->position}
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        <div class="row">
+                                            <div class="col-3 pl-0 pr-2">
+                                                <img src="/images/metro_logo.png" class="img-fluid">
+                                            </div>
+                                            <div class="col-5 pl-0 pr-2">
+                                                Введите номер карты METRO и получите подарок на Gastreet
+                                            </div>
+                                            <div class="col-4 pl-0 pr-0">
+                                                Оформить карту если ее нет
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <input class="form-control" autocomplete="off" id="reg_metro_card" name="metro_card" type="text" value="{$this.user->metro_card}" />
                                 </div>
                             </div>
                         </div>

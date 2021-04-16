@@ -3,7 +3,8 @@
 /**
  *
  */
-class Speaker extends Entity {
+class Speaker extends Entity
+{
     const STATUS_ENABLED = 'STATUS_ENABLED';
     const STATUS_DISABLED = 'STATUS_DISABLED';
 
@@ -22,6 +23,7 @@ class Speaker extends Entity {
     const COUNTRY_EE = 'ee';
     const COUNTRY_LV = 'lv';
     const COUNTRY_SI = 'si';
+    const COUNTRY_TR = 'tr';
 
     public $entityTable = 'speaker';
     public $primaryKey = 'id';
@@ -55,17 +57,19 @@ class Speaker extends Entity {
     public $tsCreated = null;
     public $tsUpdated = null;
 
-    public static function getStatusDesc($stat = null) {
-        $statList = array(
+    public static function getStatusDesc($s = false)
+    {
+        $list = [
             self::STATUS_ENABLED => "Включено",
             self::STATUS_DISABLED => "Выключено",
-        );
-        return $stat ? $statList[$stat] : $statList;
+        ];
+        return $s ? $list[$s] : $list;
     }
 
-    public static function getCountry($с = null) {
-        $сList = array(
-            self::COUNTRY_AMB => "Амбасадор",
+    public static function getCountry($s = false)
+    {
+        $list = [
+            self::COUNTRY_AMB =>"Амбасадор",
             self::COUNTRY_RU => "Россия",
             self::COUNTRY_GB => "Великобритания",
             self::COUNTRY_DE => "Германия",
@@ -75,17 +79,19 @@ class Speaker extends Entity {
             self::COUNTRY_PL => "Польша",
             self::COUNTRY_LV => "Латвия",
             self::COUNTRY_SI => "Словения",
-            self::COUNTRY_UZ => "Узбекистан",
             self::COUNTRY_US => "США",
+            self::COUNTRY_TR => "Турция",
+            self::COUNTRY_UZ => "Узбекистан",
             self::COUNTRY_UA => "Украина",
             self::COUNTRY_FR => "Франция",
             self::COUNTRY_EE => "Эстония",
-        );
-        return $с ? $сList[$с] : $сList;
+        ];
+        return $s ? $list[$s] : $list;
     }
 
-    function getFields() {
-        return array(
+    function getFields()
+    {
+        return [
             'id' => self::ENTITY_FIELD_INT,
             'country' => self::ENTITY_FIELD_STRING,
             'name' => self::ENTITY_FIELD_STRING,
@@ -116,6 +122,6 @@ class Speaker extends Entity {
             'sortOrder' => self::ENTITY_FIELD_INT,
             'tsCreated' => self::ENTITY_FIELD_INT,
             'tsUpdated' => self::ENTITY_FIELD_INT,
-        );
+        ];
     }
 }

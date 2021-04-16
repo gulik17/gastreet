@@ -20,44 +20,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-2 chef ticket-january">
-	{assign var=ticketId value=2}
-	{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «ШЕФСКИЙ» -->
-	<div class="ticket-item">
-		<div class="ticket-header">
-			<h5>ШЕФСКИЙ</h5>
-		</div>
-		<div class="ticket-footer">
-			<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-				<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-					Добавить
-				</a>
-			</div>
-			<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
-				<span></span>
-			</div>
-		</div>
-	</div>
-</div>
-	<div class="col-md-2 fun ticket-january">
-		{assign var=ticketId value=18}
-		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «FUN» -->
-		<div class="ticket-item">
-			<div class="ticket-header">
-				<h5>FUN</h5>
-			</div>
-			<div class="ticket-footer">
-				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-						Добавить
-					</a>
-				</div>
-				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
-					<span></span>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="col-md-2 partner ticket-january">
 		{assign var=ticketId value=16}
 		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
@@ -78,24 +40,24 @@
 		</div>
 	</div>
 	<div class="col-md-2 staff ticket-january mb-5">
-	{assign var=ticketId value=17}
-	{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
-	<div class="ticket-item">
-		<div class="ticket-header">
-			<h5>{$ticket->name}</h5>
-		</div>
-		<div class="ticket-footer">
-			<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
-				<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
-					Добавить
-				</a>
+		{assign var=ticketId value=17}
+		{assign var=ticket value=$ticketId|getticket} <!-- УКАЗАТЬ ID БИЛЕТА «Партнер» -->
+		<div class="ticket-item">
+			<div class="ticket-header">
+				<h5>{$ticket->name}</h5>
 			</div>
-			<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
-				<span></span>
+			<div class="ticket-footer">
+				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
+					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
+						Добавить
+					</a>
+				</div>
+				<div class="{if $ticket->leftCount <= 0}capacity sold-out{/if}">
+					<span></span>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 {elseif $this.gastreetspecial || $this.gastreetrebro || $this.gastreetlubimki || $this.gastreetambassadors || $this.artpeople || $this.hells_kitchen}
 	<div class="col-md-2 opportunities">
 		<div class="opportunities-header">
@@ -216,6 +178,9 @@
 						<div class="opportunities-text"><p>Закрытые вечеринки</p></div>
 					</div>
 					<div class="ticket-row">
+						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
+					</div>
+					<div class="ticket-row">
 						<div class="opportunities-text">
 							<p>Общие зоны фестиваля</p>
 						</div>
@@ -224,14 +189,11 @@
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -314,6 +276,9 @@
 						<div class="opportunities-text"><p>Закрытые вечеринки</p></div>
 					</div>
 					<div class="ticket-row">
+						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
+					</div>
+					<div class="ticket-row">
 						<div class="opportunities-text">
 							<p>Общие зоны фестиваля</p>
 						</div>
@@ -322,14 +287,11 @@
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -419,6 +381,9 @@
 						<div class="opportunities-text"><p>Закрытые вечеринки</p></div>
 					</div>
 					<div class="ticket-row">
+						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
+					</div>
+					<div class="ticket-row">
 						<div class="opportunities-text">
 							<p>Общие зоны фестиваля</p>
 						</div>
@@ -427,14 +392,11 @@
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -517,6 +479,9 @@
 						<div class="opportunities-text"><p>Закрытые вечеринки</p></div>
 					</div>
 					<div class="ticket-row">
+						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
+					</div>
+					<div class="ticket-row">
 						<div class="opportunities-text">
 							<p>Общие зоны фестиваля</p>
 						</div>
@@ -525,14 +490,11 @@
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -615,6 +577,9 @@
 						<div class="opportunities-text"><p>Закрытые вечеринки</p></div>
 					</div>
 					<div class="ticket-row">
+						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
+					</div>
+					<div class="ticket-row">
 						<div class="opportunities-text">
 							<p>Общие зоны фестиваля</p>
 						</div>
@@ -623,14 +588,11 @@
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -772,20 +734,17 @@
 						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
 					</div>
 					<div class="ticket-row">
-						<div class="opportunities-text"><p>Общие зоны фестивая</p></div>
+						<div class="opportunities-text"><p>Общие зоны фестиваля</p></div>
 					</div>
 					<div class="row all-category">
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -795,7 +754,7 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">с&nbsp;1 апреля - 180&nbsp;000&nbsp;₽<br>с&nbsp;1 мая - 190&nbsp;000&nbsp;₽</p>
+				<p class="ticket_new_cost"><!--с&nbsp;1 апреля - 180&nbsp;000&nbsp;₽<br>-->с&nbsp;1 мая - 190&nbsp;000&nbsp;₽</p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -874,20 +833,17 @@
 						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
 					</div>
 					<div class="ticket-row">
-						<div class="opportunities-text"><p>Общие зоны фестивая</p></div>
+						<div class="opportunities-text"><p>Общие зоны фестиваля</p></div>
 					</div>
 					<div class="row all-category">
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -897,7 +853,7 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">с&nbsp;1 апреля - 65&nbsp;000&nbsp;₽<br>с&nbsp;1 мая - 70&nbsp;000&nbsp;₽</p>
+				<p class="ticket_new_cost"><!--с&nbsp;1 апреля - 65&nbsp;000&nbsp;₽<br>-->с&nbsp;1 мая - 70&nbsp;000&nbsp;₽</p>
 				{if $ticket->leftCount > 0}
 				{if $this.child->wantRebro == 1 || $ticket->wantRebro == 1}
 				<div class="capacity"><span>Мы приняли вашу заявку!</span></div>
@@ -983,21 +939,18 @@
 						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
 					</div>
 					<div class="ticket-row">
-						<div class="opportunities-text"><p>Общие зоны фестивая</p></div>
+						<div class="opportunities-text"><p>Общие зоны фестиваля</p></div>
 					</div>
 					<div class="row all-category">
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#BARISTASTREET</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -1007,7 +960,7 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">с&nbsp;1 апреля - 35&nbsp;000&nbsp;₽<br>с&nbsp;1 мая - 40&nbsp;000&nbsp;₽</p>
+				<p class="ticket_new_cost"><!--с&nbsp;1 апреля - 35&nbsp;000&nbsp;₽<br>-->с&nbsp;1 мая - 40&nbsp;000&nbsp;₽</p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -1086,21 +1039,18 @@
 						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
 					</div>
 					<div class="ticket-row">
-						<div class="opportunities-text"><p>Общие зоны фестивая</p></div>
+						<div class="opportunities-text"><p>Общие зоны фестиваля</p></div>
 					</div>
 					<div class="row all-category">
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#BARISTASTREET</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>
@@ -1110,7 +1060,7 @@
 			</div>
 			<div class="ticket-footer">
 				<h3 class="ticket_cost">{$ticket->price|numberprice} ₽</h3>
-				<p class="ticket_new_cost">с&nbsp;1 апреля - 30&nbsp;000&nbsp;₽<br>с&nbsp;1 мая - 35&nbsp;000&nbsp;₽</p>
+				<p class="ticket_new_cost"><!--с&nbsp;1 апреля - 30&nbsp;000&nbsp;₽<br>-->с&nbsp;1 мая - 35&nbsp;000&nbsp;₽</p>
 				<div class="{if $ticket->leftCount <= 0}btn-opacity{/if}">
 					<a href="#" class="btn btn-white btn-line buy buy-ticket-click" {if $this.child->id > 0}data-extuser="{$this.child->id}"{/if} data-id="{$ticket->id}">
 						##buy##
@@ -1189,20 +1139,17 @@
 						<p><img src="/images/checked-2.svg" class="" style="width: 15px" alt=""></p>
 					</div>
 					<div class="ticket-row">
-						<div class="opportunities-text"><p>Общие зоны фестивая</p></div>
+						<div class="opportunities-text"><p>Общие зоны фестиваля</p></div>
 					</div>
 					<div class="row all-category">
 						<div class="col-6 col-md-3">
 							<p>#ЦЕНТРАЛЬНАЯПЛОЩАДЬ</p>
 							<p>#ITТЕХНОЛОГИИ</p>
-							<p>#FRANCHISESTREET</p>
 							<p>#ШКОЛАСОМЕЛЬЕ</p>
-							<p>#ЗОЖ</p>
 						</div>
 						<div class="col-6 col-md-3">
 							<p>#FOODMARKET</p>
 							<p>#BBQBEERSTREET</p>
-							<p>#ЗОЖ</p>
 							<p>#КОНЦЕРТЫ</p>
 							<p>#ВЕЧЕРИНКИ</p>
 							<p>ЛУЧШИЕ ПОСТАВЩИКИ</p>

@@ -2,10 +2,12 @@
 
 /**
  */
-class EditPrizesControl extends BaseAdminkaControl {
+class EditPrizesControl extends BaseAdminkaControl
+{
     public $pageTitle = "Редактирование бонусного задания";
 
-    public function render() {
+    public function render()
+    {
         $id = Request::getInt("id");
         if (!$id) {
             $this->pageTitle = "Создание новости/ништяка";
@@ -25,5 +27,6 @@ class EditPrizesControl extends BaseAdminkaControl {
             }
         }
         $this->addData("prizeStatuses", Prize::getStatusDesc());
+        $this->addData("typeList", Prize::getType());
     }
 }

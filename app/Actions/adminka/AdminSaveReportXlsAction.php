@@ -70,6 +70,8 @@ class AdminSaveReportXlsAction extends AdminkaAction {
             $column_index++;
             $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, "Как узнал");
             $column_index++;
+            $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, "Карта METRO");
+            $column_index++;
             $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, "Дата начала бронирования");
             $column_index++;
             $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, "Статус бронирования");
@@ -169,6 +171,8 @@ class AdminSaveReportXlsAction extends AdminkaAction {
                 $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, self::removeDelimiters($line->userOnline));
                 $column_index++;
                 $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, self::removeDelimiters($line->youAboutUs));
+                $column_index++;
+                $out_sheet->setCellValueByColumnAndRow($column_index, $row_index, self::removeDelimiters($line->metroCard));
                 $column_index++;
 
                 // бронирования

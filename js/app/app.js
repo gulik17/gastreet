@@ -199,12 +199,12 @@ jQuery(document).ready(function ($) {
 
     // Карусель спикеров
     $('.js-speakers-carousel').each(function () {
-        var $carousel = $(this);
-        $carousel.find('.js-carousel').owlCarousel({
+        let carousel = $(this);
+        carousel.find('.js-carousel').owlCarousel({
             loop: false,
             margin: 5,
             nav: true,
-            dotsContainer: $carousel.find('.js-dots-speakers'),
+            dotsContainer: carousel.find('.js-dots-speakers'),
             responsive: {
                 0: {items: 2},
                 480: {items: 3},
@@ -215,12 +215,12 @@ jQuery(document).ready(function ($) {
 
     // Карусель спикеров
     $('.js-videos-gallery').each(function () {
-        var $carousel = $(this);
-        $carousel.find('.js-carousel').owlCarousel({
-            loop: true,
+        let carousel = $(this);
+        carousel.find('.js-carousel').owlCarousel({
+            loop: false,
             margin: 15,
             nav: true,
-            dotsContainer: $carousel.find('.js-dots-videos'),
+            dotsContainer: carousel.find('.js-dots-videos'),
             responsive: {
                 0: {items: 2},
                 480: {items: 3},
@@ -231,12 +231,12 @@ jQuery(document).ready(function ($) {
 
     // Карусель бонусных заданий
     $('.js-prizes-carousel').each(function () {
-        var $carousel = $(this);
-        $carousel.find('.js-carousel').owlCarousel({
-            loop: true,
+        let carousel = $(this);
+        carousel.find('.js-carousel').owlCarousel({
+            loop: false,
             margin: 15,
             nav: true,
-            dotsContainer: $carousel.find('.js-dots-prizes'),
+            dotsContainer: carousel.find('.js-dots-prizes'),
             responsive: {
                 0: {items: 2},
                 480: {items: 3},
@@ -812,6 +812,16 @@ $(document).ready(function() {
         dots:false,
         nav:false,
         items:1,
+        responsive:{
+            0:{
+                dots:false,
+                nav:true,
+            },
+            600:{
+                dots:false,
+                nav:false,
+            }
+        }
         //autoplay:true,
        // autoplayTimeout:3000,
        // autoplayHoverPause:true

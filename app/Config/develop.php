@@ -139,4 +139,4 @@ reccurentAccount = 0                                           ; Доступн�
 
 [eventicious]
 host = "https://api.eventicious.com/"                          ; Адрес хоста
-code = "3e6062e4-383b-4345-95c6-0fee20fb38b0"                  ; Код доступа к API   dc98e055-2388-4b7b-8c00-88d50fd803d3
+code = "e1751532-3ddb-4a12-8f8e-8f87605c7d1e"                  ; Код доступа к API   dc98e055-2388-4b7b-8c00-88d50fd803d3

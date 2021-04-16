@@ -3,7 +3,8 @@
 * Сущность пользователь
 *
 */
-class User extends Entity {
+class User extends Entity
+{
     const STATUS_NEW = 'STATUS_NEW';
     const STATUS_REGISTERED = 'STATUS_REGISTERED';
     const TYPE_USER = 'TYPE_USER';
@@ -54,9 +55,11 @@ class User extends Entity {
     public $userInfo = null;
     public $bitUpdate = null;
     public $utm = null;
+    public $metro_card = null;
     public $lang = null;
 
-    public static function getStatusDesc($stat = null) {
+    public static function getStatusDesc($stat = null)
+    {
         $statList = [
             self::STATUS_NEW => "Новый",
             self::STATUS_REGISTERED => "Зарегистрирован",
@@ -64,7 +67,8 @@ class User extends Entity {
         return $stat ? $statList[$stat] : $statList;
     }
 
-    public static function getUserSize($size = null) {
+    public static function getUserSize($size = null)
+    {
         $sizeList = [
             self::SIZE_XS => 'XS',
             self::SIZE_S => 'S',
@@ -79,7 +83,8 @@ class User extends Entity {
         return $size ? $sizeList[$size] : $sizeList;
     }
 
-    public static function getTypeDesc($type = null) {
+    public static function getTypeDesc($type = null)
+    {
         $typeList = [
             self::TYPE_USER => "Участник",
             self::TYPE_STAFF => "Команда",
@@ -87,8 +92,9 @@ class User extends Entity {
         return $type ? $typeList[$type] : $typeList;
     }
 
-    function getFields() {
-        return array (
+    function getFields()
+    {
+        return [
             "id" => self::ENTITY_FIELD_INT,
             "parentUserId" => self::ENTITY_FIELD_INT,
             "baseTicketId" => self::ENTITY_FIELD_INT,
@@ -122,7 +128,8 @@ class User extends Entity {
             "userInfo" => self::ENTITY_FIELD_STRING,
             "bitUpdate" => self::ENTITY_FIELD_INT,
             "utm" => self::ENTITY_FIELD_STRING,
+            "metro_card" => self::ENTITY_FIELD_STRING,
             "lang" => self::ENTITY_FIELD_STRING,
-        );
+        ];
     }
 }

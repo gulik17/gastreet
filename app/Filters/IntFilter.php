@@ -3,7 +3,8 @@
 /**
  * фильтр int
  */
-class IntFilter extends BaseFilter {
+class IntFilter extends BaseFilter
+{
 
     /**
      * Проверка int
@@ -12,9 +13,10 @@ class IntFilter extends BaseFilter {
      * @param bool $isRequired Флаг обязательности
      * @param string $description Описание поля
      * @param int $maxLen Максимальная длина
-     * @return void
+     * @return bool
      */
-    public function __construct($name, $isRequired, $description, $maxLen = 11) {
+    public function __construct($name, $isRequired, $description, $maxLen = 11)
+    {
         $value = Request::getVar($name, 0);
         // обязательно вызывать
         $this->setValue(intval($value));

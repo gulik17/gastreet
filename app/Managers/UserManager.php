@@ -67,16 +67,15 @@ class UserManager extends BaseEntityManager {
 
     /**
      * Функция добавления нового пользователя
-     * 
+     *
      * @param string $phone Телефон юзера
      * @param string $youAboutUs От куда узнали о нас
      * @param integer $code Код из смс
      * @param string $lang Язык пользователя
-     * 
+     *
      * @return void
-     * 
-     */
-    public static function add($phone, $youAboutUs, $code, $lang = 'ru') {
+     **/
+    public static function add($phone, $youAboutUs, $code, $metro_card = '', $lang = 'ru') {
         $um = new UserManager();
         $userObj = new User();
         $userObj->status = User::STATUS_NEW;
@@ -84,6 +83,7 @@ class UserManager extends BaseEntityManager {
         $userObj->phone = $phone;
         $userObj->youAboutUs = $youAboutUs;
         $userObj->code = $code;
+        $userObj->metro_card = $metro_card;
         $userObj->lang = $lang;
         $userObj->tsCreated = time();
         if (isset($_SESSION["utm"])) {
@@ -309,7 +309,7 @@ class UserManager extends BaseEntityManager {
                     . "Мыло: ".$user->email;
 
             $isSent = self::sendOneEmail($email, $userId, $shortTitle, $template, null, null);
-            //$isSent = self::sendOneEmail('ticket@gastreet.com', $userId, $shortTitle, $template, null, null);
+            $isSent = self::sendOneEmail('911@gastreet.com', $userId, $shortTitle, $template, null, null);
 
             //$message = "Заявка на ReBro принята, ответ после 21 января";
 
@@ -1245,15 +1245,22 @@ class UserManager extends BaseEntityManager {
         if (count($productsArray)) {
             // не будем менять шаблон пока
             // $alias .= "prods"; // шаблон с добавлением названий МК
-            $prods .= "<b>".__("List of additional master classes:", $lang)."</b><br/><br/><table width=700>";
             foreach ($productsArray AS $prodItem) {
                 if ($prodItem['productId'] == 84 || $prodItem['productId'] == 82) {
                     $ext_option .= "{$prodItem['productName']} <br>";
+                } else {
+                    $showDateTime = date("Y-m-d, в H:i", $prodItem['eventTsStart']);
+                    $prods .= "<tr><td valign=top>[{$showDateTime}] </td><td valign=top width=500> {$prodItem['productName']}</td></tr>";
                 }
-                $showDateTime = date("Y-m-d, в H:i", $prodItem['eventTsStart']);
-                $prods .= "<tr><td valign=top>[{$showDateTime}] </td><td valign=top width=500> {$prodItem['productName']}</td></tr>";
             }
-            $prods .= "</table>";
+            if ($prods) {
+                $prods = "<p style=\"margin-top:500px;font-family:LiberationSans;font-size:15px;color:#000;\">
+                    <b>".__("List of additional master classes:", $lang)."</b>
+                    <br/>
+                    <br/>
+                    <table width=700>".$prods."</table>
+                    </p>";
+            }
             $alias = ($amount > 0) ? 'biletamountprods' : 'biletprods';
         }
         // сформировать билет
@@ -1502,7 +1509,7 @@ class UserManager extends BaseEntityManager {
         // отправить E-Mail с аттачем $newFileName
         //$email = ($user->confirmedEmail) ? $user->confirmedEmail : $user->email;
         $email = $user->confirmedEmail;
-        $shortTitle = "Билет на GASTREET'20";
+        $shortTitle = "Билет на GASTREET'21";
         $vars = [
             "SIGNATURE" => Configurator::get("mail:sign"),
         ];

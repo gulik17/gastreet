@@ -62,7 +62,10 @@
                     <a title="#амбассадор" href="{link show=speakers tag=амбассадор}"><i class="fa fa-ambassador" aria-hidden="true"></i> АМБАССАДОРЫ</a>
                 </li>
                 <li class="gss-tag-li {if $this.tag == ''}active{/if} ">
-                    <a title="#2020" href="{link show=speakers}">#2020</a>
+                    <a title="#2021" href="{link show=speakers}">#2021</a>
+                </li>
+                <li class="gss-tag-li {if $this.tag == '2020'}active{/if} ">
+                    <a title="#2020" href="{link show=speakers tag=2020}">#2020</a>
                 </li>
                 <li class="gss-tag-li {if $this.tag == '2019'}active{/if} ">
                     <a title="#2019" href="{link show=speakers tag=2019}">#2019</a>
@@ -96,43 +99,44 @@
                     <a title="#ВСЕ" href="{link show=speakers}">#ВСЕ</a>
                 </li>
                 <li class="gss-tag-li tag_mainstreet {if $this.tag == 'mainstreet'}active{/if} ">
-                    <a title="#mainstreet" href="{link show=speakers tag=mainstreet y=2020}">#MAINSTREET</a>
-                </li>
-                <li class="gss-tag-li tag_businessschool {if $this.tag == 'бизнесшкола'}active{/if} ">
-                    <a title="#бизнесшкола" href="{link show=speakers tag=бизнесшкола y=2020}">#БИЗНЕСШКОЛА</a>
+                    <a title="#mainstreet" href="{link show=speakers tag=mainstreet y=2021}">#MAINSTREET</a>
                 </li>
                 <li class="gss-tag-li tag_chefstreet {if $this.tag == 'chefstreet'}active{/if} ">
-                    <a title="#chefstreet" href="{link show=speakers tag=chefstreet y=2020}">#CHEFSTREET</a>
-                </li>
-                <li class="gss-tag-li tag_barstreet {if $this.tag == 'barstreet'}active{/if} ">
-                    <a title="#barstreet" href="{link show=speakers tag=barstreet y=2020}">#BARSTREET</a>
+                    <a title="#chefstreet" href="{link show=speakers tag=chefstreet y=2021}">#CHEFSTREET</a>
                 </li>
                 <li class="gss-tag-li tag_rebro {if $this.tag == 'rebro'}active{/if} ">
-                    <a title="#rebro" href="{link show=speakers tag=rebro y=2020}">#REBRO</a>
+                    <a title="#rebro" href="{link show=speakers tag=rebro y=2021}">#REBRO</a>
                 </li>
-                <li class="gss-tag-li d-none tag_tedx {if $this.tag == 'tedx'}active{/if} ">
-                    <a title="#TEDx" href="{link show=speakers tag=tedx y=2020}">#TEDx</a>
+                <li class="gss-tag-li tag_centralnayaploshchad {if $this.tag == 'центральнаяплощадь'}active{/if} ">
+                    <a title="#центральнаяплощадь" href="{link show=speakers tag=центральнаяплощадь y=2021}">#центральнаяплощадь</a>
                 </li>
-<!--                <li class="gss-tag-li tag_fuckup {if $this.tag == 'fuckup'}active{/if} ">-->
-<!--                    <a title="#fuckup" href="{link show=speakers tag=fuckup y=2020}" onclick="return false">#FUCKUP</a>-->
-<!--                </li>-->
-<!--                <li class="gss-tag-li tag_partnerstreet {if $this.tag == 'partnerstreet'}active{/if} ">-->
-<!--                    <a title="#partnerstreet" href="{link show=speakers tag=partnerstreet y=2020}">#PARTNERSTREET</a>-->
-<!--                </li>-->
-<!--                <li class="gss-tag-li tag_winedome {if $this.tag == 'winedome'}active{/if} ">-->
-<!--                    <a title="#winedome" href="{link show=speakers tag=winedome y=2020}">#WINEDOME</a>-->
-<!--                </li>-->
-<!--                <li class="gss-tag-li tag_baristastreet {if $this.tag == 'baristastreet'}active{/if} ">-->
-<!--                    <a title="#baristastreet" href="{link show=speakers tag=baristastreet y=2020}">#BARISTASTREET</a>-->
-<!--                </li>-->
-<!--                <li class="gss-tag-li tag_centralnayaploshchad {if $this.tag == 'центральнаяплощадь'}active{/if} ">-->
-<!--                    <a title="#центральнаяплощадь" href="{link show=speakers tag=центральнаяплощадь y=2020}">#центральнаяплощадь</a>-->
-<!--                </li>-->
-<!--                <li class="gss-tag-li tag_franchisestreet {if $this.tag == 'franchisestreet'}active{/if} ">-->
-<!--                    <a title="#franchisestreet" href="{link show=speakers tag=franchisestreet y=2020}">#franchisestreet</a>-->
-<!--                </li>-->
+                <li class="gss-tag-li tag_schools {if $this.tag == 'школы'}active{/if} ">
+                    <a title="#школы" href="{link show=speakers tag=школы y=2021}">#школы</a>
+                </li>
+                <li class="gss-tag-li tag_tedx {if $this.tag == 'TEDx'}active{/if} ">
+                    <a title="#TEDx" href="{link show=speakers tag=TEDx y=2021}">#TEDx</a>
+                </li>
                 <li class="gss-tag-li tag_ambassador {if $this.tag == 'амбассадор'}active{/if} ">
                     <a title="#амбассадор" href="{link show=speakers tag=амбассадор}"><i class="fa fa-ambassador" aria-hidden="true"></i> АМБАССАДОРЫ</a>
+                </li>
+<!--                <li class="gss-tag-li tag_fuckup {if $this.tag == 'fuckup'}active{/if} ">-->
+<!--                    <a title="#fuckup" href="{link show=speakers tag=fuckup y=2021}" onclick="return false">#FUCKUP</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_partnerstreet {if $this.tag == 'partnerstreet'}active{/if} ">-->
+<!--                    <a title="#partnerstreet" href="{link show=speakers tag=partnerstreet y=2021}">#PARTNERSTREET</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_winedome {if $this.tag == 'winedome'}active{/if} ">-->
+<!--                    <a title="#winedome" href="{link show=speakers tag=winedome y=2021}">#WINEDOME</a>-->
+<!--                </li>-->
+<!--                <li class="gss-tag-li tag_baristastreet {if $this.tag == 'baristastreet'}active{/if} ">-->
+<!--                    <a title="#baristastreet" href="{link show=speakers tag=baristastreet y=2021}">#BARISTASTREET</a>-->
+<!--                </li>-->
+
+<!--                <li class="gss-tag-li tag_franchisestreet {if $this.tag == 'franchisestreet'}active{/if} ">-->
+<!--                    <a title="#franchisestreet" href="{link show=speakers tag=franchisestreet y=2021}">#franchisestreet</a>-->
+<!--                </li>-->
+				<li class="gss-tag-li tag_ambassador">
+                    <a href="{link show=folkspeaker}">Стать спикером</a>
                 </li>
             </ul>
         </div>
@@ -277,6 +281,7 @@
                 <li id="fat-menu" class="dropdown">
                     <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Спикеры прошлых лет <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="drop3">
+                        <li><a href="{link show=speakers tag=2020}">#2020</a></li>
                         <li><a href="{link show=speakers tag=2019}">#2019</a></li>
                         <li><a href="{link show=speakers tag=2018}">#2018</a></li>
                         <li><a href="{link show=speakers tag=2017}">#2017</a></li>

@@ -1,10 +1,13 @@
 <?php
 /**
  */
-class SavePrizesAction extends AdminkaAction {
-	public function execute() {
+class SavePrizesAction extends AdminkaAction
+{
+	public function execute()
+    {
 		$id = FilterInput::add(new IntFilter("id", false, "id"));
         $status = FilterInput::add(new StringFilter("status", true, "Статус"));
+        $type = FilterInput::add(new StringFilter("type", true, "Тип"));
 		$name = FilterInput::add(new StringFilter("name", true, "Заголовок"));
         $annotation = FilterInput::add(new StringFilter("annotation", false, "Аннотация"));
         $description = Request::getVar("description");
@@ -16,7 +19,8 @@ class SavePrizesAction extends AdminkaAction {
             FilterInput::addMessage("Слишком большой текст");
         }
 
-		if (!FilterInput::isValid()) {
+		if (!FilterInput::isValid())
+		{
 			FormRestore::add("form");
 			Adminka::redirectBack(FilterInput::getMessages());
 		}
@@ -35,6 +39,7 @@ class SavePrizesAction extends AdminkaAction {
 
         $prize->tsUpdate = time();
         $prize->status = $status;
+        $prize->type = $type;
         $prize->name = $name;
         $prize->annotation = $annotation;
         $prize->description = $description;

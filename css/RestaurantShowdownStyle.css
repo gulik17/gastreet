@@ -1,0 +1,447 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;}
+html {
+    font-size: 16px;}
+body {
+    background-image: url('../images/folkspeaker/bg.png');
+    background-color: #141d5b;
+    font-family: 'Gastreet Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;}
+.folk-page {
+    width: 100%;
+    text-align: center;
+    color: #fff;}
+.folk-logo {
+    width: 90%;
+    max-width: 750px;}
+.select {
+    text-align: center;
+    margin-bottom: 2rem;}
+.select a {
+    text-decoration: underline;
+    color: #fff;
+    margin-left: .7rem;
+    margin-right: .7rem;}
+.select a.active {
+    font-weight: 600;}
+.block-quote {
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-size: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;}
+.block-quote:after {
+    content: "P.S.";
+    display: inline-block;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-weight: 600;
+    color: #008dd2;
+    font-size: 1.1rem;}
+.block-arrow {
+    border-radius: 15px;
+    border: 1px solid #008dd2;
+    box-shadow: 0 0 10px 5px rgba(0,141,210,.32);
+    margin-bottom: 3rem;
+    padding: .875rem 1rem;
+    margin-right: 4rem;
+    background-color: #141d5b;
+    position: relative;
+    font-size: 1rem;}
+.block-arrow.arrow2 {
+    border: 1px solid #e51a4b!important;
+    box-shadow: 0 0 10px 5px rgba(229,26,75,.32)!important;}
+.block-arrow.arrow3 {
+    border: 1px solid #d6ff55!important;
+    box-shadow: 0 0 10px 5px rgba(214,255,85,.32)!important;}
+.block-arrow.arrow4 {
+    border: 1px solid #f39200!important;
+    box-shadow: 0 0 10px 5px rgba(243,146,0,.32)!important;}
+.block-arrow.arrow1:after {
+    content: '';
+    width: 1.313rem;
+    height: 3.938rem;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(/images/folkspeaker/arrow1.svg);
+    background-size: cover;
+    left: 2.063rem;
+    bottom: -4.500rem;}
+.block-arrow.arrow2:after {
+    content: '';
+    width: 2.375rem;
+    height: 4rem;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(/images/folkspeaker/arrow2.svg);
+    background-size: cover;
+    right: 1rem;
+    bottom: -4.500rem;}
+.block-arrow.arrow3:after {
+    content: '';
+    width: 3rem;
+    height: 4.938rem;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('/images/folkspeaker/arrow3.svg');
+    background-size: cover;
+    left: .5rem;
+    bottom: -5.500rem;}
+.block-arrow:nth-child(even) {
+    border: 1px solid #008dd2;
+    box-shadow: 0 0 10px 5px rgba(0,141,210,.32);
+    margin-right: 0;
+    margin-left: 4rem;
+    background-color: #141d5b;}
+.folk-page .button {
+    text-align: center;
+    margin-bottom: 3rem;}
+.folk-page .btn-accept, .modal .btn-next {
+    font-size: 1.2rem;
+    border-radius: 30px;
+    background-color: #e71873;
+    border: 0;
+    margin: 0;
+    color: #fff;
+    text-transform: initial;}
+.folk-page .text {
+    text-align: left;
+    font-size: 11px;}
+.speak-row {
+    margin-right: -17px;
+    margin-left: -17px;}
+.speak .img-block .photo {
+    position: relative;
+    background-color: #4c0db9;
+    background-image: linear-gradient(45deg, #00053d, #4f0dbe);
+    width: 100%;}
+[id^=folkspeaker_] .thumb img {
+    position: relative;
+    background-color: #4c0db9;
+    background-image: linear-gradient(45deg, #00053d, #4f0dbe);
+    width: 100%;}
+.speak .img-block .about {
+    background-image: linear-gradient(transparent 0%, #10093B 100%);
+    margin-bottom: 0;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;}
+.speak {
+    width: 100%;
+    padding: 2px;}
+.speak a {
+    color: #fff;}
+.btn-vote {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 11px 7px;
+    width: 80%;
+    font-size: 11px;
+    border: none;
+    border-radius: 50px;
+    background-color: #008dd2;}
+.folk-page .share {
+    color: #fff;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 11px 7px;
+    width: 80%;
+    font-size: 11px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    border-radius: 50px;}
+.folk-page .share:hover, .folk-page .btn-vote:hover {
+    color: #fff;
+    text-decoration: none;}
+.folk-page .fa-heart {
+    border-left: 1px solid;
+    padding-left: 7px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: -6px;
+    margin-bottom: -6px;
+    margin-left: 6px}
+.speak .img-block {
+    position: relative;
+    text-align: left;}
+.folk-page .name {
+    margin-bottom: .5rem;
+    font-size: 1.1rem;}
+.folk-page .job {
+    margin-bottom: 0;
+    font-size: .750rem}
+.folk-page .pdf {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 11px;}
+.folk-page .pdf a {
+    color: #fff;
+    text-decoration: none;}
+.folk-page .pdf span {
+    padding: 0 5px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;}
+.folk-page .pdf > span > a {
+    font-size: 12px;
+    margin-bottom: 3px;
+    display: inline-block;}
+.folk-page .pdf a > span, .folk-page .pdf a {
+    font-weight: 600;
+    text-decoration: underline;}
+.folk-page .pdf i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;}
+.modal .position {
+    border: 1px solid #dee2e6;
+    overflow: auto;
+    width: 100%;
+    height: 250px;
+    padding: .5rem;}
+.modal .position h4 {
+    font-size: 1.2rem;}
+.modal .position-text {
+    text-align: left;
+    color: #000}
+.modal .modal-title {
+    font-family: 'Gastreet Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #141d5b;}
+.modal .btn-next {
+    text-align: center;}
+.warning {
+    padding-bottom: 1rem;}
+.form-group .form-control {
+    color: #008dd2;
+    width: 100%;
+    border-radius: 2px;
+    line-height: 1.5;}
+.names, .contacts, .jobs {
+    margin-bottom: 2rem;}
+::placeholder {
+    color: #2696d5 !important;
+    text-align: start !important;}
+.modal-footer>* {
+    margin: 0;}
+input.input {
+    border: 1px dashed #2696d5 ;}
+.input-group-prepend .basic-addon {
+    border-color: #999;
+    border-right: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: #008dd2;}
+.form-control.socnet {
+    border-left: none;
+    padding-left: 2.4rem;}
+.modal-dialog .input-group-prepend {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    top: 0;}
+[id^=registerModal] .btn {
+    background-color: #008dd2;}
+[id^=registerModal] .modal-header, [id^=registerModal] .modal-body, [id^=registerModal] .modal-footer,
+#v_share .modal-header, #v_share .modal-body, #v_share .modal-footer, #ruleModal .modal-header, #ruleModal .modal-body {
+    padding: 1rem;}
+[id^=registerModal] .modal-header, div[id^=registerModal] .modal-footer {
+    border: none;}
+[id^=registerModal] .modal-body {
+    padding-top: 0;}
+[id^=registerModal] .form-check {
+    position: relative;
+    padding-left: 1.85rem;
+    text-align: left;}
+[id^=registerModal] .form-check input {
+    left: 0;
+    top: 5px;
+    margin: 0;}
+.modal-body h6{
+    font-weight: bold;
+    color: #141d5b;
+    font-size: 16px;}
+#v_share i {
+    margin: .3rem .3rem 30px .3rem;
+    font-size: 40px;
+    border: 1px solid #afafaf;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;}
+#v_share img {
+    vertical-align: middle;}
+#v_share a.copy {
+    margin-left: 35px;
+    color: #414467;
+    text-decoration: underline;}
+#voting .modal-title {
+    font-size: 14px;}
+#voting .form-control {
+    padding: .3rem 1rem;}
+#voting label {
+    color: #333;
+    text-transform: initial;}
+#voting input + span {
+    font-size: 10px;
+    padding-left: 15px;
+    color: #aaa;}
+#voting .alert {
+    min-width: auto;}
+#voting .form-result, #voting .form-code {
+    display: none;}
+.form-group .photo-file {
+    margin: 0;
+    width: 100%;}
+.photo-file span {
+    display: inline-block;
+    padding: .7rem 1.563rem;
+    border: 2px dashed #008dd2;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: initial;
+    color: #008dd2;
+    cursor: pointer;
+    transition: all .3s linear;}
+.photo-file span.success {
+    border-color: #0f0;
+    color: #0f0;}
+.photo-file span.error {
+    border-color: #f00;
+    color: #f00;}
+.timer-speaker-page .timer-speaker-ps .ps {
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-size: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;}
+.timer-speaker-page .timer-speaker-ps .ps::after {
+    content: "P.S.";
+    display: inline-block;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-weight: 600;
+    color: #008dd2;
+    font-size: 1.1rem;}
+.timer-speaker-page .timer-speaker-ps .ps a {
+    color: #fff;
+    text-decoration: underline;}
+.timer-speaker-page .timer-speaker-body .hours::before {
+    content: ":";
+    display: inline-block;
+    position: absolute;
+    left: -5px;
+    top: -5px;}
+.timer-speaker-page .timer-speaker-body .minutes::before {
+    content: ":";
+    display: inline-block;
+    position: absolute;
+    left: -5px;
+    top: -5px;}
+.timer-speaker-page .timer-speaker-body .minutes::before, .timer-speaker-page .timer-speaker-body .hours::before {
+    animation: blink 2s linear infinite;}
+@keyframes blink {
+    50% { color: rgb(255, 255, 255); }
+    51% { color: rgba(255, 255, 255, 0); }
+    100% { color: rgba(255, 255, 255, 0); }
+}
+.timer-speaker-page .timer-speaker-body .number {
+    font-size: 3rem;}
+.timer-speaker-page .timer-speaker-body .timer-title {
+    color: #ffb643;
+    text-shadow: 0 0 20px rgb(255, 182, 67)!important}
+.timer-speaker-page .timer-speaker-body {
+    font-size: 1.250rem;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #fff;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;}
+.timer-speaker-page .timer-speaker-body .time-number {
+    line-height: 1.2;}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    html {
+        font-size: 11px;}
+    .timer-speaker-page .timer-speaker-body {
+        font-size: 1.5rem;}
+    .timer-speaker-page .timer-speaker-body .number {
+        font-size: 2.7rem;}
+    .timer-speaker-page .timer-speaker-body .number + div {
+        font-size: 1rem;}
+}
+
+
+
+/* Extra small */
+@media (max-width: 575px) {
+    html {
+        font-size: 11px;}
+}
+
+/* Small */
+@media (min-width: 576px) and (max-width: 767px) {
+    html {
+        font-size: 12px;}
+    .speak-row {
+        margin-right: 0;
+        margin-left: 0;}
+    .text {
+        font-size: 14px;}
+}
+/* Medium */
+@media (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 14px;}
+    .speak-row {
+        margin-right: 0;
+        margin-left: 0;}
+    .text {
+        font-size: 14px;}
+    .speak {
+        width: 100%;
+        padding: .5rem;}
+}
+/* Large */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .speak-row {
+        margin-right: 0;
+        margin-left: 0;}
+    .text {
+        font-size: 14px;}
+    .speak {
+        width: 100%;
+        padding: 1rem;}
+}
+/* Extra large */
+@media (min-width: 1200px) {
+    .text {
+        font-size: 14px;}
+    .speak {
+        width: 100%;
+        padding: 1rem;}
+}

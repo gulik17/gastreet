@@ -219,40 +219,40 @@ h1.title {
     background-repeat: no-repeat;
     background-size: contain;}
 .hotels .header .pick {
-    left: 250px;
-    top: 82px;
+    left: 435px;
+    top: 35px;
     background-image: url('/images/place/movenpik_baloon.png');}
 .hotels .header .dolina {
-    left: 225px;
-    top: 166px;
+    left: 312px;
+    top: 45px;
     background-image: url('/images/place/dolina_baloon.png');}
 .hotels .header .congress {
-    left: 344px;
-    top: 146px;
+    left: 389px;
+    top: 95px;
     background-image: url('/images/place/novotel_congres_baloon.png');}
 .hotels .header .panorama {
-    left: 270px;
-    top: 243px;
+    left: 343px;
+    top: 229px;
     background-image: url('/images/place/gorkigorod_baloon.png');}
 .hotels .header .ibis {
-    left: 511px;
-    top: 121px;
+    left: 537px;
+    top: 151px;
     background-image: url('/images/place/ibis_baloon.png');}
 .hotels .header .sber {
-    right: 474px;
-    top: 260px;
+    right: 601px;
+    top: 295px;
     background-image: url('/images/place/sber_baloon.png');}
 .hotels .header .rixos {
-    right: 473px;
+    right: 752px;
     top: 474px;
     background-image: url('/images/place/rixos_baloon.png');}
 .hotels .header .camping {
-    right: 436px;
-    top: 71px;
+    right: 478px;
+    top: 29px;
     background-image: url('/images/place/camping_baloon.png');}
 .hotels .header .novotel {
-    right: 69px;
-    top: 62px;
+    right: 182px;
+    top: 228px;
     background-image: url('/images/place/novotel_baloon.png');}
 .hotels .header .map-page {
     height: 40rem;}
@@ -286,7 +286,7 @@ h1.title {
 .hotels .header .polyana::before {
     content: "";
     position: absolute;
-    bottom: -3rem;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 1px;

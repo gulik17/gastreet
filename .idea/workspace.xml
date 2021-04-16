@@ -2,148 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/lang/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lang/ru.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/g19-logo-shot-hover.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/mart/chef.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/mart/leader.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main/mart/owner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/camping_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/dolina_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/gorkigorod_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/ibis_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/map-mobile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/movenpik_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/novotel_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/novotel_congres_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/rixos_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/place/sber_baloon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__BBQ-street.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Barista-street.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Beer-street_A.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Beer-street_B.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Chef-street_A.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Chef-street_B.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Drink-zone.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Food-market.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Wine-dome.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Wine-street.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__central-square.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021_logo-1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021_logo-2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021_logo-3.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021_logo-4.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/pdf/Gastreet2021_logo-5.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__BBQ-street.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Barista-street.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Beer-street_A.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Beer-street_B.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Chef-street_A.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Chef-street_B.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Drink-zone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Food-market.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Wine-dome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__Wine-street.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021__central-square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021_logo-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021_logo-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021_logo-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021_logo-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/files/png/Gastreet2021_logo-5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/guide_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/guide_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/guide_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/guide_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controls/CarBrandingControl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controls/RestaurantShowdownControl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Templates/CarBrandingControl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Templates/RestaurantShowdownControl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/RestaurantShowdownStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/carbranding/Fuck_black.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/carbranding/Fuck_white.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/carbranding/carbranding_main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/carbranding/fuck-black.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/carbranding/fuck-white.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/PayBalanceAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/PayBalanceAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/UserGetBiletAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/UserGetBiletAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config/framework.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/framework.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enviropment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enviropment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/BaseEntityManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/BaseEntityManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/AddAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/AddAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveReportXlsAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveReportXlsAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/AppSyncAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/AppSyncAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SavePrizesAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SavePrizesAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config/develop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config/develop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/AjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AjaxControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/BaseControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BaseControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/PageControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/PageControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/RegisterControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/RegisterControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/SpeakersControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SpeakersControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/adminka/EditPrizesControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/adminka/EditPrizesControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/Prize.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Prize.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/Speaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Speaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/IntFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/IntFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/StringFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/StringFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lib/eventicious.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lib/eventicious.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/PrizeManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/PrizeManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/SpeakerManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/SpeakerManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Managers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.alink.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.alink.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.captcha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.component.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.component.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.control.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.control.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.copyright.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.copyright.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.count.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.count.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.currentuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.currentuser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.declension.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.declension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.delimitlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.delimitlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.dico.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.dico.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.displayerror.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.displayerror.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.displaynotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.displaynotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.drawinfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.drawinfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.formrestore.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.formrestore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.frontPager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.frontPager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.getmkbyspeaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.getmkbyspeaker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.guid.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.guid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.implode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.implode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.ischecked.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.ischecked.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.jqueryui.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.jqueryui.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.link.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadCSS.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadCSS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadJS.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadJS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadscript.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.loadscript.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.page.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.pager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.pager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.rendercontrol.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.rendercontrol.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.revision.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.revision.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.rolelink.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.rolelink.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.rwlink.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.rwlink.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.sqlhistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.sqlhistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.uigenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.uigenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/function.wordlimit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/function.wordlimit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.age.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.age.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.basedecode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.basedecode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.bbcode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.bbcode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.checked.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.checked.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.color2class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.color2class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.colorizeclass.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.colorizeclass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.colorizetags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.colorizetags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.date2word.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.date2word.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.dateformat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.dateformat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.dbtexttohtml.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.dbtexttohtml.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.forcewrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.forcewrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getidyoutubevideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getidyoutubevideo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getproductpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getproductpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getstringpart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getstringpart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getuserticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.getuserticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.htmltoplaintext.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.htmltoplaintext.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.inperm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.inperm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.inticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.inticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isareapic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isareapic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.iscontactpicpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.iscontactpicpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.ispartnerpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.ispartnerpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isplacepicpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isplacepicpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isprizepic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isprizepic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isproductpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isproductpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isspeakerpicpic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.isspeakerpicpic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.leaderZero.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.leaderZero.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.leftcount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.leftcount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.length.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.length.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.mobilephone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.mobilephone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.nl2br.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.nl2br.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.null2zero.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.null2zero.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.numberformat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.numberformat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.numberprice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.numberprice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.round0.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.round0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.round2.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.round2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.roundzero.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.roundzero.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.strtrim.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.strtrim.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tag2desc.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tag2desc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tagformat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tagformat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tagtocssclass.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tagtocssclass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tstocheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.tstocheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.utftowin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.utftowin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.wintoutf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.wintoutf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.yeartomedal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Smarty.Plugins/modifier.yeartomedal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/AvatarControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/AvatarControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/AvatarMobileControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/AvatarMobileControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/AvatarOldControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/AvatarOldControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ContactsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ContactsControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/FooterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FooterControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/KidsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/KidsControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/Register2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register2Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/Register3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register3Control.html" afterDir="false" />
@@ -151,64 +49,37 @@
       <change beforePath="$PROJECT_DIR$/app/Templates/Register5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register5Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/RegisterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/RegisterControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/TicketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TicketControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/adminka/EditPrizesControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/EditPrizesControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/adminka/EditSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/EditSpeakerControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/battle.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/battle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/blank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/cashback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/empty.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/empty.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/gaz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/indexgastopperformances.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/landingindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/memory.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/memory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/messagehome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/en.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/en.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lang/ru.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/lang/ru.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/place.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/place.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/ticketindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/userhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.core.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cron/reportworker.php" beforeDir="false" afterPath="$PROJECT_DIR$/cron/reportworker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/place.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/place.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/core/Context.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/core/Context.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/place/map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/place/map.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/install/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/pages/basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/basket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/pages/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/bar_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/barista_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/bbq_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/beer_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/business_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/central_squire.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/chef_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/dai5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/foodmarket.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/gimme5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/logo6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/pizza_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/wine_dome.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/pdf/wine_street.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/bar_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/barista_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/bbq_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/beer_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/business_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/central_squire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/chef_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/dai5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/foodmarket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/gimme5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/logo6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/pizza_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/wine_dome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/files/png/wine_street.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/guide_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/guide_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/guide_03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/guide_04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/guide_05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,18 +145,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/style/files/pdf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gastreet.loc\css" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\app\Controls" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\images\carbranding" />
       <recent name="C:\OpenServer\domains\gastreet.loc\style\files\pdf" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\style\files\png" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\style" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\images\main\mart" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
@@ -405,14 +276,37 @@
       <workItem from="1614334829930" duration="1203000" />
       <workItem from="1614526837816" duration="595000" />
       <workItem from="1614619013296" duration="10638000" />
-      <workItem from="1614712637651" duration="11612000" />
-    </task>
-    <task id="LOCAL-00010" summary="After add special link ticket page">
-      <created>1581060070709</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1581060070709</updated>
+      <workItem from="1614712637651" duration="11983000" />
+      <workItem from="1614802921216" duration="1732000" />
+      <workItem from="1614846908605" duration="54000" />
+      <workItem from="1615032281463" duration="1350000" />
+      <workItem from="1615461402565" duration="157000" />
+      <workItem from="1615554786400" duration="3690000" />
+      <workItem from="1615638285929" duration="4412000" />
+      <workItem from="1615648471145" duration="548000" />
+      <workItem from="1615851209392" duration="4298000" />
+      <workItem from="1615892832027" duration="1030000" />
+      <workItem from="1615909420803" duration="432000" />
+      <workItem from="1616094326985" duration="3096000" />
+      <workItem from="1616137475620" duration="600000" />
+      <workItem from="1616146266911" duration="766000" />
+      <workItem from="1616448023084" duration="2346000" />
+      <workItem from="1616514046211" duration="1188000" />
+      <workItem from="1616520495114" duration="592000" />
+      <workItem from="1616610413171" duration="6697000" />
+      <workItem from="1616695278358" duration="6957000" />
+      <workItem from="1616748458602" duration="204000" />
+      <workItem from="1617045538356" duration="2962000" />
+      <workItem from="1617108950979" duration="1064000" />
+      <workItem from="1617313363368" duration="127000" />
+      <workItem from="1617313991903" duration="2566000" />
+      <workItem from="1617320811572" duration="587000" />
+      <workItem from="1617367402285" duration="686000" />
+      <workItem from="1617634477553" duration="2032000" />
+      <workItem from="1617718747978" duration="53000" />
+      <workItem from="1618357942845" duration="4607000" />
+      <workItem from="1618392853848" duration="10788000" />
+      <workItem from="1618477934355" duration="26000" />
     </task>
     <task id="LOCAL-00011" summary="Correct text on the ticket page">
       <created>1581060699228</created>
@@ -750,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613587651586</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="save 03-03-2021">
+      <created>1614727160634</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1614727160635</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,7 +673,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Добавлены тематические страницы" />
     <MESSAGE value="Правки" />
     <MESSAGE value="Добавил страницу Чатбот" />
     <MESSAGE value="Начало работы над главным баннером" />
@@ -797,6 +697,7 @@
     <MESSAGE value="Правки по сайту от 10-02-2021" />
     <MESSAGE value="Правки 11-02-21" />
     <MESSAGE value="Правки 17-02-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="Правки 17-02-21" />
+    <MESSAGE value="save 03-03-2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="save 03-03-2021" />
   </component>
 </project>

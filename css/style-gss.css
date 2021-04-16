@@ -3202,7 +3202,7 @@ section.ticket.block_4 {
     margin: -5px -3px 0;
     padding: 5px 3px;
     font-weight: 600;
-    font-size: 11px;}
+    font-size: 10px;}
 .page_body .ticket .ticket_new_cost span + span {
     text-decoration: underline;
     margin: 0;
@@ -3597,9 +3597,11 @@ div[class^='row block-body tag_gastritik'] .gss-tag-tr {
     font-size: 16px;
     font-weight: 600;
     box-sizing: content-box;}
-.social-icons a:last-child {
+.gss-mainpage-statistics .social-icons a.btn-avatar {
+    border-color: #0088d4;
+    color: #0088d4;
+    background-color: #fff;
     font-size: 14px;
-    margin-left: 30px;
     padding: 3px 10px;
     box-shadow: 0 0 7px 0 #fff;}
 .gss-mainpage-statistics .social-icons {
@@ -3607,10 +3609,6 @@ div[class^='row block-body tag_gastritik'] .gss-tag-tr {
 .gss-mainpage-statistics .social-icons a {
     border-color: #0088d4;
     background-color: #0088d4;}
-.gss-mainpage-statistics .social-icons a:last-child {
-    border-color: #0088d4;
-    color: #0088d4;
-    background-color: #fff;}
 .modal ::placeholder {
     color: #e8e8e8;}
 #old18 {
@@ -4652,9 +4650,63 @@ main {
     padding: .594rem 1.563rem;}
 .ticket-january .row.all-category {
     display: none;}
+.main-slider-carousel_mart .item img {
+    width: 100%;}
+.main-slider-carousel_mart .item p {
+    display: none;
+}
 @media (min-width: 300px) and (max-width: 767px) {
     html, body {
         font-size: 11px;}
+    .main-slider-carousel_mart .item img {
+        width: 500px;
+        transform: translateX(-250px);
+        left: 50%;
+        max-width: initial;}
+    .main-slider-carousel_mart .item p {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 999;
+        text-transform: uppercase;
+        font-size: 18px;
+        display: block;
+    }
+    .gss-mainpage-statistics .bg-mobile {
+        background: #000;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: -15px;
+    }
+    .gss-mainpage-statistics .bg-mobile span:not(.gss-mainpage-statistics-digits) {
+        color: #fff;
+    }
+    .main-slider-carousel_mart .owl-nav {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        z-index: 99;}
+    .main-slider-carousel_mart.owl-carousel.owl-theme .owl-nav > div {
+        opacity: 1;
+        background: transparent;
+        color: #fff;
+    }
+    .main-slider-carousel_mart.owl-carousel.owl-theme .owl-nav > div:after {
+        font-size: 3rem;
+    }
+    .main-slider-carousel_mart.owl-carousel.owl-theme .owl-nav > div.owl-next {
+        left: auto;
+        right: 0;
+    }
+    .main-slider-carousel_mart.owl-carousel.owl-theme .owl-nav > div.owl-prev {
+        left: 0;
+        right: auto;
+    }
+    .main-slider-carousel_mart .item {
+        overflow: hidden;}
+    .main-slider_mart {
+        margin-top: 50px;}
     .breadcrumbs-register li a small {
         font-size: 5px;}
     .thematic-menu {
@@ -5067,7 +5119,6 @@ main {
         margin-bottom: .8rem;
         margin-top: 1rem;}
     .register-page .ticket .btn {
-        bottom: -20px;
         font-size: 1.5rem;
         margin: 0;}
     .product-select-tabs li a {
@@ -5207,7 +5258,7 @@ main {
         margin-top: 0;
         height: 23px;}
     .person-teaser img.foreground {
-        width: 75px;
+        width: 75px!important;
         padding: 0 10px;}
 }
 @media (max-width: 320px) { /* iPhone 5/5s/5c/SE */

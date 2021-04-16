@@ -406,8 +406,8 @@ class Eventicious {
      * РЕДАКТИРОВАНИЕ: Позволяет отредактировать доклад с идентификатором {id}<br>
      * <b>Метод:</b> 'PUT'<br>
      * <b>URL:​</b> ​api/external/Sessions/Update/{id}<br>
-     * 
-     * @param integer  $id               Идентификатор темы в вашей системе
+     *
+     * @param int      $id               Идентификатор темы в вашей системе
      * @param string   $title            Название события
      * @param string   $description      Описание события
      * @param DateTime $startTime        Время начала в формате "2014-07-24T18:00"
@@ -416,9 +416,8 @@ class Eventicious {
      * @param array    $speakersIds      Массив id спикеров
      * @param array    $locationsIds     Массив id залов
      * @param integer  $style            Тип доклада
-     * @param array    $aclGroupsIds     Массив ID групп участников
      * @param string   $language         Язык, на котором происходит редактирование (только для PUT запросов)
-     * 
+     *
      * @return array Массив
      */
     public function sessionsUpdate($id, $title, $description, $startTime, $endTime, $tagIds, $speakersIds, $locationsIds, $style, $language = "ru-RU") {

@@ -54,6 +54,15 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-5PLBL8S');</script>
         <!-- End Google Tag Manager -->
+        <script>
+            !function (w, d, t) {
+                w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+
+                ttq.load('C11ODPNMJ1JP7306FPO0');
+                ttq.page();
+            }(window, document, 'ttq');
+        </script>
         {/literal}
     </head>
     <body class="d-flex flex-column h-100 main-page">
@@ -75,22 +84,25 @@
                 </div>
             </div>
             <section class="l-site">
-                <section class="main-slider_mart d-none d-md-block">
+                <section class="main-slider_mart">
                     <div class="main-slider-carousel_mart owl-carousel owl-theme">
                         <div class="item main-slider-rebro">
-                            <img src="/images/main/mart/owner.jpg" class="img-fluid" style="width: 100%" alt="">
+                            <img src="/images/main/mart/owner.jpg" class="img-fluid" alt="">
 <!--                            <img src="/images/main/mart/levitsky.png" class="img-fluid" alt="">-->
+                            <p>Владельцу</p>
                         </div>
                         <div class="item main-slider-mainstreet">
-                            <img src="/images/main/mart/leader.jpg" class="img-fluid" style="width: 100%" alt="">
+                            <img src="/images/main/mart/leader.jpg" class="img-fluid" alt="">
 <!--                            <img src="/images/main/mart/popova.png" class="img-fluid" alt="">-->
+                            <p>Руководителю</p>
                         </div>
                         <div class="item main-slider-chefstreet">
-                            <img src="/images/main/mart/chef.jpg" class="img-fluid" style="width: 100%" alt="">
+                            <img src="/images/main/mart/chef.jpg" class="img-fluid" alt="">
 <!--                            <img src="/images/main/mart/shmakov.png" class="img-fluid" alt="">-->
+                            <p>Шефу</p>
                         </div>
                     </div>
-                    <div class="main-slider-carousel_mart_navigation">
+                    <div class="main-slider-carousel_mart_navigation d-none d-md-block">
                         <div class="container" style="z-index: 1;position: relative;">
                             <div class="row thematic-menu m-0 justify-content-center">
                                 <div class="col-6 col-md-3 py-2 text-center">
@@ -108,7 +120,7 @@
                     <div class="slider-bg"></div>
                 </section>
 
-                <div class="container banner-mobile-page d-md-none">
+                <div class="container banner-mobile-page d-none">
                     <div class="row">
                         <div class="col-12 text-center">
                             <img src="/images/main/mart/break_through.png" class="img-fluid mt-4" alt="">
@@ -153,7 +165,7 @@
                 </div>
                 <div class="gss-mainpage-statistics container mt-md-3">
                     <div class="row align-items-center">
-                        <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="col-md-4 mb-3 mb-md-0 bg-mobile">
                             <div class="gss-mainpage-statistics-col1">
                                 <span class="gss-mainpage-statistics-text">{if $lang == 'en'}DAYS LEFT&nbsp;&nbsp;&nbsp;{else}ДО GASTREET&nbsp;&nbsp;&nbsp;{/if}</span>
                                 <span class="gss-mainpage-statistics-digits">
@@ -176,14 +188,19 @@
                         </div>
 						<div class="col-md-4 text-center">
 							<span class="gss-mainpage-statistics-text d-block" style="font-size: 22px;">1-5 июня 2021</span>
-							<a href="https://krasnayapolyanaresort.ru/" target="_blank"><img src="/images/kp_logo.svg" style="width: 180px;" /></a>
+							<a href="https://krasnayapolyanaresort.ru/" target="_blank"><img src="/images/kp_logo.svg" style="width:160px;margin-bottom:5px;margin-top:5px;" /></a>
 						</div>
                         <div class="col-md-4">
-                            <div class="social-icons text-md-right">
-                                <a href="https://www.instagram.com/gastreetshow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="https://www.instagram.com/explore/tags/gastreetshow/" target="_blank">#</a>
-                                <a href="https://www.facebook.com/gastreetshow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="{link show=avatar}" target="_blank">Сделать аватар</a>
+                            <div class="social-icons text-md-center">
+                                <div class="mb-3">
+                                    <a href="https://www.instagram.com/gastreetshow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://www.instagram.com/explore/tags/gastreetshow/" target="_blank">#</a>
+                                    <a href="https://www.facebook.com/gastreetshow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </div>
+                                <div>
+                                    <a class="btn-avatar" href="{link show=avatar}" target="_blank">Сделать аватар</a>
+                                    <a class="btn-avatar" href="{link show=carbranding}">Забрендируй тачку</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -594,6 +611,105 @@
                                     <div class="dots js-dots-prizes">&nbsp;</div>
                                 </div>
                                 {foreach item=prize from=$prizes}
+                                {assign var=idYoutubeVideo value=$prize->youtube|getidyoutubevideo}
+                                {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+                                <div class="modal fade" id="popover-win-prize-{$prize->id}" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="popover-win">
+                                                <span class="close" data-dismiss="modal">&times;</span>
+                                                {if $prize->youtube}
+                                                <div class="thumb">
+                                                    <iframe width="100%" height="350" src="https://www.youtube.com/embed/{$prize->youtube}" frameborder="0" allowfullscreen></iframe>
+                                                </div>
+                                                {else}
+                                                <figure class="thumb fg-container">
+                                                    {if $isPrizeImg1}
+                                                    <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" alt="">
+                                                    {else}
+                                                    <img src="/images/gss/speaker.jpg" alt="">
+                                                    {/if}
+                                                </figure>
+                                                {/if}
+                                                {if $lang == 'en'}
+                                                <p class="title">{$prize->name_en}</p>
+                                                <div class="desc">
+                                                    <p>{$prize->description_en|dbtexttohtml}</p>
+                                                </div>
+                                                {else}
+                                                <p class="title">{$prize->name}</p>
+                                                <div class="desc">
+                                                    <p>{$prize->description|dbtexttohtml}</p>
+                                                </div>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                {/if}
+
+                <!-- блок ПОЧИТАТЬ -->
+                {if $reads}
+                <section class="page-section">
+                    <div class="container">
+                        <section class="page-section">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="section-headline">{if $lang == 'en'}Read{else}Почитать{/if}</h2>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    {if $lang == 'en'}
+                                    <div class="more d-none">
+                                        <a class="more-link" href="{link show=prizes}">
+                                            <span class="gss-all-speackers-link-mobile">More <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                            <span class="gss-all-speackers-link-pc">See all <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                        </a>
+                                    </div>
+                                    {else}
+                                    <div class="more d-none">
+                                        <a class="more-link" href="{link show=prizes}">
+                                            <span class="gss-all-speackers-link-mobile">Смотреть все <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                            <span class="gss-all-speackers-link-pc">Посмотреть все <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                        </a>
+                                    </div>
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="speakers-carousel js-prizes-carousel">
+                                <ul class="owl-carousel owl-theme carousel js-carousel">
+                                    <!-- loop start -->
+                                    {foreach item=prize from=$reads}
+                                    {assign var=isPrizeImg1 value=$prize->id|isprizepic}
+                                    <li>
+                                        <a class="person-teaser js-popover" href="#popover-win-prize-{$prize->id}" data-popover="#popover-win-prize-{$prize->id}" data-idyoutubevideo="{$idYoutubeVideo}" data-timer="on">
+                                            {if $isPrizeImg1}
+                                            <img src="/images/prizes/resized/{$prize->id}.jpg?v={$prize->tsUpdate}" data-ratio="1" alt="">
+                                            {else}
+                                            <img src="/images/gss/speaker.jpg" data-ratio="1" alt="">
+                                            {/if}
+                                            <div class="prizes-about">
+                                                {if $lang == 'en'}
+                                                <p class="prizes-name">{$prize->name_en}</p>
+                                                <p class="prizes-job">{$prize->annotation_en}</p>
+                                                {else}
+                                                <p class="prizes-name">{$prize->name}</p>
+                                                <p class="prizes-job">{$prize->annotation}</p>
+                                                {/if}
+                                            </div>
+                                        </a>
+                                    </li>
+                                    {/foreach}
+                                    <!-- loop end -->
+                                </ul>
+                                <div class="controls">
+                                    <div class="dots js-dots-prizes">&nbsp;</div>
+                                </div>
+                                {foreach item=prize from=$reads}
                                 {assign var=idYoutubeVideo value=$prize->youtube|getidyoutubevideo}
                                 {assign var=isPrizeImg1 value=$prize->id|isprizepic}
                                 <div class="modal fade" id="popover-win-prize-{$prize->id}" tabindex="-1" role="dialog">

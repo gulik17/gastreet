@@ -19,6 +19,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $countryName = FilterInput::add(new StringFilter("country", true, "Страна"));
             $cityName    = FilterInput::add(new StringFilter("city", true, "Город"));
             $company     = FilterInput::add(new StringFilter("company", false, "Компания"));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
@@ -30,7 +31,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 if ($this->lang == 'en') {
                     $array['msg'] = 'The following mandatory fields not filled in:'."\r".implode("\r", FilterInput::getMessages());
                 } else {
-                    $array['msg'] = 'Не заполнены обязательные поля:'."\r".implode("\r", FilterInput::getMessages());
+                    $array['msg'] = implode("\r", FilterInput::getMessages());
                 }
                 echo json_encode($array);
                 exit;
@@ -111,6 +112,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 $userObj->tsBorn      = ($tsBorn) ? strtotime($tsBorn) : "";
                 $userObj->countryName = $countryName;
                 $userObj->cityName    = $cityName;
+                $userObj->metro_card  = $metro_card;
                 $userObj->company     = preg_replace('/\&quot;([^\"]*)\&quot;/ismU', "«$1»", $company);
                 $userObj->position    = $position;
                 $userObj->userSize    = $usersize;
@@ -302,6 +304,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $city        = FilterInput::add(new StringFilter("city",     true, "Город"));
             $company     = FilterInput::add(new StringFilter("company",  true, "Компания"));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
             // Приведем полученый ящик к нижнему регистру
@@ -376,6 +379,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $user->cityName = $city;
             $user->company = $company;
             $user->position = $position;
+            $user->metro_card = $metro_card;
             $user->userSize = $usersize;
             $user->tsCreated = time();
             $user->tsRegister = time();
@@ -421,6 +425,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $city        = FilterInput::add(new StringFilter("city",     true, "Город"));
             $company     = FilterInput::add(new StringFilter("company",  true, "Компания"));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
             // Приведем полученый ящик к нижнему регистру
@@ -500,6 +505,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
                 $userObj->cityName    = $city;
                 $userObj->company     = preg_replace('/\&quot;([^\"]*)\&quot;/ismU', "«$1»", $company);
                 $userObj->position    = $position;
+                $userObj->metro_card  = $metro_card;
                 $userObj->userSize    = $usersize;
                 $userObj->typeId      = 8; // ID участника
 

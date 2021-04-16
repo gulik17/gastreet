@@ -4297,6 +4297,8 @@ figure.thumb.fg-container > img.foreground.fg-hide.fg-not {
     background-color: #f3a6da;}
 .tag_rebro figure.thumb.fg-container {
     background-color: #434242;}
+.tag_shkoly figure.thumb.fg-container {
+    background-color: #47114c;}
 .tag_partnerstreet figure.thumb.fg-container {
     background-color: #a0a0a0;}
 /* классы для реализации смены картинок в модальных окнах (конец) */
@@ -4561,6 +4563,8 @@ div.thumb > iframe {
     background-color: #f3a6da;}
 .speakers_2019 .tag_rebro, .rebro-item img {
     background-color: #434242;}
+.speakers_2019 .tag_shkoly, .school-item img {
+    background-color: #47114c;}
 .speakers_2019 .tag_biznesshkola, .biznesshkola-item img {
     background-color: #295f61;}
 .speakers_2019 .tag_baristastreet, .baristastreet-item img {
@@ -4573,7 +4577,7 @@ div.thumb > iframe {
     font-size: .7rem;
     color: #777;}
 .modal .img-tags .foreground {
-    width: 46%;
+    width: 40%;
     margin-top: 15%;
     margin-left: 15px;}
 .icon-country {
@@ -4623,6 +4627,7 @@ div.thumb > iframe {
 .icon-country.au {background-image: url('/images/flags/AU.png');}
 .icon-country.aw {background-image: url('/images/flags/AW.png');}
 .icon-country.si {background-image: url('/images/flags/SI.png');}
+.icon-country.tr {background-image: url('/images/flags/TR.png');}
 .icon-country.amb {
     display:inline-block;
     font:normal normal normal 2rem/1 FontAwesome;

@@ -20,6 +20,7 @@ class PageControl extends IndexControl {
     public $parthners = null;
     public $fmList = null;
     public $prizes = null;
+    public $reads = null;
     public $vmList = null;
     public $leftDays = 0;
     public $purchasedTickets = 0;
@@ -99,6 +100,7 @@ class PageControl extends IndexControl {
             // бонусы
             $przm = new PrizeManager();
             $this->prizes = $przm->getActive();
+            $this->reads = $przm->getActive(Prize::TYPE_READ);
 
             // сколько осталось дней
             $leftSeconds = 1622505600 - time();

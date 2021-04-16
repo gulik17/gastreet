@@ -116,6 +116,24 @@
                                         <input class="form-control" type="text" id="tmp_edit_city" name="tmp_edit_city" value="{$child->cityName}" autocomplete="off" maxlength="100">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>
+                                            <div class="row">
+                                                <div class="col-3 pl-0 pr-2">
+                                                    <img src="/images/metro_logo.png" class="img-fluid">
+                                                </div>
+                                                <div class="col-5 pl-0 pr-2">
+                                                    Введите номер карты METRO и получите подарок на Gastreet
+                                                </div>
+                                                <div class="col-4 pl-0 pr-0">
+                                                    Оформить карту если ее нет
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input class="form-control" autocomplete="off" id="metro_card" name="metro_card" type="text" value="{$child->metro_card}" />
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-submit">
                                         <button data-id="{$child->id}" class="btn btn-white reg_edit_user" type="submit">{if $lang == 'en'}Save{else}Сохранить{/if}</button>
@@ -187,7 +205,24 @@
                         <input class="form-control" type="text" id="tmp_add_city" name="tmp_add_city" value="" autocomplete="off" maxlength="100">
                     </div>
                 </div>
-
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>
+                            <div class="row">
+                                <div class="col-3 pl-0 pr-2">
+                                    <img src="/images/metro_logo.png" class="img-fluid">
+                                </div>
+                                <div class="col-5 pl-0 pr-2">
+                                    Введите номер карты METRO и получите подарок на Gastreet
+                                </div>
+                                <div class="col-4 pl-0 pr-0">
+                                    Оформить карту если ее нет
+                                </div>
+                            </div>
+                        </label>
+                        <input class="form-control" autocomplete="off" name="metro_card" type="text" value="" />
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="form-submit">
                         <button id="reg_add_user" class="btn btn-white" type="submit">{if $lang == 'en'}Add User{else}Добавить{/if}</button>
@@ -256,6 +291,24 @@
                                     <input type="hidden" id="cityName" name="cityName" value="{$this.user->cityName}">
                                     <label for="tmpaddress">Город</label>
                                     <input class="form-control" type="text" id="tmpaddress" name="tmpaddress" value="{$this.user->cityName}" autocomplete="off" maxlength="100">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>
+                                        <div class="row">
+                                            <div class="col-3 pl-0 pr-2">
+                                                <img src="/images/metro_logo.png" class="img-fluid">
+                                            </div>
+                                            <div class="col-5 pl-0 pr-2">
+                                                Введите номер карты METRO и получите подарок на Gastreet
+                                            </div>
+                                            <div class="col-4 pl-0 pr-0">
+                                                Оформить карту если ее нет
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <input class="form-control" autocomplete="off" id="reg_metro_card" name="metro_card" type="text" value="{$this.user->metro_card}" />
                                 </div>
                             </div>
                         </div>

@@ -74,6 +74,13 @@
                     <p>Когда ты закончил, проверь еще раз и&nbsp;нажми кнопку «ПРОДОЛЖИТЬ».</p>
                 {/if}
             </div>
+			{if $this.showMetroPrize}
+			<div class="badge-metro mt-4">
+				<a href="{link show=basket q=2}">
+					<img src="/images/metro_prize.png" alt="" class="img-fluid">
+				</a>
+			</div>
+			{/if}
         </div>
     </div>
     
@@ -94,8 +101,8 @@
 									<p style="font-size:16px;">Ты — избранный. И&nbsp;только тебе доступны специальные цены. До 31&nbsp;декабря.</p>
 								</div>
 								<div class="col-md-12">
-									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
-									{assign var=ticket value=$ticketId|getticket}
+								<!--	{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «FUN» -->
+								<!--	{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
 										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
@@ -212,8 +219,8 @@
 								</div>
 							{else}
 								<div class="col-md-12">
-									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
-									{assign var=ticket value=$ticketId|getticket}
+								<!--	{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «FUN» -->
+								<!--	{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
 										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>

@@ -70,7 +70,7 @@ class AppSyncAction extends AdminkaAction {
         if ($task == "speakers") {
             // перезагрузка наименований
             $sm = new SpeakerManager();
-            $speakers = $sm->getActiveByTag("2019");
+            $speakers = $sm->getActiveByTag("2021");
 
             if (is_array($speakers) && count($speakers)) {
                 foreach ($speakers AS $speaker) {

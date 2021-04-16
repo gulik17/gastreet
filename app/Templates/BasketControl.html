@@ -6,6 +6,7 @@
 {assign var=showBronProductButton value=0}
 
 {assign var="showWarning" value=0}
+{assign var="showGasteetik" value=0}
 
 {if !$this.user->confirmedEmail}
     {assign var="showWarning" value=1}
@@ -80,6 +81,9 @@
                         {assign var="count" value=$count+1}
                     {/foreach}
                     {foreach from=$this.purchasedProducts key=countId item=product}
+                        {if $product.productId == 84}
+                            {assign var="showGasteetik" value=1}
+                        {/if}
                         {assign var=total value=$total+$product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount}
                         <div class="row basket-row">
                             <div class="col-md-6"><span class="counter">{$count}.</span> <span class="ticket-name">{$product.productName}</span></div>
@@ -118,6 +122,9 @@
                             {assign var="count" value=$count+1}
                         {/foreach}
                         {foreach from=$this.purchasedChildProducts[$child_id] item=product}
+                            {if $product.productId == 84}
+                                {assign var="showGasteetik" value=1}
+                            {/if}
                             {assign var=total value=$total+$product.needAmount-$product.payAmount-$product.ulAmount+$product.returnedAmount-$product.discountAmount}
                             <div class="row basket-row">
                                 <div class="col-md-6"><span class="counter">{$count}.</span> <span class="ticket-name">{$product.productName}</span></div>
@@ -192,14 +199,13 @@
                         </div>
                         <div class="pay-card-btn">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <a href="/index.php?do=payment&total={$total}&mode=alfa" class="btn btn-white" onclick="yaCounter28771811.reachGoal('oplatit-kartoj-korzina');return true">Оплатить картой</a>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="button" id="applePay"></button>
-                                </div>
                                 <div class="col-md-12">
-                                    <p class="oferta mt-4">Нажимая кнопку «Оплатить картой» Вы соглашаетесь с&nbsp;<a href="/oferta">договором оферты</a> и с <a href="/pdf/dogovor_gastreet_camp.pdf">договором оферты Детского кемпа «Гастритик»</a></p>
+                                    <p class="oferta mt-4">Нажимая кнопку «Оплатить картой» Вы соглашаетесь с&nbsp;<a href="/oferta">договором оферты</a>
+                                        {if $showGasteetik == 1}и с <a href="/pdf/dogovor_gastreet_camp.pdf">договором оферты Детского кемпа «Гастритик»</a>{/if}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -238,165 +244,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    let debug               = false;
-    let merchantIdentifier  = '{$this.PRODUCTION_MERCHANTIDENTIFIER}';
-    let currencyCode        = '{$this.PRODUCTION_CURRENCYCODE}';
-    let countryCode         = '{$this.PRODUCTION_COUNTRYCODE}';
-    let label               = '{$this.PRODUCTION_DISPLAYNAME}';
-    var runningAmount       = {$total};
-    var orderNumber         = '';
-    var subTotalDescr       = 'Оплата заказа';
-</script>
-
-{literal}
-<script>
-    if (window.ApplePaySession) {
-        let promise = ApplePaySession.canMakePaymentsWithActiveCard(merchantIdentifier);
-        promise.then(function (canMakePayments) {
-            if (canMakePayments) {
-                document.getElementById("applePay").style.display = "inline-block";
-                logit('Hi, I can do ApplePay');
-            } else {
-                logit('ApplePay is possible on this browser, but not currently activated.');
-            }
-        });
-    } else {
-        logit('ApplePay is not available on this browser');
-    }
-
-    document.getElementById("applePay").onclick = function(evt) {
-        let runningPP		= 0;
-        let runningTotal	= function() { return runningAmount + runningPP; }
-
-        let promiseDB = sendPaymentDataToDB();
-        promiseDB.then(function (success) {
-            var status = 'STATUS_FAILURE';
-            if (success) {
-                status = 'STATUS_SUCCESS';
-                runningAmount = success.amount;
-                //runningAmount = 10;
-                orderNumber = success.orderNumber;
-                subTotalDescr = success.msg;
-            }
-            logit( "result of sendPaymentDataToDB() function =  " + status );
-        });
-
-        console.log(subTotalDescr);
-
-        let paymentRequest = {
-            currencyCode: currencyCode,
-            countryCode: countryCode,
-            lineItems: [{label: subTotalDescr, amount: runningAmount }],
-            total: {
-                label: label,
-                amount: runningTotal()
-            },
-            supportedNetworks: ['maestro', 'masterCard', 'visa' ],
-            merchantCapabilities: [ 'supports3DS', 'supportsCredit', 'supportsDebit' ]
-        };
-
-        let session = new ApplePaySession(1, paymentRequest);
-        // Merchant Validation
-        session.onvalidatemerchant = function (event) {
-            logit(event);
-            let promise = performValidation(event.validationURL);
-            promise.then(function (merchantSession) {
-                session.completeMerchantValidation(merchantSession);
-            });
-        }
-
-        function performValidation(valURL) {
-            return new Promise(function(resolve, reject) {
-                let xhr = new XMLHttpRequest();
-                xhr.onload = function() {
-                    let data = JSON.parse(this.responseText);
-                    logit(data);
-                    resolve(data);
-                };
-                xhr.onerror = reject;
-                xhr.open('GET', 'apple_pay_comm.php?u=' + valURL);
-                xhr.send();
-            });
-        }
-
-        session.onpaymentmethodselected = function(event) {
-            logit('starting session.onpaymentmethodselected');
-            logit(event);
-            var newTotal = { type: 'final', label: label, amount: runningTotal() };
-            var newLineItems = [{type: 'final',label: subTotalDescr, amount: runningAmount }];
-            session.completePaymentMethodSelection( newTotal, newLineItems );
-        }
-
-        session.onpaymentauthorized = function (event) {
-            logit('starting session.onpaymentauthorized');
-            logit('NB: This is the first stage when you get the *full shipping address* of the customer, in the event.payment.shippingContact object');
-            logit(event);
-            let promise = sendPaymentToken(event.payment.token);
-            promise.then(function (success) {
-                var status;
-                if (success) {
-                    status = ApplePaySession.STATUS_SUCCESS;
-                    document.getElementById("applePay").style.display = "none";
-                    session.completePayment(status);
-                    alert("Платеж выполнен. Данные обновятся в течение минуты.");
-                } else {
-                    status = ApplePaySession.STATUS_FAILURE;
-                    session.completePayment(status);
-                }
-                logit( "result of sendPaymentToken() function =  " + success );
-            });
-        }
-
-        function sendPaymentToken(paymentToken) {
-            return new Promise(function(resolve, reject) {
-                logit('starting function sendPaymentToken()');
-                logit(paymentToken);
-
-                var xhr = new XMLHttpRequest();
-                xhr.onerror = reject;
-                var data = new FormData();
-                paymentToken.orderNumber = orderNumber;
-                paymentToken.desc = subTotalDescr;
-                data.append("json", JSON.stringify(paymentToken));
-
-                xhr.open('POST', '/apple_pay_alfa.php', true);
-                xhr.send(data);
-
-                if ( debug == true ) {
-                    resolve(true);
-                } else {
-                    reject;
-                }
-            });
-        }
-
-        function sendPaymentDataToDB() {
-            return new Promise(function(resolve, reject) {
-                let xhr = new XMLHttpRequest();
-                xhr.onload = function() {
-                    let data = JSON.parse(this.responseText);
-                    logit(data);
-                    resolve(data);
-                };
-                xhr.onerror = reject;
-                xhr.open('GET', '/ajax?job=apple_pay');
-                xhr.send();
-            });
-        }
-
-        session.oncancel = function(event) {
-            logit('starting session.cancel');
-            logit(event);
-        }
-        session.begin();
-    };
-
-    function logit( data ) {
-        if( debug == true ) {
-            console.log(data);
-        }
-    };
-</script>
-{/literal}

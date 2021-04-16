@@ -196,6 +196,7 @@
         </div>
     </div>
     {/if}
+    {if !$this.gastreetpartner}
     <div class="container">
         <div class="row row-condensed row-options">
             <div class="col-md-2">
@@ -259,7 +260,7 @@
             <div class="col-md-2">
                 <div class="ticket cat_fuckup" data-ri="d3">
                     <h2 class="ticket_header">Место в&nbsp;палаточном лагере</h2>
-                    <p class="ticket_cost">3 000 ₽</p>
+                    <p class="ticket_cost">5 000 ₽</p>
                     <p class="ticket_new_cost">Место в палаточном лагере - зона выката уровень +960</p>
                     <div class="mt-2">
                         <a href="#" class="buy-product-click-pc btn btn-white" data-id="82" data-night="false" id="buy-product-pc-82" title="##buy##">Купить</a>
@@ -475,7 +476,7 @@
                                                 <div class="col-4 col-md-2 col-xs-12 td td-cart">
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                    <!--<div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>-->
                                                     <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
@@ -658,7 +659,7 @@
                                                 <div class="col-4 col-md-2 col-xs-12 td td-cart">
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                    <!--<div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>-->
                                                     <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
@@ -841,7 +842,7 @@
                                                 <div class="col-4 col-md-2 col-xs-12 td td-cart">
                                                     <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
-                                                    <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
+                                                    <!--<div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>-->
                                                     <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                                     <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                                     <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
@@ -872,6 +873,7 @@
             </div>
         </div>
     </div>
+    {/if}
 </div>
 
 <div class="modal fade" id="mk-modal" tabindex="-1" role="dialog">

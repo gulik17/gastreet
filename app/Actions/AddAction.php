@@ -88,12 +88,12 @@ class AddAction extends AuthorizedUserAction implements IPublicAction {
                     if ($this->lang == 'en') {
                         $array['error'] = 'You have the maximum number of Tourist tickets for the basket.';
                     } else {
-                        $array['error'] = 'У Вас максимальное количество билетов Спутник для корзины';
+                        $array['error'] = 'У Вас максимальное количество билетов FUN для корзины';
                     }
                     echo json_encode($array);
                     exit;
                 } else {
-                    Enviropment::redirect("basket", "У Вас максимальное количество билетов Спутник для корзины", "danger");
+                    Enviropment::redirect("basket", "У Вас максимальное количество билетов FUN для корзины", "danger");
                 }
             }
         }

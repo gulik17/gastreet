@@ -137,7 +137,12 @@ class RegisterControl extends AuthorizedUserControl {
         if ( ($step > 2) && (!$this->actor->baseTicketId) ) {
             Enviropment::redirect("register?step=2", "Не выбран основной билет, вы не можете перейти к следующему шагу");
         }
-        
+
+        $showMetroPrize = false;
+
+        if (!$this->actor->metro_card) {
+            $showMetroPrize = true;
+        }
         // подопечные пользователи текущего юзера
         $um = new UserManager();
         $children = $um->getByParentId($this->actor->id);
@@ -149,6 +154,9 @@ class RegisterControl extends AuthorizedUserControl {
             $purchasedChildProductsArray = array();
 
             foreach ($children AS $key => $child) {
+                if (!$child->metro_card) {
+                    $showMetroPrize = true;
+                }
                 $childrenArray[$child->id] = '<h4>'.$child->lastname.' '.$child->name.'</h4><div class="phone">'.Utility::mobilephone($child->phone).'</div>';
                 $childrenBalanceArray[$child->id] = $child->ulBalance;
 
@@ -186,6 +194,7 @@ class RegisterControl extends AuthorizedUserControl {
             }
             // участники
             
+            $this->addData("showMetroPrize", $showMetroPrize);
             $this->addData("children", $children);
             $this->addData("childrenArray", $childrenArray);
             // баланс участников

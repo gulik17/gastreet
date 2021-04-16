@@ -59,20 +59,21 @@
                                 <li class="gss-tag-li tag_rebro"><a class="gss-tag-link" data-tag="t_rebro" href="#">REBRO</a></li>
                                 <li class="gss-tag-li tag_mainstreet"><a class="gss-tag-link" data-tag="t_profi" href="#">ПРОФИ</a></li>
                                 <li class="gss-tag-li tag_chefstreet"><a class="gss-tag-link" data-tag="t_chefs" href="#">ШЕФСКИЙ</a></li>
-                                <li class="gss-tag-li tag_barstreet"><a class="gss-tag-link" data-tag="t_barstreet" href="#">BARSTREET</a></li>
-                                <li class="gss-tag-li tag_tourist"><a class="gss-tag-link" data-tag="t_tourist" href="#">СПУТНИК</a></li>
+                               <!-- <li class="gss-tag-li tag_barstreet"><a class="gss-tag-link" data-tag="t_barstreet" href="#">BARSTREET</a></li>-->
+                                <li class="gss-tag-li tag_tourist"><a class="gss-tag-link" data-tag="t_tourist" href="#">FUN</a></li>
                                 <li class="gss-tag-li tag_buy"><a class="gss-tag-link" data-tag="t_buy" href="#">КУПИТЬ К БИЛЕТУ</a></li>
                             </ul>
                         </div>
                         <div class="tags-list tags-list-speakers schedule-filter-area" style="position: relative;right: auto;top: auto;margin: 0;">
                             <ul>
                                 <li class="gss-tag-li active"><a class="gss-tag-link" data-tag="all" title="" href="#">{if $lang == 'en'}#All{else}#Все{/if}</a></li>
-                                <li class="gss-tag-li tag_centralnayaploshchad"><a class="gss-tag-link" data-tag="tag_centralnayaploshchad" title="#центральнаяплощадь" href="#">#центральнаяплощадь</a></li>
-                                <li class="gss-tag-li tag_rebro"><a class="gss-tag-link" data-tag="tag_rebro" title="#rebro" href="#">#rebro</a></li>
                                 <li class="gss-tag-li tag_mainstreet"><a class="gss-tag-link" data-tag="tag_mainstreet" title="#mainstreet" href="#">#mainstreet</a></li>
                                 <li class="gss-tag-li tag_chefstreet"><a class="gss-tag-link" data-tag="tag_chefstreet" title="#chefstreet" href="#">#chefstreet</a></li>
-                                <li class="gss-tag-li tag_barstreet"><a class="gss-tag-link" data-tag="tag_barstreet" title="#barstreet" href="#">#barstreet</a></li>
-                                <li class="gss-tag-li tag_businessschool"><a class="gss-tag-link" data-tag="tag_biznesshkola" title="#бизнесшкола" href="#">#бизнесшкола</a></li>
+                                <li class="gss-tag-li tag_rebro"><a class="gss-tag-link" data-tag="tag_rebro" title="#rebro" href="#">#rebro</a></li>
+                                <li class="gss-tag-li tag_centralnayaploshchad"><a class="gss-tag-link" data-tag="tag_centralnayaploshchad" title="#центральнаяплощадь" href="#">#центральнаяплощадь</a></li>
+                                <li class="gss-tag-li tag_schools"><a class="gss-tag-link" data-tag="tag_schools" title="#школы" href="#">#школы</a></li>
+                                <li class="gss-tag-li tag_tedx"><a class="gss-tag-link" data-tag="tag_tedx" title="#TEDx" href="#">#TEDx</a></li>
+                                <!--<li class="gss-tag-li tag_businessschool"><a class="gss-tag-link" data-tag="tag_biznesshkola" title="#бизнесшкола" href="#">#бизнесшкола</a></li>-->
                                 <li class="gss-tag-li tag_popupujiny d-none"><a class="gss-tag-link" data-tag="tag_popupujiny" title="#бизнесшкола" href="#">#popup</a></li>
                             </ul>
                         </div>
@@ -223,7 +224,7 @@
                                                 {/if}
                                             </div>
                                             {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
-                                            <div class="speaker-img d-none d-lg-block d-md-block d-sm-block" style="background-image:url('/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230');background-position:bottom 5px right 0;background-size:80%;"></div>
+                                            <div class="speaker-img d-none d-lg-block d-md-block d-sm-block" style="background-image:url('/images/parthners/resized/{$speaker.partner_id}.png?v=1554463230');background-position:center;background-size:80%;"></div>
                                             {/if}
                                             <div class="speaker-img d-lg-none d-md-none d-sm-none" style="background-image: url('{$modalLink}');"></div>
                                         </div>
@@ -278,8 +279,8 @@
                                         <div class="col-4 col-md-2 col-xs-12 td td-cart">
                                             <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                             <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
-                                            <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
-                                            <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                            <div class="badge-ticket {if $product->id|inticket:1}active{/if}">FUN</div>
+                                           <!-- <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>-->
                                             <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                             <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
                                             {assign var=canShowButton value=1}
