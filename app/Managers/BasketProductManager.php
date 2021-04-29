@@ -19,14 +19,12 @@ class BasketProductManager extends BaseEntityManager {
 
     public function getProductCounts() {
         $sql = "SELECT productId, COUNT(id) AS cnt FROM basketProduct GROUP BY productId";
-        $res = $this->getByAnySQL($sql);
-        return $res;
+        return $this->getByAnySQL($sql);
     }
 
     public function getPayedByProductId($id) {
         $sql = "SELECT `id`, `userId`, `childId`, `productName` FROM `basketProduct` WHERE `status` = 'STATUS_PAID' AND `productId` = $id";
-        $res = $this->getByAnySQL($sql);
-        return $res;
+        return $this->getByAnySQL($sql);
     }
 
     public function getLinkByUserIdAndProductId($userId, $productId) {

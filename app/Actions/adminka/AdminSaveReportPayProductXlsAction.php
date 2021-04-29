@@ -24,6 +24,7 @@ class AdminSaveReportPayProductXlsAction extends AdminkaAction {
             } else {
                 $user = $um->getById($product['userId']);
             }
+
             $products[$key] = $product;
             $products[$key]['lastname'] = $user->lastname;
             $products[$key]['name'] = $user->name;

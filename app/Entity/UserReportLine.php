@@ -32,6 +32,7 @@ class UserReportLine extends Entity
     public $userRegister = null;
     public $userOnline = null;
     public $youAboutUs = null;
+    public $metroCard = null;
     public $bookingSerialized = null;
     public $bookingSerializedData = null;
     public $bookingInfo = null;
@@ -48,7 +49,8 @@ class UserReportLine extends Entity
 
 	function __construct() {}
 	
-    function getFields() {
+    function getFields()
+    {
         return array (
             'id' => self::ENTITY_FIELD_INT,
             'reportId' => self::ENTITY_FIELD_INT,
@@ -73,6 +75,7 @@ class UserReportLine extends Entity
             'userRegister' => self::ENTITY_FIELD_STRING,
             'userOnline' => self::ENTITY_FIELD_STRING,
             'youAboutUs' => self::ENTITY_FIELD_STRING,
+            'metroCard' => self::ENTITY_FIELD_STRING,
             'bookingSerialized' => self::ENTITY_FIELD_STRING,
             'bookingSerializedData' => self::ENTITY_FIELD_STRING,
             'bookingInfo' => self::ENTITY_FIELD_STRING,

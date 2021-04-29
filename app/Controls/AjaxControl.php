@@ -19,7 +19,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $countryName = FilterInput::add(new StringFilter("country", true, "Страна"));
             $cityName    = FilterInput::add(new StringFilter("city", true, "Город"));
             $company     = FilterInput::add(new StringFilter("company", false, "Компания"));
-            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 20));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
@@ -304,7 +304,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $city        = FilterInput::add(new StringFilter("city",     true, "Город"));
             $company     = FilterInput::add(new StringFilter("company",  true, "Компания"));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
-            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 20));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
             // Приведем полученый ящик к нижнему регистру
@@ -425,7 +425,7 @@ class AjaxControl extends BaseControl implements IAjaxControl {
             $city        = FilterInput::add(new StringFilter("city",     true, "Город"));
             $company     = FilterInput::add(new StringFilter("company",  true, "Компания"));
             $position    = FilterInput::add(new StringFilter("position", true, "Должность"));
-            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 25));
+            $metro_card  = FilterInput::add(new StringFilter("metro_card", false, "Карта METRO", 25, 20));
             $usersize    = FilterInput::add(new StringFilter("usersize", true, "Размер одежды"));
 
             // Приведем полученый ящик к нижнему регистру

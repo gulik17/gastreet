@@ -18,6 +18,7 @@ class SaveFolkSpeakerAction extends AdminkaAction {
         $company = preg_replace('/\&quot;([^\"]*)\&quot;/ismU', "«$1»", Request::getVar("company"));
         $position = Request::getVar("position");
         $description = Request::getVar("description");
+        $count = Request::getVar("count");
         $video = Request::getVar("video");
         $instagram = Request::getVar("instagram");
         $facebook = Request::getVar("facebook");
@@ -55,6 +56,7 @@ class SaveFolkSpeakerAction extends AdminkaAction {
         $fsmObj->company       = $company;
         $fsmObj->position      = $position;
         $fsmObj->description   = $description;
+        $fsmObj->count         = $count;
         $fsmObj->video         = $video;
         $fsmObj->instagram     = $instagram;
         $fsmObj->facebook      = $facebook;

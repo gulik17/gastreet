@@ -50,6 +50,11 @@
                         <a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#testModal">{if $lang == 'en'}Pizza Championship{else}Чемпионат по пицце{/if}</a>
                     {/if}
                 {/if}
+				<div class="badge-metro mt-4">
+					<a href="{link show=basket q=2}">
+						<img src="/images/metro_prize.png" alt="" class="img-fluid">
+					</a>
+				</div>
             </div>
         </div>
         <div class="col-md-8 page_body order-md-1">
@@ -93,8 +98,8 @@
                         <div class="row">
                             {if $this.gastreetspecial || $this.gastreetlubimki || $this.gastreetambassadors || $this.artpeople || $this.hells_kitchen}
 								<div class="col-md-12">
-									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
-									{assign var=ticket value=$ticketId|getticket}
+								<!--	{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «FUN» -->
+								<!--	{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
 										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
@@ -211,8 +216,8 @@
 								</div>
 							{else}
 								<div class="col-md-12">
-									{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «СПУТНИК» -->
-									{assign var=ticket value=$ticketId|getticket}
+								<!--	{assign var=ticketId value=1} <!-- УКАЗАТЬ ID БИЛЕТА «FUN» -->
+								<!--	{assign var=ticket value=$ticketId|getticket}
 									<div class="ticket ticket-tourist" data-ri="{$ticketId}">
 										<h2 class="ticket_header"><span class="title_tourist">{if $lang == 'en'}{$ticket->name_en}{else}{$ticket->name}{/if}</span></h2>
 										<p class="ticket_cost">{$ticket->price|numberprice} ₽</p>
