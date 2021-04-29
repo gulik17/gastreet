@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/thematik-page/main_school.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_03.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/ProductManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,18 +75,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/thematik-page" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gastreet.loc\images\thematik-page" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
       <recent name="C:\OpenServer\domains\gastreet.loc\css" />
       <recent name="C:\OpenServer\domains\gastreet.loc\app\Controls" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
       <recent name="C:\OpenServer\domains\gastreet.loc\images\carbranding" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\style\files\pdf" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
@@ -241,14 +246,7 @@
       <workItem from="1619103734511" duration="1960000" />
       <workItem from="1619435719659" duration="228000" />
       <workItem from="1619513373181" duration="2049000" />
-      <workItem from="1619728318263" duration="1486000" />
-    </task>
-    <task id="LOCAL-00015" summary="FolkSpeaker Update">
-      <created>1581087183215</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1581087183215</updated>
+      <workItem from="1619728318263" duration="5590000" />
     </task>
     <task id="LOCAL-00016" summary="Add GitIgnore">
       <created>1581087582327</created>
@@ -586,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619729698495</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET">
+      <created>1619730085749</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1619730085749</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +613,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Открыл доп опции и аватарку при регистрации" />
     <MESSAGE value="Правки на странице способы оплаты" />
     <MESSAGE value="Переделал Чаво" />
     <MESSAGE value="Начало интеграции AmoCRM" />
@@ -633,6 +637,7 @@
     <MESSAGE value="внес правки по срочным" />
     <MESSAGE value="fix" />
     <MESSAGE value="Добавить Сингапурский флаг в спикеры | 27/04/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавить Сингапурский флаг в спикеры | 27/04/2021" />
+    <MESSAGE value="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET" />
   </component>
 </project>

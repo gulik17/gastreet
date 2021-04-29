@@ -39,7 +39,7 @@ class CatalogControl extends IndexControl {
         $this->addData("products", $products);
 
         // максимум до 11-ми пока
-        if ($areaId > 0 && $areaId <= 33) {
+        if ($areaId > 0 && $areaId <= 34) {
             $this->layout = "indexgastop.html";
             $this->template = "CatalogControl{$areaId}.html";
             $spm = new SpeakerManager();
@@ -56,6 +56,16 @@ class CatalogControl extends IndexControl {
                 $prizes = $przm->getActive();
                 $this->addData("prizes", $prizes);
                 $spmList = $spm->getActiveByTag('mainstreet', '2021');
+                $pm = new ProductManager();
+                $products = $pm->getAllActive($areaId, $onlyAllowed);
+                $this->addData("products", $products);
+            }
+            if ($areaId == 34) {
+                $this->gcode = 'thematik-main-page';
+                $przm = new PrizeManager();
+                $prizes = $przm->getActive();
+                $this->addData("prizes", $prizes);
+                $spmList = $spm->getActiveByTag('школы', '2021');
                 $pm = new ProductManager();
                 $products = $pm->getAllActive($areaId, $onlyAllowed);
                 $this->addData("products", $products);
