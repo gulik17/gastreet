@@ -3,29 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveReportPayProductXlsAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveReportPayProductXlsAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveFolkSpeakerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveFolkSpeakerAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AjaxControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/UserReportLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/UserReportLine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/folkSpeaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/folkSpeaker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/BasketProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/BasketProductManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket6Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket6Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register2Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Register5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register5Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/RegisterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/RegisterControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SpeakersControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/adminka/EditFolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/EditFolkSpeakerControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/Speaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Speaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,14 +242,7 @@
       <workItem from="1619103734511" duration="1960000" />
       <workItem from="1619435719659" duration="228000" />
       <workItem from="1619513373181" duration="2049000" />
-      <workItem from="1619728318263" duration="595000" />
-    </task>
-    <task id="LOCAL-00013" summary="Update FAQ page">
-      <created>1581083977235</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1581083977235</updated>
+      <workItem from="1619728318263" duration="1072000" />
     </task>
     <task id="LOCAL-00014" summary="Update FAQ page">
       <created>1581087101163</created>
@@ -607,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618599396933</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fix">
+      <created>1619729160515</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1619729160516</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +609,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Начало работы над главным баннером" />
     <MESSAGE value="Добавил главный баннер, офиксил оплаты через карту, добавил гугл аналитику" />
     <MESSAGE value="Открыл доп опции и аватарку при регистрации" />
     <MESSAGE value="Правки на странице способы оплаты" />
@@ -654,6 +633,7 @@
     <MESSAGE value="save 03-03-2021" />
     <MESSAGE value="внес правки" />
     <MESSAGE value="внес правки по срочным" />
-    <option name="LAST_COMMIT_MESSAGE" value="внес правки по срочным" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

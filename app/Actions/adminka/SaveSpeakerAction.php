@@ -102,7 +102,7 @@ class SaveSpeakerAction extends AdminkaAction {
             $smObj = $sm->save($smObj);
         }
 
-        if (strpos($smObj->tags, '2019') !== false) {
+        if (strpos($smObj->tags, '2021') !== false) {
             $eventicious = new Eventicious();
             $eventicious->setHost(Configurator::get("eventicious:host"));
             $eventicious->setCode(Configurator::get("eventicious:code"));

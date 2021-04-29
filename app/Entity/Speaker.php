@@ -19,6 +19,7 @@ class Speaker extends Entity
     const COUNTRY_DE = 'de';
     const COUNTRY_PL = 'pl';
     const COUNTRY_UA = 'ua';
+    const COUNTRY_SG = 'sg';
     const COUNTRY_FR = 'fr';
     const COUNTRY_EE = 'ee';
     const COUNTRY_LV = 'lv';
@@ -83,6 +84,7 @@ class Speaker extends Entity
             self::COUNTRY_TR => "Турция",
             self::COUNTRY_UZ => "Узбекистан",
             self::COUNTRY_UA => "Украина",
+            self::COUNTRY_SG => "Сингапур",
             self::COUNTRY_FR => "Франция",
             self::COUNTRY_EE => "Эстония",
         ];
