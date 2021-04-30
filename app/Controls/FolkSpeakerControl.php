@@ -3,7 +3,9 @@
 class FolkSpeakerControl extends IndexControl {
     public $pageTitle = "Народный спикер — GASTREET 2021";
 
-    public function render() {
+    public function render()
+    {
+        $this->addData("time", time());
         $fsm = new FolkSpeakerManager();
         $speakers = $fsm->getActive();
         $this->addData("speakers", $speakers);

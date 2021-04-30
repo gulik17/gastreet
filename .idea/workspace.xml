@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/thematik-page/main_school.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/thematik-page/school_news_03.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/ProductManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,14 +242,8 @@
       <workItem from="1619103734511" duration="1960000" />
       <workItem from="1619435719659" duration="228000" />
       <workItem from="1619513373181" duration="2049000" />
-      <workItem from="1619728318263" duration="5590000" />
-    </task>
-    <task id="LOCAL-00016" summary="Add GitIgnore">
-      <created>1581087582327</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1581087582327</updated>
+      <workItem from="1619728318263" duration="6241000" />
+      <workItem from="1619781778471" duration="2721000" />
     </task>
     <task id="LOCAL-00017" summary="Folk Speaker vote finish">
       <created>1581330506739</created>
@@ -591,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619730085749</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Создать страницу площадки &quot;Школы&quot;">
+      <created>1619734455215</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1619734455215</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +610,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Правки на странице способы оплаты" />
     <MESSAGE value="Переделал Чаво" />
     <MESSAGE value="Начало интеграции AmoCRM" />
     <MESSAGE value="Перед открытием тематических страниц" />
@@ -638,6 +634,7 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Добавить Сингапурский флаг в спикеры | 27/04/2021" />
     <MESSAGE value="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET" />
+    <MESSAGE value="Создать страницу площадки &quot;Школы&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создать страницу площадки &quot;Школы&quot;" />
   </component>
 </project>
