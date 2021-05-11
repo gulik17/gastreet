@@ -4,7 +4,29 @@
  *
  */
 class SaveSpeakerAction extends AdminkaAction {
-    public function execute() {
+    /**
+     * logs events in file */
+    private function log($type, $data)
+    {
+        $data_text = $data;
+        if (gettype($data) == 'array' || gettype($data) == 'object') {
+            $data_text = serialize($data);
+        }
+        $msg = sprintf(
+            "%s\t@%s\t%s\n",
+            date("Y-m-d H:i:s"),
+            $type,
+            $data_text
+        );
+        file_put_contents(
+            DIR_LOGS . self::FILENAME,
+            $msg,
+            FILE_APPEND
+        );
+    }
+
+    public function execute()
+    {
         $doAct = "Спикер добавлен";
 
         $id = Request::getInt("id");
@@ -102,6 +124,7 @@ class SaveSpeakerAction extends AdminkaAction {
             $smObj = $sm->save($smObj);
         }
 
+        $mes = '';
         if (strpos($smObj->tags, '2021') !== false) {
             $eventicious = new Eventicious();
             $eventicious->setHost(Configurator::get("eventicious:host"));
@@ -165,6 +188,7 @@ class SaveSpeakerAction extends AdminkaAction {
         } else {
             $mes = "Eventicious: Не синхронизируется";
         }
+        $this->log('INFO', $mes);
         Adminka::redirect("managespeakers", $doAct.'<br>'.$mes);
     }
 }

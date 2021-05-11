@@ -403,6 +403,8 @@ class UserManager extends BaseEntityManager {
             Logger::error("Eventicious: ID $user->id Ошибка " . $result['result_code'] . " См. логи");
             Logger::error($result);
         }
+        Logger::info("Eventicious: ID $user->id Код " . $result['result_code']);
+        Logger::info($result);
         return $mes;
     }
 

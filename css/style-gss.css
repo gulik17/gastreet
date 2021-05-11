@@ -3095,7 +3095,7 @@ section.ticket.block_4 {
     margin-right:0;}
 .main-page .page_body .ticket {
     display: flex;
-    height: 100%;}
+    height: 176px;}
 .page_body .ticket .ticket_item li:last-child {
     margin-bottom: 0;}
 .page_body .ticket .ticket_header {
@@ -5478,9 +5478,9 @@ main {
 .schedule-table .tag_mainstreet .td.c-title {
     color: #fff;
     background-color: #008dd2;}
-.schedule-table .tag_shkoly .td {
+.schedule-table .tag_shkola .td {
     background-color: rgba(71, 17, 76, .5);}
-.schedule-table .tag_shkoly .td.c-title {
+.schedule-table .tag_shkola .td.c-title {
     color: #fff;
     background-color: #47114c;}
 .schedule-table .tag_franchisestreet .td {
@@ -5518,6 +5518,16 @@ main {
 .schedule-table .tag_centralnayaploshchad .td.c-title {
     color: #fff;
     background-color: #000;}
+.schedule-table .street-label {
+    background-color: #fff;
+    position: absolute;
+    left: 42%;
+    top: 0;}
+.schedule-table .tag_shkoly .td {
+    background-color: rgb(71 17 76 / 50%);}
+.schedule-table .tag_shkoly .td.c-title {
+    color: #fff;
+    background-color: #47114c;}
 .schedule-table .street-label {
     background-color: #fff;
     position: absolute;

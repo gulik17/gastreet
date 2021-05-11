@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/gastreet_350x166.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gastreet_760x186.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/profi_350x166.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/thematik-page/main_school.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/FolkSpeakerControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveUserAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/AdminSaveUserAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveUserDetailsAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveUserDetailsAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket6Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket6Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register2Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register5Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/RegisterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/RegisterControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,18 +95,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/thematik-page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\images\thematik-page" />
       <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
       <recent name="C:\OpenServer\domains\gastreet.loc\css" />
       <recent name="C:\OpenServer\domains\gastreet.loc\app\Controls" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\images\carbranding" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
@@ -243,14 +267,12 @@
       <workItem from="1619435719659" duration="228000" />
       <workItem from="1619513373181" duration="2049000" />
       <workItem from="1619728318263" duration="6241000" />
-      <workItem from="1619781778471" duration="2721000" />
-    </task>
-    <task id="LOCAL-00017" summary="Folk Speaker vote finish">
-      <created>1581330506739</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1581330506739</updated>
+      <workItem from="1619781778471" duration="3547000" />
+      <workItem from="1619858409925" duration="1695000" />
+      <workItem from="1619957069767" duration="1292000" />
+      <workItem from="1620040573542" duration="2071000" />
+      <workItem from="1620297647364" duration="6471000" />
+      <workItem from="1620386239817" duration="5893000" />
     </task>
     <task id="LOCAL-00018" summary="Folk Speaker vote finish">
       <created>1581400918023</created>
@@ -588,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619734455215</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="5. Стать спикером - на странице создать голосование | 19/04/2021&#10;6. Содержание (что входит в билет) билетов по секретной ссылке сделать таким же, как у билетов по обычной цене">
+      <created>1619789226747</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1619789226747</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +639,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Переделал Чаво" />
     <MESSAGE value="Начало интеграции AmoCRM" />
     <MESSAGE value="Перед открытием тематических страниц" />
     <MESSAGE value="Перенос сайта" />
@@ -635,6 +663,7 @@
     <MESSAGE value="Добавить Сингапурский флаг в спикеры | 27/04/2021" />
     <MESSAGE value="Добавить в спикеры и программу новые теги: #PARTNERSTREET и #BARISTASTREET" />
     <MESSAGE value="Создать страницу площадки &quot;Школы&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создать страницу площадки &quot;Школы&quot;" />
+    <MESSAGE value="5. Стать спикером - на странице создать голосование | 19/04/2021&#10;6. Содержание (что входит в билет) билетов по секретной ссылке сделать таким же, как у билетов по обычной цене" />
+    <option name="LAST_COMMIT_MESSAGE" value="5. Стать спикером - на странице создать голосование | 19/04/2021&#10;6. Содержание (что входит в билет) билетов по секретной ссылке сделать таким же, как у билетов по обычной цене" />
   </component>
 </project>

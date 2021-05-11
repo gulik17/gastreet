@@ -4,8 +4,31 @@
  * Сохранение реквизитов пользователя
  */
 class SaveUserDetailsAction extends AdminkaAction {
+    const FILENAME = "users.log";
 
-    public function execute() {
+    /**
+     * logs events in file */
+    private function log($type, $data)
+    {
+        $data_text = $data;
+        if (gettype($data) == 'array' || gettype($data) == 'object') {
+            $data_text = serialize($data);
+        }
+        $msg = sprintf(
+            "%s\t@%s\t%s\n",
+            date("Y-m-d H:i:s"),
+            $type,
+            $data_text
+        );
+        file_put_contents(
+            Configurator::get("logger:logger.dir") . self::FILENAME,
+            $msg,
+            FILE_APPEND
+        );
+    }
+
+    public function execute()
+    {
         $doAct = 'Реквизиты пользователя сохранены';
 
         $id = FilterInput::add(new StringFilter("id", true, "ID реквизитов"));

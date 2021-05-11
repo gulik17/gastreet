@@ -64,11 +64,7 @@
                                 <div>минут</div>
                             </div>
                         </div>
-                        {if $this.time < 1621112400}
-                            <div class="timer-title pt-3 pb-4">чтобы подать заявку</div>
-                        {else}
                             <div class="timer-title pt-3 pb-4">чтобы проголосовать</div>
-                        {/if}
                     </div>
                 </div>
             </div>
@@ -76,11 +72,7 @@
     </div>
     <div class="row">
         <div class="col-12 button">
-            {if $this.time < 1621112400}
-                <a href="#" class="btn btn-lg btn-accept" data-toggle="modal" data-target="#registerModal">Принять участие</a>
-            {else}
-                <a href="https://forms.gle/5SvnuscLrzJNivaW6" target="_blank" class="btn btn-lg btn-accept">Проголосовать</a>
-            {/if}
+            <a href="https://forms.gle/5SvnuscLrzJNivaW6" target="_blank" class="btn btn-lg btn-accept">Проголосовать</a>
         </div>
     </div>
     <div class="row select">
@@ -106,6 +98,11 @@
                                 <p class="job">{$speaker.company}<br>{$speaker.position}</p>
                             </div>
                         </div>
+                        {if $speaker.count}
+                        <p class="text-right">Голосов: {$speaker.count}</p>
+                        {else}
+                        <p class="text-right">Голосов: 0</p>
+                        {/if}
                     </a>
 <!--                    <a href="#" class="btn-vote" data-toggle="modal" data-target="#voting" data-folkspeaker-id="{$speaker.id}">Голосовать<i class="fa fa-heart"></i>&nbsp;{$speaker.fp_count}</a>-->
 <!--                    <a href="#" class="share" data-toggle="modal" data-target="#v_share" data-folkspeaker-id="{$speaker.id}">Поделиться</a>-->
@@ -557,15 +554,9 @@
         </div>
     </div>
 </div>
-{if $this.time < 1621112400}
 <script>
-    let date = new Date('05/01/2021');
+    let date = new Date('05/16/2021');
 </script>
-{else}
-<script>
-    let date = new Date('06/16/2021');
-</script>
-{/if}
 {literal}
 <script>
     function setTimer() {
@@ -580,5 +571,10 @@
     }
     setTimer();
     setInterval(setTimer, 1000);
+
+    $('.modal').on('shown.bs.modal', function () {
+        const modal = $(this).find('iframe');
+        modal.attr('src', modal.data('src'));
+    })
 </script>
 {/literal}
