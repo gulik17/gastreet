@@ -4,6 +4,8 @@
  *
  */
 class SaveSpeakerAction extends AdminkaAction {
+    const FILENAME = "users.log";
+
     /**
      * logs events in file */
     private function log($type, $data)
@@ -19,7 +21,7 @@ class SaveSpeakerAction extends AdminkaAction {
             $data_text
         );
         file_put_contents(
-            DIR_LOGS . self::FILENAME,
+            Configurator::get("logger:logger.dir") . self::FILENAME,
             $msg,
             FILE_APPEND
         );
