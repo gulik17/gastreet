@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveSpeakerAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/UserManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
@@ -11,10 +11,16 @@
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl7.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/KidsControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/KidsControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/UserticketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/UserticketControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_chef.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/thematik-page/main_rebro.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pages/catalog.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/pages/catalog.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,14 +264,8 @@
       <workItem from="1620040573542" duration="2071000" />
       <workItem from="1620297647364" duration="6471000" />
       <workItem from="1620386239817" duration="5893000" />
-      <workItem from="1620756336196" duration="7345000" />
-    </task>
-    <task id="LOCAL-00019" summary="Разместил купон на проживание">
-      <created>1581936574575</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1581936574575</updated>
+      <workItem from="1620756336196" duration="7978000" />
+      <workItem from="1620827304670" duration="9135000" />
     </task>
     <task id="LOCAL-00020" summary="Добавил партнерские илеты">
       <created>1581949124003</created>
@@ -603,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620756396515</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="finish all Work tasks">
+      <created>1620767259070</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1620767259070</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +632,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Перед открытием тематических страниц" />
     <MESSAGE value="Перенос сайта" />
     <MESSAGE value="Фиксы в связи с переносом" />
     <MESSAGE value="Корректировки на тематических страницах" />
@@ -650,6 +656,7 @@
     <MESSAGE value="Создать страницу площадки &quot;Школы&quot;" />
     <MESSAGE value="5. Стать спикером - на странице создать голосование | 19/04/2021&#10;6. Содержание (что входит в билет) билетов по секретной ссылке сделать таким же, как у билетов по обычной цене" />
     <MESSAGE value="finish old tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish old tasks" />
+    <MESSAGE value="finish all Work tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish all Work tasks" />
   </component>
 </project>

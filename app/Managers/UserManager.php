@@ -960,7 +960,7 @@ class UserManager extends BaseEntityManager {
     }
     
     public function getAllRegistered() {
-        $sql = "SELECT * FROM `user` WHERE `status` = '" . User::STATUS_REGISTERED . "' AND `name` <> '' LIMIT 1500,100";
+        $sql = "SELECT * FROM `user` WHERE `status` = '" . User::STATUS_REGISTERED . "' AND `name` <> '' LIMIT 2500,100";
         return $this->getByAnySQL($sql);
     }
     

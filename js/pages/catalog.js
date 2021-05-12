@@ -58,7 +58,7 @@ $().ready(function() {
                     } else if (data == 'no_ticketorproduct') {
                         $.alert("Не выбран товар", {title: false, type: 'danger'});
                     } else if (data == 'no_productorproductstatus') {
-                        $.alert("Не найден товар", {title: false, type: 'danger'});
+                        $.alert("Товар не найден или закончился", {title: false, type: 'danger'});
                     } else if (data == 'no_ticketorticketstatus') {
                         $.alert("Не найден билет", {title: false, type: 'danger'});
                     } else if (data == 'no_extuser') {

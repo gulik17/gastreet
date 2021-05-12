@@ -51,7 +51,14 @@
                     <li><a href="{link show=catalog}" class="indicator-toggle cashback"><span>##tickets##</span></a></li>
                     <li><a href="{link show=speakers}"><span>##speakers##</span></a></li>
                     <li><a href="{link show=folkspeaker}" class="indicator-toggle ne_sema"><span>Стать спикером</span></a></li>
-                    <li><a href="{link show=schedule}"><span>##scheduleOff##</span></a></li>
+                    <li class="has-sub-menu">
+                        <a href="/schedule"><span>##scheduleOff##</span></a>
+                        <span></span>
+                        <ul>
+                            <li><a href="/schedule"><span>Официальная программа</span></a></li>
+                            <li><a href="/schedulepartner"><span>Партнерская программа</span></a></li>
+                        </ul>
+                    </li>
                     <li><a href="{link show=becomepartner}" class="indicator-toggle partner"><span>Стать партнером</span></a></li>
                     <!--<li class="d-none"><a href="{link show=presentation}"><span>##presentation##</span></a></li>-->
                     <li class="for-mobile"><a href="{link show=kids}"><span>{if $lang == 'en'}Gastreet Kids{else}Детский кемп{/if}</span></a></li>

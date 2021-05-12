@@ -23,6 +23,14 @@
                     <div class="container schedule">
                         <h1 class="page-headline gss-speakers-title">##schedulepartner##</h1>
                         {if $lang == 'en'}
+                            <div class="g-emoji-content">
+                                <div class="g-emoji-icon">
+                                    <img src="/images/emoji/4.png" class="img-fluid" alt="">
+                                </div>
+                                <div class="g-emoji-balun">
+                                    Remember that you can not separately purchase participation in master classes. You are only available to those events that are included in your chosen ticket.
+                                </div>
+                            </div>
                             <div class="alert alert-light alert-schedule alert-dismissible fade show" role="alert">
                                 <p>Remember that you can not separately purchase participation in master classes.</p>
                                 <p>You are only available to those events that are included in your chosen ticket.</p>
@@ -30,10 +38,13 @@
                             </div>
                             <p class="note schedule-filter">ФИЛЬТР <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a> <a href="javascript:void(0);"  data-target=".schedule-filter-theme">ПО ТЕМЕ</a></p>
                         {else}
-                            <div class="alert alert-light alert-schedule alert-dismissible fade show" role="alert">
-                                <p>Помни, что ты не сможешь отдельно докупить участие в&nbsp;мастер-классах.</p>
-                                <p>Тебе доступны только те события, которые входят в&nbsp;твой билет.</p>
-                                <a href="#" class="close" data-dismiss="alert" aria-label="Close">&times;</a>
+                            <div class="g-emoji-content">
+                                <div class="g-emoji-icon">
+                                    <img src="/images/emoji/4.png" class="img-fluid" alt="">
+                                </div>
+                                <div class="g-emoji-balun">
+                                    Помни, что ты не сможешь отдельно докупить участие в&nbsp;мастер-классах. Тебе доступны только те события, которые входят в&nbsp;твой билет
+                                </div>
                             </div>
                             <p class="note schedule-filter">ФИЛЬТР <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a> <a href="javascript:void(0);"  data-target=".schedule-filter-theme">ПО ТЕМЕ</a></p>
                         {/if}
@@ -44,8 +55,8 @@
                                 <li class="gss-tag-li active"><a class="gss-tag-link" data-tag="all" title="" href="#">{if $lang == 'en'}#All{else}#Все{/if}</a></li>
                                 <li class="gss-tag-li tag_partnerstreet"><a class="gss-tag-link" data-tag="tag_partnerstreet" title="#partnerstreet" href="#">#partnerstreet</a></li>
                                 <li class="gss-tag-li tag_baristastreet"><a class="gss-tag-link" data-tag="tag_baristastreet" title="#baristastreet" href="#">#baristastreet</a></li>
-                                <li class="gss-tag-li tag_winedome"><a class="gss-tag-link" data-tag="tag_winedome" title="#winedome" href="#">#winedome</a></li>
-                                <li class="gss-tag-li tag_franchisestreet"><a class="gss-tag-link" data-tag="tag_franchisestreet" title="#franchisestreet" href="#">#franchisestreet</a></li>
+<!--                                <li class="gss-tag-li tag_winedome"><a class="gss-tag-link" data-tag="tag_winedome" title="#winedome" href="#">#winedome</a></li>-->
+<!--                                <li class="gss-tag-li tag_franchisestreet"><a class="gss-tag-link" data-tag="tag_franchisestreet" title="#franchisestreet" href="#">#franchisestreet</a></li>-->
                             </ul>
                         </div>
                         <div class="tags-list tags-list-speakers schedule-filter-theme" style="display: none;">
@@ -94,12 +105,12 @@
                             </ul>
                         </div>
                         <div class="tab-dates">
-                            <a href="#" data-date="all" class="active">##allDays##</a>
-                            <a href="#" data-date="01" class="">{if $lang == 'en'}June 01st{else}01 июня{/if}</a>
-                            <a href="#" data-date="02" class="">{if $lang == 'en'}June 02st{else}02 июня{/if}</a>
-                            <a href="#" data-date="03" class="">{if $lang == 'en'}June 03st{else}03 июня{/if}</a>
-                            <a href="#" data-date="04" class="">{if $lang == 'en'}June 04st{else}04 июня{/if}</a>
-                            <a href="#" data-date="05" class="">{if $lang == 'en'}June 05st{else}05 июня{/if}</a>
+                            <a href="#" data-date="all" class="active">##allDays##<small>&nbsp;</small></a>
+                            <a href="#" data-date="01" class="">{if $lang == 'en'}June 01st{else}01 июня{/if}<small>заезд</small></a>
+                            <a href="#" data-date="02" class="">{if $lang == 'en'}June 02st{else}02 июня{/if}<small>обучение</small></a>
+                            <a href="#" data-date="03" class="">{if $lang == 'en'}June 03st{else}03 июня{/if}<small>обучение</small></a>
+                            <a href="#" data-date="04" class="">{if $lang == 'en'}June 04st{else}04 июня{/if}<small>обучение</small></a>
+                            <a href="#" data-date="05" class="">{if $lang == 'en'}June 05st{else}05 июня{/if}<small>выезд</small></a>
                         </div>
                     </div>
                     <div class="container schedule-table">
@@ -119,7 +130,7 @@
                         {assign var=speaker6id value=$product->speaker6Id}
                         {assign var=speaker6 value=$this.speakers.$speaker6id}
 
-                        <div class="row block-body{$product->tags|tagtocssclass}{if $product->price > 0} t_buy{/if}{if $product->id|inticket:1} t_tourist{/if}{if $product->id|inticket:2} t_chefs{/if}{if $product->id|inticket:3} t_profi{/if}{if $product->id|inticket:4} t_barstreet{/if}{if $product->id|inticket:5} t_king{/if}{if $product->id|inticket:8} t_rebro{/if}{if $product->id|inticket:10} t_pizzastreet{/if}{if $product->id|inticket:14} t_fun{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
+                        <div class="row block-body{$product->tags|tagtocssclass}{if $product->price > 0} t_buy{/if}{if $product->id|inticket:1} t_tourist{/if}{if $product->id|inticket:2} t_chefs{/if}{if $product->id|inticket:3} t_profi{/if}{if $product->id|inticket:18} t_fun{/if}{if $product->id|inticket:5} t_king{/if}{if $product->id|inticket:8} t_rebro{/if}{if $product->id|inticket:10} t_pizzastreet{/if}{if $product->id|inticket:14} t_fun{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
                             <div class="col-md-12">
                                 <div id="gss-tag-id-{$product->id}" class="row gss-tag-tr">
                                     <div class="col-md-2 td c-time d-none d-md-block d-lg-block d-xl-block">
@@ -250,8 +261,7 @@
                                     <div class="col-4 col-md-2 col-xs-12 td td-cart">
                                         <div class="badge-ticket {if $product->id|inticket:3}active{/if}">ПРОФИ</div>
                                         <div class="badge-ticket {if $product->id|inticket:2}active{/if}">ШЕФСКИЙ</div>
-                                        <div class="badge-ticket {if $product->id|inticket:1}active{/if}">СПУТНИК</div>
-                                        <div class="badge-ticket {if $product->id|inticket:4}active{/if}">BARSTREET</div>
+                                        <div class="badge-ticket {if $product->id|inticket:18}active{/if}">FUN</div>
                                         <div class="badge-ticket {if $product->id|inticket:5}active{/if}">КАК КОРОЛЬ</div>
                                         <div class="badge-ticket {if $product->id|inticket:8}active{/if}">REBRO</div>
                                         {assign var=canShowButton value=1}
