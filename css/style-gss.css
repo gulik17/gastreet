@@ -1866,6 +1866,7 @@ footer .align-self-center p {
 .lang:hover {
     color: #fff;}
 .partners-list li:nth-child(n+17) {
+    vertical-align: middle;
     display: none;}
 @media (min-width: 300px) and (max-width: 767px) {
     .user-qr img {

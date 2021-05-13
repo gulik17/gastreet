@@ -20,6 +20,7 @@ class SavePlaceAction extends AdminkaAction {
         $stars = Request::getInt("stars");
         $level = Request::getVar("level");
         $price = Request::getVar("price");
+        $alias = Request::getVar("alias");
         $description = Request::getVar("description");
         $description_en = Request::getVar("description_en");
         $modal_desc = Request::getVar("modal_desc");
@@ -68,6 +69,7 @@ class SavePlaceAction extends AdminkaAction {
         $plmObj->stars = $stars;
         $plmObj->level = $level;
         $plmObj->price = $price;
+        $plmObj->alias = $alias;
         $plmObj->description = $description;
         $plmObj->description_en = $description_en;
         $plmObj->modal_desc = $modal_desc;

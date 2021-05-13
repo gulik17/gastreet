@@ -19,6 +19,7 @@ class PlaceControl extends IndexControl {
         $pm960 = [];
         $pm540 = [];
         $pm560 = [];
+        $pm540_plus = [];
         foreach ($pmList as $key => $place) {
             $place->inclusive = unserialize($place->inclusive);
             $place->notinclusive = unserialize($place->notinclusive);
@@ -26,6 +27,8 @@ class PlaceControl extends IndexControl {
                 $pm960[] = $place;
             } else if ($place->level == '+540') {
                 $pm540[] = $place;
+            } else if ($place->level == '++540') {
+                $pm540_plus[] = $place;
             } else if ($place->level == '+560') {
                 $pm560[] = $place;
             }
@@ -36,5 +39,6 @@ class PlaceControl extends IndexControl {
         $this->addData("pm960", $pm960);
         $this->addData("pm540", $pm540);
         $this->addData("pm560", $pm560);
+        $this->addData("pm540_plus", $pm540_plus);
     }
 }

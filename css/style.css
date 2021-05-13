@@ -3925,6 +3925,9 @@ main {
 .page_body .row-options .ticket.dinner_popup {
     background-color: #fbc900;
     color: #fff;}
+.page_body .row-options .ticket.showdown_popup {
+    background-color: #282c57;
+    color: #fff;}
 .page_body .row-options .ticket.cat_business .ticket_new_cost,
 .page_body .row-options .ticket.cat_business .ticket_desc,
 .page_body .row-options .ticket.cat_fuckup .ticket_new_cost,
@@ -3934,7 +3937,9 @@ main {
 .page_body .row-options .ticket.air_popup .ticket_new_cost,
 .page_body .row-options .ticket.air_popup .ticket_desc,
 .page_body .row-options .ticket.dinner_popup .ticket_new_cost,
-.page_body .row-options .ticket.dinner_popup .ticket_desc {
+.page_body .row-options .ticket.dinner_popup .ticket_desc,
+.page_body .row-options .ticket.showdown_popup .ticket_new_cost,
+.page_body .row-options .ticket.showdown_popup .ticket_desc{
     color: #fff;
     font-size: 11px;}
 /**
