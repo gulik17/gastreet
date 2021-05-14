@@ -39,12 +39,12 @@ class CatalogControl extends IndexControl {
         $this->addData("products", $products);
 
         // максимум до 11-ми пока
-        if ($areaId > 0 && $areaId <= 34) {
+        if ($areaId > 0 && $areaId <= 37) {
             $this->layout = "indexgastop.html";
             $this->template = "CatalogControl{$areaId}.html";
             $spm = new SpeakerManager();
             $spmList = null;
-            if ($areaId == 1) {
+            if ($areaId == 37) {
                 $spmList = $spm->getActiveByTag('partnerstreet', '2021');
             }
             if ($areaId == 2) {

@@ -24,7 +24,7 @@ class SchedulePartnerControl extends IndexControl {
         }
         // показывать только те МК, у которых showInSchedule = 1
         $onlyAllowed = false;
-        $areaId = 0;
+        $areaId = 37;
         $this->template = 'SchedulePartnerControl.html';
         $onlyAllowed = true;
 

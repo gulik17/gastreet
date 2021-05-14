@@ -46,7 +46,10 @@
                                     Помни, что ты не сможешь отдельно докупить участие в&nbsp;мастер-классах. Тебе доступны только те события, которые входят в&nbsp;твой билет
                                 </div>
                             </div>
-                            <p class="note schedule-filter">ФИЛЬТР <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a> <a href="javascript:void(0);"  data-target=".schedule-filter-theme">ПО ТЕМЕ</a></p>
+                            <p class="note schedule-filter">ФИЛЬТР
+                                <a href="javascript:void(0);" class="active" data-target=".schedule-filter-area">ПО ПЛОЩАДКЕ</a>
+<!--                                <a href="javascript:void(0);"  data-target=".schedule-filter-theme">ПО ТЕМЕ</a>-->
+                            </p>
                         {/if}
                     </div>
                     <div class="container">
@@ -115,7 +118,6 @@
                     </div>
                     <div class="container schedule-table">
                     {foreach from=$this.products item=product name=productloop}
-                        {if $product->areaId == 1 || $product->areaId == 17 || $product->areaId == 10 || $product->areaId == 15 || $product->areaId == 18}
                         {assign var=placeid value=$product->placeId}
                         {assign var=speakerid value=$product->speakerId}
                         {assign var=speaker value=$this.speakers.$speakerid}
@@ -282,7 +284,6 @@
                                 </div>
                             </div>
                         </div>
-                        {/if}
                     {/foreach}
                     </div>
 

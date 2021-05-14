@@ -17,6 +17,7 @@ class ProgrammsControl extends IndexControl {
         // поднимем программы
         $am = new AreaManager();
         $amList = $am->getActive("sortOrder");
+        //deb($amList);
         $this->addData("amList", $amList);
     }
 }
