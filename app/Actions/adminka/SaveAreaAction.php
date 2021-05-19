@@ -103,7 +103,7 @@ class SaveAreaAction extends AdminkaAction {
         $eventicious->setCode(Configurator::get("eventicious:code"));
 
         // Т.к. инфу о наличии записи получить нет возможности, пробуем отредактировать
-        $result = $eventicious->tracksUpdate($amObj->id, 'VisibilityFlagHidden', $amObj->name, $amObj->color);
+        $result = $eventicious->tracksUpdate($amObj->id, 1, $amObj->name, $amObj->color);
         // Проверяем код ответа сервера на запрос редактирования записи
         if ($result['result_code'] == 200) {
             $mes = "Eventicious: ID $amObj->id Отредактирован";

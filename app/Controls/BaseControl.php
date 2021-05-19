@@ -139,15 +139,15 @@ class BaseControl extends Control {
             $this->addData("gastreetlubimki", 0);
         }
 
-        if ( ($code == 'gastreetspecial') || (Context::getObject('code') == 'gastreetspecial') ) {
-            if (Request::getVar("code")) {
-                Context::setObject('code', 'gastreetspecial');
-            }
-            $this->gcode = 'gastreetspecial';
-            $this->addData("gastreetspecial", 1);
-        } else {
-            $this->addData("gastreetspecial", 0);
-        }
+//        if ( ($code == 'gastreetspecial') || (Context::getObject('code') == 'gastreetspecial') ) {
+//            if (Request::getVar("code")) {
+//                Context::setObject('code', 'gastreetspecial');
+//            }
+//            $this->gcode = 'gastreetspecial';
+//            $this->addData("gastreetspecial", 1);
+//        } else {
+//            $this->addData("gastreetspecial", 0);
+//        }
 
         if ( ($code == 'hells_kitchen') || (Context::getObject('code') == 'hells_kitchen') ) {
             if (Request::getVar("code")) {

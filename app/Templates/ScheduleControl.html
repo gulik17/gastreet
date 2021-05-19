@@ -72,7 +72,7 @@
                                 <li class="gss-tag-li tag_rebro"><a class="gss-tag-link" data-tag="tag_rebro" title="#rebro" href="#">#rebro</a></li>
                                 <li class="gss-tag-li tag_centralnayaploshchad"><a class="gss-tag-link" data-tag="tag_centralnayaploshchad" title="#центральнаяплощадь" href="#">#центральнаяплощадь</a></li>
                                 <li class="gss-tag-li tag_shkoly"><a class="gss-tag-link" data-tag="tag_shkoly" title="#школы" href="#">#школы</a></li>
-<!--                                <li class="gss-tag-li tag_partnerstreet"><a class="gss-tag-link" data-tag="tag_partnerstreet" title="#PARTNERSTREET" href="#">#PARTNERSTREET</a></li>-->
+                                <!--<li class="gss-tag-li tag_partnerstreet"><a class="gss-tag-link" data-tag="tag_partnerstreet" title="#PARTNERSTREET" href="#">#PARTNERSTREET</a></li>-->
                                 <li class="gss-tag-li tag_baristastreet"><a class="gss-tag-link" data-tag="tag_baristastreet" title="#BARISTASTREET" href="#">#BARISTASTREET</a></li>
                                 <!--<li class="gss-tag-li tag_tedx"><a class="gss-tag-link" data-tag="tag_tedx" title="#TEDx" href="#">#TEDx</a></li>-->
                                 <!--<li class="gss-tag-li tag_businessschool"><a class="gss-tag-link" data-tag="tag_biznesshkola" title="#бизнесшкола" href="#">#бизнесшкола</a></li>-->
@@ -135,7 +135,7 @@
                     </div>
                     <div class="container schedule-table">
                     {foreach from=$this.products item=product name=productloop}
-                        {if $product->areaId != 1 && $product->areaId != 17 && $product->areaId != 10 && $product->areaId != 15 && $product->areaId != 18}
+                        {if $product->areaId != 1 && $product->areaId != 37 && $product->areaId != 10 && $product->areaId != 15 && $product->areaId != 18}
                             {assign var=placeid value=$product->placeId}
                             {assign var=speakerid value=$product->speakerId}
                             {assign var=speaker value=$this.speakers.$speakerid}

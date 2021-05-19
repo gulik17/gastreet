@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Templates/CatalogControl37.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/areas/resized/0137.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/areas/resized/0138.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/areas/resized/0139.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/areas/resized/0237.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/CatalogControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/CatalogControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/ProgrammsControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/ProgrammsControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl1.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveAreaAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveAreaAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveContactAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveContactAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/BaseControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BaseControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,14 +263,9 @@
       <workItem from="1620756336196" duration="7978000" />
       <workItem from="1620827304670" duration="9804000" />
       <workItem from="1620902564291" duration="7379000" />
-      <workItem from="1620976135185" duration="8645000" />
-    </task>
-    <task id="LOCAL-00022" summary="Корректировки на главной и где жить">
-      <created>1582009847334</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1582009847334</updated>
+      <workItem from="1620976135185" duration="9286000" />
+      <workItem from="1621357676871" duration="1573000" />
+      <workItem from="1621432292437" duration="7067000" />
     </task>
     <task id="LOCAL-00023" summary="Корректировки на странице Билеты">
       <created>1582010166866</created>
@@ -606,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620921717953</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="finish task 14-05-21">
+      <created>1621005671972</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1621005671973</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +632,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Корректировки на тематических страницах" />
     <MESSAGE value="Начало дня" />
     <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Конец дня, сохранение" />
@@ -653,6 +656,7 @@
     <MESSAGE value="finish all Work tasks" />
     <MESSAGE value="finish tasks 12.06.21" />
     <MESSAGE value="Finish tasks 13-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish tasks 13-05-21" />
+    <MESSAGE value="finish task 14-05-21" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish task 14-05-21" />
   </component>
 </project>
