@@ -2,21 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__barista-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__bbq-beer-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__central-square.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__chef-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__gastreetik.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__main-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__partner-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__rebro.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__schools.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__sport-street.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__barista-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__bbq-beer-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__central-square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__chef-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__drink-zone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__food-market.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__gastreetik.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__main-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__partner-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__rebro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__schools.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/files/png/gastreet2021__sport-street.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/guide_04.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveAreaAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveAreaAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveContactAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveContactAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/BaseControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/BaseControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/FolkSpeakerControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/PlaceControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/PlaceControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/SchedulePartnerControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/AreaManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/AreaManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Managers/ProductManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Managers/ProductManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/ScheduleControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/SchedulePartnerControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/adminka/EditProductControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/adminka/EditProductControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/g21-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__BBQ-street.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Barista-street.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Beer-street_A.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Beer-street_B.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Chef-street_A.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Chef-street_B.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Drink-zone.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__drink-zone.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Food-market.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/style/files/pdf/gastreet2021__food-market.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Wine-dome.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__Wine-street.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/pdf/Gastreet2021__central-square.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__BBQ-street.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Barista-street.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Beer-street_A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Beer-street_B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Chef-street_A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Chef-street_B.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Drink-zone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Food-market.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Wine-dome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__Wine-street.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/files/png/Gastreet2021__central-square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/guide_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,18 +124,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/areas/resized" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/style/files/pdf" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gastreet.loc\images\areas\resized" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\app\Templates" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\style\files\pdf" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\style\files\png" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\style" />
       <recent name="C:\OpenServer\domains\gastreet.loc\images" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\images\thematik-page" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\css" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\images\areas\resized" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
@@ -265,14 +307,8 @@
       <workItem from="1620902564291" duration="7379000" />
       <workItem from="1620976135185" duration="9286000" />
       <workItem from="1621357676871" duration="1573000" />
-      <workItem from="1621432292437" duration="7067000" />
-    </task>
-    <task id="LOCAL-00023" summary="Корректировки на странице Билеты">
-      <created>1582010166866</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1582010166866</updated>
+      <workItem from="1621432292437" duration="7709000" />
+      <workItem from="1621516309168" duration="7664000" />
     </task>
     <task id="LOCAL-00024" summary="Добавил ссылки на соц сети и аватар">
       <created>1582022973246</created>
@@ -610,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621005671973</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="finish tasks 19-05-21">
+      <created>1621447701498</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1621447701498</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +675,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Начало дня" />
     <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Конец дня, сохранение" />
     <MESSAGE value="Мелкие правки, шрифт, тематические страницы" />
@@ -657,6 +699,7 @@
     <MESSAGE value="finish tasks 12.06.21" />
     <MESSAGE value="Finish tasks 13-05-21" />
     <MESSAGE value="finish task 14-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish task 14-05-21" />
+    <MESSAGE value="finish tasks 19-05-21" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish tasks 19-05-21" />
   </component>
 </project>

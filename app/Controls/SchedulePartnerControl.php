@@ -79,7 +79,7 @@ class SchedulePartnerControl extends IndexControl {
             }
         }
         $this->addData("areas", $areasArray);
-        
+
         // спикеры
         $speakersArray = array();
         $spm = new SpeakerManager();
@@ -101,7 +101,7 @@ class SchedulePartnerControl extends IndexControl {
 
         // продукты
         $pm = new ProductManager();
-        $products = $pm->getAllActive($areaId, $onlyAllowed);
+        $products = $pm->getAllActive(null, $onlyAllowed);
         $this->addData("products", $products);
         // places
         $plmArray = array();

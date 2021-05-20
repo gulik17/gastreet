@@ -20,6 +20,12 @@ class Product extends Entity {
     public $speaker4Id = null;
     public $speaker5Id = null;
     public $speaker6Id = null;
+    public $speaker7Id = null;
+    public $speaker8Id = null;
+    public $speaker9Id = null;
+    public $speaker10Id = null;
+    public $speaker11Id = null;
+    public $speaker12Id = null;
     public $partner_id = null;
     public $status = null;
     public $showInSchedule = null;
@@ -44,8 +50,6 @@ class Product extends Entity {
     public $eventTsStart = null;
     public $eventTsFinish = null;
     public $tsUpdate = null;
-
-	function __construct() {}
 
     public static function getStatusDesc($stat = null, $lang = null) {
         if ($lang == 'en') {
@@ -76,6 +80,12 @@ class Product extends Entity {
             "speaker4Id" => self::ENTITY_FIELD_INT,
             "speaker5Id" => self::ENTITY_FIELD_INT,
             "speaker6Id" => self::ENTITY_FIELD_INT,
+            "speaker7Id" => self::ENTITY_FIELD_INT,
+            "speaker8Id" => self::ENTITY_FIELD_INT,
+            "speaker9Id" => self::ENTITY_FIELD_INT,
+            "speaker10Id" => self::ENTITY_FIELD_INT,
+            "speaker11Id" => self::ENTITY_FIELD_INT,
+            "speaker12Id" => self::ENTITY_FIELD_INT,
             "partner_id" => self::ENTITY_FIELD_INT,
             "status" => self::ENTITY_FIELD_STRING,
             "showInSchedule" => self::ENTITY_FIELD_INT,

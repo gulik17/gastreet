@@ -57,7 +57,7 @@
                             <ul>
                                 <li class="gss-tag-li active"><a class="gss-tag-link" data-tag="all" title="" href="#">{if $lang == 'en'}#All{else}#Все{/if}</a></li>
                                 <li class="gss-tag-li tag_partnerstreet"><a class="gss-tag-link" data-tag="tag_partnerstreet" title="#partnerstreet" href="#">#partnerstreet</a></li>
-<!--                                <li class="gss-tag-li tag_baristastreet"><a class="gss-tag-link" data-tag="tag_baristastreet" title="#baristastreet" href="#">#baristastreet</a></li>-->
+                                <li class="gss-tag-li tag_baristastreet"><a class="gss-tag-link" data-tag="tag_baristastreet" title="#baristastreet" href="#">#baristastreet</a></li>
 <!--                                <li class="gss-tag-li tag_winedome"><a class="gss-tag-link" data-tag="tag_winedome" title="#winedome" href="#">#winedome</a></li>-->
 <!--                                <li class="gss-tag-li tag_franchisestreet"><a class="gss-tag-link" data-tag="tag_franchisestreet" title="#franchisestreet" href="#">#franchisestreet</a></li>-->
                             </ul>
@@ -118,6 +118,7 @@
                     </div>
                     <div class="container schedule-table">
                     {foreach from=$this.products item=product name=productloop}
+                        {if $product->areaId == 17 || $product->areaId == 37}
                         {assign var=placeid value=$product->placeId}
                         {assign var=speakerid value=$product->speakerId}
                         {assign var=speaker value=$this.speakers.$speakerid}
@@ -131,6 +132,18 @@
                         {assign var=speaker5 value=$this.speakers.$speaker5id}
                         {assign var=speaker6id value=$product->speaker6Id}
                         {assign var=speaker6 value=$this.speakers.$speaker6id}
+                        {assign var=speaker7id value=$product->speaker7Id}
+                        {assign var=speaker7 value=$this.speakers.$speaker7id}
+                        {assign var=speaker8id value=$product->speaker8Id}
+                        {assign var=speaker8 value=$this.speakers.$speaker8id}
+                        {assign var=speaker9id value=$product->speaker9Id}
+                        {assign var=speaker9 value=$this.speakers.$speaker9id}
+                        {assign var=speaker10id value=$product->speaker10Id}
+                        {assign var=speaker10 value=$this.speakers.$speaker10id}
+                        {assign var=speaker11id value=$product->speaker11Id}
+                        {assign var=speaker11 value=$this.speakers.$speaker11id}
+                        {assign var=speaker12id value=$product->speaker12Id}
+                        {assign var=speaker12 value=$this.speakers.$speaker12id}
 
                         <div class="row block-body{$product->tags|tagtocssclass}{if $product->price > 0} t_buy{/if}{if $product->id|inticket:1} t_tourist{/if}{if $product->id|inticket:2} t_chefs{/if}{if $product->id|inticket:3} t_profi{/if}{if $product->id|inticket:18} t_fun{/if}{if $product->id|inticket:5} t_king{/if}{if $product->id|inticket:8} t_rebro{/if}{if $product->id|inticket:10} t_pizzastreet{/if}{if $product->id|inticket:14} t_fun{/if} row-date-{$product->eventTsStart|dateformat:'d'}">
                             <div class="col-md-12">
@@ -205,6 +218,42 @@
                                                     <span><a href="#" data-speaker-id="{$speaker6id}">{$speaker6.name} {$speaker6.secondName}</a></span>
                                                     <div>{$speaker6.company}{if $speaker6.company},<br> {/if}{if $speaker6.cityName}{$speaker6.cityName}{/if}</div>
                                                 </div>
+                                            {/if}
+                                            {if $speaker7}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker7id}">{$speaker7.name} {$speaker7.secondName}</a></span>
+                                                <div>{$speaker7.company}{if $speaker7.company},<br> {/if}{if $speaker7.cityName}{$speaker7.cityName}{/if}</div>
+                                            </div>
+                                            {/if}
+                                            {if $speaker8}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker8id}">{$speaker8.name} {$speaker8.secondName}</a></span>
+                                                <div>{$speaker8.company}{if $speaker8.company},<br> {/if}{if $speaker8.cityName}{$speaker8.cityName}{/if}</div>
+                                            </div>
+                                            {/if}
+                                            {if $speaker9}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker9id}">{$speaker9.name} {$speaker9.secondName}</a></span>
+                                                <div>{$speaker9.company}{if $speaker9.company},<br> {/if}{if $speaker9.cityName}{$speaker9.cityName}{/if}</div>
+                                            </div>
+                                            {/if}
+                                            {if $speaker10}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker10id}">{$speaker10.name} {$speaker10.secondName}</a></span>
+                                                <div>{$speaker10.company}{if $speaker10.company},<br> {/if}{if $speaker10.cityName}{$speaker10.cityName}{/if}</div>
+                                            </div>
+                                            {/if}
+                                            {if $speaker11}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker11id}">{$speaker11.name} {$speaker11.secondName}</a></span>
+                                                <div>{$speaker11.company}{if $speaker11.company},<br> {/if}{if $speaker11.cityName}{$speaker11.cityName}{/if}</div>
+                                            </div>
+                                            {/if}
+                                            {if $speaker12}
+                                            <div class="gss-margintop5 desc">
+                                                <span><a href="#" data-speaker-id="{$speaker12id}">{$speaker12.name} {$speaker12.secondName}</a></span>
+                                                <div>{$speaker12.company}{if $speaker12.company},<br> {/if}{if $speaker12.cityName}{$speaker12.cityName}{/if}</div>
+                                            </div>
                                             {/if}
                                         </div>
                                         {if $speaker.partner_id && $product->areaId != 4 && $product->areaId != 14}
@@ -284,6 +333,7 @@
                                 </div>
                             </div>
                         </div>
+                        {/if}
                     {/foreach}
                     </div>
 

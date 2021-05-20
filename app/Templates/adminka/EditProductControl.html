@@ -161,6 +161,54 @@
     </div>
     <div class="row">
         <div class="col-md-6 form-group">
+            <label>Спикер 7:</label>
+            <select class="form-control chosen-select" name="speaker7Id" id="speaker7Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker7Id}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Спикер 8:</label>
+            <select class="form-control chosen-select" name="speaker8Id" id="speaker8Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker8Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Спикер 9:</label>
+            <select class="form-control chosen-select" name="speaker9Id" id="speaker9Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker9Id}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Спикер 10:</label>
+            <select class="form-control chosen-select" name="speaker10Id" id="speaker10Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker10Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Спикер 11:</label>
+            <select class="form-control chosen-select" name="speaker11Id" id="speaker11Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker11Id}
+            </select>
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Спикер 12:</label>
+            <select class="form-control chosen-select" name="speaker12Id" id="speaker12Id">
+                <option value="">-- не выбран --</option>
+                {html_options options=$this.speakers selected=$this.product->speaker12Id}
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
             <label>Место проведения:</label>
             <select class="form-control chosen-select" name="placeId" id="placeId">
                 {html_options options=$this.places selected=$this.product->placeId}
