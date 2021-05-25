@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
@@ -260,14 +262,9 @@
       <workItem from="1621357676871" duration="1573000" />
       <workItem from="1621432292437" duration="7709000" />
       <workItem from="1621516309168" duration="7892000" />
-      <workItem from="1621592429293" duration="655000" />
-    </task>
-    <task id="LOCAL-00025" summary="Правки на страницах моб аватар, оферта, политика, где жить">
-      <created>1582027723868</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1582027723868</updated>
+      <workItem from="1621592429293" duration="1650000" />
+      <workItem from="1621809836862" duration="28000" />
+      <workItem from="1621938508860" duration="1257000" />
     </task>
     <task id="LOCAL-00026" summary="priceup страница">
       <created>1582038342448</created>
@@ -605,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621535626543</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="убрать Ресторанные разборки с сайта (их отменили)">
+      <created>1621593110575</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1621593110576</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +631,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Конец дня, сохранение" />
     <MESSAGE value="Мелкие правки, шрифт, тематические страницы" />
     <MESSAGE value="Сохранение перед переездом" />
     <MESSAGE value="Мелкие корректировки в связи с переездом" />
@@ -652,6 +655,7 @@
     <MESSAGE value="finish task 14-05-21" />
     <MESSAGE value="finish tasks 19-05-21" />
     <MESSAGE value="finish tasks 20-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish tasks 20-05-21" />
+    <MESSAGE value="убрать Ресторанные разборки с сайта (их отменили)" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрать Ресторанные разборки с сайта (их отменили)" />
   </component>
 </project>
