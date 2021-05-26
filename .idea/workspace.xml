@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket2Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket3Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket3Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket6Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket6Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/BasketControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/BasketControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" afterDir="false" />
@@ -11,7 +16,12 @@
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/TopmenuControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register2Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register2Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Register5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Register5Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/RegisterControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/RegisterControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/g21-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/gastreet_760x186.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/gastreet_760x186.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,17 +87,17 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/style/files/pdf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\style\files\pdf" />
       <recent name="C:\OpenServer\domains\gastreet.loc\style\files\png" />
       <recent name="C:\OpenServer\domains\gastreet.loc\style" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\images\areas\resized" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -264,14 +274,8 @@
       <workItem from="1621516309168" duration="7892000" />
       <workItem from="1621592429293" duration="1650000" />
       <workItem from="1621809836862" duration="28000" />
-      <workItem from="1621938508860" duration="1257000" />
-    </task>
-    <task id="LOCAL-00026" summary="priceup страница">
-      <created>1582038342448</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1582038342448</updated>
+      <workItem from="1621938508860" duration="1905000" />
+      <workItem from="1622050593887" duration="937000" />
     </task>
     <task id="LOCAL-00027" summary="Пофиксил повышение цены и билеты">
       <created>1582110444689</created>
@@ -609,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621593110576</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Finish task 26-05-21">
+      <created>1621954807043</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1621954807044</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +642,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Мелкие правки, шрифт, тематические страницы" />
     <MESSAGE value="Сохранение перед переездом" />
     <MESSAGE value="Мелкие корректировки в связи с переездом" />
     <MESSAGE value="Пополнение баланса от Альфа" />
@@ -656,6 +666,7 @@
     <MESSAGE value="finish tasks 19-05-21" />
     <MESSAGE value="finish tasks 20-05-21" />
     <MESSAGE value="убрать Ресторанные разборки с сайта (их отменили)" />
-    <option name="LAST_COMMIT_MESSAGE" value="убрать Ресторанные разборки с сайта (их отменили)" />
+    <MESSAGE value="Finish task 26-05-21" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish task 26-05-21" />
   </component>
 </project>
