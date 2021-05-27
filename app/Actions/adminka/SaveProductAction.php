@@ -27,6 +27,12 @@ class SaveProductAction extends AdminkaAction {
         $speaker4Id = Request::getInt("speaker4Id");
         $speaker5Id = Request::getInt("speaker5Id");
         $speaker6Id = Request::getInt("speaker6Id");
+        $speaker7Id = Request::getInt("speaker7Id");
+        $speaker8Id = Request::getInt("speaker8Id");
+        $speaker9Id = Request::getInt("speaker9Id");
+        $speaker10Id = Request::getInt("speaker10Id");
+        $speaker11Id = Request::getInt("speaker11Id");
+        $speaker12Id = Request::getInt("speaker12Id");
         $partner_id = Request::getInt("partner_id");
 
         $startDay = Request::getInt("startDay");
@@ -110,6 +116,12 @@ class SaveProductAction extends AdminkaAction {
         $pmObj->speaker4Id = $speaker4Id;
         $pmObj->speaker5Id = $speaker5Id;
         $pmObj->speaker6Id = $speaker6Id;
+        $pmObj->speaker7Id = $speaker7Id;
+        $pmObj->speaker8Id = $speaker8Id;
+        $pmObj->speaker9Id = $speaker9Id;
+        $pmObj->speaker10Id = $speaker10Id;
+        $pmObj->speaker11Id = $speaker11Id;
+        $pmObj->speaker12Id = $speaker12Id;
         $pmObj->partner_id = $partner_id;
         $pmObj->description = $description;
         $pmObj->youtube = $youtube;
