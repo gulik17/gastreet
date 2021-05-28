@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/adminka/SaveProductAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/adminka/SaveProductAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/g21-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,14 +259,8 @@
       <workItem from="1621809836862" duration="28000" />
       <workItem from="1621938508860" duration="1905000" />
       <workItem from="1622050593887" duration="1057000" />
-      <workItem from="1622148854230" duration="316000" />
-    </task>
-    <task id="LOCAL-00028" summary="Правки страницы CHEFSTREET">
-      <created>1582128428886</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1582128428886</updated>
+      <workItem from="1622148854230" duration="952000" />
+      <workItem from="1622216593414" duration="709000" />
     </task>
     <task id="LOCAL-00029" summary="Мелкие правки">
       <created>1582186127576</created>
@@ -604,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622051651706</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="finish task 27-05-21">
+      <created>1622149938766</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1622149938767</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +627,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Мелкие корректировки в связи с переездом" />
     <MESSAGE value="Пополнение баланса от Альфа" />
     <MESSAGE value="Мелкие правки в админке" />
     <MESSAGE value="Мелкие правки в админке и в проживании" />
@@ -651,6 +651,7 @@
     <MESSAGE value="убрать Ресторанные разборки с сайта (их отменили)" />
     <MESSAGE value="Finish task 26-05-21" />
     <MESSAGE value="finish task 26-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish task 26-05-21" />
+    <MESSAGE value="finish task 27-05-21" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish task 27-05-21" />
   </component>
 </project>
