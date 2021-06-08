@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controls/AjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AjaxControl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images/g21-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" afterDir="false" />
     </list>
@@ -260,14 +270,14 @@
       <workItem from="1621938508860" duration="1905000" />
       <workItem from="1622050593887" duration="1057000" />
       <workItem from="1622148854230" duration="952000" />
-      <workItem from="1622216593414" duration="709000" />
-    </task>
-    <task id="LOCAL-00029" summary="Мелкие правки">
-      <created>1582186127576</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1582186127576</updated>
+      <workItem from="1622216593414" duration="767000" />
+      <workItem from="1622475875517" duration="14000" />
+      <workItem from="1622479904624" duration="701000" />
+      <workItem from="1622542230769" duration="622000" />
+      <workItem from="1622634901626" duration="3431000" />
+      <workItem from="1622711535216" duration="50000" />
+      <workItem from="1623088677373" duration="825000" />
+      <workItem from="1623145683439" duration="1285000" />
     </task>
     <task id="LOCAL-00030" summary="Запуск шефской страницы">
       <created>1582205356375</created>
@@ -605,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622149938767</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="finish task 28-05-21">
+      <created>1622222867309</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1622222867309</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +644,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Пополнение баланса от Альфа" />
     <MESSAGE value="Мелкие правки в админке" />
     <MESSAGE value="Мелкие правки в админке и в проживании" />
     <MESSAGE value="Правки по сайту от 10-02-2021" />
@@ -652,6 +668,7 @@
     <MESSAGE value="Finish task 26-05-21" />
     <MESSAGE value="finish task 26-05-21" />
     <MESSAGE value="finish task 27-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish task 27-05-21" />
+    <MESSAGE value="finish task 28-05-21" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish task 28-05-21" />
   </component>
 </project>

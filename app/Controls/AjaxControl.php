@@ -3,9 +3,11 @@
 /**
  * Ajax-овый контрол для запросов из html
  */
-class AjaxControl extends BaseControl implements IAjaxControl {
+class AjaxControl extends BaseControl implements IAjaxControl
+{
 
-    public function render() {
+    public function render()
+    {
         $actor = Context::getActor();
         $job = Request::getVar("job");
         $time = time();
@@ -589,7 +591,6 @@ class AjaxControl extends BaseControl implements IAjaxControl {
         // получить смс код
         if ($job == "usergetcode") {
             $phone = Phone::phoneVerification(Request::getVar("phone"));
-//deb($phone);
             if ( (!$phone["isError"]) && (!Phone::phoneDadataVerification($phone["number"])) ) {
                 echo json_encode('90');
                 exit;
