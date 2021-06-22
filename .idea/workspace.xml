@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="133c2053-4c99-419f-8732-a3b18005f70f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/gss/g21certificate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/g21-finish.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main/g21-finish_mobile.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controls/AjaxControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controls/AjaxControl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/Basket4Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket4Control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl32.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl33.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl34.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/CatalogControl9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Templates/Basket5Control.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/Basket5Control.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/Templates/layouts/pageindex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/g21-map.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/g21-map.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/gastreet21_memo.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style-gss.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style-gss.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,18 +74,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pdf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gastreet.loc\images\main" />
+      <recent name="C:\OpenServer\domains\gastreet.loc\images\gss" />
       <recent name="C:\OpenServer\domains\gastreet.loc\pdf" />
       <recent name="C:\OpenServer\domains\gastreet.loc\images" />
       <recent name="C:\OpenServer\domains\gastreet.loc\style\files\pdf" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\style\files\png" />
-      <recent name="C:\OpenServer\domains\gastreet.loc\style" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\gastreet\images\place" />
@@ -277,14 +271,9 @@
       <workItem from="1622634901626" duration="3431000" />
       <workItem from="1622711535216" duration="50000" />
       <workItem from="1623088677373" duration="825000" />
-      <workItem from="1623145683439" duration="1285000" />
-    </task>
-    <task id="LOCAL-00030" summary="Запуск шефской страницы">
-      <created>1582205356375</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1582205356375</updated>
+      <workItem from="1623145683439" duration="1356000" />
+      <workItem from="1623822573467" duration="1186000" />
+      <workItem from="1624348279643" duration="1808000" />
     </task>
     <task id="LOCAL-00031" summary="Добавлены тематические страницы">
       <created>1582210792138</created>
@@ -622,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622222867309</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="finish task">
+      <created>1623161758761</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1623161758761</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +640,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Мелкие правки в админке" />
     <MESSAGE value="Мелкие правки в админке и в проживании" />
     <MESSAGE value="Правки по сайту от 10-02-2021" />
     <MESSAGE value="Правки 11-02-21" />
@@ -669,6 +664,7 @@
     <MESSAGE value="finish task 26-05-21" />
     <MESSAGE value="finish task 27-05-21" />
     <MESSAGE value="finish task 28-05-21" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish task 28-05-21" />
+    <MESSAGE value="finish task" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish task" />
   </component>
 </project>

@@ -4581,6 +4581,8 @@ p.border-gastreet-dashed {
     text-align: center;}
 .main-slider_mart {
     position: relative;}
+.main-slider_june {
+    position: relative;}
 .main-slider_mart .slider-bg {
     position: absolute;
     top: 0;
@@ -4661,6 +4663,8 @@ main {
 @media (min-width: 300px) and (max-width: 767px) {
     html, body {
         font-size: 11px;}
+    .main-slider_june {
+        padding-top: 52px;}
     .main-slider-carousel_mart .item img {
         width: 500px;
         transform: translateX(-250px);
